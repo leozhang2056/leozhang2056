@@ -15,7 +15,7 @@
 - **Tools:** Git, GitHub, Cursor, GitHub Copilot,PowerBI  
 
 ## 📂 Project Portfolio
----
+
 
 ### 📱 Android Development
 - **Enterprise Messaging Platform (2014–2023)**  
@@ -29,7 +29,7 @@
   - Offline-first design with real-time sync  
   - Integrated hardware devices for automation  
 
----
+
 
 ### ☕ Java / Backend
 - **Smart Factory Backend System (2018–2024)**  
@@ -42,8 +42,6 @@
   - Windows Server & IIS deployment, SSL, AD, scheduled tasks  
   - Migrated legacy systems and maintained 99.9% uptime  
 
----
-
 
 
 
@@ -54,7 +52,7 @@
   - Integrated ComfyUI + Dify for orchestration  
   - Delivered full-stack AI pipeline, demo + documentation submitted 6 months early  
 
----
+
 
 ### 🌐 Frontend
 - **Industrial Dashboards & IoT Visualization**  
@@ -62,7 +60,7 @@
   - GPS/photo logging apps  
   - Real-time dashboards with charts and alerts  
 
----
+
 
 ### 🖥️ .NET & System Integration
 - **Legacy Enterprise Systems Migration**  
@@ -70,6 +68,6 @@
   - IIS configuration, SSL, multi-site deployment  
   - Integrated file sync with OneDrive, Dropbox, SFTP  
 
----
+
 
 
