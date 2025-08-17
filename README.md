@@ -1,88 +1,76 @@
-# {{NAME}} / {{GITHUB_USERNAME}}
+# Leo Zhang
 
-> Senior Mobile Engineer (Android) & AI Engineer | Focused on Mobile App Development & AI Solutions
-
-[![Android](https://img.shields.io/badge/Android-Expert-green)](https://img.shields.io/badge/Android-Expert-green)
-[![AI/ML](https://img.shields.io/badge/AI/ML-Advanced-blue)](https://img.shields.io/badge/AI/ML-Advanced-blue)
-[![Full Stack](https://img.shields.io/badge/Full_Stack-Intermediate-orange)](https://img.shields.io/badge/Full_Stack-Intermediate-orange)
-[![New Zealand](https://img.shields.io/badge/Location-Auckland_NZ-red)](https://img.shields.io/badge/Location-Auckland_NZ-red)
-
-## TL;DR
-
-**What I do**: Android native app development expert with AI/ML integration experience, focused on high-performance mobile solutions.
-
-**Currently working on**: Developing ML-powered mobile applications, optimizing user experience and performance metrics.
-
-**Core value**: 5+ years Android development, 3+ years AI project experience, capable of end-to-end development from concept to launch.
-
-## 🚀 Featured Projects
-
-### Project 1: [Project Name]
-**Value**: [Brief description of business value]
-**Tech Stack**: [Technologies used]
-**Highlights**: [Key features/achievements]
-**Link**: [Project URL]
-
-### Project 2: [Project Name]
-**Value**: [Brief description of business value]
-**Tech Stack**: [Technologies used]
-**Highlights**: [Key features/achievements]
-**Link**: [Project URL]
-
-### Project 3: [Project Name]
-**Value**: [Brief description of business value]
-**Tech Stack**: [Technologies used]
-**Highlights**: [Key features/achievements]
-**Link**: [Project URL]
-
-## 🛠️ Skills Matrix
-
-| Domain | Skills | Proficiency | Experience |
-|--------|--------|-------------|------------|
-| **Android** | [List key skills] | Expert | 5+ years |
-| **AI/ML** | [List key skills] | Advanced | 3+ years |
-| **Backend** | [List key skills] | Intermediate | 3+ years |
-| **DevOps** | [List key skills] | Intermediate | 2+ years |
-
-## 📊 Key Metrics
-
-### Performance Indicators
-- **App Performance**: [Specific metrics]
-- **AI Models**: [Specific metrics]
-- **Code Quality**: [Specific metrics]
-
-### Business Impact
-- **User Growth**: [Numbers]
-- **Performance Improvement**: [Numbers]
-- **Cost Optimization**: [Numbers]
-
-## 🌟 Open Source & Community
-
-### Contributions
-- **Android Library**: [Library name - Stars]()
-- **AI Tools**: [Tool name - Downloads]()
-- **Technical Blog**: [Article - Views]()
-
-### Community Involvement
-- **Tech Conferences**: [Conference - Role]()
-- **Open Source**: [Project - Role]()
-- **Technical Writing**: [Article - Platform]()
-
-## 📞 Contact
-
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **LinkedIn**: [LinkedIn Profile]()
-- **Resume**: [Resume Download]()
-- **Location**: Auckland, New Zealand
-
-## 📈 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=radical)
-
-![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username={{GITHUB_USERNAME}}&theme=github-compact)
+**Software Engineer(Full-stack) · Android & Java & AI**  
 
 ---
 
-**License**: MIT License  
-**Note**: This README is for portfolio showcase. Project links are placeholders.  
-**Thanks**: Special thanks to [Technology/Platform Name] for support.
+## 🛠️ Skills
+- **Programming:** Java, Kotlin, Python, JavaScript, Node.js  
+- **Android:** Jetpack Compose, MVVM/MVP, NDK,Flutter  
+- **Backend:** Spring Boot, Spring Cloud, MyBatis, REST APIs, .NET  
+- **Frontend:** Vue.js, HTML/CSS  
+- **AI / ML:** PyTorch, TensorFlow, OpenCV, YOLO, Diffusion Models, LLMs  
+- **DevOps & Cloud:** Docker, Jenkins, Nginx, Linux, Windows Server, CI/CD 
+- **Databases:** MySQL, Redis, MongoDB, SQL Server, SQLite  
+- **IoT & Hardware:** RFID, barcode scanners, sensors, UART, GPIO, Raspberry Pi  
+- **Tools:** Git, GitHub, Cursor, GitHub Copilot,PowerBI  
+
+## 📂 Project Portfolio
+---
+
+### 📱 Android Development
+- **Enterprise Messaging Platform (2014–2023)**  
+  Core Android & backend developer for internal IM system (10,000+ DAU).  
+  - NDK-based TCP/UDP for low-latency messaging (<200ms)  
+  - Designed Android real-time chat UI and multi-platform login  
+  - Backend with Spring Cloud + C++  
+
+- **Smart Factory Mobile Apps (2018–2024)**  
+  Android apps for factory terminals, RFID/barcode scanners, and smart lockers.  
+  - Offline-first design with real-time sync  
+  - Integrated hardware devices for automation  
+
+---
+
+### ☕ Java / Backend
+- **Smart Factory Backend System (2018–2024)**  
+  Tech lead for microservice platform managing multi-site textile factories.  
+  - Spring Boot + MySQL/Redis backend  
+  - CI/CD pipelines with Docker, Jenkins, Nginx  
+  - Integrated IoT devices (RFID, conveyors) across 5+ factories  
+
+- **System Admin & Server Maintenance (2013–2023)**  
+  - Windows Server & IIS deployment, SSL, AD, scheduled tasks  
+  - Migrated legacy systems and maintained 99.9% uptime  
+
+---
+
+
+
+
+### 🤖 AI / Machine Learning
+- **ChatClothes Virtual Try-On (Thesis, AUT 2024–2025)**  
+  Built a diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction.  
+  - Edge-optimized inference on Raspberry Pi 5  
+  - Integrated ComfyUI + Dify for orchestration  
+  - Delivered full-stack AI pipeline, demo + documentation submitted 6 months early  
+
+---
+
+### 🌐 Frontend
+- **Industrial Dashboards & IoT Visualization**  
+  Vue.js + REST APIs for monitoring forestry patrols, factory processes, and energy systems.  
+  - GPS/photo logging apps  
+  - Real-time dashboards with charts and alerts  
+
+---
+
+### 🖥️ .NET & System Integration
+- **Legacy Enterprise Systems Migration**  
+  - .NET + SQL Server maintenance  
+  - IIS configuration, SSL, multi-site deployment  
+  - Integrated file sync with OneDrive, Dropbox, SFTP  
+
+---
+
+
