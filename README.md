@@ -2,7 +2,6 @@
 
 **Software Engineer(Full-stack) · Android & Java & AI**  
 
----
 
 ## 🛠️ Skills
 - **Programming:** Java, Kotlin, Python, JavaScript, Node.js  
