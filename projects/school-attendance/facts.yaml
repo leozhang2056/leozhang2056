@@ -1,0 +1,153 @@
+# Project Facts - 学校人脸考勤系统
+# Structured data for RAG and resume generation
+
+project_id: school-attendance
+name: School Face Recognition Attendance System
+name_cn: 学校人脸考勤系统
+
+type: IoT / Education Technology
+category:
+  - Computer Vision
+  - Android Development
+  - IoT
+  - Education
+
+timeline:
+  start: "2019"
+  end: "2022"
+  duration_years: 3
+
+role: Full-stack Engineer
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Smart face recognition attendance system for schools with real-time 
+  parent notifications and attendance statistics. Deployed across 
+  multiple schools with 99%+ recognition accuracy.
+
+highlights:
+  - 开发人脸识别考勤终端和管理系统
+  - 实现无感考勤，学生经过自动识别打卡
+  - 实时推送考勤通知给家长
+  - 出勤率统计和报表生成
+  - 活体检测防止照片作弊
+  - 多校部署，稳定运行
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+    - Python
+  
+  computer_vision:
+    - OpenCV
+    - Face Recognition
+    - Liveness Detection
+  
+  mobile:
+    - Android SDK
+    - Camera API
+    - SQLite
+  
+  backend:
+    - Spring Boot
+    - MySQL
+    - Redis
+    - MQTT
+  
+  push_notification:
+    - JPush
+    - Firebase
+    - SMS Gateway
+  
+  hardware:
+    - IP Cameras
+    - Turnstile Controllers
+    - Android Tablets
+
+features:
+  - Face recognition attendance
+  - Contactless check-in
+  - Real-time cloud sync
+  - Parent push notifications
+  - Attendance statistics
+  - Multi-terminal support
+  - Liveness detection
+  - Offline mode support
+
+metrics:
+  - metric: "3+"
+    unit: "schools"
+    description: Successfully deployed schools
+  
+  - metric: "<1s"
+    unit: "response time"
+    description: Face recognition speed
+  
+  - metric: "99%+"
+    unit: "accuracy"
+    description: Face recognition accuracy
+  
+  - metric: "Real-time"
+    unit: "notification"
+    description: Parent notification delivery
+
+achievements:
+  - Successfully deployed in multiple schools
+  - Achieved 99%+ face recognition accuracy
+  - Sub-second recognition response time
+  - Real-time parent notification system
+  - Replaced traditional manual attendance
+
+evidence:
+  - type: device
+    path: images/attendance-device.png
+  
+  - type: dashboard
+    path: images/admin-dashboard.png
+  
+  - type: app
+    path: images/parent-app.png
+
+skills_demonstrated:
+  technical:
+    - Computer Vision
+    - OpenCV
+    - Face Recognition
+    - Android Development
+    - Camera API
+    - Spring Boot
+    - MySQL
+    - Redis
+    - IoT Integration
+    - Message Push
+    - Hardware Integration
+  
+  soft:
+    - Requirements Analysis
+    - Deployment Management
+    - User Training
+    - Technical Support
+
+related_to_roles:
+  - Computer Vision Engineer
+  - Android Developer
+  - Full-stack Developer
+  - IoT Engineer
+
+keywords:
+  - Face Recognition
+  - Computer Vision
+  - OpenCV
+  - Android
+  - IoT
+  - Spring Boot
+  - Education
+  - Attendance System
+  - Liveness Detection
+
+last_updated: "2025-02-11"

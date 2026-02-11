@@ -1,0 +1,224 @@
+# 工作经历
+# Work Experience
+
+experiences:
+  - company: Auckland University of Technology (AUT)
+    location: New Zealand
+    role: Master’s Student & AI Researcher
+    start_date: "2024-07"
+    end_date: "2025-10"
+    current: true
+    type: Education/Research
+    
+    projects:
+      - name: ChatClothes Virtual Try-On
+        duration: "Nov 2024 - Apr 2025"
+        role: Sole Developer & System Designer
+        description: AI-driven virtual try-on platform with LLM control and edge deployment
+        
+        highlights:
+          - Designed and implemented entire system architecture, combining diffusion models, YOLO classifiers, and LLM for user interaction
+          - Built generation pipeline using ComfyUI and integrated user control with Dify orchestration
+          - Supported text/image/multimodal input, enabling personalized try-on scenarios
+          - Optimized for edge devices (Raspberry Pi 5) with real-time performance and offline capability
+          - Completed full-stack AI solution independently; submitted thesis 6 months early with working demo and documentation
+        
+        tech_stack:
+          - Python
+          - PyTorch
+          - OpenCV
+          - YOLO
+          - Diffusion Models
+          - ComfyUI
+          - Dify
+          - Raspberry Pi
+          - LLM
+        
+        metrics:
+          - Thesis completed 6 months early
+          - Edge deployment on Raspberry Pi 5
+          - Real-time inference optimization
+    
+    research_focus:
+      - AI
+      - Lightweight model deployment
+      - Virtual try-on
+      - Edge computing
+    
+    achievements:
+      - Thesis submitted 6 months ahead of schedule
+      - Presented working demo and comprehensive deployment documentation
+
+  - company: Chunxiao Technology Co., Ltd.
+    location: China
+    role: Technical Lead / Senior Software Engineer
+    start_date: "2013-01"
+    end_date: "2024-06"
+    current: false
+    type: Full-time
+    
+    positions:
+      - title: Technical Lead
+        period: "2018 - 2024"
+        focus: Smart Factory Backend & Team Leadership
+        
+      - title: Senior Android & Backend Developer
+        period: "2014 - 2023"
+        focus: Enterprise Messaging Platform
+        
+      - title: Software Engineer / System Administrator
+        period: "2013 - 2014"
+        focus: Full-stack Development & IT Support
+    
+    projects:
+      - name: Smart Factory Backend System
+        period: "2018 - 2024"
+        role: Technical Lead
+        team_size: 6
+        description: Microservice-based textile factory system deployed across 5+ sites
+        
+        highlights:
+          - Designed and implemented backend services with Spring Boot and MySQL/Redis
+          - Managed CI/CD and deployment via Docker, Jenkins, and Nginx on Linux servers
+          - Integrated RFID, barcode scanners, and conveyor systems for real-time process tracking
+          - Led 6-person cross-functional team building production system across Android, backend, and hardware integration
+          - Championed agile practices and documentation; ensured on-time delivery across all modules
+          - System adopted in 5+ manufacturing bases, supporting daily operations for hundreds of workers
+          - Delivered scalable architecture, increasing production efficiency by 30%+
+        
+        tech_stack:
+          - Java
+          - Spring Boot
+          - Spring Cloud
+          - MySQL
+          - Redis
+          - MongoDB
+          - Docker
+          - Jenkins
+          - Nginx
+          - CentOS
+          - RFID
+          - Barcode Scanners
+        
+        metrics:
+          - Deployed across 5+ factory sites
+          - Supported hundreds of workers daily
+          - 30%+ production efficiency improvement
+          - 99.9% uptime maintained
+      
+      - name: Enterprise Messaging Platform
+        period: "2014 - 2023"
+        role: Core Android & Backend Developer
+        description: Real-time IM platform with 10,000+ daily active users
+        
+        highlights:
+          - Developed Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++
+          - Designed real-time messaging UI for Android; integrated cross-terminal login (Web, PC)
+          - Built native communication with NDK-based TCP/UDP protocol; improved stability and performance
+          - Developed backend services using Spring Cloud and Node.js
+          - Improved connection stability and reduced message latency to under 200ms
+          - Facilitated version releases; coordinated updates with QA and client teams
+          - Processed 500K+ messages/day with latency under 200ms
+        
+        tech_stack:
+          - Java
+          - Kotlin
+          - C
+          - NDK
+          - Spring Cloud
+          - Node.js
+          - TCP/UDP
+          - MySQL
+          - Redis
+        
+        metrics:
+          - 10,000+ daily active users
+          - <200ms message latency
+          - 500K+ messages processed daily
+          - Cross-platform (Android, Web, PC)
+      
+      - name: IoT Projects & Full-Stack Solutions
+        period: "2013 - 2023"
+        role: Full-stack Engineer
+        description: Industrial, IoT, and public service applications
+        
+        highlights:
+          - Developed forestry inspection app with GPS/photo logging and backend dashboard
+          - Built smart cabinet SDKs controlling locks, sensors, lights, and doors via Android + REST APIs
+          - Implemented ad scheduling and monitoring system for factory and retail displays
+          - Built apps and APIs for forestry patrols, smart lockers, and ad display units
+          - Took part in cross-departmental collaboration and requirement analysis
+          - Automated deployment and monitoring; ensured stable long-term operation
+        
+        tech_stack:
+          - Android SDK
+          - Java
+          - Kotlin
+          - Vue.js
+          - Spring Boot
+          - GPS
+          - RFID
+          - Sensors
+          - UART/Serial
+        
+        projects_detail:
+          - name: Forestry Patrol App
+            description: Mobile app with GPS tracking and photo logging for forestry inspections
+            features:
+              - GPS tracking and route recording
+              - Photo logging with geotags
+              - Backend dashboard for monitoring
+              - Offline capability with sync
+          
+          - name: Smart Locker SDK
+            description: SDK for controlling smart cabinet hardware
+            features:
+              - Lock control
+              - Sensor monitoring
+              - Light control
+              - Door sensors
+              - REST API integration
+          
+          - name: Ad Display System
+            description: Scheduling and monitoring system for digital signage
+            features:
+              - Content scheduling
+              - Remote monitoring
+              - Multi-location management
+    
+    system_administration:
+      period: "2013 - 2023"
+      responsibilities:
+        - Managed Windows Server 2012-2022, IIS site binding, SSL certs, port setup
+        - Administered shared folders, RDP, firewall rules, FTP, and scheduled tasks
+        - Implemented automated backups with cron, Task Scheduler, and rsync
+        - Integrated OneDrive, Dropbox, and remote storage for team collaboration
+        - Migrated 6+ legacy systems to new servers, ensuring 99.9% uptime
+      
+      tech_stack:
+        - Windows Server
+        - IIS
+        - SSL/TLS
+        - Active Directory
+        - Group Policy
+        - FTP
+        - Cron
+        - Rsync
+        - OneDrive
+        - Dropbox
+      
+      achievements:
+        - 99.9% uptime maintained
+        - 6+ legacy system migrations completed
+        - Automated backup and monitoring systems
+
+total_years_experience: 11
+
+key_achievements:
+  - "Delivered enterprise messaging platform serving 10,000+ daily users with <200ms latency"
+  - "Led smart factory system deployment across 5+ manufacturing sites, improving efficiency by 30%+"
+  - "Completed AI thesis project 6 months early with working edge deployment"
+  - "Maintained 99.9% system uptime across multiple production systems"
+  - "Managed 6-person cross-functional team through full development cycles"
+
+last_updated: "2025-02-11"

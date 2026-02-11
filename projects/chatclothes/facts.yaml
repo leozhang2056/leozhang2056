@@ -1,0 +1,137 @@
+# Project Facts - ChatClothes Virtual Try-On
+# Structured data for RAG and resume generation
+
+project_id: chatclothes
+name: ChatClothes Virtual Try-On
+name_cn: ChatClothes 虚拟试衣系统
+
+type: Research Project / Master's Thesis
+category:
+  - AI/ML
+  - Computer Vision
+  - Full-stack Development
+
+timeline:
+  start: "2024-11"
+  end: "2025-04"
+  duration_months: 6
+  completed_early: true
+  early_by_months: 6
+
+role: Sole Developer & System Designer
+team_size: 1
+
+institution:
+  name: Auckland University of Technology (AUT)
+  location: New Zealand
+  department: Computer and Information Sciences
+
+summary: >
+  A multimodal AI virtual try-on system combining diffusion models, 
+  YOLO-based clothing detection, and LLM-driven user interaction. 
+  Optimized for edge deployment on Raspberry Pi 5 with offline capability.
+
+highlights:
+  - Designed and implemented entire system architecture independently
+  - Combined diffusion models, YOLO classifiers, and LLM for user interaction
+  - Built generation pipeline using ComfyUI with Dify orchestration
+  - Supported text/image/multimodal input for personalized try-on
+  - Optimized for edge devices with real-time performance
+  - Completed full-stack AI solution 6 months ahead of schedule
+
+tech_stack:
+  languages:
+    - Python
+    - JavaScript
+  
+  ai_ml:
+    - PyTorch
+    - OpenCV
+    - YOLO
+    - Diffusion Models
+    - LLM
+  
+  tools_platforms:
+    - ComfyUI
+    - Dify
+    - Raspberry Pi 5
+  
+  domain:
+    - Computer Vision
+    - Edge Computing
+    - Natural Language Processing
+    - Image Generation
+
+features:
+  - Multimodal input (text, image, combined)
+  - AI-powered clothing visualization
+  - YOLO-based clothing detection
+  - LLM-driven natural language control
+  - Edge deployment on Raspberry Pi 5
+  - Offline capability
+  - Web-based interface
+  - Real-time generation
+
+achievements:
+  - metric: "6 months"
+    description: Thesis completed ahead of schedule
+  - metric: "Raspberry Pi 5"
+    description: Successful edge deployment
+  - metric: "Real-time"
+    description: Low-latency inference achieved
+  - metric: "Full-stack"
+    description: Complete AI solution independently built
+
+evidence:
+  - type: thesis
+    status: submitted
+    date: "2025-04"
+  - type: demo
+    status: available
+    description: Working demonstration
+  - type: documentation
+    status: complete
+    description: Deployment guide included
+  - type: images
+    path: images/
+    items:
+      - arch.png
+      - demo.png
+
+skills_demonstrated:
+  technical:
+    - PyTorch
+    - OpenCV
+    - YOLO
+    - Diffusion Models
+    - LLM Integration
+    - Edge Computing
+    - System Architecture
+    - Python Development
+  
+  soft:
+    - Independent Research
+    - Project Management
+    - Documentation
+    - Technical Writing
+
+related_to_roles:
+  - AI Engineer
+  - Machine Learning Engineer
+  - Computer Vision Engineer
+  - Full-stack Developer
+  - Research Engineer
+
+keywords:
+  - Virtual Try-On
+  - Diffusion Models
+  - Computer Vision
+  - Edge AI
+  - PyTorch
+  - YOLO
+  - LLM
+  - Raspberry Pi
+  - Multimodal AI
+  - Image Generation
+
+last_updated: "2025-02-11"

@@ -1,0 +1,162 @@
+# Project Facts - 可视化网关
+# Structured data for RAG and resume generation
+
+project_id: visual-gateway
+name: Visual Gateway / IoT Data Visualization Platform
+name_cn: 可视化网关
+
+type: IoT / Industrial Internet
+category:
+  - IoT Gateway
+  - Data Visualization
+  - Industrial Automation
+  - Full-stack Development
+
+timeline:
+  start: "2018"
+  end: "2023"
+  duration_years: 5
+
+role: Full-stack Engineer / Architect
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Industrial IoT visualization gateway supporting multiple protocols 
+  (Modbus, MQTT, HTTP) with real-time data monitoring, alerting, 
+  and visualization dashboards. Deployed in factories and buildings.
+
+highlights:
+  - 设计多协议工业物联网网关架构
+  - 支持Modbus、MQTT、HTTP等10+种协议
+  - 实现边缘计算和数据预处理
+  - 开发实时数据可视化大屏
+  - 告警管理和多渠道通知
+  - 单网关支持千级设备接入
+  - 毫秒级数据采集到展示延迟
+
+tech_stack:
+  languages:
+    - Java
+    - JavaScript
+  
+  protocols:
+    - Modbus RTU/TCP
+    - MQTT
+    - HTTP/REST
+    - TCP/UDP
+    - RS485/RS232
+  
+  backend:
+    - Spring Boot
+    - Netty
+    - SQLite
+    - InfluxDB
+  
+  frontend:
+    - Vue.js
+    - ECharts
+    - WebSocket
+    - DataV
+  
+  databases:
+    - InfluxDB
+    - MySQL
+    - Redis
+    - MongoDB
+  
+  devops:
+    - Docker
+    - Linux
+    - Nginx
+
+features:
+  - Multi-protocol support (Modbus, MQTT, HTTP)
+  - Edge computing and preprocessing
+  - Real-time data monitoring
+  - Alert management system
+  - Visualization dashboard
+  - Historical data analysis
+  - Remote configuration
+  - High availability
+
+metrics:
+  - metric: "10+"
+    unit: "protocols"
+    description: Supported industrial protocols
+  
+  - metric: "<100ms"
+    unit: "latency"
+    description: Data collection to display
+  
+  - metric: "24/7"
+    unit: "operation"
+    description: Industrial-grade stability
+  
+  - metric: "1000+"
+    unit: "devices"
+    description: Single gateway capacity
+
+achievements:
+  - Designed scalable gateway architecture
+  - Supported 10+ industrial protocols
+  - Achieved sub-100ms end-to-end latency
+  - Deployed in multiple factories and buildings
+  - Processed data from thousands of devices
+  - Reduced bandwidth costs through edge computing
+
+evidence:
+  - type: architecture
+    path: images/gateway-arch.png
+  
+  - type: dashboard
+    path: images/dashboard.png
+  
+  - type: monitoring
+    path: images/device-monitor.png
+
+skills_demonstrated:
+  technical:
+    - Industrial Protocols
+    - Modbus
+    - MQTT
+    - Java
+    - Spring Boot
+    - Netty
+    - Vue.js
+    - ECharts
+    - Time-series Databases
+    - Edge Computing
+    - IoT Architecture
+    - WebSocket
+    - Docker
+    - Linux
+  
+  soft:
+    - System Architecture
+    - Protocol Design
+    - Performance Optimization
+    - Technical Documentation
+
+related_to_roles:
+  - IoT Architect
+  - Full-stack Developer
+  - System Architect
+  - Industrial IoT Engineer
+
+keywords:
+  - IoT Gateway
+  - Modbus
+  - MQTT
+  - Industrial IoT
+  - Data Visualization
+  - Edge Computing
+  - Spring Boot
+  - Vue.js
+  - Time-series Database
+  - SCADA
+
+last_updated: "2025-02-11"

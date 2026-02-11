@@ -1,0 +1,198 @@
+# Project Facts - IoT Solutions & Full-Stack Projects
+# Structured data for RAG and resume generation
+
+project_id: iot-solutions
+name: IoT Projects & Full-Stack Solutions
+name_cn: IoT 解决方案与全栈项目集
+
+type: Collection of Projects
+category:
+  - IoT
+  - Full-stack Development
+  - System Administration
+  - Mobile Development
+
+timeline:
+  start: "2013"
+  end: "2023"
+  duration_years: 10
+
+role: Full-stack Engineer / System Administrator
+team_size: varies
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Collection of industrial IoT, public service, and automation applications 
+  including forestry patrol app, smart cabinet SDK, IoT dashboards, 
+  ad display systems, and comprehensive system administration.
+
+projects:
+  - name: Forestry Patrol Application
+    type: Mobile + Backend
+    description: GPS tracking and photo logging for forestry inspections
+    features:
+      - GPS route tracking
+      - Photo logging with geotags
+      - Offline data collection
+      - Backend monitoring dashboard
+    tech:
+      - Android SDK
+      - GPS/Location Services
+      - Spring Boot
+      - Vue.js
+      - MySQL
+
+  - name: Smart Cabinet SDK
+    type: IoT SDK
+    description: SDK for controlling smart locker systems
+    features:
+      - Lock control
+      - Sensor monitoring
+      - Light control
+      - REST API integration
+      - Hardware abstraction
+    tech:
+      - Android SDK
+      - UART/Serial
+      - GPIO
+      - RESTful APIs
+      - Spring Boot
+
+  - name: IoT Dashboard & Monitoring
+    type: Full-stack Web
+    description: Real-time IoT device monitoring dashboard
+    features:
+      - Real-time data visualization
+      - Alert system
+      - Historical analysis
+      - Device management
+    tech:
+      - Vue.js
+      - Spring Boot
+      - WebSocket
+      - MongoDB
+      - Redis
+      - Chart.js
+
+  - name: Ad Display System
+    type: Digital Signage
+    description: Content management for factory/retail displays
+    features:
+      - Content scheduling
+      - Remote monitoring
+      - Multi-location support
+      - Playback reporting
+    tech:
+      - Android
+      - Web portal
+      - Spring Boot
+      - MySQL
+
+  - name: System Administration
+    type: IT Operations
+    description: Server maintenance and system support
+    responsibilities:
+      - Windows Server 2012-2022 management
+      - IIS deployment and SSL
+      - Active Directory
+      - Automated backups
+      - Legacy system migrations
+    achievements:
+      - metric: "6+"
+        description: Legacy systems migrated
+      - metric: "99.9%"
+        description: Uptime maintained
+
+tech_stack:
+  mobile:
+    - Android SDK
+    - Java
+    - Kotlin
+    - GPS Services
+    - Camera API
+    - Hardware Integration
+  
+  backend:
+    - Spring Boot
+    - RESTful APIs
+    - WebSocket
+  
+  frontend:
+    - Vue.js
+    - HTML/CSS/JavaScript
+    - Chart.js
+  
+  databases:
+    - MySQL
+    - MongoDB
+    - Redis
+  
+  hardware:
+    - UART/Serial
+    - GPIO
+    - RFID
+    - Barcode Scanners
+    - Sensors
+    - Electronic Locks
+  
+  system_admin:
+    - Windows Server
+    - IIS
+    - SSL/TLS
+    - Active Directory
+    - Linux
+    - Automated Backups
+
+key_achievements:
+  - Successfully migrated 6+ legacy systems
+  - Maintained 99.9% uptime across all systems
+  - Delivered multiple full-stack IoT solutions
+  - Implemented automated backup and monitoring
+  - Integrated diverse hardware devices
+
+skills_demonstrated:
+  technical:
+    - Android Development
+    - Full-stack Web Development
+    - IoT Hardware Integration
+    - System Administration
+    - Database Design
+    - REST API Development
+    - GPS/Location Services
+    - Hardware Protocols
+    - Windows Server
+    - Linux Administration
+    - Vue.js
+    - Spring Boot
+  
+  soft:
+    - Cross-functional Collaboration
+    - IT Support
+    - System Maintenance
+    - Problem Solving
+
+related_to_roles:
+  - Full-stack Developer
+  - Android Developer
+  - IoT Engineer
+  - System Administrator
+  - DevOps Engineer
+
+keywords:
+  - IoT
+  - Android
+  - GPS
+  - Hardware Integration
+  - Full-stack
+  - Vue.js
+  - Spring Boot
+  - System Admin
+  - Windows Server
+  - UART
+  - RFID
+  - Sensors
+
+last_updated: "2025-02-11"

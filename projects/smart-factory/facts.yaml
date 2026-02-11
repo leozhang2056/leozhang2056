@@ -1,0 +1,163 @@
+# Project Facts - Smart Factory Backend System
+# Structured data for RAG and resume generation
+
+project_id: smart-factory
+name: Smart Factory Backend System
+name_cn: 智能工厂后端系统
+
+type: Enterprise System
+category:
+  - Backend Development
+  - Industrial IoT
+  - Microservices
+  - Team Leadership
+
+timeline:
+  start: "2018"
+  end: "2024"
+  duration_years: 6
+
+role: Technical Lead
+team_size: 6
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Microservice-based textile factory management system deployed across 
+  5+ manufacturing sites, integrating IoT devices for real-time production 
+  tracking and workflow management.
+
+highlights:
+  - Designed and implemented backend microservices with Spring Boot
+  - Managed CI/CD and deployment via Docker, Jenkins, and Nginx
+  - Integrated RFID, barcode scanners, and conveyor systems
+  - Led 6-person cross-functional team across Android, backend, and hardware
+  - Deployed across 5+ manufacturing bases
+  - Maintained 99.9% uptime
+  - Improved production efficiency by 30%+
+
+tech_stack:
+  languages:
+    - Java
+  
+  backend:
+    - Spring Boot
+    - Spring Cloud
+    - MyBatis
+    - RESTful API
+  
+  databases:
+    - MySQL
+    - Redis
+    - MongoDB
+  
+  devops:
+    - Docker
+    - Jenkins
+    - Nginx
+    - CentOS
+    - Git
+  
+  iot:
+    - RFID
+    - Barcode Scanners
+    - Conveyors
+    - UART/Serial
+
+features:
+  - Microservice architecture
+  - Multi-site deployment (5+ locations)
+  - IoT device integration
+  - Real-time production tracking
+  - Workflow orchestration
+  - High availability (99.9% uptime)
+  - Automated CI/CD pipeline
+  - Cross-platform support
+
+metrics:
+  - metric: "5+"
+    unit: "factory sites"
+    description: Deployed across multiple manufacturing locations
+  
+  - metric: "30%+"
+    unit: "efficiency improvement"
+    description: Production efficiency increase
+  
+  - metric: "99.9%"
+    unit: "uptime"
+    description: System availability maintained
+  
+  - metric: "6"
+    unit: "team members"
+    description: Cross-functional team led
+  
+  - metric: "Hundreds"
+    unit: "workers"
+    description: Daily users supported
+
+achievements:
+  - Successfully scaled from 1 to 5+ factory sites
+  - Achieved 30%+ production efficiency improvement
+  - Maintained 99.9% uptime over multiple years
+  - Led and mentored 6-person development team
+  - Integrated diverse IoT hardware ecosystem
+
+evidence:
+  - type: architecture_diagram
+    path: images/arch.png
+  
+  - type: dashboard
+    path: images/dashboard.png
+  
+  - type: iot_setup
+    path: images/iot.png
+
+skills_demonstrated:
+  technical:
+    - Spring Boot
+    - Spring Cloud
+    - Microservices Architecture
+    - MySQL
+    - Redis
+    - MongoDB
+    - Docker
+    - Jenkins
+    - Nginx
+    - Linux Administration
+    - IoT Integration
+    - REST API Design
+    - Database Optimization
+  
+  soft:
+    - Technical Leadership
+    - Team Management
+    - Cross-functional Coordination
+    - Agile Practices
+    - Stakeholder Communication
+    - Project Planning
+
+related_to_roles:
+  - Technical Lead
+  - Backend Engineer
+  - Java Developer
+  - DevOps Engineer
+  - System Architect
+  - Engineering Manager
+
+keywords:
+  - Spring Boot
+  - Microservices
+  - Java
+  - IoT
+  - RFID
+  - Docker
+  - Jenkins
+  - DevOps
+  - MySQL
+  - Redis
+  - Team Leadership
+  - Industrial Automation
+
+last_updated: "2025-02-11"

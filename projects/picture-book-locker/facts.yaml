@@ -1,0 +1,151 @@
+# Project Facts - 绘本储物柜
+# Structured data for RAG and resume generation
+
+project_id: picture-book-locker
+name: Picture Book Locker / Smart Library Cabinet
+name_cn: 绘本储物柜
+
+type: IoT / Smart Library
+category:
+  - Android Development
+  - IoT
+  - Embedded Systems
+  - Hardware Integration
+
+timeline:
+  start: "2020"
+  end: "2023"
+  duration_years: 3
+
+role: Android Developer / Embedded Engineer
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Smart picture book locker system for schools and libraries providing 
+  24/7 self-service book borrowing. Features face recognition, QR code 
+  scanning, UV disinfection, and intelligent cabinet control.
+
+highlights:
+  - 开发Android主控系统实现人脸识别和二维码借阅
+  - 集成电磁锁、LED灯带、消毒模块等硬件
+  - 实现24小时自助借还书服务
+  - 内置紫外线图书消毒功能
+  - 多校部署，支持多柜组网
+  - 平均借阅时间<3秒
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+  
+  android:
+    - Android SDK
+    - Face Recognition SDK
+    - ZXing (QR Code)
+    - SQLite
+  
+  embedded:
+    - ARM Board
+    - UART/RS485
+    - GPIO Control
+    - Electromagnetic Locks
+  
+  backend:
+    - Spring Boot
+    - MySQL
+    - Redis
+    - MQTT
+  
+  hardware:
+    - Face Camera
+    - QR Scanner
+    - LED Strips
+    - UV Disinfection
+    - Door Sensors
+
+features:
+  - Face recognition borrowing
+  - QR code authentication
+  - Smart cabinet door control
+  - UV book disinfection
+  - Real-time inventory tracking
+  - Borrowing history
+  - Admin dashboard
+  - Multi-cabinet networking
+
+metrics:
+  - metric: "24/7"
+    unit: "service"
+    description: Unattended self-service
+  
+  - metric: "<3s"
+    unit: "time"
+    description: Average borrowing time
+  
+  - metric: "Multiple"
+    unit: "schools"
+    description: Successfully deployed
+  
+  - metric: "0%"
+    unit: "loss rate"
+    description: Book security with smart locks
+
+achievements:
+  - Developed complete smart locker system
+  - Integrated multiple hardware components
+  - Achieved sub-3-second borrowing experience
+  - Deployed in multiple schools and libraries
+  - 24/7 service operation capability
+  - Zero book loss with intelligent locks
+
+evidence:
+  - type: photo
+    path: images/locker-exterior.png
+  
+  - type: ui
+    path: images/borrow-ui.png
+  
+  - type: admin
+    path: images/library-admin.png
+
+skills_demonstrated:
+  technical:
+    - Android Development
+    - Face Recognition
+    - QR Code Scanning
+    - Embedded Systems
+    - UART/Serial Communication
+    - GPIO Control
+    - Hardware Integration
+    - Spring Boot
+    - MQTT
+    - SQLite
+  
+  soft:
+    - Hardware Debugging
+    - On-site Deployment
+    - User Training
+    - Technical Support
+
+related_to_roles:
+  - Android Developer
+  - Embedded Engineer
+  - IoT Engineer
+  - Hardware Integration Engineer
+
+keywords:
+  - Smart Locker
+  - Face Recognition
+  - QR Code
+  - Android
+  - IoT
+  - Embedded
+  - Library System
+  - Hardware Integration
+  - UV Disinfection
+
+last_updated: "2025-02-11"

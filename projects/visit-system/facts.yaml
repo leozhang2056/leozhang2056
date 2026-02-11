@@ -1,0 +1,160 @@
+# Project Facts - 探视系统
+# Structured data for RAG and resume generation
+
+project_id: visit-system
+name: Hospital Visit Management System
+name_cn: 探视系统
+
+type: Medical IT / Face Recognition
+category:
+  - Face Recognition
+  - Healthcare IT
+  - Access Control
+  - Mobile Development
+
+timeline:
+  start: "2020"
+  end: "2022"
+  duration_years: 2
+
+role: Full-stack Engineer
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Intelligent hospital visit management system for ICU, NICU, and infectious 
+  disease departments. Features face recognition access control, appointment 
+  management, visit time control, and remote video visitation.
+
+highlights:
+  - 开发人脸识别门禁系统，控制探视人员进出
+  - 实现微信小程序预约探视功能
+  - 集成WebRTC视频探视，减少交叉感染
+  - 开发探视管理平台，家属人脸库管理
+  - 对接医院HIS系统
+  - 多科室部署（ICU、新生儿科、传染科）
+  - 探视管理效率提升30%
+
+tech_stack:
+  languages:
+    - Java
+    - JavaScript
+    - Kotlin
+  
+  face_recognition:
+    - Face Detection
+    - Face Recognition SDK
+    - Liveness Detection
+    - Face Database
+  
+  access_control:
+    - Electromagnetic Locks
+    - Door Sensors
+    - Infrared Sensors
+    - Voice Broadcast
+  
+  mobile:
+    - WeChat Mini Program
+    - Android APP
+    - WebRTC
+  
+  backend:
+    - Spring Boot
+    - MySQL
+    - Redis
+    - WebRTC
+  
+  integration:
+    - HIS Interface
+    - WeChat Template Messages
+    - SMS Gateway
+
+features:
+  - Face recognition access control
+  - Online appointment booking
+  - Visit time management
+  - Remote video visitation
+  - Family member management
+  - Medical staff fast pass
+  - Visit statistics
+  - HIS system integration
+
+metrics:
+  - metric: "<1s"
+    unit: "recognition time"
+    description: Face recognition speed
+  
+  - metric: "99.5%"
+    unit: "accuracy"
+    description: Face recognition accuracy
+  
+  - metric: "30%"
+    unit: "efficiency gain"
+    description: Visit management efficiency improvement
+  
+  - metric: "Multiple"
+    unit: "departments"
+    description: ICU, NICU, infectious disease deployment
+
+achievements:
+  - Achieved sub-second face recognition
+  - 99.5% face recognition accuracy
+  - 30% improvement in visit management efficiency
+  - Successfully deployed in multiple departments
+  - Supported contactless visit during pandemic
+  - Integrated with hospital HIS system
+
+evidence:
+  - type: terminal
+    path: images/access-terminal.png
+  
+  - type: miniapp
+    path: images/booking-miniapp.png
+  
+  - type: admin
+    path: images/visit-admin.png
+
+skills_demonstrated:
+  technical:
+    - Face Recognition
+    - Face Detection
+    - Liveness Detection
+    - Android Development
+    - WeChat Mini Program
+    - Access Control Systems
+    - WebRTC
+    - Spring Boot
+    - MySQL
+    - Redis
+    - HIS Integration
+    - Hardware Integration
+  
+  soft:
+    - Healthcare Domain Knowledge
+    - Privacy Protection
+    - User Experience Design
+    - Deployment Support
+
+related_to_roles:
+  - Full-stack Developer
+  - Face Recognition Engineer
+  - Android Developer
+  - Healthcare IT Engineer
+  - System Integration Engineer
+
+keywords:
+  - Face Recognition
+  - Hospital Management
+  - Access Control
+  - WeChat Mini Program
+  - Healthcare IT
+  - Video Visitation
+  - WebRTC
+  - HIS Integration
+  - Android
+  - Medical IT
+
+last_updated: "2025-02-11"

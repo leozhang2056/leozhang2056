@@ -1,0 +1,128 @@
+# 证书、奖项与成就
+# Certifications, Awards & Achievements
+
+certifications:
+  - name: Software Design Engineer Certificate
+    authority: China Qualification Authority
+    year: 2019
+    status: Active
+    relevance:
+      - Software architecture
+      - System design
+      - Enterprise development
+    
+  - name: Network Communication Security Administrator
+    authority: China Qualification Authority
+    year: 2017
+    status: Active
+    relevance:
+      - Network security
+      - Communication protocols
+      - System administration
+    
+  - name: IoT Fundamentals (MOOC)
+    authority: Xi'an Jiaotong University
+    year: 2020
+    status: Completed
+    relevance:
+      - Internet of Things
+      - Hardware integration
+      - Sensor networks
+
+awards:
+  - name: Science and Technology Achievement Award
+    category: Smart Manufacturing
+    authority: Hebei, China
+    year: 2020
+    level: Provincial
+    description: Recognition for contributions to smart manufacturing systems
+    project_related: Smart Factory Backend System
+    
+  - name: National Scholarship
+    authority: Hebei University of Science and Technology
+    year: 2013
+    level: National
+    description: Highest academic honor for undergraduate students
+    education_related: Bachelor of Software Engineering
+
+academic_achievements:
+  - description: Thesis submitted 6 months early
+    context: Master of Computer and Information Sciences, AUT
+    year: 2025
+    details:
+      - Completed full-stack AI solution independently
+      - Presented working demo and deployment documentation
+      - Edge deployment optimization on Raspberry Pi 5
+      
+  - description: Research focus in AI and edge computing
+    context: AUT Master's program
+    year: "2024-2025"
+    areas:
+      - AI model optimization
+      - Lightweight deployment
+      - Virtual try-on systems
+      - Edge computing
+
+professional_achievements:
+  - metric: "10,000+"
+    unit: "daily active users"
+    project: Enterprise Messaging Platform
+    description: Built and maintained IM platform serving 10,000+ internal users
+    
+  - metric: "<200ms"
+    unit: "latency"
+    project: Enterprise Messaging Platform
+    description: Achieved sub-200ms message delivery latency
+    
+  - metric: "500K+"
+    unit: "messages/day"
+    project: Enterprise Messaging Platform
+    description: Processed over 500,000 messages daily
+    
+  - metric: "5+"
+    unit: "factory sites"
+    project: Smart Factory Backend System
+    description: Deployed across 5+ manufacturing locations
+    
+  - metric: "30%+"
+    unit: "efficiency improvement"
+    project: Smart Factory Backend System
+    description: Increased production efficiency by over 30%
+    
+  - metric: "99.9%"
+    unit: "uptime"
+    project: Multiple systems
+    description: Maintained 99.9% system uptime
+    
+  - metric: "6+"
+    unit: "legacy migrations"
+    project: System Administration
+    description: Successfully migrated 6+ legacy systems
+    
+  - metric: "6"
+    unit: "team members"
+    project: Smart Factory Platform
+    description: Led 6-person cross-functional team
+
+publications:
+  # 如有论文发表可在此添加
+  # - title: "..."
+  #   venue: "..."
+  #   year: 20XX
+  #   type: thesis/paper/poster
+
+presentations:
+  # 如有演讲/展示可在此添加
+  # - title: "..."
+  #   event: "..."
+  #   year: 20XX
+
+languages:
+  - language: Chinese (Mandarin)
+    proficiency: Native
+    
+  - language: English
+    proficiency: Professional Working Proficiency
+    # 可根据实际情况调整：IELTS/PTE 分数等
+
+last_updated: "2025-02-11"

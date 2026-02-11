@@ -1,0 +1,121 @@
+# 个人基本信息与职业档案
+# Profile & Career Identity
+
+personal_info:
+  name: Yuchao Zhang
+  preferred_name: Leo Zhang
+  name_cn: 张玉超
+  
+  contact:
+    email: leozhang2056@gmail.com
+    phone: "+64 27 385 0794"
+    location: 
+      city: North Shore
+      country: Auckland
+      country_code: NZ
+    
+  visa_status: 
+    type: Student Visa
+    work_rights: Full-time work permitted
+    valid_until: null  # 可根据实际情况填写
+
+career_identity:
+  current_role: Master’s Student & Software Engineer
+  primary_titles:
+    - Full-stack Software Engineer
+    - Android Developer
+    - AI/ML Engineer
+    - Backend Engineer
+  
+  tagline: >
+    Full-stack software engineer and Master's student with 10+ years of experience 
+    in Java backend, Android development, AI integration, and IoT systems.
+  
+  summary_variants:
+    default: >
+      Full-stack software engineer and Master’s student in Computer and Information Sciences at AUT,
+      graduating October 2025. Over 10 years of experience in Java backend, Android development, 
+      AI integration, and IoT systems, delivering enterprise solutions in industrial automation, 
+      mobile platforms, and edge AI. Proficient in Spring Boot, Docker, PyTorch, and microservice 
+      architecture, with hands-on expertise in AI-driven applications, full-stack systems, and cloud/edge deployment.
+    
+    android_focus: >
+      Master’s student in Computer and Information Sciences at AUT, graduating September 2025. 
+      Over 10 years of experience in software development with a focus on Android. Delivered 
+      solutions in industrial automation, retail systems, and consumer platforms. Skilled in 
+      both coding and team leadership, managing cross-functional teams through full development cycles.
+    
+    ai_focus: >
+      AI-focused software engineer and Master’s student in Computer and Information Sciences at AUT,
+      graduating October 2025. Experienced in AI, edge computing, and cloud deployment, with 
+      expertise in LLM-based applications, computer vision, and IoT integration. Over 10 years 
+      of experience in software engineering and full-stack development.
+    
+    java_focus: >
+      Master’s student in Computer and Information Sciences at AUT, graduating October 2025. 
+      Over 10 years of experience in Java backend and full-stack development, including Spring Boot,
+      MyBatis, and microservice architecture. Built and maintained enterprise systems across 
+      manufacturing, messaging, and IoT.
+
+education:
+  - degree: Master of Computer and Information Sciences
+    institution: Auckland University of Technology (AUT)
+    location: New Zealand
+    start_date: "2024-07"
+    end_date: "2025-10"
+    status: Graduating
+    research_focus:
+      - AI
+      - Lightweight model deployment
+      - Virtual try-on
+    highlights:
+      - Thesis submitted 6 months early
+      - Presented working demo and deployment documentation
+    
+  - degree: Bachelor of Software Engineering
+    institution: Hebei University of Science and Technology
+    location: China
+    start_date: "2009-07"
+    end_date: "2013-06"
+    honors:
+      - National Scholarship
+    highlights:
+      - Trained in Java, databases, and backend system design
+
+career_objectives:
+  target_roles:
+    - Android Developer
+    - Backend Engineer (Java)
+    - AI/ML Engineer
+    - Full-stack Developer
+    - DevOps Engineer
+  
+  preferred_locations:
+    - Auckland, New Zealand
+    - Remote
+  
+  work_preferences:
+    - Full-time
+    - Contract
+    - Hybrid
+
+keywords:
+  - Java
+  - Kotlin
+  - Android
+  - Spring Boot
+  - AI
+  - Machine Learning
+  - PyTorch
+  - Python
+  - IoT
+  - Microservices
+  - Docker
+  - Edge Computing
+  - Full-stack
+  - Computer Vision
+  - LLM
+  - Agile
+  - CI/CD
+
+last_updated: "2025-02-11"

@@ -1,0 +1,172 @@
+# Project Facts - 展会机器人
+# Structured data for RAG and resume generation
+
+project_id: exhibition-robot
+name: Exhibition Service Robot
+name_cn: 展会机器人
+
+type: AI / Robotics
+category:
+  - Robotics
+  - AI Integration
+  - SLAM Navigation
+  - Voice Interaction
+
+timeline:
+  start: "2021"
+  end: "2023"
+  duration_years: 2
+
+role: Full-stack Engineer / System Integration
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Intelligent service robot for exhibitions and shopping malls providing 
+  guided tours, voice interaction, face recognition, and autonomous navigation.
+  Supports multi-modal interaction and customizable content.
+
+highlights:
+  - 开发Android交互应用和语音对话系统
+  - 集成ROS机器人系统实现自主导航
+  - 激光雷达SLAM建图与定位
+  - 语音识别ASR和语音合成TTS
+  - 人脸识别实现VIP迎接和考勤
+  - 厘米级导航精度，多展会部署
+  - 7×24小时展会服务能力
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+    - Python
+    - C++
+  
+  robotics:
+    - ROS
+    - SLAM
+    - Navigation Stack
+    - OpenCV
+    - PCL
+  
+  ai:
+    - ASR (Speech Recognition)
+    - TTS (Text to Speech)
+    - NLP (Natural Language Processing)
+    - Face Recognition
+    - Human Detection
+  
+  sensors:
+    - LiDAR
+    - RGBD Camera
+    - Ultrasonic Sensors
+    - IMU
+    - Encoders
+  
+  mobile:
+    - Android SDK
+    - Touch Screen UI
+  
+  backend:
+    - Spring Boot
+    - WebSocket
+    - MQTT
+    - MySQL
+    - Redis
+
+features:
+  - Voice interaction and dialogue
+  - Face recognition
+  - Autonomous navigation (SLAM)
+  - Guided tour and explanation
+  - Information query
+  - Multi-modal interaction
+  - Remote monitoring
+  - Content customization
+
+metrics:
+  - metric: "cm-level"
+    unit: "precision"
+    description: Navigation accuracy
+  
+  - metric: ">90%"
+    unit: "accuracy"
+    description: Voice understanding rate
+  
+  - metric: ">98%"
+    unit: "accuracy"
+    description: Face recognition accuracy
+  
+  - metric: "Multiple"
+    unit: "exhibitions"
+    description: Successfully deployed
+  
+  - metric: "7×24"
+    unit: "service"
+    description: Continuous operation capability
+
+achievements:
+  - Developed complete service robot system
+  - Achieved cm-level navigation precision
+  - Integrated multi-modal AI capabilities
+  - Successfully deployed at multiple exhibitions
+  - 24/7 autonomous service operation
+  - Collected valuable visitor analytics
+
+evidence:
+  - type: photo
+    path: images/robot-exterior.png
+  
+  - type: ui
+    path: images/navigation-ui.png
+  
+  - type: interaction
+    path: images/voice-interaction.png
+
+skills_demonstrated:
+  technical:
+    - ROS
+    - SLAM Navigation
+    - Android Development
+    - Speech Recognition (ASR)
+    - Text to Speech (TTS)
+    - Natural Language Processing
+    - Face Recognition
+    - Computer Vision
+    - Sensor Fusion
+    - Motion Control
+    - LiDAR Integration
+    - Spring Boot
+    - WebSocket
+    - MQTT
+  
+  soft:
+    - System Integration
+    - Hardware Debugging
+    - On-site Deployment
+    - Cross-functional Collaboration
+    - Technical Documentation
+
+related_to_roles:
+  - Robotics Engineer
+  - AI Engineer
+  - Android Developer
+  - System Integration Engineer
+  - Full-stack Developer
+
+keywords:
+  - Service Robot
+  - ROS
+  - SLAM
+  - Autonomous Navigation
+  - Voice Interaction
+  - Face Recognition
+  - AI
+  - Android
+  - Exhibition
+  - Computer Vision
+
+last_updated: "2025-02-11"

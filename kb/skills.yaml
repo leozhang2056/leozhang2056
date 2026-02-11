@@ -1,0 +1,540 @@
+# 技能清单
+# Skills Inventory
+
+# 编程语言
+programming_languages:
+  - name: Java
+    level: expert
+    years: 10
+    evidence: 
+      - Enterprise Messaging System backend
+      - Smart Factory Backend System
+      - Multiple Spring Boot microservices
+    
+  - name: Kotlin
+    level: advanced
+    years: 5
+    evidence:
+      - Android development
+      - Enterprise Messaging Android client
+      - Smart Factory Android apps
+    
+  - name: Python
+    level: advanced
+    years: 3
+    evidence:
+      - ChatClothes AI thesis project
+      - PyTorch/TensorFlow model development
+      - Computer vision pipelines
+    
+  - name: JavaScript
+    level: intermediate
+    years: 6
+    evidence:
+      - Vue.js frontend development
+      - Full-stack web applications
+    
+  - name: Node.js
+    level: intermediate
+    years: 4
+    evidence:
+      - Backend services
+      - Enterprise messaging system
+    
+  - name: SQL
+    level: advanced
+    years: 10
+    evidence:
+      - Database design and optimization
+      - MySQL, SQL Server
+    
+  - name: C
+    level: intermediate
+    years: 4
+    evidence:
+      - NDK development for Android
+      - Low-level protocol implementation
+    
+  - name: Bash
+    level: intermediate
+    years: 8
+    evidence:
+      - Linux server administration
+      - CI/CD automation
+
+# AI / ML
+ai_ml:
+  - name: PyTorch
+    level: advanced
+    evidence:
+      - ChatClothes diffusion model implementation
+      - Model optimization for edge devices
+    
+  - name: TensorFlow
+    level: intermediate
+    evidence:
+      - Computer vision models
+      - Mobile model deployment
+    
+  - name: OpenCV
+    level: advanced
+    years: 3
+    evidence:
+      - Image processing pipelines
+      - Computer vision applications
+    
+  - name: YOLO
+    level: advanced
+    evidence:
+      - Clothing detection in ChatClothes
+      - Object detection systems
+    
+  - name: Diffusion Models
+    level: intermediate
+    evidence:
+      - ChatClothes virtual try-on system
+      - ComfyUI integration
+    
+  - name: LLM Fine-tuning
+    level: intermediate
+    evidence:
+      - LLM-driven user control
+      - Prompt engineering
+    
+  - name: Computer Vision
+    level: advanced
+    evidence:
+      - Virtual try-on system
+      - Image generation pipelines
+
+# AI Coding Tools
+ai_coding_tools:
+  - name: Cursor
+    level: expert
+  - name: GitHub Copilot
+    level: advanced
+  - name: Trae
+    level: advanced
+  - name: Qwen
+    level: intermediate
+  - name: OpenAI API
+    level: intermediate
+  - name: MCP
+    level: intermediate
+
+# Android Development
+android:
+  - name: Android SDK
+    level: expert
+    years: 10
+    evidence:
+      - Enterprise messaging platform (10K+ DAU)
+      - Smart factory mobile apps
+      - IoT device integration
+    
+  - name: Jetpack
+    level: advanced
+    evidence:
+      - Modern Android architecture
+      - UI development
+    
+  - name: NDK
+    level: advanced
+    evidence:
+      - TCP/UDP protocol implementation
+      - Low-latency messaging (<200ms)
+    
+  - name: MVVM/MVP Architecture
+    level: expert
+    evidence:
+      - Enterprise Android applications
+      - Clean architecture implementation
+    
+  - name: Material Design
+    level: advanced
+    evidence:
+      - UI/UX design implementation
+    
+  - name: SQLite
+    level: advanced
+    evidence:
+      - Local data persistence
+      - Offline-first design
+    
+  - name: Flutter
+    level: intermediate
+    evidence:
+      - Cross-platform development
+    
+  - name: Android ADB
+    level: advanced
+    evidence:
+      - Debugging and development
+      - Device management
+
+# Backend & Full-stack
+backend:
+  - name: Spring Boot
+    level: expert
+    years: 8
+    evidence:
+      - Smart factory microservices
+      - Enterprise messaging backend
+    
+  - name: Spring Cloud
+    level: advanced
+    years: 6
+    evidence:
+      - Microservice architecture
+      - Distributed systems
+    
+  - name: MyBatis
+    level: advanced
+    years: 7
+    evidence:
+      - Data access layer
+      - ORM implementation
+    
+  - name: Hibernate
+    level: intermediate
+    years: 5
+    evidence:
+      - JPA implementation
+    
+  - name: RESTful API
+    level: expert
+    years: 10
+    evidence:
+      - API design and implementation
+      - Multiple enterprise systems
+    
+  - name: .NET
+    level: intermediate
+    years: 4
+    evidence:
+      - Legacy system maintenance
+
+# Frontend
+frontend:
+  - name: Vue.js
+    level: advanced
+    years: 5
+    evidence:
+      - Industrial dashboards
+      - IoT visualization
+    
+  - name: HTML/CSS
+    level: advanced
+    years: 10
+    evidence:
+      - Web application development
+      - UI implementation
+
+# DevOps & Cloud
+devops:
+  - name: Docker
+    level: advanced
+    years: 6
+    evidence:
+      - Containerization of microservices
+      - CI/CD pipelines
+    
+  - name: Jenkins
+    level: advanced
+    years: 5
+    evidence:
+      - CI/CD automation
+      - Build pipelines
+    
+  - name: Nginx
+    level: advanced
+    years: 7
+    evidence:
+      - Load balancing
+      - Reverse proxy configuration
+    
+  - name: Git
+    level: expert
+    years: 10
+    evidence:
+      - Version control
+      - Team collaboration
+    
+  - name: Tomcat
+    level: advanced
+    years: 8
+    evidence:
+      - Java application deployment
+    
+  - name: IIS
+    level: intermediate
+    years: 6
+    evidence:
+      - Windows Server deployment
+      - Site binding and SSL
+    
+  - name: Azure
+    level: beginner
+    evidence:
+      - Basic cloud setup
+    
+  - name: GitHub Actions
+    level: intermediate
+    evidence:
+      - CI/CD workflows
+    
+  - name: GitLab CI/CD
+    level: intermediate
+    evidence:
+      - Pipeline configuration
+
+# Operating Systems
+operating_systems:
+  - name: CentOS
+    level: advanced
+    years: 7
+    evidence:
+      - Server deployment
+      - Production systems
+    
+  - name: Ubuntu
+    level: advanced
+    years: 8
+    evidence:
+      - Development and production
+    
+  - name: Windows Server
+    level: advanced
+    years: 10
+    versions:
+      - "2012"
+      - "2016"
+      - "2019"
+      - "2022"
+    evidence:
+      - System administration
+      - IIS deployment
+      - Active Directory
+    
+  - name: Android
+    level: expert
+    years: 10
+    evidence:
+      - Application development
+      - System-level integration
+
+# Databases
+databases:
+  - name: MySQL
+    level: expert
+    years: 10
+    evidence:
+      - Database design
+      - Query optimization
+      - Smart factory backend
+    
+  - name: Redis
+    level: advanced
+    years: 6
+    evidence:
+      - Caching layer
+      - Session management
+    
+  - name: MongoDB
+    level: intermediate
+    years: 4
+    evidence:
+      - NoSQL data storage
+    
+  - name: SQL Server
+    level: intermediate
+    years: 6
+    evidence:
+      - Legacy system maintenance
+    
+  - name: SQLite
+    level: advanced
+    years: 8
+    evidence:
+      - Mobile app databases
+      - Offline storage
+
+# IoT & Hardware
+iot_hardware:
+  - name: Raspberry Pi
+    level: advanced
+    years: 5
+    evidence:
+      - ChatClothes edge deployment
+      - IoT projects
+    
+  - name: UART/Serial
+    level: advanced
+    years: 7
+    evidence:
+      - Hardware communication
+      - Protocol debugging
+    
+  - name: GPIO
+    level: intermediate
+    years: 4
+    evidence:
+      - Sensor integration
+    
+  - name: RFID
+    level: advanced
+    years: 6
+    evidence:
+      - Smart factory integration
+      - Access control systems
+    
+  - name: Barcode Scanners
+    level: advanced
+    years: 6
+    evidence:
+      - Industrial automation
+      - Inventory management
+    
+  - name: Sensors
+    level: advanced
+    years: 5
+    evidence:
+      - IoT monitoring
+      - Smart cabinet systems
+    
+  - name: Relays
+    level: intermediate
+    years: 4
+    evidence:
+      - Device control
+    
+  - name: Device Control Protocols
+    level: advanced
+    years: 6
+    evidence:
+      - Hardware integration
+      - Custom protocol development
+
+# Cloud & File Sync
+cloud_sync:
+  - name: OneDrive
+    level: advanced
+    evidence:
+      - Team collaboration
+      - File synchronization
+    
+  - name: Dropbox
+    level: advanced
+    evidence:
+      - File sharing
+    
+  - name: Google Drive
+    level: intermediate
+    evidence:
+      - Cloud storage
+    
+  - name: SFTP
+    level: advanced
+    evidence:
+      - Secure file transfer
+    
+  - name: rsync
+    level: intermediate
+    evidence:
+      - Backup automation
+
+# System Administration
+system_admin:
+  - name: Active Directory
+    level: intermediate
+    years: 6
+    evidence:
+      - User management
+      - Group policy
+    
+  - name: SSL/TLS
+    level: advanced
+    years: 7
+    evidence:
+      - Certificate management
+      - HTTPS configuration
+    
+  - name: Firewall Rules
+    level: intermediate
+    years: 6
+    evidence:
+      - Security configuration
+    
+  - name: Remote Desktop
+    level: advanced
+    years: 8
+    evidence:
+      - System administration
+    
+  - name: Cron/Scheduled Tasks
+    level: advanced
+    years: 8
+    evidence:
+      - Automation
+      - Backup scheduling
+    
+  - name: Systemd
+    level: intermediate
+    years: 5
+    evidence:
+      - Service management
+
+skill_groups:
+  android_development:
+    - Android SDK
+    - Kotlin
+    - Java
+    - Jetpack
+    - NDK
+    - MVVM/MVP
+    - Material Design
+    - SQLite
+    
+  backend_engineering:
+    - Java
+    - Spring Boot
+    - Spring Cloud
+    - MyBatis
+    - RESTful API
+    - MySQL
+    - Redis
+    - Docker
+    
+  ai_ml:
+    - Python
+    - PyTorch
+    - TensorFlow
+    - OpenCV
+    - YOLO
+    - Diffusion Models
+    - LLM
+    
+  devops:
+    - Docker
+    - Jenkins
+    - Nginx
+    - Git
+    - CI/CD
+    - Linux
+    
+  full_stack:
+    - Java
+    - JavaScript
+    - Vue.js
+    - HTML/CSS
+    - Node.js
+    - Spring Boot
+    
+  iot_hardware:
+    - Android
+    - UART/Serial
+    - RFID
+    - Raspberry Pi
+    - Sensors
+
+last_updated: "2025-02-11"

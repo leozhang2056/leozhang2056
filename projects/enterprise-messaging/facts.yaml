@@ -1,0 +1,161 @@
+# Project Facts - Enterprise Messaging Platform
+# Structured data for RAG and resume generation
+
+project_id: enterprise-messaging
+name: Enterprise Messaging Platform
+name_cn: 企业即时通讯平台
+
+type: Enterprise Communication Platform
+category:
+  - Android Development
+  - Backend Development
+  - Real-time Systems
+  - Network Programming
+
+timeline:
+  start: "2014"
+  end: "2023"
+  duration_years: 9
+
+role: Core Android & Backend Developer
+team_size: null  # Part of larger team
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Enterprise instant messaging platform supporting real-time communication 
+  across Android, Web, and PC clients with 10,000+ daily active users 
+  and sub-200ms message latency.
+
+highlights:
+  - Developed Android client using NDK-based TCP/UDP
+  - Built backend using Spring Cloud and Node.js
+  - Achieved sub-200ms message latency
+  - Supported 10,000+ daily active users
+  - Processed 500K+ messages daily
+  - Implemented cross-terminal login (Web, PC, Android)
+  - Improved connection stability and performance
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+    - C
+    - C++
+    - JavaScript
+  
+  mobile:
+    - Android SDK
+    - NDK
+    - TCP/UDP
+  
+  backend:
+    - Spring Cloud
+    - Node.js
+    - WebSocket
+  
+  databases:
+    - MySQL
+    - Redis
+  
+  infrastructure:
+    - Nginx
+    - Linux
+    - Git
+
+features:
+  - Real-time messaging
+  - Cross-platform support (Android, Web, PC)
+  - Low latency (<200ms)
+  - High throughput (500K+ messages/day)
+  - Native protocol implementation
+  - Cross-terminal login
+  - Connection stability optimization
+  - Session management
+
+metrics:
+  - metric: "10,000+"
+    unit: "daily active users"
+    description: Company-wide adoption
+  
+  - metric: "<200ms"
+    unit: "latency"
+    description: Message delivery time
+  
+  - metric: "500K+"
+    unit: "messages/day"
+    description: Daily message throughput
+  
+  - metric: "3"
+    unit: "platforms"
+    description: Android, Web, PC support
+  
+  - metric: "99.9%"
+    unit: "uptime"
+    description: System availability
+
+achievements:
+  - Achieved sub-200ms message latency through protocol optimization
+  - Successfully scaled to 10,000+ daily active users
+  - Processed over 500,000 messages daily
+  - Maintained high availability over 9 years
+  - Delivered consistent cross-platform experience
+
+evidence:
+  - type: architecture
+    path: images/arch.png
+  
+  - type: screenshot
+    path: images/android-client.png
+  
+  - type: diagram
+    path: images/message-flow.png
+
+skills_demonstrated:
+  technical:
+    - Android Development
+    - NDK Programming
+    - TCP/UDP Protocols
+    - Socket Programming
+    - Spring Cloud
+    - Java
+    - Kotlin
+    - C/C++
+    - Node.js
+    - MySQL
+    - Redis
+    - REST API
+    - WebSocket
+    - Performance Optimization
+    - Low-latency Systems
+  
+  soft:
+    - Cross-functional Collaboration
+    - Release Management
+    - QA Coordination
+    - Technical Documentation
+
+related_to_roles:
+  - Android Developer
+  - Backend Engineer
+  - Network Engineer
+  - Full-stack Developer
+  - Real-time Systems Engineer
+
+keywords:
+  - Android
+  - NDK
+  - TCP
+  - UDP
+  - Spring Cloud
+  - Real-time Messaging
+  - Low Latency
+  - High Throughput
+  - Cross-platform
+  - WebSocket
+  - Redis
+  - Microservices
+
+last_updated: "2025-02-11"

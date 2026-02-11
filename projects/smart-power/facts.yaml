@@ -1,0 +1,160 @@
+# Project Facts - 智慧电力系统
+# Structured data for RAG and resume generation
+
+project_id: smart-power
+name: Smart Power Management System
+name_cn: 智慧电力系统
+
+type: IoT / Energy Management
+category:
+  - IoT
+  - Energy Management
+  - Industrial Automation
+  - Data Analytics
+
+timeline:
+  start: "2019"
+  end: "2022"
+  duration_years: 3
+
+role: Full-stack Engineer / System Architect
+team_size: null
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  Smart power management system providing comprehensive electricity monitoring, 
+  energy consumption analysis, and energy-saving optimization for factories 
+  and buildings. Features real-time data collection, fault warning, and remote control.
+
+highlights:
+  - 开发智慧电力监控平台，支持多园区管理
+  - 集成Modbus/RS485电表和传感器数据采集
+  - 实现实时能耗分析和故障预警
+  - 基于InfluxDB时序数据库存储和处理海量数据
+  - 开发能耗大屏和移动端APP
+  - 实现平均能耗降低15%
+  - 秒级告警响应时间
+
+tech_stack:
+  languages:
+    - Java
+    - JavaScript
+    - Python
+  
+  iot_protocols:
+    - Modbus RTU/TCP
+    - RS485
+    - MQTT
+    - DL/T645
+  
+  hardware:
+    - Smart Meters
+    - Temperature Sensors
+    - Smart Circuit Breakers
+    - Power Quality Monitors
+  
+  backend:
+    - Spring Boot
+    - InfluxDB
+    - MySQL
+    - Redis
+    - RabbitMQ
+    - Apache Flink
+  
+  frontend:
+    - Vue.js
+    - ECharts
+    - DataV
+    - UniApp
+
+features:
+  - Real-time power monitoring
+  - Energy consumption analysis
+  - Fault warning and alerts
+  - Remote switch control
+  - Report generation
+  - Energy-saving optimization
+  - Multi-tenant management
+  - Mobile app control
+
+metrics:
+  - metric: "15%"
+    unit: "energy saving"
+    description: Average energy consumption reduction
+  
+  - metric: "<1s"
+    unit: "response time"
+    description: Alert notification speed
+  
+  - metric: "99.9%"
+    unit: "collection rate"
+    description: Data accuracy and completeness
+  
+  - metric: "3+"
+    unit: "parks"
+    description: Multi-park unified management
+
+achievements:
+  - Achieved 15% average energy consumption reduction
+  - Sub-second alert response time
+  - 99.9% data collection accuracy
+  - Successfully deployed across multiple parks
+  - Replaced manual meter reading, 80% efficiency improvement
+  - Enabled data-driven energy optimization decisions
+
+evidence:
+  - type: dashboard
+    path: images/power-dashboard.png
+  
+  - type: analytics
+    path: images/data-analysis.png
+  
+  - type: alarm
+    path: images/alarm-center.png
+
+skills_demonstrated:
+  technical:
+    - IoT Data Collection
+    - Modbus Protocol
+    - RS485 Communication
+    - InfluxDB
+    - Time-series Data
+    - Apache Flink
+    - Spring Boot
+    - Microservices
+    - Data Visualization
+    - ECharts
+    - Vue.js
+    - UniApp
+    - Redis
+    - RabbitMQ
+  
+  soft:
+    - System Architecture
+    - Energy Management Domain Knowledge
+    - Data Analysis
+    - Technical Documentation
+
+related_to_roles:
+  - IoT Engineer
+  - Full-stack Developer
+  - Data Engineer
+  - System Architect
+  - Energy Management Specialist
+
+keywords:
+  - Smart Power
+  - Energy Management
+  - IoT
+  - Smart Meter
+  - Modbus
+  - InfluxDB
+  - Time-series Database
+  - Energy Saving
+  - Industrial IoT
+  - Data Analytics
+
+last_updated: "2025-02-11"
