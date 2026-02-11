@@ -1,0 +1,30 @@
+# Ignore sensitive directories
+templates/
+outputs/
+
+# Ignore IDE files
+.idea/
+*.iml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+
+# Ignore local environment files
+.env
+.env.local
+
+# Ignore build outputs
+build/
+dist/
+node_modules/
+
+# Ignore large binary files that shouldn't be in git
+*.zip
+*.tar.gz
+*.rar
