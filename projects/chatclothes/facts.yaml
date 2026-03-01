@@ -9,6 +9,7 @@ type: Research Project / Master's Thesis
 category:
   - AI/ML
   - Computer Vision
+  - Natural Language Processing
   - Full-stack Development
 
 timeline:
@@ -26,17 +27,35 @@ institution:
   location: New Zealand
   department: Computer and Information Sciences
 
+supervisor:
+  name: Dr. Wei Qi Yan
+  institution: Auckland University of Technology
+
+author:
+  name: Yuchao Zhang
+
+academic_info:
+  degree: Master of Computer and Information Sciences
+  year: 2025
+  doi: "10.10292/20210"
+  repository_url: "http://hdl.handle.net/10292/20210"
+  thesis_status: submitted
+
 summary: >
-  A multimodal AI virtual try-on system combining diffusion models, 
-  YOLO-based clothing detection, and LLM-driven user interaction. 
-  Optimized for edge deployment on Raspberry Pi 5 with offline capability.
+  ChatClothes is a modular and multimodal virtual try-on system that integrates 
+  controllable diffusion-based generation with dialogue-driven garment interaction. 
+  The system employs DeepSeek LLM for natural language instruction understanding, 
+  LoRA fine-tuning for enhanced OOTDiffusion performance, and YOLO12n-LC for 
+  efficient garment classification. Optimized for edge deployment with complete 
+  offline capability.
 
 highlights:
-  - Designed and implemented entire system architecture independently
-  - Combined diffusion models, YOLO classifiers, and LLM for user interaction
-  - Built generation pipeline using ComfyUI with Dify orchestration
-  - Supported text/image/multimodal input for personalized try-on
-  - Optimized for edge devices with real-time performance
+  - Designed and implemented complete multimodal VTON system independently
+  - Developed YOLO12n-LC lightweight classifier for edge deployment
+  - Applied LoRA fine-tuning to OOTDiffusion for enhanced pose alignment and texture reconstruction
+  - Integrated DeepSeek LLM for natural language control and dialogue-driven interaction
+  - Built orchestration pipeline using Dify + ComfyUI + Ollama
+  - Validated system on DressCode and VITON-HD datasets
   - Completed full-stack AI solution 6 months ahead of schedule
 
 tech_stack:
@@ -47,91 +66,238 @@ tech_stack:
   ai_ml:
     - PyTorch
     - OpenCV
-    - YOLO
-    - Diffusion Models
-    - LLM
+    - Diffusion Models (OOTDiffusion)
+    - LoRA (Low-Rank Adaptation)
+    - LLM (DeepSeek)
+    - YOLO12n-LC
   
-  tools_platforms:
-    - ComfyUI
-    - Dify
-    - Raspberry Pi 5
+  platforms:
+    - Dify (Workflow Orchestration)
+    - ComfyUI (Visual Workflow)
+    - Ollama (Local LLM Hosting)
+    - Raspberry Pi 5 (Edge Deployment)
+  
+  datasets:
+    - DressCode
+    - VITON-HD
   
   domain:
     - Computer Vision
-    - Edge Computing
     - Natural Language Processing
-    - Image Generation
+    - Diffusion Models
+    - Virtual Try-On (VTON)
+    - Edge Computing
 
 features:
-  - Multimodal input (text, image, combined)
-  - AI-powered clothing visualization
-  - YOLO-based clothing detection
-  - LLM-driven natural language control
+  - Natural language control via DeepSeek LLM
+  - Dialogue-driven garment interaction
+  - YOLO12n-LC lightweight clothing classification
+  - OOTDiffusion with LoRA fine-tuning
+  - Enhanced pose alignment and hand generation
+  - Improved garment texture reconstruction
   - Edge deployment on Raspberry Pi 5
   - Offline capability
-  - Web-based interface
-  - Real-time generation
+  - Web-based interface with real-time preview
+  - Structured prompt generation from natural language
+  - Interactive refinement through conversation
+
+technical_innovations:
+  - name: LoRA Fine-tuning
+    description: Introduced Low-Rank Adaptation modules for fine-tuning OOTDiffusion without altering backbone architecture
+    benefits:
+      - Enhanced pose alignment in generated images
+      - Improved hand generation accuracy
+      - Better garment texture reconstruction
+      - Effective adaptation with limited training resources
+  
+  - name: YOLO12n-LC
+    description: Lightweight variant of YOLO12n specifically optimized for garment classification
+    benefits:
+      - Balanced accuracy, speed, and model size
+      - Competitive performance across clothing categories
+      - Feasible for device-level deployment
+      - Real-time classification capability
+  
+  - name: Vision-Language Integration
+    description: Unified framework combining natural language control with visual generation
+    benefits:
+      - Intuitive user interaction beyond attribute selection
+      - Semantic alignment between intent and results
+      - Dialogue-driven iterative refinement
+      - Structured prompt generation from instructions
 
 achievements:
   - metric: "6 months"
     description: Thesis completed ahead of schedule
-  - metric: "Raspberry Pi 5"
-    description: Successful edge deployment
-  - metric: "Real-time"
-    description: Low-latency inference achieved
+    category: Project Management
+  - metric: "DressCode & VITON-HD"
+    description: Experimental validation on standard benchmarks
+    category: Research
+  - metric: "Edge Deployment"
+    description: Successful deployment on Raspberry Pi 5
+    category: Engineering
   - metric: "Full-stack"
     description: Complete AI solution independently built
+    category: Development
+  - metric: "LoRA Innovation"
+    description: Novel fine-tuning strategy for OOTDiffusion
+    category: Research
+  - metric: "YOLO12n-LC"
+    description: Custom lightweight classifier developed
+    category: Engineering
+  - metric: "Dialogue Interface"
+    description: Natural language interaction implemented
+    category: User Experience
+
+performance_metrics:
+  realism:
+    description: High-quality generation with realistic clothing appearance
+    achievement: Improved texture preservation through LoRA fine-tuning
+  controllability:
+    description: Precise control through natural language
+    achievement: Effective semantic alignment with user instructions
+  structural_preservation:
+    description: Consistent body pose and anatomical accuracy
+    achievement: Enhanced pose alignment and improved hand generation
+  classification_accuracy:
+    description: YOLO12n-LC performance
+    achievement: Competitive accuracy across clothing categories
+  edge_deployment:
+    description: Performance on Raspberry Pi 5
+    achievement: Acceptable latency for interactive use
+  offline_capability:
+    description: Full functionality without internet
+    achievement: Complete offline operation
+
+research_contributions:
+  academic_value:
+    - Unified framework for vision-language interaction with diffusion-based generation
+    - Foundation for scalable fashion AI systems
+    - Demonstration of device adaptability for advanced AI models
+    - Novel dialogue-driven garment interaction paradigm
+  
+  technical_innovations:
+    - LoRA fine-tuning strategy for OOTDiffusion enhancement
+    - YOLO12n-LC lightweight classifier for edge deployment
+    - Structured prompt generation from natural language
+    - Integrated orchestration using Dify + ComfyUI + Ollama
+
+applications:
+  - E-commerce integration with virtual try-on capabilities
+  - AR fitting mirrors for in-store experiences
+  - Personalization platforms for style recommendations
+  - Automated outfit design and fashion assistance
 
 evidence:
   - type: thesis
     status: submitted
     date: "2025-04"
+    description: Master's thesis completed 6 months early
+    url: "http://hdl.handle.net/10292/20210"
+    doi: "10.10292/20210"
   - type: demo
     status: available
-    description: Working demonstration
+    description: Working demonstration with full functionality
   - type: documentation
     status: complete
-    description: Deployment guide included
+    description: Complete deployment guide, API documentation, and user manual
   - type: images
     path: images/
+    count: 36
+    description: Comprehensive image documentation including architecture, implementation, and results
+    key_items:
+      - arch.png - System architecture overview
+      - demo.png - Virtual try-on results demonstration
+      - slide02_yolo_detection.PNG - YOLO detection results
+      - slide03_pose_estimation.PNG - Pose estimation and body landmarks
+      - slide04_clothing_segmentation.PNG - Clothing segmentation results
+      - slide10_pipeline_overview.PNG - Detailed pipeline workflow
+      - slide11_edge_deployment.PNG - Raspberry Pi 5 deployment
+      - slide12_multimodal_input.PNG - Multi-modal input interface
+      - slide13_comfyui_workflow.PNG - ComfyUI workflow
+      - slide14_dify_integration.PNG - Dify LLM integration
+      - slide15_results.PNG - System performance results
+      - slide18_accuracy.PNG - Accuracy metrics and evaluation
+  - type: presentation
+    status: complete
+    description: Project presentation slides (31 slides included)
+  - type: datasets
+    status: used
     items:
-      - arch.png
-      - demo.png
+      - DressCode - High-quality virtual try-on dataset
+      - VITON-HD - High-resolution virtual try-on dataset
 
 skills_demonstrated:
   technical:
     - PyTorch
-    - OpenCV
-    - YOLO
-    - Diffusion Models
-    - LLM Integration
+    - Deep Learning
+    - Diffusion Models (OOTDiffusion)
+    - LoRA Fine-tuning
+    - LLM Integration (DeepSeek)
+    - Computer Vision (YOLO, OpenCV)
+    - Natural Language Processing
     - Edge Computing
     - System Architecture
     - Python Development
+    - Model Optimization
+    - ARM Optimization
+  
+  research:
+    - Independent Research
+    - Literature Review
+    - Experimental Design
+    - Academic Writing
+    - Technical Innovation
+    - Dataset Validation
+  
+  engineering:
+    - Full-stack Development
+    - System Integration
+    - Performance Optimization
+    - Edge Deployment
+    - Documentation
+    - Project Management
+    - API Design
   
   soft:
     - Independent Research
     - Project Management
     - Documentation
     - Technical Writing
+    - Problem Solving
+    - Innovation
 
 related_to_roles:
   - AI Engineer
   - Machine Learning Engineer
   - Computer Vision Engineer
+  - NLP Engineer
   - Full-stack Developer
   - Research Engineer
+  - Edge AI Engineer
+  - MLOps Engineer
 
 keywords:
   - Virtual Try-On
+  - VTON
   - Diffusion Models
+  - OOTDiffusion
   - Computer Vision
   - Edge AI
   - PyTorch
+  - LoRA
   - YOLO
+  - YOLO12n-LC
   - LLM
+  - DeepSeek
+  - Dify
+  - ComfyUI
+  - Ollama
   - Raspberry Pi
   - Multimodal AI
+  - Natural Language Processing
   - Image Generation
+  - Master's Thesis
+  - Research
 
-last_updated: "2025-02-11"
+last_updated: "2025-03-01"
