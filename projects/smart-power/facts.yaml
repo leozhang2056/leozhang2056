@@ -25,9 +25,9 @@ company:
   location: China
 
 summary: >
-  Smart power management system providing comprehensive electricity monitoring, 
-  energy consumption analysis, and energy-saving optimization for factories 
-  and buildings. Features real-time data collection, fault warning, and remote control.
+  Smart power management platform for onboarding gateways/switches/meters,
+  monitoring per-load electrical parameters (current/voltage/power/energy),
+  remote switch control, and alarm policy management across factories and buildings.
 
 highlights:
   - 开发智慧电力监控平台，支持多园区管理
@@ -71,6 +71,10 @@ tech_stack:
     - UniApp
 
 features:
+  - Device onboarding (gateway, smart switches, meters)
+  - Per-load electrical parameter monitoring
+  - Remote ON/OFF and schedule control
+  - Alarm threshold and policy configuration
   - Real-time power monitoring
   - Energy consumption analysis
   - Fault warning and alerts
@@ -107,13 +111,13 @@ achievements:
 
 evidence:
   - type: dashboard
-    path: images/power-dashboard.png
+    path: images/power-dashboard-main.png
   
   - type: analytics
-    path: images/data-analysis.png
+    path: images/env-control-bi-kanban.png
   
   - type: alarm
-    path: images/alarm-center.png
+    path: images/power-mobile-app.png
 
 skills_demonstrated:
   technical:

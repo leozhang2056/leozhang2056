@@ -196,14 +196,10 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 
 ## Evidence
 
-![Gateway architecture](images/gateway-arch.png)
-*Visual gateway architecture*
-
-![Dashboard](images/dashboard.png)
-*Industrial data dashboard*
-
-![Device monitor](images/device-monitor.png)
-*Real-time device monitoring*
+> 当前仓库暂未提交该项目截图。补充以下文件到 `images/` 后会自动展示：
+> - `gateway-arch.png`
+> - `dashboard.png`
+> - `device-monitor.png`
 
 ---
 

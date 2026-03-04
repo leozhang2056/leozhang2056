@@ -154,24 +154,10 @@ An intelligent face recognition attendance system for primary and secondary scho
 
 ## Evidence
 
-> 将现场/终端/后台截图放入 `images/` 并命名为下方文件名后，本页会以网格形式展示。
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="./images/attendance-device.png" width="320" alt="Attendance terminal"/><br/>
-      <sub>Face recognition attendance terminal</sub>
-    </td>
-    <td align="center">
-      <img src="./images/admin-dashboard.png" width="320" alt="Admin dashboard"/><br/>
-      <sub>Attendance admin dashboard</sub>
-    </td>
-    <td align="center">
-      <img src="./images/parent-app.png" width="320" alt="Parent app"/><br/>
-      <sub>Parent notification screen</sub>
-    </td>
-  </tr>
-</table>
+> 当前仓库暂未提交该项目截图。补充以下文件到 `images/` 后会自动展示：
+> - `attendance-device.png`
+> - `admin-dashboard.png`
+> - `parent-app.png`
 
 ---
 

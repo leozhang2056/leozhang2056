@@ -2,10 +2,10 @@
 # Structured data for RAG and resume generation
 
 project_id: visit-system
-name: Hospital Visit Management System
+name: Visit Booking & Access Management System
 name_cn: 探视系统
 
-type: Medical IT / Face Recognition
+type: Security Visit Platform / Face Recognition / Audio-Video
 category:
   - Face Recognition
   - Healthcare IT
@@ -25,17 +25,18 @@ company:
   location: China
 
 summary: >
-  Intelligent hospital visit management system for ICU, NICU, and infectious 
-  disease departments. Features face recognition access control, appointment 
-  management, visit time control, and remote video visitation.
+  Visit booking and access management platform for high-security scenarios
+  (primarily prison visitation). Includes admin side, client/terminal side,
+  and visitor side; supports booking approval, face-based access control,
+  chat, and audio-video session management.
 
 highlights:
-  - 开发人脸识别门禁系统，控制探视人员进出
-  - 实现微信小程序预约探视功能
-  - 集成WebRTC视频探视，减少交叉感染
-  - 开发探视管理平台，家属人脸库管理
-  - 对接医院HIS系统
-  - 多科室部署（ICU、新生儿科、传染科）
+  - 开发多端探视预约平台（管理端、终端、访客端）
+  - 实现预约审批、时段与配额策略管理
+  - 集成人脸识别门禁，控制探视人员进出
+  - 集成WebRTC音视频探视与会话管理
+  - 增加聊天系统（消息记录与必要审核）
+  - 提供探视记录、审计追踪和统计报表
   - 探视管理效率提升30%
 
 tech_stack:
@@ -73,14 +74,14 @@ tech_stack:
     - SMS Gateway
 
 features:
+  - Multi-role platform (admin/terminal/visitor)
+  - Online appointment booking and approval
+  - Visit policy and quota management
   - Face recognition access control
-  - Online appointment booking
-  - Visit time management
-  - Remote video visitation
-  - Family member management
-  - Medical staff fast pass
-  - Visit statistics
-  - HIS system integration
+  - Chat system
+  - Audio-video session management
+  - Visit statistics and audit trail
+  - Optional external system integration
 
 metrics:
   - metric: "<1s"
@@ -147,14 +148,15 @@ related_to_roles:
 
 keywords:
   - Face Recognition
-  - Hospital Management
+  - Prison Visitation
   - Access Control
-  - WeChat Mini Program
-  - Healthcare IT
+  - Booking System
+  - Chat System
+  - Audio-Video Session Management
   - Video Visitation
   - WebRTC
-  - HIS Integration
+  - Admin Portal
   - Android
-  - Medical IT
+  - Security Platform
 
 last_updated: "2025-02-11"

@@ -25,9 +25,10 @@ company:
   location: China
 
 summary: >
-  Microservice-based textile factory management system deployed across 
-  5+ manufacturing sites, integrating IoT devices for real-time production 
-  tracking and workflow management.
+  Full value-chain smart manufacturing platform connecting customers/brands,
+  factories, and workers. Supports order intake, factory allocation,
+  per-garment production tracking, and shipment synchronization across
+  5+ manufacturing sites.
 
 highlights:
   - Designed and implemented backend microservices with Spring Boot
@@ -67,6 +68,10 @@ tech_stack:
     - UART/Serial
 
 features:
+  - End-to-end order to shipment flow
+  - Multi-role portals (customer/factory/worker)
+  - Order allocation to suitable factories
+  - Per-garment production progress tracking
   - Microservice architecture
   - Multi-site deployment (5+ locations)
   - IoT device integration
@@ -106,13 +111,13 @@ achievements:
 
 evidence:
   - type: architecture_diagram
-    path: images/arch.png
+    path: images/bi-dashboard-overview.jpg
   
   - type: dashboard
-    path: images/dashboard.png
+    path: images/equipment-dashboard-list.png
   
   - type: iot_setup
-    path: images/iot.png
+    path: images/mom-quality-station.png
 
 technical_innovations:
   - name: Multi-site Cloud-Edge Sync

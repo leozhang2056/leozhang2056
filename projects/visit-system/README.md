@@ -9,7 +9,7 @@
 A visit booking and access management **platform** designed for high-security scenarios such as **prison visitation** (and can be adapted to hospitals, ICUs, NICUs, infectious wards, etc.).  
 The system provides a **management side, client/terminal side, and visitor side**: families use mobile/mini‑program to make appointments, on-site terminals handle face-based identity verification and gate control, and the admin backend manages visit rules, approvals, schedules, and statistics.
 
-**Project Type:** Healthcare IT / Smart Hardware / Face Recognition  
+**Project Type:** Security Visit Platform / Face Recognition / Audio-Video  
 **Timeline:** 2020 – 2022  
 **Role:** Full-stack Developer  
 **Company:** Chunxiao Technology Co., Ltd., China
@@ -102,8 +102,8 @@ The platform is built around three main subsystems, with **audio-video session m
 
 ### Mobile
 - **WeChat Mini Program** – Family booking
-- **Android app** – Management
-- **Web admin** – Hospital management
+- **Android app** – On-site terminal / staff side
+- **Web admin** – Prison/hospital management portal
 
 ### Backend
 - **Spring Boot** – Business services
@@ -113,8 +113,8 @@ The platform is built around three main subsystems, with **audio-video session m
 - **IM / Chat** – Chat system for text messages and history
 
 ### Integration
-- **HIS interface** – Hospital system integration
-- **WeChat template messages** – Notifications
+- **Prison/Hospital data interface** – Optional external system integration
+- **WeChat template messages** – Booking and visit notifications
 - **SMS gateway** – SMS notifications
 
 ---
@@ -124,8 +124,8 @@ The platform is built around three main subsystems, with **audio-video session m
 - ✅ **<1s recognition** – Face recognition speed
 - ✅ **99.5% accuracy** – Face recognition accuracy
 - ✅ **~30% efficiency gain** – Visit management
-- ✅ **Multi-ward deployment** – ICU, NICU, infectious, etc.
-- ✅ **Contact reduction** – Remote video during pandemic
+- ✅ **Multi-site deployment** – Adapted to different high-security visit scenarios
+- ✅ **Session compliance** – Audio-video session lifecycle under policy control
 
 ---
 
@@ -175,7 +175,7 @@ The platform is built around three main subsystems, with **audio-video session m
 **Solution:** Mask-aware algorithm, stronger eye-region features.
 
 ### Challenge 2: Unstable Network
-**Problem:** Complex hospital networks.  
+**Problem:** Complex on-site networks in security facilities.  
 **Solution:** Local face cache, offline recognition, sync when online.
 
 ### Challenge 3: Visit Duration
@@ -193,22 +193,18 @@ The platform is built around three main subsystems, with **audio-video session m
 - **Efficiency** – ~30% improvement in visit management
 - **Order** – Less congestion at peak times
 - **Security** – Unauthorized access prevented
-- **Infection control** – Less contact; remote video option
-- **Data** – Visit data for hospital management
+- **Compliance** – Session timing and operation logs for traceability
+- **Data** – Visit data for management and audit
 - **Satisfaction** – Booking reduced wait time
 
 ---
 
 ## Evidence
 
-![Access terminal](images/access-terminal.png)
-*Face recognition access terminal*
-
-![Booking miniapp](images/booking-miniapp.png)
-*Family booking WeChat Mini Program*
-
-![Visit admin](images/visit-admin.png)
-*Visit management backend*
+> 当前仓库暂未提交该项目截图。补充以下文件到 `images/` 后会自动展示：
+> - `access-terminal.png`
+> - `booking-miniapp.png`
+> - `visit-admin.png`
 
 ---
 
@@ -223,4 +219,4 @@ The platform is built around three main subsystems, with **audio-video session m
 
 ---
 
-**Tags:** #FaceRecognition #Healthcare #AccessControl #WeChatMiniapp #Android #WebRTC #Hospital
+**Tags:** #FaceRecognition #AccessControl #BookingSystem #ChatSystem #WebRTC #PrisonVisitation #SecurityPlatform

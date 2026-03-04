@@ -30,7 +30,6 @@ summary: >
   scanning, UV disinfection, and intelligent cabinet control.
 
 highlights:
-highlights:
   - Developed Android control system with face recognition and QR code borrowing
   - Integrated hardware components including electromagnetic locks, LED strips, and disinfection modules
   - Enabled 24/7 self-service book borrowing and returning
@@ -105,13 +104,13 @@ achievements:
 
 evidence:
   - type: photo
-    path: images/locker-exterior.png
+    path: images/picture-book-locker-front.png
   
   - type: ui
-    path: images/borrow-ui.png
+    path: images/borrow-ui-on-device.png
   
   - type: admin
-    path: images/library-admin.png
+    path: images/borrow-ui-closeup.png
 
 technical_innovations:
   - name: Low-Latency Hardware Control

@@ -120,34 +120,36 @@ evidence:
     path: images/device-monitor.png
 
 technical_innovations:
-  - name: Multi-protocol Engine
-    description: High-performance protocol parsing engine based on Netty
+  - name: Serial Breaker Control Engine
+    description: High-reliability serial polling and command engine for RS485/RS232 breaker networks
     benefits:
-      - Unified data model for disparate industrial protocols
-      - Scalable to support new protocols with minimal code changes
-      - Efficient memory management for high-throughput data
+      - Unified telemetry and command model for heterogeneous breaker models
+      - Stable command delivery (open/close) with retry and timeout handling
+      - Lower retrofit cost by reusing non-networked breakers
   
   - name: Edge Alerting Logic
-    description: Localized rule engine for real-time alerting without cloud dependency
+    description: Localized rule engine for breaker safety alerts and offline-resilient operation
     benefits:
-      - Reduced latency for critical industrial alerts
-      - Continued operation during network outages
-      - Lower bandwidth usage by filtering non-critical data
+      - Sub-second local response for critical electrical anomalies
+      - Continued telemetry buffering and control during network outages
+      - Reduced cloud bandwidth through edge-side filtering and aggregation
 
 performance_metrics:
   capacity:
-    description: Device handling per gateway
-    achievement: Successfully managed 1,000+ active device connections
+    description: Breaker handling per gateway
+    achievement: One gateway manages multiple serial breaker circuits (1:N model)
   latency:
-    description: End-to-end data processing speed
-    achievement: Sub-100ms latency from hardware sensor to web dashboard
+    description: Telemetry and control response
+    achievement: Real-time breaker telemetry uplink and low-latency open/close command relay
   reliability:
-    description: Industrial-grade stability
-    achievement: 24/7 continuous operation in manufacturing environments
+    description: Gateway edge service stability
+    achievement: 24/7 operation with local cache, retry, and offline buffering
 
 skills_demonstrated:
   technical:
-    - Industrial Protocols (Modbus, MQTT, HTTP)
+    - Serial Protocols (RS485/RS232, Modbus RTU)
+    - Breaker Control Logic
+    - Command Auditing and Safety Rules
     - Netty Framework
     - Java / Spring Boot
     - Vue.js / ECharts
