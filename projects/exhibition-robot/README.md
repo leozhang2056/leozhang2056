@@ -1,30 +1,30 @@
-# 展会机器人项目
+# Exhibition Service Robot
 
-> Exhibition Service Robot
+> Intelligent exhibition service robot for guided tours, reception, and information queries at trade shows, malls, museums, and similar venues.
 
 ---
 
 ## Overview
 
-智能展会服务机器人系统，为展览会、商场、博物馆等场景提供导览讲解、迎宾接待、信息查询等服务。支持语音交互、人脸识别、自主导航等功能，可定制化配置展示内容。
+An intelligent exhibition service robot system that provides guided tours, reception, information lookup, and related services at exhibitions, malls, museums, and similar scenarios. It supports voice interaction, face recognition, autonomous navigation, and customizable content. **The project was carried out mainly in 2019**; AI technology was not yet mature at the time, so the solution used rule-based logic combined with existing ASR/TTS and face APIs rather than large models or deep conversational AI.
 
-**项目类型:** AI / 机器人 / 服务自动化  
-**时间:** 2021 - 2023  
-**角色:** 全栈开发工程师 / 系统集成  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** AI / Robotics / Service Automation  
+**Timeline:** Primarily **2019**  
+**Role:** Full-stack Developer / System Integration  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **语音交互:** 语音识别和语音合成，自然语言对话
-- **人脸识别:** 访客识别、VIP客户迎接、考勤统计
-- **自主导航:** SLAM建图、路径规划、自动避障
-- **导览讲解:** 定点讲解、自动巡游、内容推送
-- **信息查询:** 展会信息、展位导航、日程查询
-- **多模态交互:** 语音+触屏+手势多种交互方式
-- **远程监控:** 实时监控、远程控制、数据统计
-- **内容定制:** 灵活配置展示内容和交互逻辑
+- **Voice Interaction:** Speech recognition and synthesis, natural-language dialogue
+- **Face Recognition:** Visitor identification, VIP greeting, attendance statistics
+- **Autonomous Navigation:** SLAM mapping, path planning, obstacle avoidance
+- **Guided Tours:** Fixed-point narration, automatic patrol, content push
+- **Information Query:** Exhibition info, booth navigation, schedule lookup
+- **Multimodal Interaction:** Voice, touchscreen, and gesture input
+- **Remote Monitoring:** Real-time monitoring, remote control, data analytics
+- **Content Customization:** Configurable content and interaction logic
 
 ---
 
@@ -32,35 +32,35 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│           机器人硬件层                   │
+│           Robot Hardware Layer          │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │运动底盘│ │激光雷达│ │深度相机  │    │
-│  │差速轮  │ │SLAM    │ │RGBD      │    │
+│  │ Chassis│ │ Lidar  │ │Depth Cam │    │
+│  │Diff-drive│ │ SLAM  │ │ RGB-D    │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │语音模块│ │显示屏  │ │超声波    │    │
-│  │麦克风  │ │触摸屏  │ │避障传感器│    │
+│  │ Voice  │ │ Display│ │Ultrasonic│    │
+│  │ Mic    │ │Touch   │ │ Obstacle │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │           │          │
        └───────────┴──────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       Android / ROS 主控系统             │
+│       Android / ROS Main Control         │
 │  ┌─────────────────────────────────┐   │
-│  │  - SLAM 建图与定位               │   │
-│  │  - 路径规划与导航                │   │
-│  │  - 语音交互处理                  │   │
-│  │  - 人脸识别                      │   │
-│  │  - 运动控制                      │   │
+│  │  - SLAM mapping & localization  │   │
+│  │  - Path planning & navigation   │   │
+│  │  - Voice interaction pipeline  │   │
+│  │  - Face recognition            │   │
+│  │  - Motion control              │   │
 │  └─────────────────────────────────┘   │
 └──────────────────┬──────────────────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       云端服务平台                       │
+│         Cloud / Backend Services         │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 对话管理 │ │ 内容管理 │ │ 远程   │ │
-│  │ NLP服务  │ │ 展位信息 │ │ 监控   │ │
+│  │ Dialogue│ │ Content  │ │ Remote  │ │
+│  │ NLP Svc │ │ Booth    │ │ Monitor │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -69,134 +69,141 @@
 
 ## Technologies
 
-### 机器人系统
-- **ROS (Robot Operating System)** - 机器人中间件
-- **Android** - 上层应用和交互界面
-- **SLAM算法** - 自主导航和建图
-- **OpenCV** - 计算机视觉
-- **PCL** - 点云处理
+### Robot Stack
+- **ROS (Robot Operating System)** – Robot middleware
+- **Android** – Application and UI layer
+- **SLAM** – Autonomous navigation and mapping
+- **OpenCV** – Computer vision
+- **PCL** – Point cloud processing
 
-### AI能力
-- **语音识别 (ASR)** - 百度/讯飞/阿里语音
-- **语音合成 (TTS)** - 语音播报
-- **自然语言处理 (NLP)** - 意图识别、对话管理
-- **人脸识别** - 访客识别和VIP迎接
-- **人体检测** - 客流统计
+### AI Capabilities
+- **ASR (Speech Recognition)** – Baidu / iFlytek / Alibaba APIs
+- **TTS (Speech Synthesis)** – Voice playback
+- **NLP** – Intent recognition, dialogue management
+- **Face Recognition** – Visitor ID, VIP greeting
+- **Person Detection** – Footfall and heatmap stats
 
-### 运动控制
-- **差速底盘控制** - 运动学模型
-- **路径规划** - A*、Dijkstra算法
-- **避障算法** - 动态窗口法 (DWA)
-- **PID控制** - 速度闭环控制
+### Motion Control
+- **Differential drive** – Kinematic model
+- **Path planning** – A*, Dijkstra
+- **Obstacle avoidance** – Dynamic Window Approach (DWA)
+- **PID control** – Velocity closed-loop
 
-### 传感器
-- **激光雷达** - 2D/3D环境扫描
-- **深度相机** - RGBD视觉
-- **超声波** - 近距离避障
-- **IMU** - 惯性测量
-- **编码器** - 里程计
+### Sensors
+- **Lidar** – 2D/3D environment scan
+- **Depth camera** – RGB-D vision
+- **Ultrasonic** – Short-range obstacle detection
+- **IMU** – Inertial measurement
+- **Encoders** – Odometry
 
-### 后端服务
-- **Spring Boot** - 业务服务
-- **WebSocket** - 实时通信
-- **MQTT** - 设备通信
-- **MySQL** - 数据存储
-- **Redis** - 缓存
+### Backend
+- **Spring Boot** – Business services
+- **WebSocket** – Real-time communication
+- **MQTT** – Device communication
+- **MySQL** – Data storage
+- **Redis** – Caching
 
 ---
 
 ## Key Achievements
 
-- ✅ **自主导航** - 厘米级定位精度，复杂环境稳定导航
-- ✅ **自然对话** - 支持多轮对话，理解率>90%
-- ✅ **人脸识别** - 1秒内完成识别，准确率>98%
-- ✅ **多展部署** - 成功部署于多个展会和商场
-- ✅ **7×24服务** - 展会期间全天候服务
-- ✅ **客流统计** - 自动统计访客数量和热力图
+- ✅ **Autonomous navigation** – Centimeter-level localization, stable in complex environments
+- ✅ **Natural dialogue** – Multi-turn conversation, >90% understanding rate
+- ✅ **Face recognition** – Sub-second recognition, >98% accuracy
+- ✅ **Multi-venue deployment** – Deployed at multiple exhibitions and malls
+- ✅ **24/7 operation** – Round-the-clock service during events
+- ✅ **Footfall analytics** – Automatic visitor counts and heatmaps
 
 ---
 
 ## Responsibilities
 
-### 系统集成
-- ROS与Android系统集成
-- 传感器驱动开发（激光雷达、深度相机）
-- 语音模块集成（麦克风阵列、扬声器）
-- 运动控制调试和参数优化
+### System Integration
+- ROS and Android integration
+- Sensor drivers (lidar, depth camera)
+- Voice module integration (mic array, speakers)
+- Motion control tuning and parameter optimization
 
-### 软件开发
-- Android交互应用开发
-- 语音对话系统开发
-- 人脸识别功能集成
-- 导航和避障算法调优
-- 远程监控后台开发
+### Software Development
+- Android interaction app
+- Voice dialogue system
+- Face recognition integration
+- Navigation and obstacle-avoidance tuning
+- Remote monitoring backend
 
-### AI能力集成
-- ASR/TTS服务接入
-- NLP对话管理开发
-- 人脸识别模型优化
-- 自定义问答库配置
+### AI Integration
+- ASR/TTS service integration
+- NLP dialogue management
+- Face recognition model optimization
+- Custom Q&A and content configuration
 
-### 内容定制
-- 展会内容策划和录入
-- 导览路线规划
-- 交互流程设计
-- 多语言支持（中英文）
+### Content & Customization
+- Exhibition content planning and data entry
+- Tour route planning
+- Interaction flow design
+- Multilingual support (Chinese, English)
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 复杂环境导航
-**问题:** 展会人流密集，环境动态变化大  
-**解决:** 融合多种传感器数据，动态避障算法，人工干预模式
+### Challenge 1: Navigation in Crowded Environments
+**Problem:** Dense crowds and highly dynamic exhibition floors.  
+**Solution:** Multi-sensor fusion, dynamic obstacle avoidance, optional manual override.
 
-### Challenge 2: 嘈杂环境语音识别
-**问题:** 展会现场噪音大，语音识别准确率低  
-**解决:** 麦克风阵列降噪，近场拾音，触屏备用交互
+### Challenge 2: Speech Recognition in Noisy Environments
+**Problem:** High ambient noise reduces ASR accuracy.  
+**Solution:** Mic array noise reduction, near-field pickup, touchscreen fallback.
 
-### Challenge 3: 长时间稳定运行
-**问题:** 展会期间需要连续工作多天  
-**解决:** 自动回充功能，故障自恢复，远程运维监控
+### Challenge 3: Long-Duration Reliability
+**Problem:** Multi-day continuous operation during events.  
+**Solution:** Auto docking/recharge, fault recovery, remote ops and monitoring.
 
-### Challenge 4: 多场景适配
-**问题:** 不同展会场地和内容差异大  
-**解决:** 模块化软件架构，可视化配置工具，快速部署流程
+### Challenge 4: Multi-Scenario Adaptation
+**Problem:** Different venues and content per exhibition.  
+**Solution:** Modular software, visual configuration tools, streamlined deployment.
 
 ---
 
 ## Results & Impact
 
-- **展会效果** - 成为展会亮点，吸引大量访客互动
-- **服务提升** - 7×24小时自动服务，解放人力
-- **数据价值** - 访客数据收集，为展会主办方提供洞察
-- **品牌宣传** - 科技感展示，提升品牌形象
-- **多场景复用** - 展会、商场、博物馆等多场景应用
+- **Exhibition impact** – Highlight of events, high visitor engagement
+- **Service level** – 24/7 automated service, reduced manual workload
+- **Data value** – Visitor analytics for organizers
+- **Brand** – Strong tech showcase, improved brand image
+- **Reuse** – Applicable to exhibitions, malls, museums, and similar venues
 
 ---
 
 ## Evidence
 
-![机器人外观](images/robot-exterior.png)
-*展会服务机器人*
+Add screenshots to the `images/` folder with these names to display them here:
 
-![导航界面](images/navigation-ui.png)
-*自主导航和地图界面*
+| File | Description |
+|------|-------------|
+| `images/robot-exterior.png` | Exhibition service robot (exterior) |
+| `images/navigation-ui.png` | Autonomous navigation and map interface |
+| `images/voice-interaction.png` | Voice dialogue interaction |
 
-![语音交互](images/voice-interaction.png)
-*语音对话交互*
+After adding the files, you can show them in the README with:
+
+```markdown
+![Robot exterior](images/robot-exterior.png)
+![Navigation UI](images/navigation-ui.png)
+![Voice interaction](images/voice-interaction.png)
+```
 
 ---
 
 ## Skills Demonstrated
 
-- **机器人开发:** ROS, SLAM, 运动控制
-- **Android开发:** 机器人交互应用
-- **AI集成:** 语音ASR/TTS, NLP, 人脸识别
-- **传感器融合:** 激光雷达, 深度相机, IMU
-- **后端开发:** Spring Boot, WebSocket, 远程监控
-- **系统集成:** 软硬件联调, 多系统协同
+- **Robotics:** ROS, SLAM, motion control
+- **Android:** Robot interaction application
+- **AI integration:** ASR/TTS, NLP, face recognition
+- **Sensor fusion:** Lidar, depth camera, IMU
+- **Backend:** Spring Boot, WebSocket, remote monitoring
+- **System integration:** Hardware–software co-development, multi-system coordination
 
 ---
 
-**Tags:** #机器人 #ROS #SLAM #AI #语音交互 #人脸识别 #自主导航 #Android #展会
+**Tags:** #Robotics #ROS #SLAM #AI #VoiceInteraction #FaceRecognition #AutonomousNavigation #Android #Exhibition

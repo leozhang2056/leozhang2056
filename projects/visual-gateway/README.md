@@ -1,30 +1,30 @@
-# 可视化网关
+# Visual Gateway / IoT Data Visualization Platform
 
-> Visual Gateway / IoT Data Visualization Platform
+> Industrial IoT gateway for multi-protocol data ingestion, real-time monitoring, alerts, and visualization dashboards.
 
 ---
 
 ## Overview
 
-工业物联网可视化网关系统，用于集中管理和可视化展示各类IoT设备数据。支持多种工业协议接入，实时数据监控，告警管理，以及可视化大屏展示。广泛应用于工厂、楼宇、能源管理等场景。
+An industrial IoT visualization gateway that centralizes and visualizes data from various devices. It supports multiple industrial protocols, real-time monitoring, alert management, and large-screen dashboards. Used in factories, buildings, energy management, and similar scenarios.
 
-**项目类型:** IoT / 工业物联网 / 数据可视化  
-**时间:** 2018 - 2023  
-**角色:** 全栈开发工程师 / 架构设计  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** IoT / Industrial IoT / Data Visualization  
+**Timeline:** 2018 – 2023  
+**Role:** Full-stack Developer / Architecture  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **多协议接入:** 支持Modbus、MQTT、HTTP、TCP等多种协议
-- **边缘计算:** 本地数据预处理和过滤
-- **实时监控:** 设备状态、数据指标的实时可视化
-- **告警管理:** 阈值告警、异常检测、多渠道通知
-- **可视化大屏:** 工业级数据展示看板
-- **历史数据:** 数据存储、查询、趋势分析
-- **远程配置:** 远程设备配置和固件升级
-- **高可用:** 双机热备，故障自动切换
+- **Multi-protocol:** Modbus, MQTT, HTTP, TCP, and others
+- **Edge computing:** Local preprocessing and filtering
+- **Real-time monitoring:** Device status and metrics visualization
+- **Alert management:** Thresholds, anomaly detection, multi-channel notifications
+- **Dashboards:** Industrial-grade large-screen displays
+- **History:** Storage, query, trend analysis
+- **Remote config:** Remote device config and firmware updates
+- **High availability:** Hot standby, automatic failover
 
 ---
 
@@ -32,10 +32,10 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│           设备层 (Field Devices)         │
+│         Field Devices                   │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │传感器  │ │  PLC   │ │ 智能仪表 │    │
-│  │采集器  │ │控制器  │ │          │    │
+│  │Sensors │ │  PLC   │ │ Smart    │    │
+│  │Collectors│ │Controllers│ │ Meters  │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │           │          │
@@ -43,33 +43,33 @@
        │ RS485     │ TCP/IP   │ API
        ▼           ▼          ▼
 ┌─────────────────────────────────────────┐
-│          可视化网关 (Gateway)            │
+│         Visual Gateway                  │
 │  ┌─────────────────────────────────┐   │
-│  │   协议适配层                     │   │
-│  │  Modbus  MQTT  HTTP  TCP/UDP   │   │
+│  │   Protocol adaptation           │   │
+│  │   Modbus  MQTT  HTTP  TCP/UDP   │   │
 │  └─────────────────────────────────┘   │
 │  ┌─────────────────────────────────┐   │
-│  │   数据处理层                     │   │
-│  │  Parse  Filter  Calculate      │   │
+│  │   Data processing               │   │
+│  │   Parse  Filter  Calculate      │   │
 │  └─────────────────────────────────┘   │
 │  ┌─────────────────────────────────┐   │
-│  │   本地服务层                     │   │
-│  │  Cache  Rules  Alerts          │   │
+│  │   Local services                │   │
+│  │   Cache  Rules  Alerts          │   │
 │  └─────────────────────────────────┘   │
 └──────────────┬──────────────────────────┘
                │
          ┌─────┴─────┐
          │           │
 ┌────────▼───┐  ┌────▼──────────┐
-│  本地存储   │  │   云端同步     │
-│  SQLite    │  │  WebSocket    │
+│ Local Store│  │ Cloud Sync    │
+│ SQLite     │  │ WebSocket     │
 └────────────┘  └───────────────┘
                         │
 ┌───────────────────────▼─────────────────┐
-│           云端平台                       │
+│         Cloud Platform                   │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 数据存储 │ │ 可视化   │ │ 告警    │ │
-│  │ 时序数据库│ │ 大屏     │ │ 中心    │ │
+│  │ Time-series│ │ Viz     │ │ Alert   │ │
+│  │ Storage  │ │ Dashboard│ │ Center  │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -78,128 +78,128 @@
 
 ## Technologies
 
-### 协议层
-- **Modbus RTU/TCP** - 工业标准协议
-- **MQTT** - 物联网消息协议
-- **HTTP/REST** - API接入
-- **TCP/UDP** - 自定义协议
-- **RS485/RS232** - 串口通信
+### Protocols
+- **Modbus RTU/TCP** – Industrial standard
+- **MQTT** – IoT messaging
+- **HTTP/REST** – API access
+- **TCP/UDP** – Custom protocols
+- **RS485/RS232** – Serial
 
-### 网关开发
-- **Java** - 网关核心服务
-- **Spring Boot** - 应用框架
-- **Netty** - 高性能网络通信
-- **SQLite** - 本地嵌入式数据库
+### Gateway
+- **Java** – Core service
+- **Spring Boot** – Application framework
+- **Netty** – High-performance I/O
+- **SQLite** – Local embedded DB
 
-### 可视化
-- **Vue.js** - 前端框架
-- **ECharts** - 数据可视化图表
-- **WebSocket** - 实时数据推送
-- **DataV** - 大屏展示组件
+### Visualization
+- **Vue.js** – Frontend
+- **ECharts** – Charts
+- **WebSocket** – Real-time push
+- **DataV** – Large-screen components
 
-### 数据存储
-- **InfluxDB** - 时序数据库
-- **MySQL** - 配置和元数据
-- **Redis** - 缓存和实时数据
-- **MongoDB** - 日志和非结构化数据
+### Storage
+- **InfluxDB** – Time-series
+- **MySQL** – Config and metadata
+- **Redis** – Cache and real-time
+- **MongoDB** – Logs and unstructured
 
-### 部署
-- **Docker** - 容器化部署
-- **Linux** - 网关操作系统
-- **Nginx** - 反向代理
+### Deployment
+- **Docker** – Containerization
+- **Linux** – Gateway OS
+- **Nginx** – Reverse proxy
 
 ---
 
 ## Key Achievements
 
-- ✅ **10+种协议** - 支持主流工业通信协议
-- ✅ **毫秒级延迟** - 数据采集到展示延迟<100ms
-- ✅ **7×24稳定** - 工业级稳定性，持续运行
-- ✅ **千级设备** - 单网关支持上千设备接入
-- ✅ **多场景部署** - 工厂、楼宇、能源等多场景
+- ✅ **10+ protocols** – Mainstream industrial protocols supported
+- ✅ **Sub-100ms latency** – From acquisition to display
+- ✅ **24/7 stability** – Industrial-grade uptime
+- ✅ **1000+ devices** – Single gateway scale
+- ✅ **Multi-scenario** – Factories, buildings, energy, etc.
 
 ---
 
 ## Responsibilities
 
-### 系统架构设计
-- 设计分层网关架构（协议层/处理层/服务层）
-- 制定数据流转和存储策略
-- 高可用和故障转移方案
-- 扩展性设计，支持新协议接入
+### Architecture
+- Layered gateway (protocol / processing / service)
+- Data flow and storage strategy
+- HA and failover design
+- Extensibility for new protocols
 
-### 协议适配开发
-- 开发Modbus、MQTT等协议适配器
-- 实现协议解析和数据转换
-- 自定义协议支持
-- 串口和网络通信开发
+### Protocol Adapters
+- Modbus, MQTT, and other adapters
+- Parsing and data transformation
+- Custom protocol support
+- Serial and network I/O
 
-### 后端服务开发
-- 数据采集和预处理服务
-- 告警规则和引擎开发
-- 数据存储和查询服务
-- 远程配置和OTA升级
+### Backend
+- Data ingestion and preprocessing
+- Alert rules and engine
+- Storage and query
+- Remote config and OTA
 
-### 可视化大屏
-- 设计可视化界面和数据展示
-- 开发实时数据看板
-- 告警可视化展示
-- 响应式布局适配
+### Dashboards
+- Visualization and layout
+- Real-time dashboards
+- Alert display
+- Responsive layout
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 多协议兼容性
-**问题:** 不同厂家设备使用不同通信协议  
-**解决:** 设计可插拔协议适配器架构，标准化数据模型
+### Challenge 1: Multi-Protocol Compatibility
+**Problem:** Different vendors, different protocols.  
+**Solution:** Pluggable adapter architecture, standardized data model.
 
-### Challenge 2: 大数据量处理
-**问题:** 大量设备高频数据，系统压力大  
-**解决:** 边缘计算预处理，数据压缩，批量入库，分级存储
+### Challenge 2: High Data Volume
+**Problem:** Many devices, high frequency; system load.  
+**Solution:** Edge preprocessing, compression, batch write, tiered storage.
 
-### Challenge 3: 实时性要求
-**问题:** 工业场景需要毫秒级数据响应  
-**解决:** 内存缓存，WebSocket推送，异步处理，数据库优化
+### Challenge 3: Real-Time Requirements
+**Problem:** Millisecond-level response in industrial use.  
+**Solution:** In-memory cache, WebSocket push, async processing, DB tuning.
 
-### Challenge 4: 现场环境复杂
-**问题:** 电磁干扰、网络不稳定等恶劣环境  
-**解决:** 断点续传，本地缓存，看门狗机制，硬件加固
+### Challenge 4: Harsh Environments
+**Problem:** EMI, unstable network in the field.  
+**Solution:** Resume transfer, local cache, watchdog, hardware hardening.
 
 ---
 
 ## Results & Impact
 
-- **广泛应用** - 部署于多个工厂、楼宇项目
-- **数据整合** - 统一接入多种异构设备
-- **效率提升** - 实时监控减少人工巡检
-- **成本降低** - 边缘计算减少带宽和云端成本
-- **数字化** - 助力企业数字化转型
+- **Wide deployment** – Multiple factories and building projects
+- **Unified data** – Single gateway for heterogeneous devices
+- **Efficiency** – Real-time monitoring reduced manual inspection
+- **Cost** – Edge computing reduced bandwidth and cloud cost
+- **Digitalization** – Support for enterprise digital initiatives
 
 ---
 
 ## Evidence
 
-![网关架构](images/gateway-arch.png)
-*可视化网关系统架构*
+![Gateway architecture](images/gateway-arch.png)
+*Visual gateway architecture*
 
-![数据大屏](images/dashboard.png)
-*工业数据可视化大屏*
+![Dashboard](images/dashboard.png)
+*Industrial data dashboard*
 
-![设备监控](images/device-monitor.png)
-*设备实时监控界面*
+![Device monitor](images/device-monitor.png)
+*Real-time device monitoring*
 
 ---
 
 ## Skills Demonstrated
 
-- **工业协议:** Modbus, MQTT, RS485, TCP/IP
-- **后端开发:** Java, Spring Boot, Netty, 高并发
-- **数据可视化:** Vue.js, ECharts, WebSocket, 大屏设计
-- **数据库:** 时序数据库, MySQL, Redis, 数据建模
-- **IoT架构:** 边缘计算, 协议网关, 分布式系统
-- **DevOps:** Docker, Linux, 部署运维
+- **Industrial protocols:** Modbus, MQTT, RS485, TCP/IP
+- **Backend:** Java, Spring Boot, Netty, high concurrency
+- **Visualization:** Vue.js, ECharts, WebSocket, dashboard design
+- **Databases:** Time-series, MySQL, Redis, data modeling
+- **IoT architecture:** Edge computing, protocol gateway, distributed systems
+- **DevOps:** Docker, Linux, deployment and ops
 
 ---
 
-**Tags:** #IoT #工业物联网 #Modbus #MQTT #数据可视化 #Java #SpringBoot #Vue.js #边缘计算 #网关
+**Tags:** #IoT #IndustrialIoT #Modbus #MQTT #DataViz #Java #SpringBoot #Vue.js #EdgeComputing #Gateway

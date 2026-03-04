@@ -114,28 +114,46 @@ evidence:
   - type: iot_setup
     path: images/iot.png
 
+technical_innovations:
+  - name: Multi-site Cloud-Edge Sync
+    description: Synchronized production data across 5+ manufacturing bases with local caching
+    benefits:
+      - Resiliency against regional network outages
+      - Centralized management with localized performance
+  
+  - name: Heterogeneous IoT Orchestration
+    description: Unified backend service for managing RFID, barcode, and PLC-driven conveyor systems
+    benefits:
+      - Simplified integration of new hardware types
+      - Real-time synchronization of physical movement and digital records
+
+performance_metrics:
+  efficiency:
+    description: Production throughput improvement
+    achievement: >30% increase in overall production efficiency
+  availability:
+    description: System uptime in industrial environments
+    achievement: 99.9% uptime maintained over 6 years of operation
+  scale:
+    description: Multi-site expansion
+    achievement: Scaled from a single pilot to 5+ full-scale manufacturing bases
+
 skills_demonstrated:
   technical:
-    - Spring Boot
-    - Spring Cloud
-    - Microservices Architecture
-    - MySQL
-    - Redis
-    - MongoDB
-    - Docker
-    - Jenkins
-    - Nginx
-    - Linux Administration
-    - IoT Integration
+    - Spring Boot / Spring Cloud (Microservices)
+    - Java (Backend Development)
+    - MySQL / Redis / MongoDB (Polyglot Persistence)
+    - Docker / Jenkins / Nginx (DevOps)
+    - Industrial IoT (RFID, Barcode, Serial)
     - REST API Design
     - Database Optimization
+    - Linux Administration (CentOS)
   
   soft:
     - Technical Leadership
-    - Team Management
+    - Team Management (6 members)
     - Cross-functional Coordination
     - Agile Practices
-    - Stakeholder Communication
     - Project Planning
 
 related_to_roles:

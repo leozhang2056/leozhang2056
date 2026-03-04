@@ -1,30 +1,30 @@
-# 探视系统
+# Hospital Visit Management System
 
-> Hospital Visit Management System
+> Smart visit management for ICU, NICU, infectious wards: face-based access, booking, time control, and remote video visits.
 
 ---
 
 ## Overview
 
-医院智能探视管理系统，为医院ICU、新生儿科、传染病科等特殊科室提供智能化探视管理服务。支持人脸识别、预约管理、探视时间控制、远程视频探视等功能，提升医院管理效率和探视体验。
+A hospital visit management system for special wards (ICU, NICU, infectious disease, etc.). It provides face recognition access, booking, visit duration control, and remote video visits, improving both management efficiency and visitor experience.
 
-**项目类型:** 医疗信息化 / 智能硬件 / 人脸识别  
-**时间:** 2020 - 2022  
-**角色:** 全栈开发工程师  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** Healthcare IT / Smart Hardware / Face Recognition  
+**Timeline:** 2020 – 2022  
+**Role:** Full-stack Developer  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **人脸识别门禁:** 刷脸进出，防止陌生人进入
-- **预约探视:** 线上预约探视时段，避免排队
-- **时间管理:** 自动控制探视时长，到点提醒
-- **远程探视:** 视频探视，减少交叉感染风险
-- **家属管理:** 家属信息登记、人脸识别库管理
-- **医护人员通道:** 医护人员专用快速通道
-- **数据统计:** 探视记录、人流量统计分析
-- **对接HIS:** 与医院信息系统对接
+- **Face recognition access:** Face-based entry/exit; blocks unauthorized access
+- **Visit booking:** Online booking of time slots to avoid queues
+- **Time management:** Automatic duration control and end-of-slot reminders
+- **Remote video visits:** Video visits to reduce cross-infection risk
+- **Family management:** Family registration and face database management
+- **Staff channel:** Dedicated fast lane for medical staff
+- **Statistics:** Visit records and footfall analysis
+- **HIS integration:** Integration with hospital information systems
 
 ---
 
@@ -32,38 +32,39 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│           门禁终端设备                   │
+│         Access Terminal Devices         │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │人脸识别│ │门禁控制│ │显示屏    │    │
-│  │摄像头  │ │电磁锁  │ │提示信息  │    │
+│  │Face Rec│ │Access  │ │ Display  │    │
+│  │ Camera │ │Lock    │ │ & Prompt  │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │IC卡读 │ │二维码  │ │语音播报  │    │
-│  │卡器    │ │扫描器  │ │模块      │    │
+│  │IC Card │ │QR Code │ │ Voice    │    │
+│  │ Reader │ │Scanner │ │ Announce │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │           │          │
        └───────────┴──────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       Android 终端控制系统               │
+│       Android Terminal Control           │
 │  ┌─────────────────────────────────┐   │
-│  │  - 人脸识别和比对                │   │
-│  │  - 门禁开关控制                  │   │
-│  │  - 本地人脸识别库                │   │
-│  │  - 网络同步和离线模式            │   │
+│  │  - Face recognition & match      │   │
+│  │  - Access lock control           │   │
+│  │  - Local face database           │   │
+│  │  - Network sync & offline mode   │   │
 │  └─────────────────────────────────┘   │
 └──────────────────┬──────────────────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       探视管理平台                       │
+│        Visit Management Platform         │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 预约管理 │ │ 家属管理 │ │ 探视    │ │
-│  │ 时段控制 │ │ 人脸库   │ │ 记录    │ │
+│  │ Booking  │ │ Family   │ │ Visit   │ │
+│  │ & Slots  │ │ Face DB  │ │ Records │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 视频探视 │ │ 统计报表 │ │ 系统   │ │
-│  │ 对接HIS  │ │ 数据分析 │ │ 设置   │ │
+│  │ Video    │ │ Reports  │ │ System  │ │
+│  │ Visit    │ │ & Stats  │ │ Config  │ │
+│  │ HIS      │ │          │ │         │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -72,134 +73,133 @@
 
 ## Technologies
 
-### 人脸识别
-- **人脸检测算法** - 快速人脸检测
-- **人脸识别SDK** - 高精度人脸比对
-- **活体检测** - 防止照片/视频欺骗
-- **人脸库管理** - 家属人脸特征管理
+### Face Recognition
+- **Face detection** – Fast detection
+- **Face SDK** – High-accuracy matching
+- **Liveness** – Anti photo/video spoofing
+- **Face database** – Family feature management
 
-### 门禁控制
-- **电磁锁控制** - 门禁开关
-- **门磁传感器** - 门状态检测
-- **红外感应** - 人员检测
-- **语音播报** - 提示和引导
+### Access Control
+- **Electromagnetic lock** – Door control
+- **Door sensor** – Door state
+- **IR sensor** – Presence detection
+- **Voice** – Prompts and guidance
 
-### 移动端
-- **微信小程序** - 家属预约端
-- **Android APP** - 管理端
-- **Web管理后台** - 医院管理端
+### Mobile
+- **WeChat Mini Program** – Family booking
+- **Android app** – Management
+- **Web admin** – Hospital management
 
-### 后端
-- **Spring Boot** - 业务服务
-- **MySQL** - 数据存储
-- **Redis** - 缓存和会话
-- **WebRTC** - 视频探视
+### Backend
+- **Spring Boot** – Business services
+- **MySQL** – Data storage
+- **Redis** – Cache and session
+- **WebRTC** – Video visits
 
-### 集成
-- **HIS接口** - 医院信息系统对接
-- **消息推送** - 微信模板消息
-- **短信网关** - 短信通知
+### Integration
+- **HIS interface** – Hospital system integration
+- **WeChat template messages** – Notifications
+- **SMS gateway** – SMS notifications
 
 ---
 
 ## Key Achievements
 
-- ✅ **<1秒识别** - 人脸识别速度
-- ✅ **99.5%准确率** - 人脸识别准确率
-- ✅ **30%效率提升** - 探视管理效率提升
-- ✅ **多科室部署** - ICU、新生儿科、传染科等
-- ✅ **零接触** - 疫情期间减少交叉感染
+- ✅ **<1s recognition** – Face recognition speed
+- ✅ **99.5% accuracy** – Face recognition accuracy
+- ✅ **~30% efficiency gain** – Visit management
+- ✅ **Multi-ward deployment** – ICU, NICU, infectious, etc.
+- ✅ **Contact reduction** – Remote video during pandemic
 
 ---
 
 ## Responsibilities
 
-### 人脸识别系统
-- 开发门禁终端人脸识别功能
-- 人脸特征提取和比对算法
-- 活体检测防作弊
-- 本地人脸库管理和同步
+### Face Recognition
+- Access terminal face recognition
+- Feature extraction and matching
+- Liveness anti-spoofing
+- Local face DB and sync
 
-### 门禁控制开发
-- 电磁锁控制逻辑
-- 门状态检测和报警
-- 语音播报系统
-- 异常情况处理
+### Access Control
+- Lock control logic
+- Door state and alarms
+- Voice announcements
+- Exception handling
 
-### 预约系统开发
-- 微信小程序预约功能
-- 探视时段管理
-- 预约提醒和通知
-- 预约数据统计
+### Booking
+- WeChat Mini Program booking
+- Time slot management
+- Reminders and notifications
+- Booking statistics
 
-### 视频探视
-- WebRTC视频通话集成
-- 探视房间管理
-- 探视时长控制
-- 视频录制和存档
+### Video Visits
+- WebRTC integration
+- Room management
+- Duration control
+- Recording and archive
 
-### 后台管理
-- 家属信息管理
-- 人脸库管理
-- 探视记录查询
-- 统计报表生成
-- HIS系统对接
+### Admin
+- Family and face DB management
+- Visit record query
+- Reports
+- HIS integration
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 口罩识别
-**问题:** 疫情期间家属戴口罩，影响识别率  
-**解决:** 口罩人脸识别算法优化，眼部特征加强
+### Challenge 1: Masked Faces
+**Problem:** Masks during pandemic reduced recognition.  
+**Solution:** Mask-aware algorithm, stronger eye-region features.
 
-### Challenge 2: 网络不稳定
-**问题:** 医院内网环境复杂，网络不稳定  
-**解决:** 本地人脸库缓存，离线识别模式，数据同步机制
+### Challenge 2: Unstable Network
+**Problem:** Complex hospital networks.  
+**Solution:** Local face cache, offline recognition, sync when online.
 
-### Challenge 3: 探视时间控制
-**问题:** 严格控制探视时长，避免超时  
-**解决:** 自动计时，提前提醒，到点自动关闭门禁
+### Challenge 3: Visit Duration
+**Problem:** Strict time limits, no overstay.  
+**Solution:** Auto timer, advance reminder, auto lock at end of slot.
 
-### Challenge 4: 隐私保护
-**问题:** 家属信息和探视记录需要严格保密  
-**解决:** 数据加密存储，权限控制，操作日志审计
+### Challenge 4: Privacy
+**Problem:** Family data and visit records must be protected.  
+**Solution:** Encrypted storage, access control, audit logs.
 
 ---
 
 ## Results & Impact
 
-- **管理效率** - 探视管理效率提升30%
-- **秩序改善** - 避免探视高峰期拥堵
-- **安全保障** - 防止无关人员进入特殊科室
-- **疫情防护** - 减少接触，支持远程视频探视
-- **数据支撑** - 探视数据为医院管理提供依据
-- **家属满意** - 预约制减少等待，体验提升
+- **Efficiency** – ~30% improvement in visit management
+- **Order** – Less congestion at peak times
+- **Security** – Unauthorized access prevented
+- **Infection control** – Less contact; remote video option
+- **Data** – Visit data for hospital management
+- **Satisfaction** – Booking reduced wait time
 
 ---
 
 ## Evidence
 
-![门禁终端](images/access-terminal.png)
-*人脸识别门禁终端*
+![Access terminal](images/access-terminal.png)
+*Face recognition access terminal*
 
-![预约小程序](images/booking-miniapp.png)
-*家属预约微信小程序*
+![Booking miniapp](images/booking-miniapp.png)
+*Family booking WeChat Mini Program*
 
-![管理后台](images/visit-admin.png)
-*探视管理后台*
+![Visit admin](images/visit-admin.png)
+*Visit management backend*
 
 ---
 
 ## Skills Demonstrated
 
-- **人脸识别:** 人脸检测、特征提取、活体检测
-- **Android开发:** 门禁终端应用、硬件集成
-- **微信小程序:** 预约功能、用户交互
-- **视频通话:** WebRTC、实时通信
-- **后端开发:** Spring Boot、数据管理
-- **医疗集成:** HIS对接、数据安全
+- **Face recognition:** Detection, features, liveness
+- **Android:** Terminal app, hardware integration
+- **WeChat Mini Program:** Booking, UX
+- **Video:** WebRTC, real-time communication
+- **Backend:** Spring Boot, data management
+- **Healthcare:** HIS integration, data security
 
 ---
 
-**Tags:** #人脸识别 #医疗信息化 #门禁系统 #微信小程序 #Android #医院管理 #预约系统 #视频通话
+**Tags:** #FaceRecognition #Healthcare #AccessControl #WeChatMiniapp #Android #WebRTC #Hospital

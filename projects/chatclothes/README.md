@@ -5,17 +5,14 @@
 
 ---
 
-## Overview
+## 1. Introduction & Overview
 
 ChatClothes is a state-of-the-art multimodal AI virtual try-on (VTON) system that bridges vision-language interaction with diffusion-based generation. The system integrates controllable diffusion-based generation with dialogue-driven garment interaction, providing a unified framework for scalable, user-centered, and device-adaptable fashion AI systems.
 
-### Key Innovations
+![System Demo](images/demo.png)
+*ChatClothes in action: From natural language request to high-fidelity virtual try-on result*
 
-- **Natural Language Control:** DeepSeek LLM interprets natural language instructions and transforms them into structured prompts
-- **LoRA Fine-tuning:** Enhanced OOTDiffusion model with improved pose alignment, hand generation, and texture reconstruction
-- **YOLO12n-LC:** Lightweight classifier optimized for edge deployment
-- **Dialogue-Driven Interaction:** Intuitive conversational interface for iterative refinement
-
+### Project Details
 **Project Type:** AI Research / Master's Thesis  
 **Timeline:** November 2024 - April 2025  
 **Role:** Sole Developer & System Designer  
@@ -24,93 +21,101 @@ ChatClothes is a state-of-the-art multimodal AI virtual try-on (VTON) system tha
 
 ---
 
-## System Architecture
+## 2. System Architecture & Components
 
-![System Architecture](images/arch.png)
-*Complete system architecture: LLM control → YOLO classification → Diffusion generation → Try-on results*
+The foundational architecture orchestrates LLMs, Computer Vision algorithms, and Generative Diffusion models.
 
-![Pipeline Overview](images/slide10_pipeline_overview.PNG)
-*Detailed pipeline workflow with ComfyUI + Dify + Ollama integration*
+| Architecture | Components | Data Flow | Pipeline Overview |
+| :---: | :---: | :---: | :---: |
+| ![Arch](images/arch.png) | ![Components](images/slide09_system_components.PNG) | ![Data Flow](images/slide08_data_flow.PNG) | ![Pipeline](images/slide10_pipeline_overview.PNG) |
 
 ---
 
-## Key Features
+## 3. Core Technical Workflow
 
-- **Multimodal Input:** Natural language descriptions, image uploads, or combined inputs
-- **LLM-Powered Control:** DeepSeek interprets instructions for intuitive user interaction
-- **Enhanced Generation:** LoRA-fine-tuned OOTDiffusion for realistic clothing synthesis
-- **Efficient Classification:** YOLO12n-LC lightweight garment detection
-- **Edge Deployment:** Optimized for Raspberry Pi 5 with offline capability
-- **Dialogue Interface:** Conversational refinement for iterative improvements
-- **Web Interface:** Browser-based interaction with real-time preview
-- **Comprehensive Validation:** Tested on DressCode and VITON-HD datasets
+### 3.1 Vision-Language Input & Interaction (LLM)
+Natural language instructions are processed by **DeepSeek LLM** to generate structured prompts and control signals.
+
+| Multi-modal Input | Dify Orchestration |
+| :---: | :---: |
+| ![Input](images/slide12_multimodal_input.PNG) | ![Dify](images/slide14_dify_integration.PNG) |
+
+### 3.2 Intelligent Pre-processing (YOLO & Computer Vision)
+Before generation, the input source and target images are strictly analyzed to preserve structural facts.
+
+| YOLO Garment Detection | Body Pose Estimation | Semantic Segmentation |
+| :---: | :---: | :---: |
+| ![YOLO](images/slide02_yolo_detection.PNG) | ![Pose](images/slide03_pose_estimation.PNG) | ![Segmentation](images/slide04_clothing_segmentation.PNG) |
+
+### 3.3 Diffusion Generation & Post-Processing
+The core generative process uses **OOTDiffusion** enhanced with **LoRA** fine-tuning, managed entirely within custom ComfyUI workflows.
+
+| Diffusion Model | ComfyUI Workflow | Post-Processing | Quality Control |
+| :---: | :---: | :---: | :---: |
+| ![Diffusion](images/slide05_diffusion_model.PNG) | ![Workflow](images/slide13_comfyui_workflow.PNG) | ![Post](images/slide06_post_processing.PNG) | ![QC](images/slide07_quality_control.PNG) |
+
+---
+
+## 4. Results & Performance
+
+### 4.1 Try-On Quality & Accuracy
+The system maintains realistic fabric textures, poses, and shading across different physical builds and garments.
+
+![Results Grid](images/slide15_results.PNG)
+*Qualitative try-on results*
+
+| Performance Evaluation | Accuracy Metrics |
+| :---: | :---: |
+| ![Performance](images/slide17_performance.PNG) | ![Accuracy](images/slide18_accuracy.PNG) |
+
+### 4.2 Application Environments & Deployment
+
+The application adapts elegantly from local Edge Devices directly to Cloud Enterprise and Mobile platforms.
+
+| Edge Deployment (RPi 5) | Mobile App UI | Cloud Deployment | E-Commerce Integration |
+| :---: | :---: | :---: | :---: |
+| ![Edge](images/slide11_edge_deployment.PNG) | ![Mobile](images/slide22_mobile_app.PNG) | ![Cloud](images/slide23_cloud_deployment.PNG) | ![Ecommerce](images/slide24_ecommerce_integration.PNG) |
+
+---
+
+## 5. User Testing & Validation
+
+The system successfully underwent intensive integration testing and practical user testing.
+
+| Complete Interface | Demo Workflow | Test Cases | User Testing Results |
+| :---: | :---: | :---: | :---: |
+| ![UI](images/slide16_user_interface.PNG) | ![Demo Flow](images/slide28_demo_workflow.PNG) | ![Test Cases](images/slide29_test_cases.PNG) | ![User Test](images/slide30_user_testing.PNG) |
+
+---
+
+## 6. Research Impact & Future Outlook
+
+I independently addressed the key challenges in the domain of virtual try-on, delivering real technical innovation and research contributions.
+
+| Technical Innovation | Research Contribution |
+| :---: | :---: |
+| ![Innovation](images/slide26_technical_innovation.PNG) | ![Contribution](images/slide25_research_contribution.PNG) |
+
+| Challenges Solved | Optimizations Applied | Future Work Roadmap |
+| :---: | :---: | :---: |
+| ![Challenges](images/slide19_challenges.PNG) | ![Optimization](images/slide20_optimization.PNG) | ![Future](images/slide21_future_work.PNG) |
+
+### Conclusion
+
+![Conclusion](images/slide31_conclusion.PNG)
 
 ---
 
 ## Technical Stack
-
-### AI/ML Core
-- **DeepSeek** - LLM for natural language understanding
-- **OOTDiffusion** - State-of-the-art virtual try-on model
-- **LoRA** - Fine-tuning for enhanced performance
-- **YOLO12n-LC** - Lightweight garment classifier
-- **PyTorch** - Deep learning framework
-
-### Platforms
-- **Dify** - Workflow orchestration
-- **ComfyUI** - Visual pipeline management
-- **Ollama** - Local LLM hosting
-- **Raspberry Pi 5** - Edge deployment
-
-### Languages
-- **Python** - Core development
-- **JavaScript** - Frontend interface
-
----
-
-## Key Achievements
-
-### Project Milestones
-- ✅ **Thesis completed 6 months early** (submitted April 2025)
-- ✅ **Full-stack AI solution** - End-to-end system independently built
-- ✅ **Edge deployment** - Optimized for Raspberry Pi 5
-- ✅ **Comprehensive validation** - Tested on standard benchmarks
-
-### Technical Accomplishments
-- ✅ **LoRA fine-tuning** - Enhanced pose alignment, hand generation, texture reconstruction
-- ✅ **YOLO12n-LC development** - Lightweight classifier for edge deployment
-- ✅ **Natural language integration** - Dialogue-driven garment interaction
-- ✅ **Offline capability** - Full functionality without internet
-
-### Research Impact
-- ✅ **Unified framework** - Vision-language interaction with diffusion generation
-- ✅ **Device adaptability** - Edge deployment feasibility demonstrated
-- ✅ **Interactive paradigm** - Novel dialogue-driven approach
-
----
-
-## Applications
-
-**E-commerce:** Virtual try-on for online shopping with reduced return rates  
-**AR Fitting Mirrors:** In-store augmented reality fitting experiences  
-**Personalization:** Customized outfit recommendations and style exploration  
-**Automated Design:** AI-powered fashion design assistance and rapid prototyping
-
----
-
-## Quick Links
-
-- 📄 [Technical Details](TECHNICAL_DETAILS.md) - Architecture, implementation, and optimization
-- 📊 [Experiments & Results](EXPERIMENTS.md) - Datasets, metrics, and evaluation
-- 🖼️ [Image Gallery](IMAGES.md) - Complete visual documentation
-- 📖 [Thesis](http://hdl.handle.net/10292/20210) - Full academic thesis (AUT Open Repository)
-- 📹 [Demo Video](#) - Available upon request
-- 📥 [Documentation](#) - Deployment guide and API documentation
-
----
+- **AI/ML Core:** DeepSeek LLM, PyTorch, OOTDiffusion, LoRA, YOLO12n-LC
+- **Platforms:** Dify, ComfyUI, Ollama, Raspberry Pi 5
+- **Languages:** Python, JavaScript
 
 ## Citation
 
+If you find this project useful for your research, please consider citing our work:
+
+### Master's Thesis
 ```bibtex
 @mastersthesis{zhang2025chatclothes,
   title={ChatClothes: An AI-Powered Virtual Try-On System},
@@ -122,16 +127,17 @@ ChatClothes is a state-of-the-art multimodal AI virtual try-on (VTON) system tha
 }
 ```
 
----
-
-## Contact
-
-**Author:** Yuchao Zhang  
-**Supervisor:** Dr. Wei Qi Yan  
-**Institution:** Auckland University of Technology (AUT)  
-**Department:** Computer and Information Sciences  
-**DOI:** [10.10292/20210](http://dx.doi.org/10.10292/20210)
-
----
+### Conference Publication
+```bibtex
+@inproceedings{Zhang2025ChatClothes,
+  author    = {Yuchao Zhang and Kien Tran and Minh Nguyen and Wei Qi Yan},
+  title     = {ChatClothes: A Lightweight Diffusion-Based Virtual Try-On System with Multimodal Control},
+  booktitle = {Proceedings of the 40th International Conference on Image and Vision Computing New Zealand (IVCNZ 2025)},
+  year      = {2025},
+  month     = {Nov},
+  address   = {Wellington, New Zealand},
+  doi       = {10.1109/IVCNZ67716.2025.11281834}
+}
+```
 
 **Tags:** #AI #VirtualTryOn #DiffusionModels #LLM #LoRA #YOLO #EdgeComputing #Thesis

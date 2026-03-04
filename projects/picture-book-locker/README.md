@@ -1,30 +1,30 @@
-# 绘本储物柜
+# Picture Book Locker / Smart Library Cabinet
 
-> Picture Book Locker / Smart Library Cabinet
+> 24/7 self-service borrow/return for school and community libraries, with face recognition, QR code, and card support.
 
 ---
 
 ## Overview
 
-智能绘本储物柜系统，为学校图书馆和社区阅读点提供24小时自助借还书服务。支持人脸识别、二维码、刷卡等多种借阅方式，配备智能灯控和消毒功能，实现图书的智能化管理。
+A smart picture-book locker system for school and community libraries. It provides 24-hour self-service borrow and return with face recognition, QR code, and card options, plus smart lighting and UV disinfection for hygienic book handling.
 
-**项目类型:** IoT / 智慧图书馆 / 自助服务  
-**时间:** 2020 - 2023  
-**角色:** Android开发工程师 / 嵌入式开发  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** IoT / Smart Library / Self-Service  
+**Timeline:** 2020 – 2023  
+**Role:** Android Developer / Embedded Development  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **人脸识别借阅:** 刷脸即可快速借还书
-- **多种认证:** 支持二维码、IC卡、密码等多种方式
-- **智能柜门:** 自动弹开对应格口，LED灯带指引
-- **图书消毒:** 内置紫外线消毒模块
-- **库存管理:** 实时库存查询，图书位置追踪
-- **借阅记录:** 完整的借阅历史和逾期提醒
-- **后台管理:** 图书上下架、统计分析、远程监控
-- **多柜组网:** 多个柜子联网统一管理
+- **Face recognition borrow:** Quick borrow/return by face
+- **Multiple auth:** QR code, IC card, PIN
+- **Smart doors:** Auto-open target compartment, LED guidance
+- **UV disinfection:** Built-in UV module
+- **Inventory:** Real-time stock and location
+- **Borrow history:** Full history and overdue reminders
+- **Admin:** Stock management, analytics, remote monitoring
+- **Multi-cabinet:** Multiple units networked and managed together
 
 ---
 
@@ -32,35 +32,36 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│           硬件层                         │
+│            Hardware Layer               │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │主控板  │ │电磁锁  │ │消毒模块  │    │
-│  │ARM    │ │控制器  │ │UV灯      │    │
+│  │ Main   │ │Solenoid│ │ UV       │    │
+│  │ Board  │ │ Lock   │ │ Module   │    │
+│  │ (ARM)  │ │Control │ │          │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │人脸识别│ │二维码  │ │LED灯带   │    │
-│  │摄像头  │ │扫描器  │ │状态指示  │    │
+│  │Face Rec│ │QR Code │ │ LED      │    │
+│  │ Camera │ │Scanner │ │ Strip    │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │           │          │
        └───────────┴──────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       Android 主控系统                   │
+│       Android Main Control                │
 │  ┌─────────────────────────────────┐   │
-│  │  - 人脸识别 SDK                  │   │
-│  │  - 二维码扫描                    │   │
-│  │  - 串口通信 (锁控/传感器)        │   │
-│  │  - 本地数据库                    │   │
-│  │  - 网络同步                      │   │
+│  │  - Face recognition SDK         │   │
+│  │  - QR code scan                  │   │
+│  │  - Serial (lock/sensors)         │   │
+│  │  - Local DB                      │   │
+│  │  - Network sync                  │   │
 │  └─────────────────────────────────┘   │
 └──────────────────┬──────────────────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       后端服务 (Spring Boot)             │
+│       Backend (Spring Boot)              │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 借阅服务 │ │ 图书管理 │ │ 用户    │ │
-│  │ 库存服务 │ │ 消息通知 │ │ 统计    │ │
+│  │ Borrow   │ │ Book     │ │ User    │ │
+│  │ Inventory│ │ Notify   │ │ Stats   │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -69,124 +70,165 @@
 
 ## Technologies
 
-### Android 主控
-- **Android SDK** - 主控系统开发
-- **Java/Kotlin** - 开发语言
-- **人脸识别 SDK** - 刷脸认证
-- **ZXing** - 二维码扫描
-- **SQLite** - 本地数据缓存
+### Android
+- **Android SDK** – Main control app
+- **Java/Kotlin** – Language
+- **Face SDK** – Face auth
+- **ZXing** – QR scanning
+- **SQLite** – Local cache
 
-### 嵌入式硬件
-- **ARM 主控板** - 核心控制器
-- **电磁锁控制** - 柜门开关
-- **UART/RS485** - 硬件通信
-- **GPIO 控制** - LED、消毒灯
-- **传感器集成** - 门磁、温度等
+### Embedded
+- **ARM main board** – Controller
+- **Solenoid lock** – Door control
+- **UART/RS485** – Hardware comms
+- **GPIO** – LED, UV control
+- **Sensors** – Door, temperature, etc.
 
-### 后端
-- **Spring Boot** - 服务框架
-- **MySQL** - 业务数据
-- **Redis** - 缓存和会话
-- **MQTT** - 设备通信
+### Backend
+- **Spring Boot** – Services
+- **MySQL** – Business data
+- **Redis** – Cache and session
+- **MQTT** – Device communication
 
-### 第三方集成
-- **微信/支付宝** - 扫码认证（可选）
-- **短信平台** - 通知和提醒
-- **推送服务** - 移动端通知
+### Third-Party
+- **WeChat/Alipay** – Scan auth (optional)
+- **SMS** – Notifications
+- **Push** – Mobile notifications
 
 ---
 
 ## Key Achievements
 
-- ✅ **24小时服务** - 无人值守自助借还
-- ✅ **<3秒借阅** - 人脸识别借阅平均耗时
-- ✅ **多校部署** - 部署于多所学校和图书馆
-- ✅ **消毒功能** - 图书自动紫外线消毒
-- ✅ **零丢失率** - 智能锁控确保图书安全
+- ✅ **24/7 service** – Unmanned self-service
+- ✅ **<3s borrow** – Average face-based borrow time
+- ✅ **Multi-site** – Deployed in multiple schools and libraries
+- ✅ **UV disinfection** – Automatic book disinfection
+- ✅ **Zero loss** – Lock control for book security
 
 ---
 
 ## Responsibilities
 
-### Android 主控开发
-- 开发储物柜主控Android应用
-- 集成人脸识别和二维码扫描
-- 实现串口通信与硬件交互
-- 本地数据库设计和同步逻辑
-- UI界面和交互流程设计
+### Android
+- Locker main control app
+- Face recognition and QR integration
+- Serial communication and hardware
+- Local DB and sync logic
+- UI and flows
 
-### 硬件集成
-- 电磁锁控制器对接
-- LED灯带控制实现
-- 消毒模块定时控制
-- 传感器数据采集
-- 硬件故障检测和报警
+### Hardware
+- Solenoid lock integration
+- LED strip control
+- UV module scheduling
+- Sensor data
+- Fault detection and alerts
 
-### 后端开发
-- 图书管理API开发
-- 借阅记录服务
-- 用户认证和权限
-- 消息通知服务
-- 数据统计报表
+### Backend
+- Book management APIs
+- Borrow record service
+- User auth and permissions
+- Notifications
+- Reports and stats
 
-### 部署调试
-- 现场安装和调试
-- 硬件联调测试
-- 用户培训和交付
+### Deployment
+- On-site installation and debugging
+- Hardware integration testing
+- User training and handover
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 人脸识别准确率
-**问题:** 儿童人脸识别难度高，准确率受影响  
-**解决:** 优化摄像头角度和光照，使用专门优化的人脸算法
+### Challenge 1: Face Recognition Accuracy
+**Problem:** Children’s faces harder to recognize.  
+**Solution:** Camera angle and lighting, child-optimized face algorithm.
 
-### Challenge 2: 硬件稳定性
-**问题:** 电磁锁长时间工作易发热故障  
-**解决:** 增加散热设计，定时巡检机制，故障自动切换
+### Challenge 2: Hardware Reliability
+**Problem:** Solenoid locks overheating over time.  
+**Solution:** Cooling, periodic checks, automatic failover.
 
-### Challenge 3: 网络不稳定
-**问题:** 图书馆网络环境差，经常断网  
-**解决:** 离线模式支持，本地数据缓存，断网续传
+### Challenge 3: Unstable Network
+**Problem:** Poor library network, frequent disconnects.  
+**Solution:** Offline mode, local cache, resume sync.
 
-### Challenge 4: 图书尺寸差异
-**问题:** 不同绘本尺寸差异大，格口设计难  
-**解决:** 多种格口规格设计，智能分配算法
+### Challenge 4: Book Size Variation
+**Problem:** Different book sizes, compartment design.  
+**Solution:** Multiple compartment sizes, allocation logic.
 
 ---
 
 ## Results & Impact
 
-- **便利借阅** - 学生可随时自助借还书
-- **延长服务** - 24小时服务，突破图书馆开放时间限制
-- **图书保护** - 自动消毒，保护儿童健康
-- **管理高效** - 自动统计和报表，减少人工管理成本
-- **多场景应用** - 学校、社区、商场等多场景部署
+- **Convenience** – Students can borrow/return anytime
+- **Extended hours** – 24/7 beyond library opening
+- **Hygiene** – UV disinfection for children
+- **Efficiency** – Auto stats and reports, less manual work
+- **Multi-scenario** – Schools, communities, malls
 
 ---
 
 ## Evidence
 
-![储物柜外观](images/locker-exterior.png)
-*智能绘本储物柜外观*
+### Hardware & Deployment / 硬件与部署现场
 
-![借阅界面](images/borrow-ui.png)
-*人脸识别借阅界面*
+![Picture book locker front](./images/picture-book-locker-front.png)  
+*Deployed picture-book locker with visible book slots and screen*
 
-![管理后台](images/library-admin.png)
-*图书管理后台*
+![Campus hallway deployment](./images/picture-book-locker-campus-hall.png)  
+*Two picture-book lockers installed in a school canteen corridor*
+
+![Smart library room exterior](./images/smart-library-room-exterior.jpg)  
+*24/7 smart library room built around the locker system*
+
+![Bank of China deployment](./images/picture-book-locker-bank-of-china.png)  
+*Outdoor deployment in front of a public site*
+
+### Locker Variants / 柜机款式
+
+![Locker exterior blue](./images/locker-exterior-blue-site.png)  
+*Blue locker cabinet with integrated touch screen*
+
+![Locker exterior green](./images/locker-exterior-green.jpg)  
+*Green picture-book locker with dense slots*
+
+![Locker exterior red](./images/locker-exterior-red.jpg)  
+*Red/grey locker variant with high capacity*
+
+![Locker exterior with gates](./images/locker-exterior-with-gates.png)  
+*Locker with anti-theft gates for entrance/exit control*
+
+![Locker exterior with gates (alt)](./images/locker-exterior-with-gates-alt.png)  
+*Alternative angle of locker plus gate combination*
+
+### UV & Night Mode / 消毒与夜间效果
+
+![Picture-book locker UV mode](./images/picture-book-locker-uv-mode.png)  
+*Locker running with illuminated UV/lighting effect*
+
+![Borrow UI close-up](./images/borrow-ui-closeup.png)  
+*Touch screen UI for borrow / return / exchange*
+
+![Borrow UI on device](./images/borrow-ui-on-device.png)  
+*Borrow UI running on the actual locker device*
+
+### Related Devices & Concept / 相关设备与概念图
+
+![Cartoon illustration locker](./images/locker-illustration-cartoon.png)  
+*Concept illustration showing a user interacting with the locker*
+
+![Smart cabinet recycle style](./images/smart-cabinet-recycle-style.jpg)  
+*Another IoT cabinet form factor used in similar scenarios*
 
 ---
 
 ## Skills Demonstrated
 
-- **Android开发:** 主控应用，人脸识别，二维码扫描
-- **嵌入式开发:** 串口通信，GPIO控制，硬件集成
-- **IoT架构:** 设备联网，MQTT通信，远程管理
-- **硬件调试:** 电磁锁，LED控制，传感器集成
-- **后端开发:** Spring Boot，图书管理业务逻辑
+- **Android:** Main control app, face recognition, QR scan
+- **Embedded:** Serial, GPIO, hardware integration
+- **IoT:** Device networking, MQTT, remote management
+- **Hardware:** Solenoid lock, LED, sensors
+- **Backend:** Spring Boot, book management logic
 
 ---
 
-**Tags:** #IoT #Android #人脸识别 #二维码 #智能储物柜 #图书馆 #嵌入式 #硬件集成 #SpringBoot
+**Tags:** #IoT #Android #FaceRecognition #QRCode #SmartLocker #Library #Embedded #SpringBoot

@@ -1,227 +1,138 @@
-# IoT Projects & Full-Stack Solutions
+# IoT Device Management Platform
 
-> Collection of industrial IoT, public service, and automation applications
+> Platform for users to manage purchased IoT devices; company products include smart switches and gateways. I developed the gateway and mobile app, and participated in platform development.
 
 ---
 
 ## Overview
 
-Throughout my tenure at Chunxiao Technology, I developed multiple full-stack solutions spanning industrial automation, public services, and IoT device integration. These projects demonstrate versatility across Android development, backend systems, and hardware integration.
+An **IoT management platform** where users can register, configure, and manage their purchased IoT devices. The company sells **smart switches** and **gateways**; the platform provides device binding, remote control, status monitoring, and related services. I **developed the gateway** (gateway software/firmware), **developed the mobile (phone) app** for device control and management, and **participated in platform** (backend and/or web) development.
 
-**Project Type:** Multiple IoT & Full-stack Projects  
-**Timeline:** 2013 - 2023  
-**Role:** Full-stack Engineer / System Administrator  
+**Project Type:** IoT Platform / Device Management / Product Development  
+**Timeline:** 2013 – 2023 (tenure at company)  
+**Role:** Gateway Developer, Mobile Developer, Platform Development (participated)  
 **Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
-## Projects
+## Platform & Products
 
-### 1. Forestry Patrol Application
+### Platform
+- Users manage **purchased IoT devices** in one place
+- Device registration, binding, grouping
+- Remote control, status monitoring, alerts
+- Account and device lifecycle management
 
-**Description:** Mobile application for forestry inspection with GPS tracking and photo documentation
+### Products Sold
+- **Smart switches** – Sold to end users; managed via platform and app
+- **Gateways** – Sold to end users; I developed the **gateway** software/firmware that connects devices to the platform and enables local/remote control
 
-**Features:**
-- GPS route tracking and recording
-- Photo logging with automatic geotags
-- Offline data collection with sync
-- Backend dashboard for monitoring patrol activities
-- Real-time location tracking on map interface
+### Screenshots
 
-**Technologies:**
-- Android SDK, Java, Kotlin
-- GPS/Location Services
-- Camera API
-- Spring Boot backend
-- Vue.js dashboard
-- MySQL database
+![IoT platform demo](./images/iot-platform-demo.png)  
+*IoT platform demo: exhibition area, mobile app UI, and smart access*
 
-**Impact:**
-- Improved patrol efficiency and coverage tracking
-- Digital documentation replacing paper records
-- Real-time monitoring for management
+![Gateway & smart switches](./images/gateway-smart-switches.jpg)  
+*Gateway (TXWG-LA) and smart micro-breakers (smart switches)*
 
 ---
 
-### 2. Smart Cabinet SDK
+## My Contributions
 
-**Description:** SDK for controlling smart locker and cabinet systems
+### Gateway Development
+- Designed and implemented gateway software/firmware
+- Device connectivity (e.g. smart switches and sensors via gateway)
+- Protocol implementation and data forwarding to platform
+- Local control and offline behavior
+- OTA and remote configuration support where applicable
 
-**Features:**
-- Lock control via Android app
-- Sensor monitoring (door, temperature, humidity)
-- Light control integration
-- REST API for backend communication
-- Hardware abstraction layer
-- Multi-device management
+### Mobile App (Phone)
+- Developed the **mobile application** for end users
+- Device discovery, binding, and management
+- Remote control of smart switches and gateway-connected devices
+- Real-time status and notifications
+- Integration with platform APIs
 
-**Technologies:**
-- Android SDK
-- UART/Serial communication
-- GPIO control
-- RESTful APIs
-- Hardware protocols
-- Spring Boot backend
-
-**Hardware Integration:**
-- Electronic locks
-- Door sensors
-- LED lights
-- Temperature sensors
-- Control boards
+### Platform (Participated)
+- Participated in **platform** (backend and/or web) development
+- APIs for device management, user accounts, and control
+- Possibly dashboards, rules, or admin tools (depending on actual scope)
 
 ---
 
-### 3. IoT Dashboard & Monitoring System
+## Architecture (Conceptual)
 
-**Description:** Real-time monitoring dashboard for IoT devices and energy systems
-
-**Features:**
-- Real-time sensor data visualization
-- Alert and notification system
-- Historical data analysis
-- Device management interface
-- Energy consumption tracking
-- Remote device control
-
-**Technologies:**
-- Vue.js frontend
-- Spring Boot backend
-- WebSocket for real-time updates
-- MongoDB for time-series data
-- Redis for caching
-- Chart.js for visualization
-
----
-
-### 4. Ad Display & Scheduling System
-
-**Description:** Digital signage management system for factory and retail displays
-
-**Features:**
-- Content scheduling and playlist management
-- Remote display monitoring
-- Multi-location support
-- Ad rotation and timing
-- Content upload and management
-- Playback status reporting
-
-**Technologies:**
-- Android player application
-- Web management portal
-- Spring Boot backend
-- MySQL database
-- File storage and CDN
-- REST APIs
+```
+┌─────────────────────────────────────────────────────────┐
+│                    End Users                             │
+│  ┌─────────────────┐         ┌─────────────────┐        │
+│  │  Mobile App     │         │  Web Portal     │        │
+│  │  (I developed)  │         │  (platform)     │        │
+│  └────────┬────────┘         └────────┬────────┘        │
+└───────────┼────────────────────────────┼─────────────────┘
+            │                            │
+            └────────────┬───────────────┘
+                         │
+            ┌────────────▼────────────┐
+            │   IoT Management       │
+            │   Platform (backend)   │
+            │   (I participated)      │
+            └────────────┬────────────┘
+                         │
+            ┌────────────▼────────────┐
+            │   Gateway               │
+            │   (I developed)         │
+            │   Smart switches, etc.  │
+            └─────────────────────────┘
+```
 
 ---
 
-### 5. System Administration & Maintenance
+## Technologies
 
-**Description:** Comprehensive IT support and system maintenance for production environments
+### Gateway
+- Embedded / Linux-based gateway stack
+- Protocol implementation (e.g. Zigbee, Z-Wave, WiFi, or proprietary)
+- UART/Serial, GPIO, or network interfaces to devices
+- Secure connection to cloud platform (e.g. MQTT, HTTPS)
 
-**Responsibilities:**
-- **Windows Server Management:**
-  - Windows Server 2012-2022 administration
-  - IIS site binding and SSL certificate configuration
-  - Port setup and firewall rules
-  - Active Directory basics and group policy
-  - Remote Desktop Services
+### Mobile
+- Android SDK, Java/Kotlin
+- REST/WebSocket to platform
+- Device discovery and control flows
+- Push notifications
 
-- **Deployment & Automation:**
-  - Automated deployment pipelines
-  - Backup automation (cron, Task Scheduler, rsync)
-  - System monitoring and alerting
-  - 99.9% uptime maintenance
-
-- **File Sync & Collaboration:**
-  - OneDrive integration
-  - Dropbox setup
-  - SFTP/rsync for secure transfers
-  - Shared folder management
-
-- **Legacy System Migration:**
-  - Migrated 6+ legacy systems to new servers
-  - Data migration and validation
-  - Zero-downtime cutover strategies
-  - Rollback planning
+### Platform (backend / web)
+- Spring Boot (or equivalent) backend
+- RESTful APIs, WebSocket for real-time
+- MySQL / Redis for data and session
+- Vue.js or similar for admin/dashboard if applicable
 
 ---
 
 ## Key Achievements
 
-- ✅ **6+ legacy systems** successfully migrated
-- ✅ **99.9% uptime** maintained across systems
-- ✅ **Multiple IoT integrations** completed
-- ✅ **Full-stack delivery** from mobile to backend
-- ✅ **Hardware protocol** implementations
-- ✅ **Automated backup** systems deployed
+- ✅ **Gateway** – Delivered gateway product used by customers on the platform
+- ✅ **Mobile app** – Full-featured app for device management and control
+- ✅ **Platform** – Contributed to backend/APIs and device lifecycle on the platform
+- ✅ **End-to-end** – Users can purchase smart switches and gateways and manage them via app and platform
 
 ---
 
-## Technologies Summary
+## Other Work (Same Tenure)
 
-### Mobile
-- Android SDK, Java, Kotlin
-- GPS/Location Services
-- Camera API
-- Hardware integration
-- UART/Serial communication
-
-### Backend
-- Spring Boot
-- RESTful APIs
-- MySQL, MongoDB, Redis
-- WebSocket
-
-### Frontend
-- Vue.js
-- HTML/CSS/JavaScript
-- Chart.js
-- Real-time dashboards
-
-### DevOps & Admin
-- Windows Server (2012-2022)
-- IIS, SSL/TLS
-- Active Directory
-- Automated backups
-- Linux (CentOS, Ubuntu)
-
-### Hardware
-- RFID
-- Barcode scanners
-- Sensors (temperature, door, etc.)
-- Electronic locks
-- GPIO/UART control
-
----
-
-## Evidence
-
-![Forestry App](images/forestry-app.png)
-*Forestry patrol mobile application*
-
-![Smart Cabinet](images/smart-cabinet.png)
-*Smart cabinet control interface*
-
-![IoT Dashboard](images/iot-dashboard.png)
-*IoT monitoring dashboard*
-
-![Server Monitoring](images/server-monitor.png)
-*System administration dashboard*
+During the same period I also contributed to other internal and client projects, including forestry patrol apps, smart cabinet SDKs, IoT dashboards, ad display systems, and system administration. These demonstrate broader full-stack and IoT experience alongside the core platform and product work above.
 
 ---
 
 ## Skills Demonstrated
 
-- **Full-stack Development:** Android, backend, frontend
-- **IoT Integration:** Hardware protocols, sensor integration
-- **System Administration:** Windows/Linux servers, deployment
-- **Mobile Development:** GPS, camera, hardware control
-- **Database Design:** MySQL, MongoDB for different use cases
-- **DevOps:** Automation, monitoring, backup strategies
-- **Hardware Programming:** UART, GPIO, device protocols
+- **Gateway / Embedded:** Protocol design, device connectivity, firmware/software for gateways
+- **Mobile:** Android app for IoT device control and management
+- **Backend / Platform:** APIs, device management, user and device lifecycle
+- **Full-stack:** End-to-end from gateway and app to platform
+- **IoT:** Smart switches, gateways, cloud connectivity
 
 ---
 
-**Tags:** #IoT #Android #FullStack #Vue.js #SpringBoot #GPS #HardwareIntegration #SystemAdmin #WindowsServer
+**Tags:** #IoT #Gateway #Android #SmartSwitch #DeviceManagement #Platform #SpringBoot #Embedded

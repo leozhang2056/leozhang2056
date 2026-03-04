@@ -30,13 +30,13 @@ summary: >
   and visualization dashboards. Deployed in factories and buildings.
 
 highlights:
-  - 设计多协议工业物联网网关架构
-  - 支持Modbus、MQTT、HTTP等10+种协议
-  - 实现边缘计算和数据预处理
-  - 开发实时数据可视化大屏
-  - 告警管理和多渠道通知
-  - 单网关支持千级设备接入
-  - 毫秒级数据采集到展示延迟
+  - Designed multi-protocol industrial IoT gateway architecture
+  - Supports 10+ protocols including Modbus, MQTT, and HTTP
+  - Implemented edge computing and data preprocessing logic
+  - Developed real-time data visualization dashboards
+  - Built comprehensive alert management and multi-channel notification system
+  - Supported 1,000+ device connections per single gateway
+  - Achieved millisecond-level latency from data collection to display
 
 tech_stack:
   languages:
@@ -118,22 +118,43 @@ evidence:
   - type: monitoring
     path: images/device-monitor.png
 
+technical_innovations:
+  - name: Multi-protocol Engine
+    description: High-performance protocol parsing engine based on Netty
+    benefits:
+      - Unified data model for disparate industrial protocols
+      - Scalable to support new protocols with minimal code changes
+      - Efficient memory management for high-throughput data
+  
+  - name: Edge Alerting Logic
+    description: Localized rule engine for real-time alerting without cloud dependency
+    benefits:
+      - Reduced latency for critical industrial alerts
+      - Continued operation during network outages
+      - Lower bandwidth usage by filtering non-critical data
+
+performance_metrics:
+  capacity:
+    description: Device handling per gateway
+    achievement: Successfully managed 1,000+ active device connections
+  latency:
+    description: End-to-end data processing speed
+    achievement: Sub-100ms latency from hardware sensor to web dashboard
+  reliability:
+    description: Industrial-grade stability
+    achievement: 24/7 continuous operation in manufacturing environments
+
 skills_demonstrated:
   technical:
-    - Industrial Protocols
-    - Modbus
-    - MQTT
-    - Java
-    - Spring Boot
-    - Netty
-    - Vue.js
-    - ECharts
-    - Time-series Databases
+    - Industrial Protocols (Modbus, MQTT, HTTP)
+    - Netty Framework
+    - Java / Spring Boot
+    - Vue.js / ECharts
+    - Time-series Databases (InfluxDB)
     - Edge Computing
     - IoT Architecture
     - WebSocket
-    - Docker
-    - Linux
+    - Docker / Linux
   
   soft:
     - System Architecture

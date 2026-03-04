@@ -1,30 +1,30 @@
-# 智慧电力系统
+# Smart Power Management System
 
-> Smart Power Management System
+> Enterprise power monitoring, energy analysis, and optimization for factories, buildings, and campuses.
 
 ---
 
 ## Overview
 
-智慧电力管理系统，为企业提供全方位的电力监控、能耗分析和节能优化解决方案。支持实时数据采集、用电分析、故障预警、远程控制等功能，帮助工厂、楼宇、园区实现能源的智能化管理。
+A smart power management system that provides monitoring, energy analysis, and optimization for enterprises. It supports real-time data collection, consumption analysis, fault alerts, and remote control, helping factories, buildings, and campuses manage energy intelligently.
 
-**项目类型:** IoT / 能源管理 / 工业自动化  
-**时间:** 2019 - 2022  
-**角色:** 全栈开发工程师 / 系统架构  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** IoT / Energy Management / Industrial Automation  
+**Timeline:** 2019 – 2022  
+**Role:** Full-stack Developer / System Architecture  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **实时监控:** 电流、电压、功率、电量等参数实时采集
-- **能耗分析:** 分时用电统计、峰谷分析、能耗趋势
-- **故障预警:** 过载、漏电、温度异常等安全预警
-- **远程控制:** 远程开关控制、定时任务、策略执行
-- **报表生成:** 多维度用电报表，支持导出
-- **节能优化:** 能耗基准对比，节能建议
-- **多租户:** 支持多园区、多建筑分级管理
-- **移动端:** APP实时查看和控制
+- **Real-time monitoring:** Current, voltage, power, energy, and other parameters in real time
+- **Energy analysis:** Time-of-use stats, peak/valley analysis, consumption trends
+- **Fault alerts:** Overload, leakage, temperature anomalies, and other safety alerts
+- **Remote control:** Remote switching, scheduled tasks, policy execution
+- **Reporting:** Multi-dimensional reports with export
+- **Energy optimization:** Baseline comparison and optimization suggestions
+- **Multi-tenant:** Multi-campus and multi-building hierarchy
+- **Mobile:** App for real-time viewing and control
 
 ---
 
@@ -32,38 +32,38 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│           现场设备层                     │
+│         Field Device Layer               │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │智能电表│ │温湿度  │ │断路器    │    │
-│  │三相/单相│ │传感器  │ │智能开关  │    │
+│  │ Smart  │ │Temp/   │ │Circuit   │    │
+│  │ Meters │ │Humidity│ │Breakers  │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │无功补偿│ │谐波监测│ │漏电保护  │    │
-│  │控制器  │ │装置    │ │器        │    │
+│  │Reactive│ │Harmonic│ │Leakage   │    │
+│  │Compens.│ │Monitor │ │Protection│    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │ RS485    │ 4-20mA   │ Modbus
        └───────────┴──────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       数据采集网关                       │
+│        Data Acquisition Gateway         │
 │  ┌─────────────────────────────────┐   │
-│  │  - Modbus/RS485 协议解析         │   │
-│  │  - 数据预处理与缓存              │   │
-│  │  - 边缘计算 (阈值判断)           │   │
-│  │  - 断网续传机制                  │   │
+│  │  - Modbus/RS485 protocol        │   │
+│  │  - Preprocessing & cache         │   │
+│  │  - Edge logic (thresholds)       │   │
+│  │  - Offline buffer & sync         │   │
 │  └─────────────────────────────────┘   │
 └──────────────────┬──────────────────────┘
                    │ MQTT/HTTP
 ┌──────────────────▼──────────────────────┐
-│       云端平台                           │
+│        Cloud Platform                    │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 数据采集 │ │ 数据分析 │ │ 告警    │ │
-│  │ 服务     │ │ 引擎     │ │ 中心    │ │
+│  │ Data     │ │ Analytics│ │ Alert   │ │
+│  │ Ingest   │ │ Engine   │ │ Center  │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ 报表生成 │ │ 设备管理 │ │ 用户    │ │
-│  │ 服务     │ │ 服务     │ │ 服务    │ │
+│  │ Reports  │ │ Device   │ │ User    │ │
+│  │ Service  │ │ Mgmt     │ │ Service │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -72,131 +72,131 @@
 
 ## Technologies
 
-### 硬件设备
-- **智能电表** - 三相/单相多功能电表
-- **传感器** - 温度、湿度、烟感
-- **断路器** - 智能断路器，支持远程控制
-- **无功补偿** - 功率因数自动补偿
-- **谐波监测** - 电能质量监测装置
+### Hardware
+- **Smart meters** – Three-phase/single-phase multi-function
+- **Sensors** – Temperature, humidity, smoke
+- **Circuit breakers** – Smart breakers with remote control
+- **Reactive compensation** – Power factor correction
+- **Harmonic monitoring** – Power quality
 
-### 通信协议
-- **Modbus RTU/TCP** - 电表通信协议
-- **RS485** - 现场总线
-- **MQTT** - 物联网消息协议
-- **DL/T645** - 电力行业标准协议
-- **HTTP/REST** - API通信
+### Protocols
+- **Modbus RTU/TCP** – Meter communication
+- **RS485** – Field bus
+- **MQTT** – IoT messaging
+- **DL/T645** – Power industry standard
+- **HTTP/REST** – APIs
 
-### 后端开发
-- **Spring Boot** - 微服务架构
-- **InfluxDB** - 时序数据库，存储用电数据
-- **MySQL** - 业务数据和配置
-- **Redis** - 缓存和实时数据
-- **RabbitMQ** - 消息队列
+### Backend
+- **Spring Boot** – Microservices
+- **InfluxDB** – Time-series data
+- **MySQL** – Business data and config
+- **Redis** – Cache and real-time data
+- **RabbitMQ** – Message queue
 
-### 数据处理
-- **Apache Flink** - 实时流处理
-- **Elasticsearch** - 日志和告警搜索
-- **Quartz** - 定时任务调度
+### Data Processing
+- **Apache Flink** – Stream processing
+- **Elasticsearch** – Log and alert search
+- **Quartz** – Scheduled jobs
 
-### 前端
-- **Vue.js** - 管理后台
-- **ECharts** - 数据可视化图表
-- **DataV** - 大屏展示
-- **UniApp** - 移动端APP
+### Frontend
+- **Vue.js** – Admin UI
+- **ECharts** – Charts
+- **DataV** – Large-screen display
+- **UniApp** – Mobile app
 
 ---
 
 ## Key Achievements
 
-- ✅ **能耗降低15%** - 通过数据分析实现节能优化
-- ✅ **<1秒告警** - 异常事件秒级推送
-- ✅ **99.9%采集率** - 数据完整性和准确性
-- ✅ **多园区部署** - 支持3+园区统一管理
-- ✅ **远程控制** - 故障快速响应和处理
+- ✅ **~15% energy reduction** – Via analysis and optimization
+- ✅ **<1s alerts** – Near real-time anomaly push
+- ✅ **99.9% collection rate** – Data completeness
+- ✅ **Multi-campus** – 3+ campuses under one platform
+- ✅ **Remote control** – Fast response to faults
 
 ---
 
 ## Responsibilities
 
-### 系统架构设计
-- 设计分层采集架构（设备层-网关层-平台层）
-- 制定通信协议和数据格式标准
-- 高并发数据处理和存储方案
-- 告警规则和策略引擎设计
+### Architecture
+- Layered design (devices – gateway – platform)
+- Protocol and data format standards
+- High-throughput data pipeline
+- Alert rules and policy engine
 
-### 网关开发
-- 开发Modbus/RS485数据采集程序
-- 实现边缘计算和本地告警
-- 断网续传和数据同步机制
-- 设备发现和自动配置
+### Gateway
+- Modbus/RS485 data collection
+- Edge computation and local alerts
+- Offline buffer and sync
+- Device discovery and auto-config
 
-### 后端服务
-- 数据采集和解析服务
-- 实时数据计算和聚合
-- 告警引擎和通知服务
-- 报表生成和导出功能
-- 设备管理和远程控制API
+### Backend
+- Data ingestion and parsing
+- Real-time computation and aggregation
+- Alert engine and notifications
+- Report generation and export
+- Device management and remote control APIs
 
-### 数据可视化
-- 能耗大屏设计和开发
-- 实时监控仪表盘
-- 历史数据趋势分析
-- 移动端APP开发
+### Visualization
+- Energy dashboards and large screens
+- Real-time monitoring
+- Historical trends
+- Mobile app
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 海量数据处理
-**问题:** 数千电表高频采集，数据量巨大  
-**解决:** InfluxDB时序数据库，数据分级存储，冷热数据分离
+### Challenge 1: High Data Volume
+**Problem:** Thousands of meters, high-frequency data.  
+**Solution:** InfluxDB time-series DB, tiered storage, hot/cold separation.
 
-### Challenge 2: 实时告警要求
-**问题:** 用电异常需要秒级响应  
-**解决:** 边缘计算+云端协同，多级告警机制，消息队列加速
+### Challenge 2: Real-Time Alerts
+**Problem:** Sub-second response to anomalies.  
+**Solution:** Edge + cloud, multi-level alerts, message queue.
 
-### Challenge 3: 设备兼容性
-**问题:** 不同厂家电表协议差异大  
-**解决:** 可配置协议适配器，支持主流电表协议
+### Challenge 3: Device Compatibility
+**Problem:** Different meter vendors and protocols.  
+**Solution:** Configurable protocol adapters for mainstream meters.
 
-### Challenge 4: 数据准确性
-**问题:** 通信干扰导致数据丢失或错误  
-**解决:** 数据校验、重传机制、异常数据清洗
+### Challenge 4: Data Accuracy
+**Problem:** Interference causing loss or errors.  
+**Solution:** Validation, retry, anomaly cleaning.
 
 ---
 
 ## Results & Impact
 
-- **节能降耗** - 平均能耗降低15%，节省电费支出
-- **安全保障** - 过载、漏电等安全隐患及时发现
-- **管理效率** - 远程抄表替代人工，效率提升80%
-- **决策支持** - 数据驱动用电策略优化
-- **碳中和** - 助力企业绿色低碳转型
+- **Energy savings** – ~15% average reduction, lower costs
+- **Safety** – Timely detection of overload, leakage, etc.
+- **Efficiency** – Remote reading replaced manual; ~80% efficiency gain
+- **Decision support** – Data-driven consumption strategy
+- **Sustainability** – Support for green/low-carbon goals
 
 ---
 
 ## Evidence
 
-![能耗大屏](images/power-dashboard.png)
-*智慧电力监控大屏*
+![Power dashboard](images/power-dashboard.png)
+*Smart power monitoring dashboard*
 
-![数据分析](images/data-analysis.png)
-*能耗分析和趋势*
+![Data analysis](images/data-analysis.png)
+*Energy analysis and trends*
 
-![告警中心](images/alarm-center.png)
-*实时告警和通知*
-
----
-
-## Skills Demonstronstrated
-
-- **IoT采集:** Modbus、RS485、智能电表、传感器
-- **时序数据库:** InfluxDB、数据建模、查询优化
-- **实时计算:** Apache Flink、流处理、聚合分析
-- **后端开发:** Spring Boot、微服务、高并发
-- **数据可视化:** ECharts、DataV、大屏设计
-- **移动端:** UniApp、跨平台开发
+![Alarm center](images/alarm-center.png)
+*Real-time alerts and notifications*
 
 ---
 
-**Tags:** #IoT #能源管理 #智能电表 #Modbus #时序数据库 #InfluxDB #节能 #数据分析 #工业自动化
+## Skills Demonstrated
+
+- **IoT acquisition:** Modbus, RS485, smart meters, sensors
+- **Time-series DB:** InfluxDB, data modeling, query optimization
+- **Stream processing:** Apache Flink, aggregation
+- **Backend:** Spring Boot, microservices, high concurrency
+- **Visualization:** ECharts, DataV, dashboard design
+- **Mobile:** UniApp, cross-platform
+
+---
+
+**Tags:** #IoT #EnergyManagement #SmartMeters #Modbus #InfluxDB #Analytics #IndustrialAutomation

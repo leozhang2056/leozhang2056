@@ -1,23 +1,23 @@
-# Project Facts - IoT Solutions & Full-Stack Projects
+# Project Facts - IoT Device Management Platform
 # Structured data for RAG and resume generation
 
 project_id: iot-solutions
-name: IoT Projects & Full-Stack Solutions
-name_cn: IoT 解决方案与全栈项目集
+name: IoT Device Management Platform
+name_cn: IoT 设备管理平台
 
-type: Collection of Projects
+type: IoT Platform / Product Development
 category:
   - IoT
-  - Full-stack Development
-  - System Administration
+  - Platform Development
   - Mobile Development
+  - Gateway / Embedded
 
 timeline:
   start: "2013"
   end: "2023"
   duration_years: 10
 
-role: Full-stack Engineer / System Administrator
+role: Gateway Developer, Mobile Developer, Platform Development (participated)
 team_size: varies
 
 company:
@@ -25,174 +25,84 @@ company:
   location: China
 
 summary: >
-  Collection of industrial IoT, public service, and automation applications 
-  including forestry patrol app, smart cabinet SDK, IoT dashboards, 
-  ad display systems, and comprehensive system administration.
+  IoT management platform where users manage their purchased IoT devices.
+  Company sells smart switches and gateways. I developed the gateway (gateway
+  software/firmware), developed the mobile (phone) app for device control and
+  management, and participated in platform (backend/web) development.
 
-projects:
-  - name: Forestry Patrol Application
-    type: Mobile + Backend
-    description: GPS tracking and photo logging for forestry inspections
-    features:
-      - GPS route tracking
-      - Photo logging with geotags
-      - Offline data collection
-      - Backend monitoring dashboard
-    tech:
-      - Android SDK
-      - GPS/Location Services
-      - Spring Boot
-      - Vue.js
-      - MySQL
+products_sold:
+  - Smart switches
+  - Gateways
 
-  - name: Smart Cabinet SDK
-    type: IoT SDK
-    description: SDK for controlling smart locker systems
-    features:
-      - Lock control
-      - Sensor monitoring
-      - Light control
-      - REST API integration
-      - Hardware abstraction
-    tech:
-      - Android SDK
-      - UART/Serial
-      - GPIO
-      - RESTful APIs
-      - Spring Boot
+my_contributions:
+  gateway:
+    - Designed and implemented gateway software/firmware
+    - Device connectivity and protocol implementation
+    - Data forwarding to platform, local/offline behavior
+  mobile:
+    - Developed mobile (phone) app for end users
+    - Device discovery, binding, remote control
+    - Integration with platform APIs
+  platform:
+    - Participated in platform (backend and/or web) development
+    - APIs for device management and control
 
-  - name: IoT Dashboard & Monitoring
-    type: Full-stack Web
-    description: Real-time IoT device monitoring dashboard
-    features:
-      - Real-time data visualization
-      - Alert system
-      - Historical analysis
-      - Device management
-    tech:
-      - Vue.js
-      - Spring Boot
-      - WebSocket
-      - MongoDB
-      - Redis
-      - Chart.js
-
-  - name: Ad Display System
-    type: Digital Signage
-    description: Content management for factory/retail displays
-    features:
-      - Content scheduling
-      - Remote monitoring
-      - Multi-location support
-      - Playback reporting
-    tech:
-      - Android
-      - Web portal
-      - Spring Boot
-      - MySQL
-
-  - name: System Administration
-    type: IT Operations
-    description: Server maintenance and system support
-    responsibilities:
-      - Windows Server 2012-2022 management
-      - IIS deployment and SSL
-      - Active Directory
-      - Automated backups
-      - Legacy system migrations
-    achievements:
-      - metric: "6+"
-        description: Legacy systems migrated
-      - metric: "99.9%"
-        description: Uptime maintained
+platform_features:
+  - User management of purchased IoT devices
+  - Device registration, binding, grouping
+  - Remote control and status monitoring
+  - Smart switches and gateways as sold products
 
 tech_stack:
+  gateway:
+    - Embedded / Linux
+    - Protocol implementation (e.g. Zigbee, WiFi, proprietary)
+    - UART/Serial, GPIO, MQTT/HTTPS to cloud
   mobile:
     - Android SDK
-    - Java
-    - Kotlin
-    - GPS Services
-    - Camera API
-    - Hardware Integration
-  
-  backend:
+    - Java / Kotlin
+    - REST, WebSocket
+  platform:
     - Spring Boot
     - RESTful APIs
-    - WebSocket
-  
-  frontend:
-    - Vue.js
-    - HTML/CSS/JavaScript
-    - Chart.js
-  
-  databases:
     - MySQL
-    - MongoDB
     - Redis
-  
-  hardware:
-    - UART/Serial
-    - GPIO
-    - RFID
-    - Barcode Scanners
-    - Sensors
-    - Electronic Locks
-  
-  system_admin:
-    - Windows Server
-    - IIS
-    - SSL/TLS
-    - Active Directory
-    - Linux
-    - Automated Backups
+    - Vue.js (if applicable)
 
-key_achievements:
-  - Successfully migrated 6+ legacy systems
-  - Maintained 99.9% uptime across all systems
-  - Delivered multiple full-stack IoT solutions
-  - Implemented automated backup and monitoring
-  - Integrated diverse hardware devices
+other_projects_same_tenure:
+  - Forestry patrol application
+  - Smart cabinet SDK
+  - IoT dashboards and monitoring
+  - Ad display system
+  - System administration and maintenance
 
 skills_demonstrated:
   technical:
-    - Android Development
-    - Full-stack Web Development
-    - IoT Hardware Integration
-    - System Administration
-    - Database Design
-    - REST API Development
-    - GPS/Location Services
-    - Hardware Protocols
-    - Windows Server
-    - Linux Administration
-    - Vue.js
-    - Spring Boot
-  
+    - Gateway / embedded development
+    - Android (Java/Kotlin)
+    - Protocol and hardware integration
+    - Backend / API (Spring Boot)
+    - Device management and lifecycle
   soft:
-    - Cross-functional Collaboration
-    - IT Support
-    - System Maintenance
-    - Problem Solving
+    - Cross-functional delivery
+    - Product-oriented development
 
 related_to_roles:
-  - Full-stack Developer
-  - Android Developer
   - IoT Engineer
-  - System Administrator
-  - DevOps Engineer
+  - Android Developer
+  - Embedded Software Engineer
+  - Full-stack Developer
+  - Platform Engineer
 
 keywords:
-  - IoT
+  - IoT platform
+  - Smart switch
+  - Gateway
+  - Device management
   - Android
-  - GPS
-  - Hardware Integration
-  - Full-stack
-  - Vue.js
   - Spring Boot
-  - System Admin
-  - Windows Server
+  - Embedded
   - UART
-  - RFID
-  - Sensors
+  - MQTT
 
-last_updated: "2025-02-11"
+last_updated: "2026-03-04"

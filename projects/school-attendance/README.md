@@ -1,29 +1,29 @@
-# 学校人脸考勤系统
+# School Face Recognition Attendance System
 
-> School Face Recognition Attendance System
+> Smart face-based attendance for K–12 schools: touchless check-in, real-time stats, and parent notifications.
 
 ---
 
 ## Overview
 
-为中小学校开发的智能人脸识别考勤系统，实现学生无感考勤、实时统计和家长通知。系统支持人脸识别打卡、考勤数据统计、异常提醒等功能，已部署在多所学校使用。
+An intelligent face recognition attendance system for primary and secondary schools. It provides touchless student check-in, real-time statistics, and automatic parent notifications. Features include face-based punch, attendance reporting, and anomaly alerts; the system has been deployed in multiple schools.
 
-**项目类型:** IoT / 教育信息化  
-**时间:** 2019 - 2022  
-**角色:** 全栈开发工程师  
-**公司:** Chunxiao Technology Co., Ltd., China
+**Project Type:** IoT / Education IT  
+**Timeline:** 2019 – 2022  
+**Role:** Full-stack Developer  
+**Company:** Chunxiao Technology Co., Ltd., China
 
 ---
 
 ## Key Features
 
-- **人脸识别打卡:** 基于摄像头的人脸检测和识别
-- **无感考勤:** 学生经过即自动识别打卡，无需主动操作
-- **实时同步:** 考勤数据实时上传云端
-- **家长通知:** 打卡成功后自动推送消息给家长
-- **数据统计:** 出勤率、迟到、请假等数据报表
-- **多终端支持:** 闸机终端 + 管理后台 + 家长APP
-- **活体检测:** 防止照片/视频作弊
+- **Face recognition punch:** Camera-based face detection and recognition
+- **Touchless attendance:** Automatic recognition as students pass; no manual action
+- **Real-time sync:** Attendance data uploaded to the cloud in real time
+- **Parent notifications:** Automatic push to parents after successful check-in
+- **Data & reports:** Attendance rate, late arrivals, leave, and other reports
+- **Multi-terminal:** Gate terminals + admin backend + parent app
+- **Liveness detection:** Reduces photo/video spoofing
 
 ---
 
@@ -31,35 +31,35 @@
 
 ```
 ┌─────────────────────────────────────┐
-│         终端设备层                   │
+│          Terminal Devices            │
 │  ┌──────────┐ ┌──────────┐         │
-│  │人脸识别  │ │   闸机   │         │
-│  │  摄像头  │ │  控制器  │         │
+│  │Face Rec  │ │   Gate   │         │
+│  │ Camera   │ │ Controller│         │
 │  └────┬─────┘ └────┬─────┘         │
 └───────┼────────────┼────────────────┘
         │            │
 ┌───────▼────────────▼────────────────┐
-│      Android 终端应用                │
-│   - 人脸识别 SDK                     │
-│   - 本地缓存                         │
-│   - 网络同步                         │
+│      Android Terminal App           │
+│   - Face recognition SDK            │
+│   - Local cache                      │
+│   - Network sync                     │
 └───────┬─────────────────────────────┘
         │
 ┌───────▼─────────────────────────────┐
-│      后端服务 (Spring Boot)          │
-│   - 考勤记录服务                      │
-│   - 人脸识别服务                      │
-│   - 消息推送服务                      │
+│      Backend (Spring Boot)           │
+│   - Attendance record service       │
+│   - Face recognition service        │
+│   - Push notification service       │
 └───────┬─────────────────────────────┘
         │
 ┌───────▼─────────────────────────────┐
-│      数据层                          │
-│   MySQL    Redis    图片存储         │
-└─────────────────────────────────────┘
+│      Data Layer                      │
+│   MySQL    Redis    Image storage    │
+└───────┬─────────────────────────────┘
         │
 ┌───────▼─────────────────────────────┐
-│      用户端                          │
-│  管理后台(Web)   家长APP(Android)    │
+│      User Clients                    │
+│  Admin (Web)    Parent App (Android) │
 └─────────────────────────────────────┘
 ```
 
@@ -67,113 +67,113 @@
 
 ## Technologies
 
-### 人脸识别
-- **OpenCV** - 图像处理和特征提取
-- **人脸识别算法** - 本地嵌入式识别
-- **活体检测** - 防止照片欺骗
+### Face Recognition
+- **OpenCV** – Image processing and feature extraction
+- **Face recognition** – On-device embedded recognition
+- **Liveness detection** – Anti-spoofing
 
-### 移动端
-- **Android SDK** - 终端应用开发
-- **Java/Kotlin** - 编程语言
-- **SQLite** - 本地数据缓存
-- **Camera API** - 摄像头控制
+### Mobile
+- **Android SDK** – Terminal app
+- **Java/Kotlin** – Language
+- **SQLite** – Local cache
+- **Camera API** – Camera control
 
-### 后端
-- **Spring Boot** - 后端服务框架
-- **MySQL** - 考勤数据存储
-- **Redis** - 缓存和会话
-- **MQTT/WebSocket** - 实时推送
+### Backend
+- **Spring Boot** – Services
+- **MySQL** – Attendance data
+- **Redis** – Cache and session
+- **MQTT/WebSocket** – Real-time push
 
-### 消息推送
-- **极光推送** / **Firebase** - 家长通知
-- **短信网关** - 备用通知方式
+### Push
+- **JPush / Firebase** – Parent notifications
+- **SMS gateway** – Fallback notifications
 
 ---
 
 ## Key Achievements
 
-- ✅ **多校部署** - 在3+所学校成功部署使用
-- ✅ **<1秒识别** - 人脸识别响应时间小于1秒
-- ✅ **99%+准确率** - 人脸识别准确率超过99%
-- ✅ **实时通知** - 家长秒级收到考勤通知
-- ✅ **无感体验** - 学生无需停留即可完成打卡
+- ✅ **Multi-school deployment** – Deployed in 3+ schools
+- ✅ **<1s recognition** – Face recognition response under 1 second
+- ✅ **99%+ accuracy** – Face recognition accuracy over 99%
+- ✅ **Real-time notifications** – Parents notified within seconds
+- ✅ **Touchless experience** – Students pass through without stopping
 
 ---
 
 ## Responsibilities
 
-### Android 终端开发
-- 开发人脸识别终端应用
-- 集成摄像头和人脸识别SDK
-- 实现活体检测功能
-- 本地数据缓存和离线同步
-- 闸机控制器对接
+### Android Terminal
+- Face recognition terminal app
+- Camera and face SDK integration
+- Liveness detection
+- Local cache and offline sync
+- Gate controller integration
 
-### 后端开发
-- 考勤记录API开发
-- 人脸识别服务端逻辑
-- 家长消息推送服务
-- 数据统计和报表生成
+### Backend
+- Attendance record APIs
+- Face recognition server logic
+- Parent push service
+- Statistics and reporting
 
-### 系统集成
-- 人脸识别算法集成
-- 消息推送通道配置
-- 多学校数据隔离
-- 硬件设备调试
+### System Integration
+- Face recognition algorithm integration
+- Push channel configuration
+- Multi-school data isolation
+- Hardware debugging
 
 ---
 
 ## Challenges & Solutions
 
-### Challenge 1: 人脸识别准确率
-**问题:** 不同光照、角度影响识别准确率  
-**解决:** 优化算法参数，增加训练样本，多角度摄像头部署
+### Challenge 1: Recognition Accuracy
+**Problem:** Lighting and angle affect accuracy.  
+**Solution:** Tuned algorithm parameters, more training samples, multi-angle camera placement.
 
-### Challenge 2: 网络不稳定
-**问题:** 学校网络环境不稳定，数据同步困难  
-**解决:** 本地SQLite缓存，断网续传，数据一致性校验
+### Challenge 2: Unstable Network
+**Problem:** School networks unreliable; sync difficult.  
+**Solution:** SQLite local cache, resume after disconnect, data consistency checks.
 
-### Challenge 3: 活体检测
-**问题:** 防止学生用照片代替真人打卡  
-**解决:** 集成活体检测算法，眨眼/动作检测
+### Challenge 3: Liveness Detection
+**Problem:** Students using photos instead of live face.  
+**Solution:** Liveness algorithm (blink/action detection).
 
-### Challenge 4: 高并发处理
-**问题:** 上下学高峰期大量学生同时打卡  
-**解决:** Redis缓存优化，异步处理，数据库连接池调优
+### Challenge 4: High Concurrency
+**Problem:** Rush hours with many students punching at once.  
+**Solution:** Redis cache, async processing, connection pool tuning.
 
 ---
 
 ## Results & Impact
 
-- **多校成功部署** - 系统稳定运行在多所学校
-- **家长满意度高** - 实时掌握孩子到校情况
-- **管理效率提升** - 替代传统人工点名，节省人力
-- **数据可追溯** - 完整考勤记录，便于统计查询
+- **Stable multi-school deployment**
+- **High parent satisfaction** – Real-time visibility of child arrival
+- **Higher management efficiency** – Replaced manual roll call
+- **Traceable data** – Full attendance history for reporting
 
 ---
 
 ## Evidence
 
-![考勤终端](images/attendance-device.png)
-*人脸识别考勤终端*
+![Attendance terminal](images/attendance-device.png)
+*Face recognition attendance terminal*
 
-![管理后台](images/admin-dashboard.png)
-*考勤管理后台*
+![Admin dashboard](images/admin-dashboard.png)
+*Attendance admin dashboard*
 
-![家长APP](images/parent-app.png)
-*家长端通知界面*
+![Parent app](images/parent-app.png)
+*Parent notification screen*
 
 ---
 
 ## Skills Demonstrated
 
-- **计算机视觉:** OpenCV, 人脸识别算法
-- **Android开发:** Camera API, 本地存储, 网络同步
-- **后端开发:** Spring Boot, REST API, 高并发处理
-- **IoT集成:** 硬件设备对接, 闸机控制
-- **消息推送:** 极光推送, Firebase, 短信网关
-- **系统集成:** 算法集成, 多终端同步
+- **Computer vision:** OpenCV, face recognition
+- **Android:** Camera API, local storage, network sync
+- **Backend:** Spring Boot, REST API, high concurrency
+- **IoT:** Hardware integration, gate control
+- **Push:** JPush, Firebase, SMS gateway
+- **System integration:** Algorithm integration, multi-terminal sync
 
 ---
 
-**Tags:** #人脸识别 #Android #SpringBoot #IoT #教育信息化 #OpenCV #考勤系统
+**Tags:** #FaceRecognition #Android #SpringBoot #IoT #Education #OpenCV #Attendance

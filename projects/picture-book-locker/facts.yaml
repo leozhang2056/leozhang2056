@@ -30,12 +30,13 @@ summary: >
   scanning, UV disinfection, and intelligent cabinet control.
 
 highlights:
-  - 开发Android主控系统实现人脸识别和二维码借阅
-  - 集成电磁锁、LED灯带、消毒模块等硬件
-  - 实现24小时自助借还书服务
-  - 内置紫外线图书消毒功能
-  - 多校部署，支持多柜组网
-  - 平均借阅时间<3秒
+highlights:
+  - Developed Android control system with face recognition and QR code borrowing
+  - Integrated hardware components including electromagnetic locks, LED strips, and disinfection modules
+  - Enabled 24/7 self-service book borrowing and returning
+  - Implemented built-in UV disinfection for returned books
+  - Successfully deployed in multiple schools with multi-cabinet networking support
+  - Achieved average borrowing time of less than 3 seconds
 
 tech_stack:
   languages:
@@ -112,24 +113,43 @@ evidence:
   - type: admin
     path: images/library-admin.png
 
+technical_innovations:
+  - name: Low-Latency Hardware Control
+    description: Optimized serial communication and GPIO control for sub-second lock response
+    benefits:
+      - Improved user experience with immediate cabinet access
+  
+  - name: Integrated Disinfection Cycle
+    description: Automated UV-C disinfection logic triggered by book return sensors
+    benefits:
+      - Ensuring hygienic safety for school environments
+
+performance_metrics:
+  speed:
+    description: User transaction time
+    achievement: Average borrowing/returning process completed in <3 seconds
+  security:
+    description: Asset protection
+    achievement: zero book loss rate achieved via smart lock integration
+  availability:
+    description: Operational uptime
+    achievement: 24/7 unattended service in high-traffic school libraries
+
 skills_demonstrated:
   technical:
-    - Android Development
-    - Face Recognition
-    - QR Code Scanning
-    - Embedded Systems
-    - UART/Serial Communication
-    - GPIO Control
-    - Hardware Integration
-    - Spring Boot
-    - MQTT
-    - SQLite
+    - Android (Java/Kotlin)
+    - Face Recognition SDK
+    - Serial Communication (UART/RS485)
+    - GPIO / Hardware Control
+    - IoT Systems
+    - Spring Boot / MQTT
+    - SQLite / MySQL
   
   soft:
     - Hardware Debugging
     - On-site Deployment
-    - User Training
     - Technical Support
+    - User Training
 
 related_to_roles:
   - Android Developer
