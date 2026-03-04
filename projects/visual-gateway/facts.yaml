@@ -2,10 +2,10 @@
 # Structured data for RAG and resume generation
 
 project_id: visual-gateway
-name: Visual Gateway / IoT Data Visualization Platform
+name: Visual Gateway / Breaker Control Gateway Platform
 name_cn: 可视化网关
 
-type: IoT / Industrial Internet
+type: IoT Gateway / Power Control / Industrial Internet
 category:
   - IoT Gateway
   - Data Visualization
@@ -25,18 +25,19 @@ company:
   location: China
 
 summary: >
-  Industrial IoT visualization gateway supporting multiple protocols 
-  (Modbus, MQTT, HTTP) with real-time data monitoring, alerting, 
-  and visualization dashboards. Deployed in factories and buildings.
+  Gateway-centric breaker control platform: multiple non-networked circuit breakers
+  connect to gateway via RS485/RS232 serial bus, and the gateway provides telemetry
+  collection, open/close control, local alerting, and cloud reporting for unified
+  web/mobile monitoring across factories and buildings.
 
 highlights:
-  - Designed multi-protocol industrial IoT gateway architecture
-  - Supports 10+ protocols including Modbus, MQTT, and HTTP
-  - Implemented edge computing and data preprocessing logic
-  - Developed real-time data visualization dashboards
-  - Built comprehensive alert management and multi-channel notification system
-  - Supported 1,000+ device connections per single gateway
-  - Achieved millisecond-level latency from data collection to display
+  - Designed serial breaker-to-gateway control architecture (RS485/RS232)
+  - Enabled remote open/close control for non-networked circuit breakers
+  - Implemented per-breaker telemetry collection (current/voltage/power/energy/status)
+  - Built gateway-to-cloud telemetry uplink and centralized control console
+  - Developed alert rules for overcurrent, over/undervoltage, leakage, and offline
+  - Added local cache/retry/offline buffering for unstable network scenarios
+  - Supported multi-gateway and multi-site centralized operations
 
 tech_stack:
   languages:
@@ -44,11 +45,11 @@ tech_stack:
     - JavaScript
   
   protocols:
-    - Modbus RTU/TCP
+    - Modbus RTU
+    - RS485/RS232
     - MQTT
     - HTTP/REST
     - TCP/UDP
-    - RS485/RS232
   
   backend:
     - Spring Boot
@@ -74,39 +75,39 @@ tech_stack:
     - Nginx
 
 features:
-  - Multi-protocol support (Modbus, MQTT, HTTP)
-  - Edge computing and preprocessing
-  - Real-time data monitoring
-  - Alert management system
-  - Visualization dashboard
-  - Historical data analysis
-  - Remote configuration
-  - High availability
+  - Serial breaker access via RS485/RS232 gateway
+  - Per-breaker telemetry monitoring
+  - Remote open/close control
+  - Gateway-based unified control for multiple breakers
+  - Cloud reporting and dashboard visualization
+  - Alert management and protection rules
+  - Local cache/retry/offline buffering
+  - Multi-site gateway operations
 
 metrics:
-  - metric: "10+"
-    unit: "protocols"
-    description: Supported industrial protocols
+  - metric: "1:N"
+    unit: "gateway-to-breaker"
+    description: One gateway controls multiple serial breakers
   
-  - metric: "<100ms"
-    unit: "latency"
-    description: Data collection to display
+  - metric: "Real-time"
+    unit: "telemetry"
+    description: Current/voltage/power/status uplink to cloud
   
   - metric: "24/7"
     unit: "operation"
-    description: Industrial-grade stability
+    description: Gateway edge service stability
   
-  - metric: "1000+"
-    unit: "devices"
-    description: Single gateway capacity
+  - metric: "Multi-site"
+    unit: "deployment"
+    description: Centralized management across buildings/factories
 
 achievements:
-  - Designed scalable gateway architecture
-  - Supported 10+ industrial protocols
-  - Achieved sub-100ms end-to-end latency
-  - Deployed in multiple factories and buildings
-  - Processed data from thousands of devices
-  - Reduced bandwidth costs through edge computing
+  - Unified control of non-networked breakers through serial gateway
+  - Delivered remote breaker open/close and command auditing
+  - Built reliable gateway-cloud synchronization pipeline
+  - Deployed across multiple factories and building projects
+  - Improved safety response using threshold alarms and notifications
+  - Reduced retrofit costs by avoiding per-breaker networking upgrades
 
 evidence:
   - type: architecture
@@ -169,15 +170,15 @@ related_to_roles:
   - Industrial IoT Engineer
 
 keywords:
+  - Breaker Control Gateway
+  - Serial Bus
+  - RS485
+  - Modbus RTU
   - IoT Gateway
-  - Modbus
-  - MQTT
-  - Industrial IoT
-  - Data Visualization
+  - Remote Switch Control
+  - Telemetry Uplink
   - Edge Computing
   - Spring Boot
-  - Vue.js
-  - Time-series Database
-  - SCADA
+  - Industrial IoT
 
 last_updated: "2025-02-11"

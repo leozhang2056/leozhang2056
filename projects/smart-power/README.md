@@ -6,7 +6,8 @@
 
 ## Overview
 
-A smart power management system that provides monitoring, energy analysis, and optimization for enterprises. It supports real-time data collection, consumption analysis, fault alerts, and remote control, helping factories, buildings, and campuses manage energy intelligently.
+Built a **smart power management platform** that connects **field devices, cloud services, web dashboards, and mobile apps** into one unified system.  
+The platform provides real-time power data collection, energy analysis, alarm handling, and remote control, and exposes these capabilities as services to **factories, building managers, and campus operators** so they can monitor, analyze, and optimize energy usage collaboratively.
 
 **Project Type:** IoT / Energy Management / Industrial Automation  
 **Timeline:** 2019 – 2022  
@@ -17,14 +18,30 @@ A smart power management system that provides monitoring, energy analysis, and o
 
 ## Key Features
 
-- **Real-time monitoring:** Current, voltage, power, energy, and other parameters in real time
-- **Energy analysis:** Time-of-use stats, peak/valley analysis, consumption trends
-- **Fault alerts:** Overload, leakage, temperature anomalies, and other safety alerts
-- **Remote control:** Remote switching, scheduled tasks, policy execution
-- **Reporting:** Multi-dimensional reports with export
-- **Energy optimization:** Baseline comparison and optimization suggestions
-- **Multi-tenant:** Multi-campus and multi-building hierarchy
-- **Mobile:** App for real-time viewing and control
+- **Device onboarding platform:** Users can connect third-party smart switches, gateways, and meters to the cloud platform.
+- **Per-load monitoring:** View per-load current, voltage, power, energy, and other electrical parameters in real time.
+- **Remote control:** Switch loads on/off remotely, configure schedules, and apply control policies.
+- **Alarm & protection:** Configure thresholds and alerts for overload, leakage, over‑temperature, etc.
+- **Energy analysis:** Time-of-use stats, peak/valley analysis, consumption trends.
+- **Reporting:** Multi-dimensional reports with export for management and finance.
+- **Energy optimization:** Baseline comparison and optimization suggestions.
+- **Multi-tenant:** Multi-campus and multi-building hierarchy.
+- **Mobile:** App for real-time viewing and control.
+
+---
+
+## Device Access Flow / 设备接入与控制流程
+
+1. **设备接入（Onboarding）**：  
+   用户将购买的智能网关、智能开关、智能电表等接入现场配电箱，通过 RS485 / Modbus 与网关通讯，再由网关安全接入云平台。  
+2. **自动识别（Discovery）**：  
+   平台根据设备地址和型号完成自动识别与注册，为每个回路/负载建立数字档案。  
+3. **实时监测（Monitoring）**：  
+   用户在 Web 大屏或 App 中，按建筑/楼层/配电箱查看每个负载的电流、电压、功率、电能等关键电力参数。  
+4. **远程控制（Control）**：  
+   通过平台远程下发开关指令、场景策略或定时任务，实现统一控制。  
+5. **告警与策略（Alarms & Policies）**：  
+   为不同负载配置告警阈值和策略，出现异常（如过载、漏电、温度过高）时，平台推送告警并可联动跳闸或关闭负载。
 
 ---
 
@@ -177,14 +194,31 @@ A smart power management system that provides monitoring, energy analysis, and o
 
 ## Evidence
 
-![Power dashboard](images/power-dashboard.png)
-*Smart power monitoring dashboard*
+### Web & BI Dashboards / Web 与大屏
 
-![Data analysis](images/data-analysis.png)
-*Energy analysis and trends*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/power-dashboard-main.png" width="360" alt="Power dashboard main"/><br/>
+      <sub>Main smart power monitoring dashboard with multi-area KPIs</sub>
+    </td>
+    <td align="center">
+      <img src="./images/env-control-bi-kanban.png" width="360" alt="Environmental BI kanban"/><br/>
+      <sub>Environmental control BI kanban (heatmap + 3D scene)</sub>
+    </td>
+  </tr>
+</table>
 
-![Alarm center](images/alarm-center.png)
-*Real-time alerts and notifications*
+### Mobile App / 移动端
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/power-mobile-app.png" width="260" alt="Power mobile app"/><br/>
+      <sub>Mobile app for device details and energy statistics</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

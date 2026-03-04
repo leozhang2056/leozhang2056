@@ -1,14 +1,15 @@
-# Visual Gateway / IoT Data Visualization Platform
+# Visual Gateway / Breaker Control Gateway Platform
 
-> Industrial IoT gateway for multi-protocol data ingestion, real-time monitoring, alerts, and visualization dashboards.
+> Gateway-centric platform for unified monitoring and control of serial-connected circuit breakers, with cloud reporting and centralized management.
 
 ---
 
 ## Overview
 
-An industrial IoT visualization gateway that centralizes and visualizes data from various devices. It supports multiple industrial protocols, real-time monitoring, alert management, and large-screen dashboards. Used in factories, buildings, energy management, and similar scenarios.
+A gateway-centric industrial IoT platform built to manage **multiple circuit breakers connected via serial ports (RS485/RS232)**.  
+The breakers themselves do **not need direct Internet access**; the gateway collects breaker metrics (current, voltage, power, energy, status), executes open/close control commands, applies local rules/alerts, and reports data to the cloud platform for unified monitoring and operations.
 
-**Project Type:** IoT / Industrial IoT / Data Visualization  
+**Project Type:** IoT Gateway / Power Control / Industrial IoT  
 **Timeline:** 2018 – 2023  
 **Role:** Full-stack Developer / Architecture  
 **Company:** Chunxiao Technology Co., Ltd., China
@@ -17,14 +18,25 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 
 ## Key Features
 
-- **Multi-protocol:** Modbus, MQTT, HTTP, TCP, and others
-- **Edge computing:** Local preprocessing and filtering
-- **Real-time monitoring:** Device status and metrics visualization
-- **Alert management:** Thresholds, anomaly detection, multi-channel notifications
-- **Dashboards:** Industrial-grade large-screen displays
-- **History:** Storage, query, trend analysis
-- **Remote config:** Remote device config and firmware updates
-- **High availability:** Hot standby, automatic failover
+- **Serial breaker access:** One gateway connects and manages many non-networked breakers via RS485/RS232.
+- **Per-breaker telemetry:** Real-time current, voltage, power, energy, switch status, and other electrical indicators.
+- **Remote open/close control:** Execute breaker ON/OFF commands from web/admin side through the gateway.
+- **Unified gateway management:** Centralized management of all breakers under each gateway.
+- **Cloud reporting:** Gateway uplinks telemetry and event data to cloud for dashboards and history analysis.
+- **Alert rules:** Overcurrent, over/undervoltage, leakage, offline, and abnormal behavior alarms.
+- **Edge reliability:** Local cache, retry, and offline buffering when network is unstable.
+- **Batch operations:** Group control and scheduled strategies for multiple breaker circuits.
+
+---
+
+## Device Access & Control Flow
+
+1. **Physical wiring:** Breakers connect to gateway serial bus (RS485/RS232), no per-breaker Internet needed.  
+2. **Gateway discovery:** Gateway scans addresses and registers breakers/circuits.  
+3. **Telemetry collection:** Gateway polls breaker registers for current, voltage, power, energy, and status.  
+4. **Cloud sync:** Gateway sends normalized data/events to cloud via MQTT/HTTP.  
+5. **Remote control:** Platform sends open/close and parameter commands to gateway, which relays them via serial protocol.  
+6. **Alerts & audit:** Rule engine triggers alarms and stores operation/command logs for traceability.
 
 ---
 
@@ -32,29 +44,29 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 
 ```
 ┌─────────────────────────────────────────┐
-│         Field Devices                   │
+│     Serial-connected Circuit Breakers   │
 │  ┌────────┐ ┌────────┐ ┌──────────┐    │
-│  │Sensors │ │  PLC   │ │ Smart    │    │
-│  │Collectors│ │Controllers│ │ Meters  │    │
+│  │Breaker │ │Breaker │ │ Breaker  │    │
+│  │  #01   │ │  #02   │ │   #N     │    │
 │  └───┬────┘ └────┬───┘ └────┬─────┘    │
 └──────┼───────────┼──────────┼──────────┘
        │           │          │
-       │ Modbus    │ MQTT     │ HTTP
-       │ RS485     │ TCP/IP   │ API
+       │ Modbus RTU / vendor protocol
+       │ RS485 / RS232 serial bus
        ▼           ▼          ▼
 ┌─────────────────────────────────────────┐
-│         Visual Gateway                  │
+│      Visual Breaker Control Gateway     │
 │  ┌─────────────────────────────────┐   │
-│  │   Protocol adaptation           │   │
-│  │   Modbus  MQTT  HTTP  TCP/UDP   │   │
+│  │   Serial protocol adapter       │   │
+│  │   Modbus RTU + vendor drivers   │   │
 │  └─────────────────────────────────┘   │
 │  ┌─────────────────────────────────┐   │
-│  │   Data processing               │   │
-│  │   Parse  Filter  Calculate      │   │
+│  │   Telemetry & control engine    │   │
+│  │   Polling  Parse  Open/Close    │   │
 │  └─────────────────────────────────┘   │
 │  ┌─────────────────────────────────┐   │
 │  │   Local services                │   │
-│  │   Cache  Rules  Alerts          │   │
+│  │   Cache  Rules  Alerts  Retry   │   │
 │  └─────────────────────────────────┘   │
 └──────────────┬──────────────────────────┘
                │
@@ -62,14 +74,18 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
          │           │
 ┌────────▼───┐  ┌────▼──────────┐
 │ Local Store│  │ Cloud Sync    │
-│ SQLite     │  │ WebSocket     │
+│ SQLite     │  │ MQTT / HTTP   │
 └────────────┘  └───────────────┘
                         │
 ┌───────────────────────▼─────────────────┐
 │         Cloud Platform                   │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
-│  │ Time-series│ │ Viz     │ │ Alert   │ │
+│  │ Time-series│ │ Web/App │ │ Alert   │ │
 │  │ Storage  │ │ Dashboard│ │ Center  │ │
+│  └──────────┘ └──────────┘ └─────────┘ │
+│  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
+│  │ Gateway  │ │ Breaker  │ │ Command │ │
+│  │ Mgmt     │ │ Mgmt     │ │ Audit   │ │
 │  └──────────┘ └──────────┘ └─────────┘ │
 └─────────────────────────────────────────┘
 ```
@@ -79,11 +95,11 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 ## Technologies
 
 ### Protocols
-- **Modbus RTU/TCP** – Industrial standard
-- **MQTT** – IoT messaging
-- **HTTP/REST** – API access
-- **TCP/UDP** – Custom protocols
-- **RS485/RS232** – Serial
+- **Modbus RTU** – Breaker serial communication
+- **RS485/RS232** – Serial physical layer
+- **MQTT** – Gateway-to-cloud telemetry uplink
+- **HTTP/REST** – Management APIs
+- **TCP/UDP** – Optional extension protocols
 
 ### Gateway
 - **Java** – Core service
@@ -112,11 +128,11 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 
 ## Key Achievements
 
-- ✅ **10+ protocols** – Mainstream industrial protocols supported
-- ✅ **Sub-100ms latency** – From acquisition to display
-- ✅ **24/7 stability** – Industrial-grade uptime
-- ✅ **1000+ devices** – Single gateway scale
-- ✅ **Multi-scenario** – Factories, buildings, energy, etc.
+- ✅ **Non-networked breakers enabled** – Existing serial breakers managed without retrofit networking
+- ✅ **Unified gateway control** – One gateway centrally controls multiple breaker circuits
+- ✅ **Real-time visibility** – Current/voltage/power/status synchronized to cloud dashboards
+- ✅ **Reliable operations** – Local buffering + retry ensures stable data in weak-network sites
+- ✅ **Scalable deployment** – Multi-gateway management across sites/buildings
 
 ---
 
@@ -129,16 +145,16 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 - Extensibility for new protocols
 
 ### Protocol Adapters
-- Modbus, MQTT, and other adapters
-- Parsing and data transformation
-- Custom protocol support
-- Serial and network I/O
+- Serial Modbus RTU and vendor-specific breaker protocol adapters
+- Breaker register mapping and data normalization
+- Serial communication stability and retry control
+- Command framing for remote open/close operations
 
 ### Backend
-- Data ingestion and preprocessing
-- Alert rules and engine
-- Storage and query
-- Remote config and OTA
+- Gateway data ingestion and preprocessing
+- Breaker management, grouping, and policy control
+- Alert rules and event engine
+- Storage, query, and operation audit logs
 
 ### Dashboards
 - Visualization and layout
@@ -170,11 +186,11 @@ An industrial IoT visualization gateway that centralizes and visualizes data fro
 
 ## Results & Impact
 
-- **Wide deployment** – Multiple factories and building projects
-- **Unified data** – Single gateway for heterogeneous devices
-- **Efficiency** – Real-time monitoring reduced manual inspection
-- **Cost** – Edge computing reduced bandwidth and cloud cost
-- **Digitalization** – Support for enterprise digital initiatives
+- **Lower retrofit cost** – Legacy non-network breakers reused through gateway access
+- **Unified control** – Centralized open/close and alarm management per gateway/site
+- **Operational efficiency** – Reduced manual on-site switching and inspections
+- **Safety improvement** – Faster anomaly detection and response through platform alerts
+- **Cloud visibility** – Full historical and real-time breaker data for maintenance decisions
 
 ---
 

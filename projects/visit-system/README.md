@@ -1,12 +1,13 @@
-# Hospital Visit Management System
+# Visit Booking & Access Management System
 
-> Smart visit management for ICU, NICU, infectious wards: face-based access, booking, time control, and remote video visits.
+> Smart visit booking and access management platform for high-security sites (especially prisons), with admin portal, client terminals, and visitor-side apps.
 
 ---
 
 ## Overview
 
-A hospital visit management system for special wards (ICU, NICU, infectious disease, etc.). It provides face recognition access, booking, visit duration control, and remote video visits, improving both management efficiency and visitor experience.
+A visit booking and access management **platform** designed for high-security scenarios such as **prison visitation** (and can be adapted to hospitals, ICUs, NICUs, infectious wards, etc.).  
+The system provides a **management side, client/terminal side, and visitor side**: families use mobile/mini‑program to make appointments, on-site terminals handle face-based identity verification and gate control, and the admin backend manages visit rules, approvals, schedules, and statistics.
 
 **Project Type:** Healthcare IT / Smart Hardware / Face Recognition  
 **Timeline:** 2020 – 2022  
@@ -17,14 +18,28 @@ A hospital visit management system for special wards (ICU, NICU, infectious dise
 
 ## Key Features
 
-- **Face recognition access:** Face-based entry/exit; blocks unauthorized access
-- **Visit booking:** Online booking of time slots to avoid queues
-- **Time management:** Automatic duration control and end-of-slot reminders
-- **Remote video visits:** Video visits to reduce cross-infection risk
-- **Family management:** Family registration and face database management
-- **Staff channel:** Dedicated fast lane for medical staff
-- **Statistics:** Visit records and footfall analysis
-- **HIS integration:** Integration with hospital information systems
+- **Multi-role platform:** Separate experiences for prison/hospital admin, on-site terminals, and visitors/family.
+- **Online visit booking:** Families book visit time slots in advance, reducing on-site queuing and conflict.
+- **Approval & quota rules:** Configurable visit policies (frequency, duration, number of visitors, relationship, blacklist, etc.).
+- **Face recognition access:** Face-based entry/exit at gates or doors; blocks unauthorized or expired visits.
+- **Time management:** Automatic visit timing, warnings before end of slot, and automatic end of visit.
+- **Remote video visits:** Video visitation for special periods (e.g., epidemic) or remote relatives.
+- **Family & inmate management:** Family registration, relationship binding, and face database management.
+- **Statistics & audit:** Visit records, frequency analysis, abnormal behavior tracing, and audit logs.
+
+---
+
+## Core Subsystems / 核心子系统
+
+The platform is built around three main subsystems, with **audio-video session management** at the center of remote visits:
+
+| Subsystem | Role |
+|-----------|------|
+| **预约系统（Booking）** | Time-slot reservation, approval workflow, visit rules, and family/inmate binding. |
+| **音视频系统（A/V）** | Real-time audio/video calls between visitors and inmates; session creation, join/leave, duration control, and quality management. |
+| **聊天系统（Chat）** | Text messaging between parties (e.g., pre/post visit), message history, and moderation where required. |
+
+- **音视频会话管理（A/V session management）：** Create and manage A/V sessions (e.g., one-to-one video visit), control who can join, set max duration, handle reconnection and end-of-session cleanup, and optionally record or archive for compliance.
 
 ---
 
@@ -94,7 +109,8 @@ A hospital visit management system for special wards (ICU, NICU, infectious dise
 - **Spring Boot** – Business services
 - **MySQL** – Data storage
 - **Redis** – Cache and session
-- **WebRTC** – Video visits
+- **WebRTC** – Real-time audio/video; A/V session management (create, join, leave, timeout, recording)
+- **IM / Chat** – Chat system for text messages and history
 
 ### Integration
 - **HIS interface** – Hospital system integration
@@ -133,11 +149,16 @@ A hospital visit management system for special wards (ICU, NICU, infectious dise
 - Reminders and notifications
 - Booking statistics
 
-### Video Visits
-- WebRTC integration
-- Room management
-- Duration control
-- Recording and archive
+### Chat System
+- Text messaging between visitors and inmates
+- Message history and moderation
+- Integration with visit and A/V flows
+
+### Audio-Video & Session Management
+- WebRTC-based real-time audio/video
+- A/V session lifecycle (create, join, leave, timeout)
+- Duration control and end-of-session cleanup
+- Room/session management and optional recording
 
 ### Admin
 - Family and face DB management

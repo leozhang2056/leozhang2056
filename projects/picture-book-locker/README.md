@@ -171,53 +171,91 @@ A smart picture-book locker system for school and community libraries. It provid
 
 ### Hardware & Deployment / 硬件与部署现场
 
-![Picture book locker front](./images/picture-book-locker-front.png)  
-*Deployed picture-book locker with visible book slots and screen*
-
-![Campus hallway deployment](./images/picture-book-locker-campus-hall.png)  
-*Two picture-book lockers installed in a school canteen corridor*
-
-![Smart library room exterior](./images/smart-library-room-exterior.jpg)  
-*24/7 smart library room built around the locker system*
-
-![Bank of China deployment](./images/picture-book-locker-bank-of-china.png)  
-*Outdoor deployment in front of a public site*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/picture-book-locker-front.png" width="320"/><br/>
+      <sub>Deployed locker with visible book slots and screen</sub>
+    </td>
+    <td align="center">
+      <img src="./images/picture-book-locker-campus-hall.png" width="320"/><br/>
+      <sub>Two lockers installed in a school canteen corridor</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/smart-library-room-exterior.jpg" width="320"/><br/>
+      <sub>24/7 smart library room built around the locker system</sub>
+    </td>
+    <td align="center">
+      <img src="./images/picture-book-locker-bank-of-china.png" width="320"/><br/>
+      <sub>Outdoor deployment in front of a public site</sub>
+    </td>
+  </tr>
+</table>
 
 ### Locker Variants / 柜机款式
 
-![Locker exterior blue](./images/locker-exterior-blue-site.png)  
-*Blue locker cabinet with integrated touch screen*
-
-![Locker exterior green](./images/locker-exterior-green.jpg)  
-*Green picture-book locker with dense slots*
-
-![Locker exterior red](./images/locker-exterior-red.jpg)  
-*Red/grey locker variant with high capacity*
-
-![Locker exterior with gates](./images/locker-exterior-with-gates.png)  
-*Locker with anti-theft gates for entrance/exit control*
-
-![Locker exterior with gates (alt)](./images/locker-exterior-with-gates-alt.png)  
-*Alternative angle of locker plus gate combination*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/locker-exterior-blue-site.png" width="260"/><br/>
+      <sub>Blue locker cabinet with integrated touch screen</sub>
+    </td>
+    <td align="center">
+      <img src="./images/locker-exterior-green.jpg" width="260"/><br/>
+      <sub>Green picture-book locker with dense slots</sub>
+    </td>
+    <td align="center">
+      <img src="./images/locker-exterior-red.jpg" width="260"/><br/>
+      <sub>Red/grey high-capacity variant</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/locker-exterior-with-gates.png" width="260"/><br/>
+      <sub>Locker with anti-theft gates</sub>
+    </td>
+    <td align="center">
+      <img src="./images/locker-exterior-with-gates-alt.png" width="260"/><br/>
+      <sub>Alternative angle of locker + gate</sub>
+    </td>
+    <td align="center">
+      <img src="./images/locker-illustration-cartoon.png" width="260"/><br/>
+      <sub>Cartoon-style concept illustration</sub>
+    </td>
+  </tr>
+</table>
 
 ### UV & Night Mode / 消毒与夜间效果
 
-![Picture-book locker UV mode](./images/picture-book-locker-uv-mode.png)  
-*Locker running with illuminated UV/lighting effect*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/picture-book-locker-uv-mode.png" width="280"/><br/>
+      <sub>Locker running with illuminated UV / lighting effect</sub>
+    </td>
+    <td align="center">
+      <img src="./images/borrow-ui-on-device.png" width="280"/><br/>
+      <sub>Borrow UI running on the actual locker device</sub>
+    </td>
+    <td align="center">
+      <img src="./images/borrow-ui-closeup.png" width="280"/><br/>
+      <sub>Touch screen UI: borrow / return / exchange</sub>
+    </td>
+  </tr>
+</table>
 
-![Borrow UI close-up](./images/borrow-ui-closeup.png)  
-*Touch screen UI for borrow / return / exchange*
+### Related Devices / 相关设备
 
-![Borrow UI on device](./images/borrow-ui-on-device.png)  
-*Borrow UI running on the actual locker device*
-
-### Related Devices & Concept / 相关设备与概念图
-
-![Cartoon illustration locker](./images/locker-illustration-cartoon.png)  
-*Concept illustration showing a user interacting with the locker*
-
-![Smart cabinet recycle style](./images/smart-cabinet-recycle-style.jpg)  
-*Another IoT cabinet form factor used in similar scenarios*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/smart-cabinet-recycle-style.jpg" width="320"/><br/>
+      <sub>Related IoT cabinet form factor used in similar scenarios</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
