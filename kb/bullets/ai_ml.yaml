@@ -1,0 +1,102 @@
+# AI/ML 可复用要点库
+# Reusable Bullet Points - AI/ML Engineering
+
+bullets:
+  - id: ai_computer_vision
+    category: technical
+    tags: [ai, computer-vision, pytorch, opencv]
+    original: "Built computer vision pipelines using PyTorch and OpenCV"
+    variants:
+      - "Developed end-to-end computer vision solutions with PyTorch and OpenCV"
+      - "Implemented image processing pipelines for real-time object detection"
+      - "Built custom CNN architectures for domain-specific visual recognition tasks"
+    evidence: [chatclothes, chinese-herbal-recognition]
+    skills: [PyTorch, OpenCV, Computer Vision, CNN, Image Processing]
+
+  - id: ai_diffusion_models
+    category: technical
+    tags: [ai, diffusion, generative-ai, vton]
+    original: "Implemented diffusion-based virtual try-on system with LoRA fine-tuning"
+    variants:
+      - "Built generative AI system using diffusion models for virtual try-on"
+      - "Applied LoRA fine-tuning to enhance diffusion model performance"
+      - "Developed controllable image generation pipeline with pose alignment"
+    evidence: [chatclothes]
+    skills: [Diffusion Models, LoRA, OOTDiffusion, Generative AI]
+
+  - id: ai_edge_deployment
+    category: technical
+    tags: [ai, edge, optimization, raspberry-pi]
+    original: "Optimized AI models for edge deployment on Raspberry Pi 5"
+    variants:
+      - "Deployed deep learning models on edge devices with real-time performance"
+      - "Optimized neural networks for ARM architecture and limited compute"
+      - "Built lightweight AI solutions running entirely offline on edge hardware"
+    evidence: [chatclothes]
+    skills: [Edge AI, Model Optimization, ONNX, TensorRT, Raspberry Pi]
+
+  - id: ai_llm_integration
+    category: technical
+    tags: [ai, llm, nlp, deepseek]
+    original: "Integrated DeepSeek LLM for natural language control and dialogue"
+    variants:
+      - "Built LLM-powered conversational interface for system control"
+      - "Implemented prompt engineering and structured output parsing"
+      - "Deployed local LLM with Ollama for offline natural language processing"
+    evidence: [chatclothes]
+    skills: [LLM, DeepSeek, Prompt Engineering, Ollama, NLP]
+
+  - id: ai_yolo_detection
+    category: technical
+    tags: [ai, yolo, object-detection, classification]
+    original: "Developed YOLO12n-LC lightweight classifier for garment detection"
+    variants:
+      - "Built custom YOLO variants optimized for specific object categories"
+      - "Trained and deployed real-time object detection models"
+      - "Developed lightweight CNN classifiers for resource-constrained environments"
+    evidence: [chatclothes]
+    skills: [YOLO, Object Detection, Model Training, Edge Optimization]
+
+  - id: ai_mlops_pipeline
+    category: technical
+    tags: [ai, mlops, pipeline, automation]
+    original: "Built end-to-end ML pipeline from data collection to model deployment"
+    variants:
+      - "Implemented automated ML training pipeline with experiment tracking"
+      - "Built model versioning and A/B testing infrastructure"
+      - "Created data annotation and model evaluation workflows"
+    evidence: [chinese-herbal-recognition, device-maintenance-prediction]
+    skills: [MLOps, ML Pipeline, Model Versioning, Dify, ComfyUI]
+
+  - id: ai_predictive_maintenance
+    category: technical
+    tags: [ai, predictive, random-forest, analytics]
+    original: "Developed predictive maintenance system using Random Forest"
+    variants:
+      - "Built machine learning models for equipment failure prediction"
+      - "Implemented time-series analysis for maintenance scheduling"
+      - "Created data-driven predictive analytics platform"
+    evidence: [device-maintenance-prediction]
+    skills: [Random Forest, Predictive Modeling, Time Series, Scikit-learn]
+
+  - id: ai_research_publication
+    category: research
+    tags: [ai, research, thesis, publication]
+    original: "Completed Master's thesis on AI virtual try-on, submitted 6 months early"
+    variants:
+      - "Conducted independent AI research resulting in peer-reviewed publication"
+      - "Developed novel AI methodology with comprehensive experimental validation"
+      - "Presented research findings with working demo and deployment documentation"
+    evidence: [chatclothes]
+    skills: [Research, Academic Writing, Experimental Design, Innovation]
+
+  - id: ai_multimodal
+    category: technical
+    tags: [ai, multimodal, vision-language, integration]
+    original: "Built multimodal AI system combining vision and language understanding"
+    variants:
+      - "Developed vision-language models for intuitive user interaction"
+      - "Integrated computer vision with natural language processing"
+      - "Built unified AI framework supporting text, image, and voice inputs"
+    evidence: [chatclothes]
+    skills: [Multimodal AI, Vision-Language Models, System Integration]

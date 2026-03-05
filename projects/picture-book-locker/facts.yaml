@@ -1,128 +1,108 @@
-# Project Facts - 绘本储物柜
-# Structured data for RAG and resume generation
-
 project_id: picture-book-locker
 name: Picture Book Locker / Smart Library Cabinet
 name_cn: 绘本储物柜
-
 type: IoT / Smart Library
 category:
-  - Android Development
-  - IoT
-  - Embedded Systems
-  - Hardware Integration
-
+- Android Development
+- IoT
+- Embedded Systems
+- Hardware Integration
 timeline:
-  start: "2020"
-  end: "2023"
+  start: '2020'
+  end: '2023'
   duration_years: 3
-
 role: Android Developer / Embedded Engineer
 team_size: null
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
+summary: 'Smart picture book locker system for schools and libraries providing  24/7
+  self-service book borrowing. Features face recognition, QR code  scanning, UV disinfection,
+  and intelligent cabinet control.
 
-summary: >
-  Smart picture book locker system for schools and libraries providing 
-  24/7 self-service book borrowing. Features face recognition, QR code 
-  scanning, UV disinfection, and intelligent cabinet control.
-
+  '
 highlights:
-  - Developed Android control system with face recognition and QR code borrowing
-  - Integrated hardware components including electromagnetic locks, LED strips, and disinfection modules
-  - Enabled 24/7 self-service book borrowing and returning
-  - Implemented built-in UV disinfection for returned books
-  - Successfully deployed in multiple schools with multi-cabinet networking support
-  - Achieved average borrowing time of less than 3 seconds
-
+- Developed Android control system with face recognition and QR code borrowing
+- Integrated hardware components including electromagnetic locks, LED strips, and
+  disinfection modules
+- Enabled 24/7 self-service book borrowing and returning
+- Implemented built-in UV disinfection for returned books
+- Successfully deployed in multiple schools with multi-cabinet networking support
+- Achieved average borrowing time of less than 3 seconds
 tech_stack:
   languages:
-    - Java
-    - Kotlin
-  
-  android:
-    - Android SDK
-    - Face Recognition SDK
-    - ZXing (QR Code)
-    - SQLite
-  
-  embedded:
-    - ARM Board
-    - UART/RS485
-    - GPIO Control
-    - Electromagnetic Locks
-  
+  - Java
+  - Kotlin
+  mobile:
+  - Android SDK
+  - Face Recognition SDK
+  - ZXing (QR Code)
+  - SQLite
+  iot:
+  - ARM Board
+  - QR Scanner
+  - UART/RS485
+  - Face Camera
+  - UV Disinfection
+  - Electromagnetic Locks
+  - GPIO Control
+  - LED Strips
+  - Door Sensors
   backend:
-    - Spring Boot
-    - MySQL
-    - Redis
-    - MQTT
-  
-  hardware:
-    - Face Camera
-    - QR Scanner
-    - LED Strips
-    - UV Disinfection
-    - Door Sensors
-
+  - Spring Boot
+  - MySQL
+  - Redis
+  - MQTT
 features:
-  - Face recognition borrowing
-  - QR code authentication
-  - Smart cabinet door control
-  - UV book disinfection
-  - Real-time inventory tracking
-  - Borrowing history
-  - Admin dashboard
-  - Multi-cabinet networking
-
+- Face recognition borrowing
+- QR code authentication
+- Smart cabinet door control
+- UV book disinfection
+- Real-time inventory tracking
+- Borrowing history
+- Admin dashboard
+- Multi-cabinet networking
 metrics:
-  - metric: "24/7"
-    unit: "service"
-    description: Unattended self-service
-  
-  - metric: "<3s"
-    unit: "time"
-    description: Average borrowing time
-  
-  - metric: "Multiple"
-    unit: "schools"
-    description: Successfully deployed
-  
-  - metric: "0%"
-    unit: "loss rate"
-    description: Book security with smart locks
-
+- value: '24'
+  label: /7
+  description: Unattended self-service
+  unit: service
+- value: <3s
+  label: time
+  description: Average borrowing time
+  unit: time
+- value: Multiple
+  label: schools
+  description: Successfully deployed
+  unit: schools
+- value: 0%
+  label: loss rate
+  description: Book security with smart locks
+  unit: loss rate
 achievements:
-  - Developed complete smart locker system
-  - Integrated multiple hardware components
-  - Achieved sub-3-second borrowing experience
-  - Deployed in multiple schools and libraries
-  - 24/7 service operation capability
-  - Zero book loss with intelligent locks
-
+- Developed complete smart locker system
+- Integrated multiple hardware components
+- Achieved sub-3-second borrowing experience
+- Deployed in multiple schools and libraries
+- 24/7 service operation capability
+- Zero book loss with intelligent locks
 evidence:
-  - type: photo
-    path: images/picture-book-locker-front.png
-  
-  - type: ui
-    path: images/borrow-ui-on-device.png
-  
-  - type: admin
-    path: images/borrow-ui-closeup.png
-
+- type: photo
+  path: images/picture-book-locker-front.png
+- type: ui
+  path: images/borrow-ui-on-device.png
+- type: admin
+  path: images/borrow-ui-closeup.png
 technical_innovations:
-  - name: Low-Latency Hardware Control
-    description: Optimized serial communication and GPIO control for sub-second lock response
-    benefits:
-      - Improved user experience with immediate cabinet access
-  
-  - name: Integrated Disinfection Cycle
-    description: Automated UV-C disinfection logic triggered by book return sensors
-    benefits:
-      - Ensuring hygienic safety for school environments
-
+- name: Low-Latency Hardware Control
+  description: Optimized serial communication and GPIO control for sub-second lock
+    response
+  benefits:
+  - Improved user experience with immediate cabinet access
+- name: Integrated Disinfection Cycle
+  description: Automated UV-C disinfection logic triggered by book return sensors
+  benefits:
+  - Ensuring hygienic safety for school environments
 performance_metrics:
   speed:
     description: User transaction time
@@ -133,38 +113,33 @@ performance_metrics:
   availability:
     description: Operational uptime
     achievement: 24/7 unattended service in high-traffic school libraries
-
 skills_demonstrated:
   technical:
-    - Android (Java/Kotlin)
-    - Face Recognition SDK
-    - Serial Communication (UART/RS485)
-    - GPIO / Hardware Control
-    - IoT Systems
-    - Spring Boot / MQTT
-    - SQLite / MySQL
-  
+  - Android (Java/Kotlin)
+  - Face Recognition SDK
+  - Serial Communication (UART/RS485)
+  - GPIO / Hardware Control
+  - IoT Systems
+  - Spring Boot / MQTT
+  - SQLite / MySQL
   soft:
-    - Hardware Debugging
-    - On-site Deployment
-    - Technical Support
-    - User Training
-
+  - Hardware Debugging
+  - On-site Deployment
+  - Technical Support
+  - User Training
 related_to_roles:
-  - Android Developer
-  - Embedded Engineer
-  - IoT Engineer
-  - Hardware Integration Engineer
-
+- Android Developer
+- Embedded Engineer
+- IoT Engineer
+- Hardware Integration Engineer
 keywords:
-  - Smart Locker
-  - Face Recognition
-  - QR Code
-  - Android
-  - IoT
-  - Embedded
-  - Library System
-  - Hardware Integration
-  - UV Disinfection
-
-last_updated: "2025-02-11"
+- Smart Locker
+- Face Recognition
+- QR Code
+- Android
+- IoT
+- Embedded
+- Library System
+- Hardware Integration
+- UV Disinfection
+last_updated: '2025-02-11'

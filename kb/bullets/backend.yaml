@@ -1,0 +1,91 @@
+# 后端开发可复用要点库
+# Reusable Bullet Points - Backend Development
+
+bullets:
+  - id: backend_microservices
+    category: technical
+    tags: [backend, microservices, spring, java]
+    original: "Designed and implemented microservice architecture with Spring Boot and Spring Cloud"
+    variants:
+      - "Architected scalable microservices platform using Spring Boot and Spring Cloud"
+      - "Built distributed backend system with service discovery and load balancing"
+      - "Implemented microservice patterns including circuit breaker and API gateway"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Spring Boot, Spring Cloud, Microservices, REST API]
+
+  - id: backend_devops
+    category: technical
+    tags: [backend, devops, docker, ci/cd]
+    original: "Managed CI/CD pipelines with Docker, Jenkins, and Nginx"
+    variants:
+      - "Built automated CI/CD pipelines deploying microservices to production"
+      - "Implemented containerized deployment with Docker and orchestration"
+      - "Configured reverse proxy and load balancing with Nginx"
+    evidence: [smart-factory]
+    skills: [Docker, Jenkins, Nginx, CI/CD, Linux]
+
+  - id: backend_database_design
+    category: technical
+    tags: [backend, database, mysql, redis, mongodb]
+    original: "Designed database schema and optimized queries for high-performance systems"
+    variants:
+      - "Architected polyglot persistence layer with MySQL, Redis, and MongoDB"
+      - "Optimized database performance achieving sub-100ms query response times"
+      - "Designed sharding and replication strategies for data scalability"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [MySQL, Redis, MongoDB, Database Design, Query Optimization]
+
+  - id: backend_iot_integration
+    category: technical
+    tags: [backend, iot, integration, hardware]
+    original: "Integrated IoT devices and sensors with backend systems"
+    variants:
+      - "Built IoT data ingestion pipeline processing millions of device events"
+      - "Developed protocol adapters for RFID, barcode scanners, and sensors"
+      - "Implemented real-time device monitoring and command dispatch system"
+    evidence: [smart-factory, iot-solutions]
+    skills: [IoT, MQTT, WebSocket, Protocol Design, Hardware Integration]
+
+  - id: backend_team_lead
+    category: soft
+    tags: [backend, leadership, team, architecture]
+    original: "Led backend development team and defined technical architecture"
+    variants:
+      - "Led 6-person backend team delivering enterprise microservices platform"
+      - "Established backend development standards and code review practices"
+      - "Architected multi-site deployment supporting 5+ manufacturing locations"
+    evidence: [smart-factory]
+    skills: [Technical Leadership, System Design, Team Management]
+
+  - id: backend_high_availability
+    category: technical
+    tags: [backend, reliability, monitoring, uptime]
+    original: "Maintained 99.9% uptime across production systems"
+    variants:
+      - "Achieved 99.9% system availability through redundancy and monitoring"
+      - "Implemented comprehensive logging, monitoring, and alerting systems"
+      - "Designed fault-tolerant architecture with automatic failover"
+    evidence: [smart-factory]
+    skills: [High Availability, Monitoring, Alerting, SRE]
+
+  - id: backend_api_design
+    category: technical
+    tags: [backend, api, rest, design]
+    original: "Designed RESTful APIs for mobile and web clients"
+    variants:
+      - "Built RESTful API platform serving 10K+ daily active users"
+      - "Designed versioned APIs with backward compatibility guarantees"
+      - "Implemented API authentication, rate limiting, and documentation"
+    evidence: [enterprise-messaging, smart-factory]
+    skills: [REST API, API Design, OpenAPI, Authentication]
+
+  - id: backend_windows_service
+    category: technical
+    tags: [backend, windows, serial, hardware]
+    original: "Developed Windows service for serial data acquisition from electronic scales"
+    variants:
+      - "Built Windows service for industrial equipment data collection via RS232/RS485"
+      - "Implemented serial communication protocol parsing and data normalization"
+      - "Created resilient Windows service with auto-reconnect and monitoring"
+    evidence: [smart-factory]
+    skills: [Windows Service, Serial Communication, RS232, RS485, .NET]

@@ -1,193 +1,167 @@
-# Project Facts - 展会机器人
-# Structured data for RAG and resume generation
-
 project_id: exhibition-robot
 name: Exhibition Service Robot
 name_cn: 展会机器人
-
 type: AI / Robotics
 category:
-  - Robotics
-  - AI Integration
-  - SLAM Navigation
-  - Voice Interaction
-
+- Robotics
+- AI Integration
+- SLAM Navigation
+- Voice Interaction
 timeline:
-  start: "2019"
-  end: "2019"
-  focus_year: "2019"
+  start: '2019'
+  end: '2019'
+  focus_year: '2019'
   duration_years: 1
-  note: "AI technology was not yet mature; solution used rule-based logic with ASR/TTS/face APIs rather than modern LLM or deep learning."
-
+  note: AI technology was not yet mature; solution used rule-based logic with ASR/TTS/face
+    APIs rather than modern LLM or deep learning.
 role: Full-stack Engineer / System Integration
 team_size: null
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
+summary: 'Intelligent service robot for exhibitions and shopping malls (primarily
+  2019). Provides guided tours, voice interaction (ASR/TTS), face recognition, and  autonomous
+  navigation. Built when AI was less mature—rule-based and API-driven  rather than
+  LLM/deep-learning; supports multi-modal interaction and customizable content.
 
-summary: >
-  Intelligent service robot for exhibitions and shopping malls (primarily 2019).
-  Provides guided tours, voice interaction (ASR/TTS), face recognition, and 
-  autonomous navigation. Built when AI was less mature—rule-based and API-driven 
-  rather than LLM/deep-learning; supports multi-modal interaction and customizable content.
-
+  '
 highlights:
-  - Developed Android interaction interface and voice dialogue system
-  - Integrated ROS for autonomous navigation and path planning
-  - Implemented LiDAR-based SLAM for mapping and localization
-  - Integrated ASR (Speech Recognition) and TTS (Text-to-Speech)
-  - Developed face recognition for VIP greeting and attendance tracking
-  - Achieved centimeter-level navigation precision
-  - Enabled 7x24 continuous service capability for exhibitions
-
+- Developed Android interaction interface and voice dialogue system
+- Integrated ROS for autonomous navigation and path planning
+- Implemented LiDAR-based SLAM for mapping and localization
+- Integrated ASR (Speech Recognition) and TTS (Text-to-Speech)
+- Developed face recognition for VIP greeting and attendance tracking
+- Achieved centimeter-level navigation precision
+- Enabled 7x24 continuous service capability for exhibitions
 tech_stack:
   languages:
-    - Java
-    - Kotlin
-    - Python
-    - C++
-  
-  robotics:
-    - ROS
-    - SLAM
-    - Navigation Stack
-    - OpenCV
-    - PCL
-  
-  ai:
-    - ASR (Speech Recognition)
-    - TTS (Text to Speech)
-    - NLP (Natural Language Processing)
-    - Face Recognition
-    - Human Detection
-  
-  sensors:
-    - LiDAR
-    - RGBD Camera
-    - Ultrasonic Sensors
-    - IMU
-    - Encoders
-  
+  - Java
+  - Kotlin
+  - Python
+  - C++
+  domain:
+  - ROS
+  - SLAM
+  - Navigation Stack
+  - OpenCV
+  - PCL
+  ai_ml:
+  - ASR (Speech Recognition)
+  - TTS (Text to Speech)
+  - NLP (Natural Language Processing)
+  - Face Recognition
+  - Human Detection
+  iot:
+  - LiDAR
+  - RGBD Camera
+  - Ultrasonic Sensors
+  - IMU
+  - Encoders
   mobile:
-    - Android SDK
-    - Touch Screen UI
-  
+  - Android SDK
+  - Touch Screen UI
   backend:
-    - Spring Boot
-    - WebSocket
-    - MQTT
-    - MySQL
-    - Redis
-
+  - Spring Boot
+  - WebSocket
+  - MQTT
+  - MySQL
+  - Redis
 features:
-  - Voice interaction and dialogue
-  - Face recognition
-  - Autonomous navigation (SLAM)
-  - Guided tour and explanation
-  - Information query
-  - Multi-modal interaction
-  - Remote monitoring
-  - Content customization
-
+- Voice interaction and dialogue
+- Face recognition
+- Autonomous navigation (SLAM)
+- Guided tour and explanation
+- Information query
+- Multi-modal interaction
+- Remote monitoring
+- Content customization
 metrics:
-  - metric: "cm-level"
-    unit: "precision"
-    description: Navigation accuracy
-  
-  - metric: ">90%"
-    unit: "accuracy"
-    description: Voice understanding rate
-  
-  - metric: ">98%"
-    unit: "accuracy"
-    description: Face recognition accuracy
-  
-  - metric: "Multiple"
-    unit: "exhibitions"
-    description: Successfully deployed
-  
-  - metric: "7×24"
-    unit: "service"
-    description: Continuous operation capability
-
+- value: cm-level
+  label: precision
+  description: Navigation accuracy
+  unit: precision
+- value: '>90%'
+  label: accuracy
+  description: Voice understanding rate
+  unit: accuracy
+- value: '>98%'
+  label: accuracy
+  description: Face recognition accuracy
+  unit: accuracy
+- value: Multiple
+  label: exhibitions
+  description: Successfully deployed
+  unit: exhibitions
+- value: '7'
+  label: ×24
+  description: Continuous operation capability
+  unit: service
 achievements:
-  - Developed complete service robot system
-  - Achieved cm-level navigation precision
-  - Integrated multi-modal AI capabilities
-  - Successfully deployed at multiple exhibitions
-  - 24/7 autonomous service operation
-  - Collected valuable visitor analytics
-
+- Developed complete service robot system
+- Achieved cm-level navigation precision
+- Integrated multi-modal AI capabilities
+- Successfully deployed at multiple exhibitions
+- 24/7 autonomous service operation
+- Collected valuable visitor analytics
 evidence:
-  - type: photo
-    path: images/robot-exterior.png
-  
-  - type: ui
-    path: images/navigation-ui.png
-  
-  - type: interaction
-    path: images/voice-interaction.png
-
+- type: photo
+  path: images/robot-exterior.png
+- type: ui
+  path: images/navigation-ui.png
+- type: interaction
+  path: images/voice-interaction.png
 technical_innovations:
-  - name: Multi-modal Interaction Fusion
-    description: Combines voice, touch, and vision for seamless user interaction
-    benefits:
-      - Improved user engagement in noisy exhibition environments
-      - Redundant input methods ensuring reliability
-  
-  - name: High-Precision SLAM Tuning
-    description: Fine-tuned ROS navigation stack for complex, dynamic exhibition halls
-    benefits:
-      - Centimeter-level accuracy in localization
-      - Robust obstacle avoidance in crowded areas
-
+- name: Multi-modal Interaction Fusion
+  description: Combines voice, touch, and vision for seamless user interaction
+  benefits:
+  - Improved user engagement in noisy exhibition environments
+  - Redundant input methods ensuring reliability
+- name: High-Precision SLAM Tuning
+  description: Fine-tuned ROS navigation stack for complex, dynamic exhibition halls
+  benefits:
+  - Centimeter-level accuracy in localization
+  - Robust obstacle avoidance in crowded areas
 performance_metrics:
   navigation:
     description: Localization and movement accuracy
     achievement: Maintained centimeter-level precision in dynamic environments
   recognition:
     description: Face recognition and voice understanding
-    achievement: >98% face recognition accuracy; >90% voice intent understanding
+    achievement: '>98% face recognition accuracy; >90% voice intent understanding'
   availability:
     description: Continuous operation uptime
     achievement: Successfully supported 7x24 operation throughout multi-day events
-
 skills_demonstrated:
   technical:
-    - ROS (Robot Operating System)
-    - SLAM Navigation
-    - Android (Kotlin/Java)
-    - Speech AI (ASR/TTS)
-    - Computer Vision (Face Recognition)
-    - Sensor Fusion (LiDAR/IMU)
-    - Spring Boot / WebSocket
-    - MQTT Protocol
-  
+  - ROS (Robot Operating System)
+  - SLAM Navigation
+  - Android (Kotlin/Java)
+  - Speech AI (ASR/TTS)
+  - Computer Vision (Face Recognition)
+  - Sensor Fusion (LiDAR/IMU)
+  - Spring Boot / WebSocket
+  - MQTT Protocol
   soft:
-    - System Integration
-    - Hardware Debugging
-    - On-site Deployment
-    - Cross-functional Collaboration
-    - Technical Documentation
-
+  - System Integration
+  - Hardware Debugging
+  - On-site Deployment
+  - Cross-functional Collaboration
+  - Technical Documentation
 related_to_roles:
-  - Robotics Engineer
-  - AI Engineer
-  - Android Developer
-  - System Integration Engineer
-  - Full-stack Developer
-
+- Robotics Engineer
+- AI Engineer
+- Android Developer
+- System Integration Engineer
+- Full-stack Developer
 keywords:
-  - Service Robot
-  - ROS
-  - SLAM
-  - Autonomous Navigation
-  - Voice Interaction
-  - Face Recognition
-  - AI
-  - Android
-  - Exhibition
-  - Computer Vision
-
-last_updated: "2025-02-11"
+- Service Robot
+- ROS
+- SLAM
+- Autonomous Navigation
+- Voice Interaction
+- Face Recognition
+- AI
+- Android
+- Exhibition
+- Computer Vision
+last_updated: '2025-02-11'

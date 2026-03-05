@@ -1,0 +1,96 @@
+# Android 开发可复用要点库
+# Reusable Bullet Points - Android Development
+# 
+# 使用指南：
+# - 每个要点包含原始描述和多个变体
+# - 根据目标岗位 JD 选择合适的变体
+# - 所有要点必须与 kb/ 和 projects/ 中的事实一致
+
+bullets:
+  - id: android_messaging_ndk
+    category: technical
+    tags: [android, ndk, messaging, performance]
+    original: "Developed Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++"
+    variants:
+      - "Built high-performance Android messaging client with NDK-level TCP/UDP implementation"
+      - "Developed low-latency messaging system using Android NDK for network optimization"
+      - "Implemented native network layer with NDK, achieving <200ms message latency"
+    evidence: [enterprise-messaging]
+    skills: [Android SDK, NDK, C, TCP/UDP]
+
+  - id: android_offline_first
+    category: technical
+    tags: [android, offline, sync, architecture]
+    original: "Designed offline-first architecture with real-time sync capabilities"
+    variants:
+      - "Architected offline-first mobile solution with seamless data synchronization"
+      - "Built resilient Android apps supporting offline operations and automatic sync"
+      - "Implemented local-first data pattern with conflict resolution and background sync"
+    evidence: [smart-factory, forest-patrol-inspection]
+    skills: [SQLite, Room, Sync Adapter, WorkManager]
+
+  - id: android_hardware_integration
+    category: technical
+    tags: [android, iot, hardware, integration]
+    original: "Integrated hardware devices including RFID, barcode scanners, and smart lockers"
+    variants:
+      - "Developed Android SDKs for IoT hardware integration (RFID, sensors, locks)"
+      - "Built Android applications controlling industrial hardware via UART/Serial protocols"
+      - "Created unified hardware abstraction layer for diverse IoT device ecosystem"
+    evidence: [smart-factory, picture-book-locker, iot-solutions]
+    skills: [RFID, Barcode, UART, Serial, GPIO, Sensors]
+
+  - id: android_team_leadership
+    category: soft
+    tags: [android, leadership, team, agile]
+    original: "Led Android development team through full product lifecycle"
+    variants:
+      - "Led cross-functional Android team delivering enterprise-grade mobile solutions"
+      - "Managed Android developers through agile sprints and release cycles"
+      - "Mentored junior Android developers and established coding standards"
+    evidence: [enterprise-messaging, smart-factory]
+    skills: [Team Leadership, Agile, Code Review, Mentoring]
+
+  - id: android_performance_optimization
+    category: technical
+    tags: [android, performance, optimization, memory]
+    original: "Optimized Android app performance and memory usage for large-scale deployment"
+    variants:
+      - "Profiled and optimized Android apps for 10K+ DAU with minimal crash rates"
+      - "Implemented memory-efficient image handling and caching strategies"
+      - "Reduced APK size and improved startup time through code optimization"
+    evidence: [enterprise-messaging]
+    skills: [Performance Tuning, Memory Management, Profiling]
+
+  - id: android_modern_architecture
+    category: technical
+    tags: [android, architecture, mvvm, jetpack]
+    original: "Implemented MVVM architecture with Jetpack components"
+    variants:
+      - "Architected Android apps using MVVM pattern with Jetpack ViewModel and LiveData"
+      - "Built maintainable Android codebase with clean architecture and dependency injection"
+      - "Adopted modern Android development practices with Jetpack Compose and Navigation"
+    evidence: [smart-factory, chatclothes]
+    skills: [MVVM, Jetpack, ViewModel, LiveData, Compose]
+
+  - id: android_live_streaming
+    category: technical
+    tags: [android, streaming, video, realtime]
+    original: "Developed Android client for live streaming commerce platform"
+    variants:
+      - "Built Android live streaming client with real-time chat and shopping features"
+      - "Implemented video playback optimization for live commerce scenarios"
+      - "Developed interactive live room features including gifting and comments"
+    evidence: [live-streaming-system]
+    skills: [Video Streaming, ExoPlayer, Real-time Communication]
+
+  - id: android_gis_mapping
+    category: technical
+    tags: [android, gis, maps, gps, offline]
+    original: "Built Android GIS app with offline map support for forest patrol"
+    variants:
+      - "Developed offline-capable GIS Android app for field data collection"
+      - "Implemented GPS tracking and geotagged photo capture in Android"
+      - "Built map-based Android application supporting custom tile layers and annotations"
+    evidence: [forest-patrol-inspection]
+    skills: [GIS, GPS, Maps SDK, Offline Maps, Location Services]

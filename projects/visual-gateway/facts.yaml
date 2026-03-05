@@ -1,185 +1,160 @@
-# Project Facts - 可视化网关
-# Structured data for RAG and resume generation
-
 project_id: visual-gateway
 name: Visual Gateway / Breaker Control Gateway Platform
 name_cn: 可视化网关
-
 type: Android IoT Gateway / Power Control
 category:
-  - Android Development
-  - IoT Gateway
-  - Data Visualization
-  - Industrial Automation
-  - Serial Communication
-
+- Android Development
+- IoT Gateway
+- Data Visualization
+- Industrial Automation
+- Serial Communication
 timeline:
-  start: "2018"
-  end: "2023"
+  start: '2018'
+  end: '2023'
   duration_years: 5
-
 role: Android Developer / Gateway Control Engineer
 team_size: null
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-
-summary: >
-  Gateway-centric breaker control platform: multiple non-networked circuit breakers
-  connect to gateway via RS232 serial bus, and the gateway provides telemetry
+summary: 'Gateway-centric breaker control platform: multiple non-networked circuit
+  breakers connect to gateway via RS232 serial bus, and the gateway provides telemetry
   collection, open/close control, local alerting, and cloud reporting for unified
   web/mobile monitoring across factories and buildings.
 
+  '
 highlights:
-  - Designed Android-based breaker control gateway architecture
-  - Implemented RS232 serial communication for breaker polling and control
-  - Enabled remote open/close control for non-networked circuit breakers
-  - Implemented per-breaker telemetry collection (current/voltage/power/energy/status)
-  - Built gateway-to-cloud telemetry uplink and centralized control console
-  - Developed alert rules for overcurrent, over/undervoltage, leakage, and offline
-  - Added local cache/retry/offline buffering for unstable network scenarios
-  - Supported multi-gateway and multi-site centralized operations
-
+- Designed Android-based breaker control gateway architecture
+- Implemented RS232 serial communication for breaker polling and control
+- Enabled remote open/close control for non-networked circuit breakers
+- Implemented per-breaker telemetry collection (current/voltage/power/energy/status)
+- Built gateway-to-cloud telemetry uplink and centralized control console
+- Developed alert rules for overcurrent, over/undervoltage, leakage, and offline
+- Added local cache/retry/offline buffering for unstable network scenarios
+- Supported multi-gateway and multi-site centralized operations
 tech_stack:
   languages:
-    - Java
-    - Kotlin
-  
-  protocols:
-    - RS232
-    - Modbus RTU
-    - MQTT
-    - HTTP/REST
-  
-  android_gateway:
-    - Android SDK
-    - SerialPort API
-    - SQLite
-  
+  - Java
+  - Kotlin
+  iot:
+  - HTTP/REST
+  - SerialPort API
+  - Modbus RTU
+  - Android SDK
+  - RS232
+  - MQTT
+  - SQLite
   frontend:
-    - Vue.js
-    - ECharts
-    - WebSocket
-    - DataV
-  
+  - Vue.js
+  - ECharts
+  - WebSocket
+  - DataV
   databases:
-    - InfluxDB
-    - MySQL
-    - Redis
-    - MongoDB
-  
-  deployment:
-    - Android Device
-    - Linux
-    - Nginx
-
+  - InfluxDB
+  - MySQL
+  - Redis
+  - MongoDB
+  devops:
+  - Android Device
+  - Linux
+  - Nginx
 features:
-  - Android gateway serial breaker access via RS232
-  - Per-breaker telemetry monitoring
-  - Remote open/close control
-  - Gateway-based unified control for multiple breakers
-  - Cloud reporting and dashboard visualization
-  - Alert management and protection rules
-  - Local cache/retry/offline buffering
-  - Multi-site gateway operations
-
+- Android gateway serial breaker access via RS232
+- Per-breaker telemetry monitoring
+- Remote open/close control
+- Gateway-based unified control for multiple breakers
+- Cloud reporting and dashboard visualization
+- Alert management and protection rules
+- Local cache/retry/offline buffering
+- Multi-site gateway operations
 metrics:
-  - metric: "1:N"
-    unit: "gateway-to-breaker"
-    description: One gateway controls multiple serial breakers
-  
-  - metric: "Real-time"
-    unit: "telemetry"
-    description: Current/voltage/power/status uplink to cloud
-  
-  - metric: "24/7"
-    unit: "operation"
-    description: Gateway edge service stability
-  
-  - metric: "Multi-site"
-    unit: "deployment"
-    description: Centralized management across buildings/factories
-
+- value: '1'
+  label: :N
+  description: One gateway controls multiple serial breakers
+  unit: gateway-to-breaker
+- value: Real-time
+  label: telemetry
+  description: Current/voltage/power/status uplink to cloud
+  unit: telemetry
+- value: '24'
+  label: /7
+  description: Gateway edge service stability
+  unit: operation
+- value: Multi-site
+  label: deployment
+  description: Centralized management across buildings/factories
+  unit: deployment
 achievements:
-  - Unified control of non-networked breakers through serial gateway
-  - Delivered remote breaker open/close and command auditing
-  - Built reliable gateway-cloud synchronization pipeline
-  - Deployed across multiple factories and building projects
-  - Improved safety response using threshold alarms and notifications
-  - Reduced retrofit costs by avoiding per-breaker networking upgrades
-
+- Unified control of non-networked breakers through serial gateway
+- Delivered remote breaker open/close and command auditing
+- Built reliable gateway-cloud synchronization pipeline
+- Deployed across multiple factories and building projects
+- Improved safety response using threshold alarms and notifications
+- Reduced retrofit costs by avoiding per-breaker networking upgrades
 evidence:
-  - type: architecture
-    path: images/gateway-arch.png
-  
-  - type: dashboard
-    path: images/dashboard.png
-  
-  - type: monitoring
-    path: images/device-monitor.png
-
+- type: architecture
+  path: images/gateway-arch.png
+- type: dashboard
+  path: images/dashboard.png
+- type: monitoring
+  path: images/device-monitor.png
 technical_innovations:
-  - name: Serial Breaker Control Engine
-    description: High-reliability serial polling and command engine for RS232 breaker networks
-    benefits:
-      - Unified telemetry and command model for heterogeneous breaker models
-      - Stable command delivery (open/close) with retry and timeout handling
-      - Lower retrofit cost by reusing non-networked breakers
-  
-  - name: Edge Alerting Logic
-    description: Localized rule engine for breaker safety alerts and offline-resilient operation
-    benefits:
-      - Sub-second local response for critical electrical anomalies
-      - Continued telemetry buffering and control during network outages
-      - Reduced cloud bandwidth through edge-side filtering and aggregation
-
+- name: Serial Breaker Control Engine
+  description: High-reliability serial polling and command engine for RS232 breaker
+    networks
+  benefits:
+  - Unified telemetry and command model for heterogeneous breaker models
+  - Stable command delivery (open/close) with retry and timeout handling
+  - Lower retrofit cost by reusing non-networked breakers
+- name: Edge Alerting Logic
+  description: Localized rule engine for breaker safety alerts and offline-resilient
+    operation
+  benefits:
+  - Sub-second local response for critical electrical anomalies
+  - Continued telemetry buffering and control during network outages
+  - Reduced cloud bandwidth through edge-side filtering and aggregation
 performance_metrics:
   capacity:
     description: Breaker handling per gateway
     achievement: One gateway manages multiple serial breaker circuits (1:N model)
   latency:
     description: Telemetry and control response
-    achievement: Real-time breaker telemetry uplink and low-latency open/close command relay
+    achievement: Real-time breaker telemetry uplink and low-latency open/close command
+      relay
   reliability:
     description: Gateway edge service stability
     achievement: 24/7 operation with local cache, retry, and offline buffering
-
 skills_demonstrated:
   technical:
-    - Android SDK (Gateway App)
-    - Serial Protocols (RS232, Modbus RTU)
-    - Breaker Control Logic
-    - Command Auditing and Safety Rules
-    - Java / Kotlin
-    - Vue.js / ECharts
-    - Time-series Databases (InfluxDB)
-    - Edge Computing
-    - IoT Architecture
-    - WebSocket
-    - Linux Deployment
-  
-  soft:
-    - System Architecture
-    - Protocol Design
-    - Performance Optimization
-    - Technical Documentation
-
-related_to_roles:
-  - IoT Architect
-  - Full-stack Developer
-  - System Architect
-  - Industrial IoT Engineer
-
-keywords:
-  - Android Gateway
-  - Breaker Control Gateway
-  - RS232
-  - Modbus RTU
-  - IoT Gateway
-  - Remote Switch Control
-  - Telemetry Uplink
+  - Android SDK (Gateway App)
+  - Serial Protocols (RS232, Modbus RTU)
+  - Breaker Control Logic
+  - Command Auditing and Safety Rules
+  - Java / Kotlin
+  - Vue.js / ECharts
+  - Time-series Databases (InfluxDB)
   - Edge Computing
-  - Industrial IoT
-
-last_updated: "2025-02-11"
+  - IoT Architecture
+  - WebSocket
+  - Linux Deployment
+  soft:
+  - System Architecture
+  - Protocol Design
+  - Performance Optimization
+  - Technical Documentation
+related_to_roles:
+- IoT Architect
+- Full-stack Developer
+- System Architect
+- Industrial IoT Engineer
+keywords:
+- Android Gateway
+- Breaker Control Gateway
+- RS232
+- Modbus RTU
+- IoT Gateway
+- Remote Switch Control
+- Telemetry Uplink
+- Edge Computing
+- Industrial IoT
+last_updated: '2025-02-11'

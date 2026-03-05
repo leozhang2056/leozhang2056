@@ -1,132 +1,121 @@
-# Project Facts - IoT Device Management Platform
-# Structured data for RAG and resume generation
-
 project_id: iot-solutions
 name: IoT Device Management Platform
 name_cn: IoT 设备管理平台
-
 type: IoT Platform / Product Development
 category:
-  - IoT
-  - Platform Development
-  - Mobile Development
-  - Gateway / Embedded
-
+- IoT
+- Platform Development
+- Mobile Development
+- Gateway / Embedded
 timeline:
-  start: "2013"
-  end: "2023"
+  start: '2013'
+  end: '2023'
   duration_years: 10
-
 role: Android Mobile Client Developer (primary), Gateway & Platform Integration (participated)
 team_size: varies
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
+summary: 'IoT management platform where users manage their purchased IoT devices.
+  Company sells smart switches and gateways. I developed the gateway (gateway software/firmware),
+  developed the mobile (phone) app for device control and management, and participated
+  in platform (backend/web) development, with Android mobile client work as the primary
+  responsibility.
 
-summary: >
-  IoT management platform where users manage their purchased IoT devices.
-  Company sells smart switches and gateways. I developed the gateway (gateway
-  software/firmware), developed the mobile (phone) app for device control and
-  management, and participated in platform (backend/web) development, with
-  Android mobile client work as the primary responsibility.
-
+  '
 products_sold:
-  - Smart switches
-  - Gateways
-
+- Smart switches
+- Gateways
 my_contributions:
   gateway:
-    - Designed and implemented gateway software/firmware
-    - Device connectivity and protocol implementation
-    - Data forwarding to platform, local/offline behavior
+  - Designed and implemented gateway software/firmware
+  - Device connectivity and protocol implementation
+  - Data forwarding to platform, local/offline behavior
   mobile:
-    - Main owner of Android mobile app for end users
-    - Device discovery, binding, remote control
-    - Integration with platform APIs
+  - Main owner of Android mobile app for end users
+  - Device discovery, binding, remote control
+  - Integration with platform APIs
   platform:
-    - Participated in platform (backend and/or web) development
-    - APIs for device management and control
-
+  - Participated in platform (backend and/or web) development
+  - APIs for device management and control
 platform_features:
-  - User management of purchased IoT devices
-  - Device registration, binding, grouping
-  - Remote control and status monitoring
-  - Smart switches and gateways as sold products
-
+- User management of purchased IoT devices
+- Device registration, binding, grouping
+- Remote control and status monitoring
+- Smart switches and gateways as sold products
 evidence:
-  - type: product_demo
-    path: images/iot-platform-demo.png
-    title: IoT Platform Demo
-  - type: device_photo
-    path: images/gateway-smart-switches.jpg
-    title: Gateway and Smart Switches
-  - type: app_ui
-    path: images/app-device-home.jpg
-    title: Device Home
-  - type: app_ui
-    path: images/app-fire-alert.jpg
-    title: Fire Alert
-  - type: app_ui
-    path: images/app-messages.jpg
-    title: Messages
-  - type: app_ui
-    path: images/app-discover.jpg
-    title: Discover
-  - type: app_ui
-    path: images/app-profile-center.jpg
-    title: Profile Center
-
+- type: product_demo
+  path: images/iot-platform-demo.png
+  title: IoT Platform Demo
+- type: device_photo
+  path: images/gateway-smart-switches.jpg
+  title: Gateway and Smart Switches
+- type: app_ui
+  path: images/app-device-home.jpg
+  title: Device Home
+- type: app_ui
+  path: images/app-fire-alert.jpg
+  title: Fire Alert
+- type: app_ui
+  path: images/app-messages.jpg
+  title: Messages
+- type: app_ui
+  path: images/app-discover.jpg
+  title: Discover
+- type: app_ui
+  path: images/app-profile-center.jpg
+  title: Profile Center
 tech_stack:
-  gateway:
-    - Embedded / Linux
-    - Protocol implementation (e.g. Zigbee, WiFi, proprietary)
-    - UART/Serial, GPIO, MQTT/HTTPS to cloud
+  iot:
+  - Embedded / Linux
+  - Protocol implementation (e.g. Zigbee, WiFi, proprietary)
+  - UART/Serial, GPIO, MQTT/HTTPS to cloud
   mobile:
-    - Android SDK
-    - Java / Kotlin
-    - REST, WebSocket
-  platform:
-    - Spring Boot
-    - RESTful APIs
-    - MySQL
-    - Redis
-    - Vue.js (if applicable)
-
+  - Android SDK
+  - Java / Kotlin
+  - REST, WebSocket
+  platforms:
+  - Spring Boot
+  - RESTful APIs
+  - MySQL
+  - Redis
+  - Vue.js (if applicable)
 other_projects_same_tenure:
-  - Forestry patrol application
-  - Smart cabinet SDK
-  - IoT dashboards and monitoring
-  - Ad display system
-  - System administration and maintenance
-
+- Forestry patrol application
+- Smart cabinet SDK
+- IoT dashboards and monitoring
+- Ad display system
+- System administration and maintenance
 skills_demonstrated:
   technical:
-    - Gateway / embedded development
-    - Android (Java/Kotlin)
-    - Protocol and hardware integration
-    - Backend / API (Spring Boot)
-    - Device management and lifecycle
+  - Gateway / embedded development
+  - Android (Java/Kotlin)
+  - Protocol and hardware integration
+  - Backend / API (Spring Boot)
+  - Device management and lifecycle
   soft:
-    - Cross-functional delivery
-    - Product-oriented development
-
+  - Cross-functional delivery
+  - Product-oriented development
 related_to_roles:
-  - IoT Engineer
-  - Android Developer
-  - Embedded Software Engineer
-  - Full-stack Developer
-  - Platform Engineer
-
+- IoT Engineer
+- Android Developer
+- Embedded Software Engineer
+- Full-stack Developer
+- Platform Engineer
 keywords:
-  - IoT platform
-  - Smart switch
-  - Gateway
-  - Device management
-  - Android
-  - Spring Boot
-  - Embedded
-  - UART
-  - MQTT
-
-last_updated: "2026-03-05"
+- IoT platform
+- Smart switch
+- Gateway
+- Device management
+- Android
+- Spring Boot
+- Embedded
+- UART
+- MQTT
+last_updated: '2026-03-05'
+highlights:
+- IoT management platform where users manage their purchased IoT devices
+- Company sells smart switches and gateways
+- I developed the gateway (gateway software/firmware), developed the mobile (phone)
+  app for device control and management, and participated in platform (backend/web)
+  development, with Android mobile client work as the primary responsibility

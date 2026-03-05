@@ -1,101 +1,118 @@
 # Leo Zhang
 
-**Software Engineer(Full-stack) · Android & Java & AI**  
+**Software Engineer (Full-stack) · Android & Java & AI**  
+📧 leozhang2056@gmail.com | 📱 +64 27 385 0794 | 📍 Auckland, New Zealand
 
+---
 
-## 🛠️ Skills
-- **Programming:** Java, Kotlin, Python, JavaScript, Node.js  
-- **Android:** Jetpack Compose, MVVM/MVP, NDK,Flutter  
-- **Backend:** Spring Boot, Spring Cloud, MyBatis, REST APIs, .NET  
-- **Frontend:** Vue.js, HTML/CSS  
-- **AI / ML:** PyTorch, TensorFlow, OpenCV, YOLO, Diffusion Models, LLMs  
-- **DevOps & Cloud:** Docker, Jenkins, Nginx, Linux, Windows Server, CI/CD 
-- **Databases:** MySQL, Redis, MongoDB, SQL Server, SQLite  
-- **IoT & Hardware:** RFID, barcode scanners, sensors, UART, GPIO, Raspberry Pi  
-- **Tools:** Git, GitHub, Cursor, GitHub Copilot,PowerBI  
+## 👋 Professional Summary
 
-## 📂 Project Portfolio
+Full-stack software engineer and Master's student in Computer and Information Sciences at AUT, graduating October 2025. Over **10 years of experience** delivering enterprise solutions across **Android development**, **Java backend systems**, and **AI/ML integration**. Proven track record leading technical teams, architecting scalable systems, and deploying IoT solutions in industrial environments.
 
+**Key Strengths:**
+- Deep expertise in Android development with hardware integration (RFID, barcode, sensors)
+- Strong backend architecture skills (Spring Boot microservices, 99.9% uptime maintained)
+- Emerging AI/ML capabilities with production deployment experience (PyTorch, LLMs, Edge AI)
+- Cross-functional team leadership (led 6-person teams across multiple projects)
 
-### 📱 Android Development
-- **Enterprise Messaging Platform (2014–2023)**  
-  Core Android & backend developer for internal IM system (10,000+ DAU).  
-  - NDK-based TCP/UDP for low-latency messaging (<200ms)  
-  - Designed Android real-time chat UI and multi-platform login  
-  - Backend with Spring Cloud + C++  
+---
 
-- **Smart Factory Mobile Apps (2018–2024)**  
-  Android apps for factory terminals, RFID/barcode scanners, and smart lockers.  
-  - Offline-first design with real-time sync  
-  - Integrated hardware devices for automation  
+## 🛠️ Technical Skills
 
-- **Live Streaming Commerce System (2018)**  
-  Android client development for audio/video live streaming and in-stream shopping scenarios.  
-  - Implemented live room playback and interaction flow  
-  - Participated in streaming transmission integration and playback optimization  
+| Category | Technologies |
+|----------|-------------|
+| **Programming** | Java, Kotlin, Python, JavaScript, Node.js, C, SQL |
+| **Android** | Android SDK, Jetpack Compose, MVVM/MVP, NDK, Flutter, SQLite |
+| **Backend** | Spring Boot, Spring Cloud, MyBatis, REST APIs, .NET, Node.js |
+| **AI / ML** | PyTorch, TensorFlow, OpenCV, YOLO, Diffusion Models, LLMs, Scikit-learn |
+| **DevOps** | Docker, Jenkins, Nginx, CI/CD, Git, Linux, Windows Server |
+| **Databases** | MySQL, Redis, MongoDB, SQL Server, SQLite |
+| **IoT & Hardware** | RFID, Barcode Scanners, Sensors, UART/Serial, GPIO, Raspberry Pi, MQTT |
+| **AI Tools** | Cursor, GitHub Copilot, ComfyUI, Dify, Ollama |
 
-- **Forest Patrol Inspection System (TBD)**  
-  Android patrol app for no-signal forest scenarios with offline map and GIS support.  
-  - GPS track recording and field event reporting (fire/pest/other risks)  
-  - Offline-first data capture with upload after network recovery  
+---
 
+## 💼 Professional Experience
 
+### Auckland University of Technology (AUT) — *New Zealand*
+**Master's Student & AI Researcher** | Jul 2024 – Oct 2025
 
-### ☕ Java / Backend
-- **Smart Factory Backend System (2018–2024)**  
-  Tech lead for microservice platform managing multi-site textile factories.  
-  - Spring Boot + MySQL/Redis backend  
-  - CI/CD pipelines with Docker, Jenkins, Nginx  
-  - Integrated IoT devices (RFID, conveyors) across 5+ factories  
-  - Added electronic scale serial integration with Windows service monitoring and web/system sync
+- **[ChatClothes](projects/chatclothes/)** — Developed diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction
+  - Optimized for edge deployment on Raspberry Pi 5 with full offline capability
+  - Integrated ComfyUI + Dify for workflow orchestration
+  - Submitted thesis 6 months early with working demo and documentation
 
-- **System Admin & Server Maintenance (2013–2023)**  
-  - Windows Server & IIS deployment, SSL, AD, scheduled tasks  
-  - Migrated legacy systems and maintained 99.9% uptime  
+### Chunxiao Technology Co., Ltd. — *China*
+**Technical Lead / Senior Software Engineer** | Jan 2013 – Jun 2024
 
+Promoted from Software Engineer to Technical Lead, managing 6-person cross-functional teams.
 
+**Key Projects:**
 
+- **[Smart Factory Backend](projects/smart-factory/)** — Led microservice platform for textile manufacturing (2018–2024)
+  - Architected Spring Boot + Spring Cloud backend supporting 5+ factory sites
+  - Maintained 99.9% uptime over 6 years of operation
+  - Integrated IoT devices (RFID, barcode scanners, conveyors, electronic scales)
+  - Improved production efficiency by 30%+ across manufacturing bases
+
+- **[Enterprise Messaging Platform](projects/enterprise-messaging/)** — Core developer for internal IM system (2014–2023)
+  - Built Android client using NDK-based TCP/UDP achieving <200ms message latency
+  - Developed backend with Spring Cloud + C++ supporting 10,000+ DAU
+  - Processed 500K+ messages daily with cross-platform support (Android, Web, PC)
+
+- **[IoT Solutions](projects/iot-solutions/)** — Full-stack engineer for industrial and consumer IoT products
+  - Developed Android apps with hardware integration for smart lockers, patrol systems, and energy management
+  - Built Vue.js dashboards for real-time monitoring and data visualization
+  - Created reusable SDKs for hardware device control
+
+---
+
+## 🚀 Featured Projects
 
 ### 🤖 AI / Machine Learning
-- **ChatClothes Virtual Try-On (Thesis, AUT 2024–2025)**  
-  Built a diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction.  
-  - Edge-optimized inference on Raspberry Pi 5  
-  - Integrated ComfyUI + Dify for orchestration  
-  - Delivered full-stack AI pipeline, demo + documentation submitted 6 months early  
+| Project | Description | Tech Stack |
+|---------|-------------|------------|
+| [ChatClothes](projects/chatclothes/) | Multimodal virtual try-on system with LLM control | PyTorch, Diffusion Models, YOLO, DeepSeek LLM, Raspberry Pi |
+| [Device Maintenance Prediction](projects/device-maintenance-prediction/) | Predictive maintenance using Random Forest | Python, Scikit-learn, Time Series Analysis |
+| [Chinese Herbal Recognition](projects/chinese-herbal-recognition/) | CV platform for TCM image classification | PyTorch, OpenCV, Flask, Model Versioning |
 
-- **Device Maintenance Prediction Platform (2023)**  
-  AI project for equipment aging analysis and next-maintenance prediction from historical service data.  
-  - Random Forest as core prediction algorithm  
-  - Combined with additional forecasting models for comparison and optimization
+### 📱 Android & Mobile
+| Project | Description | Highlights |
+|---------|-------------|------------|
+| [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 10K+ DAU | NDK, <200ms latency, 500K+ msgs/day |
+| [Smart Factory Mobile](projects/smart-factory/) | Industrial IoT Android apps | RFID, offline-first, hardware integration |
+| [Forest Patrol](projects/forest-patrol-inspection/) | GIS app for forest inspections | Offline maps, GPS tracking, field data capture |
+| [Picture Book Locker](projects/picture-book-locker/) | Smart library locker system | Hardware control, REST API, sensor integration |
 
-- **Chinese Herbal Recognition Platform (TBD)**  
-  Platform project using TCM recognition as a sample workflow from category creation to model inference.  
-  - User-defined category management and image annotation  
-  - Model training, release-gate testing, and herb recognition inference  
-  - Versioned model publishing, rollback, and continuous data feedback loop
+### ☕ Backend & Infrastructure
+| Project | Description | Highlights |
+|---------|-------------|------------|
+| [Smart Factory Backend](projects/smart-factory/) | Microservices for manufacturing | 5+ sites, 99.9% uptime, 30% efficiency gain |
+| [Broadcast Control](projects/broadcast-control/) | Digital signage management | MQTT, remote deployment, ad scheduling |
+| [Visit System](projects/visit-system/) | Visitor management with face recognition | Face recognition, access control, video intercom |
 
+---
 
+## 🎓 Education
 
-### 🌐 Frontend
-- **Industrial Dashboards & IoT Visualization**  
-  Vue.js + REST APIs for monitoring forestry patrols, factory processes, and energy systems.  
-  - GPS/photo logging apps  
-  - Real-time dashboards with charts and alerts  
+**Master of Computer and Information Sciences**  
+Auckland University of Technology (AUT), New Zealand | 2024 – 2025
+- Research Focus: AI, Computer Vision, Edge Computing
+- Thesis: ChatClothes Virtual Try-On System (submitted 6 months early)
 
-- **Broadcast Control Platform (Digital Signage Ad Delivery, 2020)**  
-  Platform for centrally controlling ad playback on elevator, in-store, and public screens.  
-  - Video and image campaign delivery  
-  - Project manager + Android screen client development lead  
-  - MQTT broadcast-based remote publishing and schedule playback control
+**Bachelor of Software Engineering**  
+Hebei University of Science and Technology, China | 2009 – 2013
+- National Scholarship recipient
 
+---
 
+## 📊 GitHub Stats
 
-### 🖥️ .NET & System Integration
-- **Legacy Enterprise Systems Migration**  
-  - .NET + SQL Server maintenance  
-  - IIS configuration, SSL, multi-site deployment  
-  - Integrated file sync with OneDrive, Dropbox, SFTP  
+- **15+** Production Projects
+- **10+** Years Software Development Experience
+- **5+** Industrial IoT Deployments
+- **10,000+** DAU Enterprise Systems Delivered
 
+---
 
-
-
+*Last updated: March 2025*

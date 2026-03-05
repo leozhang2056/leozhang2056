@@ -1,162 +1,137 @@
-# Project Facts - 探视系统
-# Structured data for RAG and resume generation
-
 project_id: visit-system
 name: Visit Booking & Access Management System
 name_cn: 探视系统
-
 type: Security Visit Platform / Face Recognition / Audio-Video
 category:
-  - Face Recognition
-  - Healthcare IT
-  - Access Control
-  - Mobile Development
-
+- Face Recognition
+- Healthcare IT
+- Access Control
+- Mobile Development
 timeline:
-  start: "2020"
-  end: "2022"
+  start: '2020'
+  end: '2022'
   duration_years: 2
-
 role: Full-stack Engineer
 team_size: null
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
+summary: 'Visit booking and access management platform for high-security scenarios
+  (primarily prison visitation). Includes admin side, client/terminal side, and visitor
+  side; supports booking approval, face-based access control, chat, and audio-video
+  session management.
 
-summary: >
-  Visit booking and access management platform for high-security scenarios
-  (primarily prison visitation). Includes admin side, client/terminal side,
-  and visitor side; supports booking approval, face-based access control,
-  chat, and audio-video session management.
-
+  '
 highlights:
-  - 开发多端探视预约平台（管理端、终端、访客端）
-  - 实现预约审批、时段与配额策略管理
-  - 集成人脸识别门禁，控制探视人员进出
-  - 集成WebRTC音视频探视与会话管理
-  - 增加聊天系统（消息记录与必要审核）
-  - 提供探视记录、审计追踪和统计报表
-  - 探视管理效率提升30%
-
+- 开发多端探视预约平台（管理端、终端、访客端）
+- 实现预约审批、时段与配额策略管理
+- 集成人脸识别门禁，控制探视人员进出
+- 集成WebRTC音视频探视与会话管理
+- 增加聊天系统（消息记录与必要审核）
+- 提供探视记录、审计追踪和统计报表
+- 探视管理效率提升30%
 tech_stack:
   languages:
-    - Java
-    - JavaScript
-    - Kotlin
-  
-  face_recognition:
-    - Face Detection
-    - Face Recognition SDK
-    - Liveness Detection
-    - Face Database
-  
-  access_control:
-    - Electromagnetic Locks
-    - Door Sensors
-    - Infrared Sensors
-    - Voice Broadcast
-  
+  - Java
+  - JavaScript
+  - Kotlin
+  ai_ml:
+  - Face Detection
+  - Face Recognition SDK
+  - Liveness Detection
+  - Face Database
+  domain:
+  - Voice Broadcast
+  - SMS Gateway
+  - Infrared Sensors
+  - Electromagnetic Locks
+  - WeChat Template Messages
+  - HIS Interface
+  - Door Sensors
   mobile:
-    - WeChat Mini Program
-    - Android APP
-    - WebRTC
-  
+  - WeChat Mini Program
+  - Android APP
+  - WebRTC
   backend:
-    - Spring Boot
-    - MySQL
-    - Redis
-    - WebRTC
-  
-  integration:
-    - HIS Interface
-    - WeChat Template Messages
-    - SMS Gateway
-
+  - Spring Boot
+  - MySQL
+  - Redis
+  - WebRTC
 features:
-  - Multi-role platform (admin/terminal/visitor)
-  - Online appointment booking and approval
-  - Visit policy and quota management
-  - Face recognition access control
-  - Chat system
-  - Audio-video session management
-  - Visit statistics and audit trail
-  - Optional external system integration
-
+- Multi-role platform (admin/terminal/visitor)
+- Online appointment booking and approval
+- Visit policy and quota management
+- Face recognition access control
+- Chat system
+- Audio-video session management
+- Visit statistics and audit trail
+- Optional external system integration
 metrics:
-  - metric: "<1s"
-    unit: "recognition time"
-    description: Face recognition speed
-  
-  - metric: "99.5%"
-    unit: "accuracy"
-    description: Face recognition accuracy
-  
-  - metric: "30%"
-    unit: "efficiency gain"
-    description: Visit management efficiency improvement
-  
-  - metric: "Multiple"
-    unit: "departments"
-    description: ICU, NICU, infectious disease deployment
-
+- value: <1s
+  label: recognition time
+  description: Face recognition speed
+  unit: recognition time
+- value: 99.5%
+  label: accuracy
+  description: Face recognition accuracy
+  unit: accuracy
+- value: 30%
+  label: efficiency gain
+  description: Visit management efficiency improvement
+  unit: efficiency gain
+- value: Multiple
+  label: departments
+  description: ICU, NICU, infectious disease deployment
+  unit: departments
 achievements:
-  - Achieved sub-second face recognition
-  - 99.5% face recognition accuracy
-  - 30% improvement in visit management efficiency
-  - Successfully deployed in multiple departments
-  - Supported contactless visit during pandemic
-  - Integrated with hospital HIS system
-
+- Achieved sub-second face recognition
+- 99.5% face recognition accuracy
+- 30% improvement in visit management efficiency
+- Successfully deployed in multiple departments
+- Supported contactless visit during pandemic
+- Integrated with hospital HIS system
 evidence:
-  - type: terminal
-    path: images/access-terminal.png
-  
-  - type: miniapp
-    path: images/booking-miniapp.png
-  
-  - type: admin
-    path: images/visit-admin.png
-
+- type: terminal
+  path: images/access-terminal.png
+- type: miniapp
+  path: images/booking-miniapp.png
+- type: admin
+  path: images/visit-admin.png
 skills_demonstrated:
   technical:
-    - Face Recognition
-    - Face Detection
-    - Liveness Detection
-    - Android Development
-    - WeChat Mini Program
-    - Access Control Systems
-    - WebRTC
-    - Spring Boot
-    - MySQL
-    - Redis
-    - HIS Integration
-    - Hardware Integration
-  
-  soft:
-    - Healthcare Domain Knowledge
-    - Privacy Protection
-    - User Experience Design
-    - Deployment Support
-
-related_to_roles:
-  - Full-stack Developer
-  - Face Recognition Engineer
-  - Android Developer
-  - Healthcare IT Engineer
-  - System Integration Engineer
-
-keywords:
   - Face Recognition
-  - Prison Visitation
-  - Access Control
-  - Booking System
-  - Chat System
-  - Audio-Video Session Management
-  - Video Visitation
+  - Face Detection
+  - Liveness Detection
+  - Android Development
+  - WeChat Mini Program
+  - Access Control Systems
   - WebRTC
-  - Admin Portal
-  - Android
-  - Security Platform
-
-last_updated: "2025-02-11"
+  - Spring Boot
+  - MySQL
+  - Redis
+  - HIS Integration
+  - Hardware Integration
+  soft:
+  - Healthcare Domain Knowledge
+  - Privacy Protection
+  - User Experience Design
+  - Deployment Support
+related_to_roles:
+- Full-stack Developer
+- Face Recognition Engineer
+- Android Developer
+- Healthcare IT Engineer
+- System Integration Engineer
+keywords:
+- Face Recognition
+- Prison Visitation
+- Access Control
+- Booking System
+- Chat System
+- Audio-Video Session Management
+- Video Visitation
+- WebRTC
+- Admin Portal
+- Android
+- Security Platform
+last_updated: '2025-02-11'

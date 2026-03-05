@@ -1,130 +1,113 @@
-# Project Facts - Forest Patrol Inspection System
-# Structured data for RAG and resume generation
-
 project_id: forest-patrol-inspection
 name: Forest Patrol Inspection System
 name_cn: 护林巡检系统
-
 type: Mobile GIS / Forest Patrol
 category:
-  - Android Development
-  - GIS
-  - Offline-first Systems
-  - Mobile Inspection
-  - Field Data Collection
-
+- Android Development
+- GIS
+- Offline-first Systems
+- Mobile Inspection
+- Field Data Collection
 timeline:
-  start: null
-  end: null
+  start: TBD
+  end: TBD
   duration_years: null
-
 role: Android Mobile Client Developer
 team_size: null
-
 company:
   name: null
   location: null
+summary: 'Mobile forest patrol system for no-signal field scenarios. Supports offline
+  map loading, GPS route recording, GIS point annotation, and incident reporting (fire/pest/other
+  risks), with deferred synchronization when network is available.
 
-summary: >
-  Mobile forest patrol system for no-signal field scenarios. Supports offline
-  map loading, GPS route recording, GIS point annotation, and incident reporting
-  (fire/pest/other risks), with deferred synchronization when network is
-  available.
-
+  '
 highlights:
-  - Focused on Android mobile client development for weak-network and offline forest environments
-  - Implemented continuous GPS trajectory recording and local route storage
-  - Integrated offline map package loading for no-signal patrol navigation
-  - Implemented GIS-based risk point annotation and incident reporting
-  - Added deferred data upload and auto-sync after reconnecting to network
-  - Supported fire hazard, pest risk, and other field event reporting workflows
-
+- Focused on Android mobile client development for weak-network and offline forest
+  environments
+- Implemented continuous GPS trajectory recording and local route storage
+- Integrated offline map package loading for no-signal patrol navigation
+- Implemented GIS-based risk point annotation and incident reporting
+- Added deferred data upload and auto-sync after reconnecting to network
+- Supported fire hazard, pest risk, and other field event reporting workflows
 tech_stack:
   languages:
-    - Java
-    - Kotlin
+  - Java
+  - Kotlin
   mobile:
-    - Android SDK
-    - SQLite
-  gis:
-    - GPS
-    - Offline Map
-    - GIS Layer Annotation
+  - Android SDK
+  - SQLite
+  domain:
+  - GPS
+  - Offline Map
+  - GIS Layer Annotation
   backend: []
   databases: []
-  infrastructure: []
-
+  devops: []
 features:
-  - Offline patrol task execution
-  - GPS patrol track recording
-  - Offline map loading and browsing
-  - GIS risk point marking
-  - Fire/pest/abnormal event reporting
-  - Local persistence with deferred sync
-  - Network recovery auto-upload
-
+- Offline patrol task execution
+- GPS patrol track recording
+- Offline map loading and browsing
+- GIS risk point marking
+- Fire/pest/abnormal event reporting
+- Local persistence with deferred sync
+- Network recovery auto-upload
 metrics: []
-
 achievements:
-  - Enabled patrol operations in no-signal forest environments
-  - Improved field risk reporting continuity with offline-first architecture
-  - Built GIS-visible patrol and risk data pipeline for management review
-
+- Enabled patrol operations in no-signal forest environments
+- Improved field risk reporting continuity with offline-first architecture
+- Built GIS-visible patrol and risk data pipeline for management review
 evidence:
-  - type: app_ui
-    path: images/app-photo-capture.jpg
-    title: Photo Capture
-  - type: app_ui
-    path: images/app-map-workflow.png
-    title: Patrol Map Workflow
-  - type: app_ui
-    path: images/app-task-report.png
-    title: Task and Report
-  - type: app_ui
-    path: images/app-risk-entry.png
-    title: Risk Entry
-  - type: field_photo
-    path: images/field-scene-01.jpg
-  - type: field_photo
-    path: images/field-scene-02.jpg
-  - type: field_photo
-    path: images/field-scene-03.jpg
-  - type: field_photo
-    path: images/field-scene-04.jpg
-  - type: field_photo
-    path: images/field-scene-05.jpg
-  - type: field_photo
-    path: images/field-scene-06.jpg
-  - type: field_photo
-    path: images/field-scene-07.jpg
-  - type: field_photo
-    path: images/field-scene-08.jpg
-
+- type: app_ui
+  path: images/app-photo-capture.jpg
+  title: Photo Capture
+- type: app_ui
+  path: images/app-map-workflow.png
+  title: Patrol Map Workflow
+- type: app_ui
+  path: images/app-task-report.png
+  title: Task and Report
+- type: app_ui
+  path: images/app-risk-entry.png
+  title: Risk Entry
+- type: field_photo
+  path: images/field-scene-01.jpg
+- type: field_photo
+  path: images/field-scene-02.jpg
+- type: field_photo
+  path: images/field-scene-03.jpg
+- type: field_photo
+  path: images/field-scene-04.jpg
+- type: field_photo
+  path: images/field-scene-05.jpg
+- type: field_photo
+  path: images/field-scene-06.jpg
+- type: field_photo
+  path: images/field-scene-07.jpg
+- type: field_photo
+  path: images/field-scene-08.jpg
 skills_demonstrated:
   technical:
-    - Android Development
-    - Offline-first Mobile Architecture
-    - GPS Track Recording
-    - GIS Integration
-    - Local Data Persistence
-    - Sync Strategy Design
+  - Android Development
+  - Offline-first Mobile Architecture
+  - GPS Track Recording
+  - GIS Integration
+  - Local Data Persistence
+  - Sync Strategy Design
   soft:
-    - Field Requirement Analysis
-    - Cross-team Collaboration
-    - Technical Documentation
-
+  - Field Requirement Analysis
+  - Cross-team Collaboration
+  - Technical Documentation
 related_to_roles:
-  - Android Developer
-  - GIS Application Engineer
-  - Mobile Engineer
-  - Field Systems Engineer
-
+- Android Developer
+- GIS Application Engineer
+- Mobile Engineer
+- Field Systems Engineer
 keywords:
-  - Forest Patrol
-  - Offline Map
-  - GPS Tracking
-  - GIS
-  - Incident Reporting
-  - Offline-first
-
-last_updated: "2026-03-05"
+- Forest Patrol
+- Offline Map
+- GPS Tracking
+- GIS
+- Incident Reporting
+- Offline-first
+last_updated: '2026-03-05'

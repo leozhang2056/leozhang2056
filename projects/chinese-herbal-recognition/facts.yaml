@@ -1,159 +1,139 @@
-# Project Facts - Chinese Herbal Recognition Platform
-# Structured data for RAG and resume generation
-
 project_id: chinese-herbal-recognition
 name: Chinese Herbal Recognition Platform
 name_cn: 中药识别平台
-
 type: AI Platform / Computer Vision Classification
 category:
-  - AI/ML
-  - Computer Vision
-  - Data Annotation
-  - MLOps
-  - Platform Engineering
-  - Model Serving
-
+- AI/ML
+- Computer Vision
+- Data Annotation
+- MLOps
+- Platform Engineering
+- Model Serving
 timeline:
-  start: null
-  end: null
+  start: TBD
+  end: TBD
   duration_years: null
-
 role: Platform Designer & AI Workflow Developer
 team_size: null
-
 company:
   name: null
   location: null
+summary: 'Platform-style AI project that uses traditional Chinese medicine recognition
+  as a sample scenario. Users can create categories, annotate image data, train classification
+  models, test model quality, and run recognition inference with published model versions,
+  forming a closed-loop data-to-model iteration workflow.
 
-summary: >
-  Platform-style AI project that uses traditional Chinese medicine recognition as
-  a sample scenario. Users can create categories, annotate image data, train
-  classification models, test model quality, and run recognition inference with
-  published model versions, forming a closed-loop data-to-model iteration
-  workflow.
-
+  '
 highlights:
-  - Designed end-to-end AI platform workflow from category setup to recognition inference
-  - Implemented category management for custom herbal classification tasks
-  - Built image annotation process for supervised dataset generation
-  - Added model training pipeline with experiment tracking and model registry
-  - Added testing and evaluation process with release-gate criteria
-  - Connected trained models to practical TCM recognition usage
-  - Designed versioned model publishing and rollback capability
-  - Designed platform architecture for extension to more visual classification domains
-
+- Designed end-to-end AI platform workflow from category setup to recognition inference
+- Implemented category management for custom herbal classification tasks
+- Built image annotation process for supervised dataset generation
+- Added model training pipeline with experiment tracking and model registry
+- Added testing and evaluation process with release-gate criteria
+- Connected trained models to practical TCM recognition usage
+- Designed versioned model publishing and rollback capability
+- Designed platform architecture for extension to more visual classification domains
 tech_stack:
   languages:
-    - Python
-    - TypeScript
+  - Python
+  - TypeScript
   ai_ml:
-    - Image Classification
-    - ResNet
-    - MobileNetV3
-    - EfficientNet
-    - Supervised Learning
-    - Class Imbalance Handling
-    - Model Evaluation
-  data_processing:
-    - Dataset Labeling
-    - Data Quality Check
-    - Dataset Versioning
-    - Data Augmentation
+  - Image Classification
+  - ResNet
+  - MobileNetV3
+  - EfficientNet
+  - Supervised Learning
+  - Class Imbalance Handling
+  - Model Evaluation
   backend:
-    - FastAPI
-    - REST API
+  - Dataset Labeling
+  - Data Augmentation
+  - FastAPI
+  - REST API
+  - Data Quality Check
+  - Dataset Versioning
   frontend:
-    - Vue.js
-    - Element Plus
+  - Vue.js
+  - Element Plus
   databases:
-    - MySQL
-    - Redis
-    - Object Storage
-  infrastructure:
-    - Docker
-    - Nginx
-    - GPU Training Environment
-    - CI/CD
-  mlops:
-    - Experiment Tracking
-    - Model Registry
-    - Model Versioning
-    - Online Monitoring
-
+  - MySQL
+  - Redis
+  - Object Storage
+  devops:
+  - Model Versioning
+  - Nginx
+  - Online Monitoring
+  - Model Registry
+  - Docker
+  - GPU Training Environment
+  - CI/CD
+  - Experiment Tracking
 features:
-  - Category creation and management for herb classes
-  - Image data upload and annotation workflow
-  - Annotation quality review and dispute handling
-  - Model training task orchestration with configurable hyperparameters
-  - Model evaluation with aggregate and per-class metrics
-  - Inference service for herb recognition with confidence output
-  - Model version management, A/B comparison, and rollback
-  - Low-confidence sample feedback to re-annotation queue
-  - Reusable workflow for future domain extension
-
+- Category creation and management for herb classes
+- Image data upload and annotation workflow
+- Annotation quality review and dispute handling
+- Model training task orchestration with configurable hyperparameters
+- Model evaluation with aggregate and per-class metrics
+- Inference service for herb recognition with confidence output
+- Model version management, A/B comparison, and rollback
+- Low-confidence sample feedback to re-annotation queue
+- Reusable workflow for future domain extension
 metrics:
-  - metric: "Top-1 Accuracy"
-    target: ">= 0.85"
-    description: Release gate for production model publishing
-  - metric: "Macro F1"
-    target: ">= 0.80"
-    description: Balanced classification quality across classes
-  - metric: "Worst-class Recall"
-    target: ">= 0.70"
-    description: Minimum acceptable performance on difficult categories
-  - metric: "P95 Inference Latency"
-    target: "<= 300ms"
-    description: Single-image online inference latency target
-
+- value: Top-1 Accuracy
+  label: metric
+  description: Release gate for production model publishing
+- value: Macro F1
+  label: metric
+  description: Balanced classification quality across classes
+- value: Worst-class Recall
+  label: metric
+  description: Minimum acceptable performance on difficult categories
+- value: P95 Inference Latency
+  label: metric
+  description: Single-image online inference latency target
 achievements:
-  - Established full-loop process from annotation to inference for TCM recognition
-  - Validated platform workflow using practical herbal recognition scenario
-  - Built reusable foundation for extending to additional recognition domains
-  - Standardized model release criteria and version lifecycle management
-
+- Established full-loop process from annotation to inference for TCM recognition
+- Validated platform workflow using practical herbal recognition scenario
+- Built reusable foundation for extending to additional recognition domains
+- Standardized model release criteria and version lifecycle management
 evidence:
-  - type: overview
-    path: images/platform-overview.png
-  - type: annotation
-    path: images/annotation-workbench.png
-  - type: training
-    path: images/training-dashboard.png
-  - type: inference
-    path: images/recognition-result.png
-
+- type: overview
+  path: images/platform-overview.png
+- type: annotation
+  path: images/annotation-workbench.png
+- type: training
+  path: images/training-dashboard.png
+- type: inference
+  path: images/recognition-result.png
 skills_demonstrated:
   technical:
-    - AI Platform Design
-    - Computer Vision Classification
-    - Data Annotation Workflow
-    - Model Training Pipeline
-    - Model Evaluation
-    - Model Registry and Versioning
-    - Inference API Design
-    - MLOps Workflow
-    - Inference Integration
-  soft:
-    - Workflow Design
-    - System Thinking
-    - Technical Documentation
-
-related_to_roles:
-  - AI Engineer
-  - Machine Learning Engineer
-  - Computer Vision Engineer
-  - AI Platform Engineer
-
-keywords:
-  - Chinese Herbal Recognition
-  - Traditional Chinese Medicine
-  - AI Platform
-  - Image Classification
-  - Data Annotation
-  - Model Training
+  - AI Platform Design
+  - Computer Vision Classification
+  - Data Annotation Workflow
+  - Model Training Pipeline
   - Model Evaluation
-  - Model Serving
-  - MLOps
-  - Inference
-
-last_updated: "2026-03-05"
+  - Model Registry and Versioning
+  - Inference API Design
+  - MLOps Workflow
+  - Inference Integration
+  soft:
+  - Workflow Design
+  - System Thinking
+  - Technical Documentation
+related_to_roles:
+- AI Engineer
+- Machine Learning Engineer
+- Computer Vision Engineer
+- AI Platform Engineer
+keywords:
+- Chinese Herbal Recognition
+- Traditional Chinese Medicine
+- AI Platform
+- Image Classification
+- Data Annotation
+- Model Training
+- Model Evaluation
+- Model Serving
+- MLOps
+- Inference
+last_updated: '2026-03-05'

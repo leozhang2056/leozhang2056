@@ -1,0 +1,306 @@
+# 项目关联关系图
+# Project Relations Graph
+# 
+# 用于 AI 理解项目间的技能传承和技术关联
+# 帮助生成更连贯的简历叙事
+
+relations:
+  # ============================================
+  # 技能传承关系 (Skill Progression)
+  # ============================================
+  
+  - from: enterprise-messaging
+    to: smart-factory
+    type: skill_progression
+    description: "从纯软件开发扩展到工业 IoT 集成"
+    shared_skills:
+      - Java
+      - Spring Boot
+      - REST API
+      - Team Leadership
+    progression:
+      - "企业消息系统 → 智能工厂：从纯软件到软硬结合"
+      - "TCP/UDP 通信 → 串口/RFID 硬件通信"
+      - "单体应用 → 微服务架构"
+
+  - from: smart-factory
+    to: iot-solutions
+    type: skill_progression
+    description: "工业 IoT 经验扩展到消费级 IoT 产品"
+    shared_skills:
+      - IoT Integration
+      - Android Hardware
+      - MQTT
+    progression:
+      - "工业场景 → 消费场景"
+      - "工厂设备 → 智能家居设备"
+
+  - from: smart-factory
+    to: picture-book-locker
+    type: skill_progression
+    description: "RFID/条码经验应用于智能柜产品"
+    shared_skills:
+      - RFID
+      - Barcode
+      - Android Hardware Control
+
+  - from: smart-factory
+    to: visual-gateway
+    type: skill_progression
+    description: "工业控制经验应用于能源管理"
+    shared_skills:
+      - Serial Communication
+      - Device Control
+      - Android Gateway
+
+  # ============================================
+  # 技术栈演进 (Tech Stack Evolution)
+  # ============================================
+
+  - from: enterprise-messaging
+    to: chatclothes
+    type: tech_evolution
+    description: "从传统后端到 AI 全栈"
+    evolution_path:
+      - "Java Backend → Python AI/ML"
+      - "REST API → Diffusion Models"
+      - "Mobile App → Multimodal AI System"
+    narrative: "10年后端经验为 AI 系统架构奠定基础"
+
+  - from: device-maintenance-prediction
+    to: chatclothes
+    type: tech_evolution
+    description: "从传统 ML 到深度学习"
+    evolution_path:
+      - "Random Forest → Deep Learning"
+      - "Scikit-learn → PyTorch"
+      - "Tabular Data → Computer Vision"
+
+  - from: chinese-herbal-recognition
+    to: chatclothes
+    type: tech_evolution
+    description: "CV 平台经验应用于 VTON 研究"
+    evolution_path:
+      - "Image Classification → Diffusion Models"
+      - "Model Training Pipeline → End-to-End AI System"
+      - "Web Platform → Research System"
+
+  # ============================================
+  # 领域扩展 (Domain Expansion)
+  # ============================================
+
+  - from: forest-patrol-inspection
+    to: exhibition-robot
+    type: domain_expansion
+    description: "从户外 GIS 到室内机器人"
+    shared_skills:
+      - GPS/Navigation
+      - Sensor Integration
+      - Real-time Systems
+    expansion:
+      - "野外地图 → 室内 SLAM"
+      - "人工巡检 → 自动导览"
+
+  - from: broadcast-control
+    to: live-streaming-system
+    type: domain_expansion
+    description: "从广告播控到直播电商"
+    shared_skills:
+      - Video Streaming
+      - Content Delivery
+      - Android Client
+    expansion:
+      - "单向播放 → 双向互动"
+      - "广告系统 → 电商直播"
+
+  # ============================================
+  # 技术复用 (Technology Reuse)
+  # ============================================
+
+  - from: school-attendance
+    to: visit-system
+    type: technology_reuse
+    description: "人脸识别技术复用"
+    shared_technology:
+      - Face Recognition
+      - Camera Integration
+      - Access Control
+
+  - from: smart-power
+    to: visual-gateway
+    type: technology_reuse
+    description: "能源监控技术复用"
+    shared_technology:
+      - Power Monitoring
+      - Data Collection
+      - Alert System
+
+  - from: picture-book-locker
+    to: iot-solutions
+    type: technology_reuse
+    description: "智能柜控制技术复用"
+    shared_technology:
+      - Lock Control
+      - Sensor Management
+      - Android SDK
+
+  # ============================================
+  # 研究-工程桥梁 (Research-Engineering Bridge)
+  # ============================================
+
+  - from: chatclothes
+    to: chinese-herbal-recognition
+    type: research_engineering
+    description: "研究项目与工程平台的互补"
+    bridge:
+      research_side: "ChatClothes - 前沿 AI 研究"
+      engineering_side: "中药识别 - 工程化平台"
+      synergy: "研究经验指导平台设计，平台能力支撑研究落地"
+
+  # ============================================
+  # 时间线分组 (Timeline Groups)
+  # ============================================
+
+timeline_groups:
+  early_career:
+    period: "2013-2014"
+    projects:
+      - enterprise-messaging
+      - system-administration
+    theme: "基础技能建立期"
+    
+  growth_phase:
+    period: "2014-2018"
+    projects:
+      - enterprise-messaging
+      - smart-factory
+      - broadcast-control
+      - live-streaming-system
+    theme: "全栈能力扩展期"
+    
+  leadership_phase:
+    period: "2018-2023"
+    projects:
+      - smart-factory
+      - iot-solutions
+      - picture-book-locker
+      - forest-patrol-inspection
+      - school-attendance
+      - visit-system
+      - visual-gateway
+      - smart-power
+      - exhibition-robot
+    theme: "技术领导力建立期"
+    
+  ai_transition:
+    period: "2023-2024"
+    projects:
+      - device-maintenance-prediction
+      - chinese-herbal-recognition
+    theme: "AI 技能转型期"
+    
+  research_phase:
+    period: "2024-2025"
+    projects:
+      - chatclothes
+    theme: "研究深造期"
+
+# ============================================
+# 技能矩阵 (Skill Matrix)
+# 展示各项目覆盖的技能领域
+# ============================================
+
+skill_matrix:
+  android_development:
+    projects:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - picture-book-locker
+      - forest-patrol-inspection
+      - school-attendance
+      - visit-system
+      - visual-gateway
+      - iot-solutions
+      - exhibition-robot
+    depth: expert
+    years: 10
+
+  backend_java:
+    projects:
+      - enterprise-messaging
+      - smart-factory
+      - broadcast-control
+      - visit-system
+    depth: expert
+    years: 10
+
+  ai_ml:
+    projects:
+      - chatclothes
+      - device-maintenance-prediction
+      - chinese-herbal-recognition
+      - school-attendance
+      - visit-system
+    depth: advanced
+    years: 3
+
+  iot_hardware:
+    projects:
+      - smart-factory
+      - picture-book-locker
+      - visual-gateway
+      - smart-power
+      - iot-solutions
+      - exhibition-robot
+    depth: expert
+    years: 6
+
+  devops:
+    projects:
+      - smart-factory
+    depth: advanced
+    years: 6
+
+# ============================================
+# 叙事线索 (Narrative Threads)
+# 用于生成连贯的职业故事
+# ============================================
+
+narrative_threads:
+  full_stack_evolution:
+    title: "从全栈工程师到 AI 研究者"
+    projects:
+      - enterprise-messaging
+      - smart-factory
+      - chatclothes
+    story: >
+      从企业级消息系统起步，建立扎实的 Java 后端和 Android 开发基础。
+      随后领导智能工厂项目，扩展了 IoT 集成和团队管理能力。
+      最终转向 AI 领域，将工程经验应用于虚拟试衣研究，
+      实现了从传统软件工程到 AI 工程的完整转型。
+
+  iot_expertise:
+    title: "IoT 系统集成专家"
+    projects:
+      - smart-factory
+      - picture-book-locker
+      - visual-gateway
+      - iot-solutions
+    story: >
+      在智能工厂项目中积累了深厚的工业 IoT 经验，
+      涵盖 RFID、条码、串口通信等多种硬件协议。
+      这些经验被成功应用于智能柜、能源管理、智能家居等多个产品领域，
+      形成了完整的 IoT 解决方案能力。
+
+  ai_researcher:
+    title: "AI 工程化实践者"
+    projects:
+      - device-maintenance-prediction
+      - chinese-herbal-recognition
+      - chatclothes
+    story: >
+      从预测性维护项目开始接触机器学习，
+      通过中药识别平台深入理解 CV 模型训练和部署，
+      最终在硕士研究中完成了前沿的虚拟试衣系统，
+      展现了从传统 ML 到深度学习、从工程应用到学术研究的完整路径。

@@ -1,212 +1,187 @@
-# Project Facts - Smart Factory Backend System
-# Structured data for RAG and resume generation
-
 project_id: smart-factory
 name: Smart Factory Backend System
 name_cn: 智能工厂后端系统
-
 type: Enterprise System
 category:
-  - Backend Development
-  - Industrial IoT
-  - Microservices
-  - Team Leadership
-
+- Backend Development
+- Industrial IoT
+- Microservices
+- Team Leadership
 timeline:
-  start: "2018"
-  end: "2024"
+  start: '2018'
+  end: '2024'
   duration_years: 6
-
 role: Technical Lead
 team_size: 6
-
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
+summary: 'Full value-chain smart manufacturing platform connecting customers/brands,
+  factories, and workers. Supports order intake, factory allocation, per-garment production
+  tracking, and shipment synchronization across 5+ manufacturing sites. Also includes
+  electronic scale weighing integration through serial communication and Windows service
+  monitoring, with real-time synchronization to web pages and backend business systems.
 
-summary: >
-  Full value-chain smart manufacturing platform connecting customers/brands,
-  factories, and workers. Supports order intake, factory allocation,
-  per-garment production tracking, and shipment synchronization across
-  5+ manufacturing sites. Also includes electronic scale weighing integration
-  through serial communication and Windows service monitoring, with real-time
-  synchronization to web pages and backend business systems.
-
+  '
 highlights:
-  - Designed and implemented backend microservices with Spring Boot
-  - Managed CI/CD and deployment via Docker, Jenkins, and Nginx
-  - Integrated RFID, barcode scanners, and conveyor systems
-  - Integrated electronic scales with serial data acquisition pipeline
-  - Implemented Windows service for serial monitoring and auto-reconnect
-  - Synchronized weighing data to web dashboards and business systems
-  - Led 6-person cross-functional team across Android, backend, and hardware
-  - Deployed across 5+ manufacturing bases
-  - Maintained 99.9% uptime
-  - Improved production efficiency by 30%+
-
+- Designed and implemented backend microservices with Spring Boot
+- Managed CI/CD and deployment via Docker, Jenkins, and Nginx
+- Integrated RFID, barcode scanners, and conveyor systems
+- Integrated electronic scales with serial data acquisition pipeline
+- Implemented Windows service for serial monitoring and auto-reconnect
+- Synchronized weighing data to web dashboards and business systems
+- Led 6-person cross-functional team across Android, backend, and hardware
+- Deployed across 5+ manufacturing bases
+- Maintained 99.9% uptime
+- Improved production efficiency by 30%+
 tech_stack:
   languages:
-    - Java
-  
+  - Java
   backend:
-    - Spring Boot
-    - Spring Cloud
-    - MyBatis
-    - RESTful API
-  
+  - Spring Boot
+  - Spring Cloud
+  - MyBatis
+  - RESTful API
   databases:
-    - MySQL
-    - Redis
-    - MongoDB
-  
+  - MySQL
+  - Redis
+  - MongoDB
   devops:
-    - Docker
-    - Jenkins
-    - Nginx
-    - CentOS
-    - Git
-  
+  - Docker
+  - Jenkins
+  - Nginx
+  - CentOS
+  - Git
   iot:
-    - RFID
-    - Barcode Scanners
-    - Conveyors
-    - UART/Serial
-    - Electronic Scales
-    - RS232/RS485
-    - Windows Service Monitoring
-
+  - RFID
+  - Barcode Scanners
+  - Conveyors
+  - UART/Serial
+  - Electronic Scales
+  - RS232/RS485
+  - Windows Service Monitoring
 features:
-  - End-to-end order to shipment flow
-  - Multi-role portals (customer/factory/worker)
-  - Order allocation to suitable factories
-  - Per-garment production progress tracking
-  - Microservice architecture
-  - Multi-site deployment (5+ locations)
-  - IoT device integration
-  - Electronic scale weighing data acquisition
-  - Serial protocol parsing and data normalization
-  - Windows service watchdog and auto-reconnect
-  - Weighing data sync to web pages and backend systems
-  - Real-time production tracking
-  - Workflow orchestration
-  - High availability (99.9% uptime)
-  - Automated CI/CD pipeline
-  - Cross-platform support
-
+- End-to-end order to shipment flow
+- Multi-role portals (customer/factory/worker)
+- Order allocation to suitable factories
+- Per-garment production progress tracking
+- Microservice architecture
+- Multi-site deployment (5+ locations)
+- IoT device integration
+- Electronic scale weighing data acquisition
+- Serial protocol parsing and data normalization
+- Windows service watchdog and auto-reconnect
+- Weighing data sync to web pages and backend systems
+- Real-time production tracking
+- Workflow orchestration
+- High availability (99.9% uptime)
+- Automated CI/CD pipeline
+- Cross-platform support
 metrics:
-  - metric: "5+"
-    unit: "factory sites"
-    description: Deployed across multiple manufacturing locations
-  
-  - metric: "30%+"
-    unit: "efficiency improvement"
-    description: Production efficiency increase
-  
-  - metric: "99.9%"
-    unit: "uptime"
-    description: System availability maintained
-  
-  - metric: "6"
-    unit: "team members"
-    description: Cross-functional team led
-  
-  - metric: "Hundreds"
-    unit: "workers"
-    description: Daily users supported
-
+- value: '5'
+  label: +
+  description: Deployed across multiple manufacturing locations
+  unit: factory sites
+- value: 30%
+  label: +
+  description: Production efficiency increase
+  unit: efficiency improvement
+- value: 99.9%
+  label: uptime
+  description: System availability maintained
+  unit: uptime
+- value: '6'
+  label: team members
+  description: Cross-functional team led
+  unit: team members
+- value: Hundreds
+  label: workers
+  description: Daily users supported
+  unit: workers
 achievements:
-  - Successfully scaled from 1 to 5+ factory sites
-  - Achieved 30%+ production efficiency improvement
-  - Maintained 99.9% uptime over multiple years
-  - Led and mentored 6-person development team
-  - Integrated diverse IoT hardware ecosystem
-  - Delivered reliable electronic scale data pipeline for production operations
-
+- Successfully scaled from 1 to 5+ factory sites
+- Achieved 30%+ production efficiency improvement
+- Maintained 99.9% uptime over multiple years
+- Led and mentored 6-person development team
+- Integrated diverse IoT hardware ecosystem
+- Delivered reliable electronic scale data pipeline for production operations
 evidence:
-  - type: architecture_diagram
-    path: images/bi-dashboard-overview.jpg
-  
-  - type: dashboard
-    path: images/equipment-dashboard-list.png
-  
-  - type: iot_setup
-    path: images/mom-quality-station.png
-
+- type: architecture_diagram
+  path: images/bi-dashboard-overview.jpg
+- type: dashboard
+  path: images/equipment-dashboard-list.png
+- type: iot_setup
+  path: images/mom-quality-station.png
 technical_innovations:
-  - name: Multi-site Cloud-Edge Sync
-    description: Synchronized production data across 5+ manufacturing bases with local caching
-    benefits:
-      - Resiliency against regional network outages
-      - Centralized management with localized performance
-  
-  - name: Heterogeneous IoT Orchestration
-    description: Unified backend service for managing RFID, barcode, and PLC-driven conveyor systems
-    benefits:
-      - Simplified integration of new hardware types
-      - Real-time synchronization of physical movement and digital records
-
-  - name: Weighing Data Bridge via Windows Service
-    description: Persistent serial listener service for electronic scales with monitoring and reconnect strategy
-    benefits:
-      - Stable weight data ingestion from shop-floor scales
-      - Reliable synchronization to web UI and business systems
-      - Lower manual input errors in weighing workflows
-
+- name: Multi-site Cloud-Edge Sync
+  description: Synchronized production data across 5+ manufacturing bases with local
+    caching
+  benefits:
+  - Resiliency against regional network outages
+  - Centralized management with localized performance
+- name: Heterogeneous IoT Orchestration
+  description: Unified backend service for managing RFID, barcode, and PLC-driven
+    conveyor systems
+  benefits:
+  - Simplified integration of new hardware types
+  - Real-time synchronization of physical movement and digital records
+- name: Weighing Data Bridge via Windows Service
+  description: Persistent serial listener service for electronic scales with monitoring
+    and reconnect strategy
+  benefits:
+  - Stable weight data ingestion from shop-floor scales
+  - Reliable synchronization to web UI and business systems
+  - Lower manual input errors in weighing workflows
 performance_metrics:
   efficiency:
     description: Production throughput improvement
-    achievement: >30% increase in overall production efficiency
+    achievement: '>30% increase in overall production efficiency'
   availability:
     description: System uptime in industrial environments
     achievement: 99.9% uptime maintained over 6 years of operation
   scale:
     description: Multi-site expansion
     achievement: Scaled from a single pilot to 5+ full-scale manufacturing bases
-
 skills_demonstrated:
   technical:
-    - Spring Boot / Spring Cloud (Microservices)
-    - Java (Backend Development)
-    - MySQL / Redis / MongoDB (Polyglot Persistence)
-    - Docker / Jenkins / Nginx (DevOps)
-    - Industrial IoT (RFID, Barcode, Serial)
-    - Electronic Scale Integration (RS232/RS485)
-    - Windows Service Monitoring and Recovery
-    - REST API Design
-    - Database Optimization
-    - Linux Administration (CentOS)
-  
+  - Spring Boot / Spring Cloud (Microservices)
+  - Java (Backend Development)
+  - MySQL / Redis / MongoDB (Polyglot Persistence)
+  - Docker / Jenkins / Nginx (DevOps)
+  - Industrial IoT (RFID, Barcode, Serial)
+  - Electronic Scale Integration (RS232/RS485)
+  - Windows Service Monitoring and Recovery
+  - REST API Design
+  - Database Optimization
+  - Linux Administration (CentOS)
   soft:
-    - Technical Leadership
-    - Team Management (6 members)
-    - Cross-functional Coordination
-    - Agile Practices
-    - Project Planning
-
+  - Technical Leadership
+  - Team Management (6 members)
+  - Cross-functional Coordination
+  - Agile Practices
+  - Project Planning
 related_to_roles:
-  - Technical Lead
-  - Backend Engineer
-  - Java Developer
-  - DevOps Engineer
-  - System Architect
-  - Engineering Manager
-
+- Technical Lead
+- Backend Engineer
+- Java Developer
+- DevOps Engineer
+- System Architect
+- Engineering Manager
 keywords:
-  - Spring Boot
-  - Microservices
-  - Java
-  - IoT
-  - RFID
-  - Electronic Scale
-  - Weighing Data
-  - RS232
-  - Windows Service
-  - Docker
-  - Jenkins
-  - DevOps
-  - MySQL
-  - Redis
-  - Team Leadership
-  - Industrial Automation
-
-last_updated: "2025-02-11"
+- Spring Boot
+- Microservices
+- Java
+- IoT
+- RFID
+- Electronic Scale
+- Weighing Data
+- RS232
+- Windows Service
+- Docker
+- Jenkins
+- DevOps
+- MySQL
+- Redis
+- Team Leadership
+- Industrial Automation
+last_updated: '2025-02-11'

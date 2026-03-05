@@ -1,0 +1,585 @@
+# Project Facts Schema Definition
+# 项目事实 Schema 定义 - 所有 projects/*/facts.yaml 必须遵循此结构
+# Version: 1.0.0
+#
+# ============================================
+# AI 使用指南 (AI Usage Guide)
+# ============================================
+#
+# 这个 Schema 定义了个人职业知识库的项目数据结构。
+# 作为 AI，当你处理这些数据时：
+#
+# 1. 数据来源理解
+#    - 所有项目数据存储在 projects/<project_id>/facts.yaml
+#    - 技能数据存储在 kb/skills.yaml
+#    - 工作经历存储在 kb/experience/work.yaml
+#    - 可复用要点库存储在 kb/bullets/*.yaml
+#    - 项目关联关系存储在 kb/project_relations.yaml
+#
+# 2. 简历生成工作流程
+#    a) 读取目标岗位的 JD
+#    b) 从所有项目中筛选相关项目（使用 keywords 和 related_to_roles 匹配）
+#    c) 从 kb/bullets/ 中选择匹配的要点变体
+#    d) 结合 project_relations.yaml 中的叙事线索
+#    e) 生成结构化的简历内容
+#
+# 3. 重要约束
+#    - 绝不编造不存在的数据
+#    - 所有量化指标必须来自 facts.yaml 中的 metrics
+#    - 技术栈必须与 tech_stack 一致
+#    - 时间线必须与 timeline 一致
+#
+# 4. 最佳实践
+#    - 优先使用标准化的 metrics 格式（value + label + description）
+#    - 利用 related_projects 建立项目间的联系
+#    - 根据 target_role 选择合适的 summary_variants
+#    - 使用 evidence 字段验证内容真实性
+#
+# ============================================
+# 根对象定义
+# ============================================
+project_fact:
+  type: object
+  required:
+    - project_id
+    - name
+    - type
+    - timeline
+    - role
+    - summary
+    - highlights
+    - tech_stack
+    - skills_demonstrated
+    - related_to_roles
+    - keywords
+    - last_updated
+  properties:
+    # ----------------------------------------
+    # 基础信息 (Basic Info)
+    # ----------------------------------------
+    project_id:
+      type: string
+      description: "项目的唯一标识符，使用小写字母、数字和连字符"
+      pattern: "^[a-z0-9-]+$"
+      example: "chatclothes"
+    
+    name:
+      type: string
+      description: "项目英文名称"
+      example: "ChatClothes Virtual Try-On"
+    
+    name_cn:
+      type: string
+      description: "项目中文名称（可选）"
+      example: "ChatClothes 虚拟试衣系统"
+    
+    type:
+      type: string
+      description: "项目类型"
+      enum:
+        - "Research Project"           # 研究项目
+        - "Master's Thesis"            # 硕士论文
+        - "Enterprise System"          # 企业系统
+        - "Open Source Project"        # 开源项目
+        - "Personal Project"           # 个人项目
+        - "Contract Work"              # 合同项目
+      example: "Research Project"
+    
+    category:
+      type: array
+      items:
+        type: string
+      description: "项目分类标签"
+      example: ["AI/ML", "Computer Vision", "Full-stack Development"]
+    
+    # ----------------------------------------
+    # 时间线 (Timeline)
+    # ----------------------------------------
+    timeline:
+      type: object
+      required:
+        - start
+        - end
+      properties:
+        start:
+          type: string
+          description: "开始日期，格式 YYYY-MM 或 YYYY"
+          pattern: "^[0-9]{4}(-[0-9]{2})?$"
+          example: "2024-11"
+        end:
+          type: string
+          description: "结束日期，格式 YYYY-MM 或 YYYY，或 'present'"
+          pattern: "^([0-9]{4}(-[0-9]{2})?|present)$"
+          example: "2025-04"
+        duration_months:
+          type: integer
+          description: "项目持续时间（月）"
+          example: 6
+        duration_years:
+          type: number
+          description: "项目持续时间（年）"
+          example: 6
+        completed_early:
+          type: boolean
+          description: "是否提前完成"
+          example: true
+        early_by_months:
+          type: integer
+          description: "提前完成的月数"
+          example: 6
+    
+    # ----------------------------------------
+    # 角色与团队 (Role & Team)
+    # ----------------------------------------
+    role:
+      type: string
+      description: "你在项目中的角色"
+      example: "Sole Developer & System Designer"
+    
+    team_size:
+      type: integer
+      description: "团队人数"
+      example: 1
+    
+    # ----------------------------------------
+    # 所属机构 (Organization)
+    # ----------------------------------------
+    institution:
+      type: object
+      description: "学术机构信息（学术项目适用）"
+      properties:
+        name:
+          type: string
+          example: "Auckland University of Technology"
+        location:
+          type: string
+          example: "New Zealand"
+        department:
+          type: string
+          example: "Computer and Information Sciences"
+    
+    company:
+      type: object
+      description: "公司信息（企业项目适用）"
+      properties:
+        name:
+          type: string
+          example: "Chunxiao Technology Co., Ltd."
+        location:
+          type: string
+          example: "China"
+    
+    supervisor:
+      type: object
+      description: "导师信息（学术项目适用）"
+      properties:
+        name:
+          type: string
+          example: "Dr. Wei Qi Yan"
+        institution:
+          type: string
+          example: "Auckland University of Technology"
+    
+    author:
+      type: object
+      description: "作者信息"
+      properties:
+        name:
+          type: string
+          example: "Yuchao Zhang"
+    
+    # ----------------------------------------
+    # 学术信息 (Academic Info)
+    # ----------------------------------------
+    academic_info:
+      type: object
+      description: "学术项目特有信息"
+      properties:
+        degree:
+          type: string
+          example: "Master of Computer and Information Sciences"
+        year:
+          type: integer
+          example: 2025
+        doi:
+          type: string
+          example: "10.10292/20210"
+        repository_url:
+          type: string
+          format: uri
+          example: "http://hdl.handle.net/10292/20210"
+        thesis_status:
+          type: string
+          enum: ["in_progress", "submitted", "defended", "published"]
+          example: "submitted"
+    
+    # ----------------------------------------
+    # 项目描述 (Description)
+    # ----------------------------------------
+    summary:
+      type: string
+      description: "项目摘要，1-3段话概括项目"
+      minLength: 50
+      maxLength: 500
+    
+    highlights:
+      type: array
+      items:
+        type: string
+      description: "项目亮点，3-8条关键成就"
+      minItems: 3
+      maxItems: 10
+    
+    # ----------------------------------------
+    # 技术栈 (Tech Stack)
+    # ----------------------------------------
+    tech_stack:
+      type: object
+      properties:
+        languages:
+          type: array
+          items:
+            type: string
+          description: "编程语言"
+        
+        ai_ml:
+          type: array
+          items:
+            type: string
+          description: "AI/ML 技术"
+        
+        backend:
+          type: array
+          items:
+            type: string
+          description: "后端技术"
+        
+        frontend:
+          type: array
+          items:
+            type: string
+          description: "前端技术"
+        
+        databases:
+          type: array
+          items:
+            type: string
+          description: "数据库"
+        
+        devops:
+          type: array
+          items:
+            type: string
+          description: "DevOps 工具"
+        
+        platforms:
+          type: array
+          items:
+            type: string
+          description: "平台和框架"
+        
+        iot:
+          type: array
+          items:
+            type: string
+          description: "IoT 和硬件"
+        
+        datasets:
+          type: array
+          items:
+            type: string
+          description: "使用的数据集（AI项目）"
+        
+        domain:
+          type: array
+          items:
+            type: string
+          description: "技术领域"
+    
+    # ----------------------------------------
+    # 功能特性 (Features)
+    # ----------------------------------------
+    features:
+      type: array
+      items:
+        type: string
+      description: "主要功能特性"
+    
+    # ----------------------------------------
+    # 技术创新 (Technical Innovations)
+    # ----------------------------------------
+    technical_innovations:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: "创新点名称"
+          description:
+            type: string
+            description: "创新点描述"
+          benefits:
+            type: array
+            items:
+              type: string
+            description: "带来的好处"
+    
+    # ----------------------------------------
+    # 量化指标 (Metrics)
+    # ============================================
+    # 统一指标格式 - 所有项目使用相同结构
+    # ============================================
+    metrics:
+      type: array
+      items:
+        type: object
+        required:
+          - value
+          - label
+        properties:
+          value:
+            type: [string, number]
+            description: "指标值"
+            example: 99.9
+          unit:
+            type: string
+            description: "单位"
+            example: "%"
+          label:
+            type: string
+            description: "指标标签/名称"
+            example: "uptime"
+          description:
+            type: string
+            description: "指标描述"
+            example: "System availability maintained"
+          verified:
+            type: boolean
+            description: "是否有证据支持"
+            default: true
+    
+    # ----------------------------------------
+    # 成就 (Achievements)
+    # ----------------------------------------
+    achievements:
+      type: array
+      items:
+        type: object
+        properties:
+          metric:
+            type: string
+            description: "成就指标"
+          description:
+            type: string
+            description: "成就描述"
+          category:
+            type: string
+            description: "成就类别"
+            enum:
+              - "Project Management"
+              - "Research"
+              - "Engineering"
+              - "Development"
+              - "User Experience"
+              - "Business Impact"
+              - "Technical Innovation"
+    
+    # ----------------------------------------
+    # 性能指标 (Performance Metrics)
+    # ----------------------------------------
+    performance_metrics:
+      type: object
+      description: "详细的性能指标"
+      additionalProperties:
+        type: object
+        properties:
+          description:
+            type: string
+          achievement:
+            type: string
+    
+    # ----------------------------------------
+    # 研究贡献 (Research Contributions)
+    # ----------------------------------------
+    research_contributions:
+      type: object
+      description: "研究项目的学术贡献"
+      properties:
+        academic_value:
+          type: array
+          items:
+            type: string
+        technical_innovations:
+          type: array
+          items:
+            type: string
+    
+    # ----------------------------------------
+    # 应用场景 (Applications)
+    # ----------------------------------------
+    applications:
+      type: array
+      items:
+        type: string
+      description: "潜在应用场景"
+    
+    # ----------------------------------------
+    # 证据材料 (Evidence)
+    # ============================================
+    # 统一证据格式
+    # ============================================
+    evidence:
+      type: array
+      items:
+        type: object
+        required:
+          - type
+        properties:
+          type:
+            type: string
+            description: "证据类型"
+            enum:
+              - "thesis"           # 论文
+              - "paper"            # 学术论文
+              - "demo"             # 演示
+              - "documentation"    # 文档
+              - "images"           # 图片
+              - "video"            # 视频
+              - "github"           # GitHub 仓库
+              - "presentation"     # 演示文稿
+              - "architecture_diagram"  # 架构图
+              - "dashboard"        # 仪表板截图
+              - "iot_setup"        # IoT 设置照片
+              - "datasets"         # 数据集
+              - "certificate"      # 证书
+              - "link"             # 外部链接
+          
+          status:
+            type: string
+            enum: ["available", "in_progress", "complete", "used", "submitted", "published"]
+          
+          date:
+            type: string
+            description: "日期，格式 YYYY-MM-DD 或 YYYY-MM"
+          
+          description:
+            type: string
+            description: "证据描述"
+          
+          url:
+            type: string
+            format: uri
+            description: "链接地址"
+          
+          path:
+            type: string
+            description: "本地路径"
+          
+          count:
+            type: integer
+            description: "数量（如图片数量）"
+          
+          items:
+            type: array
+            items:
+              type: string
+            description: "列表项"
+          
+          key_items:
+            type: array
+            items:
+              type: string
+            description: "关键项目列表"
+    
+    # ----------------------------------------
+    # 技能展示 (Skills Demonstrated)
+    # ----------------------------------------
+    skills_demonstrated:
+      type: object
+      properties:
+        technical:
+          type: array
+          items:
+            type: string
+          description: "技术技能"
+        
+        research:
+          type: array
+          items:
+            type: string
+          description: "研究技能（学术项目）"
+        
+        engineering:
+          type: array
+          items:
+            type: string
+          description: "工程技能"
+        
+        soft:
+          type: array
+          items:
+            type: string
+          description: "软技能"
+    
+    # ----------------------------------------
+    # 关联角色 (Related Roles)
+    # ----------------------------------------
+    related_to_roles:
+      type: array
+      items:
+        type: string
+      description: "相关的求职岗位"
+      example: ["AI Engineer", "Machine Learning Engineer", "Full-stack Developer"]
+    
+    # ----------------------------------------
+    # 关键词 (Keywords)
+    # ----------------------------------------
+    keywords:
+      type: array
+      items:
+        type: string
+      description: "用于检索和匹配的关键词"
+      example: ["Virtual Try-On", "Diffusion Models", "PyTorch", "Edge AI"]
+    
+    # ----------------------------------------
+    # 项目关联 (Project Relations)
+    # ----------------------------------------
+    related_projects:
+      type: array
+      items:
+        type: object
+        properties:
+          project_id:
+            type: string
+            description: "关联项目ID"
+          relation:
+            type: string
+            description: "关联关系描述"
+      description: "相关的其他项目"
+    
+    # ----------------------------------------
+    # 元数据 (Metadata)
+    # ----------------------------------------
+    last_updated:
+      type: string
+      description: "最后更新日期，格式 YYYY-MM-DD"
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      example: "2025-03-01"
+
+# ============================================
+# Schema 元信息
+# ============================================
+schema_info:
+  version: "1.0.0"
+  author: "Leo Zhang"
+  created: "2025-03-05"
+  description: "个人职业知识库项目事实统一Schema"
+  
+  changelog:
+    - version: "1.0.0"
+      date: "2025-03-05"
+      changes:
+        - "初始版本，统一所有项目 facts.yaml 结构"
+        - "标准化 metrics 和 evidence 格式"
+        - "添加项目关联关系支持"
