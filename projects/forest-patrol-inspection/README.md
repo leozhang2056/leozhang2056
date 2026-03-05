@@ -90,28 +90,45 @@ The system supports offline-first data collection and delayed synchronization, e
 
 ## Evidence
 
-### App Screens / 页面截图
+### Android App Screens
 
 <table>
   <tr>
     <td align="center">
-      <img src="./images/patrol-photo-01.jpg" width="320" alt="Forest patrol mobile screen 1"/><br/>
-      <sub>Patrol app interface (photo capture)</sub>
+      <img src="./images/app-photo-capture.jpg" width="320" alt="Photo capture and evidence upload"/><br/>
+      <sub>Photo capture and evidence upload</sub>
     </td>
     <td align="center">
-      <img src="./images/app-screen-01.png" width="320" alt="Forest patrol mobile screen 2"/><br/>
+      <img src="./images/app-map-workflow.png" width="320" alt="Patrol map workflow"/><br/>
       <sub>Patrol map and operation workflow</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./images/app-screen-02.png" width="320" alt="Forest patrol mobile screen 3"/><br/>
+      <img src="./images/app-task-report.png" width="320" alt="Task and field report"/><br/>
       <sub>Patrol task and field reporting page</sub>
     </td>
     <td align="center">
-      <img src="./images/app-screen-03.png" width="320" alt="Forest patrol mobile screen 4"/><br/>
+      <img src="./images/app-risk-entry.png" width="320" alt="Risk record entry"/><br/>
       <sub>Risk record and evidence entry page</sub>
     </td>
+  </tr>
+</table>
+
+### Field Patrol Scenes
+
+<table>
+  <tr>
+    <td align="center"><img src="./images/field-scene-01.jpg" width="240" alt="Field patrol scene 01"/><br/><sub>Field patrol scene 01</sub></td>
+    <td align="center"><img src="./images/field-scene-02.jpg" width="240" alt="Field patrol scene 02"/><br/><sub>Field patrol scene 02</sub></td>
+    <td align="center"><img src="./images/field-scene-03.jpg" width="240" alt="Field patrol scene 03"/><br/><sub>Field patrol scene 03</sub></td>
+    <td align="center"><img src="./images/field-scene-04.jpg" width="240" alt="Field patrol scene 04"/><br/><sub>Field patrol scene 04</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./images/field-scene-05.jpg" width="240" alt="Field patrol scene 05"/><br/><sub>Field patrol scene 05</sub></td>
+    <td align="center"><img src="./images/field-scene-06.jpg" width="240" alt="Field patrol scene 06"/><br/><sub>Field patrol scene 06</sub></td>
+    <td align="center"><img src="./images/field-scene-07.jpg" width="240" alt="Field patrol scene 07"/><br/><sub>Field patrol scene 07</sub></td>
+    <td align="center"><img src="./images/field-scene-08.jpg" width="240" alt="Field patrol scene 08"/><br/><sub>Field patrol scene 08</sub></td>
   </tr>
 </table>
 

@@ -71,12 +71,34 @@ achievements:
   - Built GIS-visible patrol and risk data pipeline for management review
 
 evidence:
-  - type: map
-    path: images/app-screen-01.png
-  - type: track
-    path: images/app-screen-02.png
-  - type: report
-    path: images/app-screen-03.png
+  - type: app_ui
+    path: images/app-photo-capture.jpg
+    title: Photo Capture
+  - type: app_ui
+    path: images/app-map-workflow.png
+    title: Patrol Map Workflow
+  - type: app_ui
+    path: images/app-task-report.png
+    title: Task and Report
+  - type: app_ui
+    path: images/app-risk-entry.png
+    title: Risk Entry
+  - type: field_photo
+    path: images/field-scene-01.jpg
+  - type: field_photo
+    path: images/field-scene-02.jpg
+  - type: field_photo
+    path: images/field-scene-03.jpg
+  - type: field_photo
+    path: images/field-scene-04.jpg
+  - type: field_photo
+    path: images/field-scene-05.jpg
+  - type: field_photo
+    path: images/field-scene-06.jpg
+  - type: field_photo
+    path: images/field-scene-07.jpg
+  - type: field_photo
+    path: images/field-scene-08.jpg
 
 skills_demonstrated:
   technical:
