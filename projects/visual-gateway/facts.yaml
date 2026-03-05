@@ -5,19 +5,20 @@ project_id: visual-gateway
 name: Visual Gateway / Breaker Control Gateway Platform
 name_cn: 可视化网关
 
-type: IoT Gateway / Power Control / Industrial Internet
+type: Android IoT Gateway / Power Control
 category:
+  - Android Development
   - IoT Gateway
   - Data Visualization
   - Industrial Automation
-  - Full-stack Development
+  - Serial Communication
 
 timeline:
   start: "2018"
   end: "2023"
   duration_years: 5
 
-role: Full-stack Engineer / Architect
+role: Android Developer / Gateway Control Engineer
 team_size: null
 
 company:
@@ -26,12 +27,13 @@ company:
 
 summary: >
   Gateway-centric breaker control platform: multiple non-networked circuit breakers
-  connect to gateway via RS485/RS232 serial bus, and the gateway provides telemetry
+  connect to gateway via RS232 serial bus, and the gateway provides telemetry
   collection, open/close control, local alerting, and cloud reporting for unified
   web/mobile monitoring across factories and buildings.
 
 highlights:
-  - Designed serial breaker-to-gateway control architecture (RS485/RS232)
+  - Designed Android-based breaker control gateway architecture
+  - Implemented RS232 serial communication for breaker polling and control
   - Enabled remote open/close control for non-networked circuit breakers
   - Implemented per-breaker telemetry collection (current/voltage/power/energy/status)
   - Built gateway-to-cloud telemetry uplink and centralized control console
@@ -42,20 +44,18 @@ highlights:
 tech_stack:
   languages:
     - Java
-    - JavaScript
+    - Kotlin
   
   protocols:
+    - RS232
     - Modbus RTU
-    - RS485/RS232
     - MQTT
     - HTTP/REST
-    - TCP/UDP
   
-  backend:
-    - Spring Boot
-    - Netty
+  android_gateway:
+    - Android SDK
+    - SerialPort API
     - SQLite
-    - InfluxDB
   
   frontend:
     - Vue.js
@@ -69,13 +69,13 @@ tech_stack:
     - Redis
     - MongoDB
   
-  devops:
-    - Docker
+  deployment:
+    - Android Device
     - Linux
     - Nginx
 
 features:
-  - Serial breaker access via RS485/RS232 gateway
+  - Android gateway serial breaker access via RS232
   - Per-breaker telemetry monitoring
   - Remote open/close control
   - Gateway-based unified control for multiple breakers
@@ -121,7 +121,7 @@ evidence:
 
 technical_innovations:
   - name: Serial Breaker Control Engine
-    description: High-reliability serial polling and command engine for RS485/RS232 breaker networks
+    description: High-reliability serial polling and command engine for RS232 breaker networks
     benefits:
       - Unified telemetry and command model for heterogeneous breaker models
       - Stable command delivery (open/close) with retry and timeout handling
@@ -147,17 +147,17 @@ performance_metrics:
 
 skills_demonstrated:
   technical:
-    - Serial Protocols (RS485/RS232, Modbus RTU)
+    - Android SDK (Gateway App)
+    - Serial Protocols (RS232, Modbus RTU)
     - Breaker Control Logic
     - Command Auditing and Safety Rules
-    - Netty Framework
-    - Java / Spring Boot
+    - Java / Kotlin
     - Vue.js / ECharts
     - Time-series Databases (InfluxDB)
     - Edge Computing
     - IoT Architecture
     - WebSocket
-    - Docker / Linux
+    - Linux Deployment
   
   soft:
     - System Architecture
@@ -172,15 +172,14 @@ related_to_roles:
   - Industrial IoT Engineer
 
 keywords:
+  - Android Gateway
   - Breaker Control Gateway
-  - Serial Bus
-  - RS485
+  - RS232
   - Modbus RTU
   - IoT Gateway
   - Remote Switch Control
   - Telemetry Uplink
   - Edge Computing
-  - Spring Boot
   - Industrial IoT
 
 last_updated: "2025-02-11"

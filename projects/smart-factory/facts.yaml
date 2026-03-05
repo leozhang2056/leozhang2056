@@ -28,12 +28,17 @@ summary: >
   Full value-chain smart manufacturing platform connecting customers/brands,
   factories, and workers. Supports order intake, factory allocation,
   per-garment production tracking, and shipment synchronization across
-  5+ manufacturing sites.
+  5+ manufacturing sites. Also includes electronic scale weighing integration
+  through serial communication and Windows service monitoring, with real-time
+  synchronization to web pages and backend business systems.
 
 highlights:
   - Designed and implemented backend microservices with Spring Boot
   - Managed CI/CD and deployment via Docker, Jenkins, and Nginx
   - Integrated RFID, barcode scanners, and conveyor systems
+  - Integrated electronic scales with serial data acquisition pipeline
+  - Implemented Windows service for serial monitoring and auto-reconnect
+  - Synchronized weighing data to web dashboards and business systems
   - Led 6-person cross-functional team across Android, backend, and hardware
   - Deployed across 5+ manufacturing bases
   - Maintained 99.9% uptime
@@ -66,6 +71,9 @@ tech_stack:
     - Barcode Scanners
     - Conveyors
     - UART/Serial
+    - Electronic Scales
+    - RS232/RS485
+    - Windows Service Monitoring
 
 features:
   - End-to-end order to shipment flow
@@ -75,6 +83,10 @@ features:
   - Microservice architecture
   - Multi-site deployment (5+ locations)
   - IoT device integration
+  - Electronic scale weighing data acquisition
+  - Serial protocol parsing and data normalization
+  - Windows service watchdog and auto-reconnect
+  - Weighing data sync to web pages and backend systems
   - Real-time production tracking
   - Workflow orchestration
   - High availability (99.9% uptime)
@@ -108,6 +120,7 @@ achievements:
   - Maintained 99.9% uptime over multiple years
   - Led and mentored 6-person development team
   - Integrated diverse IoT hardware ecosystem
+  - Delivered reliable electronic scale data pipeline for production operations
 
 evidence:
   - type: architecture_diagram
@@ -132,6 +145,13 @@ technical_innovations:
       - Simplified integration of new hardware types
       - Real-time synchronization of physical movement and digital records
 
+  - name: Weighing Data Bridge via Windows Service
+    description: Persistent serial listener service for electronic scales with monitoring and reconnect strategy
+    benefits:
+      - Stable weight data ingestion from shop-floor scales
+      - Reliable synchronization to web UI and business systems
+      - Lower manual input errors in weighing workflows
+
 performance_metrics:
   efficiency:
     description: Production throughput improvement
@@ -150,6 +170,8 @@ skills_demonstrated:
     - MySQL / Redis / MongoDB (Polyglot Persistence)
     - Docker / Jenkins / Nginx (DevOps)
     - Industrial IoT (RFID, Barcode, Serial)
+    - Electronic Scale Integration (RS232/RS485)
+    - Windows Service Monitoring and Recovery
     - REST API Design
     - Database Optimization
     - Linux Administration (CentOS)
@@ -175,6 +197,10 @@ keywords:
   - Java
   - IoT
   - RFID
+  - Electronic Scale
+  - Weighing Data
+  - RS232
+  - Windows Service
   - Docker
   - Jenkins
   - DevOps

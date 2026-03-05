@@ -8,6 +8,7 @@
 
 Led the development of a **full value-chain smart manufacturing platform** for textile factories, connecting **brands/customers, factories, and frontline workers** on one system.  
 The platform not only manages production workflows, inventory, and IoT equipment, but also **accepts customer orders, allocates them to suitable factories, tracks per-garment production progress, and synchronizes shipping status back to the customer side**, supporting hundreds of workers across multiple sites.
+In addition, I implemented a **weighing integration module**: electronic scale data is collected through serial communication, monitored by a Windows service, and synchronized to web pages and core business systems in real time.
 
 **Project Type:** Enterprise System / Industrial IoT  
 **Timeline:** 2018 - 2024  
@@ -25,6 +26,7 @@ The platform not only manages production workflows, inventory, and IoT equipment
 - **Per-garment progress tracking:** Realtime view of each garment’s process and station
 - **Microservice architecture:** Scalable, modular backend services
 - **IoT integration:** Real-time tracking via RFID, barcode scanners, conveyors
+- **Weighing integration:** Electronic scale data acquisition and synchronization to web/system
 - **Production management:** Workflow orchestration and process tracking
 - **Multi-site deployment:** Supports 5+ manufacturing locations
 - **High availability:** 99.9% uptime maintained
@@ -40,7 +42,8 @@ The platform not only manages production workflows, inventory, and IoT equipment
 3. **Factory execution（工厂执行）**：  
    - 车间终端为工人下发工序任务；  
    - 工人通过生产端扫码/刷卡完成工序上报；  
-   - RFID / 条码 / 产线设备实时回传进度与产量。  
+   - RFID / 条码 / 产线设备实时回传进度与产量；  
+   - 电子秤通过串口上报称重数据，由 Windows 服务监控并推送到网页与业务系统。  
 4. **Progress tracking（进度追踪）**：客户在平台上可以看到每个订单、每一批甚至每件衣服的实时生产进度。  
 5. **Shipping & delivery（发货与交付）**：生产完成后，系统生成出货信息并同步给客户，形成从下单到收货的闭环数据链路。
 
@@ -75,7 +78,7 @@ The platform not only manages production workflows, inventory, and IoT equipment
               │
 ┌─────────────▼───────────────────────┐
 │      IoT Hardware Layer            │
-│   (RFID, Barcode, Conveyors)       │
+│ (RFID, Barcode, Conveyors, Scales) │
 └─────────────────────────────────────┘
 ```
 
@@ -106,6 +109,9 @@ The platform not only manages production workflows, inventory, and IoT equipment
 - **Barcode Scanners** - Product identification
 - **Conveyors** - Automated material handling
 - **UART/Serial** - Device communication
+- **Electronic Scales** - Weight data capture for production/business workflows
+- **Windows Service** - Serial listener, health monitoring, and auto-reconnect
+- **RS232/RS485** - Stable scale communication channel
 
 ---
 
@@ -151,6 +157,9 @@ The platform not only manages production workflows, inventory, and IoT equipment
 - Protocol design and implementation
 - Real-time data processing
 - System monitoring and maintenance
+- Electronic scale serial data acquisition and parsing
+- Windows service watchdog, reconnect, and exception recovery
+- Scale data synchronization to web dashboards and backend business system
 
 ---
 
@@ -171,6 +180,10 @@ The platform not only manages production workflows, inventory, and IoT equipment
 ### Challenge 4: Team Coordination
 **Problem:** Coordinating Android, backend, and hardware teams  
 **Solution:** Agile methodologies, clear documentation, and regular sync meetings
+
+### Challenge 5: Stable Weighing Data Pipeline
+**Problem:** Serial scale data may be noisy, interrupted, or disconnected in factory environments  
+**Solution:** Implemented Windows service-based serial monitoring with heartbeat, auto-reconnect, buffering, and retry to ensure reliable web/system data sync
 
 ---
 
@@ -263,6 +276,8 @@ The platform not only manages production workflows, inventory, and IoT equipment
 - **Database Design:** MySQL, Redis, MongoDB optimization
 - **DevOps:** Docker, Jenkins, CI/CD, Linux administration
 - **IoT Integration:** Hardware protocols, real-time processing
+- **Industrial Data Acquisition:** Electronic scale serial communication (RS232/RS485)
+- **Windows Services:** Process monitoring, fault recovery, and long-running device integration
 - **Team Leadership:** Cross-functional team management, agile practices
 - **System Architecture:** Scalable distributed systems design
 

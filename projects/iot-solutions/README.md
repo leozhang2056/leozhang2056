@@ -1,16 +1,18 @@
 # IoT Device Management Platform
 
-> Platform for users to manage purchased IoT devices; company products include smart switches and gateways. I developed the gateway and mobile app, and participated in platform development.
+> IoT platform for smart switches and gateways. My main work focused on Android mobile client development, with participation in gateway and platform integration.
 
 ---
 
 ## Overview
 
-An **IoT management platform** where users can register, configure, and manage their purchased IoT devices. The company sells **smart switches** and **gateways**; the platform provides device binding, remote control, status monitoring, and related services. I **developed the gateway** (gateway software/firmware), **developed the mobile (phone) app** for device control and management, and **participated in platform** (backend and/or web) development.
+An **IoT management platform** where users can register, configure, and manage purchased IoT devices.  
+The company sells **smart switches** and **gateways**; the platform provides device binding, remote control, status monitoring, and related services.  
+My **primary responsibility was Android mobile client development** for end-user device control and management, while also participating in gateway and platform integration work.
 
 **Project Type:** IoT Platform / Device Management / Product Development  
 **Timeline:** 2013 – 2023 (tenure at company)  
-**Role:** Gateway Developer, Mobile Developer, Platform Development (participated)  
+**Role:** Android Mobile Client Developer (primary), Gateway & Platform Integration (participated)  
 **Company:** Chunxiao Technology Co., Ltd., China
 
 ---
@@ -29,11 +31,24 @@ An **IoT management platform** where users can register, configure, and manage t
 
 ### Screenshots
 
-![IoT platform demo](./images/iot-platform-demo.png)  
-*IoT platform demo: exhibition area, mobile app UI, and smart access*
+#### Product & Device
 
-![Gateway & smart switches](./images/gateway-smart-switches.jpg)  
-*Gateway (TXWG-LA) and smart micro-breakers (smart switches)*
+| Platform Demo | Gateway & Smart Switches |
+|---|---|
+| ![IoT platform demo](./images/iot-platform-demo.png) | ![Gateway and smart switches](./images/gateway-smart-switches.jpg) |
+| IoT platform demo: exhibition area, mobile app UI, and smart access | Gateway (TXWG-LA) and smart micro-breakers |
+
+#### Android App UI
+
+| Device Home | Fire Alert | Messages |
+|---|---|---|
+| ![Device Home](./images/app-device-home.jpg) | ![Fire Alert](./images/app-fire-alert.jpg) | ![Messages](./images/app-messages.jpg) |
+| Current device status and quick controls | Fire warning and risk status view | Message center and device notifications |
+
+| Discover | Profile Center |
+|---|---|
+| ![Discover](./images/app-discover.jpg) | ![Profile Center](./images/app-profile-center.jpg) |
+| Discover/services entry for user workflows | Personal center and account settings |
 
 ---
 
@@ -47,7 +62,7 @@ An **IoT management platform** where users can register, configure, and manage t
 - OTA and remote configuration support where applicable
 
 ### Mobile App (Phone)
-- Developed the **mobile application** for end users
+- Main owner of the **Android mobile application** for end users
 - Device discovery, binding, and management
 - Remote control of smart switches and gateway-connected devices
 - Real-time status and notifications

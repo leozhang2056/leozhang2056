@@ -1,0 +1,112 @@
+# Project Facts - Broadcast Control Platform
+# Structured data for RAG and resume generation
+
+project_id: broadcast-control
+name: Broadcast Control Platform
+name_cn: 播控平台
+
+type: Digital Signage / AdTech Platform
+category:
+  - Project Management
+  - Android Development
+  - Digital Signage
+  - AdTech
+  - Device Management
+  - MQTT Communication
+
+timeline:
+  start: "2020"
+  end: "2020"
+  duration_years: 1
+
+role: Project Manager + Android Screen Client Developer
+team_size: null
+
+company:
+  name: null
+  location: null
+
+summary: >
+  2020 digital signage ad delivery project. As project manager and Android
+  screen client lead developer, delivered a centralized platform to control
+  elevator, in-store, and public screens, using MQTT broadcast for large-scale
+  campaign task delivery and scheduled video/image playback.
+
+highlights:
+  - Led project delivery and cross-team coordination as project manager
+  - Developed Android player clients across elevator/store/public screen scenarios
+  - Implemented MQTT broadcast-based campaign task distribution
+  - Built device grouping and campaign policy control for targeted delivery
+  - Implemented scheduled playback for image/video materials
+  - Added client heartbeat and playback status feedback for operational visibility
+  - Supported remote publishing and campaign adjustment without on-site operation
+  - Implemented operation audit trails for publishing and policy changes
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+  android:
+    - Android SDK
+  frontend: []
+  backend: []
+  databases: []
+  protocols:
+    - MQTT
+    - HTTP/REST
+    - WebSocket
+  infrastructure: []
+
+features:
+  - Centralized management of elevator/store/public screens
+  - Video and image ad delivery
+  - Campaign scheduling and priority control
+  - MQTT broadcast task delivery
+  - Remote publishing and task synchronization
+  - Device heartbeat and playback status monitoring
+  - Operation auditing and traceability
+
+metrics: []
+
+achievements:
+  - Established unified ad delivery control for heterogeneous public screens
+  - Delivered MQTT broadcast mechanism for efficient large-group publishing
+  - Improved campaign operation efficiency through remote Android client control
+
+evidence:
+  - type: architecture
+    path: images/platform-arch.png
+  - type: console
+    path: images/campaign-console.png
+  - type: playback
+    path: images/screen-playback.png
+
+skills_demonstrated:
+  technical:
+    - Android Client Development
+    - MQTT Broadcast Messaging
+    - Digital Signage
+    - Campaign Management
+    - Device Fleet Management
+    - Scheduling Strategy
+    - Remote Content Delivery
+  soft:
+    - Project Management
+    - System Design
+    - Documentation
+
+related_to_roles:
+  - Project Manager
+  - Android Developer
+  - IoT Engineer
+  - Platform Engineer
+
+keywords:
+  - Broadcast Control
+  - Digital Signage
+  - Ad Delivery
+  - Device Management
+  - Campaign Scheduling
+  - MQTT Broadcast
+
+last_updated: "2026-03-05"

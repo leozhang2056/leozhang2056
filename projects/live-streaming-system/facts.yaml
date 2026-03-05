@@ -1,0 +1,104 @@
+# Project Facts - Live Streaming Commerce System
+# Structured data for RAG and resume generation
+
+project_id: live-streaming-system
+name: Live Streaming Commerce System
+name_cn: 直播系统
+
+type: Live Streaming / Live Commerce
+category:
+  - Android Development
+  - Live Streaming
+  - Mobile Development
+  - Audio/Video Transmission
+  - E-commerce
+
+timeline:
+  start: "2018"
+  end: "2018"
+  duration_years: 1
+
+role: Android Client Developer
+team_size: null
+
+company:
+  name: null
+  location: null
+
+summary: >
+  2018 live streaming and online shopping project. Focused on Android client
+  development for live room playback, interaction, and in-stream purchase flow,
+  with practical implementation related to audio/video transmission and
+  playback stability.
+
+highlights:
+  - Developed Android client modules for live streaming scenarios
+  - Implemented live room playback and core interaction flow
+  - Integrated live stream experience with online shopping path
+  - Participated in audio/video transmission integration and client tuning
+  - Improved playback stability under varying network conditions
+  - Collaborated with backend and product teams for feature delivery
+
+tech_stack:
+  languages:
+    - Java
+    - Kotlin
+  mobile:
+    - Android SDK
+  protocols:
+    - Streaming Protocols (project-specific)
+    - HTTP/REST
+    - WebSocket
+  backend: []
+  databases: []
+  infrastructure: []
+
+features:
+  - Live room audio/video playback
+  - Live interaction user flow
+  - Live shopping conversion path
+  - Playback stability optimization
+  - Session and state synchronization
+  - Client-side monitoring feedback
+
+metrics: []
+
+achievements:
+  - Delivered Android live streaming client capability in 2018
+  - Enabled live-commerce user journey on mobile client
+  - Improved user experience through playback stability optimization
+
+evidence:
+  - type: ui
+    path: images/live-room-ui.png
+  - type: architecture
+    path: images/streaming-flow.png
+  - type: flow
+    path: images/live-commerce-path.png
+
+skills_demonstrated:
+  technical:
+    - Android Development
+    - Live Streaming Client Development
+    - Audio/Video Transmission Integration
+    - Streaming Playback Optimization
+    - Mobile E-commerce Flow Integration
+  soft:
+    - Cross-team Collaboration
+    - Requirement Understanding
+    - Release Coordination
+
+related_to_roles:
+  - Android Developer
+  - Mobile Engineer
+  - Streaming Client Engineer
+
+keywords:
+  - Live Streaming
+  - Live Commerce
+  - Android
+  - Audio/Video
+  - Streaming Playback
+  - Mobile Client
+
+last_updated: "2026-03-05"

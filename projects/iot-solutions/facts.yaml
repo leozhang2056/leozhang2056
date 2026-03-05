@@ -17,7 +17,7 @@ timeline:
   end: "2023"
   duration_years: 10
 
-role: Gateway Developer, Mobile Developer, Platform Development (participated)
+role: Android Mobile Client Developer (primary), Gateway & Platform Integration (participated)
 team_size: varies
 
 company:
@@ -28,7 +28,8 @@ summary: >
   IoT management platform where users manage their purchased IoT devices.
   Company sells smart switches and gateways. I developed the gateway (gateway
   software/firmware), developed the mobile (phone) app for device control and
-  management, and participated in platform (backend/web) development.
+  management, and participated in platform (backend/web) development, with
+  Android mobile client work as the primary responsibility.
 
 products_sold:
   - Smart switches
@@ -40,7 +41,7 @@ my_contributions:
     - Device connectivity and protocol implementation
     - Data forwarding to platform, local/offline behavior
   mobile:
-    - Developed mobile (phone) app for end users
+    - Main owner of Android mobile app for end users
     - Device discovery, binding, remote control
     - Integration with platform APIs
   platform:
@@ -52,6 +53,29 @@ platform_features:
   - Device registration, binding, grouping
   - Remote control and status monitoring
   - Smart switches and gateways as sold products
+
+evidence:
+  - type: product_demo
+    path: images/iot-platform-demo.png
+    title: IoT Platform Demo
+  - type: device_photo
+    path: images/gateway-smart-switches.jpg
+    title: Gateway and Smart Switches
+  - type: app_ui
+    path: images/app-device-home.jpg
+    title: Device Home
+  - type: app_ui
+    path: images/app-fire-alert.jpg
+    title: Fire Alert
+  - type: app_ui
+    path: images/app-messages.jpg
+    title: Messages
+  - type: app_ui
+    path: images/app-discover.jpg
+    title: Discover
+  - type: app_ui
+    path: images/app-profile-center.jpg
+    title: Profile Center
 
 tech_stack:
   gateway:
@@ -105,4 +129,4 @@ keywords:
   - UART
   - MQTT
 
-last_updated: "2026-03-04"
+last_updated: "2026-03-05"

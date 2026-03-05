@@ -9,9 +9,9 @@
 A gateway-centric industrial IoT platform built to manage **multiple circuit breakers connected via serial ports (RS485/RS232)**.  
 The breakers themselves do **not need direct Internet access**; the gateway collects breaker metrics (current, voltage, power, energy, status), executes open/close control commands, applies local rules/alerts, and reports data to the cloud platform for unified monitoring and operations.
 
-**Project Type:** IoT Gateway / Power Control / Industrial IoT  
+**Project Type:** Android IoT Gateway / Power Control  
 **Timeline:** 2018 – 2023  
-**Role:** Full-stack Developer / Architecture  
+**Role:** Android Developer / Gateway Control  
 **Company:** Chunxiao Technology Co., Ltd., China
 
 ---
@@ -95,16 +95,15 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 ## Technologies
 
 ### Protocols
-- **Modbus RTU** – Breaker serial communication
-- **RS485/RS232** – Serial physical layer
+- **RS232** – Primary serial communication to breakers
+- **Modbus RTU / vendor protocol** – Breaker register read/write
 - **MQTT** – Gateway-to-cloud telemetry uplink
 - **HTTP/REST** – Management APIs
-- **TCP/UDP** – Optional extension protocols
 
-### Gateway
-- **Java** – Core service
-- **Spring Boot** – Application framework
-- **Netty** – High-performance I/O
+### Android Gateway
+- **Android SDK** – Gateway control app runtime
+- **Java/Kotlin** – Core implementation
+- **SerialPort API** – RS232 polling and command delivery
 - **SQLite** – Local embedded DB
 
 ### Visualization
@@ -120,8 +119,8 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 - **MongoDB** – Logs and unstructured
 
 ### Deployment
-- **Docker** – Containerization
-- **Linux** – Gateway OS
+- **Android device deployment** – On-site gateway terminals
+- **Linux/cloud servers** – Platform services
 - **Nginx** – Reverse proxy
 
 ---
@@ -139,15 +138,15 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 ## Responsibilities
 
 ### Architecture
-- Layered gateway (protocol / processing / service)
-- Data flow and storage strategy
-- HA and failover design
-- Extensibility for new protocols
+- Android-based gateway control architecture
+- RS232 command/data flow design
+- Local cache and offline resilience strategy
+- Extensibility for new breaker models/protocols
 
 ### Protocol Adapters
 - Serial Modbus RTU and vendor-specific breaker protocol adapters
 - Breaker register mapping and data normalization
-- Serial communication stability and retry control
+- RS232 communication stability and retry control
 - Command framing for remote open/close operations
 
 ### Backend
@@ -205,13 +204,14 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 
 ## Skills Demonstrated
 
-- **Industrial protocols:** Modbus, MQTT, RS485, TCP/IP
-- **Backend:** Java, Spring Boot, Netty, high concurrency
+- **Android gateway development:** Android SDK, Java/Kotlin, device integration
+- **Industrial protocols:** RS232, Modbus RTU, MQTT
+- **Gateway logic:** Breaker polling, command control, retry, local cache
 - **Visualization:** Vue.js, ECharts, WebSocket, dashboard design
 - **Databases:** Time-series, MySQL, Redis, data modeling
-- **IoT architecture:** Edge computing, protocol gateway, distributed systems
-- **DevOps:** Docker, Linux, deployment and ops
+- **IoT architecture:** Edge gateway, serial bus control, cloud synchronization
+- **Deployment:** On-site Android terminals, Linux server operations
 
 ---
 
-**Tags:** #IoT #IndustrialIoT #Modbus #MQTT #DataViz #Java #SpringBoot #Vue.js #EdgeComputing #Gateway
+**Tags:** #Android #IoT #RS232 #ModbusRTU #Gateway #BreakerControl #MQTT #DataViz

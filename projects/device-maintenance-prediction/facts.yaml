@@ -1,0 +1,109 @@
+# Project Facts - Device Maintenance Prediction Platform
+# Structured data for RAG and resume generation
+
+project_id: device-maintenance-prediction
+name: Device Maintenance Prediction Platform
+name_cn: 设备保养预测平台
+
+type: AI / Predictive Maintenance
+category:
+  - AI/ML
+  - Predictive Maintenance
+  - Industrial AI
+  - Data Analysis
+
+timeline:
+  start: "2023"
+  end: "2023"
+  duration_years: 1
+
+role: AI Algorithm Developer
+team_size: null
+
+company:
+  name: null
+  location: null
+
+summary: >
+  2023 predictive maintenance AI project. Based on historical maintenance and
+  operational data, the system analyzes equipment aging trends and predicts the
+  next recommended maintenance window using Random Forest as the core model,
+  with comparative forecasting algorithms for validation and optimization.
+
+highlights:
+  - Designed predictive maintenance workflow from historical service records
+  - Implemented Random Forest as core model for next-maintenance timing prediction
+  - Built feature engineering pipeline for intervals, fault frequency, and usage intensity
+  - Added comparative modeling with regression and time-series baselines
+  - Modeled equipment aging trends and maintenance risk progression
+  - Generated recommendation outputs for next maintenance windows
+  - Supported maintenance planning with risk-priority scoring
+
+tech_stack:
+  languages:
+    - Python
+  ai_ml:
+    - Random Forest
+    - Regression Models
+    - Time-series Forecasting
+    - Ensemble Modeling
+  data_processing:
+    - Feature Engineering
+    - Data Cleaning
+    - Statistical Analysis
+  backend: []
+  databases: []
+  infrastructure: []
+
+features:
+  - Historical maintenance data analysis
+  - Equipment aging trend estimation
+  - Next-maintenance time prediction
+  - Multi-model comparison and optimization
+  - Maintenance urgency risk scoring
+  - Decision support for maintenance scheduling
+
+metrics: []
+
+achievements:
+  - Delivered AI-based maintenance recommendation capability in 2023
+  - Improved maintenance planning from fixed-cycle and reactive style to predictive strategy
+  - Established model-driven support for maintenance resource prioritization
+  - Built reusable model pipeline for future algorithm iteration
+
+evidence:
+  - type: architecture
+    path: images/pipeline-arch.png
+  - type: evaluation
+    path: images/model-evaluation.png
+  - type: dashboard
+    path: images/maintenance-forecast-dashboard.png
+
+skills_demonstrated:
+  technical:
+    - Predictive Maintenance
+    - Random Forest
+    - Machine Learning Modeling
+    - Feature Engineering
+    - Data Analysis
+    - Forecasting
+    - Model Evaluation
+    - Industrial Data Processing
+  soft:
+    - Problem Solving
+    - Technical Documentation
+
+related_to_roles:
+  - AI Engineer
+  - Machine Learning Engineer
+  - Data Analyst
+  - Industrial AI Engineer
+
+keywords:
+  - Predictive Maintenance
+  - Equipment Aging Analysis
+  - Random Forest
+  - Maintenance Forecasting
+  - Industrial AI
+
+last_updated: "2026-03-05"
