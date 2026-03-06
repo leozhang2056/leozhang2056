@@ -50,18 +50,16 @@ Java, Kotlin, Python, JavaScript, C, C++, C#, SQL, Lua, Bash
 ### Databases & Storage
 **Relational**: MySQL, PostgreSQL, Oracle, SQL Server, SQLite  
 **NoSQL**: Redis, MongoDB  
-**Search**: Lucene, Elasticsearch  
-**File Storage**: FastDFS, MinIO
+**File Storage**: FastDFS
 
 ### Data Engineering & BI
 **ETL**: Kettle (Pentaho Data Integration)  
 **Visualization**: PowerBI, FineReport, Grafana  
 **Data Warehouse**: Basic dimensional modeling
 
-### IoT & Embedded
-**Hardware**: RFID, Barcode Scanners, Sensors, Electronic Scales  
-**Protocols**: UART, RS232/RS485, GPIO, Modbus, MQTT, HTTP/REST  
-**Platforms**: Raspberry Pi, Arduino, Android Things
+### IoT & Hardware
+**Devices**: RFID, Barcode Scanners, Sensors, Electronic Scales  
+**Protocols**: UART, RS232/RS485, GPIO, Modbus, MQTT, HTTP/REST
 
 ### Streaming & Media
 **Protocols**: RTMP, HLS (M3U8), WebRTC, HTTP-FLV  
