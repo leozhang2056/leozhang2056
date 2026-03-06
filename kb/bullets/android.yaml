@@ -105,3 +105,25 @@ bullets:
       - "Optimized streaming performance with native C++ code on Android"
     evidence: [live-streaming-system]
     skills: [Android NDK, C++, JNI, Media Processing, RTMP]
+
+  - id: android_reverse_engineering
+    category: technical
+    tags: [android, reverse-engineering, decompilation, security]
+    original: "Proficient in Android reverse engineering using JADX and Xposed"
+    variants:
+      - "Analyzed third-party Android applications using JADX decompiler for API understanding"
+      - "Hooked Android system and app behaviors using Xposed Framework for debugging"
+      - "Performed security analysis on Android apps through reverse engineering techniques"
+    evidence: [enterprise-messaging]
+    skills: [JADX, Xposed, Reverse Engineering, APK Analysis, Smali, Security Research]
+
+  - id: android_security_analysis
+    category: technical
+    tags: [android, security, reverse-engineering, penetration-testing]
+    original: "Conducted security analysis and penetration testing on Android applications"
+    variants:
+      - "Identified security vulnerabilities in Android apps through static and dynamic analysis"
+      - "Analyzed app communication protocols and encryption implementations"
+      - "Documented security findings and provided remediation recommendations"
+    evidence: [enterprise-messaging]
+    skills: [Android Security, Penetration Testing, Vulnerability Analysis, Protocol Analysis]

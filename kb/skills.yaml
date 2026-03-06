@@ -171,6 +171,20 @@ android:
     evidence:
       - Debugging and development
       - Device management
+  
+  - name: Reverse Engineering
+    level: intermediate
+    evidence:
+      - JADX decompiler for APK analysis
+      - Xposed Framework for runtime hooking
+      - Security research and vulnerability analysis
+  
+  - name: Android Security
+    level: intermediate
+    evidence:
+      - Static and dynamic analysis
+      - Protocol analysis
+      - Penetration testing on Android apps
 
 # Backend & Full-stack
 backend:
@@ -272,6 +286,46 @@ devops:
     evidence:
       - Windows Server deployment
       - Site binding and SSL
+  
+  - name: Linux System Administration
+    level: advanced
+    years: 8
+    evidence:
+      - CentOS/Ubuntu server management
+      - Shell scripting and automation
+      - System monitoring and troubleshooting
+  
+  - name: Windows Server
+    level: advanced
+    years: 10
+    evidence:
+      - Windows Server 2012/2016/2019 administration
+      - Active Directory and Group Policy
+      - IIS and .NET application deployment
+  
+  - name: CI/CD Pipeline Design
+    level: advanced
+    years: 5
+    evidence:
+      - Jenkins pipeline as code
+      - Docker container orchestration
+      - Automated deployment strategies
+  
+  - name: Infrastructure Monitoring
+    level: intermediate
+    years: 4
+    evidence:
+      - System performance monitoring
+      - Log aggregation and analysis
+      - Alert configuration and incident response
+  
+  - name: Kubernetes
+    level: intermediate
+    years: 3
+    evidence:
+      - Container orchestration and deployment
+      - Pod management and scaling
+      - Service discovery and load balancing
     
   - name: Azure
     level: beginner

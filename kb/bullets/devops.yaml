@@ -1,0 +1,113 @@
+# DevOps / 运维可复用要点库
+# Reusable Bullet Points - DevOps & System Administration
+
+bullets:
+  - id: devops_cicd_jenkins
+    category: technical
+    tags: [devops, jenkins, cicd, automation]
+    original: "Built and maintained CI/CD pipelines using Jenkins for automated deployment"
+    variants:
+      - "Designed Jenkins pipelines as code for automated build, test, and deployment"
+      - "Implemented multi-environment CI/CD workflows with Jenkins and Docker"
+      - "Created automated deployment pipelines reducing release time by 70%"
+    evidence: [smart-factory]
+    skills: [Jenkins, CI/CD, Pipeline as Code, Automated Deployment]
+
+  - id: devops_docker_containerization
+    category: technical
+    tags: [devops, docker, containerization, microservices]
+    original: "Containerized applications with Docker for consistent deployment environments"
+    variants:
+      - "Dockerized microservices for consistent deployment across environments"
+      - "Built Docker images and orchestrated containers for production workloads"
+      - "Implemented container-based deployment strategy with Docker and Jenkins"
+    evidence: [smart-factory]
+    skills: [Docker, Containerization, Microservices, Image Building]
+
+  - id: devops_linux_administration
+    category: technical
+    tags: [devops, linux, centos, ubuntu, system-admin]
+    original: "Managed Linux servers (CentOS/Ubuntu) for production application hosting"
+    variants:
+      - "Administered CentOS/Ubuntu production servers with 99.9% uptime"
+      - "Configured Linux systems for high-availability application deployment"
+      - "Automated Linux server configuration with shell scripting and cron jobs"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Linux Administration, CentOS, Ubuntu, Shell Scripting, System Tuning]
+
+  - id: devops_windows_server
+    category: technical
+    tags: [devops, windows-server, iis, active-directory]
+    original: "Managed Windows Server infrastructure including IIS and Active Directory"
+    variants:
+      - "Administered Windows Server 2012/2016/2019 for enterprise applications"
+      - "Configured IIS, SSL certificates, and application pools for .NET deployments"
+      - "Managed Active Directory, Group Policy, and enterprise user authentication"
+    evidence: [smart-factory, patent-search-system]
+    skills: [Windows Server, IIS, Active Directory, Group Policy, SSL Configuration]
+
+  - id: devops_nginx_loadbalancer
+    category: technical
+    tags: [devops, nginx, load-balancer, reverse-proxy]
+    original: "Configured Nginx as reverse proxy and load balancer for high-traffic applications"
+    variants:
+      - "Set up Nginx reverse proxy and load balancing for microservices architecture"
+      - "Optimized Nginx configuration for high-concurrency application delivery"
+      - "Implemented SSL termination and caching with Nginx for improved performance"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Nginx, Load Balancing, Reverse Proxy, SSL Termination, Performance Tuning]
+
+  - id: devops_infrastructure_monitoring
+    category: technical
+    tags: [devops, monitoring, alerting, logging]
+    original: "Implemented infrastructure monitoring and alerting for production systems"
+    variants:
+      - "Set up system monitoring and alerting for 99.9% uptime SLA maintenance"
+      - "Configured log aggregation and analysis for troubleshooting and optimization"
+      - "Implemented proactive monitoring with automated incident response workflows"
+    evidence: [smart-factory]
+    skills: [System Monitoring, Log Analysis, Alerting, Incident Response, SLA Management]
+
+  - id: devops_database_administration
+    category: technical
+    tags: [devops, database, mysql, redis, backup]
+    original: "Managed database infrastructure including MySQL, Redis with backup and replication"
+    variants:
+      - "Administered MySQL and Redis clusters with automated backup and failover"
+      - "Configured database replication and sharding for high-availability systems"
+      - "Optimized database performance through indexing and query tuning"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Database Administration, MySQL, Redis, Backup Strategies, Replication]
+
+  - id: devops_security_hardening
+    category: technical
+    tags: [devops, security, hardening, firewall]
+    original: "Implemented security hardening and firewall configuration for production servers"
+    variants:
+      - "Hardened Linux and Windows servers following security best practices"
+      - "Configured firewalls, SSL/TLS, and access controls for secure deployments"
+      - "Performed security audits and vulnerability assessments on infrastructure"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Security Hardening, Firewall Configuration, SSL/TLS, Vulnerability Management]
+
+  - id: devops_disaster_recovery
+    category: technical
+    tags: [devops, disaster-recovery, backup, high-availability]
+    original: "Designed and implemented disaster recovery and backup strategies"
+    variants:
+      - "Created comprehensive backup and disaster recovery plans for critical systems"
+      - "Implemented automated backup solutions with tested recovery procedures"
+      - "Designed high-availability architectures with failover capabilities"
+    evidence: [smart-factory]
+    skills: [Disaster Recovery, Backup Strategies, High Availability, Business Continuity]
+
+  - id: devops_kubernetes_orchestration
+    category: technical
+    tags: [devops, kubernetes, k8s, container-orchestration]
+    original: "Deployed and managed containerized applications with Kubernetes"
+    variants:
+      - "Orchestrated Docker containers using Kubernetes for production workloads"
+      - "Managed Kubernetes clusters with automated scaling and rolling updates"
+      - "Implemented Kubernetes deployments with service discovery and config maps"
+    evidence: [smart-factory]
+    skills: [Kubernetes, K8s, Container Orchestration, Pod Management, Service Mesh]
