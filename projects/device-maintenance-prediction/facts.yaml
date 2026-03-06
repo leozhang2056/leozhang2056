@@ -18,13 +18,13 @@ company:
   location: null
 summary: '2023 predictive maintenance AI project. Based on historical maintenance
   and operational data, the system analyzes equipment aging trends and predicts the
-  next recommended maintenance window using Random Forest as the core model, with
-  comparative forecasting algorithms for validation and optimization.
+  next recommended maintenance window using SparkNet + Random Forest as core models,
+  with comparative forecasting algorithms for validation and optimization.
 
   '
 highlights:
 - Designed predictive maintenance workflow from historical service records
-- Implemented Random Forest as core model for next-maintenance timing prediction
+- Implemented SparkNet + Random Forest as core models for next-maintenance timing prediction
 - Built feature engineering pipeline for intervals, fault frequency, and usage intensity
 - Added comparative modeling with regression and time-series baselines
 - Modeled equipment aging trends and maintenance risk progression
@@ -34,6 +34,7 @@ tech_stack:
   languages:
   - Python
   ai_ml:
+  - SparkNet
   - Random Forest
   - Regression Models
   - Time-series Forecasting
@@ -69,6 +70,7 @@ skills_demonstrated:
   technical:
   - Predictive Maintenance
   - Random Forest
+  - SparkNet
   - Machine Learning Modeling
   - Feature Engineering
   - Data Analysis
@@ -87,6 +89,7 @@ keywords:
 - Predictive Maintenance
 - Equipment Aging Analysis
 - Random Forest
+- SparkNet
 - Maintenance Forecasting
 - Industrial AI
 last_updated: '2026-03-05'

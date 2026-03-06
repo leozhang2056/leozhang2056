@@ -102,7 +102,7 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 
 ### Android Gateway
 - **Android SDK** – Gateway control app runtime
-- **Java/Kotlin** – Core implementation
+- **Kotlin/Java** – Core implementation (gateway serial communication and control logic)
 - **SerialPort API** – RS232 polling and command delivery
 - **SQLite** – Local embedded DB
 
@@ -204,8 +204,8 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 
 ## Skills Demonstrated
 
-- **Android gateway development:** Android SDK, Java/Kotlin, device integration
-- **Industrial protocols:** RS232, Modbus RTU, MQTT
+- **Android gateway development:** Android SDK, Kotlin/Java, device integration
+- **Industrial protocols:** Serial communication (RS232), Modbus RTU, MQTT
 - **Gateway logic:** Breaker polling, command control, retry, local cache
 - **Visualization:** Vue.js, ECharts, WebSocket, dashboard design
 - **Databases:** Time-series, MySQL, Redis, data modeling
@@ -214,4 +214,4 @@ The breakers themselves do **not need direct Internet access**; the gateway coll
 
 ---
 
-**Tags:** #Android #IoT #RS232 #ModbusRTU #Gateway #BreakerControl #MQTT #DataViz
+**Tags:** #Android #IoT #Kotlin #SerialCommunication #RS232 #ModbusRTU #Gateway #BreakerControl #MQTT #DataViz

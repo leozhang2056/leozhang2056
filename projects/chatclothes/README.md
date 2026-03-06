@@ -1,6 +1,6 @@
 # ChatClothes Virtual Try-On
 
-> A modular and multimodal AI virtual try-on system integrating diffusion models, YOLO-based classification, and LLM-driven user interaction
+> A modular and multimodal AI virtual try-on system integrating LoRA fine-tuned diffusion models, ComfyUI workflows, YOLO-based classification, and LLM-driven user interaction
 > Master's Thesis Project at Auckland University of Technology (AUT), New Zealand
 
 ---

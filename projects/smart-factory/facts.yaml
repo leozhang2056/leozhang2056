@@ -3,6 +3,7 @@ name: Smart Factory Backend System
 name_cn: 智能工厂后端系统
 type: Enterprise System
 category:
+- Frontend Development
 - Backend Development
 - Industrial IoT
 - Microservices
@@ -11,7 +12,7 @@ timeline:
   start: '2018'
   end: '2024'
   duration_years: 6
-role: Technical Lead
+role: Frontend Developer (Vue.js)
 team_size: 6
 company:
   name: Chunxiao Technology Co., Ltd.
@@ -24,6 +25,9 @@ summary: 'Full value-chain smart manufacturing platform connecting customers/bra
 
   '
 highlights:
+- Developed Vue.js web portals and production dashboards
+- Implemented frontend modules for order progress and equipment status views
+- Integrated frontend with backend APIs and real-time data flows
 - Designed and implemented backend microservices with Spring Boot
 - Managed CI/CD and deployment via Docker, Jenkins, and Nginx
 - Integrated RFID, barcode scanners, and conveyor systems
@@ -37,6 +41,10 @@ highlights:
 tech_stack:
   languages:
   - Java
+  - JavaScript
+  frontend:
+  - Vue.js
+  - HTML/CSS
   backend:
   - Spring Boot
   - Spring Cloud
@@ -144,6 +152,8 @@ performance_metrics:
     achievement: Scaled from a single pilot to 5+ full-scale manufacturing bases
 skills_demonstrated:
   technical:
+  - Vue.js (Frontend Development)
+  - JavaScript / HTML / CSS
   - Spring Boot / Spring Cloud (Microservices)
   - Java (Backend Development)
   - MySQL / Redis / MongoDB (Polyglot Persistence)

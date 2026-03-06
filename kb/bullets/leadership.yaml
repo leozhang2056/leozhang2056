@@ -1,0 +1,58 @@
+# 团队领导/软技能可复用要点库
+# Reusable Bullet Points - Leadership & Soft Skills
+
+bullets:
+  - id: leadership_team_management
+    category: soft
+    tags: [leadership, team, management, agile]
+    original: "Led 6-person cross-functional team through full development cycles"
+    variants:
+      - "Led cross-functional team of 6 developers delivering enterprise solutions"
+      - "Managed full product lifecycle from requirements to deployment"
+      - "Established agile practices and sprint planning for distributed team"
+    evidence: [smart-factory]
+    skills: [Team Leadership, Agile, Scrum, Project Management]
+
+  - id: leadership_mentoring
+    category: soft
+    tags: [leadership, mentoring, code-review]
+    original: "Mentored junior developers and established coding standards"
+    variants:
+      - "Mentored 3+ junior developers, accelerating their growth to mid-level"
+      - "Established code review practices and technical documentation standards"
+      - "Created onboarding program reducing new hire ramp-up time by 50%"
+    evidence: [smart-factory, enterprise-messaging]
+    skills: [Mentoring, Code Review, Technical Writing, Onboarding]
+
+  - id: leadership_stakeholder
+    category: soft
+    tags: [leadership, communication, stakeholder]
+    original: "Collaborated with cross-functional stakeholders to deliver projects"
+    variants:
+      - "Partnered with product and business teams to align technical solutions"
+      - "Presented technical proposals to non-technical stakeholders and executives"
+      - "Facilitated requirements gathering and scope negotiation with clients"
+    evidence: [smart-factory, broadcast-control]
+    skills: [Communication, Stakeholder Management, Requirements Analysis]
+
+  - id: soft_problem_solving
+    category: soft
+    tags: [problem-solving, debugging, optimization]
+    original: "Solved complex technical challenges under tight deadlines"
+    variants:
+      - "Diagnosed and resolved critical production issues under pressure"
+      - "Optimized system performance achieving 30%+ efficiency improvements"
+      - "Designed creative solutions for resource-constrained environments"
+    evidence: [smart-factory, chatclothes]
+    skills: [Problem Solving, Debugging, Performance Optimization]
+
+  - id: soft_continuous_learning
+    category: soft
+    tags: [learning, adaptability, growth]
+    original: "Continuously learned new technologies and applied to projects"
+    variants:
+      - "Self-taught AI/ML and delivered production-ready deep learning system"
+      - "Rapidly adapted to new technology stacks for project requirements"
+      - "Completed Master's degree while working full-time, submitted thesis 6 months early"
+    evidence: [chatclothes]
+    skills: [Self-Learning, Adaptability, Time Management]

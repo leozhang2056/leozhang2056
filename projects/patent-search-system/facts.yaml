@@ -1,0 +1,139 @@
+# Project Facts - Patent Search System
+# Structured data for RAG and resume generation
+
+project_id: patent-search-system
+name: Patent Search System
+name_cn: 专利搜索管理系统
+
+type: Enterprise System
+category:
+  - Desktop Application
+  - Data Management
+  - Enterprise System
+
+timeline:
+  start: "2014"
+  end: "2014"
+  duration_months: 6
+
+role: Full-stack Developer
+team_size: 2
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+
+summary: >
+  A comprehensive .NET-based Windows desktop application for enterprise patent document management.
+  Built on .NET Framework 2.0 with C# 3.0, featuring Windows Forms 2.0 UI, SQL Server 2008 backend,
+  and Lucene.NET 2.9 full-text search engine. The system enabled research teams to efficiently
+  manage 10,000+ patent records with Excel batch processing capabilities and sub-second search response.
+  Demonstrated early adoption of Microsoft technology stack including ADO.NET 2.0 data access patterns,
+  enterprise application architecture, and desktop UI development patterns in the .NET 2.x era.
+
+highlights:
+  - Built enterprise desktop application on .NET Framework 2.0 with C# 3.0 and Windows Forms 2.0
+  - Designed SQL Server 2008 database schema with optimized indexing for .NET 2.0 data access
+  - Implemented ADO.NET 2.0 data access layer with connection pooling and transaction support
+  - Integrated Lucene.NET 2.9 for high-performance full-text patent search (<2s response)
+  - Developed Excel import/export using EPPlus library compatible with .NET 2.0
+  - Created Windows Forms 2.0 UI with data binding, validation, and layered architecture patterns
+
+tech_stack:
+  languages:
+    - C#
+    - SQL
+  
+  backend:
+    - .NET Framework 2.0
+    - ADO.NET 2.0
+    - Windows Forms 2.0
+  
+  databases:
+    - SQL Server 2008
+    - SQLite 3 (local cache)
+  
+  libraries:
+    - EPPlus (Excel processing)
+    - iTextSharp (PDF handling)
+    - Lucene.NET 2.9 (full-text search)
+  
+  tools:
+    - Visual Studio 2008
+    - SQL Server Management Studio 2008
+
+features:
+  - Patent document CRUD operations
+  - Excel batch import/export with data validation
+  - Full-text search across patent titles, abstracts, and claims
+  - Multi-criteria advanced search (date range, inventor, category, status)
+  - Patent document attachment management (PDF, images)
+  - User authentication and role-based permissions
+  - Data backup and restore functionality
+  - Search history and favorites
+
+metrics:
+  - value: "10,000+"
+    label: "patent records managed"
+    description: "Maximum patent records handled by the system"
+  
+  - value: "<2s"
+    label: "search response time"
+    description: "Average full-text search response time"
+  
+  - value: "50+"
+    label: "daily users"
+    description: "Research team members using the system"
+
+evidence:
+  - type: documentation
+    status: available
+    description: "System architecture documentation and user manual"
+  
+  - type: demo
+    status: archived
+    description: "Working application deployed to internal research team"
+
+skills_demonstrated:
+  technical:
+    - C# / .NET Framework 4.5
+    - Windows Forms / Desktop Development
+    - ADO.NET / SQL Server Data Access
+    - Lucene.NET Full-text Search
+    - EPPlus Excel Processing
+    - .NET Application Architecture
+  
+  engineering:
+    - Enterprise Desktop Application Design
+    - Database Schema Design (SQL Server)
+    - Data Import/Export Pipeline Development
+    - Windows Desktop UI Patterns (MVP/MVVM)
+    - .NET Performance Optimization
+  
+  soft:
+    - End-user Requirements Analysis
+    - Technical Documentation Writing
+    - User Training and System Support
+
+related_to_roles:
+  - .NET Developer
+  - Desktop Application Developer
+  - Full-stack Developer
+  - C# Developer
+  - Software Engineer
+
+keywords:
+  - .NET
+  - C#
+  - Windows Forms
+  - SQL Server
+  - Excel Import Export
+  - Patent Management
+  - Full-text Search
+  - Desktop Application
+  - Enterprise Software
+  - Data Management
+  - Lucene.NET
+  - EPPlus
+
+last_updated: "2025-03-05"

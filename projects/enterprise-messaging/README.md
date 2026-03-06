@@ -6,7 +6,8 @@
 
 ## Overview
 
-Developed and maintained a comprehensive enterprise instant messaging platform for internal company communications. The system supports real-time messaging across Android, Web, and PC clients with high reliability and low latency.
+Developed and maintained a comprehensive enterprise instant messaging platform for internal company communications.  
+The platform is organized as multiple core subsystems, including **User Center**, **Message Center**, and **File System**, and supports real-time messaging across Android, Web, and PC clients with high reliability and low latency.
 
 **Project Type:** Enterprise Communication Platform  
 **Timeline:** 2014 - 2023  
@@ -25,6 +26,7 @@ Developed and maintained a comprehensive enterprise instant messaging platform f
 - **Cross-Terminal Login:** Seamless device switching
 - **Stable Connection:** Robust protocol handling
 - **Enterprise Security:** Internal network deployment
+- **Modular Subsystems:** User Center, Message Center, File System, and supporting services
 
 ---
 
@@ -89,6 +91,8 @@ Developed and maintained a comprehensive enterprise instant messaging platform f
 ### Data & Caching
 - **MySQL** - Message and user data storage
 - **Redis** - Session management and caching
+- **Distributed Database** - Scalable data storage across nodes
+- **FastDFS** - Distributed file management for media/file attachments
 - **Message Queue** - Async processing
 
 ### Infrastructure
@@ -120,8 +124,10 @@ Developed and maintained a comprehensive enterprise instant messaging platform f
 
 ### Backend Development
 - Developed messaging backend services using Spring Cloud
+- Designed and implemented core subsystem collaboration: User Center, Message Center, and File System
 - Implemented message routing and delivery logic
 - Built session management and presence system
+- Integrated distributed database architecture and FastDFS file storage
 - Created REST APIs for client integration
 - Node.js auxiliary services development
 

@@ -1,0 +1,80 @@
+# .NET / C# / 桌面开发可复用要点库
+# Reusable Bullet Points - .NET & Desktop Development
+
+bullets:
+  - id: dotnet_desktop_application
+    category: technical
+    tags: [dotnet, csharp, winforms, desktop]
+    original: "Developed Windows desktop application using .NET Framework and C#"
+    variants:
+      - "Built enterprise-grade Windows desktop applications with .NET Framework and C#"
+      - "Designed WinForms applications with complex data grids and advanced UI components"
+      - "Developed full-featured desktop software for internal business processes"
+    evidence: [patent-search-system]
+    skills: [C#, .NET Framework, Windows Forms, Desktop Development]
+
+  - id: dotnet_excel_integration
+    category: technical
+    tags: [dotnet, excel, data-import, data-export]
+    original: "Implemented Excel import/export functionality for batch data processing"
+    variants:
+      - "Built Excel data import/export pipelines using EPPlus library"
+      - "Developed batch data processing with Excel integration and validation"
+      - "Created automated Excel report generation and data import tools"
+    evidence: [patent-search-system]
+    skills: [EPPlus, Excel Automation, Data Processing, C#]
+
+  - id: dotnet_fulltext_search
+    category: technical
+    tags: [dotnet, search, lucene, fulltext]
+    original: "Implemented full-text search using Lucene.NET"
+    variants:
+      - "Built high-performance full-text search with Lucene.NET indexing"
+      - "Developed multi-criteria search with sub-second response times"
+      - "Implemented advanced search features with filtering and faceting"
+    evidence: [patent-search-system]
+    skills: [Lucene.NET, Full-text Search, Indexing, Search Optimization]
+
+  - id: dotnet_sql_server
+    category: technical
+    tags: [dotnet, sql-server, database, ado-net]
+    original: "Designed SQL Server database and implemented data access layer with ADO.NET"
+    variants:
+      - "Architected SQL Server databases with optimized schema design"
+      - "Built data access layers using ADO.NET for high-performance operations"
+      - "Implemented stored procedures and complex queries for reporting"
+    evidence: [patent-search-system]
+    skills: [SQL Server, ADO.NET, Database Design, T-SQL]
+
+  - id: dotnet_legacy_maintenance
+    category: technical
+    tags: [dotnet, legacy, maintenance, migration]
+    original: "Maintained and enhanced legacy .NET applications"
+    variants:
+      - "Supported legacy .NET systems with bug fixes and feature enhancements"
+      - "Migrated legacy desktop applications to newer .NET Framework versions"
+      - "Maintained 99.9% uptime for critical business applications"
+    evidence: [patent-search-system]
+    skills: [.NET Maintenance, Legacy Support, System Migration]
+
+  - id: dotnet_aspnet_web
+    category: technical
+    tags: [dotnet, aspnet, web, mvc]
+    original: "Developed ASP.NET Web Forms and MVC applications"
+    variants:
+      - "Built enterprise web applications using ASP.NET Web Forms and MVC"
+      - "Developed real-time web dashboards with ASP.NET and SignalR"
+      - "Created RESTful APIs using ASP.NET MVC and WCF services"
+    evidence: [live-streaming-system]
+    skills: [ASP.NET, ASP.NET MVC, Web Forms, WCF, SignalR]
+
+  - id: dotnet_multilanguage_architecture
+    category: technical
+    tags: [dotnet, multilanguage, architecture, integration]
+    original: "Designed multi-language system architecture with .NET, C++, Python, and Lua"
+    variants:
+      - "Architected multi-language systems combining .NET, C++, Python, and Lua"
+      - "Built .NET-based platforms with native C++ modules and Python analytics"
+      - "Integrated Lua scripting engine for dynamic business rules in .NET applications"
+    evidence: [live-streaming-system]
+    skills: [Multi-language Architecture, .NET, C++, Python, Lua, System Integration]

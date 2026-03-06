@@ -9,6 +9,42 @@ relations:
   # 技能传承关系 (Skill Progression)
   # ============================================
   
+  - from: patent-search-system
+    to: live-streaming-system
+    type: tech_stack_evolution
+    description: ".NET 2.0 到 .NET 4.x 的技术演进，扩展至多语言架构"
+    shared_skills:
+      - .NET Framework Development
+      - SQL Server Database Design
+      - Enterprise Application Architecture
+      - C# Programming
+    progression:
+      - ".NET 2.0 (WinForms) → .NET 4.x (ASP.NET)：技术栈升级"
+      - "桌面应用 → Web 应用 + 移动应用：全栈能力扩展"
+      - "单一 C# → 多语言 (C#, C++, Python, Lua)：复杂系统架构"
+    dotnet_evolution:
+      - ".NET Framework 2.0 → 4.5：利用新特性优化性能"
+      - "WinForms → ASP.NET Web Forms：Web 开发能力建立"
+      - "ADO.NET 2.0 → Entity Framework：数据访问技术升级"
+
+  - from: live-streaming-system
+    to: enterprise-messaging
+    type: tech_stack_transition
+    description: ".NET 全栈向 Java 生态的扩展，保留多语言架构经验"
+    shared_skills:
+      - Multi-language System Architecture
+      - Real-time Communication Systems
+      - Cross-platform Client Development
+      - Enterprise Backend Design
+    progression:
+      - ".NET (C#, C++, Python, Lua) → Java (Java, C++, Kotlin)：多语言能力迁移"
+      - "ASP.NET Web → Spring Cloud Microservices：Web 后端技术转换"
+      - "Android Streaming Client → Android Messaging Client：移动端能力复用"
+    multi_language_experience:
+      - "C++ 媒体处理核心 → C++ NDK 消息协议实现"
+      - "Python 数据分析 → Python AI/ML 数据处理"
+      - "Lua 配置脚本 → 业务规则引擎经验"
+
   - from: enterprise-messaging
     to: smart-factory
     type: skill_progression
@@ -165,6 +201,7 @@ timeline_groups:
   early_career:
     period: "2013-2014"
     projects:
+      - patent-search-system
       - enterprise-messaging
       - system-administration
     theme: "基础技能建立期"

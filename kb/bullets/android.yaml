@@ -94,3 +94,14 @@ bullets:
       - "Built map-based Android application supporting custom tile layers and annotations"
     evidence: [forest-patrol-inspection]
     skills: [GIS, GPS, Maps SDK, Offline Maps, Location Services]
+
+  - id: android_ndk_cpp
+    category: technical
+    tags: [android, ndk, cpp, native, streaming]
+    original: "Developed Android streaming client with C++ NDK core"
+    variants:
+      - "Built high-performance Android streaming engine using C++ NDK"
+      - "Implemented custom media protocols with JNI bridge to Android Java layer"
+      - "Optimized streaming performance with native C++ code on Android"
+    evidence: [live-streaming-system]
+    skills: [Android NDK, C++, JNI, Media Processing, RTMP]

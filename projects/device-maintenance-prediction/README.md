@@ -21,7 +21,7 @@ The result is a data-driven maintenance decision workflow that supports scheduli
 ## My Responsibilities
 
 - Designed predictive maintenance modeling workflow and target labels.
-- Implemented Random Forest as the core algorithm for maintenance timing prediction.
+- Implemented SparkNet + Random Forest as the core algorithms for maintenance timing prediction.
 - Built feature engineering pipeline on historical service and fault data.
 - Added baseline model comparison to improve model selection reliability.
 - Designed risk scoring outputs for maintenance decision support.
@@ -45,7 +45,7 @@ The result is a data-driven maintenance decision workflow that supports scheduli
 
 1. **Data collection:** Aggregate historical maintenance, fault, and runtime data.
 2. **Feature engineering:** Build device-level features (intervals, fault frequency, usage intensity).
-3. **Model training:** Train Random Forest and baseline prediction models.
+3. **Model training:** Train SparkNet, Random Forest, and baseline prediction models.
 4. **Model evaluation:** Compare model metrics and select the best-performing strategy.
 5. **Prediction serving:** Predict remaining healthy period / next maintenance window.
 6. **Maintenance planning:** Generate recommended schedule and risk-priority list.
@@ -54,7 +54,7 @@ The result is a data-driven maintenance decision workflow that supports scheduli
 
 ## Algorithm Strategy
 
-- **Random Forest (Core):** Handles non-linear feature interactions, robust for mixed maintenance features, and less sensitive to noisy industrial records.
+- **SparkNet + Random Forest (Core):** Combines distributed neural modeling and tree-based learning to improve robustness and generalization on industrial maintenance data.
 - **Comparative Models:** Regression/time-series/classification baselines for benchmark validation and strategy fallback.
 - **Model Selection Principle:** Prioritize prediction stability and operational usability over single-metric optimization.
 
@@ -75,7 +75,7 @@ The result is a data-driven maintenance decision workflow that supports scheduli
                        │
 ┌──────────────────────▼───────────────────────┐
 │            Model Layer                        │
-│ Random Forest | Other Predictive Algorithms   │
+│ SparkNet | Random Forest | Other Algorithms    │
 └──────────────────────┬───────────────────────┘
                        │
 ┌──────────────────────▼───────────────────────┐
@@ -117,11 +117,11 @@ The result is a data-driven maintenance decision workflow that supports scheduli
 ## Skills Demonstrated
 
 - Predictive maintenance modeling
-- Random Forest core modeling and model comparison
+- SparkNet + Random Forest modeling and model comparison
 - Feature engineering on maintenance history
 - AI-driven decision support design
 - Data analysis and model evaluation
 
 ---
 
-**Tags:** #AI #PredictiveMaintenance #RandomForest #TimeSeries #IndustrialAI #DataMining
+**Tags:** #AI #PredictiveMaintenance #SparkNet #RandomForest #TimeSeries #IndustrialAI #DataMining

@@ -20,7 +20,8 @@ company:
 summary: 'Gateway-centric breaker control platform: multiple non-networked circuit
   breakers connect to gateway via RS232 serial bus, and the gateway provides telemetry
   collection, open/close control, local alerting, and cloud reporting for unified
-  web/mobile monitoring across factories and buildings.
+  web/mobile monitoring across factories and buildings, implemented with Kotlin/Java
+  Android gateway services.
 
   '
 highlights:
@@ -130,7 +131,7 @@ skills_demonstrated:
   - Serial Protocols (RS232, Modbus RTU)
   - Breaker Control Logic
   - Command Auditing and Safety Rules
-  - Java / Kotlin
+  - Kotlin / Java
   - Vue.js / ECharts
   - Time-series Databases (InfluxDB)
   - Edge Computing
@@ -150,6 +151,8 @@ related_to_roles:
 keywords:
 - Android Gateway
 - Breaker Control Gateway
+- Kotlin
+- Serial Communication
 - RS232
 - Modbus RTU
 - IoT Gateway
@@ -157,4 +160,4 @@ keywords:
 - Telemetry Uplink
 - Edge Computing
 - Industrial IoT
-last_updated: '2025-02-11'
+last_updated: '2026-03-05'

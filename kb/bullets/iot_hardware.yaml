@@ -1,0 +1,58 @@
+# IoT/硬件集成可复用要点库
+# Reusable Bullet Points - IoT & Hardware Integration
+
+bullets:
+  - id: iot_rfid_integration
+    category: technical
+    tags: [iot, rfid, hardware, integration]
+    original: "Integrated RFID systems for inventory and access control"
+    variants:
+      - "Developed RFID-based tracking systems for manufacturing and logistics"
+      - "Built Android apps with RFID reader integration for real-time inventory"
+      - "Implemented RFID access control for smart locker systems"
+    evidence: [smart-factory, picture-book-locker]
+    skills: [RFID, Hardware Integration, Android, Embedded Systems]
+
+  - id: iot_serial_communication
+    category: technical
+    tags: [iot, serial, uart, hardware]
+    original: "Implemented serial communication protocols for industrial devices"
+    variants:
+      - "Developed RS232/RS485 communication layer for electronic scales and sensors"
+      - "Built Windows service for persistent serial data acquisition"
+      - "Created protocol parsers for diverse industrial equipment"
+    evidence: [smart-factory, visual-gateway]
+    skills: [Serial Communication, RS232, RS485, Protocol Design, Windows Service]
+
+  - id: iot_sensor_integration
+    category: technical
+    tags: [iot, sensors, android, embedded]
+    original: "Integrated diverse sensors for IoT monitoring systems"
+    variants:
+      - "Built sensor networks for environmental monitoring and smart buildings"
+      - "Developed Android SDK for sensor data collection and device control"
+      - "Implemented real-time alerts based on sensor thresholds"
+    evidence: [iot-solutions, smart-power, school-attendance]
+    skills: [Sensors, IoT, Android SDK, Real-time Monitoring]
+
+  - id: iot_edge_deployment
+    category: technical
+    tags: [iot, edge, raspberry-pi, deployment]
+    original: "Deployed IoT solutions on edge devices including Raspberry Pi"
+    variants:
+      - "Optimized AI models for edge deployment on Raspberry Pi 5"
+      - "Built offline-capable edge computing solutions for industrial environments"
+      - "Deployed containerized services to ARM-based edge devices"
+    evidence: [chatclothes, visual-gateway]
+    skills: [Edge Computing, Raspberry Pi, ARM, Docker, Model Optimization]
+
+  - id: iot_mqtt_protocol
+    category: technical
+    tags: [iot, mqtt, messaging, protocols]
+    original: "Implemented MQTT-based messaging for IoT device communication"
+    variants:
+      - "Built MQTT broker infrastructure for thousands of connected devices"
+      - "Developed pub/sub messaging for real-time device control"
+      - "Implemented MQTT-based remote configuration and OTA updates"
+    evidence: [broadcast-control, iot-solutions]
+    skills: [MQTT, IoT Protocols, Message Queues, Real-time Communication]

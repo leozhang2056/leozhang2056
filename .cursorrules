@@ -1,0 +1,32 @@
+# Career KB Project - AI Assistant Rules
+# 个人职业知识库项目 - AI 助手规则
+
+## 项目定位
+这是一个 AI 可读的结构化职业知识库，不是可运行的应用程序。
+核心目标：作为数据层支持 AI 驱动的简历生成和职业分析。
+
+## 数据架构
+- projects/<project_id>/facts.yaml - 项目事实数据（核心数据源）
+- kb/profile.yaml - 个人档案和职业身份
+- kb/skills.yaml - 技能清单和熟练度
+- kb/bullets/*.yaml - 可复用要点库
+- kb/project_relations.yaml - 项目关联关系
+- kb/schema/*.yaml - 数据 Schema 定义
+
+## AI 使用约束
+1. 只使用 kb/ 和 projects/ 中已存在的数据
+2. 绝不编造项目、技能或量化指标
+3. 所有 resume 内容必须从 bullets/ 或 facts.yaml 生成
+4. 使用 project_relations.yaml 建立项目间的叙事联系
+
+## 简历生成工作流
+1. 读取 JD → 提取关键词
+2. 匹配 projects/ 中相关项目（通过 keywords 和 related_to_roles）
+3. 从 bullets/ 选择匹配的要点变体
+4. 结合 project_relations 中的叙事线索
+5. 生成结构化简历内容
+
+## 文件修改规范
+- 修改 facts.yaml 后必须运行: python app/backend/validate.py
+- 新增项目必须遵循 kb/schema/project_facts_schema.yaml
+- 新增 bullets 必须包含 id, category, tags, variants, evidence

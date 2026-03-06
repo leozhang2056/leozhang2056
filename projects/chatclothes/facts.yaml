@@ -45,9 +45,9 @@ summary: >
   ChatClothes is a modular and multimodal virtual try-on system that integrates 
   controllable diffusion-based generation with dialogue-driven garment interaction. 
   The system employs DeepSeek LLM for natural language instruction understanding, 
-  LoRA fine-tuning for enhanced OOTDiffusion performance, and YOLO12n-LC for 
-  efficient garment classification. Optimized for edge deployment with complete 
-  offline capability.
+  LoRA fine-tuning for enhanced OOTDiffusion performance, ComfyUI for visual 
+  workflow orchestration, and YOLO12n-LC for efficient garment classification. 
+  Optimized for edge deployment with complete offline capability.
 
 highlights:
   - Designed and implemented complete multimodal VTON system independently

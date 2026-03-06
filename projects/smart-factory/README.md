@@ -1,4 +1,4 @@
-# Smart Factory Backend System
+# Smart Factory System
 
 > Microservice-based manufacturing platform deployed across 5+ factory sites
 
@@ -12,7 +12,7 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 **Project Type:** Enterprise System / Industrial IoT  
 **Timeline:** 2018 - 2024  
-**Role:** Technical Lead  
+**Role:** Frontend Developer (Vue.js)  
 **Company:** Chunxiao Technology Co., Ltd., China  
 **Team Size:** 6 people (cross-functional)
 
@@ -86,6 +86,11 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 ## Technologies
 
+### Frontend
+- **Vue.js** - Web portals and dashboard development
+- **JavaScript** - Frontend business logic and interaction handling
+- **HTML/CSS** - Responsive UI implementation
+
 ### Backend
 - **Java** - Primary development language
 - **Spring Boot** - Microservice framework
@@ -127,6 +132,12 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 ---
 
 ## Responsibilities
+
+### Frontend Development (Vue.js)
+- Developed web portals and operational dashboards with Vue.js
+- Implemented production, equipment, and workflow visualization pages
+- Built frontend modules for order progress, status monitoring, and data forms
+- Integrated frontend with backend APIs and real-time update mechanisms
 
 ### Technical Leadership
 - Designed overall system architecture

@@ -89,3 +89,36 @@ bullets:
       - "Created resilient Windows service with auto-reconnect and monitoring"
     evidence: [smart-factory]
     skills: [Windows Service, Serial Communication, RS232, RS485, .NET]
+
+  - id: bi_etl_kettle
+    category: technical
+    tags: [bi, etl, kettle, pentaho, data-warehouse]
+    original: "Built ETL pipelines with Kettle for data warehousing and analytics"
+    variants:
+      - "Designed ETL workflows using Pentaho Kettle for large-scale data integration"
+      - "Created automated data pipelines extracting from MySQL/Redis to data warehouse"
+      - "Implemented scheduled ETL jobs for real-time message analytics processing"
+    evidence: [enterprise-messaging]
+    skills: [Kettle, Pentaho, ETL, Data Warehouse, Data Integration]
+
+  - id: bi_powerbi_dashboard
+    category: technical
+    tags: [bi, powerbi, dashboard, analytics, visualization]
+    original: "Created PowerBI dashboards for business intelligence and monitoring"
+    variants:
+      - "Built interactive PowerBI dashboards for real-time user behavior analytics"
+      - "Designed executive dashboards visualizing system performance and KPIs"
+      - "Implemented self-service BI reporting with PowerBI for operational teams"
+    evidence: [enterprise-messaging]
+    skills: [PowerBI, Business Intelligence, Data Visualization, Dashboard Design]
+
+  - id: bi_finereport
+    category: technical
+    tags: [bi, finereport, reporting, chinese-bi]
+    original: "Generated operational reports using FineReport for business intelligence"
+    variants:
+      - "Developed enterprise reports using FineReport for Chinese market requirements"
+      - "Created parameterized operational reports with drill-down capabilities"
+      - "Built automated report generation and distribution workflows"
+    evidence: [enterprise-messaging]
+    skills: [FineReport, Enterprise Reporting, Chinese BI Tools, Report Automation]
