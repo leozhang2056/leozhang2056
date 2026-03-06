@@ -1,75 +1,83 @@
 # Leo Zhang
 
-**Software Engineer (Full-stack) · Android & Java & AI & DevOps**  
+**Senior Android Developer · Java Backend · Full-stack Engineer**  
 📧 leozhang2056@gmail.com | 📱 +64 27 385 0794 | 📍 Auckland, New Zealand
 
 ---
 
 ## 👋 Professional Summary
 
-Full-stack software engineer and Master's student in Computer and Information Sciences at AUT, graduating October 2025. Over **12 years of experience** delivering enterprise solutions across **Android development**, **Java backend systems**, **AI/ML integration**, and **DevOps/Infrastructure**.
+Senior Android Developer with **12+ years of experience** and Master's in Computer and Information Sciences from AUT, graduating **February 2026**. Over **12 years of experience** delivering enterprise solutions across **Android development**, **Java backend systems**, **AI/ML integration**, and **DevOps/Infrastructure**.
 
 Proven track record leading technical teams, architecting scalable systems, deploying IoT solutions in industrial environments, and managing production infrastructure with 99.9% uptime SLA.
 
 **Key Strengths:**
-- **Android Development**: Deep expertise with hardware integration (RFID, barcode, sensors), NDK programming, and reverse engineering (JADX, Xposed)
-- **Backend Architecture**: Strong skills in Spring Boot microservices, .NET, Node.js with high-availability design
-- **AI/ML Engineering**: Production deployment experience with PyTorch, LLMs, Edge AI on Raspberry Pi
-- **DevOps & Infrastructure**: CI/CD pipelines (Jenkins, Docker, Kubernetes), Linux/Windows Server administration, Nginx load balancing
-- **Data & BI**: ETL development (Kettle), business intelligence (PowerBI, FineReport), data visualization
-- **Team Leadership**: Led 6-person cross-functional teams across multiple enterprise projects
+- **Android Expertise**: 12+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
+- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
+- **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
+- **Team Leadership**: Led 6-person cross-functional teams, managed project lifecycle from requirements to deployment
+- **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle) — value-add capabilities for complex projects
 
 ---
 
 ## 🛠️ Technical Skills
 
-### Programming Languages
-Java, Kotlin, Python, JavaScript, C, C++, C#, SQL, Lua, Bash
+### Primary Skills (Core Expertise)
 
-### Mobile Development
-**Android**: SDK, Jetpack, MVVM/MVP, NDK, JNI, Flutter, SQLite  
-**Security**: Reverse Engineering (JADX, Xposed)
+**Android Development**
+- Languages: Java, Kotlin
+- Framework: Android SDK, Jetpack, MVVM/MVP, Jetpack Compose
+- Native: NDK, JNI, C/C++ for performance-critical modules
+- Storage: SQLite, Room, SharedPreferences
+- Architecture: Clean Architecture, Modular Design, Offline-First
 
-### Backend & Architecture
-**Frameworks**: Spring Boot, Spring Cloud, .NET Framework, Node.js, Express  
-**Architecture**: Microservices, REST APIs, Event-Driven, Layered Architecture  
-**Communication**: WebSocket, Socket.IO, TCP/UDP, gRPC, WCF
+**Java Backend**
+- Frameworks: Spring Boot, Spring Cloud, Spring Security
+- Data Access: MyBatis, JPA/Hibernate, MySQL, Redis
+- Services: REST APIs, WebSocket, Microservices
+- Messaging: RabbitMQ, Kafka (basic)
 
-### AI / Machine Learning
-**Frameworks**: PyTorch, TensorFlow, OpenCV, Scikit-learn  
-**Models**: YOLO, Diffusion Models, LLMs (DeepSeek, GPT)  
-**Tools**: ComfyUI, Dify, Ollama, Label Studio
+### Secondary Skills (Supporting Expertise)
 
-### DevOps & Infrastructure
-**Containerization**: Docker, Kubernetes, Containerd  
-**CI/CD**: Jenkins, GitHub Actions, GitLab CI  
-**Web Server**: Nginx, IIS, Apache  
-**OS**: Linux (CentOS, Ubuntu), Windows Server 2012/2016/2019  
-**VCS**: Git, GitHub, GitLab, SVN
+**Full-stack & Web**
+- Frontend: Vue.js, JavaScript, HTML/CSS
+- Backend: Node.js, Express, .NET Framework
+- Real-time: Socket.IO, WebSocket
 
-### Databases & Storage
-**Relational**: MySQL, PostgreSQL, Oracle, SQL Server, SQLite  
-**NoSQL**: Redis, MongoDB  
-**File Storage**: FastDFS
+**DevOps & Infrastructure**
+- CI/CD: Jenkins, GitHub Actions, Docker
+- Web Server: Nginx, IIS
+- OS: Linux (CentOS, Ubuntu), Windows Server
+- VCS: Git, GitHub, GitLab
 
-### Data Engineering & BI
-**ETL**: Kettle (Pentaho Data Integration)  
-**Visualization**: PowerBI, FineReport, Grafana  
-**Data Warehouse**: Basic dimensional modeling
+**Data & BI**
+- ETL: Kettle (Pentaho)
+- Visualization: PowerBI, FineReport
+- Databases: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB
 
-### IoT & Hardware
-**Devices**: RFID, Barcode Scanners, Sensors, Electronic Scales  
-**Protocols**: UART, RS232/RS485, GPIO, Modbus, MQTT, HTTP/REST
+### Additional Skills (Value-Add)
 
-### Streaming & Media
-**Protocols**: RTMP, HLS (M3U8), WebRTC, HTTP-FLV  
-**Processing**: FFmpeg, GStreamer  
-**Delivery**: CDN, Adaptive Bitrate Streaming
+**AI / ML** (Thesis project & self-study)
+- Frameworks: PyTorch, TensorFlow, OpenCV
+- Models: YOLO, Diffusion Models, LLM integration
+- Tools: ComfyUI, Dify
 
-### Development Tools
-**IDE**: IntelliJ IDEA, Android Studio, Visual Studio, VS Code, Cursor  
-**AI Assistants**: GitHub Copilot, ChatGPT, Claude  
-**Collaboration**: Jira, Confluence, Slack, Teams
+**Security Research** (Reverse engineering capability)
+- Tools: JADX, Xposed Framework
+- Skills: APK analysis, runtime hooking
+
+**Streaming** (Historical project experience)
+- Protocols: RTMP, HLS (M3U8), WebRTC
+- Processing: FFmpeg
+
+**IoT & Hardware** (Industrial project experience)
+- Protocols: UART, RS232/RS485, Modbus, MQTT
+- Devices: RFID, Barcode Scanners, Sensors
+
+**Development Tools**
+- IDE: Android Studio, IntelliJ IDEA, VS Code
+- AI Assistants: GitHub Copilot, Cursor
+- Collaboration: Jira, Confluence
 
 ---
 
