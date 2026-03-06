@@ -23,18 +23,55 @@ Proven track record leading technical teams, architecting scalable systems, depl
 
 ## 🛠️ Technical Skills
 
-| Category | Technologies |
-|----------|-------------|
-| **Programming** | Java, Kotlin, Python, JavaScript, Node.js, C, C++, C#, SQL, Lua |
-| **Android** | Android SDK, Jetpack, MVVM/MVP, NDK, JNI, Flutter, SQLite, Reverse Engineering (JADX, Xposed) |
-| **Backend** | Spring Boot, Spring Cloud, .NET, Node.js, REST APIs, WebSocket, Microservices |
-| **AI / ML** | PyTorch, TensorFlow, OpenCV, YOLO, Diffusion Models, LLMs, Scikit-learn, ComfyUI, Dify |
-| **DevOps** | Docker, Kubernetes, Jenkins, CI/CD, Nginx, Linux (CentOS/Ubuntu), Windows Server, Git |
-| **Databases** | MySQL, PostgreSQL, Oracle, Redis, MongoDB, SQL Server, SQLite |
-| **BI & Data** | Kettle (Pentaho), PowerBI, FineReport, ETL, Data Warehouse |
-| **IoT & Hardware** | RFID, Barcode Scanners, Sensors, UART/Serial, GPIO, Raspberry Pi, MQTT |
-| **Streaming** | RTMP, WebRTC, HLS/M3U8, Socket.IO, FFmpeg |
-| **AI Tools** | Cursor, GitHub Copilot, ComfyUI, Dify, Ollama |
+### Programming Languages
+Java, Kotlin, Python, JavaScript, C, C++, C#, SQL, Lua, Bash
+
+### Mobile Development
+**Android**: SDK, Jetpack, MVVM/MVP, NDK, JNI, Flutter, SQLite  
+**Security**: Reverse Engineering (JADX, Xposed)
+
+### Backend & Architecture
+**Frameworks**: Spring Boot, Spring Cloud, .NET Framework, Node.js, Express  
+**Architecture**: Microservices, REST APIs, Event-Driven, Layered Architecture  
+**Communication**: WebSocket, Socket.IO, TCP/UDP, gRPC, WCF
+
+### AI / Machine Learning
+**Frameworks**: PyTorch, TensorFlow, OpenCV, Scikit-learn  
+**Models**: YOLO, Diffusion Models, LLMs (DeepSeek, GPT)  
+**Tools**: ComfyUI, Dify, Ollama, Label Studio
+
+### DevOps & Infrastructure
+**Containerization**: Docker, Kubernetes, Containerd  
+**CI/CD**: Jenkins, GitHub Actions, GitLab CI  
+**Web Server**: Nginx, IIS, Apache  
+**OS**: Linux (CentOS, Ubuntu), Windows Server 2012/2016/2019  
+**VCS**: Git, GitHub, GitLab, SVN
+
+### Databases & Storage
+**Relational**: MySQL, PostgreSQL, Oracle, SQL Server, SQLite  
+**NoSQL**: Redis, MongoDB  
+**Search**: Lucene, Elasticsearch  
+**File Storage**: FastDFS, MinIO
+
+### Data Engineering & BI
+**ETL**: Kettle (Pentaho Data Integration)  
+**Visualization**: PowerBI, FineReport, Grafana  
+**Data Warehouse**: Basic dimensional modeling
+
+### IoT & Embedded
+**Hardware**: RFID, Barcode Scanners, Sensors, Electronic Scales  
+**Protocols**: UART, RS232/RS485, GPIO, Modbus, MQTT, HTTP/REST  
+**Platforms**: Raspberry Pi, Arduino, Android Things
+
+### Streaming & Media
+**Protocols**: RTMP, HLS (M3U8), WebRTC, HTTP-FLV  
+**Processing**: FFmpeg, GStreamer  
+**Delivery**: CDN, Adaptive Bitrate Streaming
+
+### Development Tools
+**IDE**: IntelliJ IDEA, Android Studio, Visual Studio, VS Code, Cursor  
+**AI Assistants**: GitHub Copilot, ChatGPT, Claude  
+**Collaboration**: Jira, Confluence, Slack, Teams
 
 ---
 
