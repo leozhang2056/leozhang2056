@@ -15,7 +15,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 - **Android Expertise**: 12+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
 - **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
 - **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
-- **Team Leadership**: Led 6-person cross-functional teams, managed project lifecycle from requirements to deployment
+- **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
 - **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle) — value-add capabilities for complex projects
 
 ---
@@ -94,7 +94,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 ### Chunxiao Technology Co., Ltd. — *China*
 **Technical Lead / Senior Software Engineer** | Jan 2013 – Jun 2024
 
-Promoted from Software Engineer to Technical Lead, managing 6-person cross-functional teams across backend, mobile, and DevOps.
+Promoted from Software Engineer to Technical Lead, leading cross-functional development teams.
 
 **Key Projects:**
 
@@ -179,7 +179,7 @@ Hebei University of Science and Technology, China | 2009 – 2013
 - **16+** Production Projects
 - **12+** Years Software Development Experience
 - **6+** Industrial IoT Deployments
-- **10,000+** DAU Enterprise Systems Delivered
+- **High-scale** Enterprise Systems Delivered (10K+ DAU)
 - **99.9%** Infrastructure Uptime Maintained
 
 ---
