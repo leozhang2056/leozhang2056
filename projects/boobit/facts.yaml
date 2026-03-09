@@ -1,0 +1,60 @@
+project:
+  name: Boobit
+  type: Mobile App
+  category: Fintech / Cryptocurrency
+  status: Completed
+  start_date: 2022
+  end_date: 2022
+
+overview: |
+  A cryptocurrency trading platform mobile application that enables users to 
+  query real-time market data, search for cryptocurrencies, and perform 
+  exchange and recharge operations. Built with focus on security, performance, 
+  and user experience.
+
+tech_stack:
+  languages:
+    - Kotlin
+    - Java
+  frontend:
+    - Android SDK
+    - Jetpack Compose
+    - XML Layouts
+    - Material Design
+  backend:
+    - RESTful API
+    - WebSocket
+  database:
+    - Room
+    - SharedPreferences
+  infrastructure:
+    - Retrofit
+    - OkHttp
+  security:
+    - Encryption
+    - Secure Storage
+
+architecture:
+  pattern: MVVM with Clean Architecture
+  components:
+    - Presentation Layer (UI, ViewModels)
+    - Domain Layer (Use Cases, Business Logic)
+    - Data Layer (Repositories, API, Local DB)
+
+achievements:
+  - Implemented real-time market data updates via WebSocket
+  - Built secure wallet system with encryption for digital assets
+  - Designed intuitive UI for complex cryptocurrency trading operations
+  - Integrated multiple payment gateways for recharge functionality
+
+metrics:
+  features: Market query, Search, Exchange, Recharge, Wallet
+  platforms: Android
+  realtime: WebSocket market data
+
+team:
+  size: 1
+  role: Sole Android Developer
+
+links:
+  images: projects/boobit/images/ 
