@@ -59,9 +59,14 @@ The app follows MVVM pattern with Clean Architecture principles:
 
 ### More Screenshots
 
-![Screenshot 10](images/screenshot_10.jpg)
-![Screenshot 11](images/screenshot_11.jpg)
-![Screenshot 12](images/screenshot_12.jpg)
-![Screenshot 13](images/screenshot_13.jpg)
-![Screenshot 14](images/screenshot_14.jpg)
-![Screenshot 15](images/screenshot_15.jpg)
+<p align="center">
+  <img src="images/screenshot_10.jpg" width="200" />
+  <img src="images/screenshot_11.jpg" width="200" />
+  <img src="images/screenshot_12.jpg" width="200" />
+</p>
+
+<p align="center">
+  <img src="images/screenshot_13.jpg" width="200" />
+  <img src="images/screenshot_14.jpg" width="200" />
+  <img src="images/screenshot_15.jpg" width="200" />
+</p>
