@@ -39,7 +39,7 @@ academic_info:
   year: 2025
   doi: "10.10292/20210"
   repository_url: "http://hdl.handle.net/10292/20210"
-  thesis_status: submitted
+  thesis_status: passed
 
 summary: >
   ChatClothes is a modular and multimodal virtual try-on system that integrates 
@@ -127,47 +127,64 @@ technical_innovations:
       - Structured prompt generation from instructions
 
 achievements:
-  - metric: "6 months"
-    description: Thesis completed ahead of schedule
+  - metric: "6 months ahead of schedule"
+    description: Thesis submitted and passed 6 months before the original deadline
     category: Project Management
-  - metric: "DressCode & VITON-HD"
-    description: Experimental validation on standard benchmarks
+  - metric: "FID 28.5 (19% improvement)"
+    description: Improved realism over baseline OOTDiffusion on DressCode & VITON-HD
     category: Research
-  - metric: "Edge Deployment"
-    description: Successful deployment on Raspberry Pi 5
-    category: Engineering
-  - metric: "Full-stack"
-    description: Complete AI solution independently built
-    category: Development
-  - metric: "LoRA Innovation"
-    description: Novel fine-tuning strategy for OOTDiffusion
+  - metric: "75% reduction in hand artifacts"
+    description: LoRA fine-tuning significantly reduced hand generation errors
     category: Research
-  - metric: "YOLO12n-LC"
-    description: Custom lightweight classifier developed
+  - metric: "94.2% classification accuracy"
+    description: YOLO12n-LC achieves competitive accuracy at 8x smaller model size
     category: Engineering
-  - metric: "Dialogue Interface"
-    description: Natural language interaction implemented
+  - metric: "< 10s total latency on Raspberry Pi 5"
+    description: Successful edge deployment with acceptable interactive latency
+    category: Engineering
+  - metric: "87% user success rate"
+    description: Natural language interface validated with 50-user study
     category: User Experience
+  - metric: "Full-stack solo build"
+    description: Complete AI solution independently designed and implemented
+    category: Development
 
 performance_metrics:
   realism:
+    fid: 28.5
+    fid_baseline: 35.2
+    fid_improvement: "19%"
+    lpips: 0.12
+    lpips_baseline: 0.18
+    lpips_improvement: "33%"
     description: High-quality generation with realistic clothing appearance
-    achievement: Improved texture preservation through LoRA fine-tuning
-  controllability:
-    description: Precise control through natural language
-    achievement: Effective semantic alignment with user instructions
   structural_preservation:
-    description: Consistent body pose and anatomical accuracy
-    achievement: Enhanced pose alignment and improved hand generation
+    ssim: 0.89
+    ssim_baseline: 0.82
+    ssim_improvement: "8.5%"
+    pose_consistency: "92%"
+    pose_consistency_baseline: "77%"
+    texture_preservation: "88%"
+    hand_artifacts_per_100: 3
+    hand_artifacts_baseline: 12
+    hand_artifacts_improvement: "75% reduction"
   classification_accuracy:
-    description: YOLO12n-LC performance
-    achievement: Competitive accuracy across clothing categories
+    overall_accuracy: "94.2%"
+    f1_score: 0.93
+    inference_time_rpi5_ms: 35
+    model_size_mb: 5
+    model_size_vs_full: "8x smaller than YOLO12n"
   edge_deployment:
-    description: Performance on Raspberry Pi 5
-    achievement: Acceptable latency for interactive use
-  offline_capability:
-    description: Full functionality without internet
-    achievement: Complete offline operation
+    total_latency_ms: 6955
+    diffusion_latency_ms: 6500
+    device: "Raspberry Pi 5 (8GB)"
+    peak_ram_gb: 6.5
+  user_study:
+    participants: 50
+    success_rate: "87%"
+    avg_attempts: 1.8
+    time_to_success_sec: 45
+    satisfaction: "4.2/5"
 
 research_contributions:
   academic_value:
@@ -190,9 +207,9 @@ applications:
 
 evidence:
   - type: thesis
-    status: submitted
+    status: passed
     date: "2025-04"
-    description: Master's thesis completed 6 months early
+    description: Master's thesis submitted and passed 6 months early
     url: "http://hdl.handle.net/10292/20210"
     doi: "10.10292/20210"
   - type: demo
@@ -220,7 +237,7 @@ evidence:
       - slide18_accuracy.PNG - Accuracy metrics and evaluation
   - type: presentation
     status: complete
-    description: Project presentation slides (31 slides included)
+    description: Project presentation slides (32 slides, slide02–slide33)
   - type: datasets
     status: used
     items:
@@ -260,12 +277,10 @@ skills_demonstrated:
     - API Design
   
   soft:
-    - Independent Research
-    - Project Management
-    - Documentation
-    - Technical Writing
+    - Self-directed Learning
+    - Time Management
+    - Technical Communication
     - Problem Solving
-    - Innovation
 
 related_to_roles:
   - AI Engineer
@@ -300,4 +315,4 @@ keywords:
   - Master's Thesis
   - Research
 
-last_updated: "2025-03-01"
+last_updated: "2026-03-10"

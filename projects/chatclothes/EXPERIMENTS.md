@@ -35,7 +35,7 @@ VITON-HD is a high-resolution virtual try-on dataset focusing on detailed garmen
 
 **Dataset Characteristics:**
 - **Resolution:** 1024×768 (higher than original VITON)
-- **Total Images:** ~150,000
+- **Total Images:** ~13,000 (training split: ~11,647)
 - **Clothing Categories:** Comprehensive fashion items
 - **Garment Details:** High-resolution textures and patterns
 

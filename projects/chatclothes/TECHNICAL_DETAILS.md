@@ -393,4 +393,4 @@ socket.on('result', (image) => {
 
 ---
 
-For deployment instructions and configuration details, see [Deployment Guide](DEPLOYMENT.md) (coming soon).
+For deployment instructions and configuration details, contact the author or refer to the project thesis documentation.

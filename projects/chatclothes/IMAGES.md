@@ -283,6 +283,28 @@ This document provides a comprehensive catalog of all images included in the Cha
 
 ---
 
+## Additional Files
+
+### final demo.mp4
+**Title:** Complete System Demonstration Video  
+**Description:** Full video demonstration of the ChatClothes virtual try-on system. Shows the end-to-end workflow: user submits a natural language request, the system processes it through LLM → YOLO → diffusion pipeline, and delivers the final try-on result.  
+**Key Elements:** Live system interaction, natural language input, generation process, result display  
+**Usage:** Primary demo for presentations, portfolio showcases, and README
+
+### slide23_cloud_deployment_copy.PNG
+**Title:** Cloud Deployment Architecture (Duplicate)  
+**Description:** Duplicate copy of `slide23_cloud_deployment.PNG`. Kept for archival purposes.  
+**Key Elements:** Same as slide23_cloud_deployment.PNG  
+**Usage:** Archival only — use `slide23_cloud_deployment.PNG` as the canonical version
+
+### slide31_conclusion_copy.PNG
+**Title:** Project Conclusion (Duplicate)  
+**Description:** Duplicate copy of `slide31_conclusion.PNG`. Kept for archival purposes.  
+**Key Elements:** Same as slide31_conclusion.PNG  
+**Usage:** Archival only — use `slide31_conclusion.PNG` as the canonical version
+
+---
+
 ## Image Usage Guidelines
 
 ### For Presentations
@@ -319,7 +341,9 @@ This document provides a comprehensive catalog of all images included in the Cha
 - **Future & Applications:** slide21-24
 - **Research & Presentation:** slide25-27, slide31-33
 
-**Total Images:** 34 files
+**Total Images:** 36 files (34 PNG/image files + 1 MP4 video + 1 duplicate PNG)
+
+> Note: `slide23_cloud_deployment_copy.PNG` and `slide31_conclusion_copy.PNG` are duplicates of their originals and are excluded from the active count of 34 unique images.
 
 ---
 

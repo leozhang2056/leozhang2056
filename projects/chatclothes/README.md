@@ -14,16 +14,15 @@ ChatClothes is a state-of-the-art multimodal AI virtual try-on (VTON) system tha
 
 ### Demo Video
 
-https://github.com/user-attachments/assets/final-demo
-
-Watch the complete demonstration of ChatClothes virtual try-on system in action.
+> A full demonstration video (`images/final demo.mp4`) is included in this repository.
+> It shows the complete virtual try-on workflow from natural language input to generated result.
 
 ### Project Details
 **Project Type:** AI Research / Master's Thesis  
 **Timeline:** November 2024 - April 2025  
 **Role:** Sole Developer & System Designer  
 **Institution:** Auckland University of Technology (AUT), New Zealand  
-**Status:** ✅ Thesis completed 6 months early (April 2025)
+**Status:** ✅ Thesis passed & completed 6 months early (April 2025)
 
 ---
 
