@@ -141,29 +141,81 @@ def generate_project_bullet_points(project_facts, max_bullets=4):
     """从项目 facts 生成 bullet points"""
     achievements = project_facts.get('achievements', [])
     
-    # 如果没有 achievements，尝试从 highlights 或 impact
-    if not achievements:
-        highlights = project_facts.get('highlights', [])
-        impact = project_facts.get('impact', [])
-        
-        # 合并并返回
-        combined = highlights + impact
-        if combined:
-            return combined[:max_bullets]
-        
-        # 最后的 fallback
-        return [
-            "Led development and delivery from concept to completion",
-            "Implemented core features using modern technologies"
-        ][:max_bullets]
+    # 处理 achievements 中的字典格式
+    processed_achievements = []
+    for item in achievements[:max_bullets]:
+        if isinstance(item, dict):
+            # 如果是字典，提取 description 或 metric
+            desc = item.get('description', '')
+            metric = item.get('metric', '')
+            if desc and metric:
+                processed_achievements.append(f"{desc} ({metric})")
+            elif desc:
+                processed_achievements.append(desc)
+            elif metric:
+                processed_achievements.append(metric)
+        elif isinstance(item, str):
+            processed_achievements.append(item)
     
-    return achievements[:max_bullets]
+    if processed_achievements:
+        return processed_achievements
+    
+    # 如果没有 achievements，尝试从 highlights 或 impact
+    highlights = project_facts.get('highlights', [])
+    impact = project_facts.get('impact', [])
+    
+    # 合并并返回
+    combined = highlights + impact
+    if combined:
+        return combined[:max_bullets]
+    
+    # 最后的 fallback
+    return [
+        "Led development and delivery from concept to completion",
+        "Implemented core features using modern technologies"
+    ][:max_bullets]
+
+
+def sort_projects_by_importance(projects):
+    """按重要性排序项目"""
+    # 定义项目优先级（数字越小越重要）
+    priority_map = {
+        'chatclothes': 1,           # 硕士项目 - 最重要
+        'enterprise-messaging': 2,  # 大项目 - 重要
+        'smart-factory': 3,         # 大项目 - 重要
+        'smart-power': 4,           # 中等项目
+        'boobit': 5,                # 虚拟币项目
+        'iot-solutions': 6,
+        'picture-book-locker': 7,
+        'forest-patrol-inspection': 8,
+        'visual-gateway': 9,
+        'visit-system': 10,
+        'school-attendance': 11,
+        'exhibition-robot': 12,
+        'broadcast-control': 13,
+        'live-streaming-system': 14,
+        'chinese-herbal-recognition': 15,
+        'device-maintenance-prediction': 16,
+        'patent-search-system': 17,
+    }
+    
+    def get_priority(project):
+        project_id = project.get('_project_dir', '')
+        # 从项目 ID 中提取基本名称（去掉时间戳等）
+        for key in priority_map:
+            if key in project_id.lower():
+                return priority_map[key]
+        return 99  # 默认最低优先级
+    
+    return sorted(projects, key=get_priority)
 
 
 def generate_experience_section(projects, max_projects=5):
     """生成工作经历部分"""
-    # 选择最近/最重要的项目
-    selected_projects = projects[:max_projects]
+    # 按重要性排序项目
+    sorted_projects = sort_projects_by_importance(projects)
+    # 选择前 N 个项目
+    selected_projects = sorted_projects[:max_projects]
     
     experience_html = []
     
