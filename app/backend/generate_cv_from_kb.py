@@ -138,42 +138,40 @@ def generate_skills_section(skills_data, max_categories=7):
 
 
 def generate_project_bullet_points(project_facts, max_bullets=4):
-    """从项目 facts 生成 bullet points"""
-    achievements = project_facts.get('achievements', [])
+    """从项目 facts 生成 bullet points - 使用自然描述风格"""
     
-    # 处理 achievements 中的字典格式
-    processed_achievements = []
-    for item in achievements[:max_bullets]:
-        if isinstance(item, dict):
-            # 如果是字典，提取 description 或 metric
-            desc = item.get('description', '')
-            metric = item.get('metric', '')
-            if desc and metric:
-                processed_achievements.append(f"{desc} ({metric})")
-            elif desc:
-                processed_achievements.append(desc)
-            elif metric:
-                processed_achievements.append(metric)
-        elif isinstance(item, str):
-            processed_achievements.append(item)
-    
-    if processed_achievements:
-        return processed_achievements
-    
-    # 如果没有 achievements，尝试从 highlights 或 impact
+    # 优先使用 highlights - 它们通常更自然
     highlights = project_facts.get('highlights', [])
+    if highlights:
+        # 只取字符串类型的 highlights
+        return [h for h in highlights[:max_bullets] if isinstance(h, str)]
+    
+    # 其次使用 impact
     impact = project_facts.get('impact', [])
+    if impact:
+        return [i for i in impact[:max_bullets] if isinstance(i, str)]
     
-    # 合并并返回
-    combined = highlights + impact
-    if combined:
-        return combined[:max_bullets]
+    # 最后使用 achievements，但简化处理
+    achievements = project_facts.get('achievements', [])
+    processed = []
+    for item in achievements[:max_bullets]:
+        if isinstance(item, str):
+            processed.append(item)
+        elif isinstance(item, dict):
+            # 只取 description，去掉 metric
+            desc = item.get('description', '')
+            if desc:
+                processed.append(desc)
     
-    # 最后的 fallback
-    return [
-        "Led development and delivery from concept to completion",
-        "Implemented core features using modern technologies"
-    ][:max_bullets]
+    if processed:
+        return processed
+    
+    # 最后的 fallback - 从 tech_stack 生成
+    tech_stack = project_facts.get('tech_stack', {})
+    if tech_stack:
+        return ["Developed full-stack solution using modern technologies"]
+    
+    return ["Led development and delivery from concept to completion"]
 
 
 def sort_projects_by_importance(projects):
