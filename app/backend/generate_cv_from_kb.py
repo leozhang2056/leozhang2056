@@ -224,10 +224,14 @@ def generate_experience_section(projects, max_projects=5):
         project_info = project.get('project', {})
         name = project_info.get('name') or project.get('name') or project.get('project_id', 'Unknown Project')
         
-        # 获取公司信息
+        # 获取公司/机构信息
+        institution = project.get('institution', {})
         company_info = project.get('company', {})
-        if isinstance(company_info, dict):
-            company = company_info.get('name') or 'Chunxiao Technology Co., Ltd.'
+        
+        if isinstance(institution, dict) and institution.get('name'):
+            company = institution['name']
+        elif isinstance(company_info, dict) and company_info.get('name'):
+            company = company_info['name']
         else:
             company = 'Chunxiao Technology Co., Ltd.'
         
@@ -240,19 +244,35 @@ def generate_experience_section(projects, max_projects=5):
             start_date = project.get('start_date', '')
             end_date = project.get('end_date', '')
         
-        # 格式化日期
-        date_range = f"{start_date} -- {end_date}" if start_date and end_date else "2022"
-        
-        # 角色
-        team = project.get('team', {})
-        role = team.get('role', 'Developer')
-        
-        # Overview
-        overview = project.get('overview', '')
-        if isinstance(overview, str):
-            overview_text = overview.strip().split('\n')[0][:100]
+        # 格式化日期 - 只保留年份
+        if start_date and end_date:
+            # 提取年份 (2024-11 -> 2024)
+            start_year = start_date.split('-')[0] if '-' in str(start_date) else str(start_date)
+            end_year = end_date.split('-')[0] if '-' in str(end_date) else str(end_date)
+            date_range = f"{start_year} -- {end_year}" if start_year != end_year else start_year
         else:
-            overview_text = 'Full-stack development project'
+            date_range = "2022"
+        
+        # 角色 - 优先使用 role 字段，然后是 team.role
+        role = project.get('role', '')
+        if not role:
+            team = project.get('team', {})
+            role = team.get('role', '')
+        if not role:
+            role = 'Developer'
+        
+        # Overview - 生成项目描述（支持多种字段名）
+        overview = project.get('overview') or project.get('summary', '')
+        if isinstance(overview, str) and overview.strip():
+            overview_text = overview.strip().split('\n')[0][:150]
+        else:
+            # 从 type 和 category 生成描述
+            project_type = project.get('type', 'Project')
+            categories = project.get('category', [])
+            if categories:
+                overview_text = f"{project_type} focusing on {', '.join(categories[:2])}"
+            else:
+                overview_text = project_type
         
         # Achievements
         achievements = generate_project_bullet_points(project)
