@@ -206,6 +206,98 @@ def generate_experience_section(projects, max_projects=5):
     return '\n'.join(experience_html)
 
 
+def generate_education_section(profile):
+    """从 profile.yaml 生成教育部分"""
+    education = profile.get('education', [])
+    edu_html = []
+    
+    for edu in education:
+        degree = edu.get('degree', '')
+        institution = edu.get('institution', '')
+        location = edu.get('location', '')
+        start = edu.get('start_date', '')
+        end = edu.get('end_date', '')
+        
+        # 格式化日期
+        start_fmt = start[:4] if start else ''
+        end_fmt = end[:4] if end else ''
+        date_range = f"{start_fmt} -- {end_fmt}" if start_fmt and end_fmt else ''
+        
+        # 构建详情
+        details = []
+        
+        # Research focus
+        research = edu.get('research_focus', [])
+        if research:
+            details.append(f"Research focus: {', '.join(research)}")
+        
+        # Honors
+        honors = edu.get('honors', [])
+        if honors:
+            details.append(f"Honors: {', '.join(honors)}")
+        
+        # Highlights
+        highlights = edu.get('highlights', [])
+        if highlights:
+            details.append('. '.join(highlights))
+        
+        # 学校名称简化
+        school_short = institution.split(',')[0] if ',' in institution else institution
+        
+        edu_html.append(f'''
+    <div class="edu-item">
+        <div class="edu-header">
+            <span class="edu-title">{degree}</span>
+            <span class="edu-school">{school_short}, {location}</span>
+            <span class="edu-date">{date_range}</span>
+        </div>
+        <div class="edu-detail">{' '.join(details)}</div>
+    </div>''')
+    
+    return '\n'.join(edu_html)
+
+
+def generate_licenses_section(achievements):
+    """从 achievements.yaml 生成证书部分"""
+    certifications = achievements.get('certifications', [])
+    awards = achievements.get('awards', [])
+    
+    licenses_html = []
+    
+    # 添加证书
+    for cert in certifications:
+        name = cert.get('name', '')
+        authority = cert.get('authority', '')
+        year = cert.get('year', '')
+        
+        licenses_html.append(f'''
+        <li>
+            <div class="license-content">
+                <span><strong>{name}</strong> — {authority}</span>
+                <span class="license-date">{year}</span>
+            </div>
+        </li>''')
+    
+    # 添加奖项
+    for award in awards[:2]:  # 只取前2个奖项
+        name = award.get('name', '')
+        category = award.get('category', '')
+        authority = award.get('authority', '')
+        year = award.get('year', '')
+        
+        display_name = f"{name} ({category})" if category else name
+        
+        licenses_html.append(f'''
+        <li>
+            <div class="license-content">
+                <span><strong>{display_name}</strong> — {authority}</span>
+                <span class="license-date">{year}</span>
+            </div>
+        </li>''')
+    
+    return '\n'.join(licenses_html)
+
+
 def generate_html_from_kb(role_type='fullstack'):
     """从 KB 生成完整 HTML"""
     
@@ -213,6 +305,7 @@ def generate_html_from_kb(role_type='fullstack'):
     kb_dir = Path('kb')
     profile = load_yaml(kb_dir / 'profile.yaml')
     skills = load_yaml(kb_dir / 'skills.yaml')
+    achievements = load_yaml(kb_dir / 'achievements.yaml')
     projects = load_projects('projects')
     
     # 提取个人信息
@@ -228,6 +321,8 @@ def generate_html_from_kb(role_type='fullstack'):
     summary = generate_summary(profile, role_type)
     skills_section = generate_skills_section(skills)
     experience_section = generate_experience_section(projects)
+    education_section = generate_education_section(profile)
+    licenses_section = generate_licenses_section(achievements)
     
     # 构建完整 HTML（使用原有模板结构）
     html = f'''<!DOCTYPE html>
@@ -463,52 +558,12 @@ def generate_html_from_kb(role_type='fullstack'):
     
     <!-- Education -->
     <div class="section-title">Education</div>
-    
-    <div class="edu-item">
-        <div class="edu-header">
-            <span class="edu-title">Master of Computer and Information Sciences</span>
-            <span class="edu-school">AUT, New Zealand</span>
-            <span class="edu-date">Jul 2024 -- Feb 2026</span>
-        </div>
-        <div class="edu-detail">Research focus: AI, lightweight model deployment, virtual try-on. GPA: A. Thesis submitted early.</div>
-    </div>
-    
-    <div class="edu-item">
-        <div class="edu-header">
-            <span class="edu-title">Bachelor of Software Engineering</span>
-            <span class="edu-school">Hebei University of Science and Technology, China</span>
-            <span class="edu-date">Jul 2009 -- Jun 2013</span>
-        </div>
-        <div class="edu-detail">Received National Scholarship. GPA: 3.5/4.0. Trained in Java, databases, and backend system design.</div>
-    </div>
+    {education_section}
     
     <!-- Licenses & Certifications -->
     <div class="section-title">Licenses & Certifications</div>
     <ul class="license-list">
-        <li>
-            <div class="license-content">
-                <span><strong>Software Design Engineer Certificate</strong> — China Qualification Authority</span>
-                <span class="license-date">2019</span>
-            </div>
-        </li>
-        <li>
-            <div class="license-content">
-                <span><strong>Network Communication Security Administrator</strong> — China Qualification Authority</span>
-                <span class="license-date">2017</span>
-            </div>
-        </li>
-        <li>
-            <div class="license-content">
-                <span><strong>Science and Technology Achievement Award (Smart Manufacturing)</strong> — Hebei, China</span>
-                <span class="license-date">2020</span>
-            </div>
-        </li>
-        <li>
-            <div class="license-content">
-                <span><strong>IoT Fundamentals (MOOC)</strong> — Xi'an Jiaotong University</span>
-                <span class="license-date">2020</span>
-            </div>
-        </li>
+{licenses_section}
     </ul>
 </body>
 </html>'''
