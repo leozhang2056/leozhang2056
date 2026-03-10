@@ -105,17 +105,29 @@ professional_achievements:
     description: Led 6-person cross-functional team
 
 publications:
-  # 如有论文发表可在此添加
-  # - title: "..."
-  #   venue: "..."
-  #   year: 20XX
-  #   type: thesis/paper/poster
+  - title: "ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models"
+    venue: AUT Open Repository (Master's Thesis)
+    year: 2025
+    type: thesis
+    url: "http://hdl.handle.net/10292/20210"
+    status: passed
+    note: "Passed April 2025; completed 6 months ahead of schedule"
+
+  - title: "ChatClothes: Conversational Virtual Try-On with Diffusion Models"
+    venue: "Image and Vision Computing New Zealand (IVCNZ 2025)"
+    year: 2025
+    type: conference_paper
+    doi: "10.1109/IVCNZ67716.2025.11281834"
+    co_authors:
+      - Kien Tran
+      - Minh Nguyen
+      - Wei Qi Yan
 
 presentations:
-  # 如有演讲/展示可在此添加
-  # - title: "..."
-  #   event: "..."
-  #   year: 20XX
+  - title: "ChatClothes: Virtual Try-On System Demo"
+    event: "Master's Thesis Presentation, AUT"
+    year: 2025
+    note: "Included working live demo and edge deployment on Raspberry Pi 5"
 
 languages:
   - language: Chinese (Mandarin)

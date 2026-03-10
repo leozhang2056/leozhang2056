@@ -4,9 +4,9 @@
 experiences:
   - company: Auckland University of Technology (AUT)
     location: New Zealand
-    role: Master’s Student & AI Researcher
+    role: Master's Student & AI Researcher
     start_date: "2024-07"
-    end_date: "2025-10"
+    end_date: "2026-02"
     current: true
     type: Education/Research
     
@@ -21,7 +21,7 @@ experiences:
           - Built generation pipeline using ComfyUI and integrated user control with Dify orchestration
           - Supported text/image/multimodal input, enabling personalized try-on scenarios
           - Optimized for edge devices (Raspberry Pi 5) with real-time performance and offline capability
-          - Completed full-stack AI solution independently; submitted thesis 6 months early with working demo and documentation
+          - Completed full-stack AI solution independently; thesis passed 6 months early with working demo and documentation
         
         tech_stack:
           - Python
@@ -46,8 +46,8 @@ experiences:
       - Edge computing
     
     achievements:
-      - Thesis submitted 6 months ahead of schedule
-      - Presented working demo and comprehensive deployment documentation
+      - Thesis passed 6 months ahead of schedule
+      - Presented working demo; thesis published on AUT Open Repository
 
   - company: Chunxiao Technology Co., Ltd.
     location: China
@@ -137,6 +137,62 @@ experiences:
           - 500K+ messages processed daily
           - Cross-platform (Android, Web, PC)
       
+      - name: Live Streaming Commerce System
+        period: "2015 - 2018"
+        role: Full-stack Developer
+        team_size: 8
+        description: Multi-language live streaming platform with 1,000+ concurrent viewers
+        
+        highlights:
+          - Built multi-language architecture: .NET (C#) + Node.js + C++ (NDK) + Python + Lua
+          - Implemented real-time streaming with WebSocket, Socket.IO, and HLS/M3U8 adaptive bitrate
+          - Developed Android client with C++ NDK streaming core for optimal performance
+          - Created ASP.NET Web Forms admin dashboard and Node.js real-time notification service
+          - Delivered stable playback under varying network conditions (3G/4G/WiFi)
+          - Achieved 1,000+ concurrent viewers with multi-bitrate streaming (360p-1080p)
+        
+        tech_stack:
+          - C# (.NET Framework)
+          - ASP.NET
+          - Java
+          - Kotlin
+          - C++ (NDK)
+          - Python
+          - Lua
+          - Node.js
+          - RTMP
+          - WebRTC
+          - HLS/M3U8
+          - FFmpeg
+        
+        metrics:
+          - 1,000+ concurrent viewers
+          - 3 years of continuous development
+          - 99.5% streaming uptime
+      
+      - name: Patent Search System
+        period: "2014"
+        role: .NET Desktop Developer
+        description: Windows application for patent document management
+        
+        highlights:
+          - Developed Windows Forms application using .NET Framework 2.0 and C# 3.0
+          - Implemented full-text search with Lucene.NET 2.9 for patent document indexing
+          - Created Excel/PDF processing modules for document management and export
+          - Integrated with SQL Server 2008 for patent data storage
+        
+        tech_stack:
+          - .NET Framework 2.0
+          - C# 3.0
+          - WinForms
+          - Lucene.NET 2.9
+          - SQL Server 2008
+          - Excel/PDF processing
+        
+        metrics:
+          - Full-text search capability
+          - Document export functionality
+
       - name: IoT Projects & Full-Stack Solutions
         period: "2013 - 2023"
         role: Full-stack Engineer
@@ -221,4 +277,4 @@ key_achievements:
   - "Maintained 99.9% system uptime across multiple production systems"
   - "Managed 6-person cross-functional team through full development cycles"
 
-last_updated: "2025-02-11"
+last_updated: "2025-03-10"

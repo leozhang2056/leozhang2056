@@ -33,26 +33,26 @@ career_identity:
   
   summary_variants:
     default: >
-      Full-stack software engineer and Master’s student in Computer and Information Sciences at AUT,
-      graduating October 2025. Over 10 years of experience in Java backend, Android development, 
+      Full-stack software engineer and Master's student in Computer and Information Sciences at AUT,
+      graduating February 2026. Over 10 years of experience in Java backend, Android development, 
       AI integration, and IoT systems, delivering enterprise solutions in industrial automation, 
       mobile platforms, and edge AI. Proficient in Spring Boot, Docker, PyTorch, and microservice 
       architecture, with hands-on expertise in AI-driven applications, full-stack systems, and cloud/edge deployment.
     
     android_focus: >
-      Master’s student in Computer and Information Sciences at AUT, graduating September 2025. 
+      Master's student in Computer and Information Sciences at AUT, graduating February 2026. 
       Over 10 years of experience in software development with a focus on Android. Delivered 
       solutions in industrial automation, retail systems, and consumer platforms. Skilled in 
       both coding and team leadership, managing cross-functional teams through full development cycles.
     
     ai_focus: >
-      AI-focused software engineer and Master’s student in Computer and Information Sciences at AUT,
-      graduating October 2025. Experienced in AI, edge computing, and cloud deployment, with 
+      AI-focused software engineer and Master's student in Computer and Information Sciences at AUT,
+      graduating February 2026. Experienced in AI, edge computing, and cloud deployment, with 
       expertise in LLM-based applications, computer vision, and IoT integration. Over 10 years 
       of experience in software engineering and full-stack development.
     
     java_focus: >
-      Master’s student in Computer and Information Sciences at AUT, graduating October 2025. 
+      Master's student in Computer and Information Sciences at AUT, graduating February 2026. 
       Over 10 years of experience in Java backend and full-stack development, including Spring Boot,
       MyBatis, and microservice architecture. Built and maintained enterprise systems across 
       manufacturing, messaging, and IoT.
@@ -62,7 +62,7 @@ education:
     institution: Auckland University of Technology (AUT)
     location: New Zealand
     start_date: "2024-07"
-    end_date: "2025-10"
+    end_date: "2026-02"
     status: Graduating
     research_focus:
       - AI
@@ -118,4 +118,4 @@ keywords:
   - Agile
   - CI/CD
 
-last_updated: "2025-02-11"
+last_updated: "2025-03-10"

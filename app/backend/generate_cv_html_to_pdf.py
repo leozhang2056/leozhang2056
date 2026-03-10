@@ -251,7 +251,7 @@ def generate_html():
     <!-- Summary -->
     <div class="section-title">Summary</div>
     <div class="summary">
-        Senior Android Developer with <strong>12+ years of experience</strong> building enterprise mobile and backend systems. Currently completing <strong>Master's in Computer and Information Sciences at AUT</strong> (graduating <strong>February 2026</strong>). Proven expertise in <strong>Android SDK, NDK, Java Spring Boot microservices</strong>, and <strong>full-stack delivery</strong>. Track record of leading teams and delivering high-scale systems with 99.9% uptime.
+        <strong>Full-Stack Developer</strong> with <strong>12 years of experience</strong> across <strong>Android, Backend, AI, and Frontend</strong>. Deep expertise in <strong>Android SDK, NDK, Kotlin/Java</strong> for mobile development, <strong>Spring Boot microservices</strong> for backend systems, and <strong>AI/ML integration</strong> for intelligent features. Proven ability to deliver complete solutions from mobile apps to cloud infrastructure. Strong foundation in <strong>React/Vue.js, RESTful APIs, and DevOps</strong>, enabling end-to-end ownership across the entire technology stack.
     </div>
     
     <!-- Key Skills -->
@@ -275,54 +275,74 @@ def generate_html():
             <span class="job-company">AUT, NZ</span>
             <span class="job-date">2024 -- 2026</span>
         </div>
-        <div class="job-role"><strong>Sole developer</strong> of a multimodal AI try-on system with LLM control and edge deployment.</div>
+        <div class="job-role"><strong>Sole developer</strong> of a multimodal AI virtual fitting system with LLM control and edge deployment capabilities.</div>
         <ul class="job-list">
-            <li><strong>Built</strong> modular pipeline: diffusion model (image generation) + YOLO (clothing detection) + LLM (prompt parsing)</li>
-            <li><strong>Integrated</strong> ComfyUI + Dify for orchestration, supporting browser and offline operation</li>
-            <li><strong>Optimized</strong> inference on Raspberry Pi 5, achieving low-latency edge performance</li>
-            <li>Completed thesis 6 months early with demo and deployment guide</li>
+            <li><strong>Architected</strong> end-to-end pipeline integrating diffusion models for image generation, YOLO for clothing detection, and LLMs for prompt interpretation</li>
+            <li><strong>Developed</strong> modular workflow system with ComfyUI and Dify orchestration, supporting both browser-based and offline edge deployment</li>
+            <li><strong>Optimized</strong> PyTorch inference for Raspberry Pi 5, achieving real-time performance with low-latency edge computing</li>
+            <li><strong>Delivered</strong> complete thesis 6 months early with working demo, deployment guide, and comprehensive documentation</li>
         </ul>
     </div>
     
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Smart Factory Backend System</span>
+            <span class="job-title">Smart Factory System</span>
             <span class="job-company">Chunxiao Technology Co., Ltd., China</span>
             <span class="job-date">2018 -- 2024</span>
         </div>
-        <div class="job-role"><strong>Tech lead</strong> for a microservice-based textile factory system deployed across 5+ sites.</div>
+        <div class="job-role"><strong>Technical Lead</strong> for enterprise manufacturing platform deployed across 5+ factory sites with 99.9% uptime.</div>
         <ul class="job-list">
-            <li><strong>Designed and implemented</strong> backend services with Spring Boot and MySQL/Redis</li>
-            <li><strong>Managed</strong> CI/CD and deployment via Docker, Jenkins, and Nginx on Linux servers</li>
-            <li><strong>Integrated</strong> RFID, barcode scanners, and conveyor systems for real-time process tracking</li>
+            <li><strong>Architected</strong> Spring Boot microservices with Spring Cloud, supporting 5+ manufacturing sites and 1000+ concurrent users</li>
+            <li><strong>Developed</strong> Android applications for shop-floor operations with RFID/barcode integration and offline-first design</li>
+            <li><strong>Built</strong> CI/CD pipelines with Docker, Jenkins, and Nginx on Linux (CentOS/Ubuntu) servers</li>
+            <li><strong>Integrated</strong> industrial IoT devices: RFID readers, barcode scanners, electronic scales, and conveyor systems</li>
+            <li><strong>Improved</strong> production efficiency by 30%+ through real-time process tracking and automated workflows</li>
         </ul>
     </div>
     
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Enterprise Messaging System</span>
+            <span class="job-title">Enterprise Messaging Platform</span>
             <span class="job-company">Chunxiao Technology Co., Ltd., China</span>
             <span class="job-date">2014 -- 2023</span>
         </div>
-        <div class="job-role"><strong>Core Android & backend developer</strong> for real-time IM platform with 10,000+ daily users.</div>
+        <div class="job-role"><strong>Core Android & Backend Developer</strong> for real-time IM system supporting 10,000+ daily active users.</div>
         <ul class="job-list">
-            <li><strong>Developed</strong> Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++</li>
-            <li><strong>Improved</strong> connection stability and reduced message latency to <strong>&lt;200ms</strong></li>
+            <li><strong>Built</strong> high-performance Android client using NDK-based TCP/UDP protocols, achieving <strong>&lt;200ms</strong> message latency</li>
+            <li><strong>Developed</strong> scalable backend with Spring Cloud and C++ native modules, processing 500K+ messages daily</li>
+            <li><strong>Implemented</strong> cross-platform support (Android, Web, PC) with real-time synchronization</li>
+            <li><strong>Created</strong> BI analytics infrastructure with Kettle ETL pipelines and PowerBI dashboards for user behavior analysis</li>
         </ul>
     </div>
     
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Other Projects & IoT Solutions</span>
+            <span class="job-title">Live Streaming Commerce System</span>
+            <span class="job-company">Chunxiao Technology Co., Ltd., China</span>
+            <span class="job-date">2015 -- 2018</span>
+        </div>
+        <div class="job-role"><strong>Full-Stack Developer</strong> for multi-language live streaming platform with 1,000+ concurrent viewers.</div>
+        <ul class="job-list">
+            <li><strong>Built</strong> multi-language architecture: Java/Kotlin Android, C++ NDK streaming core, ASP.NET web admin, Python analytics</li>
+            <li><strong>Implemented</strong> real-time streaming with WebSocket, RTMP ingestion, and HLS/M3U8 adaptive bitrate delivery</li>
+            <li><strong>Developed</strong> low-latency streaming engine handling 1,000+ concurrent viewers with adaptive quality (360p-1080p)</li>
+            <li><strong>Created</strong> Lua-based configuration system for dynamic business rules and hot-swappable settings</li>
+        </ul>
+    </div>
+    
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">IoT Solutions & Smart Hardware</span>
             <span class="job-company">Chunxiao Technology Co., Ltd., China</span>
             <span class="job-date">2013 -- 2024</span>
         </div>
-        <div class="job-role"><strong>Full-stack engineer</strong> for industrial, IoT, and public service applications.</div>
+        <div class="job-role"><strong>Full-Stack Engineer</strong> for industrial IoT, smart hardware, and public service applications.</div>
         <ul class="job-list">
-            <li><strong>Developed</strong> forestry patrol app with GPS/photo logging and backend dashboard</li>
-            <li><strong>Built</strong> smart cabinet SDKs controlling locks, sensors, and lights via Android + REST APIs</li>
-            <li><strong>Implemented</strong> ad scheduling and monitoring for factory and retail displays</li>
-            <li><strong>Automated</strong> deployment and monitoring to maintain 99.9% uptime</li>
+            <li><strong>Developed</strong> forestry patrol mobile app with GPS tracking, offline maps, and photo-based risk reporting</li>
+            <li><strong>Built</strong> smart locker/book cabinet systems with Android control, sensor integration, and REST API backend</li>
+            <li><strong>Created</strong> reusable hardware SDKs for RFID, barcode scanners, and industrial sensors (UART/RS232/Modbus)</li>
+            <li><strong>Implemented</strong> Vue.js dashboards for real-time monitoring, data visualization, and equipment management</li>
+            <li><strong>Deployed</strong> digital signage and broadcast control systems with MQTT-based remote management</li>
         </ul>
     </div>
     
@@ -335,7 +355,7 @@ def generate_html():
             <span class="edu-school">AUT, New Zealand</span>
             <span class="edu-date">Jul 2024 -- Feb 2026</span>
         </div>
-        <div class="edu-detail">Research focus: AI, lightweight model deployment, virtual try-on. Thesis submitted early.</div>
+        <div class="edu-detail">Research focus: AI, lightweight model deployment, virtual try-on. GPA: A. Thesis submitted early.</div>
     </div>
     
     <div class="edu-item">
@@ -344,7 +364,7 @@ def generate_html():
             <span class="edu-school">Hebei University of Science and Technology, China</span>
             <span class="edu-date">Jul 2009 -- Jun 2013</span>
         </div>
-        <div class="edu-detail">Received National Scholarship. Trained in Java, databases, and backend system design.</div>
+        <div class="edu-detail">Received National Scholarship. GPA: 3.5/4.0. Trained in Java, databases, and backend system design.</div>
     </div>
     
     <!-- Licenses & Certifications -->
