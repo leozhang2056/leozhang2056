@@ -141,16 +141,20 @@ def generate_project_bullet_points(project_facts, max_bullets=4):
     """从项目 facts 生成 bullet points"""
     achievements = project_facts.get('achievements', [])
     
-    # 如果没有 achievements，尝试从其他字段生成
+    # 如果没有 achievements，尝试从 highlights 或 impact
     if not achievements:
-        tech_stack = project_facts.get('tech_stack', {})
-        overview = project_facts.get('overview', '')
+        highlights = project_facts.get('highlights', [])
+        impact = project_facts.get('impact', [])
         
-        # 简单的默认 bullet points
+        # 合并并返回
+        combined = highlights + impact
+        if combined:
+            return combined[:max_bullets]
+        
+        # 最后的 fallback
         return [
-            "Led development and delivery of the project from concept to completion",
-            "Implemented core features using modern technologies and best practices",
-            "Collaborated with cross-functional teams to ensure project success"
+            "Led development and delivery from concept to completion",
+            "Implemented core features using modern technologies"
         ][:max_bullets]
     
     return achievements[:max_bullets]
@@ -164,11 +168,25 @@ def generate_experience_section(projects, max_projects=5):
     experience_html = []
     
     for project in selected_projects:
+        # 支持两种格式: project.name 或直接 name
         project_info = project.get('project', {})
-        name = project_info.get('name', 'Unknown Project')
-        company = 'Chunxiao Technology Co., Ltd., China'  # 默认公司
-        start_date = project_info.get('start_date', '')
-        end_date = project_info.get('end_date', '')
+        name = project_info.get('name') or project.get('name') or project.get('project_id', 'Unknown Project')
+        
+        # 获取公司信息
+        company_info = project.get('company', {})
+        if isinstance(company_info, dict):
+            company = company_info.get('name') or 'Chunxiao Technology Co., Ltd.'
+        else:
+            company = 'Chunxiao Technology Co., Ltd.'
+        
+        # 获取时间
+        timeline = project.get('timeline', {})
+        if isinstance(timeline, dict):
+            start_date = timeline.get('start', '')
+            end_date = timeline.get('end', '')
+        else:
+            start_date = project.get('start_date', '')
+            end_date = project.get('end_date', '')
         
         # 格式化日期
         date_range = f"{start_date} -- {end_date}" if start_date and end_date else "2022"
@@ -350,7 +368,6 @@ def generate_html_from_kb(role_type='fullstack'):
         .header {{
             text-align: center;
             margin-bottom: 12px;
-            border-bottom: 1.5px solid #000080;
             padding-bottom: 8px;
         }}
         
@@ -394,8 +411,13 @@ def generate_html_from_kb(role_type='fullstack'):
             color: #000080;
             margin-top: 12px;
             margin-bottom: 6px;
-            border-bottom: 1px solid #000080;
+            border-bottom: 1.5px solid #000080;
             padding-bottom: 2px;
+        }}
+        
+        /* First section title should not have top margin */
+        .section-title:first-of-type {{
+            margin-top: 0;
         }}
         
         /* Summary */
