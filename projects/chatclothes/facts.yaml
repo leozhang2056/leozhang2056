@@ -216,8 +216,8 @@ evidence:
     status: available
     description: Working demonstration with full functionality
   - type: documentation
-    status: complete
-    description: Complete deployment guide, API documentation, and user manual
+    status: partial
+    description: API documentation and image gallery documented; full deployment guide not yet published
   - type: images
     path: images/
     count: 36

@@ -7,7 +7,7 @@
 
 ## 1. Introduction & Overview
 
-ChatClothes is a state-of-the-art multimodal AI virtual try-on (VTON) system that bridges vision-language interaction with diffusion-based generation. The system integrates controllable diffusion-based generation with dialogue-driven garment interaction, providing a unified framework for scalable, user-centered, and device-adaptable fashion AI systems.
+ChatClothes is a modular and multimodal AI virtual try-on (VTON) system that bridges vision-language interaction with diffusion-based generation. The system integrates controllable diffusion-based generation with dialogue-driven garment interaction, providing a unified framework for scalable, user-centered, and device-adaptable fashion AI systems.
 
 ![System Demo](images/demo.png)
 *ChatClothes in action: From natural language request to high-fidelity virtual try-on result*
@@ -64,6 +64,18 @@ The core generative process uses **OOTDiffusion** enhanced with **LoRA** fine-tu
 ## 4. Results & Performance
 
 ### 4.1 Try-On Quality & Accuracy
+The system achieves measurable improvements over the baseline OOTDiffusion across all evaluation metrics:
+
+| Metric | ChatClothes | Baseline | Improvement |
+| :--- | :---: | :---: | :---: |
+| FID ↓ | 28.5 | 35.2 | 19% |
+| LPIPS ↓ | 0.12 | 0.18 | 33% |
+| SSIM ↑ | 0.89 | 0.82 | 8.5% |
+| Pose Consistency ↑ | 92% | 77% | +15pp |
+| Hand Artifacts (per 100) ↓ | 3 | 12 | 75% |
+| YOLO12n-LC Accuracy | 94.2% | — | 8× smaller than YOLO12n |
+| User Success Rate | 87% | — | 50-user study |
+
 The system maintains realistic fabric textures, poses, and shading across different physical builds and garments.
 
 ![Results Grid](images/slide15_results.PNG)
@@ -108,6 +120,16 @@ I independently addressed the key challenges in the domain of virtual try-on, de
 ### Conclusion
 
 ![Conclusion](images/slide31_conclusion.PNG)
+
+---
+
+## Documentation
+
+| Document | Contents |
+| :--- | :--- |
+| [Technical Details](TECHNICAL_DETAILS.md) | Architecture, LoRA strategy, YOLO12n-LC design, edge optimization, API reference |
+| [Experiments & Results](EXPERIMENTS.md) | Datasets, evaluation metrics, ablation study, SOTA comparison, reproducibility |
+| [Image Gallery](IMAGES.md) | Full catalog of all 36 images and demo video with descriptions |
 
 ---
 

@@ -13,7 +13,7 @@ DressCode is a high-quality virtual try-on dataset designed for training and eva
 
 **Dataset Characteristics:**
 - **Resolution:** 1024×768
-- **Total Images:** ~100,000
+- **Total Images:** ~53,792 (upper-body, lower-body, and dresses categories)
 - **Clothing Categories:** Upper-body, lower-body, full-body
 - **Garment Types:** Shirts, pants, dresses, coats, etc.
 - **Diversity:** Various poses, lighting conditions, body types
@@ -296,7 +296,6 @@ Evaluated the impact of LoRA fine-tuning on different aspects of generation qual
 - **Repository:** Private (contact for access)
 - **Models:** Available upon request
 - **Datasets:** Publicly available (DressCode, VITON-HD)
-- **Documentation:** Complete deployment guide included
 
 ---
 

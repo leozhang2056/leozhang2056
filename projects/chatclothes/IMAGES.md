@@ -20,6 +20,7 @@ This document provides a comprehensive catalog of all images included in the Cha
 - [Applications](#applications)
 - [Research Contributions](#research-contributions)
 - [Presentation](#presentation)
+- [Additional Files](#additional-files)
 
 ---
 
@@ -341,9 +342,9 @@ This document provides a comprehensive catalog of all images included in the Cha
 - **Future & Applications:** slide21-24
 - **Research & Presentation:** slide25-27, slide31-33
 
-**Total Images:** 36 files (34 PNG/image files + 1 MP4 video + 1 duplicate PNG)
+**Total Files:** 37 (34 unique PNG/image files + 1 MP4 video + 2 duplicate PNGs)
 
-> Note: `slide23_cloud_deployment_copy.PNG` and `slide31_conclusion_copy.PNG` are duplicates of their originals and are excluded from the active count of 34 unique images.
+> Note: `slide23_cloud_deployment_copy.PNG` and `slide31_conclusion_copy.PNG` are duplicates of their originals. Use the originals as canonical versions.
 
 ---
 
