@@ -177,24 +177,26 @@ def generate_project_bullet_points(project_facts, max_bullets=4):
 def sort_projects_by_importance(projects):
     """按重要性排序项目"""
     # 定义项目优先级（数字越小越重要）
+    # 前5个是指定优先级，其余按时间排序（越近越靠前）
     priority_map = {
-        'chatclothes': 1,           # 硕士项目 - 最重要
-        'enterprise-messaging': 2,  # 大项目 - 重要
-        'smart-factory': 3,         # 大项目 - 重要
-        'smart-power': 4,           # 中等项目
-        'boobit': 5,                # 虚拟币项目
-        'iot-solutions': 6,
-        'picture-book-locker': 7,
-        'forest-patrol-inspection': 8,
-        'visual-gateway': 9,
-        'visit-system': 10,
-        'school-attendance': 11,
-        'exhibition-robot': 12,
-        'broadcast-control': 13,
-        'live-streaming-system': 14,
-        'chinese-herbal-recognition': 15,
-        'device-maintenance-prediction': 16,
-        'patent-search-system': 17,
+        'chatclothes': 1,                   # 硕士项目 (2024-2025)
+        'enterprise-messaging': 2,          # 大项目 (2014-2023)
+        'smart-factory': 3,                 # 大项目 (2018-2024)
+        'iot-solutions': 4,                 # 提到第4位
+        'picture-book-locker': 5,           # 提到第5位
+        # 其余项目按时间排序，时间近的优先级数字小
+        'smart-power': 10,                  # 2021-2022
+        'boobit': 11,                       # 2022
+        'broadcast-control': 12,            # 2020
+        'visual-gateway': 13,               # 2019
+        'forest-patrol-inspection': 14,     # 2019
+        'chinese-herbal-recognition': 15,   # 2019
+        'device-maintenance-prediction': 16,# 2019
+        'visit-system': 17,                 # 2018
+        'exhibition-robot': 18,             # 2017
+        'school-attendance': 19,            # 2016
+        'live-streaming-system': 20,        # 2015-2018
+        'patent-search-system': 21,         # 2013-2014
     }
     
     def get_priority(project):
