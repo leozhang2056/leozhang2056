@@ -11,24 +11,32 @@ timeline:
   start: '2020'
   end: '2023'
   duration_years: 3
-role: Android Developer / Embedded Engineer
+role: Android Developer (Locker & Client Apps)
+role_cn: 安卓开发工程师（储物柜与客户端应用）
 team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Smart picture book locker system for schools and libraries providing  24/7
-  self-service book borrowing. Features face recognition, QR code  scanning, UV disinfection,
-  and intelligent cabinet control.
+summary: 'Smart library locker system for schools and libraries providing 24/7 self-service 
+  book borrowing. Developed Android control system for locker hardware and Android client 
+  application for users. Features face recognition, QR code scanning, and UV disinfection.'
 
-  '
+summary_cn: '智能图书馆储物柜系统，为学校及图书馆提供24/7自助借书服务。
+  开发储物柜硬件的安卓控制系统及用户使用的安卓客户端应用。
+  具备人脸识别、二维码扫描和紫外线消毒功能。'
 highlights:
-- Developed Android control system with face recognition and QR code borrowing
-- Integrated hardware components including electromagnetic locks, LED strips, and
-  disinfection modules
-- Enabled 24/7 self-service book borrowing and returning
-- Implemented built-in UV disinfection for returned books
-- Successfully deployed in multiple schools with multi-cabinet networking support
-- Achieved average borrowing time of less than 3 seconds
+- Developed Android control system for locker hardware (electromagnetic locks, UV disinfection, sensors)
+- Built Android client application for user book borrowing and returning
+- Integrated face recognition and QR code scanning for authentication
+- Implemented 24/7 self-service operation with multi-cabinet networking
+- Deployed in multiple schools and libraries
+
+highlights_cn:
+- 开发储物柜硬件的安卓控制系统（电磁锁、紫外线消毒、传感器）
+- 构建用户借还书的安卓客户端应用
+- 集成人脸识别和二维码扫描进行身份验证
+- 实现24/7自助服务运营，支持多柜联网
+- 部署于多所学校和图书馆
 tech_stack:
   languages:
   - Java

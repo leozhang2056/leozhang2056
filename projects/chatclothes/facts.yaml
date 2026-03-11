@@ -20,6 +20,7 @@ timeline:
   early_by_months: 6
 
 role: Sole Developer & System Designer
+role_cn: 独立开发者与系统设计师
 team_size: 1
 
 institution:
@@ -49,14 +50,29 @@ summary: >
   workflow orchestration, and YOLO12n-LC for efficient garment classification. 
   Optimized for edge deployment with complete offline capability.
 
+summary_cn: >
+  ChatClothes 是一个模块化、多模态的虚拟试衣系统，集成了可控的扩散生成技术和对话驱动的服装交互功能。
+  系统采用 DeepSeek 大语言模型进行自然语言指令理解，使用 LoRA 微调技术优化 OOTDiffusion 性能，
+  通过 ComfyUI 进行可视化工作流编排，并使用 YOLO12n-LC 实现高效的服装分类。
+  针对边缘部署优化，具备完全的离线运行能力。
+
 highlights:
   - Designed and implemented complete multimodal VTON system independently
-  - Developed YOLO12n-LC lightweight classifier for edge deployment
   - Applied LoRA fine-tuning to OOTDiffusion for enhanced pose alignment and texture reconstruction
-  - Integrated DeepSeek LLM for natural language control and dialogue-driven interaction
-  - Built orchestration pipeline using Dify + ComfyUI + Ollama
+  - Optimized YOLO12n to YOLO12n-LC lightweight classifier for local deployment
+  - Integrated DeepSeek LLM via Ollama for local natural language control and dialogue-driven interaction
+  - Built orchestration pipeline using Dify + ComfyUI + Ollama for local model management
   - Validated system on DressCode and VITON-HD datasets
-  - Completed full-stack AI solution 6 months ahead of schedule
+  - Achieved complete offline capability with local model deployment (no API dependency)
+
+highlights_cn:
+  - 独立设计并实现完整的多模态虚拟试衣系统
+  - 应用 LoRA 微调技术优化 OOTDiffusion，提升姿态对齐和纹理重建效果
+  - 将 YOLO12n 优化为 YOLO12n-LC 轻量级分类器，支持本地部署
+  - 通过 Ollama 集成 DeepSeek 大语言模型，实现本地自然语言控制和对话交互
+  - 使用 Dify + ComfyUI + Ollama 构建本地模型管理流程编排管道
+  - 在 DressCode 和 VITON-HD 数据集上验证系统性能
+  - 实现完全离线能力，本地模型部署无需依赖 API
 
 tech_stack:
   languages:

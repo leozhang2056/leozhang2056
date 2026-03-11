@@ -23,13 +23,13 @@ summary: 'Visit booking and access management platform for high-security scenari
 
   '
 highlights:
-- 开发多端探视预约平台（管理端、终端、访客端）
-- 实现预约审批、时段与配额策略管理
-- 集成人脸识别门禁，控制探视人员进出
-- 集成WebRTC音视频探视与会话管理
-- 增加聊天系统（消息记录与必要审核）
-- 提供探视记录、审计追踪和统计报表
-- 探视管理效率提升30%
+- Developed multi-terminal visit booking platform (admin, terminal, visitor)
+- Implemented booking approval with time slot and quota management
+- Integrated face recognition access control for visitor entry/exit
+- Built WebRTC audio-video visitation and session management
+- Added chat system with message logging and audit capabilities
+- Provided visit records, audit trails, and statistical reports
+- Improved visit management efficiency
 tech_stack:
   languages:
   - Java

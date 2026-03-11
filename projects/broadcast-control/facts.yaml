@@ -13,21 +13,19 @@ timeline:
   start: '2020'
   end: '2020'
   duration_years: 1
-role: Project Manager + Android Screen Client Developer
+role: Project Manager, System Designer & Android Developer
 team_size: null
 company:
-  name: null
-  location: null
-summary: '2020 digital signage ad delivery project. As project manager and Android
-  screen client lead developer, delivered a centralized platform to control elevator,
-  in-store, and public screens, using MQTT broadcast for large-scale campaign task
-  delivery and scheduled video/image playback.
-
-  '
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+summary: 'Large-scale digital signage platform with platform portal, management console,
+  and Android screen clients. Led overall system design, project management, and Android 
+  device client development for elevator, in-store, and public screen scenarios.'
 highlights:
-- Led project delivery and cross-team coordination as project manager
-- Developed Android player clients across elevator/store/public screen scenarios
-- Implemented MQTT broadcast-based campaign task distribution
+- Led overall system design and project management for multi-terminal platform
+- Designed platform architecture with platform portal, management console, and device clients
+- Developed Android screen clients for elevator, in-store, and public displays
+- Implemented MQTT broadcast for large-scale campaign task distribution
 - Built device grouping and campaign policy control for targeted delivery
 - Implemented scheduled playback for image/video materials
 - Added client heartbeat and playback status feedback for operational visibility

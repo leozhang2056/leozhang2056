@@ -11,7 +11,7 @@ timeline:
   start: '2019'
   end: '2022'
   duration_years: 3
-role: Full-stack Engineer / System Architect
+role: Java Backend & Android Developer
 team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
@@ -22,13 +22,12 @@ summary: 'Smart power management platform for onboarding gateways/switches/meter
 
   '
 highlights:
-- 开发智慧电力监控平台，支持多园区管理
-- 集成Modbus/RS485电表和传感器数据采集
-- 实现实时能耗分析和故障预警
-- 基于InfluxDB时序数据库存储和处理海量数据
-- 开发能耗大屏和移动端APP
-- 实现平均能耗降低15%
-- 秒级告警响应时间
+- Developed Java backend platform for power monitoring and multi-site management
+- Built Android mobile app for real-time energy monitoring and alerts
+- Integrated Modbus/RS485 gateways and smart meters for data collection
+- Implemented Android gateway software for device connectivity
+- Created energy consumption dashboards and data analytics
+- Achieved sub-second alarm response time
 tech_stack:
   languages:
   - Java

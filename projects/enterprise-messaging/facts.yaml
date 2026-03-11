@@ -9,32 +9,40 @@ category:
 - Network Programming
 timeline:
   start: '2014'
-  end: '2023'
-  duration_years: 9
-role: Core Android & Backend Developer
+  end: '2025'
+  duration_years: 11
+role: Developer & System Designer
+role_cn: 开发工程师与系统设计师
 team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Enterprise instant messaging platform organized into multiple core subsystems,
-  including User Center, Message Center, and File System. Supports real-time communication
-  across Android, Web, and PC clients with 10,000+ daily active users and sub-200ms
-  message latency.
+summary: 'Large-scale enterprise communication platform with multi-terminal support (Android, Web, PC). 
+  Designed and developed multiple subsystems including user management, messaging, file system, 
+  workflow management, and audit systems. Focused on real-time communication technologies 
+  and audio/video processing. Responsible for mobile client, web frontend, backend services, 
+  database design, and server maintenance.'
 
-  '
+summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
+  设计和开发多个子系统，包括用户管理、消息系统、文件系统、工作流管理和审计系统。
+  专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
 highlights:
-- Developed Android client using NDK-based TCP/UDP
-- Built backend using Spring Cloud and Node.js
-- Designed multi-subsystem architecture (User Center, Message Center, File System)
-- Integrated distributed database and FastDFS file management system
-- Built ETL pipelines with Kettle for message data warehousing and analytics
-- Created PowerBI dashboards for real-time user behavior and system performance monitoring
-- Generated operational reports using FineReport for business intelligence
-- Achieved sub-200ms message latency
-- Supported 10,000+ daily active users
-- Processed 500K+ messages daily
-- Implemented cross-terminal login (Web, PC, Android)
-- Improved connection stability and performance
+- Designed and developed Android client using NDK-based TCP/UDP for real-time messaging
+- Built Web frontend and backend services using Spring Cloud and Node.js
+- Architected multi-subsystem platform including user management, messaging, file system, workflow, and audit systems
+- Implemented audio/video communication technologies for enterprise collaboration
+- Designed and maintained distributed database architecture and server infrastructure
+- Developed login system, attendance system, and approval workflows
+- Created real-time monitoring dashboards and business intelligence reports
+
+highlights_cn:
+- 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输
+- 使用 Spring Cloud 和 Node.js 构建 Web 前端和后端服务
+- 架构多子系统平台，包括用户管理、消息系统、文件系统、工作流和审计系统
+- 实现音视频通信技术，支持企业协作
+- 设计和维护分布式数据库架构和服务器基础设施
+- 开发登录系统、考勤系统和审批工作流
+- 创建实时监控仪表板和商业智能报表
 tech_stack:
   languages:
   - Java

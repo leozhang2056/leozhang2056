@@ -10,14 +10,14 @@ category:
 - Platform Engineering
 - Model Serving
 timeline:
-  start: TBD
-  end: TBD
-  duration_years: null
+  start: '2019'
+  end: '2019'
+  duration_years: 1
 role: Platform Designer & AI Workflow Developer
 team_size: null
 company:
-  name: null
-  location: null
+  name: Chunxiao Technology Co., Ltd.
+  location: China
 summary: 'Platform-style AI project that uses traditional Chinese medicine recognition
   as a sample scenario. Users can create categories, annotate image data, train classification
   models, test model quality, and run recognition inference with published model versions,

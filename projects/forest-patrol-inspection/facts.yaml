@@ -9,14 +9,14 @@ category:
 - Mobile Inspection
 - Field Data Collection
 timeline:
-  start: TBD
-  end: TBD
-  duration_years: null
+  start: '2014'
+  end: '2022'
+  duration_years: 8
 role: Android Mobile Client Developer
 team_size: null
 company:
-  name: null
-  location: null
+  name: Chunxiao Technology Co., Ltd.
+  location: China
 summary: 'Mobile forest patrol system for no-signal field scenarios. Supports offline
   map loading, GPS route recording, GIS point annotation, and incident reporting (fire/pest/other
   risks), with deferred synchronization when network is available.

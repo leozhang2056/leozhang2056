@@ -11,18 +11,19 @@ timeline:
   start: '2013'
   end: '2023'
   duration_years: 10
-role: Android Mobile Client Developer (primary), Gateway & Platform Integration (participated)
+role: Android Developer, Gateway Developer & Platform Designer
+role_cn: 安卓开发工程师、网关开发工程师与平台设计师
 team_size: varies
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'IoT management platform where users manage their purchased IoT devices.
-  Company sells smart switches and gateways. I developed the gateway (gateway software/firmware),
-  developed the mobile (phone) app for device control and management, and participated
-  in platform (backend/web) development, with Android mobile client work as the primary
-  responsibility.
+summary: 'IoT device management platform integrating multiple sensors and smart devices.
+  Designed and developed gateway software for device connectivity and data forwarding.
+  Built platform backend for device management, remote control, and data processing.'
 
-  '
+summary_cn: '物联网设备管理平台，集成多种传感器和智能设备。
+  设计和开发网关软件，实现设备连接和数据转发。
+  构建设备管理、远程控制和数据处理的平台后端。'
 products_sold:
 - Smart switches
 - Gateways
@@ -38,6 +39,12 @@ my_contributions:
   platform:
   - Participated in platform (backend and/or web) development
   - APIs for device management and control
+
+highlights_cn:
+- 设计并实现网关软件/固件，实现设备连接和协议处理
+- 负责安卓移动端应用的主要开发，包括设备发现、绑定和远程控制
+- 参与平台（后端/Web）开发，提供设备管理和控制 API
+- 实现数据转发到平台，支持本地/离线行为
 platform_features:
 - User management of purchased IoT devices
 - Device registration, binding, grouping

@@ -22,12 +22,12 @@ summary: 'Smart face recognition attendance system for schools with real-time  p
 
   '
 highlights:
-- 开发人脸识别考勤终端和管理系统
-- 实现无感考勤，学生经过自动识别打卡
-- 实时推送考勤通知给家长
-- 出勤率统计和报表生成
-- 活体检测防止照片作弊
-- 多校部署，稳定运行
+- Developed face recognition attendance terminal and management system
+- Implemented touchless attendance with automatic student recognition
+- Real-time attendance notifications pushed to parents
+- Attendance rate statistics and report generation
+- Liveness detection to prevent photo spoofing
+- Deployed across multiple schools with stable operation
 tech_stack:
   languages:
   - Java

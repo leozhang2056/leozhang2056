@@ -14,8 +14,8 @@ timeline:
 role: AI Algorithm Developer
 team_size: null
 company:
-  name: null
-  location: null
+  name: Chunxiao Technology Co., Ltd.
+  location: China
 summary: '2023 predictive maintenance AI project. Based on historical maintenance
   and operational data, the system analyzes equipment aging trends and predicts the
   next recommended maintenance window using SparkNet + Random Forest as core models,
