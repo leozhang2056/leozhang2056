@@ -1,66 +1,193 @@
 # Leo Zhang
 
-**Full-stack Software Engineer · Android · Backend · AI/ML**  
-Auckland, New Zealand · leozhang2056@gmail.com
+**Senior Android Developer · Java Backend · Full-stack Engineer**  
+📧 leozhang2056@gmail.com | 📱 +64 27 385 0794 | 📍 Auckland, New Zealand
 
 ---
 
-## About
+## 👋 Professional Summary
 
-Software engineer with 10+ years of experience across Android development, Java backend systems, and AI/ML integration. Currently completing a Master of Computer and Information Sciences at AUT (graduating February 2026), with a thesis on conversational AI and diffusion-based virtual try-on systems.
+Senior Software Engineer with **10+ years of experience** and Master's in Computer and Information Sciences from AUT, graduating **February 2026**. Delivering enterprise solutions across **Android development**, **Java backend systems**, **AI/ML integration**, and **DevOps/Infrastructure**.
 
-Worked at a single company for 11 years before moving to New Zealand to pursue postgraduate study — which means most of my professional work isn't visible on GitHub. This repository serves as a structured knowledge base and resume generation system for that experience.
+Proven track record leading technical teams, architecting scalable systems, deploying IoT solutions in industrial environments, and managing production infrastructure for long-running enterprise systems.
 
----
-
-## Technical Skills
-
-**Android** — Java, Kotlin, NDK/JNI, Jetpack, MVVM, Clean Architecture, hardware integration (RFID, barcode, sensors)
-
-**Backend** — Spring Boot, Spring Cloud, MyBatis, MySQL, Redis, WebSocket, REST, Microservices
-
-**AI / ML** — PyTorch, TensorFlow, OpenCV, YOLO, Diffusion Models, LLM integration (DeepSeek, ComfyUI, Dify)
-
-**Full-stack** — Vue.js, Node.js, .NET/C#, Docker, Jenkins, Nginx, Linux
-
-**IoT** — UART, RS232/RS485, Modbus, MQTT, embedded Android
+**Key Strengths:**
+- **Android Expertise**: 10+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
+- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
+- **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
+- **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
+- **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle) — value-add capabilities for complex projects
 
 ---
 
-## Selected Projects
+## 🛠️ Technical Skills
 
-### [ChatClothes](projects/chatclothes/) — AI Virtual Try-On System
-Master's thesis project. Multimodal system combining YOLO-based clothing classification, diffusion model image generation, and a DeepSeek LLM conversational interface. Optimized for offline edge deployment on Raspberry Pi 5.  
-**Published:** IVCNZ 2025 · [DOI 10.1109/IVCNZ67716.2025.11281834](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
+### Primary Skills (Core Expertise)
 
-### [Enterprise Messaging Platform](projects/enterprise-messaging/) — Internal IM System (2014–2023)
-Large-scale IM platform serving 10,000+ daily active users across Android, Web, and PC clients. Built the Android client using NDK-based TCP/UDP for real-time messaging, and contributed to the Spring Cloud backend and BI pipeline (Kettle ETL, PowerBI).
+**Android Development**
+- Languages: Java, Kotlin
+- Framework: Android SDK, Jetpack, MVVM/MVP, Jetpack Compose
+- Native: NDK, JNI, C/C++ for performance-critical modules
+- Storage: SQLite, Room, SharedPreferences
+- Architecture: Clean Architecture, Modular Design, Offline-First
 
-### [Smart Factory System](projects/smart-factory/) — Manufacturing Platform (2018–2024)
-Microservice platform deployed across multiple factory sites for textile manufacturing automation. Backend in Spring Boot + Spring Cloud; Android apps for shop floor workers with RFID/barcode/sensor integration; DevOps on Linux with Docker and Jenkins.
+**Java Backend**
+- Frameworks: Spring Boot, Spring Cloud, Spring Security
+- Data Access: MyBatis, JPA/Hibernate, MySQL, Redis
+- Services: REST APIs, WebSocket, Microservices
+- Messaging: RabbitMQ, Kafka (basic)
 
-### [Live Streaming Commerce](projects/live-streaming-system/) — Live Shopping Platform (2015–2018)
-Multi-technology platform: .NET/C# backend, Node.js services, Android NDK client, real-time streaming via WebRTC/HLS. Supported concurrent live broadcasts with viewer interaction.
+### Secondary Skills (Supporting Expertise)
 
-### [IoT Solutions](projects/iot-solutions/) — Industrial & Consumer IoT
-Collection of Android + backend projects for smart lockers, forest patrol, energy management, and visitor systems. Built hardware SDKs, Vue.js dashboards, and Spring Boot APIs.
+**Full-stack & Web**
+- Frontend: Vue.js, JavaScript, HTML/CSS
+- Backend: Node.js, Express, .NET Framework
+- Real-time: Socket.IO, WebSocket
+
+**DevOps & Infrastructure**
+- CI/CD: Jenkins, GitHub Actions, Docker
+- Web Server: Nginx, IIS
+- OS: Linux (CentOS, Ubuntu), Windows Server
+- VCS: Git, GitHub, GitLab
+
+**Data & BI**
+- ETL: Kettle (Pentaho)
+- Visualization: PowerBI, FineReport
+- Databases: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB
+
+### Additional Skills (Value-Add)
+
+**AI / ML** (Thesis project & self-study)
+- Frameworks: PyTorch, TensorFlow, OpenCV
+- Models: YOLO, Diffusion Models, LLM integration
+- Tools: ComfyUI, Dify
+
+**Security Research** (Reverse engineering capability)
+- Tools: JADX, Xposed Framework
+- Skills: APK analysis, runtime hooking
+
+**Streaming** (Historical project experience)
+- Protocols: RTMP, HLS (M3U8), WebRTC
+- Processing: FFmpeg
+
+**IoT & Hardware** (Industrial project experience)
+- Protocols: UART, RS232/RS485, Modbus, MQTT
+- Devices: RFID, Barcode Scanners, Sensors
+
+**Development Tools**
+- IDE: Android Studio, IntelliJ IDEA, VS Code
+- AI Assistants: GitHub Copilot, Cursor
+- Collaboration: Jira, Confluence
 
 ---
 
-## Education
+## 💼 Professional Experience
 
-**Master of Computer and Information Sciences** — Auckland University of Technology, NZ (2024 – Feb 2026)  
-First Class Honours · GPA 8.25/9.0 · Research: AI, Computer Vision, Edge Computing
+### Auckland University of Technology (AUT) — *New Zealand*
+**Master's Student & AI Researcher** | Jul 2024 – Feb 2026
 
-**Bachelor of Software Engineering** — Hebei University of Science and Technology, China (2009 – 2013)  
-National Scholarship
+- **[ChatClothes](projects/chatclothes/)** — Developed diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction
+  - Optimized for edge deployment on Raspberry Pi 5 with full offline capability
+  - Integrated ComfyUI + Dify for workflow orchestration
+  - Thesis passed with First Class Honours; completed ahead of schedule
+
+### Chunxiao Technology Co., Ltd. — *China*
+**Technical Lead / Senior Software Engineer** | Jan 2013 – Jun 2024
+
+Promoted from Software Engineer to Technical Lead, leading cross-functional development teams.
+
+**Key Projects:**
+
+- **[Smart Factory Backend](projects/smart-factory/)** — Led microservice platform for textile manufacturing (2018–2024)
+  - Architected Spring Boot + Spring Cloud backend supporting 5+ factory sites
+  - Long-running production deployment with Docker, Jenkins, Nginx on Linux
+  - Integrated IoT devices (RFID, barcode scanners, conveyors, electronic scales)
+  - Improved production efficiency by 30%+ across manufacturing bases
+
+- **[Enterprise Messaging Platform](projects/enterprise-messaging/)** — Core developer for internal IM system (2014–2023)
+  - Built Android client using NDK-based TCP/UDP achieving <200ms message latency
+  - Developed backend with Spring Cloud supporting 10,000+ DAU
+  - Processed 500K+ messages daily with cross-platform support (Android, Web, PC)
+  - Implemented BI analytics with Kettle ETL, PowerBI dashboards, FineReport
+
+- **[Live Streaming Commerce System](projects/live-streaming-system/)** — Full-stack developer (2015–2018)
+  - Built multi-language platform: .NET (C#) + Node.js + C++ (NDK) + Python + Lua
+  - Implemented real-time streaming with WebSocket, Socket.IO, HLS/M3U8
+  - Delivered Android client and ASP.NET Web admin for 1,000+ concurrent viewers
+
+- **[Patent Search System](projects/patent-search-system/)** — .NET Desktop Developer (2014)
+  - Developed Windows Forms application using .NET Framework 2.0, C# 3.0
+  - Implemented full-text search with Lucene.NET 2.9 and SQL Server 2008
+  - Created Excel/PDF processing modules for patent document management
+
+- **[IoT Solutions](projects/iot-solutions/)** — Full-stack engineer for industrial and consumer IoT
+  - Developed Android apps with hardware integration for smart lockers, patrol systems, energy management
+  - Built Vue.js dashboards for real-time monitoring and data visualization
+  - Created reusable SDKs for hardware device control
 
 ---
 
-## Publications
+## 🚀 Featured Projects
 
-- Zhang, Y. et al. *ChatClothes: Conversational Virtual Try-On with Diffusion Models* — IVCNZ 2025 · [DOI](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
-- Zhang, Y. *ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models* — AUT Master's Thesis, 2025 · [Repository](http://hdl.handle.net/10292/20210)
+### 🤖 AI / Machine Learning
+| Project | Description | Tech Stack |
+|---------|-------------|------------|
+| [ChatClothes](projects/chatclothes/) | Multimodal virtual try-on with LLM control | PyTorch, Diffusion, YOLO, DeepSeek LLM, Raspberry Pi |
+| [Device Maintenance Prediction](projects/device-maintenance-prediction/) | Predictive maintenance with ML | Python, Scikit-learn, Time Series |
+| [Chinese Herbal Recognition](projects/chinese-herbal-recognition/) | TCM image classification platform | PyTorch, OpenCV, Flask |
+
+### 📱 Android & Mobile
+| Project | Description | Highlights |
+|---------|-------------|------------|
+| [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 10K+ DAU | NDK, <200ms latency, Reverse Engineering |
+| [Smart Factory Mobile](projects/smart-factory/) | Industrial IoT Android apps | RFID, offline-first, hardware integration |
+| [Forest Patrol](projects/forest-patrol-inspection/) | GIS app for forest inspections | Offline maps, GPS tracking, field data |
+| [Picture Book Locker](projects/picture-book-locker/) | Smart library locker system | Hardware control, REST API, sensors |
+| [Live Streaming](projects/live-streaming-system/) | Live commerce platform | Multi-language, WebSocket, HLS/M3U8 |
+
+### ☕ Backend & Infrastructure
+| Project | Description | Highlights |
+|---------|-------------|------------|
+| [Smart Factory Backend](projects/smart-factory/) | Microservices for manufacturing | 5+ sites, Docker, Jenkins, Nginx |
+| [Broadcast Control](projects/broadcast-control/) | Digital signage management | MQTT, remote deployment, ad scheduling |
+| [Visit System](projects/visit-system/) | Visitor management with face recognition | Face recognition, access control |
+| [Patent Search System](projects/patent-search-system/) | .NET patent document management | .NET 2.0, Lucene.NET, SQL Server 2008 |
+
+### 🔧 DevOps & Data
+| Project | Description | Highlights |
+|---------|-------------|------------|
+| [Enterprise Messaging BI](projects/enterprise-messaging/) | BI and analytics infrastructure | Kettle ETL, PowerBI, FineReport |
+| [Smart Factory DevOps](projects/smart-factory/) | CI/CD and infrastructure | Jenkins, Docker, Kubernetes, Nginx |
+
+---
+
+## 🎓 Education
+
+**Master of Computer and Information Sciences**  
+Auckland University of Technology (AUT), New Zealand | 2024 – Feb 2026
+- First Class Honours · GPA 8.25/9.0
+- Research Focus: AI, Computer Vision, Edge Computing
+- Thesis: ChatClothes Virtual Try-On System — passed ahead of schedule
+
+**Bachelor of Software Engineering**  
+Hebei University of Science and Technology, China | 2009 – 2013
+- National Scholarship recipient
+
+---
+
+## 📄 Publications
+
+- Zhang, Y. et al. **ChatClothes: Conversational Virtual Try-On with Diffusion Models** — IVCNZ 2025 · [DOI 10.1109/IVCNZ67716.2025.11281834](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
+- Zhang, Y. **ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models** — AUT Master's Thesis, 2025 · [AUT Repository](http://hdl.handle.net/10292/20210)
+
+---
+
+## 📊 GitHub Stats
+
+- **16+** Production Projects
+- **10+** Years Software Development Experience
+- **6+** Industrial IoT Deployments
+- **Enterprise-scale** Systems Delivered (10,000+ DAU)
 
 ---
 
