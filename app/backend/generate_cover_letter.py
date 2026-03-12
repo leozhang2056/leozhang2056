@@ -187,8 +187,7 @@ def build_cover_letter_content(
         body2 = ' '.join(body2_parts)
 
         closing = (
-            f'I would welcome the opportunity to discuss how my experience can contribute to {company_name}. '
-            f'I am available for an interview at your convenience and can be reached at {email} or {phone}.'
+            f'I would welcome the opportunity to discuss how my experience can contribute to {company_name}.'
         )
 
     else:  # zh
@@ -218,7 +217,6 @@ def build_cover_letter_content(
 
         closing = (
             f'我期待有机会进一步探讨如何为 {company_name} 做出贡献。'
-            f'如有面试意向，欢迎随时通过 {email} 或 {phone} 与我联系。'
         )
 
     return {

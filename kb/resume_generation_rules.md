@@ -1,4 +1,4 @@
-﻿# Career KB Resume Generation Rules
+# Career KB Resume Generation Rules
 # 简历生成规则
 
 > This file defines output behavior only.
@@ -37,11 +37,18 @@ Default length:
 
 ### Summary
 
-- 3-4 sentences
+- 4-5 lines preferred (concise but not too short)
 - One paragraph
 - Focus on role fit, core strengths, and domain relevance
 - Do not include visa status by default
 - Include dates or years only when the target output explicitly wants them
+- Must end with a complete sentence (no truncation artifacts)
+- Integrate matching highlights naturally into prose (do not add `Highlights:` label)
+- For developer roles, emphasize:
+  - fast execution / quick iteration
+  - strong self-management / ownership
+- Remove edge-related wording unless explicitly required by target JD:
+  - `edge AI`, `edge deployment`, `边缘部署`, `边缘计算`, `端侧`
 
 ### Skills
 
@@ -49,19 +56,33 @@ Default length:
 - Order by JD relevance
 - Prefer grouped skills over long raw lists
 - Remove weakly relevant or distracting skills
+- Do not show implementation labels like `JD Match`
+- For Android CV, use label `Android` (not `Android Development`)
+- AI-assisted development tools should default to:
+  - Cursor, GitHub Copilot, Claude Code, Antigravity, OpenCode
+- Keep rows visually balanced; avoid excessive wrap when possible
+- Include relevant practical skills such as `Reverse Engineering` and `.NET` when role-fit allows
 
 ### Experience
 
-- Select 3-5 projects or roles
+- Select at least 5 projects or roles
 - Use 2-4 bullets per item
 - Start bullets with strong action verbs
 - Include metrics when available
 - Prefer impact + technology + scope in each bullet
+- Always keep key projects:
+  - `chatclothes`
+  - `smart-factory`
+- For Android-targeted resumes, prioritize:
+  - `forest-patrol-inspection` (offline map/GIS relevance)
+- For developer roles, de-emphasize people-management wording
 
 ### Education
 
 - Keep concise
 - Include thesis or honors only if helpful for the target role
+- Use full name `Auckland University of Technology` (do not abbreviate to `AUT`)
+- Reduce awkward line breaks in institution rendering where possible
 
 ---
 
@@ -93,6 +114,11 @@ Adjust emphasis by target role:
 
 Do not force unrelated strengths into every version.
 
+Role auto-selection guidance:
+- Infer role from JD/title when role is not explicitly forced:
+  - `android` / `backend` / `ai` / `fullstack`
+- If JD page content is noisy (login pages, browser labels, share forms), avoid over-trusting extracted keywords and prefer title/manual keywords.
+
 ---
 
 ## 6. Validation Checklist
@@ -101,9 +127,11 @@ Do not force unrelated strengths into every version.
 - [ ] Selected skills match the JD
 - [ ] Selected projects support the target role
 - [ ] No unsupported metrics or titles were added
-- [ ] Summary is short and targeted
+- [ ] Summary is targeted, 4-5 lines, and ends as a complete sentence
 - [ ] Bullets use strong verbs
 - [ ] Timeline is internally consistent
+- [ ] No edge-related terms remain unless explicitly requested
+- [ ] No internal label artifacts (e.g., `JD Match`) are shown
 
 ---
 
@@ -111,7 +139,9 @@ Do not force unrelated strengths into every version.
 
 - Presentation style, colors, fonts, and layout belong to rendering templates, not to generation rules.
 - Human-oriented historical guidance lives in `templates/resume_generation_guide.md`.
+- Output behavior preference:
+  - Resume generation should keep PDF outputs and remove intermediate HTML files.
 
 ---
 
-*Version: 2026-03-09*
+*Version: 2026-03-12*

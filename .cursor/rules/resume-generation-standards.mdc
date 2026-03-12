@@ -1,0 +1,44 @@
+---
+description: Resume generation standards from recent hiring optimization sessions
+alwaysApply: true
+---
+
+# Resume Generation Standards
+
+Apply these when generating or adjusting CVs in this project.
+
+## Role and output
+- Infer role from JD input (`android` / `backend` / `ai` / `fullstack`) when user does not force a role.
+- Output filename must include company tag when provided.
+- Generate PDFs only; delete intermediate `.html` files after successful PDF generation.
+
+## Content priorities
+- Keep these key projects in CV project list: `chatclothes`, `smart-factory`.
+- For Android-targeted CVs, also prioritize `forest-patrol-inspection` (offline map/GIS relevance).
+- Do not include Publications section.
+- De-emphasize team-management wording for developer roles.
+
+## Summary rules
+- Summary should be ATS-friendly and match JD requirements.
+- Keep Summary around 4-5 lines (not too short), with complete final sentence.
+- Integrate highlights naturally into Summary text; do not add explicit "Highlights:" label.
+- Remove edge-related wording (e.g., edge AI, edge deployment, 边缘部署/边缘计算/端侧).
+- Emphasize fast execution/iteration and strong self-management for developer roles.
+
+## Key Skills rules
+- Do not show labels like `JD Match`.
+- Use `Android` label (not `Android Development`) for Android skills row.
+- Include AI-assisted development tools as:
+  `Cursor, GitHub Copilot, Claude Code, Antigravity, OpenCode`.
+- Prefer visually balanced one-line skill rows where possible.
+- Allow relevant skills such as `Reverse Engineering` and `.NET` when layout permits.
+
+## Education formatting
+- Use full name `Auckland University of Technology` (do not abbreviate to AUT).
+- Reduce awkward hard line breaks in school/company display where possible.
+
+## Continuous project evolution
+- After each CV generation session, extract stable improvements and persist them to project rules/config.
+- Prioritize codifying reusable changes (layout, wording, ranking, keyword filters) over one-off manual edits.
+- When a user gives repeated preferences, convert them into defaults in generator logic.
+- Keep generated outputs clean and consistent so future resumes benefit without re-specifying requirements.

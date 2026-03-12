@@ -1,4 +1,4 @@
-﻿# Resume Generation Prompt
+# Resume Generation Prompt
 # 简历生成执行提示词
 
 > Keep this prompt short. Put facts in the payload, not in the prompt.
@@ -24,11 +24,13 @@ Your job:
 
 Hard constraints:
 - Do not invent dates, metrics, titles, scope, team size, or technologies
-- Prefer 3-5 projects
+- Prefer at least 5 projects
 - Prefer 2-4 bullets per project
-- Summary must be 3-4 sentences
+- Summary should be 4-5 lines and end with a complete sentence
 - Use strong action verbs
 - Keep output traceable to the selected KB entries
+- Do not output internal helper labels like `JD Match`
+- Avoid edge-related terms unless explicitly required by the target JD
 ```
 
 ---
@@ -58,6 +60,8 @@ Requirements:
 - Use only KB facts
 - Include metrics when available
 - Keep bullets concise
+- Integrate highlights naturally into Summary prose (no explicit "Highlights:" tag)
+- For developer roles, emphasize fast execution and strong self-management
 - Do not explain your reasoning unless requested
 ```
 
@@ -122,6 +126,8 @@ Use only the hints relevant to the target role.
 - Backend: emphasize Spring Boot, APIs, databases, microservices, scalability, DevOps
 - AI/ML: emphasize model work, evaluation, deployment, experimentation, research output
 - Full-stack: emphasize cross-layer delivery and system integration
+- Keep these key projects whenever possible: `chatclothes`, `smart-factory`
+- For Android-focused outputs, prioritize `forest-patrol-inspection` for map/GIS relevance
 
 These are weighting hints, not additional facts.
 

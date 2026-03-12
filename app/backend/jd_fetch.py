@@ -194,6 +194,16 @@ def extract_keywords_from_text(text: str, max_keywords: int = 20) -> List[str]:
         "updated",
         "professional",
         "world",
+        # 职位站点导航/浏览器噪声词（避免误命中 JD）
+        "google",
+        "microsoft",
+        "apple",
+        "mozilla",
+        "chrome",
+        "edge",
+        "safari",
+        "firefox",
+        "smartrecruiters",
     }
 
     keywords: List[str] = []

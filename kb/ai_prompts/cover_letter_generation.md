@@ -29,6 +29,7 @@ Hard constraints:
 - Use first person
 - Tone: professional, direct, not sycophantic
 - Do not repeat the resume; tell a story instead
+- Do not repeat contact details in closing when contact is already shown in header
 ```
 
 ---
@@ -46,7 +47,7 @@ Structure:
 1. Opening paragraph: connect to role and company (1-2 sentences on why this role/company)
 2. Body paragraph 1: strongest technical evidence (1-2 projects, specific metrics)
 3. Body paragraph 2: broader experience / soft skills / unique value
-4. Closing: availability, next steps, contact
+4. Closing: value proposition + next steps (avoid duplicate contact line when header already includes contact)
 
 Requirements:
 - Optimize for JD match
@@ -54,6 +55,7 @@ Requirements:
 - Include 2-3 specific metrics or outcomes
 - Do not simply repeat resume bullets — synthesize them into a narrative
 - Keep it under 400 words
+- For developer roles, reflect fast execution and strong self-management where relevant
 - Do not explain your reasoning unless requested
 ```
 
@@ -101,11 +103,11 @@ Dear Hiring Manager,
 
 [Body paragraph 2 — broader value / soft skills]
 
-[Closing — availability and contact]
+[Closing — value proposition and next steps]
 
 Sincerely,
 [Full Name]
-[Email] | [Phone]
+[Email] | [Phone]  # optional when header already includes contact
 ```
 
 ---
@@ -133,4 +135,4 @@ These are narrative direction hints, not additional facts.
 
 ---
 
-*Version: 2026-03-10*
+*Version: 2026-03-12*
