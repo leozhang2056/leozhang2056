@@ -51,7 +51,7 @@ tech_stack:
   - C++
   - JavaScript
   - SQL
-  mobile:
+  android:
   - Android SDK
   - NDK
   - TCP/UDP

@@ -21,7 +21,8 @@ def validate_facts(file_path: Path) -> list:
     
     # 必需字段
     required = ["project_id", "name", "type", "timeline", "role", 
-                "summary", "highlights", "tech_stack", "keywords", "last_updated"]
+                "summary", "highlights", "tech_stack", "keywords", "last_updated",
+                "skills_demonstrated", "related_to_roles"]
     
     for field in required:
         if field not in data:

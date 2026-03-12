@@ -12,7 +12,7 @@ category:
 timeline:
   start: '2020'
   end: '2020'
-  duration_years: 1
+  duration_years: 0.5
 role: Project Manager, System Designer & Android Developer
 team_size: null
 company:
@@ -35,7 +35,7 @@ tech_stack:
   languages:
   - Java
   - Kotlin
-  mobile:
+  android:
   - Android SDK
   frontend: []
   backend: []

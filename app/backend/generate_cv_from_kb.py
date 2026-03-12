@@ -225,6 +225,9 @@ def _select_projects_with_relations(
 
     # 强制保留的“最重要项目”：无论角色/JD 如何，都必须出现（并置顶）
     pinned_ids = ["chatclothes", "smart-factory"]
+    # Android 场景下优先保留地图/GIS相关项目（如 EROAD 车队/位置类业务更匹配）
+    if role_type == "android":
+        pinned_ids.append("forest-patrol-inspection")
     max_projects = max(max_projects, len(pinned_ids))
 
     ranked = sort_projects(all_projects, role_type, jd_keywords, max_projects=max_projects)
@@ -340,7 +343,7 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 5, 'field': 'name'},
         {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端 & API',      'max': 5, 'field': 'name'},
         {'key': 'devops',         'label_en': 'DevOps & Cloud',       'label_zh': 'DevOps & 云',     'max': 5, 'field': 'name'},
-        {'key': 'iot_hardware',   'label_en': 'Edge / IoT',           'label_zh': '边缘 / IoT',      'max': 4, 'field': 'name'},
+        {'key': 'iot_hardware',   'label_en': 'IoT',                  'label_zh': 'IoT',             'max': 4, 'field': 'name'},
     ],
     'backend': [
         {'key': 'backend',        'label_en': 'Backend Engineering',  'label_zh': '后端开发',         'max': 8, 'field': 'name'},
@@ -381,6 +384,48 @@ def _extract_skill_names(category_data, max_count: int) -> List[str]:
                 names.extend([str(x) for x in v if x])
         return names[:max_count]
     return []
+
+
+def _remove_edge_terms(text: str) -> str:
+    """移除不希望出现的 edge/边缘相关表述。"""
+    if not isinstance(text, str) or not text:
+        return text
+
+    cleaned = text
+    patterns = [
+        r"<strong>\s*edge\s*</strong>",
+        r"<strong>\s*边缘\s*</strong>",
+        r"\bedge\s*ai\b",
+        r"\bedge[-\s]?deployment\b",
+        r"\bedge computing\b",
+        r"\bedge/latency constraints\b",
+        r"cloud/edge deployment",
+        r"边缘部署",
+        r"边缘计算",
+        r"端侧部署",
+        r"端侧",
+        r"边缘",
+    ]
+    for p in patterns:
+        cleaned = re.sub(p, "", cleaned, flags=re.IGNORECASE)
+
+    # 修复删除关键词后遗留的断裂短语
+    # 保留语义完整：cloud/edge deployment -> cloud deployment
+    cleaned = re.sub(r"cloud/\s*", "cloud ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\band cloud\s*$", "and cloud deployment", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\band cloud([,.;])", r"and cloud deployment\1", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r",?\s*and\s*\.", ".", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"/\s*$", "", cleaned)
+
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    cleaned = re.sub(r"\s+,", ",", cleaned)
+    cleaned = re.sub(r"\s+\.", ".", cleaned)
+    cleaned = re.sub(r"\(\s*\)", "", cleaned)
+    cleaned = re.sub(r"[,;/]\s*[,;/]", ", ", cleaned)
+    # 如果最终结尾没有句号，补一个句号，避免“被截断感”
+    if cleaned and re.search(r"[A-Za-z0-9\u4e00-\u9fff]$", cleaned):
+        cleaned = cleaned + "."
+    return cleaned.strip(" ,;")
 
 
 def generate_skills_section(
@@ -435,7 +480,8 @@ def generate_summary(
     如果对应 variant 不存在，降级到 default。
     """
     career = profile.get('career_identity', {})
-    summaries = career.get('summary_variants', {})
+    variants_key = 'summary_variants_zh' if lang == 'zh' else 'summary_variants'
+    summaries = career.get(variants_key) or career.get('summary_variants', {})
 
     role_map = {
         'android': 'android_focus',
@@ -503,53 +549,6 @@ def generate_summary(
             return s[:cut + 1]
         return s[:max_chars].rstrip(" ,;") + "…"
 
-    if lang == "zh":
-        if role_type == "android":
-            text = (
-                f"{text} "
-                "擅长 Kotlin 与 Android SDK 的生产级交付，理解 OOP 与常用设计模式，能独立完成从需求到发布的完整开发流程。"
-                "关注性能优化、稳定性与安全，具备问题定位与修复能力（bug、性能瓶颈与安全风险）。"
-                "有自动化测试与 CI/CD、代码评审与敏捷协作经验，能与产品、设计、QA 等跨职能团队高效合作。"
-                "熟练使用 AI 辅助开发工具（Cursor、GitHub Copilot、Claude Code）提升交付效率与质量。"
-            )
-        elif role_type == "backend":
-            text = (
-                f"{text} "
-                "熟悉 Java / Spring Boot 微服务与 REST API 设计，强调可维护性、可观测性与上线稳定性。"
-                "具备数据库与缓存（如 MySQL/Redis）性能优化思路，并有 CI/CD 与自动化发布实践。"
-                "能与多端团队协作推进需求落地，并以工程质量与交付结果为导向。"
-            )
-        elif role_type == "ai":
-            text = (
-                f"{text} "
-                "擅长将 LLM / RAG 与计算机视觉能力集成到可落地的应用系统中，并关注端侧/边缘部署约束。"
-                "熟悉 PyTorch 与工程化训练/推理流程，强调可复现、性能与成本权衡。"
-                "具备端到端交付能力：从数据/模型到服务化与上线。"
-            )
-    else:
-        if role_type == "android":
-            text = (
-                f"{text} "
-                "Strong Kotlin and Android SDK delivery in production, with solid OOP fundamentals and practical design patterns across the full Android development lifecycle. "
-                "Hands-on debugging for bugs, performance bottlenecks, and security issues; focused on reliability and maintainability. "
-                "Experienced with automated testing, CI/CD, code reviews, and Agile cross-functional collaboration with PM/design/QA. "
-                "Proficient in AI-assisted development (Cursor, GitHub Copilot, Claude Code) to improve delivery speed and code quality."
-            )
-        elif role_type == "backend":
-            text = (
-                f"{text} "
-                "Hands-on Java/Spring Boot microservices and REST APIs with a focus on maintainability, observability, and production stability. "
-                "Comfortable with database/cache performance tuning (e.g., MySQL/Redis) and CI/CD-driven delivery. "
-                "Collaborate effectively across teams to ship high-quality features end-to-end."
-            )
-        elif role_type == "ai":
-            text = (
-                f"{text} "
-                "Experienced in shipping LLM/RAG and computer-vision capabilities into real products, with attention to edge/latency constraints. "
-                "Strong PyTorch-based training/inference pipelines and practical trade-offs across quality, cost, and performance. "
-                "Own delivery end-to-end from data/model to deployment."
-            )
-
     # 若有 JD 关键词，将首次出现的位置加粗（避免重复强调）
     if jd_keywords:
         for kw in jd_keywords:
@@ -559,7 +558,13 @@ def generate_summary(
             kw_norm = str(kw).strip()
             if len(kw_norm) < 3:
                 continue
-            if kw_norm.lower() in {"new", "full", "time", "hours", "ago", "mid", "level", "information", "technology", "position", "posted", "behalf", "partner", "company", "currently"}:
+            if kw_norm.lower() in {
+                "new", "full", "time", "hours", "ago", "mid", "level",
+                "information", "technology", "position", "posted", "behalf",
+                "partner", "company", "currently",
+                "edge", "chrome", "firefox", "safari",
+                "google", "microsoft", "apple", "mozilla", "smartrecruiters"
+            }:
                 continue
             if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
                 text = _bold_first(text, kw_norm)
@@ -567,7 +572,7 @@ def generate_summary(
     # 控制 Summary 长度（目标：4–5 行左右）
     text = _trim_summary(text, 560 if lang == "en" else 380)
 
-    return text
+    return _remove_edge_terms(text)
 
 
 # ---------------------------------------------------------------------------
@@ -775,6 +780,8 @@ def generate_project_bullet_points(
             h for h in highlights
             if isinstance(h, str) and h.strip() and not _is_management_bullet(h)
         ]
+        bullets = [_remove_edge_terms(b) for b in bullets]
+        bullets = [b for b in bullets if b]
         if bullets:
             return bullets[:max_bullets]
 
@@ -782,6 +789,8 @@ def generate_project_bullet_points(
             i for i in project.get('impact', [])
             if isinstance(i, str) and not _is_management_bullet(i)
         ]
+        impact = [_remove_edge_terms(b) for b in impact]
+        impact = [b for b in impact if b]
         if impact:
             return impact[:max_bullets]
 
@@ -789,12 +798,16 @@ def generate_project_bullet_points(
         for item in project.get('achievements', []):
             if isinstance(item, str):
                 if not _is_management_bullet(item):
-                    processed.append(item)
+                    cleaned_item = _remove_edge_terms(item)
+                    if cleaned_item:
+                        processed.append(cleaned_item)
             elif isinstance(item, dict):
                 desc = item.get('description', '')
                 if desc:
                     if not _is_management_bullet(desc):
-                        processed.append(desc)
+                        cleaned_desc = _remove_edge_terms(desc)
+                        if cleaned_desc:
+                            processed.append(cleaned_desc)
         if processed:
             return processed[:max_bullets]
 
@@ -813,7 +826,13 @@ def generate_project_bullet_points(
 
     # 如果从 bullets 库已经拿到了足够的条目，直接返回
     if len(bullets_from_lib) >= max_bullets:
-        return [b for b in bullets_from_lib if not _is_management_bullet(b)][:max_bullets]
+        cleaned = [
+            _remove_edge_terms(b)
+            for b in bullets_from_lib
+            if not _is_management_bullet(b)
+        ]
+        cleaned = [b for b in cleaned if b]
+        return cleaned[:max_bullets]
 
     remaining = max_bullets - len(bullets_from_lib)
 
@@ -823,11 +842,15 @@ def generate_project_bullet_points(
         h for h in highlights
         if isinstance(h, str) and h.strip() and not _is_management_bullet(h)
     ]
+    fact_bullets = [_remove_edge_terms(b) for b in fact_bullets]
+    fact_bullets = [b for b in fact_bullets if b]
     if not fact_bullets:
         impact = [
             i for i in project.get('impact', [])
             if isinstance(i, str) and not _is_management_bullet(i)
         ]
+        impact = [_remove_edge_terms(b) for b in impact]
+        impact = [b for b in impact if b]
         if impact:
             fact_bullets = impact
         else:
@@ -835,22 +858,34 @@ def generate_project_bullet_points(
             for item in project.get('achievements', []):
                 if isinstance(item, str):
                     if not _is_management_bullet(item):
-                        processed.append(item)
+                        cleaned_item = _remove_edge_terms(item)
+                        if cleaned_item:
+                            processed.append(cleaned_item)
                 elif isinstance(item, dict):
                     desc = item.get('description', '')
                     if desc:
                         if not _is_management_bullet(desc):
-                            processed.append(desc)
+                            cleaned_desc = _remove_edge_terms(desc)
+                            if cleaned_desc:
+                                processed.append(cleaned_desc)
             fact_bullets = processed
 
     combined: List[str] = []
-    combined.extend([b for b in bullets_from_lib if not _is_management_bullet(b)])
+    combined.extend(
+        [
+            _remove_edge_terms(b)
+            for b in bullets_from_lib
+            if not _is_management_bullet(b)
+        ]
+    )
+    combined = [b for b in combined if b]
     for b in fact_bullets:
         if len(combined) >= max_bullets:
             break
         # 简单去重
-        if b not in combined:
-            combined.append(b)
+        cleaned_b = _remove_edge_terms(b)
+        if cleaned_b and cleaned_b not in combined:
+            combined.append(cleaned_b)
 
     if not combined:
         combined = ['Developed and delivered full solution independently.']
@@ -927,6 +962,7 @@ def generate_experience_section(
             overview = overview_raw.strip().split('\n')[0][:160]
         else:
             overview = ''
+        overview = _remove_edge_terms(overview)
 
         # Bullet points
         bullets = generate_project_bullet_points(

@@ -69,16 +69,16 @@ features:
 - Local cache/retry/offline buffering
 - Multi-site gateway operations
 metrics:
-- value: '1'
-  label: :N
+- value: '1:N'
+  label: gateway-to-breaker
   description: One gateway controls multiple serial breakers
   unit: gateway-to-breaker
 - value: Real-time
   label: telemetry
   description: Current/voltage/power/status uplink to cloud
   unit: telemetry
-- value: '24'
-  label: /7
+- value: 24/7
+  label: operation
   description: Gateway edge service stability
   unit: operation
 - value: Multi-site

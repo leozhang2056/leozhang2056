@@ -57,6 +57,32 @@ career_identity:
       MyBatis, and microservice architecture. Built and maintained enterprise systems across 
       manufacturing, messaging, and IoT.
 
+  summary_variants_zh:
+    default: >
+      全栈软件工程师，奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
+      拥有 10 年以上 Java 后端、Android 开发、AI 集成与物联网系统经验，
+      交付过工业自动化、移动平台与边缘 AI 领域的企业级解决方案。
+      精通 Spring Boot、Docker、PyTorch 与微服务架构，具备 AI 应用、全栈系统与云/边缘部署的一线实战经验。
+
+    android_focus: >
+      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
+      10 年以上软件开发经验，专注于 Android 方向，交付过工业自动化、零售系统与消费类平台解决方案。
+      擅长 Kotlin 与 Android SDK 的生产级交付，理解 OOP 与常用设计模式，能独立完成从需求到发布的完整开发流程。
+      关注性能优化、稳定性与安全，具备 bug/性能瓶颈/安全风险的定位与修复能力。
+      有自动化测试、CI/CD、代码评审与敏捷跨职能协作经验，熟练使用 AI 辅助开发工具（Cursor、GitHub Copilot、Claude Code）提升交付效率与质量。
+
+    ai_focus: >
+      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业，研究方向为 AI 与计算机视觉。
+      具备 AI、边缘计算与云端部署经验，专长 LLM 应用、计算机视觉与物联网集成。
+      擅长将 LLM / RAG 与计算机视觉能力集成到可落地的应用系统，关注部署约束与推理性能。
+      熟悉 PyTorch 工程化训练/推理流程，强调可复现性与成本权衡，具备端到端交付能力。
+
+    java_focus: >
+      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
+      10 年以上 Java 后端与全栈开发经验，包括 Spring Boot、MyBatis 与微服务架构。
+      熟悉 REST API 设计，强调可维护性、可观测性与上线稳定性。
+      具备数据库与缓存（MySQL/Redis）性能优化实践，以及 CI/CD 与自动化发布经验，能与多端团队高效协作。
+
 education:
   - degree: Master of Computer and Information Sciences
     degree_cn: 计算机与信息科学硕士
