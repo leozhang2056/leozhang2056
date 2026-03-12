@@ -2,6 +2,11 @@
 templates/
 outputs/
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
 # Ignore IDE files
 .idea/
 *.iml
@@ -18,6 +23,9 @@ Thumbs.db
 # Ignore local environment files
 .env
 .env.local
+
+# LinkedIn cookies for JD fetch (never commit)
+.linkedin_cookies
 
 # Ignore build outputs
 build/

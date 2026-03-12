@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """
-使用 Playwright 将 HTML 转换为 PDF
-保持 LaTeX 模板风格和可点击链接
+HTML → PDF 工具 & 旧版模板 (LEGACY)
+
+当前角色定位：
+- `html_to_pdf(html_content, output_path)` 是推荐使用的通用「HTML 转 PDF」工具，
+  供 `generate_cv_from_kb.py`、`generate_cover_letter.py` 等主线调用。
+- 本文件内的 `generate_html()` 与 `main()` 中的硬编码简历模板属于早期版本，
+  内容已与 Career KB 主线不完全一致，仅作为参考 / 对比使用。
+
+如果要生成正式简历/求职信，请优先使用仓库根目录的统一入口：
+  python generate.py cv ...
+  python generate.py cl ...
 """
 
 import asyncio

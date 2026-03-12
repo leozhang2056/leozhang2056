@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 """
-Career KB PDF Resume Generator
-直接从 Career KB 数据生成专业格式 PDF 简历
+Career KB PDF Resume Generator (LEGACY)
+使用 ReportLab 直接排版生成 PDF 简历。
+
+说明：
+- 本文件中的 Summary / Skills / Experience 文案大部分为硬编码，
+  只在少量位置读取 `kb/profile.yaml` 等 KB 数据。
+- 当前推荐的主简历内容管线是：
+    app/backend/generate_cv_from_kb.py  →  HTML
+    generate_cv_html_to_pdf.html_to_pdf →  PDF
+  并通过根目录 `python generate.py cv ...` 调用。
+
+建议：
+- 如需继续维护 ReportLab 版本，可在后续改造为消费
+  `generate_cv_from_kb.py` 产出的统一结构化简历数据，仅负责「皮肤/排版」。
 """
 
 from reportlab.lib import colors
@@ -213,6 +225,7 @@ class CVGenerator:
             ]),
             ("Additional Capabilities", [
                 "<b>AI/ML:</b> PyTorch, TensorFlow, OpenCV, YOLO (thesis project)",
+                "<b>AI-Assisted Development:</b> Cursor, GitHub Copilot, Claude Code, Antigravity, OpenCode",
                 "<b>Security:</b> Reverse engineering with JADX, Xposed",
                 "<b>IoT:</b> RFID, barcode scanners, sensors, MQTT, Modbus"
             ])

@@ -1,7 +1,18 @@
 #!/usr/bin/env python3
 """
-Career KB LaTeX Resume Generator
-基于 LaTeX 模板生成专业简历
+Career KB LaTeX Resume Generator (LEGACY)
+基于 LaTeX 模板生成专业简历。
+
+说明：
+- 本脚本中的 Summary / Skills / Experience 内容基本为手写硬编码，
+  只少量读取 `kb/profile.yaml` 里的姓名和联系方式。
+- 目前推荐的简历内容管线是：
+    app/backend/generate_cv_from_kb.py  +  generate_cv_html_to_pdf.html_to_pdf
+  并通过根目录命令行入口 `python generate.py cv ...` 调用。
+
+建议：
+- 如需 LaTeX 版本，仅将本脚本视为「早期模板示例」，后续可以改为消费
+  由 `generate_cv_from_kb.py` 生成的统一结构化数据。
 """
 
 import yaml

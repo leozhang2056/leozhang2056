@@ -107,20 +107,28 @@ ai_ml:
       - Virtual try-on system
       - Image generation pipelines
 
-# AI Coding Tools
+# AI Coding Tools（海外主流 AI 辅助编码能力）
 ai_coding_tools:
   - name: Cursor
     level: expert
+    evidence:
+      - Daily AI-assisted coding, refactoring, and debugging
   - name: GitHub Copilot
     level: advanced
-  - name: Trae
+    evidence:
+      - In-IDE code completion and generation
+  - name: Claude Code
     level: advanced
-  - name: Qwen
+    evidence:
+      - AI coding assistant for planning, implementation, and refactoring
+  - name: Antigravity
     level: intermediate
-  - name: OpenAI API
+    evidence:
+      - AI-assisted coding workflows (tooling)
+  - name: OpenCode
     level: intermediate
-  - name: MCP
-    level: intermediate
+    evidence:
+      - AI-assisted coding workflows (tooling)
 
 # Android Development
 android:
@@ -143,6 +151,13 @@ android:
     evidence:
       - TCP/UDP protocol implementation
       - Low-latency messaging (<200ms)
+  
+  - name: Reverse Engineering
+    level: intermediate
+    evidence:
+      - JADX decompiler for APK analysis
+      - Xposed Framework for runtime hooking
+      - Security research and vulnerability analysis
     
   - name: MVVM/MVP Architecture
     level: expert
@@ -171,13 +186,6 @@ android:
     evidence:
       - Debugging and development
       - Device management
-  
-  - name: Reverse Engineering
-    level: intermediate
-    evidence:
-      - JADX decompiler for APK analysis
-      - Xposed Framework for runtime hooking
-      - Security research and vulnerability analysis
   
   - name: Android Security
     level: intermediate
@@ -539,6 +547,13 @@ system_admin:
       - Service management
 
 skill_groups:
+  ai_coding:
+    - Cursor
+    - GitHub Copilot
+    - Claude Code
+    - Antigravity
+    - OpenCode
+  
   android_development:
     - Android SDK
     - Kotlin
