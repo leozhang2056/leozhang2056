@@ -16,7 +16,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 - **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
 - **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
 - **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
-- **AI-Assisted Development**: Daily use of Cursor and GitHub Copilot for code generation, refactoring, and review — comfortable integrating AI tools into the full development workflow
+- **AI-Assisted Development**: Daily use of **Claude Code**, Cursor, and GitHub Copilot for code generation, refactoring, and review — comfortable integrating AI tools into the full development workflow
 - **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle) — value-add capabilities for complex projects
 
 ---
@@ -76,9 +76,9 @@ Proven track record leading technical teams, architecting scalable systems, depl
 - Devices: RFID, Barcode Scanners, Sensors
 
 **AI-Assisted Development**
-- Editors: Cursor (primary), VS Code with GitHub Copilot
+- Tools: **Claude Code** (primary), Cursor, GitHub Copilot
 - Workflow: AI-assisted code generation, refactoring, test writing, and code review
-- LLM tools: DeepSeek, ChatGPT, Claude — used for architecture planning and debugging
+- LLM tools: Claude, DeepSeek, ChatGPT — used for architecture planning and debugging
 - Built this repository's resume generation system entirely with AI-assisted coding
 
 **Development Tools**
