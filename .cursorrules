@@ -1,32 +1,129 @@
 # Career KB Project - AI Assistant Rules
 # 个人职业知识库项目 - AI 助手规则
 
+---
+
 ## 项目定位
-这是一个 AI 可读的结构化职业知识库，不是可运行的应用程序。
-核心目标：作为数据层支持 AI 驱动的简历生成和职业分析。
+
+这是一个 AI 可读的结构化职业知识库 + 简历生成系统。
+核心目标：作为数据层支持 AI 驱动的简历/求职信生成和面试准备。
+系统已完整实现：生成器、验证器、CLI 全部可用。
+
+---
+
+## 已确认的关键事实（绝对不得修改或质疑）
+
+| 字段 | 值 |
+|------|-----|
+| 姓名 | Yuchao Zhang（Leo Zhang） |
+| 毕业时间 | **February 2026** |
+| 学位 | Master of Computer and Information Sciences @ AUT |
+| 荣誉 | **First Class Honours，GPA 8.25/9.0** |
+| 工作经验 | **10+ years** |
+| 论文 | ChatClothes，DOI `10.1109/IVCNZ67716.2025.11281834` |
+| 论文提交 | 提前 6 个月提交（ahead of schedule by 6 months） |
+| 目标岗位 | Android / Java 后端 / AI/ML / 全栈（全方向覆盖） |
+| 面试语言 | **英文** |
+
+---
 
 ## 数据架构
-- projects/<project_id>/facts.yaml - 项目事实数据（核心数据源）
-- kb/profile.yaml - 个人档案和职业身份
-- kb/skills.yaml - 技能清单和熟练度
-- kb/bullets/*.yaml - 可复用要点库
-- kb/project_relations.yaml - 项目关联关系
-- kb/schema/*.yaml - 数据 Schema 定义
+
+### 核心数据文件（事实来源）
+- `projects/<project_id>/facts.yaml` — 项目事实数据（17 个真实项目）
+- `kb/profile.yaml` — 个人档案、Summary 变体、目标岗位
+- `kb/skills.yaml` — 技能清单（分组/熟练度/证据）
+- `kb/achievements.yaml` — 论文、奖项、证书
+- `kb/experience/` — 工作 / 研究经历（YAML）
+
+### 辅助数据文件
+- `kb/bullets/*.yaml` — 可复用要点库（按方向/岗位）
+- `kb/project_relations.yaml` — 项目关联关系（叙事线索）
+- `kb/schema/project_facts_schema.yaml` — 数据 Schema 定义（新增项目必须遵循）
+- `kb/resume_generation_rules.md` — 简历生成规则与约束
+- `kb/ai_input_spec.md` — AI 输入规范
+
+### 面试 Q&A 文件
+- `kb/interview_qa/index.yaml` — 题目索引
+- `kb/interview_qa/technical.yaml` — 技术题（要点）
+- `kb/interview_qa/behavioral.yaml` — 行为题（要点）
+- `kb/interview_qa/role_specific.yaml` — 岗位专项题（要点）
+- `kb/interview_qa/scripts.md` — 完整英文口语回答稿（33 题，可直接背诵）
+
+### 生成系统文件
+- `generate.py` — 统一 CLI 入口（所有生成操作从这里调用）
+- `app/backend/generate_cv_from_kb.py` — 核心简历生成器（从 KB 生成 Markdown）
+- `app/backend/generate_cover_letter.py` — 求职信生成器
+- `app/backend/validate.py` — KB 数据验证器
+- `app/backend/kb_query.py` — KB 查询工具
+- `app/backend/facts_normalizer.py` — 数据规范化（注意：内部会把 android→mobile，不影响 facts.yaml）
+- `app/backend/interview_qa_cli.py` — 面试 Q&A 命令行工具
+
+---
+
+## 17 个真实项目列表
+
+| project_id | 简述 |
+|---|---|
+| chatclothes | AI 服装推荐，IEEE 论文，DOI 已确认 |
+| smart-factory | 工业 IoT + AI 预测性维护 |
+| enterprise-messaging | 企业即时通讯（Android + Java 后端） |
+| broadcast-control | 电视台播出控制系统 |
+| visual-gateway | 视觉网关系统 |
+| boobit | 见 facts.yaml |
+| chinese-herbal-recognition | 中草药识别 AI |
+| device-maintenance-prediction | 设备维护预测 |
+| exhibition-robot | 展览机器人 |
+| forest-patrol-inspection | 森林巡检系统 |
+| iot-solutions | IoT 解决方案 |
+| live-streaming-system | 直播系统 |
+| patent-search-system | 专利检索系统 |
+| picture-book-locker | 绘本柜系统 |
+| school-attendance | 学校考勤系统 |
+| smart-power | 智慧电力系统 |
+| visit-system | 访客管理系统 |
+
+---
 
 ## AI 使用约束
-1. 只使用 kb/ 和 projects/ 中已存在的数据
-2. 绝不编造项目、技能或量化指标
-3. 所有 resume 内容必须从 bullets/ 或 facts.yaml 生成
-4. 使用 project_relations.yaml 建立项目间的叙事联系
+
+### 绝对禁止
+1. 编造不存在的项目、公司、职责、技能
+2. 编造量化指标或成果（如把"提升了性能"写成"提升了 40%"）
+3. 把"熟悉/了解"升级成"负责/主导"
+4. 修改已确认的关键事实（毕业时间、GPA、DOI 等）
+5. 在没有读取 KB 数据的情况下生成简历内容
+
+### 必须遵守
+1. 所有 resume 内容必须从 `kb/` 或 `projects/*/facts.yaml` 生成
+2. 修改 `facts.yaml` 后**必须**运行 `python app/backend/validate.py`
+3. 新增项目**必须**遵循 `kb/schema/project_facts_schema.yaml`
+4. 新增 bullets 必须包含 `id, category, tags, variants, evidence`
+5. 如果 KB 中缺少信息，输出 `MISSING_INFO`，提示用户补充后再生成
+
+---
 
 ## 简历生成工作流
-1. 读取 JD → 提取关键词
-2. 匹配 projects/ 中相关项目（通过 keywords 和 related_to_roles）
-3. 从 bullets/ 选择匹配的要点变体
-4. 结合 project_relations 中的叙事线索
-5. 生成结构化简历内容
 
-## 文件修改规范
-- 修改 facts.yaml 后必须运行: python app/backend/validate.py
-- 新增项目必须遵循 kb/schema/project_facts_schema.yaml
-- 新增 bullets 必须包含 id, category, tags, variants, evidence
+1. 读取 JD → 提取关键词和岗位信号
+2. 匹配 `projects/` 中相关项目（通过 `keywords` 和 `related_to_roles`）
+3. 从 `kb/bullets/` 选择匹配的要点变体
+4. 结合 `kb/project_relations.yaml` 中的叙事线索
+5. 生成结构化简历内容
+6. 运行 `python app/backend/validate.py` 验证
+
+## 快速命令参考
+
+```bash
+# 验证 KB 数据完整性
+python app/backend/validate.py
+
+# 生成 Android 岗位简历
+python generate.py cv --role android
+
+# 生成 Backend 岗位简历
+python generate.py cv --role backend
+
+# 面试 Q&A CLI
+python app/backend/interview_qa_cli.py
+```
