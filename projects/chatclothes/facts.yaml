@@ -227,7 +227,7 @@ evidence:
     date: "2025-04"
     description: Master's thesis submitted and passed 6 months early
     url: "http://hdl.handle.net/10292/20210"
-  doi: "10.1109/IVCNZ67716.2025.11281834"
+    doi: "10.1109/IVCNZ67716.2025.11281834"
   - type: demo
     status: available
     description: Working demonstration with full functionality

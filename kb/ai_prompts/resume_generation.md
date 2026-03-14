@@ -135,12 +135,13 @@ These are weighting hints, not additional facts.
 
 ## 6. Recommended Pipeline
 
-1. Build compact payload from KB
-2. Run selection pass
-3. Review warnings such as `MISSING_INFO` or `FACT_CONFLICT`
-4. Run final generation pass
-5. Render with template
+1. Gather company context from JD/company page (business domain, product context, culture/values, stack signals)
+2. Build compact payload from KB + company context
+3. Run selection pass
+4. Review warnings such as `MISSING_INFO` or `FACT_CONFLICT`
+5. Run final generation pass with explicit company-fit language
+6. Render with template
 
 ---
 
-*Version: 2026-03-09*
+*Version: 2026-03-13*

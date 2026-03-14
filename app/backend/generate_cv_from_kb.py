@@ -223,14 +223,20 @@ def _select_projects_with_relations(
     if not all_projects:
         return []
 
+    # 需要排除/替换的项目（会话偏好）
+    excluded_ids = {"exhibition-robot"}
+
     # 强制保留的“最重要项目”：无论角色/JD 如何，都必须出现（并置顶）
     pinned_ids = ["chatclothes", "smart-factory"]
     # Android 场景下优先保留地图/GIS相关项目（如 EROAD 车队/位置类业务更匹配）
     if role_type == "android":
         pinned_ids.append("forest-patrol-inspection")
+    # 优先替换展会机器人为更相关项目（智慧电力/IoT）
+    preferred_replacements = ["smart-power", "iot-solutions"]
     max_projects = max(max_projects, len(pinned_ids))
 
     ranked = sort_projects(all_projects, role_type, jd_keywords, max_projects=max_projects)
+    ranked = [p for p in ranked if _build_project_id(p) not in excluded_ids]
     # 在任何情况下都保证 pinned 项目在列表内且置顶
     id_to_project: Dict[str, Dict] = {}
     for p in all_projects:
@@ -245,12 +251,17 @@ def _select_projects_with_relations(
             p = items_by_id.get(pid) or id_to_project.get(pid)
             if p:
                 pinned.append(p)
+        replacements: List[Dict] = []
+        for pid in preferred_replacements:
+            p = items_by_id.get(pid) or id_to_project.get(pid)
+            if p:
+                replacements.append(p)
         # 去重并保持原顺序（先 pinned，再 items）
         seen: set[str] = set()
         out: List[Dict] = []
-        for p in pinned + items:
+        for p in pinned + replacements + items:
             pid = _build_project_id(p)
-            if not pid or pid in seen:
+            if not pid or pid in seen or pid in excluded_ids:
                 continue
             seen.add(pid)
             out.append(p)
@@ -1559,9 +1570,12 @@ async def generate_cv_from_kb(
     max_projects = max(int(max_projects or 0), 5)
 
     today = datetime.now().strftime('%Y%m%d')
+    today_dir = datetime.now().strftime('%Y-%m-%d')
     repo_root = Path(__file__).parent.parent.parent
     outputs_dir = repo_root / 'outputs'
     outputs_dir.mkdir(exist_ok=True)
+    dated_outputs_dir = outputs_dir / today_dir
+    dated_outputs_dir.mkdir(exist_ok=True)
 
     if output_path:
         en_path = str(output_path)
@@ -1570,8 +1584,8 @@ async def generate_cv_from_kb(
         role_tag_lower = role_type.lower()
         company_slug = _slugify_company(company_name)
         suffix = f"_{company_slug}" if company_slug else ""
-        en_path = str(outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}.pdf')
-        zh_path = str(outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}_CN.pdf')
+        en_path = str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}.pdf')
+        zh_path = str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}_CN.pdf')
 
     role_tag = role_type.upper()
     print(f"\nGenerating CV [{role_tag}] from Career KB...")

@@ -140,6 +140,7 @@ Role auto-selection guidance:
 - Presentation style, colors, fonts, and layout belong to rendering templates, not to generation rules.
 - Human-oriented historical guidance lives in `templates/resume_generation_guide.md`.
 - Output behavior preference:
+  - Resume generation should save outputs in `outputs/YYYY-MM-DD/`.
   - Resume generation should keep PDF outputs and remove intermediate HTML files.
 
 ---

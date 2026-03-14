@@ -72,7 +72,38 @@ def _pick_top_projects(
     n: int = 2,
 ) -> List[Dict]:
     """选出最相关的 n 个项目用于 Cover Letter 叙述"""
-    return sort_projects(all_projects, role_type, jd_keywords, max_projects=n)
+    ranked = sort_projects(all_projects, role_type, jd_keywords, max_projects=max(n + 3, 5))
+    by_id = {str(p.get("project_id") or p.get("_project_dir") or ""): p for p in all_projects}
+
+    # 会话偏好：
+    # - fullstack 叙事优先 smart-factory / iot-solutions，弱化 chatclothes
+    # - 其他角色维持 chatclothes + smart-factory
+    preferred = []
+    if role_type == "fullstack":
+        preferred_order = ("smart-factory", "iot-solutions", "chatclothes")
+    else:
+        preferred_order = ("chatclothes", "smart-factory")
+
+    for pid in preferred_order:
+        p = by_id.get(pid)
+        if p:
+            preferred.append(p)
+
+    seen = set()
+    out: List[Dict] = []
+    for p in preferred + ranked:
+        pid = str(p.get("project_id") or p.get("_project_dir") or "")
+        if not pid or pid in seen:
+            continue
+        # cover letter 中默认不使用 enterprise-messaging 作为主叙事项目
+        if pid == "enterprise-messaging":
+            continue
+        seen.add(pid)
+        out.append(p)
+        if len(out) >= n:
+            break
+
+    return out[:n]
 
 
 def _best_metrics(project: Dict) -> List[str]:
@@ -181,10 +212,38 @@ def build_cover_letter_content(
                if proj2_name else '')
         )
 
-        body2_parts = [summary_text[:300] + '...'] if len(summary_text) > 300 else [summary_text]
-        if pub_note:
-            body2_parts.append(pub_note)
-        body2 = ' '.join(body2_parts)
+        # 第三段专注“岗位匹配能力”，避免与项目段重复
+        role_match_map = {
+            'android': (
+                'For this role, I bring production Android delivery experience across API integration, '
+                'testing discipline, and CI/CD-driven release workflows, plus strong collaboration with product and design.'
+            ),
+            'backend': (
+                'For this role, I bring strong backend engineering depth in Java/Spring APIs, data-layer reliability, '
+                'and pragmatic delivery with code reviews, testing, and CI/CD.'
+            ),
+            'ai': (
+                'For this role, I bring practical AI engineering experience with end-to-end implementation, '
+                'evaluation, and production-focused delivery with clear technical communication.'
+            ),
+            'fullstack': (
+                'For this role, I bring hands-on full-stack delivery across frontend, backend APIs, and cloud workflows. '
+                'I write maintainable code, value test automation and code reviews, and collaborate effectively in Agile teams. '
+                'I am fast in execution, strong in self-management, and comfortable driving work from ambiguity to reliable outcomes.'
+            ),
+        }
+        body2 = role_match_map.get(role_type, role_match_map['fullstack'])
+        # Company-fit highlights: add non-resume narrative hooks without inventing hard facts
+        company_lower = (company_name or '').lower()
+        if 'theta' in company_lower:
+            body2 = (
+                f'{body2} '
+                'What especially motivates me about Theta is your pragmatic consulting culture and focus on secure, mission-critical systems. '
+                'I enjoy working closely with stakeholders, translating technical trade-offs clearly for non-technical audiences, '
+                'and continuously improving engineering practices in fast-moving environments.'
+            )
+        if pub_note and role_type == 'ai':
+            body2 = f'{body2} {pub_note}'
 
         closing = (
             f'I would welcome the opportunity to discuss how my experience can contribute to {company_name}.'
@@ -210,10 +269,34 @@ def build_cover_letter_content(
             + (f'此外，在 {proj2_name} 项目中，我积累了丰富的相关技术经验。' if proj2_name else '')
         )
 
-        body2_parts = [summary_text[:300] + '……'] if len(summary_text) > 300 else [summary_text]
-        if pub_note:
-            body2_parts.append(pub_note)
-        body2 = ''.join(body2_parts)
+        # 第三段专注“岗位匹配能力”，避免与项目段重复
+        role_match_map_zh = {
+            'android': (
+                '针对该岗位，我具备面向生产环境的 Android 交付经验，熟悉 API 集成、测试质量控制与 CI/CD 发布流程，'
+                '并能与产品、设计和测试团队高效协作。'
+            ),
+            'backend': (
+                '针对该岗位，我具备扎实的后端工程能力（Java/Spring/API/数据层），'
+                '注重可维护性、稳定性与可持续交付。'
+            ),
+            'ai': (
+                '针对该岗位，我具备 AI 工程端到端落地能力，能够在工程约束下平衡效果、性能与交付节奏。'
+            ),
+            'fullstack': (
+                '针对该岗位，我具备前后端一体化交付能力，注重代码可维护性、自动化测试、代码评审与敏捷协作。'
+                '我执行效率高、自我管理能力强，能在不确定需求下持续推进并稳定交付。'
+            ),
+        }
+        body2 = role_match_map_zh.get(role_type, role_match_map_zh['fullstack'])
+        company_lower = (company_name or '').lower()
+        if 'theta' in company_lower:
+            body2 = (
+                f'{body2}'
+                '我也非常认同 Theta 务实、以结果为导向的咨询文化，以及对关键系统安全性的重视。'
+                '我擅长与业务和非技术干系人沟通技术取舍，并在快节奏环境中持续优化工程实践。'
+            )
+        if pub_note and role_type == 'ai':
+            body2 = f'{body2}{pub_note}'
 
         closing = (
             f'我期待有机会进一步探讨如何为 {company_name} 做出贡献。'
@@ -400,13 +483,16 @@ async def generate_cover_letter(
 ):
     """生成 Cover Letter PDF"""
     today = datetime.now().strftime('%Y%m%d')
+    today_dir = datetime.now().strftime('%Y-%m-%d')
     repo_root   = Path(__file__).parent.parent.parent
     outputs_dir = repo_root / 'outputs'
     outputs_dir.mkdir(exist_ok=True)
+    dated_outputs_dir = outputs_dir / today_dir
+    dated_outputs_dir.mkdir(exist_ok=True)
 
     if not output_path:
         safe_company = re.sub(r'[^a-zA-Z0-9_-]', '_', company_name)[:20]
-        output_path = str(outputs_dir / f'CoverLetter_{safe_company}_{today}.pdf')
+        output_path = str(dated_outputs_dir / f'CoverLetter_{safe_company}_{today}.pdf')
 
     lang_suffix = '' if lang == 'en' else '_CN'
     pdf_path  = output_path.replace('.pdf', f'{lang_suffix}.pdf')
@@ -427,6 +513,11 @@ async def generate_cover_letter(
 
     await html_to_pdf(html, pdf_path)
     print(f"  PDF  → {pdf_path}  ({os.path.getsize(pdf_path)/1024:.1f} KB)")
+    # 清理中间产物：HTML
+    try:
+        os.remove(html_path)
+    except Exception:
+        pass
 
     return pdf_path
 

@@ -10,7 +10,10 @@ Apply these when generating or adjusting CVs in this project.
 ## Role and output
 - Infer role from JD input (`android` / `backend` / `ai` / `fullstack`) when user does not force a role.
 - Output filename must include company tag when provided.
+- Save resume outputs under dated folder: `outputs/YYYY-MM-DD/`.
 - Generate PDFs only; delete intermediate `.html` files after successful PDF generation.
+- Before writing resume/cover letter, gather company context first (business domain, tech stack, culture/values, role expectations).
+- Content must explicitly show company-fit, not only generic JD keyword match.
 
 ## Content priorities
 - Keep these key projects in CV project list: `chatclothes`, `smart-factory`.

@@ -127,12 +127,13 @@ These are narrative direction hints, not additional facts.
 
 ## 6. Recommended Pipeline
 
-1. Build compact payload from KB (same payload as resume)
-2. Run selection pass to identify top experiences and hooks
-3. Review warnings (`MISSING_INFO`, `FACT_CONFLICT`)
-4. Run cover letter generation pass
-5. Manually verify company name and any JD-specific references
+1. Gather company context first (mission/business model, technical environment, values/culture, role expectations)
+2. Build compact payload from KB + company context
+3. Run selection pass to identify top experiences and company hooks
+4. Review warnings (`MISSING_INFO`, `FACT_CONFLICT`)
+5. Run cover letter generation pass with explicit company-fit narrative
+6. Manually verify company name and JD/company references
 
 ---
 
-*Version: 2026-03-12*
+*Version: 2026-03-13*
