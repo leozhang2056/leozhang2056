@@ -23,6 +23,12 @@ Usage examples:
   python generate.py interview --category technical
   python generate.py interview --role android --search "NDK"
 Available roles: android | ai | backend | fullstack
+
+Output naming convention (auto, when --output is not specified):
+  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
+  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf
+  outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
+  The dated subfolder is created automatically if it does not exist.
 """
 
 import sys
