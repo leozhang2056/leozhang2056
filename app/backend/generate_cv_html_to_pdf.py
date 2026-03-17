@@ -14,6 +14,7 @@ HTML → PDF 工具 & 旧版模板 (LEGACY)
 """
 
 import asyncio
+import argparse
 from playwright.async_api import async_playwright
 import yaml
 import os
@@ -439,7 +440,21 @@ async def html_to_pdf(html_content, output_path):
 
 
 def main():
-    """主函数"""
+    """旧版模板主函数（需显式确认）"""
+    parser = argparse.ArgumentParser(description="LEGACY CV template generator")
+    parser.add_argument(
+        "--legacy-ok",
+        action="store_true",
+        help="Acknowledge this generates an outdated hardcoded template.",
+    )
+    args = parser.parse_args()
+
+    if not args.legacy_ok:
+        print("This is a legacy script with hardcoded resume content.")
+        print("Use unified pipeline instead: python generate.py cv ...")
+        print("If you still want the legacy output, run with --legacy-ok.")
+        return
+
     print("Generating HTML CV...")
     html_content = generate_html()
     

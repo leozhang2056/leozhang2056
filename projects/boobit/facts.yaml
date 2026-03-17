@@ -1,18 +1,44 @@
-project:
-  name: Boobit
-  type: Mobile App
-  category: Fintech / Cryptocurrency
-  status: Completed
-  start_date: 2022
-  end_date: 2022
-
+project_id: boobit
+name: Boobit Crypto Trading App
+name_cn: Boobit 数字货币交易应用
+type: Mobile App
+timeline:
+  start: "2022-01"
+  end: "2022-12"
 role: Android Developer
+role_cn: Android 开发工程师
+
+company:
+  name: Chunxiao Technology Co., Ltd.
+  industry: Software / Fintech
+
+summary: |
+  Built an Android cryptocurrency trading app supporting real-time market data,
+  token search, exchange, and recharge flows with a focus on security,
+  reliability, and responsive user experience.
+summary_cn: |
+  负责数字货币交易 Android 应用开发，支持行情实时更新、币种检索、兑换与充值流程，
+  重点保障安全性、稳定性与交互体验。
 
 overview: |
-  A cryptocurrency trading platform mobile application that enables users to 
-  query real-time market data, search for cryptocurrencies, and perform 
-  exchange and recharge operations. Built with focus on security, performance, 
+  A cryptocurrency trading platform mobile application that enables users to
+  query real-time market data, search for cryptocurrencies, and perform
+  exchange and recharge operations. Built with focus on security, performance,
   and user experience.
+overview_cn: |
+  一款数字货币交易平台 Android 应用，支持实时行情查询、币种搜索、兑换与充值，
+  兼顾安全、性能与用户体验。
+
+highlights:
+  - Implemented real-time market feed and price updates through WebSocket channels.
+  - Developed secure wallet-related data handling with encrypted local storage.
+  - Designed a clear trading workflow UI to reduce user operation complexity.
+  - Integrated recharge and exchange APIs with robust error handling and retries.
+highlights_cn:
+  - 基于 WebSocket 实现行情实时推送与价格更新。
+  - 通过加密本地存储提升钱包相关数据安全性。
+  - 优化交易流程交互，降低复杂操作成本。
+  - 集成充值与兑换接口，并完善错误处理与重试机制。
 
 tech_stack:
   languages:
@@ -44,19 +70,47 @@ architecture:
     - Data Layer (Repositories, API, Local DB)
 
 achievements:
-  - Implemented real-time market data updates via WebSocket
-  - Built secure wallet system with encryption for digital assets
-  - Designed intuitive UI for complex cryptocurrency trading operations
-  - Integrated multiple payment gateways for recharge functionality
+  - description: Implemented real-time market data updates with WebSocket channels.
+  - description: Built secure local storage flows for wallet and account data.
+  - description: Designed and delivered Android trading screens with clear UX states.
+  - description: Integrated recharge and exchange APIs with stable failure recovery.
 
 metrics:
-  features: Market query, Search, Exchange, Recharge, Wallet
-  platforms: Android
-  realtime: WebSocket market data
+  - label: "core features"
+    value: "5+"
+    description: "Market query, search, exchange, recharge, wallet flows delivered"
+  - label: "platform"
+    value: "Android"
+    description: "Production mobile client"
+  - label: "transport"
+    value: "WebSocket"
+    description: "Real-time market data updates"
 
 team:
   size: 1
   role: Sole Android Developer
 
+keywords:
+  - Android
+  - Kotlin
+  - WebSocket
+  - Fintech
+  - Cryptocurrency
+  - Secure Storage
+  - Mobile App
+
+skills_demonstrated:
+  - Android
+  - Kotlin
+  - API Integration
+  - Secure Storage
+  - Real-time Data
+
+related_to_roles:
+  - android
+  - fullstack
+
+last_updated: "2026-03-12"
+
 links:
-  images: projects/boobit/images/ 
+  images: projects/boobit/images/

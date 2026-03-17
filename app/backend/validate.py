@@ -3,6 +3,7 @@
 简单的 facts.yaml 验证脚本
 """
 
+import sys
 import yaml
 from pathlib import Path
 
@@ -31,10 +32,13 @@ def validate_facts(file_path: Path) -> list:
     # 验证 timeline
     if "timeline" in data:
         timeline = data["timeline"]
-        if not timeline.get("start"):
-            errors.append("timeline.start 为空")
-        if not timeline.get("end"):
-            errors.append("timeline.end 为空")
+        if isinstance(timeline, dict):
+            if not timeline.get("start"):
+                errors.append("timeline.start 为空")
+            if not timeline.get("end"):
+                errors.append("timeline.end 为空")
+        else:
+            errors.append("timeline 必须是对象")
     
     # 验证 metrics 格式
     if "metrics" in data and isinstance(data["metrics"], list):
@@ -49,6 +53,13 @@ def validate_facts(file_path: Path) -> list:
 
 
 def main():
+    # 尽量在 Windows 控制台下使用 UTF-8，避免输出编码问题。
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
     projects_dir = Path(__file__).parent.parent.parent / "projects"
     
     print("=" * 60)
@@ -68,18 +79,18 @@ def main():
         
         errors = validate_facts(facts_file)
         if errors:
-            print(f"\n❌ {project_dir.name}:")
+            print(f"\n[ERROR] {project_dir.name}:")
             for e in errors:
                 print(f"   - {e}")
             all_pass = False
         else:
-            print(f"✓ {project_dir.name}")
+            print(f"[OK] {project_dir.name}")
     
     print("\n" + "=" * 60)
     if all_pass:
-        print("✅ 所有项目验证通过！")
+        print("[PASS] 所有项目验证通过！")
     else:
-        print("❌ 存在验证错误")
+        print("[FAIL] 存在验证错误")
     print("=" * 60)
 
 

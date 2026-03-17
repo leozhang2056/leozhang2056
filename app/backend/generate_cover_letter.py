@@ -47,8 +47,8 @@ _ROLE_NARRATIVE_HINT = {
         'zh': '拥有 10 年以上企业级移动开发经验的高级 Android 工程师',
     },
     'ai': {
-        'en': 'AI/ML engineer with published research and hands-on edge deployment experience',
-        'zh': '具有学术发表经历和边缘 AI 部署经验的 AI/ML 工程师',
+        'en': 'AI/ML engineer with published research and strong production implementation experience',
+        'zh': '具有学术发表经历和扎实生产级落地经验的 AI/ML 工程师',
     },
     'backend': {
         'en': 'Backend engineer with 10+ years building high-scale Java microservices',

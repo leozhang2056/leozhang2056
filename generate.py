@@ -8,10 +8,10 @@ Usage examples:
   python generate.py cv --role android
 
   # Generate AI CV with JD keywords:
-  python generate.py cv --role ai --jd-keywords Python PyTorch ONNX "edge deployment"
+  python generate.py cv --role ai --jd-keywords Python PyTorch ONNX "model optimization"
 
   # Generate Cover Letter:
-  python generate.py cl --role android --company "Entelect" --title "Senior Android Engineer"
+  python generate.py cl --role auto --jd-url "<job-url>" --company "Entelect" --title "Senior Android Engineer"
 
   # Generate CV with custom output path:
   python generate.py cv --role backend --output outputs/my_resume.pdf
@@ -22,7 +22,7 @@ Usage examples:
   # List interview Q&A (by category / role / keyword):
   python generate.py interview --category technical
   python generate.py interview --role android --search "NDK"
-Available roles: android | ai | backend | fullstack
+Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
@@ -35,6 +35,7 @@ import sys
 import argparse
 import asyncio
 from pathlib import Path
+from urllib.parse import urlparse
 
 # Ensure app/backend is importable regardless of cwd
 _BACKEND = Path(__file__).parent / 'app' / 'backend'
@@ -94,9 +95,9 @@ def build_parser() -> argparse.ArgumentParser:
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
     cl_parser.add_argument(
-        '--role', default='android',
-        choices=['android', 'ai', 'backend', 'fullstack'],
-        help='Target role type (default: android)',
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Target role type (default: auto; inferred from JD/title)',
     )
     cl_parser.add_argument(
         '--lang', default='en',
@@ -282,17 +283,71 @@ def _auto_role(args) -> str:
     return inferred
 
 
+def _auto_company(args) -> str:
+    """
+    If --company is not explicitly set, try infer company name from --jd-url.
+    """
+    company = (getattr(args, "company", None) or "").strip()
+    if company and company.lower() not in {"the company", "target company"}:
+        return company
+
+    jd_url = (getattr(args, "jd_url", None) or "").strip()
+    if not jd_url:
+        return company or "the company"
+
+    try:
+        parsed = urlparse(jd_url)
+        host = (parsed.netloc or "").lower()
+        path = (parsed.path or "").strip("/")
+    except Exception:
+        return company or "the company"
+
+    # Workday hosts like eroadgroup.wd3.myworkdayjobs.com -> eroadgroup
+    if ".myworkdayjobs.com" in host:
+        org = host.split(".")[0]
+        if org:
+            inferred = org.replace("-", " ").replace("_", " ").title()
+            print(f"Auto-inferred company from JD URL: {inferred}")
+            return inferred
+
+    # Greenhouse format: /<company>/jobs/<id>
+    if "greenhouse.io" in host and path:
+        first = path.split("/")[0]
+        if first and first not in {"job-boards", "boards"}:
+            inferred = first.replace("-", " ").replace("_", " ").title()
+            print(f"Auto-inferred company from JD URL: {inferred}")
+            return inferred
+
+    # SmartRecruiters: jobs.smartrecruiters.com/<Company>/...
+    if "smartrecruiters.com" in host and path:
+        first = path.split("/")[0]
+        if first:
+            inferred = first.replace("-", " ").replace("_", " ").title()
+            print(f"Auto-inferred company from JD URL: {inferred}")
+            return inferred
+
+    # Generic fallback: first host label
+    root = host.split(".")[0] if host else ""
+    if root and root not in {"www", "jobs", "careers", "apply"}:
+        inferred = root.replace("-", " ").replace("_", " ").title()
+        print(f"Auto-inferred company from JD URL: {inferred}")
+        return inferred
+
+    return company or "the company"
+
+
 async def run(args) -> None:
     if args.command == 'cv':
         from generate_cv_from_kb import generate_cv_from_kb
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
+        company = _auto_company(args)
         en_path, zh_path = await generate_cv_from_kb(
             output_path=args.output,
             role_type=role,
             jd_keywords=jd_keywords or [],
             max_projects=args.max_projects,
-            company_name=getattr(args, 'company', None),
+            company_name=company,
             target_role_title=getattr(args, 'title', None),
         )
         print(f"\nDone.")
@@ -302,11 +357,13 @@ async def run(args) -> None:
     elif args.command == 'cl':
         from generate_cover_letter import generate_cover_letter
         jd_keywords = _auto_keywords_from_jd(args)
+        role = _auto_role(args)
+        company = _auto_company(args)
         pdf_path = await generate_cover_letter(
             output_path=args.output,
-            role_type=args.role,
+            role_type=role,
             lang=args.lang,
-            company_name=args.company,
+            company_name=company,
             target_role_title=args.title,
             jd_keywords=jd_keywords or [],
         )

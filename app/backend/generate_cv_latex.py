@@ -17,6 +17,7 @@ Career KB LaTeX Resume Generator (LEGACY)
 
 import yaml
 import os
+import argparse
 from datetime import datetime
 
 
@@ -157,7 +158,21 @@ National Scholarship recipient. Trained in Java, databases, and backend system d
 
 
 def main():
-    """主函数"""
+    """旧版 LaTeX 模板主函数（需显式确认）"""
+    parser = argparse.ArgumentParser(description="LEGACY LaTeX CV template generator")
+    parser.add_argument(
+        "--legacy-ok",
+        action="store_true",
+        help="Acknowledge this generates an outdated hardcoded template.",
+    )
+    args = parser.parse_args()
+
+    if not args.legacy_ok:
+        print("This is a legacy script with hardcoded resume content.")
+        print("Use unified pipeline instead: python generate.py cv ...")
+        print("If you still want the legacy .tex output, run with --legacy-ok.")
+        return
+
     print("Generating LaTeX CV...")
     
     latex_content = generate_latex_cv()
