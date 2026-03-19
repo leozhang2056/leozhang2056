@@ -522,6 +522,30 @@ def generate_summary(
         pattern = re.compile(re.escape(term), re.IGNORECASE)
         return pattern.sub(lambda m: f"<strong>{m.group()}</strong>", s, count=1)
 
+    def _normalize_jd_keywords(kws: Optional[List[str]]) -> List[str]:
+        if not kws:
+            return []
+        bad = {
+            "new", "full", "time", "hours", "ago", "mid", "level",
+            "information", "technology", "position", "posted", "behalf",
+            "partner", "company", "currently", "chrome", "firefox", "safari",
+            "google", "microsoft", "apple", "mozilla", "smartrecruiters",
+        }
+        normed: List[str] = []
+        seen = set()
+        for kw in kws:
+            kw_norm = str(kw or "").strip()
+            if len(kw_norm) < 3:
+                continue
+            if kw_norm.lower() in bad:
+                continue
+            key = kw_norm.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            normed.append(kw_norm)
+        return normed
+
     # 加粗关键词（角色相关的核心词）
     bold_terms: Dict[str, List[str]] = {
         'android': ['Android', 'Kotlin', 'Android SDK', 'Jetpack', 'NDK'],
@@ -550,6 +574,36 @@ def generate_summary(
 
     text = _strip_management_phrases(text)
 
+    # 去掉毕业时间/在读时间等教育时间线表达，保留岗位能力与业务亮点
+    def _strip_grad_timeline(s: str) -> str:
+        s = re.sub(
+            r"\b(master'?s student|graduating\s+[A-Za-z]+\s+\d{4}|graduating\s+\d{4}|expected graduation[^\.,;]*|in computer and information sciences at AUT)\b",
+            "",
+            s,
+            flags=re.IGNORECASE,
+        )
+        s = re.sub(r"(硕士在读|即将毕业|预计毕业|毕业于?\s*\d{4}\s*年?\d{0,2}\s*月?)", "", s)
+        s = re.sub(r"(202[4-9]\s*年?\s*\d{0,2}\s*月?\s*毕业)", "", s)
+        s = re.sub(r"\s{2,}", " ", s)
+        s = re.sub(r"\s+,", ",", s)
+        s = re.sub(r"\s+\.", ".", s)
+        return s.strip(" ,.;")
+
+    text = _strip_grad_timeline(text)
+
+    # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业（不写具体毕业时间）
+    if lang == "zh":
+        edu_lead = "AUT（Auckland University of Technology）计算机与信息科学硕士毕业（计算机专业）。"
+        if "AUT" not in text and "奥克兰理工大学" not in text:
+            text = f"{edu_lead} {text}"
+    else:
+        edu_lead = (
+            "Graduated from Auckland University of Technology (AUT) "
+            "with a Master's in Computer and Information Sciences."
+        )
+        if "Auckland University of Technology" not in text and "AUT" not in text:
+            text = f"{edu_lead} {text}"
+
     # Summary 保持 4–5 行：重点放在 JD 匹配关键词，但不写成“Highlights”模块
     def _trim_summary(s: str, max_chars: int) -> str:
         s = re.sub(r"\s+", " ", s).strip()
@@ -561,24 +615,44 @@ def generate_summary(
         return s[:max_chars].rstrip(" ,;") + "…"
 
     # 若有 JD 关键词，将首次出现的位置加粗（避免重复强调）
-    if jd_keywords:
-        for kw in jd_keywords:
-            if not kw:
-                continue
-            # 过滤明显无意义的词（避免把“New/Full/time/ago”等加粗）
-            kw_norm = str(kw).strip()
-            if len(kw_norm) < 3:
-                continue
-            if kw_norm.lower() in {
-                "new", "full", "time", "hours", "ago", "mid", "level",
-                "information", "technology", "position", "posted", "behalf",
-                "partner", "company", "currently",
-                "edge", "chrome", "firefox", "safari",
-                "google", "microsoft", "apple", "mozilla", "smartrecruiters"
-            }:
-                continue
+    normed_kws = _normalize_jd_keywords(jd_keywords)
+    if normed_kws:
+        for kw_norm in normed_kws:
             if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
                 text = _bold_first(text, kw_norm)
+
+        # 若 Summary 命中词不足，追加一条高匹配亮点句（不使用 "Highlights:" 标签）
+        hit_count = sum(1 for kw in normed_kws if re.search(re.escape(kw), text, flags=re.IGNORECASE))
+        target_hits = 5 if role_type == "android" else 4
+        if hit_count < target_hits:
+            top_kws = normed_kws[:7]
+            if lang == "zh":
+                addon = (
+                    "我在以下方向具备可落地交付经验："
+                    + "、".join(top_kws)
+                    + "，能够在离线场景、稳定性与性能约束下持续高质量交付。"
+                )
+            else:
+                addon = (
+                    "I deliver production outcomes across "
+                    + ", ".join(top_kws)
+                    + ", with strong ownership of offline reliability, performance optimization, and release quality."
+                )
+            text = f"{text} {addon}"
+
+    # 强化结果导向亮点（避免空泛）
+    if lang == "zh":
+        if "高质量交付" not in text:
+            text = (
+                f"{text} 擅长从需求澄清到上线监控的端到端交付，"
+                "关注 API 协作、自动化测试、CI/CD、崩溃率与性能指标的持续改进。"
+            )
+    else:
+        if "end-to-end delivery" not in text.lower():
+            text = (
+                f"{text} I focus on end-to-end delivery from problem framing to production monitoring, "
+                "with practical discipline in API collaboration, automated testing, CI/CD, and reliability metrics."
+            )
 
     # 控制 Summary 长度（目标：4–5 行左右）
     text = _trim_summary(text, 560 if lang == "en" else 380)
@@ -1547,6 +1621,221 @@ def _slugify_company(company_name: Optional[str]) -> str:
     return slug
 
 
+def _strip_html_tags(text: str) -> str:
+    """移除 HTML 标签，返回纯文本。"""
+    if not isinstance(text, str):
+        return ""
+    return re.sub(r"<[^>]+>", " ", text)
+
+
+def _normalize_keywords(jd_keywords: Optional[List[str]]) -> List[str]:
+    """规范化 JD 关键词（去重、过滤空值）。"""
+    if not jd_keywords:
+        return []
+    out: List[str] = []
+    seen = set()
+    for kw in jd_keywords:
+        if not kw:
+            continue
+        k = str(kw).strip().lower()
+        if not k or k in seen:
+            continue
+        seen.add(k)
+        out.append(k)
+    return out
+
+
+def _keyword_hits_in_text(text: str, keywords: List[str]) -> List[str]:
+    """返回在文本中命中的关键词列表。"""
+    if not text or not keywords:
+        return []
+    t = text.lower()
+    return [k for k in keywords if k in t]
+
+
+def _build_quality_report_markdown(
+    role_type: str,
+    jd_keywords: Optional[List[str]],
+    max_projects: int,
+    company_name: Optional[str],
+    target_role_title: Optional[str],
+) -> str:
+    """
+    生成质量报告（Markdown）：
+    - JD 关键词覆盖率
+    - 低匹配项目
+    - 弱匹配 bullet
+    - 重复 bullet
+    - 候选替换项目建议
+    """
+    base = Path(__file__).parent.parent.parent
+    kb_dir = base / 'kb'
+
+    profile = load_yaml(kb_dir / 'profile.yaml')
+    skills_data = load_yaml(kb_dir / 'skills.yaml')
+    all_projects = load_projects(base / 'projects')
+    bullets_data = _load_all_bullets(base)
+    relations_data = _load_project_relations(base)
+
+    selected_projects = _select_projects_with_relations(
+        all_projects,
+        role_type=role_type,
+        jd_keywords=jd_keywords,
+        max_projects=max_projects,
+        relations_data=relations_data,
+    )
+
+    normalized_kws = _normalize_keywords(jd_keywords)
+
+    summary_text = _strip_html_tags(
+        generate_summary(profile, role_type=role_type, lang='en', jd_keywords=jd_keywords)
+    )
+    skills_html = generate_skills_section(
+        skills_data,
+        role_type=role_type,
+        lang='en',
+        jd_keywords=jd_keywords,
+    )
+    skills_text = _strip_html_tags(skills_html)
+
+    bullet_rows: List[Dict[str, str]] = []
+    selected_scores: List[Dict[str, Any]] = []
+    for p in selected_projects:
+        pid = _build_project_id(p)
+        pname = p.get('name') or pid
+        score = score_project_by_jd(p, jd_keywords or []) if normalized_kws else 0.0
+        selected_scores.append({'project_id': pid, 'name': pname, 'score': score})
+
+        bullets = generate_project_bullet_points(
+            p,
+            lang='en',
+            role_type=role_type,
+            all_bullets=bullets_data,
+            jd_keywords=jd_keywords,
+        )
+        for b in bullets:
+            bullet_rows.append({'project_id': pid, 'project_name': str(pname), 'bullet': str(b)})
+
+    exp_text = ' '.join([r['bullet'] for r in bullet_rows])
+
+    # Coverage by section
+    summary_hits = _keyword_hits_in_text(summary_text, normalized_kws)
+    skills_hits = _keyword_hits_in_text(skills_text, normalized_kws)
+    exp_hits = _keyword_hits_in_text(exp_text, normalized_kws)
+
+    all_hits = sorted(set(summary_hits + skills_hits + exp_hits))
+    coverage_pct = (len(all_hits) / len(normalized_kws) * 100.0) if normalized_kws else 100.0
+
+    # Weak bullets: no JD keyword hit
+    weak_bullets: List[Dict[str, str]] = []
+    if normalized_kws:
+        for row in bullet_rows:
+            if not _keyword_hits_in_text(row['bullet'], normalized_kws):
+                weak_bullets.append(row)
+
+    # Duplicate bullet detection (normalized text)
+    seen_bullets: Dict[str, List[Dict[str, str]]] = {}
+    for row in bullet_rows:
+        norm = re.sub(r'[^a-z0-9]+', ' ', row['bullet'].lower()).strip()
+        if not norm:
+            continue
+        seen_bullets.setdefault(norm, []).append(row)
+    duplicate_groups = [rows for rows in seen_bullets.values() if len(rows) > 1]
+
+    # Replacement suggestions (highest unselected JD score)
+    replacement_suggestions: List[Dict[str, Any]] = []
+    if normalized_kws:
+        selected_ids = {_build_project_id(p) for p in selected_projects}
+        unselected = [p for p in all_projects if _build_project_id(p) not in selected_ids]
+        ranked_unselected = sorted(
+            [
+                {
+                    'project_id': _build_project_id(p),
+                    'name': p.get('name') or _build_project_id(p),
+                    'score': score_project_by_jd(p, normalized_kws),
+                }
+                for p in unselected
+            ],
+            key=lambda x: x['score'],
+            reverse=True,
+        )
+        replacement_suggestions = [x for x in ranked_unselected if x['score'] > 0][:3]
+
+    selected_scores_sorted = sorted(selected_scores, key=lambda x: x['score'])
+    low_match_projects = [x for x in selected_scores_sorted if x['score'] <= 0] if normalized_kws else []
+
+    now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    title_text = (target_role_title or 'Software Engineer').strip()
+    company_text = (company_name or 'Target Company').strip()
+
+    lines: List[str] = []
+    lines.append('# CV Quality Report')
+    lines.append('')
+    lines.append(f'- Generated at: `{now_str}`')
+    lines.append(f'- Role: `{role_type}`')
+    lines.append(f'- Target: `{title_text}` @ `{company_text}`')
+    lines.append(f'- Selected projects: `{len(selected_projects)}`')
+    lines.append('')
+
+    lines.append('## Keyword Coverage')
+    if normalized_kws:
+        lines.append(f'- JD keywords ({len(normalized_kws)}): `{", ".join(normalized_kws)}`')
+        lines.append(f'- Coverage: `{len(all_hits)}/{len(normalized_kws)} ({coverage_pct:.1f}%)`')
+        lines.append(f'- Summary hits: `{", ".join(summary_hits) if summary_hits else "none"}`')
+        lines.append(f'- Skills hits: `{", ".join(skills_hits) if skills_hits else "none"}`')
+        lines.append(f'- Experience hits: `{", ".join(exp_hits) if exp_hits else "none"}`')
+    else:
+        lines.append('- No JD keywords provided; coverage check skipped.')
+    lines.append('')
+
+    lines.append('## Selected Projects (Score)')
+    if normalized_kws:
+        for x in sorted(selected_scores, key=lambda t: t['score'], reverse=True):
+            lines.append(f"- `{x['name']}` (`{x['project_id']}`): `{x['score']:.2f}`")
+    else:
+        for x in selected_scores:
+            lines.append(f"- `{x['name']}` (`{x['project_id']}`)")
+    lines.append('')
+
+    lines.append('## Weak Areas')
+    if not normalized_kws:
+        lines.append('- No JD keywords provided; weak match analysis skipped.')
+    else:
+        if low_match_projects:
+            lines.append('- Low-match projects (JD score <= 0):')
+            for x in low_match_projects:
+                lines.append(f"  - `{x['name']}` (`{x['project_id']}`)")
+        else:
+            lines.append('- No low-match projects detected.')
+
+        if weak_bullets:
+            lines.append(f'- Weak bullets without JD keyword hit: `{len(weak_bullets)}`')
+            for row in weak_bullets[:8]:
+                lines.append(f"  - `{row['project_name']}`: {row['bullet']}")
+            if len(weak_bullets) > 8:
+                lines.append(f'  - ... and `{len(weak_bullets) - 8}` more')
+        else:
+            lines.append('- All bullets hit at least one JD keyword.')
+
+        if duplicate_groups:
+            lines.append(f'- Duplicate bullets detected: `{len(duplicate_groups)}` group(s)')
+            for grp in duplicate_groups[:5]:
+                lines.append(f"  - Duplicate text appears `{len(grp)}` times:")
+                lines.append(f"    - {grp[0]['bullet']}")
+        else:
+            lines.append('- No duplicate bullets detected.')
+    lines.append('')
+
+    lines.append('## Replacement Suggestions')
+    if replacement_suggestions:
+        for x in replacement_suggestions:
+            lines.append(f"- Consider `{x['name']}` (`{x['project_id']}`), JD score `{x['score']:.2f}`")
+    else:
+        lines.append('- No high-confidence replacement project found.')
+
+    return '\n'.join(lines).rstrip() + '\n'
+
+
 async def generate_cv_from_kb(
     output_path: Optional[str] = None,
     role_type: str = 'fullstack',
@@ -1627,6 +1916,28 @@ async def generate_cv_from_kb(
         os.remove(html_zh_path)
     except Exception:
         pass
+
+    # 生成质量报告（用于快速检查关键词覆盖、弱匹配条目、重复 bullet）
+    try:
+        quality_report = _build_quality_report_markdown(
+            role_type=role_type,
+            jd_keywords=jd_keywords,
+            max_projects=max_projects,
+            company_name=company_name,
+            target_role_title=target_role_title,
+        )
+        report_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_QUALITY.md"))
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write(quality_report)
+        print(f"  QA RPT → {report_path}")
+        # 清理中间产物：质量报告 Markdown
+        try:
+            os.remove(report_path)
+            print("  QA RPT cleaned")
+        except Exception:
+            pass
+    except Exception as e:
+        print(f"Warning: failed to generate CV quality report: {e}")
 
     return en_path, zh_path
 
