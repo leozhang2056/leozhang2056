@@ -480,6 +480,68 @@ def generate_skills_section(
 # Summary —— 完全从 KB 读取，不硬编码
 # ---------------------------------------------------------------------------
 
+def _pick_concrete_jd_terms_for_summary(normed_kws: List[str], limit: int = 4) -> List[str]:
+    """
+    从 JD 词里挑出更像「具体技术/工具」的项，避免 Summary 变成逗号分隔的关键词墙（ATS/人工都易判为模板或 AI 腔）。
+    """
+    if not normed_kws:
+        return []
+    generic_penalty = {
+        "engineering", "development", "experience", "agile", "team", "mentoring",
+        "leadership", "customer", "stakeholder", "communication", "collaboration",
+        "innovation", "passionate", "proactive", "world-class", "dynamic",
+    }
+    scored: List[tuple] = []
+    for kw in normed_kws:
+        t = str(kw).strip()
+        if len(t) < 2:
+            continue
+        score = min(len(t), 24)
+        tl = t.lower()
+        if "/" in t or "-" in t or "." in t:
+            score += 5
+        if any(c.isupper() for c in t):
+            score += 2
+        if tl in generic_penalty:
+            score -= 8
+        if len(t) <= 4 and tl.isalpha() and tl not in {"api", "sql", "aws", "git", "mvc", "mvp", "sdk", "iot"}:
+            score -= 3
+        scored.append((score, t))
+    scored.sort(key=lambda x: (-x[0], x[1].lower()))
+    out: List[str] = []
+    seen = set()
+    for _, t in scored:
+        k = t.lower()
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(t)
+        if len(out) >= limit:
+            break
+    return out if out else normed_kws[:limit]
+
+
+def _build_jd_summary_tail(concrete_terms: List[str], lang: str) -> str:
+    """一句自然话融入 JD 技术词，避免罗列整表关键词。"""
+    if not concrete_terms:
+        return ""
+    if lang == "zh":
+        if len(concrete_terms) >= 3:
+            a, b, c = concrete_terms[0], concrete_terms[1], concrete_terms[2]
+            return f"与岗位相关的技术栈包括 {a}、{b}、{c} 等；交付上坚持可测、可评审、可上线的工程习惯。"
+        return f"与岗位相关的实践包括{'、'.join(concrete_terms)}；交付上坚持可测、可评审与稳定发布。"
+    if len(concrete_terms) >= 3:
+        a, b, c = concrete_terms[0], concrete_terms[1], concrete_terms[2]
+        return (
+            f"Hands-on with {a}, {b}, and {c}. "
+            f"I ship with tests, code review, and stable release discipline."
+        )
+    if len(concrete_terms) == 2:
+        a, b = concrete_terms[0], concrete_terms[1]
+        return f"Hands-on with {a} and {b}, with the same rigor on tests, review, and production stability."
+    return f"Hands-on with {concrete_terms[0]}, with practical focus on tests, review, and production stability."
+
+
 def generate_summary(
     profile: Dict,
     role_type: str = 'fullstack',
@@ -549,7 +611,7 @@ def generate_summary(
     # 加粗关键词（角色相关的核心词）
     bold_terms: Dict[str, List[str]] = {
         'android': ['Android', 'Kotlin', 'Android SDK', 'Jetpack', 'NDK'],
-        'ai':      ['AI', 'LLM', 'RAG', 'diffusion', 'computer vision', 'edge'],
+        'ai':      ['AI', 'LLM', 'RAG', 'diffusion', 'computer vision'],
         'backend': ['Spring Boot', 'Java', 'microservice', 'REST', 'API'],
         'fullstack': ['full-stack', 'Android', 'Spring Boot', 'AI'],
     }
@@ -614,45 +676,23 @@ def generate_summary(
             return s[:cut + 1]
         return s[:max_chars].rstrip(" ,;") + "…"
 
-    # 若有 JD 关键词，将首次出现的位置加粗（避免重复强调）
+    # JD：少量加粗即可（过多 <strong> 像模板/AI 堆砌；关键词更应落在 Experience bullet）
     normed_kws = _normalize_jd_keywords(jd_keywords)
     if normed_kws:
-        for kw_norm in normed_kws:
+        jd_bold_limit = 5
+        for i, kw_norm in enumerate(normed_kws):
+            if i >= jd_bold_limit:
+                break
             if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
                 text = _bold_first(text, kw_norm)
 
-        # 若 Summary 命中词不足，追加一条高匹配亮点句（不使用 "Highlights:" 标签）
         hit_count = sum(1 for kw in normed_kws if re.search(re.escape(kw), text, flags=re.IGNORECASE))
         target_hits = 5 if role_type == "android" else 4
         if hit_count < target_hits:
-            top_kws = normed_kws[:7]
-            if lang == "zh":
-                addon = (
-                    "我在以下方向具备可落地交付经验："
-                    + "、".join(top_kws)
-                    + "，能够在离线场景、稳定性与性能约束下持续高质量交付。"
-                )
-            else:
-                addon = (
-                    "I deliver production outcomes across "
-                    + ", ".join(top_kws)
-                    + ", with strong ownership of offline reliability, performance optimization, and release quality."
-                )
-            text = f"{text} {addon}"
-
-    # 强化结果导向亮点（避免空泛）
-    if lang == "zh":
-        if "高质量交付" not in text:
-            text = (
-                f"{text} 擅长从需求澄清到上线监控的端到端交付，"
-                "关注 API 协作、自动化测试、CI/CD、崩溃率与性能指标的持续改进。"
-            )
-    else:
-        if "end-to-end delivery" not in text.lower():
-            text = (
-                f"{text} I focus on end-to-end delivery from problem framing to production monitoring, "
-                "with practical discipline in API collaboration, automated testing, CI/CD, and reliability metrics."
-            )
+            concrete = _pick_concrete_jd_terms_for_summary(normed_kws, 4)
+            tail = _build_jd_summary_tail(concrete, lang)
+            if tail:
+                text = f"{text} {tail}"
 
     # 控制 Summary 长度（目标：4–5 行左右）
     text = _trim_summary(text, 560 if lang == "en" else 380)

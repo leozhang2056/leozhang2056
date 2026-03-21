@@ -40,6 +40,9 @@ Default length:
 - 4-5 lines preferred (concise but not too short)
 - One paragraph
 - Focus on role fit, core strengths, and domain relevance
+- Avoid JD **关键词整段罗列**（易被判定为模板/AI 腔）；用 1 句自然话融入少量具体技术词即可，更多匹配放在 Experience bullet
+- 少用空泛套话（如 endless “leverage / robust / passionate / world-class”）；有数据写数据，无数据写可验证的工程行为（测试、评审、发布、监控）
+- 参考：`kb/resume_writing_best_practices.md`
 - Do not include visa status by default
 - Include dates or years only when the target output explicitly wants them
 - Must end with a complete sentence (no truncation artifacts)

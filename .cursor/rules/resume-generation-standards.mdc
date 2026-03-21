@@ -27,6 +27,8 @@ Apply these when generating or adjusting CVs in this project.
 - Integrate highlights naturally into Summary text; do not add explicit "Highlights:" label.
 - Remove edge-related wording (e.g., edge AI, edge deployment, 边缘部署/边缘计算/端侧).
 - Emphasize fast execution/iteration and strong self-management for developer roles.
+- Reduce "AI resume" tone: do not dump full JD keyword lists into Summary; at most one short sentence with a few concrete tools/terms; put most JD fit in project bullets and Key Skills.
+- Prefer evidence-backed phrasing over generic buzzwords; follow `kb/resume_writing_best_practices.md`.
 
 ## Key Skills rules
 - Do not show labels like `JD Match`.

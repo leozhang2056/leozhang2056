@@ -31,6 +31,9 @@ Hard constraints:
 - Keep output traceable to the selected KB entries
 - Do not output internal helper labels like `JD Match`
 - Avoid edge-related terms unless explicitly required by the target JD
+- **Anti “AI resume” tone**: no keyword comma-lists in Summary; weave 3–4 concrete JD terms in one short sentence if needed
+- Put most JD/stack match in **bullets**, not only Summary; avoid duplicate generic closers (“end-to-end”, “passionate”, “world-class”)
+- See `kb/resume_writing_best_practices.md` for rationale
 ```
 
 ---
@@ -144,4 +147,4 @@ These are weighting hints, not additional facts.
 
 ---
 
-*Version: 2026-03-13*
+*Version: 2026-03-19*
