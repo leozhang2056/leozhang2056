@@ -4,8 +4,11 @@ Unified CV / Cover Letter generator.
 
 Usage examples:
 
-  # Generate Android CV (default role):
+  # Generate Android CV (English only by default):
   python generate.py cv --role android
+
+  # Generate Android CV with Chinese version:
+  python generate.py cv --role android --with-zh
 
   # Generate AI CV with JD keywords:
   python generate.py cv --role ai --jd-keywords Python PyTorch ONNX "model optimization"
@@ -26,7 +29,7 @@ Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
-  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf
+  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
   The dated subfolder is created automatically if it does not exist.
 """
@@ -52,7 +55,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest='command', required=True)
 
     # ── cv ──────────────────────────────────────────────────────────────────
-    cv_parser = sub.add_parser('cv', help='Generate CV (English + Chinese PDF)')
+    cv_parser = sub.add_parser('cv', help='Generate CV (English PDF by default)')
     cv_parser.add_argument(
         '--role', default='auto',
         choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
@@ -89,7 +92,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     cv_parser.add_argument(
         '--output', default=None,
-        help='English PDF output path (CN version is auto-derived)',
+        help='English PDF output path',
+    )
+    cv_parser.add_argument(
+        '--with-zh',
+        action='store_true',
+        help='Also generate Chinese CV PDF (_CN). Default: off',
     )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
@@ -349,10 +357,14 @@ async def run(args) -> None:
             max_projects=args.max_projects,
             company_name=company,
             target_role_title=getattr(args, 'title', None),
+            generate_zh=bool(getattr(args, 'with_zh', False)),
         )
         print(f"\nDone.")
         print(f"  EN: {en_path}")
-        print(f"  ZH: {zh_path}")
+        if zh_path:
+            print(f"  ZH: {zh_path}")
+        else:
+            print("  ZH: skipped (use --with-zh to generate)")
 
     elif args.command == 'cl':
         from generate_cover_letter import generate_cover_letter

@@ -40,10 +40,12 @@ career_identity:
       architecture, with hands-on expertise in AI-driven applications, full-stack systems, and cloud/edge deployment.
     
     android_focus: >
-      Master's student in Computer and Information Sciences at AUT, graduating February 2026. 
-      Over 10 years of experience in software development with a focus on Android. Delivered 
-      solutions in industrial automation, retail systems, and consumer platforms. Skilled in 
-      both coding and team leadership, managing cross-functional teams through full development cycles.
+      Senior-level software engineer with 10+ years of delivery experience, recently awarded
+      First Class Honours in the Master of Computer and Information Sciences at Auckland University
+      of Technology (AUT). Specializing in Android development with Kotlin/Java across industrial
+      IoT and mobile product scenarios, with practical full-stack architecture capability for API
+      integration and end-to-end delivery. Strong hands-on focus on reliability, iteration speed,
+      and modern engineering workflow with AI-assisted development tools.
     
     ai_focus: >
       AI-focused software engineer and Master's student in Computer and Information Sciences at AUT,
@@ -65,11 +67,11 @@ career_identity:
       精通 Spring Boot、Docker、PyTorch 与微服务架构，具备 AI 应用、全栈系统与云/边缘部署的一线实战经验。
 
     android_focus: >
-      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
-      10 年以上软件开发经验，专注于 Android 方向，交付过工业自动化、零售系统与消费类平台解决方案。
-      擅长 Kotlin 与 Android SDK 的生产级交付，理解 OOP 与常用设计模式，能独立完成从需求到发布的完整开发流程。
-      关注性能优化、稳定性与安全，具备 bug/性能瓶颈/安全风险的定位与修复能力。
-      有自动化测试、CI/CD、代码评审与敏捷跨职能协作经验，熟练使用 AI 辅助开发工具（Cursor、GitHub Copilot、Claude Code）提升交付效率与质量。
+      资深软件工程师，拥有 10 年以上交付经验；近期完成奥克兰理工大学（Auckland University of
+      Technology）计算机与信息科学硕士，并获一等荣誉学位。
+      专注 Android（Kotlin/Java）方向，覆盖工业 IoT 与移动产品场景，具备后端 API 集成与端到端交付能力。
+      强调高质量快速迭代，关注稳定性、安全性与可维护性，能在业务约束下持续交付可上线成果。
+      具备 CI/CD、代码评审与跨职能协作经验，熟练使用 AI 辅助开发工具（Cursor、GitHub Copilot、Claude Code）提升效率与质量。
 
     ai_focus: >
       奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业，研究方向为 AI 与计算机视觉。
@@ -86,8 +88,8 @@ career_identity:
 education:
   - degree: Master of Computer and Information Sciences
     degree_cn: 计算机与信息科学硕士
-    institution: Auckland University of Technology (AUT)
-    institution_cn: 奥克兰理工大学 (AUT)
+    institution: AUT
+    institution_cn: 奥克兰理工大学
     location: NZ
     location_cn: 新西兰
     start_date: "2024-07"

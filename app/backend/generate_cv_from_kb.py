@@ -342,11 +342,11 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     'android': [
         {'key': 'android',        'label_en': 'Android',             'label_zh': 'Android',        'max': 7, 'field': 'name'},
         {'key': 'programming_languages', 'label_en': 'Languages',    'label_zh': '编程语言',         'max': 5, 'field': 'name'},
-        {'key': 'backend',        'label_en': 'Backend Integration',  'label_zh': '后端集成',         'max': 6, 'field': 'name'},
+        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
+        {'key': 'backend',        'label_en': 'API Integration',      'label_zh': 'API 集成',        'max': 6, 'field': 'name'},
         {'key': 'devops',         'label_en': 'DevOps & CI/CD',       'label_zh': 'DevOps & CI/CD',  'max': 6, 'field': 'name'},
         {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 4, 'field': 'name'},
-        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
     ],
     'ai': [
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 8, 'field': 'name'},
@@ -653,18 +653,26 @@ def generate_summary(
 
     text = _strip_grad_timeline(text)
 
-    # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业（不写具体毕业时间）
+    # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业 + First Class Honours（不写具体毕业时间）
     if lang == "zh":
-        edu_lead = "AUT（Auckland University of Technology）计算机与信息科学硕士毕业（计算机专业）。"
-        if "AUT" not in text and "奥克兰理工大学" not in text:
+        edu_lead = "AUT（Auckland University of Technology）计算机与信息科学硕士毕业，获一等荣誉学位。"
+        has_aut = ("AUT" in text or "奥克兰理工大学" in text)
+        has_first_class = ("一等荣誉" in text or "First Class" in text)
+        if not has_aut:
             text = f"{edu_lead} {text}"
+        elif not has_first_class:
+            text = f"{text} 获一等荣誉学位。"
     else:
         edu_lead = (
             "Graduated from Auckland University of Technology (AUT) "
-            "with a Master's in Computer and Information Sciences."
+            "with a Master's in Computer and Information Sciences and First Class Honours."
         )
-        if "Auckland University of Technology" not in text and "AUT" not in text:
+        has_aut = ("Auckland University of Technology" in text or "AUT" in text)
+        has_first_class = ("First Class Honours" in text or "First Class" in text)
+        if not has_aut:
             text = f"{edu_lead} {text}"
+        elif not has_first_class:
+            text = f"{text} Awarded First Class Honours."
 
     # Summary 保持 4–5 行：重点放在 JD 匹配关键词，但不写成“Highlights”模块
     def _trim_summary(s: str, max_chars: int) -> str:
@@ -1045,6 +1053,12 @@ def generate_experience_section(
 ) -> str:
     """将已排序的项目列表渲染为 HTML"""
     html_parts = []
+    used_bullets_norm: set[str] = set()
+
+    def _normalize_bullet_for_dedupe(text: str) -> str:
+        t = _strip_html_tags(text or "")
+        t = re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
+        return t
 
     for project in projects:
         # 项目名称
@@ -1097,6 +1111,22 @@ def generate_experience_section(
             all_bullets=all_bullets,
             jd_keywords=jd_keywords,
         )
+        # 跨项目去重：减少“同一句话在多个项目重复出现”的阅读疲劳
+        deduped_bullets: List[str] = []
+        for b in bullets:
+            nb = _normalize_bullet_for_dedupe(b)
+            if not nb:
+                continue
+            if nb in used_bullets_norm:
+                continue
+            used_bullets_norm.add(nb)
+            deduped_bullets.append(b)
+
+        # 若去重后为空，回退原 bullets 的第一条，保证每个项目至少有一个要点
+        if not deduped_bullets and bullets:
+            deduped_bullets = [bullets[0]]
+
+        bullets = deduped_bullets
         bullets_html = '\n            '.join(f'<li>{b}</li>' for b in bullets)
 
         html_parts.append(f'''
@@ -1122,6 +1152,15 @@ def generate_experience_section(
 # ---------------------------------------------------------------------------
 
 def generate_education_section(profile: Dict, lang: str = 'en') -> str:
+    def _emphasize_first_class(s: str) -> str:
+        """在教育条目中突出一等荣誉。"""
+        if not isinstance(s, str) or not s:
+            return s
+        s = re.sub(r"\bFirst Class Honours\b", "<strong>First Class Honours</strong>", s, flags=re.IGNORECASE)
+        s = s.replace("一等荣誉学位", "<strong>一等荣誉学位</strong>")
+        s = s.replace("一等荣誉", "<strong>一等荣誉</strong>")
+        return s
+
     """从 profile.yaml 生成教育经历"""
     education = profile.get('education', [])
     parts = []
@@ -1172,6 +1211,7 @@ def generate_education_section(profile: Dict, lang: str = 'en') -> str:
             details.append(f'{lbl}: {", ".join(honors)}')
         if highlights:
             details.append('. '.join(highlights))
+        details = [_emphasize_first_class(d) for d in details]
 
         # 学校短名（减少换行）
         inst_short = _short_institution(institution)
@@ -1429,15 +1469,16 @@ _CSS = """
 
     .eh-degree {
       font-weight: 700;
-      width: 36%;
+      width: 44%;
       padding: 0;
       vertical-align: baseline;
+      white-space: nowrap;
     }
 
     .eh-school {
       font-style: italic;
       color: #444;
-      width: 46%;
+      width: 38%;
       text-align: right;
       padding: 0;
       vertical-align: baseline;
@@ -1883,9 +1924,10 @@ async def generate_cv_from_kb(
     max_projects: int = 5,
     company_name: Optional[str] = None,
     target_role_title: Optional[str] = None,
+    generate_zh: bool = False,
 ):
     """
-    从 KB 生成中英文两份简历 PDF。
+    从 KB 生成简历 PDF（默认仅英文，可选中文）。
 
     Args:
         output_path:   英文版输出路径（可选，若提供则优先生效）
@@ -1894,6 +1936,7 @@ async def generate_cv_from_kb(
         max_projects:  最多显示几个项目（默认 5）
         company_name:  投递公司名称；若提供且未显式指定 output_path，
                        将在文件名中追加公司名，便于区分不同公司的简历。
+        generate_zh:   是否生成中文简历（默认 False）
     """
     # 经验/项目不要太少：至少 5 个（且 ChatClothes/智能工厂会额外固定置顶）
     max_projects = max(int(max_projects or 0), 5)
@@ -1908,13 +1951,16 @@ async def generate_cv_from_kb(
 
     if output_path:
         en_path = str(output_path)
-        zh_path = en_path.replace('.pdf', '_CN.pdf')
+        zh_path = en_path.replace('.pdf', '_CN.pdf') if generate_zh else None
     else:
         role_tag_lower = role_type.lower()
         company_slug = _slugify_company(company_name)
         suffix = f"_{company_slug}" if company_slug else ""
         en_path = str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}.pdf')
-        zh_path = str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}_CN.pdf')
+        zh_path = (
+            str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}_CN.pdf')
+            if generate_zh else None
+        )
 
     role_tag = role_type.upper()
     print(f"\nGenerating CV [{role_tag}] from Career KB...")
@@ -1939,23 +1985,26 @@ async def generate_cv_from_kb(
     except Exception:
         pass
 
-    # 中文版
-    html_zh      = generate_html_from_kb(
-        role_type, 'zh', jd_keywords, max_projects,
-        company_name=company_name,
-        target_role_title=target_role_title,
-    )
-    html_zh_path = zh_path.replace('.pdf', '.html')
-    with open(html_zh_path, 'w', encoding='utf-8') as f:
-        f.write(html_zh)
-    print(f"  CN HTML → {html_zh_path}")
-    await html_to_pdf(html_zh, zh_path)
-    print(f"  CN PDF  → {zh_path}  ({os.path.getsize(zh_path)/1024:.1f} KB)")
-    # 清理中间产物：HTML
-    try:
-        os.remove(html_zh_path)
-    except Exception:
-        pass
+    # 中文版（可选）
+    if generate_zh and zh_path:
+        html_zh      = generate_html_from_kb(
+            role_type, 'zh', jd_keywords, max_projects,
+            company_name=company_name,
+            target_role_title=target_role_title,
+        )
+        html_zh_path = zh_path.replace('.pdf', '.html')
+        with open(html_zh_path, 'w', encoding='utf-8') as f:
+            f.write(html_zh)
+        print(f"  CN HTML → {html_zh_path}")
+        await html_to_pdf(html_zh, zh_path)
+        print(f"  CN PDF  → {zh_path}  ({os.path.getsize(zh_path)/1024:.1f} KB)")
+        # 清理中间产物：HTML
+        try:
+            os.remove(html_zh_path)
+        except Exception:
+            pass
+    else:
+        print("  CN PDF  → skipped")
 
     # 生成质量报告（用于快速检查关键词覆盖、弱匹配条目、重复 bullet）
     try:
