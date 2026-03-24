@@ -651,7 +651,48 @@ def generate_summary(
         s = re.sub(r"\s+\.", ".", s)
         return s.strip(" ,.;")
 
+    def _cleanup_broken_clauses(s: str) -> str:
+        """
+        清理删除片段后遗留的断裂连接词，例如:
+        - "..., and, Over 10 years..." -> "..., Over 10 years..."
+        - "... and." -> "..."
+        """
+        s = re.sub(r"\band,\s*", "", s, flags=re.IGNORECASE)
+        s = re.sub(r"\band\s+(?=[,.;])", "", s, flags=re.IGNORECASE)
+        s = re.sub(r"\b(and|or)\.\s*", ". ", s, flags=re.IGNORECASE)
+        s = re.sub(r",\s*,", ", ", s)
+        s = re.sub(r"\s{2,}", " ", s)
+        s = re.sub(r"\s+,", ",", s)
+        s = re.sub(r"\s+\.", ".", s)
+        return s.strip(" ,.;")
+
+    def _final_summary_sanity_fix(s: str) -> str:
+        """
+        末尾兜底修复，避免出现半句/断句异常：
+        - 删除残留连接词片段
+        - 保证输出为完整句（英文以句号结尾）
+        """
+        if not s:
+            return s
+        s = _cleanup_broken_clauses(s)
+
+        # 常见残句模式兜底
+        bad_patterns = [
+            r",\s*(and|or)\s*,",
+            r"\b(and|or)\s*,\s*[A-Z]",
+            r"\b(and|or)\s*$",
+            r"\s+\.\s*\.",
+        ]
+        for p in bad_patterns:
+            s = re.sub(p, ", ", s, flags=re.IGNORECASE)
+
+        s = re.sub(r"\s{2,}", " ", s).strip(" ,;")
+        if lang == "en" and s and not re.search(r"[.!?]$", s):
+            s = s + "."
+        return s
+
     text = _strip_grad_timeline(text)
+    text = _cleanup_broken_clauses(text)
 
     # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业 + First Class Honours（不写具体毕业时间）
     if lang == "zh":
@@ -704,6 +745,7 @@ def generate_summary(
 
     # 控制 Summary 长度（目标：4–5 行左右）
     text = _trim_summary(text, 560 if lang == "en" else 380)
+    text = _final_summary_sanity_fix(text)
 
     return _remove_edge_terms(text)
 
@@ -1618,7 +1660,7 @@ def generate_html_from_kb(
     # Publications：按需求不在简历中展示
     pub_section = ''
 
-    # ── 目标职位 / 公司（显示在简历顶部） ──
+    # ── 目标职位 / 公司（仅用于内部命名，不在简历顶部显示） ──
     default_titles = {
         'android':   'Senior Android Developer',
         'backend':   'Senior Backend Engineer (Java/Spring)',
@@ -1626,8 +1668,6 @@ def generate_html_from_kb(
         'fullstack': 'Senior Full-Stack Engineer',
     }
     title_text = (target_role_title or default_titles.get(role_type, 'Software Engineer')).strip()
-    company_text = (company_name or 'Target Company').strip()
-    target_line = f'{title_text} · {company_text}' if company_text else title_text
 
     html = f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -1644,9 +1684,6 @@ def generate_html_from_kb(
       <a href="https://www.linkedin.com/in/leo-zhang-305626280/">{name}</a>
       <a href="https://www.linkedin.com/in/leo-zhang-305626280/">{_LINKEDIN_SVG}</a>
       <a href="https://github.com/leozhang2056">{_GITHUB_SVG}</a>
-    </div>
-    <div style="margin-top:4px;font-size:11.5pt;color:#1a3a6a;font-weight:600;">
-      {target_line}
     </div>
     <div class="cv-contact">
       <a href="mailto:{email}">&#9993;&nbsp;{email}</a>
