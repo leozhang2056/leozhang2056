@@ -1925,6 +1925,7 @@ async def generate_cv_from_kb(
     company_name: Optional[str] = None,
     target_role_title: Optional[str] = None,
     generate_zh: bool = False,
+    generate_quality_report: bool = False,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -1937,6 +1938,7 @@ async def generate_cv_from_kb(
         company_name:  投递公司名称；若提供且未显式指定 output_path，
                        将在文件名中追加公司名，便于区分不同公司的简历。
         generate_zh:   是否生成中文简历（默认 False）
+        generate_quality_report: 是否生成质量报告（默认 False）
     """
     # 经验/项目不要太少：至少 5 个（且 ChatClothes/智能工厂会额外固定置顶）
     max_projects = max(int(max_projects or 0), 5)
@@ -2006,27 +2008,24 @@ async def generate_cv_from_kb(
     else:
         print("  CN PDF  → skipped")
 
-    # 生成质量报告（用于快速检查关键词覆盖、弱匹配条目、重复 bullet）
-    try:
-        quality_report = _build_quality_report_markdown(
-            role_type=role_type,
-            jd_keywords=jd_keywords,
-            max_projects=max_projects,
-            company_name=company_name,
-            target_role_title=target_role_title,
-        )
-        report_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_QUALITY.md"))
-        with open(report_path, 'w', encoding='utf-8') as f:
-            f.write(quality_report)
-        print(f"  QA RPT → {report_path}")
-        # 清理中间产物：质量报告 Markdown
+    # 质量报告（按需生成，默认关闭以减少生成耗时）
+    if generate_quality_report:
         try:
-            os.remove(report_path)
-            print("  QA RPT cleaned")
-        except Exception:
-            pass
-    except Exception as e:
-        print(f"Warning: failed to generate CV quality report: {e}")
+            quality_report = _build_quality_report_markdown(
+                role_type=role_type,
+                jd_keywords=jd_keywords,
+                max_projects=max_projects,
+                company_name=company_name,
+                target_role_title=target_role_title,
+            )
+            report_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_QUALITY.md"))
+            with open(report_path, 'w', encoding='utf-8') as f:
+                f.write(quality_report)
+            print(f"  QA RPT → {report_path}")
+        except Exception as e:
+            print(f"Warning: failed to generate CV quality report: {e}")
+    else:
+        print("  QA RPT → skipped")
 
     return en_path, zh_path
 

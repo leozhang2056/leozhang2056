@@ -99,6 +99,11 @@ def build_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='Also generate Chinese CV PDF (_CN). Default: off',
     )
+    cv_parser.add_argument(
+        '--with-quality-report',
+        action='store_true',
+        help='Also generate CV quality report. Default: off',
+    )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
@@ -358,6 +363,7 @@ async def run(args) -> None:
             company_name=company,
             target_role_title=getattr(args, 'title', None),
             generate_zh=bool(getattr(args, 'with_zh', False)),
+            generate_quality_report=bool(getattr(args, 'with_quality_report', False)),
         )
         print(f"\nDone.")
         print(f"  EN: {en_path}")
