@@ -43,7 +43,7 @@ _ROLE_SUMMARY_KEY = {
 # 各角色的主要叙事角度提示（用于生成开头和结尾）
 _ROLE_NARRATIVE_HINT = {
     'android': {
-        'en': 'Senior Android engineer with 10+ years of enterprise mobile development',
+        'en': 'Senior Android engineer focused on production mobile delivery',
         'zh': '拥有 10 年以上企业级移动开发经验的高级 Android 工程师',
     },
     'ai': {
@@ -192,9 +192,9 @@ def build_cover_letter_content(
 
     if lang == 'en':
         opening = (
-            f'I am writing to express my strong interest in the {target_role_title} position at {company_name}. '
+            f'I am writing to apply for the {target_role_title} position at {company_name}. '
             f'As a {hint_text} with {years_str} years of professional experience, '
-            f'I am confident that my background aligns well with the requirements of this role.'
+            f'I bring hands-on Android engineering experience that matches this role’s product and technical requirements.'
         )
 
         proj1 = top_projects[0] if top_projects else {}
@@ -204,19 +204,31 @@ def build_cover_letter_content(
         proj1_evidence = evidence_lines[0] if evidence_lines else ''
         proj2_evidence = evidence_lines[1] if len(evidence_lines) > 1 else ''
 
-        body1 = (
-            f'In my most recent work, {proj1_name}, I served as {proj1.get("role", "sole developer")} '
-            f'and delivered a complete solution from design through deployment. '
-            + (f'{proj1_evidence}. ' if proj1_evidence else '')
-            + (f'Additionally, through {proj2_name}, I {proj2.get("highlights", ["built and maintained a production system"])[0].lower() if proj2 else ""}.'
-               if proj2_name else '')
-        )
+        if role_type == 'android':
+            body1 = (
+                'I have built and maintained Android applications in complex production environments using '
+                'Kotlin/Java, Android SDK, Jetpack components, MVVM architecture, and REST API integration. '
+                + (f'In {proj1_name}, {proj1.get("highlights", ["I delivered end-to-end Android implementation and release workflows"])[0].lower()}. '
+                   if proj1_name else '')
+                + (f'In {proj2_name}, {proj2.get("highlights", ["I improved mobile reliability and maintainability through iterative engineering practices"])[0].lower()}.'
+                   if proj2_name else '')
+            )
+        else:
+            body1 = (
+                f'In my most recent work, {proj1_name}, I served as {proj1.get("role", "sole developer")} '
+                f'and delivered a complete solution from design through deployment. '
+                + (f'{proj1_evidence}. ' if proj1_evidence else '')
+                + (f'Additionally, through {proj2_name}, I {proj2.get("highlights", ["built and maintained a production system"])[0].lower() if proj2 else ""}.'
+                   if proj2_name else '')
+            )
 
         # 第三段专注“岗位匹配能力”，避免与项目段重复
         role_match_map = {
             'android': (
-                'For this role, I bring production Android delivery experience across API integration, '
-                'testing discipline, and CI/CD-driven release workflows, plus strong collaboration with product and design.'
+                'For this role at Air New Zealand, I can contribute to customer-facing mobile journeys by building '
+                'clean, maintainable Android code, improving app performance and reliability, and resolving complex production issues. '
+                'I work effectively in Agile product squads and collaborate closely with Product Managers, UI/UX Designers, and backend engineers '
+                'to deliver high-quality releases at pace.'
             ),
             'backend': (
                 'For this role, I bring strong backend engineering depth in Java/Spring APIs, data-layer reliability, '

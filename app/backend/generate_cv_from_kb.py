@@ -546,12 +546,12 @@ def _role_evidence_sentence(role_type: str, lang: str) -> str:
     """基于已确认事实补充一条可证据化成果句。"""
     if lang == "zh":
         if role_type == "android":
-            return "过往项目覆盖 10,000+ DAU 与 <200ms 消息延迟场景，并具备 5+ 工厂站点规模化落地经验。"
+            return "过往项目已在高并发移动业务与多站点生产环境稳定落地，验证了复杂场景下的工程交付能力。"
         if role_type == "backend":
             return "主导并交付 5+ 站点微服务平台，长期维持 99.9% 可用性，并在制造场景实现 30%+ 效率提升。"
         return "覆盖企业级移动端与后端系统交付，含 10,000+ DAU、5+ 站点落地与 99.9% 可用性目标。"
     if role_type == "android":
-        return "Proven outcomes include 10,000+ DAU mobile workloads, <200ms messaging latency, and delivery across 5+ production sites."
+        return "Proven outcomes include stable delivery in high-concurrency mobile workloads and multi-site production environments."
     if role_type == "backend":
         return "Proven outcomes include microservice delivery across 5+ production sites, 99.9% uptime targets, and 30%+ efficiency gains."
     return "Proven outcomes include enterprise delivery at 10,000+ DAU scale, 5+ production-site rollouts, and 99.9% uptime targets."

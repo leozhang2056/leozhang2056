@@ -16,6 +16,9 @@ Usage examples:
   # Generate Cover Letter:
   python generate.py cl --role auto --jd-url "<job-url>" --company "Entelect" --title "Senior Android Engineer"
 
+  # Generate application email text:
+  python generate.py email --role backend --company "Datacom" --title "Senior Backend Engineer"
+
   # Generate CV with custom output path:
   python generate.py cv --role backend --output outputs/my_resume.pdf
 
@@ -25,6 +28,10 @@ Usage examples:
   # List interview Q&A (by category / role / keyword):
   python generate.py interview --category technical
   python generate.py interview --role android --search "NDK"
+
+  # Compare CV match scores across multiple JDs:
+  python generate.py match --role auto --jd-file jd_a.txt --jd-file jd_b.txt
+  python generate.py match --role backend --jd-url "<job-url-1>" --jd-url "<job-url-2>"
 Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
@@ -32,6 +39,8 @@ Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
+  outputs/<YYYY-MM-DD>/ApplicationEmail_<company>_<YYYYMMDD>.txt
+  outputs/<YYYY-MM-DD>/JD_Match_Report_<YYYYMMDD>.md
   The dated subfolder is created automatically if it does not exist.
 """
 
@@ -146,6 +155,46 @@ def build_parser() -> argparse.ArgumentParser:
         help='PDF output path',
     )
 
+    # ── email (application email) ───────────────────────────────────────────
+    email_parser = sub.add_parser('email', help='Generate application email TXT')
+    email_parser.add_argument(
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Target role type (default: auto; inferred from JD/title)',
+    )
+    email_parser.add_argument(
+        '--lang', default='en',
+        choices=['en', 'zh'],
+        help='Output language (default: en)',
+    )
+    email_parser.add_argument(
+        '--company', default='the company',
+        help='Company name',
+    )
+    email_parser.add_argument(
+        '--title', default='Software Engineer',
+        help='Target job title (e.g. "Senior Android Engineer")',
+    )
+    email_parser.add_argument(
+        '--jd-keywords', nargs='*', dest='jd_keywords',
+        metavar='KEYWORD',
+        help='JD keywords that drive project selection',
+    )
+    email_parser.add_argument(
+        '--jd-url',
+        help='Public job posting URL; if provided and --jd-keywords is empty, '
+             'keywords will be auto-derived from the page content.',
+    )
+    email_parser.add_argument(
+        '--jd-file',
+        help='Path to a local JD text file; if provided and --jd-keywords is empty, '
+             'keywords will be auto-derived from the file content.',
+    )
+    email_parser.add_argument(
+        '--output', default=None,
+        help='TXT output path',
+    )
+
     # ── interview (Q&A 库) ────────────────────────────────────────────────────
     qa_parser = sub.add_parser('interview', help='List interview Q&A by category/role/search')
     qa_parser.add_argument(
@@ -166,6 +215,39 @@ def build_parser() -> argparse.ArgumentParser:
         '--short',
         action='store_true',
         help='Only print question text (no points/tips)',
+    )
+
+    # ── match (multi-JD match scoring) ────────────────────────────────────────
+    match_parser = sub.add_parser('match', help='Compare CV match scores across multiple JDs')
+    match_parser.add_argument(
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Role mode (auto infers role for each JD)',
+    )
+    match_parser.add_argument(
+        '--jd-url', action='append', dest='jd_urls',
+        help='JD URL (can be used multiple times)',
+    )
+    match_parser.add_argument(
+        '--jd-file', action='append', dest='jd_files',
+        help='JD file path (can be used multiple times)',
+    )
+    match_parser.add_argument(
+        '--jd-keywords', nargs='*', dest='jd_keywords',
+        metavar='KEYWORD',
+        help='Manual JD keywords (used when no URL/file is provided)',
+    )
+    match_parser.add_argument(
+        '--max-projects', type=int, default=9, dest='max_projects',
+        help='Max projects used for CV generation during scoring (default: 9)',
+    )
+    match_parser.add_argument(
+        '--max-keywords', type=int, default=24, dest='max_keywords',
+        help='Max extracted keywords per JD (default: 24)',
+    )
+    match_parser.add_argument(
+        '--output', default=None,
+        help='Output report path (Markdown)',
     )
 
     return parser
@@ -400,6 +482,36 @@ async def run(args) -> None:
             search=getattr(args, 'search', None),
             verbose=not getattr(args, 'short', False),
         )
+
+    elif args.command == 'email':
+        from generate_application_email import generate_application_email
+        jd_keywords = _auto_keywords_from_jd(args)
+        role = _auto_role(args)
+        company = _auto_company(args)
+        txt_path = generate_application_email(
+            output_path=args.output,
+            role_type=role,
+            lang=args.lang,
+            company_name=company,
+            target_role_title=args.title,
+            jd_keywords=jd_keywords or [],
+        )
+        print(f"\nDone.")
+        print(f"  EMAIL TXT: {txt_path}")
+
+    elif args.command == 'match':
+        from match_cv_to_jds import generate_match_report_file
+        report_path = generate_match_report_file(
+            role_type=args.role,
+            jd_urls=getattr(args, 'jd_urls', None),
+            jd_files=getattr(args, 'jd_files', None),
+            jd_keywords=getattr(args, 'jd_keywords', None),
+            max_projects=getattr(args, 'max_projects', 9),
+            max_keywords=getattr(args, 'max_keywords', 24),
+            output_path=args.output,
+        )
+        print(f"\nDone.")
+        print(f"  MATCH REPORT: {report_path}")
 
 
 def main():
