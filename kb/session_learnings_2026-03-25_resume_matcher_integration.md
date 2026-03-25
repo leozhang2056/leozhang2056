@@ -6,7 +6,8 @@
 
 ## 已整合能力（可直接使用）
 - 主简历 + JD 定制流程：继续以 `kb/` 作为 master resume 数据源。
-- JD 匹配可视化：默认输出 `*_JD_Annotated.pdf`（命中高亮 + hit/miss + match score）。
+- JD 匹配可视化：按需使用 `python generate.py cv --with-jd-annotated` 输出 `*_JD_Annotated.pdf`（命中高亮 + hit/miss + match score）。
+- 主简历默认不再生成标注 PDF；终端仍会输出 JD 覆盖率，并对 KB 支持词默认以 **≥85%** 为目标（可在 Summary 末尾自动补一行对齐词，仍遵守反幻觉）。
 - 反幻觉关键词门控：JD 词先过 KB 证据过滤，再参与排序和生成。
 - 求职信生成：沿用同一证据链，保证与简历一致。
 - 申请邮件生成（新增）：`generate.py email` 输出可直接发送的邮件文本。

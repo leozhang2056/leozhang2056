@@ -32,15 +32,20 @@ Usage examples:
   # Compare CV match scores across multiple JDs:
   python generate.py match --role auto --jd-file jd_a.txt --jd-file jd_b.txt
   python generate.py match --role backend --jd-url "<job-url-1>" --jd-url "<job-url-2>"
+
+  # LLM loop: extract text from PDF + JD → OpenAI JSON edits → patch KB → new PDF:
+  # Requires OPENAI_API_KEY (optional OPENAI_BASE_URL, OPENAI_MODEL); install pypdf.
+  python generate.py cv-iterate --pdf outputs/.../CV_....pdf --jd-file jd.txt --role android --company "Acme"
 Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
-  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf
+  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf (optional, --with-jd-annotated)
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
   outputs/<YYYY-MM-DD>/ApplicationEmail_<company>_<YYYYMMDD>.txt
   outputs/<YYYY-MM-DD>/JD_Match_Report_<YYYYMMDD>.md
+  outputs/<YYYY-MM-DD>/CV_*_AI_REVIEW_BUNDLE.md (for a second AI; use --no-review-bundle to skip)
   The dated subfolder is created automatically if it does not exist.
 """
 
@@ -65,7 +70,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest='command', required=True)
 
     # ── cv ──────────────────────────────────────────────────────────────────
-    cv_parser = sub.add_parser('cv', help='Generate CV (English + JD annotated PDF by default)')
+    cv_parser = sub.add_parser('cv', help='Generate CV (English PDF; JD annotated PDF optional)')
     cv_parser.add_argument(
         '--role', default='auto',
         choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
@@ -114,6 +119,25 @@ def build_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='Also generate CV quality report. Default: off',
     )
+    cv_parser.add_argument(
+        '--with-jd-annotated',
+        action='store_true',
+        help='Also generate JD keyword annotated PDF (_JD_Annotated). Default: off',
+    )
+    cv_parser.add_argument(
+        '--min-jd-match-pct',
+        type=float,
+        default=85.0,
+        metavar='PCT',
+        help='Target minimum coverage %% for KB-supported JD keywords (default: 85; use 0 to disable auto tail)',
+    )
+    cv_parser.add_argument(
+        '--no-review-bundle',
+        dest='review_bundle',
+        action='store_false',
+        help='Do not write *_AI_REVIEW_BUNDLE.md for external AI review (default: write bundle)',
+    )
+    cv_parser.set_defaults(review_bundle=True)
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
@@ -248,6 +272,44 @@ def build_parser() -> argparse.ArgumentParser:
     match_parser.add_argument(
         '--output', default=None,
         help='Output report path (Markdown)',
+    )
+
+    # ── cv-iterate (LLM: PDF + JD → KB patches → regenerate CV PDF) ──────────
+    cit_parser = sub.add_parser(
+        'cv-iterate',
+        help='OpenAI-compatible API: review CV PDF + JD, apply KB edits, regenerate PDF',
+    )
+    cit_parser.add_argument('--pdf', required=True, help='Path to existing CV PDF')
+    cit_parser.add_argument(
+        '--role', default='fullstack',
+        choices=['android', 'ai', 'backend', 'fullstack'],
+        help='Resume role / summary variant',
+    )
+    cit_parser.add_argument('--company', default=None, help='Company tag for output naming')
+    cit_parser.add_argument('--title', default=None, help='Target job title')
+    cit_parser.add_argument('--jd-url', default=None, help='JD page URL')
+    cit_parser.add_argument('--jd-file', default=None, help='Local JD text file')
+    cit_parser.add_argument(
+        '--jd-keywords', nargs='*', dest='jd_keywords', metavar='KW',
+        help='JD keywords if no full JD text',
+    )
+    cit_parser.add_argument('--max-keywords', type=int, default=24)
+    cit_parser.add_argument('--max-projects', type=int, default=9)
+    cit_parser.add_argument('--output', default=None, help='Output PDF path')
+    cit_parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Call model and print edits only; do not write KB or PDF',
+    )
+    cit_parser.add_argument('--min-jd-match-pct', type=float, default=85.0)
+    cit_parser.add_argument(
+        '--no-review-bundle',
+        action='store_true',
+        help='Skip *_AI_REVIEW_BUNDLE.md after regeneration',
+    )
+    cit_parser.add_argument(
+        '--model', default=None,
+        help='Chat model (default: env OPENAI_MODEL or gpt-4o-mini)',
     )
 
     return parser
@@ -447,10 +509,14 @@ async def run(args) -> None:
             target_role_title=getattr(args, 'title', None),
             generate_zh=bool(getattr(args, 'with_zh', False)),
             generate_quality_report=bool(getattr(args, 'with_quality_report', False)),
+            generate_jd_annotated_pdf=bool(getattr(args, 'with_jd_annotated', False)),
+            min_jd_match_pct=float(getattr(args, 'min_jd_match_pct', 85.0)),
+            write_review_bundle=bool(getattr(args, 'review_bundle', True)),
         )
         print(f"\nDone.")
         print(f"  EN: {en_path}")
-        print(f"  EN (JD Annotated): {annotated_path}")
+        if annotated_path:
+            print(f"  EN (JD Annotated): {annotated_path}")
         if zh_path:
             print(f"  ZH: {zh_path}")
         else:
@@ -512,6 +578,10 @@ async def run(args) -> None:
         )
         print(f"\nDone.")
         print(f"  MATCH REPORT: {report_path}")
+
+    elif args.command == 'cv-iterate':
+        from cv_auto_review_iterate import run_cv_iterate
+        asyncio.run(run_cv_iterate(args))
 
 
 def main():

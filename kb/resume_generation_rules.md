@@ -155,7 +155,10 @@ Role auto-selection guidance:
   - Resume generation should keep PDF outputs and remove intermediate HTML files.
   - Default outputs should include:
     - Main English CV PDF
-    - JD annotated PDF (highlighted hit keywords + match score + hit/miss list)
+  - Optional output (explicit flag): JD annotated PDF (highlighted hit keywords + match score + hit/miss list).
+  - Default companion file for **second-AI review**: `*_AI_REVIEW_BUNDLE.md` (CV plain text + JD context + reviewer prompt). Disable with `--no-review-bundle` on `generate.py cv`.
+  - **Automated second-AI loop** (OpenAI-compatible API): `python generate.py cv-iterate --pdf ... --jd-file ...` extracts PDF text + JD, calls the model for strict JSON edits, backs up YAML under `outputs/.../kb_backup_auto_*`, patches `kb/profile.yaml` / `projects/*/facts.yaml`, then regenerates a new CV PDF. Requires `OPENAI_API_KEY` and `pypdf`. Scanned/image-only PDFs may yield empty text.
+  - JD keyword coverage control (default): aim for **≥85%** coverage on **KB-supported** JD keywords; the generator may append a short Summary tail listing any still-missing supported terms (no unsupported JD terms).
   - Generation should apply anti-hallucination gating:
     - Filter out JD keywords unsupported by KB evidence before final rendering.
 

@@ -225,7 +225,7 @@ def build_cover_letter_content(
         # 第三段专注“岗位匹配能力”，避免与项目段重复
         role_match_map = {
             'android': (
-                'For this role at Air New Zealand, I can contribute to customer-facing mobile journeys by building '
+                f'For this role at {company_name}, I can contribute to customer-facing mobile journeys by building '
                 'clean, maintainable Android code, improving app performance and reliability, and resolving complex production issues. '
                 'I work effectively in Agile product squads and collaborate closely with Product Managers, UI/UX Designers, and backend engineers '
                 'to deliver high-quality releases at pace.'

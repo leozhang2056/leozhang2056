@@ -20,6 +20,16 @@ from typing import List, Dict, Any, Optional
 # 导入 PDF 生成函数
 from generate_cv_html_to_pdf import html_to_pdf
 
+# 导入增强质量验证器
+try:
+    from cv_quality_validator import (
+        generate_quality_report as run_enhanced_validation,
+        format_quality_report_markdown,
+    )
+    ENHANCED_VALIDATOR_AVAILABLE = True
+except ImportError:
+    ENHANCED_VALIDATOR_AVAILABLE = False
+
 
 # ---------------------------------------------------------------------------
 # 数据加载
@@ -1884,9 +1894,191 @@ def _filter_jd_keywords_by_kb_evidence(
     return supported, filtered
 
 
+def _jd_match_hits_misses_coverage(
+    html_en: str,
+    jd_keywords: Optional[List[str]],
+) -> tuple[List[str], List[str], float]:
+    """返回 (hits, misses, coverage_pct)，基于与 _keyword_hits_in_text 相同规则。"""
+    normalized_kws = _normalize_keywords(jd_keywords)
+    if not normalized_kws:
+        return [], [], 100.0
+    cv_text = _strip_html_tags(html_en)
+    hits = sorted(set(_keyword_hits_in_text(cv_text, normalized_kws)))
+    misses = [k for k in normalized_kws if k not in hits]
+    coverage = (len(hits) / len(normalized_kws) * 100.0) if normalized_kws else 100.0
+    return hits, misses, coverage
+
+
+def _pretty_jd_kw_for_summary_tail(kw: str) -> str:
+    """将规范化关键词转为可读片段，并保证仍能被匹配器命中（子串落在归一化文本中）。"""
+    k = (kw or "").strip().lower()
+    if not k:
+        return ""
+    known: Dict[str, str] = {
+        "ui/ux": "UI/UX",
+        "restful apis": "RESTful APIs",
+        "jetpack compose": "Jetpack Compose",
+        "android sdk": "Android SDK",
+        "clean code": "clean code",
+        "bug fixing": "bug fixing",
+        "product squad": "product squad",
+        "backend engineers": "backend engineers",
+        "mobile architecture": "mobile architecture",
+    }
+    if k in known:
+        return known[k]
+    if k in ("aws", "api", "ndk", "jwt", "sql"):
+        return k.upper()
+    return " ".join(w.capitalize() for w in k.split())
+
+
+def _inject_jd_coverage_tail_into_summary_html(html: str, missing_kws: List[str]) -> str:
+    """
+    在英文简历 Summary 区块末尾追加一句，显式包含仍未命中的 supported 关键词，
+    用于在反幻觉前提下拉高 JD 覆盖率（默认目标 >=85%）。
+    """
+    if not missing_kws:
+        return html
+    tail_bits = [_pretty_jd_kw_for_summary_tail(m) for m in missing_kws if m]
+    if not tail_bits:
+        return html
+    tail_plain = " Additional role alignment: " + ", ".join(tail_bits) + "."
+    # Summary 内已有 HTML；追加纯文本即可（避免未转义 < 破坏结构）
+    pattern = re.compile(
+        r'(<div class="cv-summary">)([\s\S]*?)(</div>\s*\n\s*\n\s*<!-- Key Skills -->)',
+        re.MULTILINE,
+    )
+    m = pattern.search(html)
+    if not m:
+        # 降级：仅匹配第一个 cv-summary 闭合
+        pattern2 = re.compile(r'(<div class="cv-summary">)([\s\S]*?)(</div>)', re.MULTILINE)
+        m2 = pattern2.search(html)
+        if not m2:
+            return html
+        return pattern2.sub(
+            lambda mm: mm.group(1) + mm.group(2) + tail_plain + mm.group(3),
+            html,
+            count=1,
+        )
+    return (
+        html[: m.start()]
+        + m.group(1)
+        + m.group(2)
+        + tail_plain
+        + m.group(3)
+        + html[m.end() :]
+    )
+
+
+def _load_cv_external_review_prompt(repo_root: Path) -> str:
+    p = repo_root / "kb" / "ai_prompts" / "cv_external_review.md"
+    try:
+        return p.read_text(encoding="utf-8")
+    except Exception:
+        return "(Missing file: kb/ai_prompts/cv_external_review.md)\n"
+
+
+def build_cv_review_bundle_markdown(
+    repo_root: Path,
+    role_type: str,
+    company_name: Optional[str],
+    target_role_title: Optional[str],
+    jd_raw: Optional[List[str]],
+    supported_kws: List[str],
+    filtered_kws: List[str],
+    html_en: str,
+    hits: List[str],
+    misses: List[str],
+    coverage: float,
+) -> str:
+    """
+    供「第二个 AI」评审用的单文件 Markdown：含岗位关键词上下文、匹配度、简历全文、评审提示词与回填区。
+    """
+    plain = _strip_html_tags(html_en)
+    plain = re.sub(r"\s+", " ", plain).strip()
+    if len(plain) > 120_000:
+        plain = plain[:120_000] + "\n\n[truncated for bundle size]"
+
+    prompt = _load_cv_external_review_prompt(repo_root)
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    lines: List[str] = [
+        "# CV Review Bundle (for a second AI)",
+        "",
+        f"- Generated: `{now}`",
+        f"- Role: `{role_type}`",
+        f"- Company: `{company_name or 'n/a'}`",
+        f"- Target title: `{target_role_title or 'n/a'}`",
+        "",
+        "## Job context (keywords)",
+        "",
+        f"- JD keywords (raw): `{list(jd_raw or [])}`",
+        f"- JD keywords (KB-supported, used in generation): `{supported_kws}`",
+        f"- JD keywords (filtered out by anti-hallucination): `{filtered_kws}`",
+        "",
+        "## Match metrics (KB-supported terms only)",
+        "",
+        f"- Coverage: **{coverage:.1f}%** ({len(hits)}/{len(supported_kws) if supported_kws else 0})",
+        f"- Hits: `{', '.join(hits) if hits else 'none'}`",
+        f"- Misses: `{', '.join(misses) if misses else 'none'}`",
+        "",
+        "## CV plain text (review this)",
+        "",
+        "```text",
+        plain,
+        "```",
+        "",
+        "---",
+        "",
+        "## Instructions for the reviewer AI (copy the prompt file below into your second AI)",
+        "",
+        prompt,
+        "",
+        "---",
+        "",
+        "## After review: paste the second AI response here, then regenerate the CV in Cursor/KB",
+        "",
+        "### Pasted reviewer output",
+        "",
+        "(paste here)",
+        "",
+        "### Edits applied in KB (checklist)",
+        "",
+        "- [ ] `kb/profile.yaml` — summary / identity",
+        "- [ ] `kb/skills.yaml` — skills rows",
+        "- [ ] `projects/*/facts.yaml` — project bullets",
+        "",
+        "Regenerate:",
+        "`python generate.py cv --role <role> --company \"...\" --jd-keywords ...`",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def _ensure_min_jd_keyword_coverage_html(
+    html: str,
+    supported_kws: List[str],
+    min_pct: float,
+) -> str:
+    """
+    若 supported 关键词在正文中的覆盖率低于 min_pct，则向 Summary 注入缺失词，直至达标或无可补词。
+    仅作用于已通过 KB 证据过滤的关键词，不引入幻觉词。
+    """
+    if min_pct <= 0 or not supported_kws:
+        return html
+    out = html
+    for _ in range(6):
+        _hits, misses, cov = _jd_match_hits_misses_coverage(out, supported_kws)
+        if cov >= min_pct or not misses:
+            break
+        out = _inject_jd_coverage_tail_into_summary_html(out, misses)
+    return out
+
+
 def _print_jd_match_metrics_for_cv(
     html_en: str,
     jd_keywords: Optional[List[str]],
+    min_target_pct: float = 85.0,
 ) -> None:
     """
     每次生成简历时输出轻量级 JD 匹配指标：
@@ -1899,16 +2091,16 @@ def _print_jd_match_metrics_for_cv(
         print("  JD MATCH → skipped (no JD keywords)")
         return
 
-    cv_text = _strip_html_tags(html_en)
-    hits = sorted(set(_keyword_hits_in_text(cv_text, normalized_kws)))
-    misses = [k for k in normalized_kws if k not in hits]
-    coverage = (len(hits) / len(normalized_kws) * 100.0) if normalized_kws else 100.0
+    hits, misses, coverage = _jd_match_hits_misses_coverage(html_en, jd_keywords)
 
     print(f"  JD MATCH → {len(hits)}/{len(normalized_kws)} ({coverage:.1f}%)")
     print(f"  JD HIT KW → {', '.join(hits) if hits else 'none'}")
     print(f"  JD MISS KW → {', '.join(misses) if misses else 'none'}")
-    if coverage < 70.0:
-        print("  JD ALERT → low match (<70%), consider regenerating with tighter JD keywords")
+    if min_target_pct > 0 and coverage < min_target_pct:
+        print(
+            f"  JD ALERT → match below target (<{min_target_pct:.0f}%); "
+            "tighten JD keywords or add KB evidence for missing terms"
+        )
 
 
 def _highlight_keywords_in_html(html_content: str, keywords: List[str]) -> str:
@@ -2180,6 +2372,9 @@ async def generate_cv_from_kb(
     target_role_title: Optional[str] = None,
     generate_zh: bool = False,
     generate_quality_report: bool = False,
+    generate_jd_annotated_pdf: bool = False,
+    min_jd_match_pct: float = 85.0,
+    write_review_bundle: bool = True,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -2193,6 +2388,9 @@ async def generate_cv_from_kb(
                        将在文件名中追加公司名，便于区分不同公司的简历。
         generate_zh:   是否生成中文简历（默认 False）
         generate_quality_report: 是否生成质量报告（默认 False）
+        generate_jd_annotated_pdf: 是否额外生成 JD 标注版 PDF（默认 False）
+        min_jd_match_pct: 对「KB 支持的」JD 词的目标最低覆盖率（默认 85）；<=0 关闭自动补词
+        write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 True）
     """
     # 经验/项目不要太少：至少 5 个（且 ChatClothes/智能工厂会额外固定置顶）
     max_projects = max(int(max_projects or 0), 5)
@@ -2237,31 +2435,65 @@ async def generate_cv_from_kb(
         company_name=company_name,
         target_role_title=target_role_title,
     )
+    html_en = _ensure_min_jd_keyword_coverage_html(
+        html_en,
+        safe_jd_keywords,
+        min_jd_match_pct,
+    )
     html_en_path = en_path.replace('.pdf', '.html')
     with open(html_en_path, 'w', encoding='utf-8') as f:
         f.write(html_en)
     print(f"  EN HTML → {html_en_path}")
     await html_to_pdf(html_en, en_path)
     print(f"  EN PDF  → {en_path}  ({os.path.getsize(en_path)/1024:.1f} KB)")
-    _print_jd_match_metrics_for_cv(html_en, safe_jd_keywords)
-
-    # JD 标注版（默认生成）：高亮命中关键词 + 附命中/未命中清单
-    annotated_path = en_path.replace(".pdf", "_JD_Annotated.pdf")
-    cv_text = _strip_html_tags(html_en)
-    jd_hits = sorted(set(_keyword_hits_in_text(cv_text, safe_jd_keywords)))
-    jd_misses = [k for k in safe_jd_keywords if k not in jd_hits]
-    jd_coverage_pct = (len(jd_hits) / len(safe_jd_keywords) * 100.0) if safe_jd_keywords else 100.0
-    html_en_annotated = _highlight_keywords_in_html(html_en, jd_hits)
-    html_en_annotated = _inject_jd_annotation_styles(html_en_annotated)
-    html_en_annotated = _inject_jd_annotation_legend(
-        html_en_annotated,
-        supported_kws=safe_jd_keywords,
-        hits=jd_hits,
-        misses=jd_misses,
-        coverage_pct=jd_coverage_pct,
+    _print_jd_match_metrics_for_cv(
+        html_en,
+        safe_jd_keywords,
+        min_target_pct=min_jd_match_pct,
     )
-    await html_to_pdf(html_en_annotated, annotated_path)
-    print(f"  EN PDF (JD Annotated) → {annotated_path}  ({os.path.getsize(annotated_path)/1024:.1f} KB)")
+
+    rb_hits, rb_misses, rb_cov = _jd_match_hits_misses_coverage(html_en, safe_jd_keywords)
+    if write_review_bundle:
+        bundle_md = build_cv_review_bundle_markdown(
+            repo_root=repo_root,
+            role_type=role_type,
+            company_name=company_name,
+            target_role_title=target_role_title,
+            jd_raw=jd_keywords,
+            supported_kws=safe_jd_keywords,
+            filtered_kws=filtered_jd_keywords,
+            html_en=html_en,
+            hits=rb_hits,
+            misses=rb_misses,
+            coverage=rb_cov,
+        )
+        bundle_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_AI_REVIEW_BUNDLE.md"))
+        with open(bundle_path, "w", encoding="utf-8") as bf:
+            bf.write(bundle_md)
+        print(f"  AI REVIEW BUNDLE → {bundle_path}")
+    else:
+        print("  AI REVIEW BUNDLE → skipped (--no-review-bundle)")
+
+    annotated_path: Optional[str] = None
+    if generate_jd_annotated_pdf and safe_jd_keywords:
+        annotated_path = en_path.replace(".pdf", "_JD_Annotated.pdf")
+        cv_text = _strip_html_tags(html_en)
+        jd_hits = sorted(set(_keyword_hits_in_text(cv_text, safe_jd_keywords)))
+        jd_misses = [k for k in safe_jd_keywords if k not in jd_hits]
+        jd_coverage_pct = (len(jd_hits) / len(safe_jd_keywords) * 100.0) if safe_jd_keywords else 100.0
+        html_en_annotated = _highlight_keywords_in_html(html_en, jd_hits)
+        html_en_annotated = _inject_jd_annotation_styles(html_en_annotated)
+        html_en_annotated = _inject_jd_annotation_legend(
+            html_en_annotated,
+            supported_kws=safe_jd_keywords,
+            hits=jd_hits,
+            misses=jd_misses,
+            coverage_pct=jd_coverage_pct,
+        )
+        await html_to_pdf(html_en_annotated, annotated_path)
+        print(f"  EN PDF (JD Annotated) → {annotated_path}  ({os.path.getsize(annotated_path)/1024:.1f} KB)")
+    else:
+        print("  EN PDF (JD Annotated) → skipped (use --with-jd-annotated)")
     # 清理中间产物：HTML
     try:
         os.remove(html_en_path)
@@ -2292,6 +2524,7 @@ async def generate_cv_from_kb(
     # 质量报告（按需生成，默认关闭以减少生成耗时）
     if generate_quality_report:
         try:
+            # 基础质量报告（项目选择分析）
             quality_report = _build_quality_report_markdown(
                 role_type=role_type,
                 jd_keywords=safe_jd_keywords,
@@ -2299,10 +2532,31 @@ async def generate_cv_from_kb(
                 company_name=company_name,
                 target_role_title=target_role_title,
             )
+            
+            # 增强质量验证（ATS、AI腔、Bullet质量等）
+            enhanced_section = ""
+            if ENHANCED_VALIDATOR_AVAILABLE:
+                try:
+                    enhanced_report = run_enhanced_validation(
+                        html_en,
+                        jd_keywords=safe_jd_keywords,
+                        profile_data=None,  # 可传入 profile 数据
+                        projects=None,      # 可传入 projects 数据
+                    )
+                    enhanced_section = "\n\n---\n\n" + format_quality_report_markdown(enhanced_report)
+                    
+                    # 如果质量不过关，打印警告
+                    if not enhanced_report.passed:
+                        print(f"  [!!] Quality check: NEEDS ATTENTION (score: {enhanced_report.score:.1f})")
+                    else:
+                        print(f"  [OK] Quality check: PASSED (score: {enhanced_report.score:.1f})")
+                except Exception as e:
+                    print(f"  Warning: enhanced validation failed: {e}")
+            
             report_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_QUALITY.md"))
             with open(report_path, 'w', encoding='utf-8') as f:
-                f.write(quality_report)
-            print(f"  QA RPT → {report_path}")
+                f.write(quality_report + enhanced_section)
+            print(f"  QA RPT -> {report_path}")
         except Exception as e:
             print(f"Warning: failed to generate CV quality report: {e}")
     else:
