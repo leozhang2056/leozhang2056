@@ -542,6 +542,21 @@ def _build_jd_summary_tail(concrete_terms: List[str], lang: str) -> str:
     return f"Hands-on with {concrete_terms[0]}, with practical focus on tests, review, and production stability."
 
 
+def _role_evidence_sentence(role_type: str, lang: str) -> str:
+    """基于已确认事实补充一条可证据化成果句。"""
+    if lang == "zh":
+        if role_type == "android":
+            return "过往项目覆盖 10,000+ DAU 与 <200ms 消息延迟场景，并具备 5+ 工厂站点规模化落地经验。"
+        if role_type == "backend":
+            return "主导并交付 5+ 站点微服务平台，长期维持 99.9% 可用性，并在制造场景实现 30%+ 效率提升。"
+        return "覆盖企业级移动端与后端系统交付，含 10,000+ DAU、5+ 站点落地与 99.9% 可用性目标。"
+    if role_type == "android":
+        return "Proven outcomes include 10,000+ DAU mobile workloads, <200ms messaging latency, and delivery across 5+ production sites."
+    if role_type == "backend":
+        return "Proven outcomes include microservice delivery across 5+ production sites, 99.9% uptime targets, and 30%+ efficiency gains."
+    return "Proven outcomes include enterprise delivery at 10,000+ DAU scale, 5+ production-site rollouts, and 99.9% uptime targets."
+
+
 def generate_summary(
     profile: Dict,
     role_type: str = 'fullstack',
@@ -715,7 +730,7 @@ def generate_summary(
         elif not has_first_class:
             text = f"{text} Awarded First Class Honours."
 
-    # Summary 保持 4–5 行：重点放在 JD 匹配关键词，但不写成“Highlights”模块
+    # Summary 保持 5–6 行：重点放在 JD 匹配关键词，但不写成“Highlights”模块
     def _trim_summary(s: str, max_chars: int) -> str:
         s = re.sub(r"\s+", " ", s).strip()
         if len(s) <= max_chars:
@@ -743,8 +758,13 @@ def generate_summary(
             if tail:
                 text = f"{text} {tail}"
 
-    # 控制 Summary 长度（目标：4–5 行左右）
-    text = _trim_summary(text, 560 if lang == "en" else 380)
+    # 增加一条可证据化成果句，提升吸引力与可信度
+    evidence_sentence = _role_evidence_sentence(role_type, lang)
+    if evidence_sentence and evidence_sentence not in text:
+        text = f"{text} {evidence_sentence}"
+
+    # 控制 Summary 长度（目标：5–6 行左右）
+    text = _trim_summary(text, 700 if lang == "en" else 460)
     text = _final_summary_sanity_fix(text)
 
     return _remove_edge_terms(text)
@@ -1763,12 +1783,209 @@ def _normalize_keywords(jd_keywords: Optional[List[str]]) -> List[str]:
     return out
 
 
+def _normalize_text_for_match(text: str) -> str:
+    """统一匹配文本，减少大小写/符号差异导致的误判。"""
+    t = (text or "").lower()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+
+def _keyword_variant_candidates(keyword: str) -> List[str]:
+    """
+    生成关键词的常见变体，提升与 JD 语义一致的匹配鲁棒性。
+    例如: REST APIs -> REST API, restful api
+    """
+    raw = (keyword or "").strip().lower()
+    if not raw:
+        return []
+    variants = {raw}
+    variants.add(raw.replace("apis", "api"))
+    variants.add(raw.replace("restful", "rest"))
+    variants.add(raw.replace("&", "and"))
+    variants.add(raw.replace("/", " "))
+    return [v for v in variants if v]
+
+
 def _keyword_hits_in_text(text: str, keywords: List[str]) -> List[str]:
     """返回在文本中命中的关键词列表。"""
     if not text or not keywords:
         return []
-    t = text.lower()
-    return [k for k in keywords if k in t]
+    t = _normalize_text_for_match(text)
+    hits: List[str] = []
+    for kw in keywords:
+        kw_hit = False
+        for v in _keyword_variant_candidates(kw):
+            nv = _normalize_text_for_match(v)
+            if nv and nv in t:
+                kw_hit = True
+                break
+        if kw_hit:
+            hits.append(kw)
+    return hits
+
+
+def _build_kb_evidence_corpus(base: Path) -> str:
+    """
+    构建可用于“反幻觉过滤”的证据语料：
+    - skills.yaml
+    - projects/*/facts.yaml 的关键词/技术栈/亮点/角色关联
+    """
+    texts: List[str] = []
+    try:
+        skills_data = load_yaml(base / "kb" / "skills.yaml")
+        texts.append(str(skills_data))
+    except Exception:
+        pass
+
+    try:
+        projects = load_projects(base / "projects")
+        for p in projects:
+            texts.extend([str(x) for x in p.get("keywords", []) if x])
+            texts.extend([str(x) for x in p.get("related_to_roles", []) if x])
+            for h in p.get("highlights", []) or []:
+                if isinstance(h, str):
+                    texts.append(h)
+            tech_stack = p.get("tech_stack", {}) or {}
+            for vals in tech_stack.values():
+                if isinstance(vals, list):
+                    texts.extend([str(v) for v in vals if v])
+    except Exception:
+        pass
+
+    return _normalize_text_for_match(" ".join(texts))
+
+
+def _filter_jd_keywords_by_kb_evidence(
+    jd_keywords: Optional[List[str]],
+    base: Path,
+) -> tuple[List[str], List[str]]:
+    """
+    反幻觉过滤：仅保留在 KB 证据语料中可支撑的 JD 关键词。
+    返回: (supported_keywords, filtered_out_keywords)
+    """
+    normalized_kws = _normalize_keywords(jd_keywords)
+    if not normalized_kws:
+        return [], []
+
+    corpus = _build_kb_evidence_corpus(base)
+    supported: List[str] = []
+    filtered: List[str] = []
+    for kw in normalized_kws:
+        hit = False
+        for v in _keyword_variant_candidates(kw):
+            nv = _normalize_text_for_match(v)
+            if nv and nv in corpus:
+                hit = True
+                break
+        if hit:
+            supported.append(kw)
+        else:
+            filtered.append(kw)
+    return supported, filtered
+
+
+def _print_jd_match_metrics_for_cv(
+    html_en: str,
+    jd_keywords: Optional[List[str]],
+) -> None:
+    """
+    每次生成简历时输出轻量级 JD 匹配指标：
+    - 匹配度（覆盖率）
+    - 命中关键词
+    - 未命中关键词
+    """
+    normalized_kws = _normalize_keywords(jd_keywords)
+    if not normalized_kws:
+        print("  JD MATCH → skipped (no JD keywords)")
+        return
+
+    cv_text = _strip_html_tags(html_en)
+    hits = sorted(set(_keyword_hits_in_text(cv_text, normalized_kws)))
+    misses = [k for k in normalized_kws if k not in hits]
+    coverage = (len(hits) / len(normalized_kws) * 100.0) if normalized_kws else 100.0
+
+    print(f"  JD MATCH → {len(hits)}/{len(normalized_kws)} ({coverage:.1f}%)")
+    print(f"  JD HIT KW → {', '.join(hits) if hits else 'none'}")
+    print(f"  JD MISS KW → {', '.join(misses) if misses else 'none'}")
+    if coverage < 70.0:
+        print("  JD ALERT → low match (<70%), consider regenerating with tighter JD keywords")
+
+
+def _highlight_keywords_in_html(html_content: str, keywords: List[str]) -> str:
+    """
+    在 HTML 文本节点中高亮 JD 命中关键词，避免修改标签本身。
+    """
+    if not html_content or not keywords:
+        return html_content
+
+    # 长词优先，避免短词先替换导致长词无法匹配
+    ordered = sorted(set(keywords), key=lambda x: len(x), reverse=True)
+    tags_and_text = re.split(r"(<[^>]+>)", html_content)
+
+    def _highlight_text_segment(seg: str) -> str:
+        out = seg
+        for kw in ordered:
+            if not kw:
+                continue
+            pattern = re.compile(
+                rf"(?<![A-Za-z0-9])({re.escape(kw)})(?![A-Za-z0-9])",
+                flags=re.IGNORECASE,
+            )
+            out = pattern.sub(r'<mark class="jd-hit">\1</mark>', out)
+        return out
+
+    result_parts: List[str] = []
+    for part in tags_and_text:
+        if part.startswith("<") and part.endswith(">"):
+            result_parts.append(part)
+        else:
+            result_parts.append(_highlight_text_segment(part))
+    return "".join(result_parts)
+
+
+def _inject_jd_annotation_styles(html_content: str) -> str:
+    style = """
+  <style>
+    mark.jd-hit {
+      background: #fff3a3;
+      color: #111;
+      padding: 0 1px;
+      border-radius: 2px;
+    }
+    .jd-annotation-legend {
+      margin-top: 10px;
+      font-size: 9.5pt;
+      color: #333;
+      border-top: 1px dashed #9ca3af;
+      padding-top: 6px;
+      line-height: 1.45;
+    }
+  </style>
+"""
+    if "</head>" in html_content:
+        return html_content.replace("</head>", f"{style}\n</head>", 1)
+    return html_content
+
+
+def _inject_jd_annotation_legend(
+    html_content: str,
+    supported_kws: List[str],
+    hits: List[str],
+    misses: List[str],
+    coverage_pct: float,
+) -> str:
+    legend = f"""
+  <div class="jd-annotation-legend">
+    <strong>JD Annotation</strong><br>
+    JD match score: {coverage_pct:.1f}% ({len(hits)}/{len(supported_kws) if supported_kws else 0})<br>
+    Supported keywords: {", ".join(supported_kws) if supported_kws else "none"}<br>
+    Hit keywords: {", ".join(hits) if hits else "none"}<br>
+    Miss keywords: {", ".join(misses) if misses else "none"}
+  </div>
+"""
+    if "</body>" in html_content:
+        return html_content.replace("</body>", f"{legend}\n</body>", 1)
+    return html_content + legend
 
 
 def _build_quality_report_markdown(
@@ -2003,12 +2220,20 @@ async def generate_cv_from_kb(
 
     role_tag = role_type.upper()
     print(f"\nGenerating CV [{role_tag}] from Career KB...")
+    safe_jd_keywords, filtered_jd_keywords = _filter_jd_keywords_by_kb_evidence(
+        jd_keywords,
+        repo_root,
+    )
     if jd_keywords:
-        print(f"  JD keywords: {jd_keywords}")
+        print(f"  JD keywords(raw): {jd_keywords}")
+    if safe_jd_keywords:
+        print(f"  JD keywords(supported): {safe_jd_keywords}")
+    if filtered_jd_keywords:
+        print(f"  JD keywords(filtered anti-hallucination): {filtered_jd_keywords}")
 
     # 英文版
     html_en      = generate_html_from_kb(
-        role_type, 'en', jd_keywords, max_projects,
+        role_type, 'en', safe_jd_keywords, max_projects,
         company_name=company_name,
         target_role_title=target_role_title,
     )
@@ -2018,6 +2243,25 @@ async def generate_cv_from_kb(
     print(f"  EN HTML → {html_en_path}")
     await html_to_pdf(html_en, en_path)
     print(f"  EN PDF  → {en_path}  ({os.path.getsize(en_path)/1024:.1f} KB)")
+    _print_jd_match_metrics_for_cv(html_en, safe_jd_keywords)
+
+    # JD 标注版（默认生成）：高亮命中关键词 + 附命中/未命中清单
+    annotated_path = en_path.replace(".pdf", "_JD_Annotated.pdf")
+    cv_text = _strip_html_tags(html_en)
+    jd_hits = sorted(set(_keyword_hits_in_text(cv_text, safe_jd_keywords)))
+    jd_misses = [k for k in safe_jd_keywords if k not in jd_hits]
+    jd_coverage_pct = (len(jd_hits) / len(safe_jd_keywords) * 100.0) if safe_jd_keywords else 100.0
+    html_en_annotated = _highlight_keywords_in_html(html_en, jd_hits)
+    html_en_annotated = _inject_jd_annotation_styles(html_en_annotated)
+    html_en_annotated = _inject_jd_annotation_legend(
+        html_en_annotated,
+        supported_kws=safe_jd_keywords,
+        hits=jd_hits,
+        misses=jd_misses,
+        coverage_pct=jd_coverage_pct,
+    )
+    await html_to_pdf(html_en_annotated, annotated_path)
+    print(f"  EN PDF (JD Annotated) → {annotated_path}  ({os.path.getsize(annotated_path)/1024:.1f} KB)")
     # 清理中间产物：HTML
     try:
         os.remove(html_en_path)
@@ -2027,7 +2271,7 @@ async def generate_cv_from_kb(
     # 中文版（可选）
     if generate_zh and zh_path:
         html_zh      = generate_html_from_kb(
-            role_type, 'zh', jd_keywords, max_projects,
+            role_type, 'zh', safe_jd_keywords, max_projects,
             company_name=company_name,
             target_role_title=target_role_title,
         )
@@ -2050,7 +2294,7 @@ async def generate_cv_from_kb(
         try:
             quality_report = _build_quality_report_markdown(
                 role_type=role_type,
-                jd_keywords=jd_keywords,
+                jd_keywords=safe_jd_keywords,
                 max_projects=max_projects,
                 company_name=company_name,
                 target_role_title=target_role_title,
@@ -2064,7 +2308,7 @@ async def generate_cv_from_kb(
     else:
         print("  QA RPT → skipped")
 
-    return en_path, zh_path
+    return en_path, zh_path, annotated_path
 
 
 if __name__ == '__main__':

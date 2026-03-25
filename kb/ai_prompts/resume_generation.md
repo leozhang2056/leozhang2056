@@ -26,13 +26,18 @@ Hard constraints:
 - Do not invent dates, metrics, titles, scope, team size, or technologies
 - Prefer at least 5 projects
 - Prefer 2-4 bullets per project
-- Summary should be 4-5 lines and end with a complete sentence
+- Summary should be 5-6 lines and end with a complete sentence
+- Include at least one concrete, evidence-backed achievement in Summary when available
 - Use strong action verbs
 - Keep output traceable to the selected KB entries
 - Do not output internal helper labels like `JD Match`
 - Avoid edge-related terms unless explicitly required by the target JD
 - **Anti “AI resume” tone**: no keyword comma-lists in Summary; weave 3–4 concrete JD terms in one short sentence if needed
 - Put most JD/stack match in **bullets**, not only Summary; avoid duplicate generic closers (“end-to-end”, “passionate”, “world-class”)
+- Avoid repeated bullet patterns across different projects; keep each project distinct
+- Keep ATS readability high: concise bullets, clear section labels, no dense text blocks
+- Map the JD at requirement level (responsibilities + must-haves + preferred) rather than relying on keyword overlap only
+- Exclude unsupported JD terms when there is no KB evidence (anti-hallucination gate)
 - See `kb/resume_writing_best_practices.md` for rationale
 ```
 
@@ -65,6 +70,7 @@ Requirements:
 - Keep bullets concise
 - Integrate highlights naturally into Summary prose (no explicit "Highlights:" tag)
 - For developer roles, emphasize fast execution and strong self-management
+- Keep hard skills prioritized; include soft skills only when role explicitly emphasizes collaboration/mentoring
 - Do not explain your reasoning unless requested
 ```
 

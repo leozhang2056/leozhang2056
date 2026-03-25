@@ -30,6 +30,7 @@ Available roles: auto | android | ai | backend | fullstack
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
+  outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
   The dated subfolder is created automatically if it does not exist.
 """
@@ -55,7 +56,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest='command', required=True)
 
     # ── cv ──────────────────────────────────────────────────────────────────
-    cv_parser = sub.add_parser('cv', help='Generate CV (English PDF by default)')
+    cv_parser = sub.add_parser('cv', help='Generate CV (English + JD annotated PDF by default)')
     cv_parser.add_argument(
         '--role', default='auto',
         choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
@@ -87,8 +88,8 @@ def build_parser() -> argparse.ArgumentParser:
              'the generated CV filenames will include this company tag.',
     )
     cv_parser.add_argument(
-        '--max-projects', type=int, default=5, dest='max_projects',
-        help='Maximum number of projects to include (default: 5)',
+        '--max-projects', type=int, default=9, dest='max_projects',
+        help='Maximum number of projects to include (default: 9, for near-2-page resumes)',
     )
     cv_parser.add_argument(
         '--output', default=None,
@@ -355,7 +356,7 @@ async def run(args) -> None:
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)
-        en_path, zh_path = await generate_cv_from_kb(
+        en_path, zh_path, annotated_path = await generate_cv_from_kb(
             output_path=args.output,
             role_type=role,
             jd_keywords=jd_keywords or [],
@@ -367,6 +368,7 @@ async def run(args) -> None:
         )
         print(f"\nDone.")
         print(f"  EN: {en_path}")
+        print(f"  EN (JD Annotated): {annotated_path}")
         if zh_path:
             print(f"  ZH: {zh_path}")
         else:
