@@ -23,13 +23,11 @@ summary: 'Mobile forest patrol system for no-signal field scenarios. Supports of
 
   '
 highlights:
-- Focused on Android mobile client development for weak-network and offline forest
-  environments
-- Implemented continuous GPS trajectory recording and local route storage
-- Integrated offline map package loading for no-signal patrol navigation
-- Implemented GIS-based risk point annotation and incident reporting
-- Added deferred data upload and auto-sync after reconnecting to network
-- Supported fire hazard, pest risk, and other field event reporting workflows
+  - Built offline-first Android GIS app for forest patrol in no-signal environments
+  - Implemented continuous GPS trajectory recording supporting 8+ hours field operation
+  - Integrated offline map packages enabling navigation without network connectivity
+  - Designed deferred sync architecture with auto-upload on network recovery
+  - Supported fire/pest risk reporting workflows across multiple forest regions
 tech_stack:
   languages:
   - Java

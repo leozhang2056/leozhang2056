@@ -27,13 +27,12 @@ summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   设计和开发多个子系统，包括用户管理、消息系统、文件系统、工作流管理和审计系统。
   专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
 highlights:
-- Designed and developed Android client using NDK-based TCP/UDP for real-time messaging
-- Built Web frontend and backend services using Spring Cloud and Node.js
-- Architected multi-subsystem platform including user management, messaging, file system, workflow, and audit systems
-- Implemented audio/video communication technologies for enterprise collaboration
-- Designed and maintained distributed database architecture and server infrastructure
-- Developed login system, attendance system, and approval workflows
-- Created real-time monitoring dashboards and business intelligence reports
+  - Built Android messaging client with NDK-level TCP/UDP achieving <200ms message latency
+  - Scaled platform to 10,000+ daily active users processing 500,000+ messages per day
+  - Maintained 99.9% uptime over 11 years across Android, Web, and PC terminals
+  - Architected multi-subsystem platform with Spring Cloud microservices and Node.js
+  - Designed distributed database and file storage supporting real-time collaboration
+  - Built ETL pipelines with Kettle and BI dashboards with PowerBI for system analytics
 
 highlights_cn:
 - 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输
