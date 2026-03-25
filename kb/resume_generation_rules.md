@@ -13,6 +13,7 @@
 - If a required fact is missing, return `MISSING_INFO`.
 - If two factual sources disagree, return `FACT_CONFLICT`.
 - Optimize for relevance to the target role, not for completeness.
+- Treat each JD sentence as meaningful input: map responsibilities, must-haves, and preferred items at sentence level, not keyword-only matching.
 
 ---
 
@@ -48,6 +49,7 @@ Default length:
 - Include dates or years only when the target output explicitly wants them
 - Must end with a complete sentence (no truncation artifacts)
 - Integrate matching highlights naturally into prose (do not add `Highlights:` label)
+- Do not append mechanical keyword tails such as `Additional role alignment: ...` in final candidate-facing PDF.
 - For developer roles, emphasize:
   - fast execution / quick iteration
   - strong self-management / ownership
@@ -77,6 +79,8 @@ Default length:
 - Prefer impact + technology + scope in each bullet
 - Avoid repetitive bullets across projects; each project should highlight a distinct challenge/outcome
 - Prefer concise bullet lines over long paragraph blocks for ATS readability
+- No truncated sentences in project overview or bullets (e.g., `Designed and de.`); fix before output.
+- Prefer role-relevant project evidence over broad technology listing; for finance/payment roles, prioritize reliability, testing, security, production support, and change safety language.
 - Always keep key projects:
   - `chatclothes`
   - `smart-factory`
@@ -122,6 +126,15 @@ Adjust emphasis by target role:
 
 Do not force unrelated strengths into every version.
 
+Company-fit emphasis:
+- Before final generation, gather company context (domain, product type, values/culture, team model, risk profile).
+- For banking/financial/payment roles, prefer wording around:
+  - reliability and operational stability
+  - testing discipline and secure engineering
+  - cloud/infra ownership and production change support
+  - cross-functional Agile delivery
+- Keep tone practical and evidence-led; avoid generic motivational wording.
+
 Role auto-selection guidance:
 - Infer role from JD/title when role is not explicitly forced:
   - `android` / `backend` / `ai` / `fullstack`
@@ -156,7 +169,8 @@ Role auto-selection guidance:
   - Default outputs should include:
     - Main English CV PDF
   - Optional output (explicit flag): JD annotated PDF (highlighted hit keywords + match score + hit/miss list).
-  - Default companion file for **second-AI review**: `*_AI_REVIEW_BUNDLE.md` (CV plain text + JD context + reviewer prompt). Disable with `--no-review-bundle` on `generate.py cv`.
+  - Do not generate or retain `.md` sidecar files by default.
+  - Optional companion file for second-AI review: `*_AI_REVIEW_BUNDLE.md` only when explicitly enabled via `--with-review-bundle`.
   - **Automated second-AI loop** (OpenAI-compatible API): `python generate.py cv-iterate --pdf ... --jd-file ...` extracts PDF text + JD, calls the model for strict JSON edits, backs up YAML under `outputs/.../kb_backup_auto_*`, patches `kb/profile.yaml` / `projects/*/facts.yaml`, then regenerates a new CV PDF. Requires `OPENAI_API_KEY` and `pypdf`. Scanned/image-only PDFs may yield empty text.
   - JD keyword coverage control (default): aim for **≥85%** coverage on **KB-supported** JD keywords; the generator may append a short Summary tail listing any still-missing supported terms (no unsupported JD terms).
   - Generation should apply anti-hallucination gating:

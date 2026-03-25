@@ -16,6 +16,11 @@ import re
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
+import logging
+from functools import lru_cache
+
+# 设置日志
+logger = logging.getLogger(__name__)
 
 # 导入 PDF 生成函数
 from generate_cv_html_to_pdf import html_to_pdf
@@ -31,33 +36,135 @@ except ImportError:
     ENHANCED_VALIDATOR_AVAILABLE = False
 
 
-# ---------------------------------------------------------------------------
+# ============================================================================
+# 常量定义
+# ============================================================================
+
+# 项目优先级常量
+_BASE_PRIORITY: Dict[str, int] = {
+    'chatclothes': 10,
+    'enterprise-messaging': 20,
+    'smart-factory': 30,
+    'live-streaming-system': 40,
+    'visual-gateway': 50,
+    'device-maintenance-prediction': 60,
+    'chinese-herbal-recognition': 70,
+    'iot-solutions': 80,
+    'exhibition-robot': 90,
+    'picture-book-locker': 100,
+    'forest-patrol-inspection': 110,
+    'smart-power': 120,
+    'boobit': 130,
+    'broadcast-control': 140,
+    'visit-system': 150,
+    'school-attendance': 160,
+    'patent-search-system': 170,
+}
+
+# 默认优先级值
+DEFAULT_PRIORITY = 9999
+PRIORITY_OFFSET = 200
+
+# 项目选择常量
+DEFAULT_MAX_PROJECTS = 5
+CORE_PROJECT_COUNT = 3
+DEFAULT_MAX_BULLETS = 4
+
+# 文本长度限制
+SUMMARY_MAX_CHARS_EN = 700
+SUMMARY_MAX_CHARS_ZH = 460
+OVERVIEW_MAX_CHARS = 160
+SUMMARY_TRUNCATE_POINT = 120
+
+# 字符串处理常量
+MAX_TERM_LENGTH = 24
+MIN_TERM_LENGTH = 3
+
+# JD匹配常量
+MIN_JD_MATCH_PCT = 85.0
+BUNDLE_SIZE_LIMIT = 120_000
+
+# ============================================================================
 # 数据加载
-# ---------------------------------------------------------------------------
+# ============================================================================
 
-def load_yaml(file_path) -> Dict:
-    """加载 YAML 文件"""
-    with open(file_path, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f) or {}
+def load_yaml(file_path: str) -> Dict[str, Any]:
+    """
+    加载 YAML 文件，支持错误处理和日志记录。
+    安全版本：防止路径遍历攻击。
+    """
+    if not isinstance(file_path, str):
+        logger.error(f"Invalid file_path type: {type(file_path)}")
+        return {}
+
+    # 安全检查：确保路径不包含危险字符
+    if any(char in file_path for char in ['..', '\\', '\x00']):
+        logger.error(f"Potentially unsafe file path: {file_path}")
+        return {}
+
+    try:
+        # 使用 Path 来规范化路径
+        safe_path = Path(file_path).resolve()
+        # 可选：检查路径是否在允许的目录内
+        # allowed_base = Path(__file__).parent.parent.parent
+        # if not safe_path.is_relative_to(allowed_base):
+        #     logger.error(f"File path outside allowed directory: {safe_path}")
+        #     return {}
+
+        with open(safe_path, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        if data is None:
+            logger.warning(f"YAML file is empty: {file_path}")
+            return {}
+        return data
+    except FileNotFoundError:
+        logger.error(f"YAML file not found: {file_path}")
+        return {}
+    except yaml.YAMLError as e:
+        logger.error(f"YAML parsing error in {file_path}: {e}")
+        return {}
+    except PermissionError:
+        logger.error(f"Permission denied reading {file_path}")
+        return {}
+    except Exception as e:
+        logger.error(f"Unexpected error loading YAML {file_path}: {e}")
+        return {}
 
 
-def load_projects(projects_dir) -> List[Dict]:
-    """加载所有项目的 facts.yaml"""
-    projects = []
+def load_projects(projects_dir: str) -> List[Dict[str, Any]]:
+    """加载所有项目的 facts.yaml，支持错误处理和日志记录。"""
+    projects: List[Dict[str, Any]] = []
     projects_path = Path(projects_dir)
 
-    for project_dir in projects_path.iterdir():
-        if project_dir.is_dir():
-            facts_file = project_dir / 'facts.yaml'
-            if facts_file.exists():
-                try:
-                    facts = load_yaml(facts_file)
-                    if facts:
-                        facts['_project_dir'] = project_dir.name
-                        projects.append(facts)
-                except Exception as e:
-                    print(f"Warning: Failed to load {facts_file}: {e}")
+    if not projects_path.exists():
+        logger.error(f"Projects directory does not exist: {projects_dir}")
+        return projects
 
+    if not projects_path.is_dir():
+        logger.error(f"Projects path is not a directory: {projects_dir}")
+        return projects
+
+    for project_dir in projects_path.iterdir():
+        if not project_dir.is_dir():
+            continue
+
+        facts_file = project_dir / 'facts.yaml'
+        if not facts_file.exists():
+            logger.debug(f"No facts.yaml found in {project_dir.name}, skipping")
+            continue
+
+        try:
+            facts = load_yaml(str(facts_file))
+            if facts:
+                facts['_project_dir'] = project_dir.name
+                projects.append(facts)
+                logger.debug(f"Loaded project: {project_dir.name}")
+            else:
+                logger.warning(f"Empty facts.yaml in {project_dir.name}")
+        except Exception as e:
+            logger.error(f"Failed to load project {project_dir.name}: {e}")
+
+    logger.info(f"Loaded {len(projects)} projects from {projects_dir}")
     return projects
 
 
@@ -107,28 +214,33 @@ _ROLE_PROJECT_ORDER: Dict[str, List[str]] = {
 }
 
 
-def score_project_by_jd(project: Dict, jd_keywords: List[str]) -> float:
+@lru_cache(maxsize=128)
+def score_project_by_jd(project: tuple, jd_keywords: tuple) -> float:
     """根据 JD 关键词对单个项目打分（复用 kb_query.py 的逻辑）"""
-    if not jd_keywords:
+    # Convert back to dict and list for processing
+    project_dict = dict(project)
+    jd_keywords_list = list(jd_keywords) if jd_keywords else []
+
+    if not jd_keywords_list:
         return 0.0
 
     score = 0.0
-    kws_lower = [k.lower() for k in jd_keywords]
+    kws_lower = [k.lower() for k in jd_keywords_list]
 
     # keywords 字段命中 +1
-    proj_kws = [k.lower() for k in project.get('keywords', [])]
+    proj_kws = [k.lower() for k in project_dict.get('keywords', [])]
     for kw in kws_lower:
         if kw in proj_kws:
             score += 1.0
 
     # related_to_roles 命中 +0.5
-    roles = [r.lower() for r in project.get('related_to_roles', [])]
+    roles = [r.lower() for r in project_dict.get('related_to_roles', [])]
     for kw in kws_lower:
         if any(kw in r for r in roles):
             score += 0.5
 
     # tech_stack 命中 +0.8
-    tech_stack = project.get('tech_stack', {})
+    tech_stack = project_dict.get('tech_stack', {})
     all_techs: List[str] = []
     for tech_list in tech_stack.values():
         if isinstance(tech_list, list):
@@ -138,7 +250,7 @@ def score_project_by_jd(project: Dict, jd_keywords: List[str]) -> float:
             score += 0.8
 
     # highlights 命中 +0.3（文本相关性；highlights 项可能是 str 或 dict）
-    raw_highlights = project.get('highlights', [])
+    raw_highlights = project_dict.get('highlights', [])
     parts = []
     for h in raw_highlights:
         if isinstance(h, str):
@@ -157,7 +269,7 @@ def sort_projects(
     projects: List[Dict],
     role_type: str = 'fullstack',
     jd_keywords: Optional[List[str]] = None,
-    max_projects: int = 5,
+    max_projects: int = DEFAULT_MAX_PROJECTS,
 ) -> List[Dict]:
     """
     排序逻辑：
@@ -176,12 +288,15 @@ def sort_projects(
         # 再查全局静态优先级
         for key, val in _BASE_PRIORITY.items():
             if key in pid.lower():
-                return 200 + val
-        return 9999
+                return PRIORITY_OFFSET + val
+        return DEFAULT_PRIORITY
 
     if jd_keywords:
         for p in projects:
-            p['_jd_score'] = score_project_by_jd(p, jd_keywords)
+            # Convert dict to tuple for caching
+            project_tuple = tuple(sorted(p.items()))
+            jd_tuple = tuple(jd_keywords)
+            p['_jd_score'] = score_project_by_jd(project_tuple, jd_tuple)
         sorted_projects = sorted(
             projects,
             key=lambda p: (-p.get('_jd_score', 0), get_base_priority(p))
@@ -197,16 +312,27 @@ def sort_projects(
 # ---------------------------------------------------------------------------
 
 
-def _load_project_relations(base: Path) -> Dict:
-    """加载 kb/project_relations.yaml（不存在时返回空 dict）"""
+def _load_project_relations(base: Path) -> Dict[str, Any]:
+    """加载 kb/project_relations.yaml，支持错误处理。"""
     kb_dir = base / 'kb'
     rel_file = kb_dir / 'project_relations.yaml'
     if not rel_file.exists():
+        logger.debug("project_relations.yaml not found, using empty relations")
         return {}
+
     try:
         with open(rel_file, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f) or {}
-    except Exception:
+            data = yaml.safe_load(f)
+            if data is None:
+                logger.warning("project_relations.yaml is empty")
+                return {}
+            logger.debug("Loaded project relations successfully")
+            return data
+    except yaml.YAMLError as e:
+        logger.error(f"YAML parsing error in project_relations.yaml: {e}")
+        return {}
+    except Exception as e:
+        logger.error(f"Unexpected error loading project_relations.yaml: {e}")
         return {}
 
 
@@ -282,8 +408,8 @@ def _select_projects_with_relations(
     if len(ranked) >= max_projects:
         return _apply_pins(ranked)[:max_projects]
 
-    # 先取若干“核心项目”
-    core_count = min(3, max_projects, len(ranked))
+    # 先取若干"核心项目"
+    core_count = min(CORE_PROJECT_COUNT, max_projects, len(ranked))
     core = ranked[:core_count]
 
     selected_ids = {_build_project_id(p) for p in core}
@@ -504,9 +630,9 @@ def _pick_concrete_jd_terms_for_summary(normed_kws: List[str], limit: int = 4) -
     scored: List[tuple] = []
     for kw in normed_kws:
         t = str(kw).strip()
-        if len(t) < 2:
+        if len(t) < MIN_TERM_LENGTH:
             continue
-        score = min(len(t), 24)
+        score = min(len(t), MAX_TERM_LENGTH)
         tl = t.lower()
         if "/" in t or "-" in t or "." in t:
             score += 5
@@ -622,7 +748,7 @@ def generate_summary(
         seen = set()
         for kw in kws:
             kw_norm = str(kw or "").strip()
-            if len(kw_norm) < 3:
+            if len(kw_norm) < MIN_TERM_LENGTH:
                 continue
             if kw_norm.lower() in bad:
                 continue
@@ -746,7 +872,7 @@ def generate_summary(
         if len(s) <= max_chars:
             return s
         cut = s.rfind(".", 0, max_chars)
-        if cut > 120:
+        if cut > SUMMARY_TRUNCATE_POINT:
             return s[:cut + 1]
         return s[:max_chars].rstrip(" ,;") + "…"
 
@@ -774,7 +900,7 @@ def generate_summary(
         text = f"{text} {evidence_sentence}"
 
     # 控制 Summary 长度（目标：5–6 行左右）
-    text = _trim_summary(text, 700 if lang == "en" else 460)
+    text = _trim_summary(text, SUMMARY_MAX_CHARS_EN if lang == "en" else SUMMARY_MAX_CHARS_ZH)
     text = _final_summary_sanity_fix(text)
 
     return _remove_edge_terms(text)
@@ -784,29 +910,49 @@ def generate_summary(
 # Experience —— 项目 bullet points
 # ---------------------------------------------------------------------------
 
-def _load_all_bullets(base: Path) -> List[Dict]:
+def _load_all_bullets(base: Path) -> List[Dict[str, Any]]:
     """
-    加载 kb/bullets/*.yaml 中的所有要点。
-
-    注意：这里只做最小加载，不复用 kb_query.KBQuery，避免不必要耦合。
+    加载 kb/bullets/*.yaml 中的所有要点，支持错误处理。
     """
     kb_dir = base / 'kb'
     bullets_dir = kb_dir / 'bullets'
-    results: List[Dict] = []
+    results: List[Dict[str, Any]] = []
 
     if not bullets_dir.exists():
+        logger.warning("Bullets directory not found")
+        return results
+
+    if not bullets_dir.is_dir():
+        logger.error("Bullets path is not a directory")
         return results
 
     for bullet_file in bullets_dir.glob('*.yaml'):
         try:
             with open(bullet_file, 'r', encoding='utf-8') as f:
-                data = yaml.safe_load(f) or {}
-            for b in data.get('bullets', []):
+                data = yaml.safe_load(f)
+                if data is None:
+                    logger.warning(f"Empty bullets file: {bullet_file.name}")
+                    continue
+
+            bullets_list = data.get('bullets', [])
+            if not isinstance(bullets_list, list):
+                logger.warning(f"Invalid bullets structure in {bullet_file.name}")
+                continue
+
+            for b in bullets_list:
                 if isinstance(b, dict):
                     results.append(b)
-        except Exception:
-            # 出错时静默跳过单个文件，不影响整体生成
-            continue
+                else:
+                    logger.warning(f"Invalid bullet entry in {bullet_file.name}: {type(b)}")
+
+            logger.debug(f"Loaded {len(bullets_list)} bullets from {bullet_file.name}")
+
+        except yaml.YAMLError as e:
+            logger.error(f"YAML parsing error in {bullet_file.name}: {e}")
+        except Exception as e:
+            logger.error(f"Unexpected error loading {bullet_file.name}: {e}")
+
+    logger.info(f"Loaded {len(results)} total bullet entries")
     return results
 
 
@@ -922,7 +1068,7 @@ def _select_bullets_for_project(
 
 def generate_project_bullet_points(
     project: Dict,
-    max_bullets: int = 4,
+    max_bullets: int = DEFAULT_MAX_BULLETS,
     lang: str = 'en',
     role_type: str = 'fullstack',
     all_bullets: Optional[List[Dict]] = None,
@@ -1170,7 +1316,7 @@ def generate_experience_section(
         else:
             overview_raw = project.get('overview') or project.get('summary', '')
         if isinstance(overview_raw, str):
-            overview = overview_raw.strip().split('\n')[0][:160]
+            overview = overview_raw.strip().split('\n')[0][:OVERVIEW_MAX_CHARS]
         else:
             overview = ''
         overview = _remove_edge_terms(overview)
@@ -1623,7 +1769,7 @@ def generate_html_from_kb(
     role_type: str = 'fullstack',
     lang: str = 'en',
     jd_keywords: Optional[List[str]] = None,
-    max_projects: int = 5,
+    max_projects: int = DEFAULT_MAX_PROJECTS,
     company_name: Optional[str] = None,
     target_role_title: Optional[str] = None,
 ) -> str:
@@ -1996,7 +2142,7 @@ def build_cv_review_bundle_markdown(
     """
     plain = _strip_html_tags(html_en)
     plain = re.sub(r"\s+", " ", plain).strip()
-    if len(plain) > 120_000:
+    if len(plain) > BUNDLE_SIZE_LIMIT:
         plain = plain[:120_000] + "\n\n[truncated for bundle size]"
 
     prompt = _load_cv_external_review_prompt(repo_root)
@@ -2078,7 +2224,7 @@ def _ensure_min_jd_keyword_coverage_html(
 def _print_jd_match_metrics_for_cv(
     html_en: str,
     jd_keywords: Optional[List[str]],
-    min_target_pct: float = 85.0,
+    min_target_pct: float = MIN_JD_MATCH_PCT,
 ) -> None:
     """
     每次生成简历时输出轻量级 JD 匹配指标：
@@ -2374,7 +2520,7 @@ async def generate_cv_from_kb(
     generate_quality_report: bool = False,
     generate_jd_annotated_pdf: bool = False,
     min_jd_match_pct: float = 85.0,
-    write_review_bundle: bool = True,
+    write_review_bundle: bool = False,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -2390,7 +2536,7 @@ async def generate_cv_from_kb(
         generate_quality_report: 是否生成质量报告（默认 False）
         generate_jd_annotated_pdf: 是否额外生成 JD 标注版 PDF（默认 False）
         min_jd_match_pct: 对「KB 支持的」JD 词的目标最低覆盖率（默认 85）；<=0 关闭自动补词
-        write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 True）
+        write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 False）
     """
     # 经验/项目不要太少：至少 5 个（且 ChatClothes/智能工厂会额外固定置顶）
     max_projects = max(int(max_projects or 0), 5)
@@ -2472,7 +2618,7 @@ async def generate_cv_from_kb(
             bf.write(bundle_md)
         print(f"  AI REVIEW BUNDLE → {bundle_path}")
     else:
-        print("  AI REVIEW BUNDLE → skipped (--no-review-bundle)")
+        print("  AI REVIEW BUNDLE → skipped (use --with-review-bundle)")
 
     annotated_path: Optional[str] = None
     if generate_jd_annotated_pdf and safe_jd_keywords:

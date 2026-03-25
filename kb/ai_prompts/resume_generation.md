@@ -38,6 +38,9 @@ Hard constraints:
 - Keep ATS readability high: concise bullets, clear section labels, no dense text blocks
 - Map the JD at requirement level (responsibilities + must-haves + preferred) rather than relying on keyword overlap only
 - Exclude unsupported JD terms when there is no KB evidence (anti-hallucination gate)
+- Every sentence in JD can carry signal; perform sentence-level requirement mapping before writing final text
+- Final PDF text must not contain truncated phrases or broken clauses
+- Avoid mechanical alignment tails such as `Additional role alignment: ...` in candidate-facing output
 - See `kb/resume_writing_best_practices.md` for rationale
 ```
 
@@ -71,6 +74,7 @@ Requirements:
 - Integrate highlights naturally into Summary prose (no explicit "Highlights:" tag)
 - For developer roles, emphasize fast execution and strong self-management
 - Keep hard skills prioritized; include soft skills only when role explicitly emphasizes collaboration/mentoring
+- Include company-fit language derived from company context (domain, product, culture) in natural prose, not slogan repetition
 - Do not explain your reasoning unless requested
 ```
 
@@ -150,6 +154,7 @@ These are weighting hints, not additional facts.
 4. Review warnings such as `MISSING_INFO` or `FACT_CONFLICT`
 5. Run final generation pass with explicit company-fit language
 6. Render with template
+7. Run final quality gate: no truncation, no repeated bullets, no robotic keyword stitching
 
 ---
 

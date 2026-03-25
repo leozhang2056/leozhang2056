@@ -45,7 +45,7 @@ Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
   outputs/<YYYY-MM-DD>/ApplicationEmail_<company>_<YYYYMMDD>.txt
   outputs/<YYYY-MM-DD>/JD_Match_Report_<YYYYMMDD>.md
-  outputs/<YYYY-MM-DD>/CV_*_AI_REVIEW_BUNDLE.md (for a second AI; use --no-review-bundle to skip)
+  outputs/<YYYY-MM-DD>/CV_*_AI_REVIEW_BUNDLE.md (optional, with --with-review-bundle)
   The dated subfolder is created automatically if it does not exist.
 """
 
@@ -132,12 +132,12 @@ def build_parser() -> argparse.ArgumentParser:
         help='Target minimum coverage %% for KB-supported JD keywords (default: 85; use 0 to disable auto tail)',
     )
     cv_parser.add_argument(
-        '--no-review-bundle',
+        '--with-review-bundle',
         dest='review_bundle',
-        action='store_false',
-        help='Do not write *_AI_REVIEW_BUNDLE.md for external AI review (default: write bundle)',
+        action='store_true',
+        help='Also write *_AI_REVIEW_BUNDLE.md for external AI review. Default: off',
     )
-    cv_parser.set_defaults(review_bundle=True)
+    cv_parser.set_defaults(review_bundle=False)
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
