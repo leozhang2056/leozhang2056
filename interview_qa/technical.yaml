@@ -1,0 +1,285 @@
+# 技术面试问题库
+# Technical Interview Q&A
+# 
+# 使用说明：
+# - 每个问题包含回答要点和可引用的项目证据
+# - 根据面试官的追问深度选择合适的回答长度
+# - 所有回答必须与 projects/ 和 kb/ 中的事实一致
+
+questions:
+  - id: tell_me_about_yourself
+    category: general
+    question: "Tell me about yourself / Walk me through your resume"
+    difficulty: easy
+    answer_points:
+      - "Full-stack software engineer with 10+ years of experience across Android, Java backend, and AI/ML"
+      - "Recently completed Master's in AI at AUT, graduating Oct 2025"
+      - "Led 6-person teams and delivered enterprise systems serving 10K+ users"
+      - "Transitioning from traditional software engineering to AI engineering"
+    evidence:
+      - project: chatclothes
+        highlight: "Master's thesis submitted 6 months early"
+      - project: smart-factory
+        highlight: "Led 6-person team, 99.9% uptime over 6 years"
+      - project: enterprise-messaging
+        highlight: "10,000+ DAU, <200ms latency"
+    narrative_thread: full_stack_evolution
+    tips:
+      - "Start with current status (Master's student)"
+      - "Highlight the 10-year progression from Android to Backend to AI"
+      - "End with what you're looking for next"
+
+  - id: why_android_to_ai
+    category: career_transition
+    question: "Why did you transition from Android to AI?"
+    difficulty: medium
+    answer_points:
+      - "Natural progression: Android development increasingly involves AI (camera, voice, on-device ML)"
+      - "Saw the trend: wanted to be at the forefront rather than just integrating others' AI"
+      - "ChatClothes thesis project proved I could deliver full-stack AI systems"
+      - "10 years of software engineering gives me unique advantage in AI engineering"
+    evidence:
+      - project: chatclothes
+        highlight: "Built complete AI pipeline independently, edge deployment on Raspberry Pi"
+      - project: school-attendance
+        highlight: "Early face recognition integration experience"
+    narrative_thread: full_stack_evolution
+    tips:
+      - "Frame it as evolution, not pivot"
+      - "Emphasize software engineering foundation as advantage"
+      - "Show intentional career planning"
+
+  - id: describe_chatclothes
+    category: project_deep_dive
+    question: "Tell me about your ChatClothes project"
+    difficulty: medium
+    answer_points:
+      - "Master's thesis: multimodal virtual try-on system combining diffusion models, YOLO, and LLM"
+      - "Technical challenge: optimized for edge deployment on Raspberry Pi 5"
+      - "Innovation: LoRA fine-tuning on OOTDiffusion, custom YOLO12n-LC classifier"
+      - "Result: submitted 6 months early with working demo and full documentation"
+    evidence:
+      - project: chatclothes
+        metrics:
+          - "6 months early submission"
+          - "Edge deployment on Raspberry Pi 5"
+          - "LoRA fine-tuning for pose alignment"
+    technical_details:
+      - "Used ComfyUI for visual workflow, Dify for LLM orchestration"
+      - "DeepSeek LLM for natural language garment control"
+      - "Validated on DressCode and VITON-HD datasets"
+    tips:
+      - "Start with what it does (virtual try-on)"
+      - "Highlight the full-stack nature (not just model training)"
+      - "Emphasize edge deployment as differentiator"
+
+  - id: handle_difficult_bug
+    category: problem_solving
+    question: "Tell me about a difficult bug you solved"
+    difficulty: medium
+    answer_points:
+      - "Smart Factory: electronic scale serial communication intermittent failures"
+      - "Root cause: Windows service losing serial port connection under heavy load"
+      - "Solution: implemented watchdog with auto-reconnect, connection pooling"
+      - "Result: eliminated data loss, maintained 99.9% uptime"
+    evidence:
+      - project: smart-factory
+        highlight: "Weighing Data Bridge via Windows Service with monitoring and reconnect"
+    star_method:
+      Situation: "Production system losing weight data from shop-floor scales"
+      Task: "Ensure reliable data acquisition for production tracking"
+      Action: "Built Windows service with persistent listener, auto-reconnect logic"
+      Result: "99.9% uptime maintained, zero data loss after fix"
+    tips:
+      - "Choose production issue with business impact"
+      - "Show systematic debugging approach"
+      - "Quantify the result"
+
+  - id: lead_team_conflict
+    category: leadership
+    question: "How do you handle conflicts in your team?"
+    difficulty: medium
+    answer_points:
+      - "Smart Factory: disagreement between Android and backend teams on API design"
+      - "Approach: facilitated technical discussion, created proof-of-concept for both approaches"
+      - "Decision: chose REST + WebSocket hybrid based on benchmark results"
+      - "Lesson: data-driven decisions reduce personal conflicts"
+    evidence:
+      - project: smart-factory
+        highlight: "Led 6-person cross-functional team"
+    star_method:
+      Situation: "Architecture disagreement blocking feature delivery"
+      Task: "Resolve conflict while maintaining team cohesion"
+      Action: "Benchmarked both approaches, let data decide"
+      Result: "Team bought into decision, feature delivered on time"
+    tips:
+      - "Show mediation skills, not just authority"
+      - "Emphasize data-driven resolution"
+      - "Mention follow-up to prevent recurrence"
+
+  - id: why_leave_china
+    category: personal
+    question: "Why did you leave your job in China and come to New Zealand?"
+    difficulty: medium
+    answer_points:
+      - "Career growth: wanted formal AI education to complement 10 years of engineering experience"
+      - "AUT's strong AI research program and industry connections in NZ"
+      - "Personal: seeking better work-life balance and outdoor lifestyle"
+      - "Long-term: contribute to NZ's growing tech sector"
+    evidence:
+      - project: chatclothes
+        highlight: "Master's at AUT, thesis submitted 6 months early"
+    tips:
+      - "Keep it positive - focus on growth, not escaping"
+      - "Show research into NZ tech scene"
+      - "Demonstrate commitment to staying"
+
+  - id: ndk_experience
+    category: technical_deep_dive
+    question: "Tell me about your NDK experience"
+    difficulty: hard
+    answer_points:
+      - "Enterprise Messaging: built TCP/UDP protocol layer in C for low-latency messaging"
+      - "Challenge: Android Java couldn't achieve <200ms latency requirement"
+      - "Solution: NDK-based native implementation with JNI bridge"
+      - "Result: achieved <200ms latency, handled 500K+ messages/day"
+    evidence:
+      - project: enterprise-messaging
+        metrics:
+          - "<200ms message latency"
+          - "500K+ messages processed daily"
+          - "10,000+ daily active users"
+    technical_details:
+      - "Custom protocol over TCP/UDP"
+      - "JNI layer for Java-C communication"
+      - "Memory management and buffer pooling in C"
+    tips:
+      - "Explain WHY NDK was necessary (performance)"
+      - "Mention JNI complexity and how you handled it"
+      - "Show understanding of memory management trade-offs"
+
+  - id: microservices_challenges
+    category: system_design
+    question: "What challenges did you face with microservices?"
+    difficulty: hard
+    answer_points:
+      - "Smart Factory: started monolithic, evolved to microservices"
+      - "Challenge 1: distributed transaction consistency across services"
+      - "Solution: eventual consistency with Saga pattern, compensating transactions"
+      - "Challenge 2: service discovery and load balancing across 5+ factory sites"
+      - "Solution: Spring Cloud Eureka with client-side load balancing"
+    evidence:
+      - project: smart-factory
+        highlight: "Microservice architecture deployed across 5+ manufacturing sites"
+    technical_details:
+      - "Spring Cloud: Eureka, Ribbon, Hystrix"
+      - "Database per service pattern"
+      - "API Gateway for unified entry point"
+    tips:
+      - "Show evolution from monolith (pragmatic)"
+      - "Discuss both technical and organizational challenges"
+      - "Mention monitoring and debugging complexity"
+
+  - id: ai_production_challenges
+    category: ai_ml
+    question: "What challenges did you face deploying AI to production?"
+    difficulty: hard
+    answer_points:
+      - "ChatClothes: edge deployment on Raspberry Pi 5 was major constraint"
+      - "Challenge 1: model size vs inference speed trade-off"
+      - "Solution: YOLO12n-LC lightweight classifier, model quantization"
+      - "Challenge 2: offline capability requirement"
+      - "Solution: Ollama for local LLM, complete pipeline on device"
+    evidence:
+      - project: chatclothes
+        highlights:
+          - "Edge-optimized inference on Raspberry Pi 5"
+          - "Full offline capability"
+          - "YOLO12n-LC lightweight classifier"
+    technical_details:
+      - "ONNX conversion for cross-platform deployment"
+      - "ARM optimization strategies"
+      - "Memory-constrained environment handling"
+    tips:
+      - "Focus on engineering, not just model accuracy"
+      - "Show understanding of deployment constraints"
+      - "Mention monitoring model performance in production"
+
+  - id: five_year_goal
+    category: career_goals
+    question: "Where do you see yourself in 5 years?"
+    difficulty: medium
+    answer_points:
+      - "Short-term (1-2 years): Join a company doing meaningful AI/ML work, deepen production ML experience"
+      - "Mid-term (3-5 years): Lead AI engineering team, architect end-to-end ML systems"
+      - "Long-term: Bridge research and engineering, bring cutting-edge AI to practical applications"
+      - "Leverage unique combination: 10 years engineering + formal AI education"
+    evidence:
+      - project: chatclothes
+        highlight: "Research to deployment full-stack experience"
+    tips:
+      - "Show ambition but realism"
+      - "Connect to your unique background"
+      - "Demonstrate commitment to continuous growth"
+
+  - id: biggest_challenge_project
+    category: project_deep_dive
+    question: "What was the biggest challenge in your recent project?"
+    difficulty: medium
+    answer_points:
+      - "ChatClothes: getting real-time inference on Raspberry Pi 5 with limited memory"
+      - "Constraint: edge deployment, no cloud fallback"
+      - "Approach: model selection (YOLO12n-LC), quantization, pipeline optimization"
+      - "Result: usable latency, full offline capability, thesis submitted early"
+    evidence:
+      - project: chatclothes
+        highlight: "Edge deployment on Raspberry Pi 5, real-time performance"
+    tips:
+      - "Pick one concrete technical challenge, not vague"
+      - "Show problem decomposition and trade-offs"
+      - "End with measurable outcome"
+
+  - id: why_this_role
+    category: general
+    question: "Why are you interested in this role / our company?"
+    difficulty: easy
+    answer_points:
+      - "Role alignment: [tailor to JD - e.g. Android + scale / AI production / backend systems]"
+      - "Company: [research their products, tech blog, mission - say something specific]"
+      - "Growth: what you want to learn and what you can contribute"
+    preparation_required: true
+    tips:
+      - "Always research company before interview"
+      - "Mention 1-2 specific things (product, blog post, tech stack)"
+      - "Connect your experience to their needs"
+
+  - id: salary_expectations
+    category: closing
+    question: "What are your salary expectations?"
+    difficulty: medium
+    answer_framework:
+      - "Research: Glassdoor, levels.fyi, local market for role and experience"
+      - "Range: give a range based on research, not a single number"
+      - "Optional: 'I'm flexible based on total package (equity, benefits, growth)'"
+    avoid:
+      - "Giving a number first if possible"
+      - "Under-selling without market data"
+    tips:
+      - "Often asked in HR round, not technical"
+      - "If asked in technical round: 'I'd prefer to discuss after we both see a fit'"
+      - "Know your walk-away number"
+
+  - id: questions_for_interviewer
+    category: closing
+    question: "What questions do you have for us?"
+    difficulty: easy
+    recommended_questions:
+      - "What does success look like in this role in the first 6 months?"
+      - "How does the team approach AI model deployment and monitoring?"
+      - "What's the biggest technical challenge the team is facing right now?"
+      - "How do you balance research innovation with production stability?"
+      - "What opportunities are there for continuing education or conference attendance?"
+    tips:
+      - "Always have questions prepared"
+      - "Show interest in their challenges"
+      - "Avoid questions about salary/vacation in technical round"

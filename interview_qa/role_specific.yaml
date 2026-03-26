@@ -1,0 +1,201 @@
+# 岗位特定面试问题
+# Role-Specific Interview Questions
+
+android_questions:
+  - id: android_background_service
+    question: "How do you handle background tasks in Android?"
+    answer_points:
+      - "WorkManager for deferrable, guaranteed background work"
+      - "Foreground Service for user-initiated long-running tasks"
+      - "AlarmManager for exact timing requirements"
+      - "Enterprise Messaging example: used foreground service for persistent connection"
+    evidence:
+      - project: enterprise-messaging
+        highlight: "NDK-based TCP/UDP with persistent connection management"
+    code_example: |
+      // WorkManager for sync
+      val syncWork = PeriodicWorkRequestBuilder<SyncWorker>(15, TimeUnit.MINUTES)
+          .setConstraints(Constraints.Builder()
+              .setRequiredNetworkType(NetworkType.CONNECTED)
+              .build())
+          .build()
+
+  - id: android_offline_sync
+    question: "How do you implement offline-first architecture?"
+    answer_points:
+      - "Local database (Room) as single source of truth"
+      - "Repository pattern with local and remote data sources"
+      - "Sync adapter or WorkManager for background sync"
+      - "Conflict resolution strategy (last-write-wins or custom logic)"
+    evidence:
+      - project: smart-factory
+        highlight: "Offline-first design with real-time sync"
+      - project: forest-patrol-inspection
+        highlight: "Offline-first data capture with upload after network recovery"
+
+  - id: android_performance
+    question: "How do you optimize Android app performance?"
+    answer_points:
+      - "Memory: use LeakCanary, avoid memory leaks in callbacks"
+      - "UI: RecyclerView view holder pattern, avoid overdraw"
+      - "Battery: batch network requests, use JobScheduler"
+      - "Enterprise Messaging: NDK for low-latency messaging"
+    evidence:
+      - project: enterprise-messaging
+        highlight: "<200ms message latency through NDK optimization"
+
+backend_questions:
+  - id: backend_scaling
+    question: "How do you scale a backend system?"
+    answer_points:
+      - "Horizontal scaling: stateless services, load balancing"
+      - "Database: read replicas, sharding, caching (Redis)"
+      - "Async processing: message queues for heavy tasks"
+      - "Smart Factory: scaled from 1 to 5+ factory sites"
+    evidence:
+      - project: smart-factory
+        metrics:
+          - "Scaled from 1 to 5+ factory sites"
+          - "99.9% uptime maintained"
+
+  - id: backend_security
+    question: "How do you secure your backend APIs?"
+    answer_points:
+      - "Authentication: JWT tokens with refresh mechanism"
+      - "Authorization: RBAC (Role-Based Access Control)"
+      - "Input validation: sanitize all inputs, SQL injection prevention"
+      - "HTTPS everywhere, rate limiting, audit logging"
+    evidence:
+      - project: smart-factory
+        highlight: "Multi-role portals (customer/factory/worker) with access control"
+
+  - id: backend_microservices_tradeoffs
+    question: "When would you NOT use microservices?"
+    answer_points:
+      - "Small team: overhead of distributed systems not worth it"
+      - "Unclear domain boundaries: leads to tight coupling anyway"
+      - "Start with monolith, extract services when boundaries clear"
+      - "Smart Factory: started monolithic, evolved to microservices"
+    evidence:
+      - project: smart-factory
+        highlight: "Evolved architecture based on business growth"
+
+ai_ml_questions:
+  - id: ml_model_selection
+    question: "How do you choose the right ML model?"
+    answer_points:
+      - "Problem type: classification vs regression vs generation"
+      - "Data characteristics: size, quality, feature types"
+      - "Constraints: inference time, model size, interpretability needs"
+      - "ChatClothes: YOLO for detection, Diffusion for generation"
+    evidence:
+      - project: chatclothes
+        highlights:
+          - "YOLO12n-LC for lightweight classification"
+          - "OOTDiffusion with LoRA for generation"
+
+  - id: ml_production_deployment
+    question: "How do you deploy ML models to production?"
+    answer_points:
+      - "Model versioning and A/B testing capability"
+      - "Monitoring: prediction distribution, latency, error rates"
+      - "Rollback strategy for model failures"
+      - "Edge deployment: quantization, ONNX conversion"
+    evidence:
+      - project: chatclothes
+        highlight: "Edge deployment on Raspberry Pi 5 with model optimization"
+
+  - id: overfitting_solution
+    question: "How do you handle overfitting?"
+    answer_points:
+      - "More data: data augmentation techniques"
+      - "Regularization: L1/L2, dropout, early stopping"
+      - "Simpler model: reduce complexity"
+      - "Cross-validation: ensure generalization"
+    evidence:
+      - project: chatclothes
+        highlight: "LoRA fine-tuning for effective adaptation with limited data"
+
+iot_questions:
+  - id: iot_protocol_choice
+    question: "How do you choose IoT communication protocols?"
+    answer_points:
+      - "MQTT: lightweight, pub/sub, good for many devices"
+      - "CoAP: RESTful, good for constrained devices"
+      - "HTTP: when compatibility matters, higher overhead"
+      - "Custom: when performance critical (NDK TCP/UDP)"
+    evidence:
+      - project: broadcast-control
+        highlight: "MQTT broadcast-based remote publishing"
+      - project: enterprise-messaging
+        highlight: "Custom NDK TCP/UDP for <200ms latency"
+
+  - id: iot_security
+    question: "How do you secure IoT devices?"
+    answer_points:
+      - "Device authentication: certificates or tokens"
+      - "Encrypted communication: TLS for MQTT/HTTP"
+      - "Firmware updates: signed OTA updates"
+      - "Network segmentation: isolate IoT devices"
+    evidence:
+      - project: iot-solutions
+        highlight: "Secure device management and communication"
+
+leadership_questions:
+  - id: lead_without_authority
+    question: "How do you lead without authority?"
+    answer_points:
+      - "Influence through expertise and demonstrated value"
+      - "Build relationships and understand others' motivations"
+      - "Find common goals and frame proposals around them"
+      - "Smart Factory: influenced architecture decisions as tech lead"
+    evidence:
+      - project: smart-factory
+        highlight: "Led 6-person cross-functional team through influence"
+
+  - id: hire_engineer
+    question: "What do you look for when hiring engineers?"
+    answer_points:
+      - "Problem-solving ability: how they approach unknown problems"
+      - "Learning mindset: curiosity and growth orientation"
+      - "Communication: can explain technical concepts clearly"
+      - "Cultural fit: collaboration and ownership"
+    tips:
+      - "Connect to your own hiring experience if any"
+      - "Show you value diverse perspectives"
+
+  - id: technical_vs_management
+    question: "Do you prefer technical or management track?"
+    answer_points:
+      - "Currently: enjoy balance of both (tech lead role)"
+      - "Strength: can bridge technical and business discussions"
+      - "Future: want to stay technical while growing leadership impact"
+      - "Ideal: Principal Engineer or Staff Engineer path"
+    tips:
+      - "Be honest about preferences"
+      - "Show you've thought about career progression"
+      - "Align with company's career ladder if known"
+
+company_research_questions:
+  - id: why_this_company
+    question: "Why do you want to join our company?"
+    preparation_required: true
+    answer_framework:
+      - "Research: company products, tech stack, recent news"
+      - "Connection: specific product/technology that interests you"
+      - "Alignment: how your skills match their needs"
+      - "Growth: what you hope to learn/contribute"
+    example_for_ai_company:
+      - "Impressed by your work on [specific product]"
+      - "Your approach to [technical challenge] aligns with my experience"
+      - "Want to contribute my production ML experience to scale your AI systems"
+
+  - id: what_do_you_know
+    question: "What do you know about our company?"
+    preparation_required: true
+    research_checklist:
+      - "Read recent blog posts and engineering articles"
+      - "Check GitHub repos and open source contributions"
+      - "Review company values and culture"
+      - "Understand product offerings and target market"
+      - "Know recent funding news or major announcements"
