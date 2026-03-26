@@ -446,7 +446,7 @@ async def run_cv_iterate(args: argparse.Namespace) -> None:
         role_type=role,
         company_name=getattr(args, "company", None),
         target_role_title=getattr(args, "title", None),
-        max_projects=int(getattr(args, "max_projects", 9)),
+        max_projects=int(getattr(args, "max_projects", 6)),
         model=model,
         dry_run=bool(getattr(args, "dry_run", False)),
         output_pdf=getattr(args, "output", None),
@@ -479,7 +479,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Optional JD keywords (used if URL/file missing or to supplement)",
     )
     p.add_argument("--max-keywords", type=int, default=24)
-    p.add_argument("--max-projects", type=int, default=9)
+    p.add_argument("--max-projects", type=int, default=6)
     p.add_argument(
         "--output",
         default=None,

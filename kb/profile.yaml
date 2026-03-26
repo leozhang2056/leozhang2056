@@ -40,13 +40,11 @@ career_identity:
       architecture, with hands-on expertise in AI-driven applications, full-stack systems, and cloud/edge deployment.
     
     android_focus: >
-      Senior Android engineer with 10+ years of production delivery, graduating with a Master's 
-      in Computer and Information Sciences (First Class Honours) from AUT in February 2026.
-      Built and deployed Android apps for industrial IoT, enterprise messaging, and consumer-facing 
-      scenarios. Delivered offline-first GIS app for field operations, NDK-level TCP/UDP messaging 
-      client, and IoT SDKs integrating RFID/sensors for manufacturing. Proficient in Kotlin/Java, 
-      Jetpack, MVVM, and performance optimization. Experienced with full mobile lifecycle from 
-      architecture to CI/CD and production monitoring. New Zealand-based, available for immediate start.
+      Android engineer with 10+ years shipping production apps across industrial IoT, in-house
+      messaging, and customer-facing products. Recent work includes offline-first mapping for field
+      crews, TCP/UDP messaging through the NDK, and on-device integrations with RFID and plant-floor
+      sensors. Kotlin and Java with Jetpack and MVVM; comfortable taking work from design reviews
+      through automated builds, release, and production troubleshooting. Based in Auckland.
     
     ai_focus: >
       AI-focused software engineer and Master's student in Computer and Information Sciences at AUT,

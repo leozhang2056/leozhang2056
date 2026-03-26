@@ -100,7 +100,7 @@ def build_match_report(
     role_type: str,
     jd_items: List[Dict[str, str]],
     manual_keywords: Optional[List[str]] = None,
-    max_projects: int = 9,
+    max_projects: int = 6,
     max_keywords: int = 24,
 ) -> str:
     rows: List[Dict[str, object]] = []
@@ -177,7 +177,7 @@ def generate_match_report_file(
     jd_urls: Optional[List[str]] = None,
     jd_files: Optional[List[str]] = None,
     jd_keywords: Optional[List[str]] = None,
-    max_projects: int = 9,
+    max_projects: int = 6,
     max_keywords: int = 24,
     output_path: Optional[str] = None,
 ) -> str:
@@ -223,7 +223,7 @@ def main() -> None:
     parser.add_argument("--jd-url", action="append", dest="jd_urls", help="JD URL (can repeat)")
     parser.add_argument("--jd-file", action="append", dest="jd_files", help="JD file path (can repeat)")
     parser.add_argument("--jd-keywords", nargs="*", dest="jd_keywords", help="Manual JD keywords")
-    parser.add_argument("--max-projects", type=int, default=9, help="Max projects when generating CV for scoring")
+    parser.add_argument("--max-projects", type=int, default=6, help="Max projects when generating CV for scoring")
     parser.add_argument("--max-keywords", type=int, default=24, help="Max extracted keywords per JD")
     parser.add_argument("--output", default=None, help="Output report path")
     args = parser.parse_args()

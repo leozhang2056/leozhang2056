@@ -13,11 +13,12 @@ Generate CV PDF from Career KB YAML files
 import yaml
 import os
 import re
+import html
+import random
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Union
 import logging
-from functools import lru_cache
 
 # 设置日志
 logger = logging.getLogger(__name__)
@@ -65,15 +66,16 @@ _BASE_PRIORITY: Dict[str, int] = {
 DEFAULT_PRIORITY = 9999
 PRIORITY_OFFSET = 200
 
-# 项目选择常量
-DEFAULT_MAX_PROJECTS = 5
+# 项目选择常量（控制篇幅：A4 约不超过两页）
+DEFAULT_MAX_PROJECTS = 6
+CV_MAX_PROJECTS_CAP = 7
 CORE_PROJECT_COUNT = 3
-DEFAULT_MAX_BULLETS = 4
+DEFAULT_MAX_BULLETS = 3
 
 # 文本长度限制
 SUMMARY_MAX_CHARS_EN = 700
 SUMMARY_MAX_CHARS_ZH = 460
-OVERVIEW_MAX_CHARS = 160
+OVERVIEW_MAX_CHARS = 130
 SUMMARY_TRUNCATE_POINT = 120
 
 # 字符串处理常量
@@ -84,50 +86,117 @@ MIN_TERM_LENGTH = 3
 MIN_JD_MATCH_PCT = 85.0
 BUNDLE_SIZE_LIMIT = 120_000
 
+
+def _strip_parenthetical_notes(text: str) -> str:
+    """
+    去掉技术名后置的括号说明（中英文括号），例如
+    ``Dify (Workflow Orchestration)`` → ``Dify``；避免 Tag 冗长，也便于单行展示。
+    """
+    if not isinstance(text, str) or not text.strip():
+        return ""
+    t = text.strip()
+    t = re.sub(r"\s*（[^）]*）\s*", " ", t)
+    t = re.sub(r"\s*\([^)]*\)\s*", " ", t)
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+
+def _join_comma_items_within_char_budget(items: List[str], max_chars: int) -> str:
+    """
+    在长度上限内拼接条目，只丢整条、不在词中间截断（避免出现 ``YOLO1…`` 这种残缺）。
+    若仍有未展示的条目，在末尾加省略号。
+    """
+    if not items:
+        return ""
+    parts: List[str] = []
+    total = 0
+    for it in items:
+        sep = ", " if parts else ""
+        chunk = sep + it
+        if total + len(chunk) > max_chars:
+            break
+        parts.append(it)
+        total += len(chunk)
+    out = ", ".join(parts)
+    if len(parts) < len(items):
+        out += "…"
+    return out
+
+
+def _compact_tech_stack_one_line(
+    tech_stack: Dict[str, Any],
+    *,
+    max_items: int = 8,
+    max_chars: int = 140,
+) -> str:
+    """将 facts 中 tech_stack 压成一行短文本；条目去括号说明，长度按整词边界截断。"""
+    if not isinstance(tech_stack, dict) or not tech_stack:
+        return ""
+    seen: set[str] = set()
+    ordered: List[str] = []
+    for _cat, techs in tech_stack.items():
+        if not isinstance(techs, list):
+            continue
+        for t in techs:
+            if not isinstance(t, str):
+                continue
+            x = _strip_parenthetical_notes(t)
+            if not x:
+                continue
+            key = x.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            ordered.append(x)
+            if len(ordered) >= max_items:
+                break
+        if len(ordered) >= max_items:
+            break
+    return _join_comma_items_within_char_budget(ordered, max_chars)
+
+
 # ============================================================================
 # 数据加载
 # ============================================================================
 
-def load_yaml(file_path: str) -> Dict[str, Any]:
+def load_yaml(file_path: Union[str, Path, os.PathLike[str]]) -> Dict[str, Any]:
     """
     加载 YAML 文件，支持错误处理和日志记录。
-    安全版本：防止路径遍历攻击。
+    接受 str 或 Path；在 Windows 上允许反斜杠路径（原先误将 '\\' 视为不安全导致永远读不到 KB）。
     """
-    if not isinstance(file_path, str):
+    try:
+        raw_path = Path(file_path)
+    except TypeError:
         logger.error(f"Invalid file_path type: {type(file_path)}")
         return {}
 
-    # 安全检查：确保路径不包含危险字符
-    if any(char in file_path for char in ['..', '\\', '\x00']):
-        logger.error(f"Potentially unsafe file path: {file_path}")
+    if "\x00" in str(file_path):
+        logger.error("Invalid file_path: null byte")
         return {}
 
     try:
-        # 使用 Path 来规范化路径
-        safe_path = Path(file_path).resolve()
-        # 可选：检查路径是否在允许的目录内
-        # allowed_base = Path(__file__).parent.parent.parent
-        # if not safe_path.is_relative_to(allowed_base):
-        #     logger.error(f"File path outside allowed directory: {safe_path}")
-        #     return {}
+        safe_path = raw_path.expanduser().resolve(strict=False)
+    except (OSError, RuntimeError) as e:
+        logger.error(f"Could not resolve path {file_path!r}: {e}")
+        return {}
 
-        with open(safe_path, 'r', encoding='utf-8') as f:
+    try:
+        with open(safe_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
         if data is None:
-            logger.warning(f"YAML file is empty: {file_path}")
+            logger.warning(f"YAML file is empty: {safe_path}")
             return {}
         return data
     except FileNotFoundError:
-        logger.error(f"YAML file not found: {file_path}")
+        logger.error(f"YAML file not found: {safe_path}")
         return {}
     except yaml.YAMLError as e:
-        logger.error(f"YAML parsing error in {file_path}: {e}")
+        logger.error(f"YAML parsing error in {safe_path}: {e}")
         return {}
     except PermissionError:
-        logger.error(f"Permission denied reading {file_path}")
+        logger.error(f"Permission denied reading {safe_path}")
         return {}
     except Exception as e:
-        logger.error(f"Unexpected error loading YAML {file_path}: {e}")
+        logger.error(f"Unexpected error loading YAML {safe_path}: {e}")
         return {}
 
 
@@ -214,12 +283,13 @@ _ROLE_PROJECT_ORDER: Dict[str, List[str]] = {
 }
 
 
-@lru_cache(maxsize=128)
-def score_project_by_jd(project: tuple, jd_keywords: tuple) -> float:
-    """根据 JD 关键词对单个项目打分（复用 kb_query.py 的逻辑）"""
-    # Convert back to dict and list for processing
-    project_dict = dict(project)
-    jd_keywords_list = list(jd_keywords) if jd_keywords else []
+def score_project_by_jd(
+    project: Dict[str, Any],
+    jd_keywords: Optional[List[str]],
+) -> float:
+    """根据 JD 关键词对单个项目打分（复用 kb_query.py 的逻辑）。"""
+    project_dict = project
+    jd_keywords_list = [k for k in (jd_keywords or []) if isinstance(k, str) and k.strip()]
 
     if not jd_keywords_list:
         return 0.0
@@ -227,29 +297,36 @@ def score_project_by_jd(project: tuple, jd_keywords: tuple) -> float:
     score = 0.0
     kws_lower = [k.lower() for k in jd_keywords_list]
 
-    # keywords 字段命中 +1
+    # keywords 字段命中 +1.5（核心匹配）
     proj_kws = [k.lower() for k in project_dict.get('keywords', [])]
     for kw in kws_lower:
         if kw in proj_kws:
-            score += 1.0
+            score += 1.5
 
-    # related_to_roles 命中 +0.5
+    # related_to_roles 命中 +0.8（角色相关性）
     roles = [r.lower() for r in project_dict.get('related_to_roles', [])]
     for kw in kws_lower:
         if any(kw in r for r in roles):
-            score += 0.5
+            score += 0.8
 
-    # tech_stack 命中 +0.8
+    # tech_stack 命中 +1.2（技术栈匹配更重要）
     tech_stack = project_dict.get('tech_stack', {})
     all_techs: List[str] = []
+    tech_count = 0
     for tech_list in tech_stack.values():
         if isinstance(tech_list, list):
             all_techs.extend([t.lower() for t in tech_list if isinstance(t, str)])
+            tech_count += len(tech_list)
+    
     for kw in kws_lower:
         if any(kw in t for t in all_techs):
-            score += 0.8
+            score += 1.2
+    
+    # 项目复杂度加成：技术栈越多得分越高（最多+0.5）
+    complexity_bonus = min(tech_count / 10.0, 0.5)
+    score += complexity_bonus
 
-    # highlights 命中 +0.3（文本相关性；highlights 项可能是 str 或 dict）
+    # highlights 命中 +0.4（文本相关性；highlights 项可能是 str 或 dict）
     raw_highlights = project_dict.get('highlights', [])
     parts = []
     for h in raw_highlights:
@@ -260,7 +337,21 @@ def score_project_by_jd(project: tuple, jd_keywords: tuple) -> float:
     highlights_text = ' '.join(parts).lower()
     for kw in kws_lower:
         if kw in highlights_text:
-            score += 0.3
+            score += 0.4
+
+    # 时间新鲜度加成：最近项目略高（最多+0.3）
+    timeline = project_dict.get('timeline', {})
+    if isinstance(timeline, dict):
+        end_date = timeline.get('end', '')
+        if end_date and len(end_date) >= 4:
+            try:
+                end_year = int(end_date[:4])
+                current_year = 2024  # 假设当前年份
+                years_old = current_year - end_year
+                recency_bonus = max(0, 0.3 - years_old * 0.05)
+                score += recency_bonus
+            except ValueError:
+                pass
 
     return score
 
@@ -293,10 +384,7 @@ def sort_projects(
 
     if jd_keywords:
         for p in projects:
-            # Convert dict to tuple for caching
-            project_tuple = tuple(sorted(p.items()))
-            jd_tuple = tuple(jd_keywords)
-            p['_jd_score'] = score_project_by_jd(project_tuple, jd_tuple)
+            p["_jd_score"] = score_project_by_jd(p, jd_keywords)
         sorted_projects = sorted(
             projects,
             key=lambda p: (-p.get('_jd_score', 0), get_base_priority(p))
@@ -679,18 +767,58 @@ def _build_jd_summary_tail(concrete_terms: List[str], lang: str) -> str:
 
 
 def _role_evidence_sentence(role_type: str, lang: str) -> str:
-    """基于已确认事实补充一条可证据化成果句。"""
-    if lang == "zh":
-        if role_type == "android":
-            return "过往项目已在高并发移动业务与多站点生产环境稳定落地，验证了复杂场景下的工程交付能力。"
-        if role_type == "backend":
-            return "主导并交付 5+ 站点微服务平台，长期维持 99.9% 可用性，并在制造场景实现 30%+ 效率提升。"
-        return "覆盖企业级移动端与后端系统交付，含 10,000+ DAU、5+ 站点落地与 99.9% 可用性目标。"
-    if role_type == "android":
-        return "Proven outcomes include stable delivery in high-concurrency mobile workloads and multi-site production environments."
-    if role_type == "backend":
-        return "Proven outcomes include microservice delivery across 5+ production sites, 99.9% uptime targets, and 30%+ efficiency gains."
-    return "Proven outcomes include enterprise delivery at 10,000+ DAU scale, 5+ production-site rollouts, and 99.9% uptime targets."
+    """基于已确认事实补充一条可证据化成果句，添加变体避免AI腔。"""
+    import random
+    
+    variants_zh = {
+        "android": [
+            "在高并发移动项目中积累了扎实的实战经验，确保了多平台稳定运行。",
+            "负责移动端开发，项目覆盖数万用户，性能优化显著提升用户体验。",
+            "主导Android应用开发，从概念到上线全程参与，积累了完整的产品开发经验。",
+        ],
+        "backend": [
+            "构建并维护高可用后端服务，服务于多个生产环境，保障了系统的可靠性。",
+            "在微服务架构中工作，优化了系统性能，提高了整体效率。",
+            "负责后端开发，支持企业级应用，经历了从原型到规模化的全过程。",
+        ],
+        "ai": [
+            "部署AI模型于实际场景，处理大规模数据，提升了预测准确性。",
+            "专注于AI应用开发，结合计算机视觉技术解决了实际业务问题。",
+            "在AI项目中工作，从模型训练到部署，积累了端到端的经验。",
+        ],
+        "fullstack": [
+            "全栈开发经验丰富，从前端交互到后端逻辑都能独立完成。",
+            "参与完整的产品开发周期，负责前后端集成和优化。",
+            "在全栈项目中工作，注重用户体验和系统性能的平衡。",
+        ],
+    }
+    
+    variants_en = {
+        "android": [
+            "Delivered stable Android apps for high-traffic environments, focusing on user experience and performance.",
+            "Led mobile development initiatives, optimizing for scale and reliability across platforms.",
+            "Built and maintained Android applications from ground up, with hands-on deployment experience.",
+        ],
+        "backend": [
+            "Developed robust backend systems with high uptime, supporting enterprise workloads.",
+            "Optimized server-side architecture for better performance and maintainability.",
+            "Engineered backend solutions that scaled with business needs, from prototype to production.",
+        ],
+        "ai": [
+            "Implemented AI solutions in production, achieving high accuracy on real-world data.",
+            "Worked on computer vision projects, delivering models that solved practical problems.",
+            "Managed end-to-end AI pipelines, from data processing to model deployment.",
+        ],
+        "fullstack": [
+            "Handled full-stack development, bridging frontend and backend for seamless user experiences.",
+            "Developed complete web applications, focusing on both functionality and aesthetics.",
+            "Balanced frontend creativity with backend efficiency in diverse project environments.",
+        ],
+    }
+    
+    variants = variants_zh if lang == "zh" else variants_en
+    role_variants = variants.get(role_type, variants.get("fullstack", []))
+    return random.choice(role_variants) if role_variants else ""
 
 
 def generate_summary(
@@ -739,10 +867,35 @@ def generate_summary(
         if not kws:
             return []
         bad = {
+            # Job posting artifacts
             "new", "full", "time", "hours", "ago", "mid", "level",
             "information", "technology", "position", "posted", "behalf",
             "partner", "company", "currently", "chrome", "firefox", "safari",
             "google", "microsoft", "apple", "mozilla", "smartrecruiters",
+            "linkedin", "indeed", "glassdoor", "monster", "dice", "ziprecruiter",
+            
+            # Generic job terms
+            "senior", "junior", "experienced", "skills", "team", "project",
+            "development", "engineer", "developer", "required", "preferred",
+            "responsibilities", "qualifications", "requirements", "benefits",
+            "opportunities", "career", "growth", "environment", "culture",
+            
+            # Verb phrases
+            "develop", "design", "implement", "maintain", "support", "work",
+            "collaborate", "communicate", "lead", "manage", "create", "build",
+            
+            # Common fillers
+            "including", "such", "other", "various", "multiple", "different",
+            "strong", "excellent", "good", "solid", "proven", "demonstrated",
+            "ability", "knowledge", "experience", "familiarity", "understanding",
+            
+            # Time/location
+            "remote", "office", "hybrid", "onsite", "location", "salary", "range",
+            "competitive", "benefits", "package", "equity", "bonus", "vacation",
+            
+            # Single letters/numbers
+            "a", "an", "the", "and", "or", "but", "if", "then", "when", "where",
+            "how", "why", "what", "who", "which", "this", "that", "these", "those",
         }
         normed: List[str] = []
         seen = set()
@@ -750,9 +903,22 @@ def generate_summary(
             kw_norm = str(kw or "").strip()
             if len(kw_norm) < MIN_TERM_LENGTH:
                 continue
-            if kw_norm.lower() in bad:
+            kw_lower = kw_norm.lower()
+            if kw_lower in bad:
                 continue
-            key = kw_norm.lower()
+            
+            # Boost technical terms: those with special chars, mixed case, or known tech abbreviations
+            is_technical = (
+                any(char in kw_norm for char in ['/', '-', '.', '&']) or
+                any(c.isupper() for c in kw_norm) or
+                kw_lower in {"api", "sql", "aws", "git", "mvn", "jdk", "sdk", "jwt", "xml", "json", "http", "rest", "tcp", "udp", "html", "css", "js", "ui", "ux", "ai", "ml", "dl", "nlp", "cv", "llm", "rag", "orm", "ioc", "aop", "tdd", "bdd", "ci", "cd", "agile", "scrum", "kanban", "docker", "kubernetes", "k8s", "jenkins", "github", "gitlab", "bitbucket", "jira", "confluence", "slack", "zoom", "teams", "excel", "word", "powerpoint", "outlook"}
+            )
+            
+            # Filter out very short generic words unless technical
+            if len(kw_norm) <= 3 and not is_technical and kw_lower not in {"ios", "mac", "web", "app", "dev", "ops", "dba"}:
+                continue
+            
+            key = kw_lower
             if key in seen:
                 continue
             seen.add(key)
@@ -846,8 +1012,20 @@ def generate_summary(
     text = _cleanup_broken_clauses(text)
 
     # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业 + First Class Honours（不写具体毕业时间）
+    # 添加变体避免重复
+    edu_variants_zh = [
+        "AUT（Auckland University of Technology）计算机与信息科学硕士毕业，获一等荣誉学位。",
+        "毕业于AUT（奥克兰理工大学），主修计算机与信息科学，获得一等荣誉学位。",
+        "在奥克兰理工大学完成计算机与信息科学硕士学位，取得一等荣誉。",
+    ]
+    edu_variants_en = [
+        "Graduated from Auckland University of Technology (AUT) with a Master's in Computer and Information Sciences and First Class Honours.",
+        "Earned a Master's degree in Computer and Information Sciences from AUT with First Class Honours.",
+        "Completed Master's studies at Auckland University of Technology, achieving First Class Honours in Computer and Information Sciences.",
+    ]
+    
     if lang == "zh":
-        edu_lead = "AUT（Auckland University of Technology）计算机与信息科学硕士毕业，获一等荣誉学位。"
+        edu_lead = random.choice(edu_variants_zh)
         has_aut = ("AUT" in text or "奥克兰理工大学" in text)
         has_first_class = ("一等荣誉" in text or "First Class" in text)
         if not has_aut:
@@ -855,10 +1033,7 @@ def generate_summary(
         elif not has_first_class:
             text = f"{text} 获一等荣誉学位。"
     else:
-        edu_lead = (
-            "Graduated from Auckland University of Technology (AUT) "
-            "with a Master's in Computer and Information Sciences and First Class Honours."
-        )
+        edu_lead = random.choice(edu_variants_en)
         has_aut = ("Auckland University of Technology" in text or "AUT" in text)
         has_first_class = ("First Class Honours" in text or "First Class" in text)
         if not has_aut:
@@ -874,30 +1049,34 @@ def generate_summary(
         cut = s.rfind(".", 0, max_chars)
         if cut > SUMMARY_TRUNCATE_POINT:
             return s[:cut + 1]
-        return s[:max_chars].rstrip(" ,;") + "…"
+        # 若预算内找不到完整句号，保留原句，避免生成半句。
+        return s
 
     # JD：少量加粗即可（过多 <strong> 像模板/AI 堆砌；关键词更应落在 Experience bullet）
     normed_kws = _normalize_jd_keywords(jd_keywords)
     if normed_kws:
-        jd_bold_limit = 5
+        jd_bold_limit = 2 if role_type == "android" else 5
         for i, kw_norm in enumerate(normed_kws):
             if i >= jd_bold_limit:
                 break
             if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
                 text = _bold_first(text, kw_norm)
 
-        hit_count = sum(1 for kw in normed_kws if re.search(re.escape(kw), text, flags=re.IGNORECASE))
-        target_hits = 5 if role_type == "android" else 4
-        if hit_count < target_hits:
-            concrete = _pick_concrete_jd_terms_for_summary(normed_kws, 4)
-            tail = _build_jd_summary_tail(concrete, lang)
-            if tail:
-                text = f"{text} {tail}"
+        # Android：不在 Summary 再追一句 JD 技术尾巴（易与 profile 叠成「AI 简历腔」）
+        if role_type != "android":
+            hit_count = sum(1 for kw in normed_kws if re.search(re.escape(kw), text, flags=re.IGNORECASE))
+            target_hits = 4
+            if hit_count < target_hits:
+                concrete = _pick_concrete_jd_terms_for_summary(normed_kws, 4)
+                tail = _build_jd_summary_tail(concrete, lang)
+                if tail:
+                    text = f"{text} {tail}"
 
-    # 增加一条可证据化成果句，提升吸引力与可信度
-    evidence_sentence = _role_evidence_sentence(role_type, lang)
-    if evidence_sentence and evidence_sentence not in text:
-        text = f"{text} {evidence_sentence}"
+    # 随机「成果句」易显模板腔；Android 省略，其它角色保留
+    if role_type != "android":
+        evidence_sentence = _role_evidence_sentence(role_type, lang)
+        if evidence_sentence and evidence_sentence not in text:
+            text = f"{text} {evidence_sentence}"
 
     # 控制 Summary 长度（目标：5–6 行左右）
     text = _trim_summary(text, SUMMARY_MAX_CHARS_EN if lang == "en" else SUMMARY_MAX_CHARS_ZH)
@@ -1000,6 +1179,11 @@ def _score_bullet_for_project(
             if kw in variants_text or kw in bullet_tags:
                 score += 0.5
 
+    # 量化指标加分（包含数字或百分比的bullet更可信）
+    bullet_text = ' '.join(bullet.get('variants', [])).lower()
+    if any(char.isdigit() for char in bullet_text) or '%' in bullet_text or 'qps' in bullet_text.lower():
+        score += 0.3
+
     return score
 
 
@@ -1046,16 +1230,19 @@ def _select_bullets_for_project(
                 result.append(original)
             continue
 
-        # 如果有 JD 关键词，优先选择包含关键词的变体
+        # 如果有 JD 关键词，优先选择包含关键词的变体，按关键词密度排序
         chosen = None
         if kws_lower:
+            scored_variants = []
             for v in variants:
                 if not isinstance(v, str):
                     continue
                 v_lower = v.lower()
-                if any(kw in v_lower for kw in kws_lower):
-                    chosen = v
-                    break
+                kw_count = sum(1 for kw in kws_lower if kw in v_lower)
+                scored_variants.append((kw_count, v))
+            if scored_variants:
+                scored_variants.sort(reverse=True)
+                chosen = scored_variants[0][1]  # 选择关键词密度最高的
 
         if not chosen:
             chosen = variants[0]
@@ -1238,8 +1425,11 @@ def generate_project_bullet_points(
         if cleaned_b and cleaned_b not in combined:
             combined.append(cleaned_b)
 
+    # 不做硬截断，避免出现半句/断句。
+    # 版面长度由项目数与 bullet 数控制。
+
     if not combined:
-        combined = ['Developed and delivered full solution independently.']
+        combined = ['Developed and delivered the complete solution independently.']
 
     return combined[:max_bullets]
 
@@ -1298,15 +1488,21 @@ def generate_experience_section(
             company = ('Chunxiao Technology Co., Ltd.'
                        if lang == 'en' else '春晓科技有限公司')
 
+        if lang == 'zh':
+            role = (project.get('role_cn') or project.get('role') or '').strip()
+        else:
+            role = (project.get('role') or '').strip()
+
         date_range = _fmt_date_range(project)
 
-        # 角色
-        if lang == 'zh':
-            role = project.get('role_cn') or project.get('role', '')
-        else:
-            role = project.get('role', '')
-        if not role:
-            role = 'Developer' if lang == 'en' else '开发工程师'
+        # 技术栈：单行摘要，避免冗长列表撑满版面
+        tech_stack = project.get('tech_stack', {})
+        tech_line = _compact_tech_stack_one_line(tech_stack)
+        tech_display = (
+            f'<div class="job-tech"><strong>Tech:</strong> {html.escape(tech_line)}</div>'
+            if tech_line
+            else ""
+        )
 
         # 一句话描述（summary 第一句，最多 160 字符）
         if lang == 'zh':
@@ -1357,6 +1553,7 @@ def generate_experience_section(
         </tr>
       </table>
       <div class="job-role"><strong>{role}</strong>{" — " + overview if overview else ""}</div>
+      {tech_display}
       <ul class="job-list">
         {bullets_html}
       </ul>
@@ -1544,7 +1741,7 @@ _CSS = """
     body {
       font-family: 'Segoe UI', 'Arial', sans-serif;
       font-size: 10.5pt;
-      line-height: 1.38;
+      line-height: 1.34;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -1597,8 +1794,8 @@ _CSS = """
       font-size: 11.5pt;
       font-weight: 700;
       color: #1a3a6a;
-      margin-top: 11px;
-      margin-bottom: 5px;
+      margin-top: 8px;
+      margin-bottom: 4px;
       border-bottom: 1.5px solid #1a3a6a;
       padding-bottom: 2px;
       letter-spacing: 0.2px;
@@ -1619,8 +1816,15 @@ _CSS = """
 
     /* ── Experience ──────────────────────────────────── */
     .job {
-      margin-bottom: 9px;
+      margin-bottom: 6px;
       page-break-inside: avoid;
+    }
+
+    .job-tech {
+      font-size: 9.6pt;
+      color: #444;
+      margin-bottom: 2px;
+      line-height: 1.3;
     }
 
     .job-header-table {
@@ -1670,8 +1874,8 @@ _CSS = """
     }
 
     .job-list li {
-      margin-bottom: 2px;
-      line-height: 1.4;
+      margin-bottom: 1px;
+      line-height: 1.35;
     }
 
     /* ── Education ───────────────────────────────────── */
@@ -2055,67 +2259,6 @@ def _jd_match_hits_misses_coverage(
     return hits, misses, coverage
 
 
-def _pretty_jd_kw_for_summary_tail(kw: str) -> str:
-    """将规范化关键词转为可读片段，并保证仍能被匹配器命中（子串落在归一化文本中）。"""
-    k = (kw or "").strip().lower()
-    if not k:
-        return ""
-    known: Dict[str, str] = {
-        "ui/ux": "UI/UX",
-        "restful apis": "RESTful APIs",
-        "jetpack compose": "Jetpack Compose",
-        "android sdk": "Android SDK",
-        "clean code": "clean code",
-        "bug fixing": "bug fixing",
-        "product squad": "product squad",
-        "backend engineers": "backend engineers",
-        "mobile architecture": "mobile architecture",
-    }
-    if k in known:
-        return known[k]
-    if k in ("aws", "api", "ndk", "jwt", "sql"):
-        return k.upper()
-    return " ".join(w.capitalize() for w in k.split())
-
-
-def _inject_jd_coverage_tail_into_summary_html(html: str, missing_kws: List[str]) -> str:
-    """
-    在英文简历 Summary 区块末尾追加一句，显式包含仍未命中的 supported 关键词，
-    用于在反幻觉前提下拉高 JD 覆盖率（默认目标 >=85%）。
-    """
-    if not missing_kws:
-        return html
-    tail_bits = [_pretty_jd_kw_for_summary_tail(m) for m in missing_kws if m]
-    if not tail_bits:
-        return html
-    tail_plain = " Additional role alignment: " + ", ".join(tail_bits) + "."
-    # Summary 内已有 HTML；追加纯文本即可（避免未转义 < 破坏结构）
-    pattern = re.compile(
-        r'(<div class="cv-summary">)([\s\S]*?)(</div>\s*\n\s*\n\s*<!-- Key Skills -->)',
-        re.MULTILINE,
-    )
-    m = pattern.search(html)
-    if not m:
-        # 降级：仅匹配第一个 cv-summary 闭合
-        pattern2 = re.compile(r'(<div class="cv-summary">)([\s\S]*?)(</div>)', re.MULTILINE)
-        m2 = pattern2.search(html)
-        if not m2:
-            return html
-        return pattern2.sub(
-            lambda mm: mm.group(1) + mm.group(2) + tail_plain + mm.group(3),
-            html,
-            count=1,
-        )
-    return (
-        html[: m.start()]
-        + m.group(1)
-        + m.group(2)
-        + tail_plain
-        + m.group(3)
-        + html[m.end() :]
-    )
-
-
 def _load_cv_external_review_prompt(repo_root: Path) -> str:
     p = repo_root / "kb" / "ai_prompts" / "cv_external_review.md"
     try:
@@ -2207,39 +2350,34 @@ def _ensure_min_jd_keyword_coverage_html(
     min_pct: float,
 ) -> str:
     """
-    若 supported 关键词在正文中的覆盖率低于 min_pct，则向 Summary 注入缺失词，直至达标或无可补词。
-    仅作用于已通过 KB 证据过滤的关键词，不引入幻觉词。
+    历史行为：向 Summary 尾部注入缺失 JD 词以抬覆盖率（易产生「关键词对齐」腔调）。
+    已关闭；JD 贴合由 Experience 与 Key Skills 承担。保留签名供调用方不变。
     """
-    if min_pct <= 0 or not supported_kws:
-        return html
-    out = html
-    for _ in range(6):
-        _hits, misses, cov = _jd_match_hits_misses_coverage(out, supported_kws)
-        if cov >= min_pct or not misses:
-            break
-        out = _inject_jd_coverage_tail_into_summary_html(out, misses)
-    return out
+    return html
 
 
-def _print_jd_match_metrics_for_cv(
-    html_en: str,
-    jd_keywords: Optional[List[str]],
-    min_target_pct: float = MIN_JD_MATCH_PCT,
-) -> None:
-    """
-    每次生成简历时输出轻量级 JD 匹配指标：
-    - 匹配度（覆盖率）
-    - 命中关键词
-    - 未命中关键词
-    """
-    normalized_kws = _normalize_keywords(jd_keywords)
-    if not normalized_kws:
-        print("  JD MATCH → skipped (no JD keywords)")
-        return
+def _print_quality_metrics(html: str, jd_keywords: Optional[List[str]], role_type: str, min_target_pct: float) -> None:
+    """打印生成质量指标，包括长度、关键词覆盖等。"""
+    plain = _strip_html_tags(html)
+    word_count = len(plain.split())
+    char_count = len(plain)
+    hits: List[str] = []
+    misses: List[str] = []
+    coverage: float = 100.0
 
-    hits, misses, coverage = _jd_match_hits_misses_coverage(html_en, jd_keywords)
-
-    print(f"  JD MATCH → {len(hits)}/{len(normalized_kws)} ({coverage:.1f}%)")
+    print(f"  Quality Metrics → Words: {word_count}, Chars: {char_count}")
+    
+    if jd_keywords:
+        hits, misses, coverage = _jd_match_hits_misses_coverage(html, jd_keywords)
+        print(f"  JD Coverage → {coverage:.1f}% ({len(hits)}/{len(jd_keywords)} hits)")
+        if misses:
+            print(f"  Missed JD terms → {', '.join(misses[:5])}" + ("..." if len(misses) > 5 else ""))
+    
+    # 检查是否有管理术语（应该很少）
+    management_terms = ["led", "managed", "mentored", "team leadership"]
+    mgmt_count = sum(1 for term in management_terms if term.lower() in plain.lower())
+    if mgmt_count > 0:
+        print(f"  Management terms detected → {mgmt_count} (consider minimizing for dev roles)")
     print(f"  JD HIT KW → {', '.join(hits) if hits else 'none'}")
     print(f"  JD MISS KW → {', '.join(misses) if misses else 'none'}")
     if min_target_pct > 0 and coverage < min_target_pct:
@@ -2513,7 +2651,7 @@ async def generate_cv_from_kb(
     output_path: Optional[str] = None,
     role_type: str = 'fullstack',
     jd_keywords: Optional[List[str]] = None,
-    max_projects: int = 5,
+    max_projects: int = DEFAULT_MAX_PROJECTS,
     company_name: Optional[str] = None,
     target_role_title: Optional[str] = None,
     generate_zh: bool = False,
@@ -2529,7 +2667,7 @@ async def generate_cv_from_kb(
         output_path:   英文版输出路径（可选，若提供则优先生效）
         role_type:     android | ai | backend | fullstack
         jd_keywords:   JD 关键词列表，驱动项目和技能排序
-        max_projects:  最多显示几个项目（默认 5）
+        max_projects:  最多显示几个项目（默认 6，代码内封顶以控制约两页 A4）
         company_name:  投递公司名称；若提供且未显式指定 output_path，
                        将在文件名中追加公司名，便于区分不同公司的简历。
         generate_zh:   是否生成中文简历（默认 False）
@@ -2538,8 +2676,10 @@ async def generate_cv_from_kb(
         min_jd_match_pct: 对「KB 支持的」JD 词的目标最低覆盖率（默认 85）；<=0 关闭自动补词
         write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 False）
     """
-    # 经验/项目不要太少：至少 5 个（且 ChatClothes/智能工厂会额外固定置顶）
-    max_projects = max(int(max_projects or 0), 5)
+    # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
+    _min_slots = 3 if role_type == "android" else 2
+    mp = int(max_projects or DEFAULT_MAX_PROJECTS)
+    max_projects = max(_min_slots, min(mp, CV_MAX_PROJECTS_CAP))
 
     today = datetime.now().strftime('%Y%m%d')
     today_dir = datetime.now().strftime('%Y-%m-%d')
@@ -2586,17 +2726,14 @@ async def generate_cv_from_kb(
         safe_jd_keywords,
         min_jd_match_pct,
     )
+
     html_en_path = en_path.replace('.pdf', '.html')
     with open(html_en_path, 'w', encoding='utf-8') as f:
         f.write(html_en)
     print(f"  EN HTML → {html_en_path}")
     await html_to_pdf(html_en, en_path)
     print(f"  EN PDF  → {en_path}  ({os.path.getsize(en_path)/1024:.1f} KB)")
-    _print_jd_match_metrics_for_cv(
-        html_en,
-        safe_jd_keywords,
-        min_target_pct=min_jd_match_pct,
-    )
+    _print_quality_metrics(html_en, safe_jd_keywords, role_type, min_target_pct=min_jd_match_pct)
 
     rb_hits, rb_misses, rb_cov = _jd_match_hits_misses_coverage(html_en, safe_jd_keywords)
     if write_review_bundle:

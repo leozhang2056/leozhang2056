@@ -40,6 +40,7 @@ Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
+    (default --max-projects 6, capped for about two A4 pages)
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf (optional, --with-jd-annotated)
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
@@ -102,8 +103,8 @@ def build_parser() -> argparse.ArgumentParser:
              'the generated CV filenames will include this company tag.',
     )
     cv_parser.add_argument(
-        '--max-projects', type=int, default=9, dest='max_projects',
-        help='Maximum number of projects to include (default: 9, for near-2-page resumes)',
+        '--max-projects', type=int, default=6, dest='max_projects',
+        help='Maximum number of projects to include (default: 6; capped for ~2 A4 pages)',
     )
     cv_parser.add_argument(
         '--output', default=None,
@@ -262,8 +263,8 @@ def build_parser() -> argparse.ArgumentParser:
         help='Manual JD keywords (used when no URL/file is provided)',
     )
     match_parser.add_argument(
-        '--max-projects', type=int, default=9, dest='max_projects',
-        help='Max projects used for CV generation during scoring (default: 9)',
+        '--max-projects', type=int, default=6, dest='max_projects',
+        help='Max projects used for CV generation during scoring (default: 6)',
     )
     match_parser.add_argument(
         '--max-keywords', type=int, default=24, dest='max_keywords',
@@ -294,7 +295,7 @@ def build_parser() -> argparse.ArgumentParser:
         help='JD keywords if no full JD text',
     )
     cit_parser.add_argument('--max-keywords', type=int, default=24)
-    cit_parser.add_argument('--max-projects', type=int, default=9)
+    cit_parser.add_argument('--max-projects', type=int, default=6)
     cit_parser.add_argument('--output', default=None, help='Output PDF path')
     cit_parser.add_argument(
         '--dry-run',
@@ -572,7 +573,7 @@ async def run(args) -> None:
             jd_urls=getattr(args, 'jd_urls', None),
             jd_files=getattr(args, 'jd_files', None),
             jd_keywords=getattr(args, 'jd_keywords', None),
-            max_projects=getattr(args, 'max_projects', 9),
+            max_projects=getattr(args, 'max_projects', 6),
             max_keywords=getattr(args, 'max_keywords', 24),
             output_path=args.output,
         )
