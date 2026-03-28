@@ -16,18 +16,17 @@ team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Smart power management platform for onboarding gateways/switches/meters,
-  monitoring per-load electrical parameters (current/voltage/power/energy), remote
-  switch control, and alarm policy management across factories and buildings.
-
-  '
+summary: >
+  Smart power platform for factories and buildings: onboard gateways, switches, and meters; monitor
+  per-load electrical parameters (current, voltage, power, energy); remote control and alarm policies.
+  Delivered Java services plus an Android app for live monitoring with sub-second alarm handling.
 highlights:
-- Developed Java backend platform for power monitoring and multi-site management
-- Built Android mobile app for real-time energy monitoring and alerts
-- Integrated Modbus/RS485 gateways and smart meters for data collection
-- Implemented Android gateway software for device connectivity
-- Created energy consumption dashboards and data analytics
-- Achieved sub-second alarm response time
+- Ran Java services for multi-site power monitoring under long-lived production load
+- Shipped Android app for live energy readouts and sub-second alarm escalation
+- Wired Modbus/RS485 gateways and smart meters into the telemetry path
+- Produced Android gateway software bridging field devices to monitoring services
+- Exposed consumption dashboards and analytics for site operators
+- Held sub-second alarm response time under production alerting rules
 tech_stack:
   languages:
   - Java

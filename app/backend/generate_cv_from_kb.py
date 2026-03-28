@@ -23,8 +23,11 @@ import logging
 # 设置日志
 logger = logging.getLogger(__name__)
 
-# 导入 PDF 生成函数
-from generate_cv_html_to_pdf import html_to_pdf
+# 导入 PDF 生成函数（支持 `python generate.py` 将 app/backend 加入 path，或包导入 `app.backend.*`）
+try:
+    from generate_cv_html_to_pdf import html_to_pdf
+except ModuleNotFoundError:
+    from app.backend.generate_cv_html_to_pdf import html_to_pdf
 
 # 导入增强质量验证器
 try:
@@ -34,7 +37,14 @@ try:
     )
     ENHANCED_VALIDATOR_AVAILABLE = True
 except ImportError:
-    ENHANCED_VALIDATOR_AVAILABLE = False
+    try:
+        from app.backend.cv_quality_validator import (
+            generate_quality_report as run_enhanced_validation,
+            format_quality_report_markdown,
+        )
+        ENHANCED_VALIDATOR_AVAILABLE = True
+    except ImportError:
+        ENHANCED_VALIDATOR_AVAILABLE = False
 
 
 # ============================================================================
@@ -75,8 +85,13 @@ DEFAULT_MAX_BULLETS = 3
 # 文本长度限制
 SUMMARY_MAX_CHARS_EN = 700
 SUMMARY_MAX_CHARS_ZH = 460
-OVERVIEW_MAX_CHARS = 130
+# 项目副标题（summary 首行）：硬截断会产生 PDF 文本层的半词（如 voltag. / subs.）
+OVERVIEW_MAX_CHARS = 245
 SUMMARY_TRUNCATE_POINT = 120
+SUMMARY_SAFE_TAIL_PHRASES_EN = (
+    "based in Auckland, New Zealand.",
+    "Full-time work rights in New Zealand.",
+)
 
 # 字符串处理常量
 MAX_TERM_LENGTH = 24
@@ -103,7 +118,7 @@ def _strip_parenthetical_notes(text: str) -> str:
 def _join_comma_items_within_char_budget(items: List[str], max_chars: int) -> str:
     """
     在长度上限内拼接条目，只丢整条、不在词中间截断（避免出现 ``YOLO1…`` 这种残缺）。
-    若仍有未展示的条目，在末尾加省略号。
+    若超出预算，仅保留可完整容纳的条目，不追加省略号，避免“被截断感”。
     """
     if not items:
         return ""
@@ -117,8 +132,6 @@ def _join_comma_items_within_char_budget(items: List[str], max_chars: int) -> st
         parts.append(it)
         total += len(chunk)
     out = ", ".join(parts)
-    if len(parts) < len(items):
-        out += "…"
     return out
 
 
@@ -429,11 +442,18 @@ def _select_projects_with_relations(
     # 需要排除/替换的项目（会话偏好）
     excluded_ids = {"exhibition-robot"}
 
-    # 强制保留的“最重要项目”：无论角色/JD 如何，都必须出现（并置顶）
-    pinned_ids = ["chatclothes", "smart-factory"]
-    # Android 场景下优先保留地图/GIS相关项目（如 EROAD 车队/位置类业务更匹配）
+    # 强制保留的核心项目（须出现在列表中）；顺序影响置顶展示
     if role_type == "android":
-        pinned_ids.append("forest-patrol-inspection")
+        # 按时间：最新在前 — ChatClothes（AUT 论文）置顶；其后为春晓项目（块内再按 end 年降序）
+        pinned_ids = [
+            "chatclothes",
+            "forest-patrol-inspection",
+            "enterprise-messaging",
+            "iot-solutions",
+            "smart-factory",
+        ]
+    else:
+        pinned_ids = ["chatclothes", "smart-factory"]
     # 优先替换展会机器人为更相关项目（智慧电力/IoT）
     preferred_replacements = ["smart-power", "iot-solutions"]
     max_projects = max(max_projects, len(pinned_ids))
@@ -543,11 +563,15 @@ def _select_projects_with_relations(
 # 各角色的技能分组顺序和展示配置
 _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     'android': [
-        {'key': 'android',        'label_en': 'Android',             'label_zh': 'Android',        'max': 7, 'field': 'name'},
+        {'key': 'android_core', 'label_en': 'Core Android', 'label_zh': '核心 Android', 'max': 8, 'field': 'name'},
+        {'key': 'android_system_low_level', 'label_en': 'System & Low-level', 'label_zh': '系统与底层', 'max': 8, 'field': 'name'},
+        {'key': 'android_testing', 'label_en': 'Testing', 'label_zh': '测试', 'max': 5, 'field': 'name'},
+        {'key': 'mobile_platform_tools', 'label_en': 'Mobile & Release', 'label_zh': '移动端与发布', 'max': 5, 'field': 'name'},
+        {'key': 'methodology_practices', 'label_en': 'Practices',    'label_zh': '工程实践',         'max': 3, 'field': 'name'},
         {'key': 'programming_languages', 'label_en': 'Languages',    'label_zh': '编程语言',         'max': 5, 'field': 'name'},
         {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
         {'key': 'backend',        'label_en': 'API Integration',      'label_zh': 'API 集成',        'max': 6, 'field': 'name'},
-        {'key': 'devops',         'label_en': 'DevOps & CI/CD',       'label_zh': 'DevOps & CI/CD',  'max': 6, 'field': 'name'},
+        {'key': 'devops',         'label_en': 'DevOps & CI/CD',       'label_zh': 'DevOps & CI/CD',  'max': 7, 'field': 'name'},
         {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 4, 'field': 'name'},
     ],
@@ -628,7 +652,8 @@ def _remove_edge_terms(text: str) -> str:
     cleaned = re.sub(r"cloud/\s*", "cloud ", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\band cloud\s*$", "and cloud deployment", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\band cloud([,.;])", r"and cloud deployment\1", cleaned, flags=re.IGNORECASE)
-    cleaned = re.sub(r",?\s*and\s*\.", ".", cleaned, flags=re.IGNORECASE)
+    # 只匹配「, and.」这类断裂从句，勿用 ,? 否则 "Zealand." 中的 and. 会被误替换成句号
+    cleaned = re.sub(r",\s*and\s*\.", ".", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"/\s*$", "", cleaned)
 
     cleaned = re.sub(r"\s{2,}", " ", cleaned)
@@ -637,9 +662,26 @@ def _remove_edge_terms(text: str) -> str:
     cleaned = re.sub(r"\(\s*\)", "", cleaned)
     cleaned = re.sub(r"[,;/]\s*[,;/]", ", ", cleaned)
     # 如果最终结尾没有句号，补一个句号，避免“被截断感”
-    if cleaned and re.search(r"[A-Za-z0-9\u4e00-\u9fff]$", cleaned):
+    if cleaned and re.search(r"[A-Za-z0-9\u4e00-\u9fff\)]$", cleaned):
         cleaned = cleaned + "."
     return cleaned.strip(" ,;")
+
+
+def _ensure_summary_tail_phrase(text: str, lang: str, role_type: str) -> str:
+    """确保英文 Android Summary 不因行宽折叠而丢失关键尾句。"""
+    if not isinstance(text, str) or not text.strip():
+        return text
+    if lang != "en" or role_type != "android":
+        return text
+    lowered = text.lower()
+    for phrase in SUMMARY_SAFE_TAIL_PHRASES_EN:
+        if phrase.lower() in lowered:
+            return text
+    # 仅在未包含这些尾句时补最短且稳定的一句，避免出现 "New Zeal." 这类截断观感。
+    base = text.rstrip()
+    if base and not base.endswith(('.', '!', '?')):
+        base += "."
+    return f"{base} Based in Auckland, New Zealand."
 
 
 def generate_skills_section(
@@ -906,7 +948,7 @@ def generate_summary(
 
     # 加粗关键词（角色相关的核心词）
     bold_terms: Dict[str, List[str]] = {
-        'android': ['Android', 'Kotlin', 'Android SDK', 'Jetpack', 'NDK'],
+        'android': ['Android', 'Kotlin', 'Jetpack Compose', 'Coroutines', 'NDK'],
         'ai':      ['AI', 'LLM', 'RAG', 'diffusion', 'computer vision'],
         'backend': ['Spring Boot', 'Java', 'microservice', 'REST', 'API'],
         'fullstack': ['full-stack', 'Android', 'Spring Boot', 'AI'],
@@ -928,7 +970,8 @@ def generate_summary(
         s = re.sub(r"\s+,", ",", s)
         s = re.sub(r"\s{2,}", " ", s)
         s = re.sub(r"\s+\.", ".", s)
-        return s.strip(" ,.;")
+        s = s.strip()
+        return re.sub(r"[,;\s]+$", "", s)
 
     text = _strip_management_phrases(text)
 
@@ -945,7 +988,8 @@ def generate_summary(
         s = re.sub(r"\s{2,}", " ", s)
         s = re.sub(r"\s+,", ",", s)
         s = re.sub(r"\s+\.", ".", s)
-        return s.strip(" ,.;")
+        s = s.strip()
+        return re.sub(r"[,;\s]+$", "", s)
 
     def _cleanup_broken_clauses(s: str) -> str:
         """
@@ -960,7 +1004,8 @@ def generate_summary(
         s = re.sub(r"\s{2,}", " ", s)
         s = re.sub(r"\s+,", ",", s)
         s = re.sub(r"\s+\.", ".", s)
-        return s.strip(" ,.;")
+        s = s.strip()
+        return re.sub(r"[,;\s]+$", "", s)
 
     def _final_summary_sanity_fix(s: str) -> str:
         """
@@ -1025,10 +1070,10 @@ def generate_summary(
         s = re.sub(r"\s+", " ", s).strip()
         if len(s) <= max_chars:
             return s
-        cut = s.rfind(".", 0, max_chars)
+        cut = _last_sentence_period_index(s, max_chars + 1)
         if cut > SUMMARY_TRUNCATE_POINT:
-            return s[:cut + 1]
-        # 若预算内找不到完整句号，保留原句，避免生成半句。
+            return s[: cut + 1]
+        # 预算内找不到完整句号时，不做硬截断，避免出现半句/半词。
         return s
 
     # JD：少量加粗即可（过多 <strong> 像模板/AI 堆砌；关键词更应落在 Experience bullet）
@@ -1057,8 +1102,12 @@ def generate_summary(
         if evidence_sentence and evidence_sentence not in text:
             text = f"{text} {evidence_sentence}"
 
-    # 控制 Summary 长度（目标：5–6 行左右）
-    text = _trim_summary(text, SUMMARY_MAX_CHARS_EN if lang == "en" else SUMMARY_MAX_CHARS_ZH)
+    # 控制 Summary 长度（目标：5–6 行左右）；Android 英文略放宽，减少句号截断吃掉末尾地点句
+    _sum_budget = SUMMARY_MAX_CHARS_ZH if lang == "zh" else SUMMARY_MAX_CHARS_EN
+    if lang == "en" and role_type == "android":
+        _sum_budget = min(900, _sum_budget + 140)
+    text = _trim_summary(text, _sum_budget)
+    text = _ensure_summary_tail_phrase(text, lang, role_type)
     text = _final_summary_sanity_fix(text)
 
     return _remove_edge_terms(text)
@@ -1112,6 +1161,15 @@ def _load_all_bullets(base: Path) -> List[Dict[str, Any]]:
 
     logger.info(f"Loaded {len(results)} total bullet entries")
     return results
+
+
+_BULLET_LEADING_VERB_RE = re.compile(r"^\s*(?:[•\-\*]\s*)?([A-Za-z]+)")
+
+
+def _bullet_leading_verb(text: str) -> str:
+    """取 bullet 英文首词（常为动词），用于同一项目下避免 Built/Developed 连打。"""
+    m = _BULLET_LEADING_VERB_RE.match(text or "")
+    return m.group(1).lower() if m else ""
 
 
 def _score_bullet_for_project(
@@ -1184,8 +1242,18 @@ def _select_bullets_for_project(
     if not all_bullets:
         return []
 
+    pid = (
+        str(project.get("project_id") or project.get("_project_dir") or "")
+        .strip()
+        .lower()
+    )
     scored: List[Dict] = []
     for b in all_bullets:
+        ev_raw = b.get("evidence") or []
+        ev_list = [str(e).strip().lower() for e in ev_raw if e]
+        # 要点库若声明了 evidence，则只允许落在对应 project_id 上，避免 NDK 消息类要点误配到 GIS 等项目
+        if ev_list and pid and pid not in ev_list:
+            continue
         s = _score_bullet_for_project(b, project, role_type, jd_keywords)
         if s > 0:
             scored.append({'bullet': b, 'score': s})
@@ -1197,6 +1265,7 @@ def _select_bullets_for_project(
 
     result: List[str] = []
     kws_lower = [k.lower() for k in (jd_keywords or [])]
+    used_leading_verbs: set[str] = set()
 
     for item in scored:
         if len(result) >= max_bullets:
@@ -1206,13 +1275,16 @@ def _select_bullets_for_project(
         if not isinstance(variants, list) or not variants:
             original = b.get('original')
             if isinstance(original, str):
+                ov = _bullet_leading_verb(original)
+                if ov:
+                    used_leading_verbs.add(ov)
                 result.append(original)
             continue
 
-        # 如果有 JD 关键词，优先选择包含关键词的变体，按关键词密度排序
+        # 如果有 JD 关键词，优先选择包含关键词的变体；同分档内优先未用过的句首动词
         chosen = None
         if kws_lower:
-            scored_variants = []
+            scored_variants: List[tuple] = []
             for v in variants:
                 if not isinstance(v, str):
                     continue
@@ -1220,13 +1292,32 @@ def _select_bullets_for_project(
                 kw_count = sum(1 for kw in kws_lower if kw in v_lower)
                 scored_variants.append((kw_count, v))
             if scored_variants:
-                scored_variants.sort(reverse=True)
-                chosen = scored_variants[0][1]  # 选择关键词密度最高的
+                scored_variants.sort(key=lambda x: x[0], reverse=True)
+                top_kw = scored_variants[0][0]
+                candidates = [v for k, v in scored_variants if k == top_kw]
+                for v in candidates:
+                    vb = _bullet_leading_verb(v)
+                    if vb and vb not in used_leading_verbs:
+                        chosen = v
+                        break
+                if not chosen and candidates:
+                    chosen = candidates[0]
 
         if not chosen:
-            chosen = variants[0]
+            for v in variants:
+                if not isinstance(v, str):
+                    continue
+                vb = _bullet_leading_verb(v)
+                if vb and vb not in used_leading_verbs:
+                    chosen = v
+                    break
+            if not chosen:
+                chosen = variants[0]
 
         if isinstance(chosen, str):
+            cvb = _bullet_leading_verb(chosen)
+            if cvb:
+                used_leading_verbs.add(cvb)
             result.append(chosen)
 
     return result[:max_bullets]
@@ -1290,6 +1381,57 @@ def generate_project_bullet_points(
             return False
         return any(p in t for p in en_bad) or any(p in text for p in zh_bad)
 
+    def _diversify_bullet_openers_en(items: List[str]) -> List[str]:
+        """弱化英文 bullet 的重复起手词（如连续 Built/Developed）。"""
+        if not items:
+            return items
+
+        starter_pool = {
+            "built": ["Engineered", "Delivered", "Shipped", "Produced"],
+            "developed": ["Implemented", "Engineered", "Crafted", "Produced"],
+            "implemented": ["Delivered", "Engineered", "Introduced", "Executed"],
+            "designed": ["Architected", "Defined", "Planned", "Framed"],
+            "architected": ["Structured", "Shaped", "Defined", "Framed"],
+            "integrated": ["Wired", "Linked", "Merged", "Connected"],
+            "created": ["Established", "Introduced", "Produced", "Added"],
+            "optimized": ["Tuned", "Refined", "Tightened", "Streamlined"],
+            "delivered": ["Shipped", "Released", "Rolled out", "Provided"],
+            "owned": ["Ran", "Stewarded", "Drove", "Operated"],
+            "applied": ["Used", "Leveraged", "Employed", "Deployed"],
+            "deployed": ["Released", "Shipped", "Rolled out", "Published"],
+            "combined": ["Merged", "Blended", "Paired", "Unified"],
+        }
+
+        used_starters: Dict[str, int] = {}
+        out: List[str] = []
+
+        for idx, raw in enumerate(items):
+            t = (raw or "").strip()
+            if not t:
+                continue
+            m = re.match(r"^([A-Za-z]+)(\b.*)$", t)
+            if not m:
+                out.append(t)
+                continue
+
+            starter = m.group(1)
+            rest = m.group(2)
+            key = starter.lower()
+
+            if key in starter_pool:
+                seen = used_starters.get(key, 0)
+                if seen > 0:
+                    repls = starter_pool[key]
+                    repl = repls[(seen - 1) % len(repls)]
+                    t = repl + rest
+                used_starters[key] = seen + 1
+            else:
+                used_starters[key] = used_starters.get(key, 0) + 1
+
+            out.append(t)
+
+        return out
+
     # 中文版本暂不混用英文 bullets 库
     if lang == 'zh':
         highlights = project.get('highlights_cn') or project.get('highlights', [])
@@ -1330,26 +1472,33 @@ def generate_project_bullet_points(
 
         return ['主导项目从需求到上线的完整交付。']
 
-    # 英文：先尝试 bullets 库
+    # 英文：先尝试 bullets 库（ChatClothes + Android：最多从库取 2 条，留 1 条给 facts 里的移动端/论文要点）
     bullets_from_lib: List[str] = []
+    lib_cap = max_bullets
+    if lang == "en" and role_type == "android":
+        _pid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
+        if _pid == "chatclothes":
+            lib_cap = min(2, max_bullets)
     if all_bullets is not None:
         bullets_from_lib = _select_bullets_for_project(
             project,
             all_bullets,
             role_type=role_type,
             jd_keywords=jd_keywords,
-            max_bullets=max_bullets,
+            max_bullets=lib_cap,
         )
 
-    # 如果从 bullets 库已经拿到了足够的条目，直接返回
+    # 如果从 bullets 库已经拿到了足够的条目，直接返回（仍做英文起手词去重）
     if len(bullets_from_lib) >= max_bullets:
         cleaned = [
             _remove_edge_terms(b)
             for b in bullets_from_lib
             if not _is_management_bullet(b)
         ]
-        cleaned = [b for b in cleaned if b]
-        return cleaned[:max_bullets]
+        cleaned = [b for b in cleaned if b][:max_bullets]
+        if lang == "en":
+            cleaned = _diversify_bullet_openers_en(cleaned)
+        return cleaned
 
     remaining = max_bullets - len(bullets_from_lib)
 
@@ -1387,6 +1536,20 @@ def generate_project_bullet_points(
                                 processed.append(cleaned_desc)
             fact_bullets = processed
 
+    def _split_compound_bullet(text: str) -> List[str]:
+        """将误拼接为一条的“ - ”链式 bullet 拆分回多条。"""
+        if not isinstance(text, str):
+            return []
+        t = text.strip()
+        if not t:
+            return []
+        # 仅在明显是链式拼接时拆分，避免破坏正常短横线表达。
+        if t.count(" - ") >= 1:
+            parts = [p.strip(" -") for p in re.split(r"\s+-\s+", t) if p.strip()]
+            if len(parts) > 1:
+                return parts
+        return [t]
+
     combined: List[str] = []
     combined.extend(
         [
@@ -1401,16 +1564,107 @@ def generate_project_bullet_points(
             break
         # 简单去重
         cleaned_b = _remove_edge_terms(b)
-        if cleaned_b and cleaned_b not in combined:
-            combined.append(cleaned_b)
+        if cleaned_b:
+            for part in _split_compound_bullet(cleaned_b):
+                if part and part not in combined:
+                    combined.append(part)
+                if len(combined) >= max_bullets:
+                    break
+        if len(combined) >= max_bullets:
+            break
 
     # 不做硬截断，避免出现半句/断句。
     # 版面长度由项目数与 bullet 数控制。
 
     if not combined:
-        combined = ['Developed and delivered the complete solution independently.']
+        combined = ['Delivered the solution end-to-end from requirements through release.']
 
-    return combined[:max_bullets]
+    final_items = combined[:max_bullets]
+    # Android 岗：ChatClothes 把含 PWA / 手持端的要点置顶，避免埋在纯 ML 句后面
+    if lang == "en" and role_type == "android":
+        _cpid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
+        if _cpid == "chatclothes":
+            mobile_first: List[str] = []
+            rest_items: List[str] = []
+            for it in final_items:
+                low = (it or "").lower()
+                if any(k in low for k in ("pwa", "android chrome", "handheld")):
+                    mobile_first.append(it)
+                else:
+                    rest_items.append(it)
+            if mobile_first:
+                final_items = mobile_first + rest_items
+    if lang == 'en':
+        final_items = _diversify_bullet_openers_en(final_items)
+    return final_items
+
+
+def _last_sentence_period_index(text: str, before_index: int) -> int:
+    """
+    最大的 i < before_index 且 text[i] == '.'，且不是小数点（如 99.9%）。
+    避免 rfind('.') 把「99.」当成句末，造成 overview / summary 残句。
+    """
+    if before_index <= 0 or not text:
+        return -1
+    lim = min(before_index - 1, len(text) - 1)
+    for i in range(lim, -1, -1):
+        if text[i] != ".":
+            continue
+        prev_d = i > 0 and text[i - 1].isdigit()
+        next_d = i + 1 < len(text) and text[i + 1].isdigit()
+        if prev_d and next_d:
+            continue
+        return i
+    return -1
+
+
+def _clip_overview_one_line(raw: Optional[str], max_chars: int) -> str:
+    """
+    取 summary/overview 的首行，并优先在句号处截断。
+    若预算内没有完整句子，则保留原句，避免 PDF 文本层出现半词（如 voltag. / subs.）。
+    """
+    if not isinstance(raw, str) or not raw.strip():
+        return ""
+    line = raw.strip().split("\n")[0].strip()
+    line = _remove_edge_terms(line)
+    if len(line) <= max_chars:
+        return line
+    cut = _last_sentence_period_index(line, max_chars + 1)
+    if cut > int(max_chars * 0.45):
+        return line[: cut + 1]
+    sp = line.rfind(" ", 0, max_chars)
+    if sp > int(max_chars * 0.45):
+        return line[:sp]
+    return line[:max_chars]
+
+
+def _timeline_year_from_field(project: Dict, field: str) -> int:
+    """从 timeline.start / timeline.end 取四位年份，用于排序。"""
+    tl = project.get("timeline") or {}
+    if not isinstance(tl, dict):
+        return 0
+    raw = str(tl.get(field) or "").strip()
+    if len(raw) < 4 or not raw[:4].isdigit():
+        return 0
+    try:
+        return int(raw[:4])
+    except ValueError:
+        return 0
+
+
+def _sort_chunxiao_subprojects_by_timeline(projects: List[Dict]) -> List[Dict]:
+    """
+    春晓同一雇主下的子项目：按结束年份降序（最近在前），结束年相同则按开始年份降序。
+    避免阅读上时间线跳跃。
+    """
+    return sorted(
+        projects,
+        key=lambda p: (
+            _timeline_year_from_field(p, "end"),
+            _timeline_year_from_field(p, "start"),
+        ),
+        reverse=True,
+    )
 
 
 def _fmt_date_range(project: Dict) -> str:
@@ -1431,114 +1685,327 @@ def _fmt_date_range(project: Dict) -> str:
     return start_yr or end_yr or ''
 
 
-def generate_experience_section(
-    projects: List[Dict],
-    lang: str = 'en',
-    role_type: str = 'fullstack',
-    all_bullets: Optional[List[Dict]] = None,
-    jd_keywords: Optional[List[str]] = None,
+def _work_entry_date_label(exp: Dict, lang: str) -> str:
+    """春晓合并雇主行日期：只显示年份区间（如 2013 – 2024），不显示月份。"""
+
+    def _year_only(raw) -> str:
+        if raw is None:
+            return ""
+        s = str(raw).strip()
+        if len(s) >= 4 and s[:4].isdigit():
+            return s[:4]
+        return ""
+
+    start = exp.get("start_date")
+    end = exp.get("end_date")
+    current = bool(exp.get("current"))
+    left = _year_only(start)
+    if current:
+        right = "Present" if lang == "en" else "至今"
+    else:
+        right = _year_only(end)
+    if left and right:
+        return f"{left} – {right}"
+    return left or right
+
+
+def _chunxiao_progression_blurb(exp: Dict, lang: str) -> str:
+    """
+    春晓合并雇主下的职级一句话：只展示职级阶梯，不写每段年份，避免与表头总任期、子项目时间叠在一起显得乱。
+    YAML 里 positions 建议从新到旧排列；展示顺序为当前 → 更早。
+    """
+    positions = exp.get("positions") or []
+    if not isinstance(positions, list) or not positions:
+        return ""
+    titles: List[str] = []
+    for p in positions:
+        if not isinstance(p, dict):
+            continue
+        title = (p.get("title") or "").strip()
+        if title:
+            titles.append(title)
+    if not titles:
+        return ""
+
+    seen = set()
+    uniq_titles: List[str] = []
+    for t in titles:
+        if t in seen:
+            continue
+        seen.add(t)
+        uniq_titles.append(t)
+
+    # 新 → 旧（与 work.yaml positions 常见写法一致；若 YAML 是旧→新则反转为新→旧）
+    ordered = list(uniq_titles)
+    if len(ordered) >= 2:
+        y0 = _progression_period_start_year(positions[0])
+        y1 = _progression_period_start_year(positions[1])
+        if y0 and y1 and y0 < y1:
+            ordered = list(reversed(ordered))
+
+    sep = " → " if lang == "zh" else " → "
+    if lang == "zh":
+        return "职级：" + sep.join(ordered) + "。"
+    return "Progression: " + sep.join(ordered) + "."
+
+
+def _progression_period_start_year(pos: Any) -> int:
+    """从 position.period 取开始年，用于判断 YAML 中 positions 排序方向。"""
+    if not isinstance(pos, dict):
+        return 0
+    raw = str(pos.get("period") or "")
+    m = re.search(r"(20\d{2})", raw)
+    return int(m.group(1)) if m else 0
+
+
+def _project_employer_bucket(project: Dict) -> str:
+    """aut | chunxiao | other — 用于合并同一雇主下的多段项目时间线。"""
+    inst = project.get("institution") or {}
+    iname = (inst.get("name") or "").strip() if isinstance(inst, dict) else ""
+    ul = iname.upper()
+    if iname and ("AUT" in ul or "AUCKLAND UNIVERSITY OF TECHNOLOGY" in ul):
+        return "aut"
+    comp = project.get("company") or {}
+    cname = (comp.get("name") or "").strip() if isinstance(comp, dict) else ""
+    if "Chunxiao" in cname or "春晓" in cname:
+        return "chunxiao"
+    return "other"
+
+
+def _find_chunxiao_work_entry(work_yaml: Optional[Dict]) -> Optional[Dict]:
+    if not work_yaml or not isinstance(work_yaml, dict):
+        return None
+    for exp in work_yaml.get("experiences") or []:
+        if not isinstance(exp, dict):
+            continue
+        c = str(exp.get("company") or "")
+        if "Chunxiao" in c or "春晓" in c:
+            return exp
+    return None
+
+
+def _experience_blocks_ordered(projects: List[Dict]) -> List[tuple]:
+    """
+    将项目序列拆成 (kind, [projects])：
+    - single: 非春晓连续段中的单个项目
+    - cx_group: 连续的春晓项目合并展示
+    """
+    blocks: List[tuple] = []
+    i = 0
+    n = len(projects)
+    while i < n:
+        if _project_employer_bucket(projects[i]) == "chunxiao":
+            j = i
+            group: List[Dict] = []
+            while j < n and _project_employer_bucket(projects[j]) == "chunxiao":
+                group.append(projects[j])
+                j += 1
+            blocks.append(("cx_group", group))
+            i = j
+        else:
+            blocks.append(("single", [projects[i]]))
+            i += 1
+    return blocks
+
+
+def _render_one_project_job_html(
+    project: Dict,
+    lang: str,
+    role_type: str,
+    all_bullets: Optional[List[Dict]],
+    jd_keywords: Optional[List[str]],
+    used_bullets_norm: set,
+    *,
+    include_company_column: bool,
+    wrapper_class: str = "job",
 ) -> str:
-    """将已排序的项目列表渲染为 HTML"""
-    html_parts = []
-    used_bullets_norm: set[str] = set()
+    """渲染单个项目经历卡片（可选隐藏公司列，用于春晓雇主下的子项目）。"""
 
     def _normalize_bullet_for_dedupe(text: str) -> str:
         t = _strip_html_tags(text or "")
         t = re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
         return t
 
-    for project in projects:
-        # 项目名称
-        if lang == 'zh':
-            name = (project.get('name_cn')
-                    or project.get('name')
-                    or project.get('project_id', ''))
-        else:
-            name = project.get('name') or project.get('project_id', '')
+    if lang == 'zh':
+        name = (project.get('name_cn')
+                or project.get('name')
+                or project.get('project_id', ''))
+    else:
+        name = project.get('name') or project.get('project_id', '')
 
-        # 公司 / 机构
-        company_info = project.get('company', {})
-        institution  = project.get('institution', {})
-        if isinstance(institution, dict) and institution.get('name'):
-            company = institution['name']
-        elif isinstance(company_info, dict) and company_info.get('name'):
-            company = company_info['name']
-        else:
-            company = ('Chunxiao Technology Co., Ltd.'
-                       if lang == 'en' else '春晓科技有限公司')
+    company_info = project.get('company', {})
+    institution = project.get('institution', {})
+    if isinstance(institution, dict) and institution.get('name'):
+        company = institution['name']
+    elif isinstance(company_info, dict) and company_info.get('name'):
+        company = company_info['name']
+    else:
+        company = ('Chunxiao Technology Co., Ltd.'
+                   if lang == 'en' else '春晓科技有限公司')
 
-        if lang == 'zh':
-            role = (project.get('role_cn') or project.get('role') or '').strip()
-        else:
-            role = (project.get('role') or '').strip()
+    if lang == 'zh':
+        role = (project.get('role_cn') or project.get('role') or '').strip()
+    else:
+        role = (project.get('role') or '').strip()
 
-        date_range = _fmt_date_range(project)
+    date_range = _fmt_date_range(project)
 
-        # 技术栈：单行摘要，避免冗长列表撑满版面
-        tech_stack = project.get('tech_stack', {})
-        tech_line = _compact_tech_stack_one_line(tech_stack)
-        tech_display = (
-            f'<div class="job-tech"><strong>Tech:</strong> {html.escape(tech_line)}</div>'
-            if tech_line
-            else ""
-        )
+    tech_stack = project.get('tech_stack', {})
+    tech_line = _compact_tech_stack_one_line(tech_stack)
+    tech_display = (
+        f'<div class="job-tech"><strong>Tech:</strong> {html.escape(tech_line)}</div>'
+        if tech_line
+        else ""
+    )
 
-        # 一句话描述（summary 第一句，最多 160 字符）
-        if lang == 'zh':
-            overview_raw = (project.get('overview_cn')
-                            or project.get('summary_cn')
-                            or project.get('summary', ''))
-        else:
-            overview_raw = project.get('overview') or project.get('summary', '')
-        if isinstance(overview_raw, str):
-            overview = overview_raw.strip().split('\n')[0][:OVERVIEW_MAX_CHARS]
-        else:
-            overview = ''
-        overview = _remove_edge_terms(overview)
+    if lang == 'zh':
+        overview_raw = (project.get('overview_cn')
+                        or project.get('summary_cn')
+                        or project.get('summary', ''))
+    else:
+        overview_raw = project.get('overview') or project.get('summary', '')
+    if isinstance(overview_raw, str):
+        overview = _clip_overview_one_line(overview_raw, OVERVIEW_MAX_CHARS)
+    else:
+        overview = ''
 
-        # Bullet points
-        bullets = generate_project_bullet_points(
-            project,
-            lang=lang,
-            role_type=role_type,
-            all_bullets=all_bullets,
-            jd_keywords=jd_keywords,
-        )
-        # 跨项目去重：减少“同一句话在多个项目重复出现”的阅读疲劳
-        deduped_bullets: List[str] = []
-        for b in bullets:
-            nb = _normalize_bullet_for_dedupe(b)
-            if not nb:
-                continue
-            if nb in used_bullets_norm:
-                continue
-            used_bullets_norm.add(nb)
-            deduped_bullets.append(b)
+    bullets = generate_project_bullet_points(
+        project,
+        lang=lang,
+        role_type=role_type,
+        all_bullets=all_bullets,
+        jd_keywords=jd_keywords,
+    )
+    deduped_bullets: List[str] = []
+    for b in bullets:
+        nb = _normalize_bullet_for_dedupe(b)
+        if not nb:
+            continue
+        if nb in used_bullets_norm:
+            continue
+        used_bullets_norm.add(nb)
+        deduped_bullets.append(b)
 
-        # 若去重后为空，回退原 bullets 的第一条，保证每个项目至少有一个要点
-        if not deduped_bullets and bullets:
-            deduped_bullets = [bullets[0]]
+    if not deduped_bullets and bullets:
+        deduped_bullets = [bullets[0]]
 
-        bullets = deduped_bullets
-        bullets_html = '\n            '.join(f'<li>{b}</li>' for b in bullets)
+    bullets = deduped_bullets
+    bullets_html = '\n            '.join(f'<li>{b}</li>' for b in bullets)
 
-        html_parts.append(f'''
-    <div class="job">
+    safe_name = html.escape(str(name))
+    safe_company = html.escape(str(company))
+    safe_date = html.escape(str(date_range))
+    safe_role = html.escape(str(role))
+    safe_overview = html.escape(str(overview)) if overview else ""
+
+    if include_company_column:
+        header_row = f'''<tr>
+          <td class="jh-title">{safe_name}</td>
+          <td class="jh-company">{safe_company}</td>
+          <td class="jh-date">{safe_date}</td>
+        </tr>'''
+    else:
+        header_row = f'''<tr>
+          <td class="jh-title">{safe_name}</td>
+          <td class="jh-date">{safe_date}</td>
+        </tr>'''
+
+    return f'''
+    <div class="{wrapper_class}">
       <table class="job-header-table">
-        <tr>
-          <td class="jh-title">{name}</td>
-          <td class="jh-company">{company}</td>
-          <td class="jh-date">{date_range}</td>
-        </tr>
+        {header_row}
       </table>
-      <div class="job-role"><strong>{role}</strong>{" — " + overview if overview else ""}</div>
+      <div class="job-role"><strong>{safe_role}</strong>{" — " + safe_overview if safe_overview else ""}</div>
       {tech_display}
       <ul class="job-list">
         {bullets_html}
       </ul>
-    </div>''')
+    </div>'''
 
-    return '\n'.join(html_parts)
+
+def _render_chunxiao_employer_group_html(
+    cx_projects: List[Dict],
+    work_entry: Optional[Dict],
+    lang: str,
+    role_type: str,
+    all_bullets: Optional[List[Dict]],
+    jd_keywords: Optional[List[str]],
+    used_bullets_norm: set,
+) -> str:
+    """单一雇主（春晓）+ 总任职时间 + 子项目阶段。"""
+    company_name = "Chunxiao Technology Co., Ltd."
+    location = "China"
+    role_title = "Technical Lead / Senior Software Engineer"
+    if work_entry:
+        company_name = str(work_entry.get("company") or company_name)
+        location = str(work_entry.get("location") or location)
+        role_title = str(work_entry.get("role") or role_title)
+
+    date_lbl = _work_entry_date_label(work_entry, lang) if work_entry else ""
+    progression = _chunxiao_progression_blurb(work_entry, lang) if work_entry else ""
+    progression_html = (
+        f'<div class="employer-progression">{html.escape(progression)}</div>'
+        if progression
+        else ""
+    )
+
+    loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
+
+    subs: List[str] = []
+    for p in cx_projects:
+        subs.append(
+            _render_one_project_job_html(
+                p, lang, role_type, all_bullets, jd_keywords, used_bullets_norm,
+                include_company_column=False,
+                wrapper_class="sub-project",
+            )
+        )
+
+    return f'''
+    <div class="job job-employer">
+      <table class="job-header-table">
+        <tr>
+          <td class="jh-title employer-company" colspan="2">{html.escape(company_name)}{loc_html}</td>
+          <td class="jh-date">{html.escape(date_lbl)}</td>
+        </tr>
+      </table>
+      <div class="job-role"><strong>{html.escape(role_title)}</strong></div>
+      {progression_html}
+      {''.join(subs)}
+    </div>'''
+
+
+def generate_experience_section(
+    projects: List[Dict],
+    lang: str = 'en',
+    role_type: str = 'fullstack',
+    all_bullets: Optional[List[Dict]] = None,
+    jd_keywords: Optional[List[str]] = None,
+    work_experience_yaml: Optional[Dict] = None,
+) -> str:
+    """将已排序的项目列表渲染为 HTML（春晓多项目合并为单一雇主时间线）。"""
+    used_bullets_norm: set[str] = set()
+    cx_entry = _find_chunxiao_work_entry(work_experience_yaml)
+    parts: List[str] = []
+
+    for kind, group in _experience_blocks_ordered(projects):
+        if kind == "single":
+            parts.append(
+                _render_one_project_job_html(
+                    group[0], lang, role_type, all_bullets, jd_keywords, used_bullets_norm,
+                    include_company_column=True,
+                    wrapper_class="job",
+                )
+            )
+        else:
+            cx_ordered = _sort_chunxiao_subprojects_by_timeline(group)
+            parts.append(
+                _render_chunxiao_employer_group_html(
+                    cx_ordered, cx_entry, lang, role_type, all_bullets, jd_keywords, used_bullets_norm,
+                )
+            )
+
+    return '\n'.join(parts)
 
 
 # ---------------------------------------------------------------------------
@@ -1629,33 +2096,42 @@ def generate_education_section(profile: Dict, lang: str = 'en') -> str:
 # Licenses & Certifications + Publications
 # ---------------------------------------------------------------------------
 
+def _achievement_year_sort_key(item: Dict) -> int:
+    """用于证书/奖项排序：整数年份或字符串中的四位年份（取最大）。"""
+    y = item.get("year")
+    if isinstance(y, int):
+        return y
+    if isinstance(y, str) and y.strip():
+        found = re.findall(r"\d{4}", y)
+        if found:
+            return max(int(x) for x in found)
+    return 0
+
+
 def generate_licenses_section(achievements: Dict, lang: str = 'en') -> str:
-    """从 achievements.yaml 生成证书、奖项条目"""
-    certifications = achievements.get('certifications', [])
-    awards         = achievements.get('awards', [])
+    """从 achievements.yaml 生成证书、奖项条目（按时间新近优先统一排序）。"""
+    raw_certs = [c for c in (achievements.get("certifications") or []) if isinstance(c, dict)]
+    raw_awards = [a for a in (achievements.get("awards") or []) if isinstance(a, dict)]
+    awards_pick = sorted(raw_awards, key=_achievement_year_sort_key, reverse=True)[:2]
+
+    merged: List[Dict] = [{**c, "_lc_kind": "cert"} for c in raw_certs]
+    merged.extend({**a, "_lc_kind": "award"} for a in awards_pick)
+    merged.sort(key=_achievement_year_sort_key, reverse=True)
+
     lines = []
-
-    for cert in certifications:
-        name      = cert.get('name', '')
-        authority = cert.get('authority', '')
-        year      = cert.get('year', '')
+    for row in merged:
+        name = row.get("name", "")
+        authority = row.get("authority", "")
+        year = row.get("year", "")
+        if row.get("_lc_kind") == "award":
+            category = (row.get("category") or "").strip()
+            display = f"{name} ({category})" if category else name
+        else:
+            display = name
         lines.append(
             f'<li><div class="lc-row">'
-            f'<span><strong>{name}</strong> — {authority}</span>'
-            f'<span class="lc-date">{year}</span>'
-            f'</div></li>'
-        )
-
-    for award in awards[:2]:
-        name      = award.get('name', '')
-        category  = award.get('category', '')
-        authority = award.get('authority', '')
-        year      = award.get('year', '')
-        display   = f'{name} ({category})' if category else name
-        lines.append(
-            f'<li><div class="lc-row">'
-            f'<span><strong>{display}</strong> — {authority}</span>'
-            f'<span class="lc-date">{year}</span>'
+            f'<span><strong>{html.escape(str(display))}</strong> — {html.escape(str(authority))}</span>'
+            f'<span class="lc-date">{html.escape(str(year))}</span>'
             f'</div></li>'
         )
 
@@ -1726,6 +2202,10 @@ _CSS = """
       margin: 0 auto;
       padding: 0;
       background: #fff;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     a { color: #1a4a8a; text-decoration: none; }
@@ -1768,6 +2248,13 @@ _CSS = """
 
     .cv-contact a { color: #1a4a8a; }
 
+    .cv-contact-secondary {
+      font-size: 9.5pt;
+      color: #1a4a8a;
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+
     /* ── Section title ───────────────────────────────── */
     .section-title {
       font-size: 11.5pt;
@@ -1785,6 +2272,9 @@ _CSS = """
       text-align: justify;
       color: #222;
       margin-bottom: 4px;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
     }
 
     /* ── Skills ──────────────────────────────────────── */
@@ -1804,6 +2294,9 @@ _CSS = """
       color: #444;
       margin-bottom: 2px;
       line-height: 1.3;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
     }
 
     .job-header-table {
@@ -1843,6 +2336,9 @@ _CSS = """
       font-size: 10pt;
       color: #333;
       margin-bottom: 3px;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
     }
 
     .job-list {
@@ -1855,6 +2351,49 @@ _CSS = """
     .job-list li {
       margin-bottom: 1px;
       line-height: 1.35;
+    }
+
+    /* 允许春晓雇主块跨页，避免上一页大块留白（子项目可在页间断开） */
+    .job-employer {
+      margin-bottom: 8px;
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+
+    .employer-company {
+      font-weight: 700;
+      font-size: 10.6pt;
+    }
+
+    .employer-loc {
+      font-weight: 400;
+      font-style: italic;
+      color: #444;
+      font-size: 10pt;
+    }
+
+    .employer-progression {
+      font-size: 9.7pt;
+      color: #444;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .sub-project {
+      margin: 4px 0 6px 10px;
+      padding-left: 10px;
+      border-left: 2px solid #cfd8ea;
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+
+    .sub-project .job-header-table .jh-title {
+      width: 62%;
+    }
+
+    .sub-project .jh-date {
+      width: 38%;
+      text-align: right;
     }
 
     /* ── Education ───────────────────────────────────── */
@@ -1983,6 +2522,7 @@ def generate_html_from_kb(
     profile         = load_yaml(kb_dir / 'profile.yaml')
     skills_data     = load_yaml(kb_dir / 'skills.yaml')
     achievements    = load_yaml(kb_dir / 'achievements.yaml')
+    work_exp_yaml   = load_yaml(kb_dir / 'experience' / 'work.yaml')
     all_projects    = load_projects(base / 'projects')
     bullets_data    = _load_all_bullets(base)
     relations_data  = _load_project_relations(base)
@@ -1996,6 +2536,14 @@ def generate_html_from_kb(
     loc      = contact.get('location', {})
     city     = loc.get('city', '')
     country  = loc.get('country', '')
+    linkedin = (contact.get('linkedin') or '').strip()
+    github   = (contact.get('github') or 'https://github.com/leozhang2056').strip()
+    resume_contact = personal.get('resume_contact') or {}
+    work_rights_line = (
+        (resume_contact.get('work_rights_en') or '').strip()
+        if lang == 'en'
+        else (resume_contact.get('work_rights_zh') or '').strip()
+    )
 
     # ── 生成各部分 ──
     summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords)
@@ -2013,6 +2561,7 @@ def generate_html_from_kb(
         role_type=role_type,
         all_bullets=bullets_data,
         jd_keywords=jd_keywords,
+        work_experience_yaml=work_exp_yaml,
     )
     edu_html     = generate_education_section(profile, lang)
     lic_html     = generate_licenses_section(achievements, lang)
@@ -2028,7 +2577,33 @@ def generate_html_from_kb(
     }
     title_text = (target_role_title or default_titles.get(role_type, 'Software Engineer')).strip()
 
-    html = f'''<!DOCTYPE html>
+    _safe_name = html.escape(name)
+    _li = html.escape(linkedin, quote=True) if linkedin else ""
+    _gh = html.escape(github, quote=True) if github else ""
+    name_bits: List[str] = []
+    if linkedin:
+        name_bits.append(f'<a href="{_li}">{_safe_name}</a>')
+        name_bits.append(f'<a href="{_li}">{_LINKEDIN_SVG}</a>')
+    else:
+        name_bits.append(_safe_name)
+    if github:
+        name_bits.append(f'<a href="{_gh}">{_GITHUB_SVG}</a>')
+    name_row = " ".join(name_bits)
+
+    sec_bits: List[str] = []
+    if linkedin:
+        sec_bits.append(f'<a href="{_li}">LinkedIn</a>')
+    if github:
+        sec_bits.append(f'<a href="{_gh}">GitHub</a>')
+    if work_rights_line:
+        sec_bits.append(html.escape(work_rights_line))
+    contact_secondary = (
+        f'<div class="cv-contact cv-contact-secondary">{"&nbsp;|&nbsp;".join(sec_bits)}</div>'
+        if sec_bits
+        else ""
+    )
+
+    html_doc = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
   <meta charset="UTF-8">
@@ -2040,20 +2615,23 @@ def generate_html_from_kb(
   <!-- Header -->
   <div class="cv-header">
     <div class="cv-name">
-      <a href="https://www.linkedin.com/in/leo-zhang-305626280/">{name}</a>
-      <a href="https://www.linkedin.com/in/leo-zhang-305626280/">{_LINKEDIN_SVG}</a>
-      <a href="https://github.com/leozhang2056">{_GITHUB_SVG}</a>
+      {name_row}
     </div>
     <div class="cv-contact">
       <a href="mailto:{email}">&#9993;&nbsp;{email}</a>
       &nbsp;|&nbsp; &#9990;&nbsp;{phone}
       &nbsp;|&nbsp; &#9679;&nbsp;{city}, {country}
     </div>
+    {contact_secondary}
   </div>
 
   <!-- Summary -->
   <div class="section-title">{lbl['summary']}</div>
   <div class="cv-summary">{summary}</div>
+
+  <!-- Education (early for NZ / local credential visibility) -->
+  <div class="section-title">{lbl['edu']}</div>
+  {edu_html}
 
   <!-- Key Skills -->
   <div class="section-title">{lbl['skills']}</div>
@@ -2062,10 +2640,6 @@ def generate_html_from_kb(
   <!-- Experience -->
   <div class="section-title">{lbl['exp']}</div>
   {exp_html}
-
-  <!-- Education -->
-  <div class="section-title">{lbl['edu']}</div>
-  {edu_html}
   {pub_section}
 
   <!-- Licenses & Certifications -->
@@ -2077,7 +2651,7 @@ def generate_html_from_kb(
 </body>
 </html>'''
 
-    return html
+    return html_doc
 
 
 # ---------------------------------------------------------------------------

@@ -121,10 +121,6 @@ ai_coding_tools:
     level: advanced
     evidence:
       - AI coding assistant for planning, implementation, and refactoring
-  - name: Antigravity
-    level: intermediate
-    evidence:
-      - AI-assisted coding workflows (tooling)
   - name: OpenCode
     level: intermediate
     evidence:
@@ -132,6 +128,30 @@ ai_coding_tools:
 
 # Android Development
 android:
+  - name: Jetpack Compose
+    level: advanced
+    evidence:
+      - Declarative UI for new and refactored screens
+  - name: Kotlin Coroutines & Flow
+    level: advanced
+    evidence:
+      - Asynchronous work and reactive UI state on Android clients
+  - name: Hilt
+    level: advanced
+    evidence:
+      - Dependency injection on Android modules
+  - name: JUnit
+    level: advanced
+    evidence:
+      - Unit tests for Android and shared business logic
+  - name: MockK
+    level: advanced
+    evidence:
+      - Kotlin unit tests with mocked dependencies
+  - name: Espresso
+    level: intermediate
+    evidence:
+      - UI-level regression checks on Android
   - name: Android SDK
     level: expert
     years: 10
@@ -164,6 +184,16 @@ android:
     evidence:
       - Enterprise Android applications
       - Clean architecture implementation
+
+  - name: Clean Architecture
+    level: advanced
+    evidence:
+      - Layered Android and service modules for maintainability
+
+  - name: SOLID Principles
+    level: advanced
+    evidence:
+      - Refactors and reviews on long-lived production codebases
     
   - name: Material Design
     level: advanced
@@ -193,6 +223,30 @@ android:
       - Static and dynamic analysis
       - Protocol analysis
       - Penetration testing on Android apps
+
+# Android CV sub-rows (Key Skills — concise labels, order preserved)
+android_core:
+  - name: Jetpack Compose
+  - name: Kotlin Coroutines & Flow
+  - name: Hilt
+  - name: MVVM / Clean Architecture
+
+android_system_low_level:
+  - name: NDK (C/C++)
+  - name: TCP/UDP Networking
+  - name: UART / Serial
+  - name: RFID
+  - name: IoT Device Integration
+
+android_testing:
+  - name: JUnit
+  - name: MockK
+  - name: Espresso
+
+mobile_platform_tools:
+  - name: Firebase (Analytics, Crashlytics)
+  - name: Google Play Console
+  - name: Gradle (AGP)
 
 # Backend & Full-stack
 backend:
@@ -344,6 +398,11 @@ devops:
     level: intermediate
     evidence:
       - CI/CD workflows
+
+  - name: Bitrise
+    level: intermediate
+    evidence:
+      - Mobile CI/CD pipelines
     
   - name: GitLab CI/CD
     level: intermediate
@@ -545,6 +604,11 @@ system_admin:
     years: 5
     evidence:
       - Service management
+
+# ATS / methodology rows (CV Key Skills — not tied to evidence bullets)
+methodology_practices:
+  - name: Agile / Scrum
+  - name: Code Review
 
 skill_groups:
   ai_coding:

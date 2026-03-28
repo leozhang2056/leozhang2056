@@ -4,23 +4,23 @@
 experiences:
   - company: Auckland University of Technology (AUT)
     location: New Zealand
-    role: Master's Student & AI Researcher
+    role: Master's Researcher (AI / Computer Vision)
     start_date: "2024-07"
-    end_date: "2026-02"
-    current: true
+    end_date: "2025-04"
+    current: false
     type: Education/Research
     
     projects:
       - name: ChatClothes Virtual Try-On
         duration: "Nov 2024 - Apr 2025"
         role: Sole Developer & System Designer
-        description: AI-driven virtual try-on platform with LLM control and edge deployment
+        description: AI-driven virtual try-on platform with LLM control and on-device deployment targets
         
         highlights:
           - Designed and implemented entire system architecture, combining diffusion models, YOLO classifiers, and LLM for user interaction
           - Built generation pipeline using ComfyUI and integrated user control with Dify orchestration
           - Supported text/image/multimodal input, enabling personalized try-on scenarios
-          - Optimized for edge devices (Raspberry Pi 5) with real-time performance and offline capability
+          - Optimized for Raspberry Pi 5 class hardware with real-time performance and offline capability
           - Completed full-stack AI solution independently; thesis passed 6 months early with working demo and documentation
         
         tech_stack:
@@ -36,14 +36,14 @@ experiences:
         
         metrics:
           - Thesis completed 6 months early
-          - Edge deployment on Raspberry Pi 5
+          - On-device deployment on Raspberry Pi 5
           - Real-time inference optimization
     
     research_focus:
       - AI
       - Lightweight model deployment
       - Virtual try-on
-      - Edge computing
+      - On-device inference
     
     achievements:
       - Thesis passed 6 months ahead of schedule
@@ -52,21 +52,23 @@ experiences:
   - company: Chunxiao Technology Co., Ltd.
     location: China
     role: Technical Lead / Senior Software Engineer
-    start_date: "2013-01"
-    end_date: "2024-06"
+    # 实际任职 2013-07 至 2024-02；简历雇主行仅展示年份（见 _work_entry_date_label）
+    start_date: "2013-07"
+    end_date: "2024-02"
     current: false
     type: Full-time
     
+    # period 仍用于内部参考；简历 Progression 行由生成器简化为「职级阶梯」不写逐段年份（与总任期重叠易显乱）
     positions:
       - title: Technical Lead
         period: "2018 - 2024"
         focus: Smart Factory Backend & Team Leadership
         
-      - title: Senior Android & Backend Developer
+      - title: Senior Engineer, Android & backend
         period: "2014 - 2023"
         focus: Enterprise Messaging Platform
         
-      - title: Software Engineer / System Administrator
+      - title: Software Engineer & Sysadmin
         period: "2013 - 2014"
         focus: Full-stack Development & IT Support
     
@@ -273,7 +275,7 @@ total_years_experience: 11
 key_achievements:
   - "Delivered enterprise messaging platform serving 10,000+ daily users with <200ms latency"
   - "Led smart factory system deployment across 5+ manufacturing sites, improving efficiency by 30%+"
-  - "Completed AI thesis project 6 months early with working edge deployment"
+  - "Completed AI thesis project 6 months early with working on-device deployment"
   - "Maintained 99.9% system uptime across multiple production systems"
   - "Managed 6-person cross-functional team through full development cycles"
 

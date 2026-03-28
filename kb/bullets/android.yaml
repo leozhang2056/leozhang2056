@@ -12,7 +12,7 @@ bullets:
     tags: [android, ndk, messaging, performance]
     original: "Developed Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++"
     variants:
-      - "Built high-performance Android messaging client with NDK-level TCP/UDP implementation"
+      - "Engineered a high-performance Android messaging client with an NDK-level TCP/UDP transport layer"
       - "Developed low-latency messaging system using Android NDK for network optimization"
       - "Implemented native network layer with NDK, achieving <200ms message latency"
     evidence: [enterprise-messaging]
@@ -26,7 +26,7 @@ bullets:
       - "Architected offline-first mobile solution with seamless data synchronization"
       - "Built resilient Android apps supporting offline operations and automatic sync"
       - "Implemented local-first data pattern with conflict resolution and background sync"
-    evidence: [smart-factory, forest-patrol-inspection]
+    evidence: [smart-factory]
     skills: [SQLite, Room, Sync Adapter, WorkManager]
 
   - id: android_hardware_integration
@@ -35,7 +35,7 @@ bullets:
     original: "Integrated hardware devices including RFID, barcode scanners, and smart lockers"
     variants:
       - "Developed Android SDKs for IoT hardware integration (RFID, sensors, locks)"
-      - "Built Android applications controlling industrial hardware via UART/Serial protocols"
+      - "Implemented Android control clients for industrial hardware over UART/Serial protocols"
       - "Created unified hardware abstraction layer for diverse IoT device ecosystem"
     evidence: [smart-factory, picture-book-locker, iot-solutions]
     skills: [RFID, Barcode, UART, Serial, GPIO, Sensors]
@@ -78,9 +78,9 @@ bullets:
     tags: [android, streaming, video, realtime]
     original: "Developed Android client for live streaming commerce platform"
     variants:
-      - "Built Android live streaming client with real-time chat and shopping features"
+      - "Delivered Android live-streaming experiences with real-time chat and in-session shopping interactions"
       - "Implemented video playback optimization for live commerce scenarios"
-      - "Developed interactive live room features including gifting and comments"
+      - "Introduced interactive live-room features, including gifting and threaded comments"
     evidence: [live-streaming-system]
     skills: [Video Streaming, ExoPlayer, Real-time Communication]
 
@@ -89,9 +89,9 @@ bullets:
     tags: [android, gis, maps, gps, offline]
     original: "Built Android GIS app with offline map support for forest patrol"
     variants:
-      - "Developed offline-capable GIS Android app for field data collection"
-      - "Implemented GPS tracking and geotagged photo capture in Android"
-      - "Built map-based Android application supporting custom tile layers and annotations"
+      - "Maintained GIS Android workflows with custom offline tiles, GPS tracks, and field annotations"
+      - "Captured geotagged patrol evidence and incident markers where connectivity was unreliable"
+      - "Tuned map rendering and layer caching for long sessions in low-signal forests"
     evidence: [forest-patrol-inspection]
     skills: [GIS, GPS, Maps SDK, Offline Maps, Location Services]
 
@@ -100,7 +100,7 @@ bullets:
     tags: [android, ndk, cpp, native, streaming]
     original: "Developed Android streaming client with C++ NDK core"
     variants:
-      - "Built high-performance Android streaming engine using C++ NDK"
+      - "Engineered a high-performance Android streaming engine on C++ NDK"
       - "Implemented custom media protocols with JNI bridge to Android Java layer"
       - "Optimized streaming performance with native C++ code on Android"
     evidence: [live-streaming-system]

@@ -9,18 +9,26 @@ personal_info:
   contact:
     email: leozhang2056@gmail.com
     phone: "+64 27 385 0794"
+    linkedin: "https://www.linkedin.com/in/leo-zhang-305626280/"
+    github: "https://github.com/leozhang2056"
     location: 
       city: North Shore
       country: Auckland
       country_code: NZ
+
+  # Shown on CV header (English) — keep factual to your current visa situation.
+  resume_contact:
+    # Post-Study Work Visa: open full-time work for any employer (update if still on student visa).
+    work_rights_en: "Full-time work rights in New Zealand (Post-Study Work Visa; open work for any employer)."
+    work_rights_zh: "新西兰全职工作资格（毕业后工签 PSWV，可为任意雇主全职工作）。"
     
   visa_status: 
-    type: Student Visa
-    work_rights: Full-time work permitted
+    type: Post-Study Work Visa
+    work_rights: Open full-time work for any employer
     valid_until: null  # 可根据实际情况填写
 
 career_identity:
-  current_role: Master’s Student & Software Engineer
+  current_role: Software Engineer (Android & backend)
   primary_titles:
     - Full-stack Software Engineer
     - Android Developer
@@ -28,42 +36,43 @@ career_identity:
     - Backend Engineer
   
   tagline: >
-    Full-stack software engineer and Master's student with 10+ years of experience 
-    in Java backend, Android development, AI integration, and IoT systems.
+    Full-stack software engineer with 10+ years of experience in Java backend, Android development,
+    AI integration, and IoT systems; recently completed MCIS at AUT with First Class Honours.
   
   summary_variants:
     default: >
-      Full-stack software engineer and Master's student in Computer and Information Sciences at AUT,
-      graduating February 2026. Over 10 years of experience in Java backend, Android development, 
-      AI integration, and IoT systems, delivering enterprise solutions in industrial automation, 
-      mobile platforms, and edge AI. Proficient in Spring Boot, Docker, PyTorch, and microservice 
-      architecture, with hands-on expertise in AI-driven applications, full-stack systems, and cloud/edge deployment.
+      Senior Full-Stack Engineer with 10+ years of experience across Java/Spring Boot, Android,
+      and IoT platform delivery, with First Class Honours in MCIS from AUT. Based in Auckland with
+      full-time work rights in New Zealand. Delivered measurable outcomes including 10+ factory
+      rollouts, 30%+ production efficiency gains, and 99.9% uptime in production systems. Experienced
+      in leading 2-6 engineer squads and driving architecture, delivery, and operational stability.
     
     android_focus: >
-      Android engineer with 10+ years shipping production apps across industrial IoT, in-house
-      messaging, and customer-facing products. Recent work includes offline-first mapping for field
-      crews, TCP/UDP messaging through the NDK, and on-device integrations with RFID and plant-floor
-      sensors. Kotlin and Java with Jetpack and MVVM; comfortable taking work from design reviews
-      through automated builds, release, and production troubleshooting. Based in Auckland.
+      Android engineer with 10+ years shipping production mobile apps; Master's from Auckland University
+      of Technology (AUT) with First Class Honours. Primary stack is Kotlin/Java, Android SDK, Jetpack/MVVM,
+      NDK networking, offline-first patterns, and automated tests (JUnit/MockK/Espresso), with ongoing
+      adoption of Compose, Coroutines/Flow, and Hilt. Representative outcomes include multi-year offline GIS
+      for field crews; enterprise messaging at 10,000+ DAU and sub-200ms latency; and Android plus gateway
+      work for IoT device control and telemetry. Seeking Android roles where CI/CD, Play releases, and
+      production debugging matter; based in Auckland, New Zealand.
     
     ai_focus: >
-      AI-focused software engineer and Master's student in Computer and Information Sciences at AUT,
-      graduating February 2026. Experienced in AI, edge computing, and cloud deployment, with 
-      expertise in LLM-based applications, computer vision, and IoT integration. Over 10 years 
-      of experience in software engineering and full-stack development.
+      AI-focused software engineer with a Master's in Computer and Information Sciences from Auckland
+      University of Technology (AUT) with First Class Honours. Experienced in LLM-based applications,
+      computer vision, and IoT integration, from research prototypes to deployable pipelines. Over 10 years
+      in software engineering and full-stack delivery.
     
     java_focus: >
-      Master's student in Computer and Information Sciences at AUT, graduating February 2026. 
-      Over 10 years of experience in Java backend and full-stack development, including Spring Boot,
-      MyBatis, and microservice architecture. Built and maintained enterprise systems across 
-      manufacturing, messaging, and IoT.
+      Software engineer with a Master's in Computer and Information Sciences from AUT (First Class Honours).
+      Over 10 years in Java backend and full-stack development, including Spring Boot, MyBatis, and
+      microservice architecture. Built and maintained enterprise systems across manufacturing, messaging, and IoT.
 
   summary_variants_zh:
     default: >
-      全栈软件工程师，奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
+      全栈软件工程师，奥克兰理工大学（AUT）计算机与信息科学硕士毕业，获一等荣誉学位。
       拥有 10 年以上 Java 后端、Android 开发、AI 集成与物联网系统经验，
-      交付过工业自动化、移动平台与边缘 AI 领域的企业级解决方案。
-      精通 Spring Boot、Docker、PyTorch 与微服务架构，具备 AI 应用、全栈系统与云/边缘部署的一线实战经验。
+      交付过工业自动化、移动平台与 AI 应用方向的企业级解决方案。
+      精通 Spring Boot、Docker、PyTorch 与微服务架构，具备 AI 应用、全栈系统与可上线部署的一线实战经验。
 
     android_focus: >
       资深软件工程师，拥有 10 年以上交付经验；近期完成奥克兰理工大学（Auckland University of
@@ -73,13 +82,13 @@ career_identity:
       具备 CI/CD、代码评审与跨职能协作经验，熟练使用 AI 辅助开发工具（Cursor、GitHub Copilot、Claude Code）提升效率与质量。
 
     ai_focus: >
-      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业，研究方向为 AI 与计算机视觉。
-      具备 AI、边缘计算与云端部署经验，专长 LLM 应用、计算机视觉与物联网集成。
+      奥克兰理工大学（AUT）计算机与信息科学硕士毕业，获一等荣誉学位；研究方向侧重 AI 与计算机视觉。
+      具备 LLM 应用、计算机视觉与物联网集成经验，熟悉云端与本地可部署方案。
       擅长将 LLM / RAG 与计算机视觉能力集成到可落地的应用系统，关注部署约束与推理性能。
       熟悉 PyTorch 工程化训练/推理流程，强调可复现性与成本权衡，具备端到端交付能力。
 
     java_focus: >
-      奥克兰理工大学（AUT）计算机与信息科学硕士在读，2026年2月毕业。
+      奥克兰理工大学（AUT）计算机与信息科学硕士毕业，获一等荣誉学位。
       10 年以上 Java 后端与全栈开发经验，包括 Spring Boot、MyBatis 与微服务架构。
       熟悉 REST API 设计，强调可维护性、可观测性与上线稳定性。
       具备数据库与缓存（MySQL/Redis）性能优化实践，以及 CI/CD 与自动化发布经验，能与多端团队高效协作。
@@ -92,9 +101,10 @@ education:
     location: NZ
     location_cn: 新西兰
     start_date: "2024-07"
+    # 毕业时间：2026-02（简历上仅显示年份）
     end_date: "2026-02"
-    status: Graduating
-    status_cn: 即将毕业
+    status: Completed
+    status_cn: 已完成
     research_focus:
       - Artificial Intelligence
       - Machine Learning
@@ -162,7 +172,6 @@ keywords:
   - IoT
   - Microservices
   - Docker
-  - Edge Computing
   - Full-stack
   - Computer Vision
   - LLM

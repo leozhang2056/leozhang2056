@@ -31,7 +31,10 @@ Hard constraints:
 - Use strong action verbs
 - Keep output traceable to the selected KB entries
 - Do not output internal helper labels like `JD Match`
-- Avoid edge-related terms unless explicitly required by the target JD
+- Avoid edge-related terms unless explicitly required by the target JD; prefer on-device / Raspberry Pi / offline-capable / local deployment phrasing when describing the same work
+- **KB narrative lockstep**: degree status and end dates in `profile.yaml` education, `experience/work.yaml`, and `projects/*/facts.yaml` must not contradict each other; never output “在读 / graduating Feb 2026” if the payload marks the degree **Completed** with an earlier `end_date`
+- **Android Summary**: do not end with job-seeking lines (e.g. “Seeking Android roles where…”); keep closers neutral (e.g. location / work rights only if present in KB)
+- **Developer roles**: de-emphasize people-management framing in Summary; put scope in bullets with evidence, avoid inflating “leading squads” unless the JD requires it
 - **Anti “AI resume” tone**: no keyword comma-lists in Summary; weave 3–4 concrete JD terms in one short sentence if needed
 - Put most JD/stack match in **bullets**, not only Summary; avoid duplicate generic closers (“end-to-end”, “passionate”, “world-class”)
 - Avoid repeated bullet patterns across different projects; keep each project distinct
@@ -41,6 +44,7 @@ Hard constraints:
 - Every sentence in JD can carry signal; perform sentence-level requirement mapping before writing final text
 - Final PDF text must not contain truncated phrases or broken clauses
 - Avoid mechanical alignment tails such as `Additional role alignment: ...` in candidate-facing output
+- Avoid repetitive bullet starters (e.g., repeated `Built`/`Developed`); vary verbs naturally to read like an experienced engineer
 - See `kb/resume_writing_best_practices.md` for rationale
 ```
 
@@ -75,6 +79,7 @@ Requirements:
 - For developer roles, emphasize fast execution and strong self-management
 - Keep hard skills prioritized; include soft skills only when role explicitly emphasizes collaboration/mentoring
 - Include company-fit language derived from company context (domain, product, culture) in natural prose, not slogan repetition
+- Enforce **Section 8 — Session-Derived Guardrails** (education vs work dates, anti-edge default wording, Android summary closers, payload over interview scripts)
 - Do not explain your reasoning unless requested
 ```
 
@@ -158,4 +163,59 @@ These are weighting hints, not additional facts.
 
 ---
 
-*Version: 2026-03-19*
+## 7. CLI Command Presets (from current workflow)
+
+Use these command presets during generation/review runs.
+
+```bash
+# 1) Generic fullstack resume
+python generate.py cv --role fullstack
+
+# 2) Generic android resume
+python generate.py cv --role android
+
+# 3) Targeted resume by JD URL
+python generate.py cv --role android --company "Jobgether" --title "Mobile Software Engineer" --jd-url "<JD_URL>"
+
+# 4) Targeted resume with manual JD keywords (when JD URL is rate-limited)
+python generate.py cv --role android --company "Jobgether" --title "Mobile Software Engineer" --jd-keywords "kotlin" "android sdk" "restful apis" "graphql" "debugging" "testing" "ci/cd"
+
+# 5) Auto-role mode from JD URL
+python generate.py cv --role auto --jd-url "<JD_URL>"
+
+# 6) Generate with reviewer bundle for second-pass QA
+python generate.py cv --role <role> --with-review-bundle
+
+# 7) Optional annotated/zh outputs
+python generate.py cv --role <role> --with-jd-annotated --with-zh
+```
+
+Operational note:
+- If JD fetch fails (e.g., HTTP 429), switch to manual `--jd-keywords` or local `--jd-file` input.
+
+---
+
+## 8. Session-Derived Guardrails (apply by default)
+
+Use these defaults unless the user explicitly overrides them.
+
+- **Single source of truth (education)**: treat `kb/profile.yaml` → `education[]` (`status`, `end_date`, honors) plus `kb/achievements.yaml` (e.g. First Class year) as authoritative for “finished vs in progress”. If the payload says **Completed**, every Summary/Experience narrative must match (no “Master’s student”, no “graduating February 2026”, no Chinese “硕士在读 / 2026年2月毕业”).
+- **Work YAML must match degree timeline**: for AUT / thesis-type rows in `kb/experience/work.yaml`, `current` and `end_date` must not imply “to Present” past the completed degree end; conflicting rows → **FACT_CONFLICT** until KB is fixed.
+- **Timeline consistency first**: all date references must stay aligned across `kb/profile.yaml`, `kb/experience/work.yaml`, and `projects/*/facts.yaml`.
+- **Verified employment dates**: Chunxiao tenure is `2013-07` to `2024-02`.
+- **Verified education (example aligned to current KB)**: MCIS at AUT — use the payload’s `end_date` and `status` (e.g. completed with First Class Honours in **2025** when the KB states that); do not resurrect older “Feb 2026 graduation” copy from interview scripts or stale notes.
+- **Edge / 边缘用语**: in resume-facing text, avoid `edge AI`, `edge deployment`, `边缘部署`, `边缘计算`, `端侧` unless the JD explicitly requires them; describe the same work with **on-device**, **Raspberry Pi**, **offline-capable**, **local / resource-constrained deployment**, **ARM-class hardware** as appropriate to the KB.
+- **Android role outputs**: omit explicit “Seeking … roles” summary endings; prefer factual stack + outcomes + neutral location (from KB). Priority projects: keep `chatclothes`, `smart-factory`; for Android targeting, prioritize `forest-patrol-inspection` when relevant.
+- **Interview Q&A ≠ resume KB**: `kb/interview_qa/*` may lag; never import dates or edge-centric phrasing from interview YAML if it conflicts with the resume payload—**payload wins**.
+- **NZ localization**: keep Auckland location + NZ full-time work rights visible near the top when present in KB.
+- **Tone target (HR + interviewer)**: practical, evidence-led, team-fit language; avoid generic motivational wording.
+- **Anti-robot wording**: avoid repeated bullet starters (especially repeated `Built` chains) and vary verbs naturally.
+- **No broken text**: prohibit truncated clauses, hanging commas, orphaned fragments, and ellipsis-style clipping in candidate-facing output.
+- **Leadership / management tone**: for developer-targeted resumes, do not lead Summary with squad-leadership framing; if scope exists in KB, one concise evidence-backed clause or bullets—not stacked management adjectives.
+- **Business impact framing**: prioritize outcomes with measurable signals (uptime, latency, rollout scale, efficiency gains), not only feature statements.
+- **Progression readability**: prefer compact progression wording over dense semicolon timelines.
+- **Artifact hygiene (CLI pipeline)**: PDF is the deliverable; remove transient `.html` after successful PDF generation when the tooling supports it—do not treat HTML as a handoff file unless the user asks.
+
+---
+
+*Version: 2026-03-28 (guardrails: education/work alignment, anti-edge default wording, Android summary closers, interview-KB precedence)*

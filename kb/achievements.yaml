@@ -60,16 +60,16 @@ academic_achievements:
     details:
       - Completed full-stack AI solution independently
       - Presented working demo and deployment documentation
-      - Edge deployment optimization on Raspberry Pi 5
+      - Lightweight on-device deployment optimization on Raspberry Pi 5
       
-  - description: Research focus in AI and edge computing
+  - description: Research focus in AI and lightweight deployment
     context: AUT Master's program
     year: "2024-2025"
     areas:
       - AI model optimization
       - Lightweight deployment
       - Virtual try-on systems
-      - Edge computing
+      - On-device inference
 
 professional_achievements:
   - metric: "10,000+"
@@ -135,7 +135,7 @@ presentations:
   - title: "ChatClothes: Virtual Try-On System Demo"
     event: "Master's Thesis Presentation, AUT"
     year: 2025
-    note: "Included working live demo and edge deployment on Raspberry Pi 5"
+    note: "Included working live demo and on-device deployment on Raspberry Pi 5"
 
 languages:
   - language: Chinese (Mandarin)

@@ -452,14 +452,15 @@ def _auto_company(args) -> str:
 
     jd_url = (getattr(args, "jd_url", None) or "").strip()
     if not jd_url:
-        return company or "the company"
+        # No JD URL: omit company slug in default CV filenames (generic resume).
+        return company or ""
 
     try:
         parsed = urlparse(jd_url)
         host = (parsed.netloc or "").lower()
         path = (parsed.path or "").strip("/")
     except Exception:
-        return company or "the company"
+        return company or ""
 
     # Workday hosts like eroadgroup.wd3.myworkdayjobs.com -> eroadgroup
     if ".myworkdayjobs.com" in host:
@@ -492,7 +493,7 @@ def _auto_company(args) -> str:
         print(f"Auto-inferred company from JD URL: {inferred}")
         return inferred
 
-    return company or "the company"
+    return company or ""
 
 
 async def run(args) -> None:

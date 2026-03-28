@@ -94,6 +94,7 @@ Default length:
 - Include thesis or honors only if helpful for the target role
 - Use full name `Auckland University of Technology` (do not abbreviate to `AUT`)
 - Reduce awkward line breaks in institution rendering where possible
+- **Narrative lockstep**: if `profile.yaml` marks the degree **Completed** with a concrete `end_date`, Summary and `experience/work.yaml` must not still describe “Master’s student”, “graduating Feb 2026”, or Chinese “硕士在读 / 2026年2月毕业”. Treat conflicting YAML as a KB fix before shipping a CV. (Full guardrails: `kb/ai_prompts/resume_generation.md` Section 8.)
 
 ---
 
@@ -153,7 +154,10 @@ Role auto-selection guidance:
 - [ ] Summary includes at least one concrete achievement when evidence exists
 - [ ] Bullets use strong verbs
 - [ ] Bullets are not repetitive across projects
-- [ ] Timeline is internally consistent
+- [ ] Timeline is internally consistent (`profile.yaml` education, `experience/work.yaml`, `projects/*/facts.yaml`)
+- [ ] Degree status matches employment rows (e.g. no AUT/thesis row `current: true` past completed `end_date`)
+- [ ] Android-target Summary has no generic “Seeking … roles” closer unless explicitly requested
+- [ ] Facts come from the resume KB payload, not stale copy in `kb/interview_qa/*` when those conflict
 - [ ] No edge-related terms remain unless explicitly requested
 - [ ] No internal label artifacts (e.g., `JD Match`) are shown
 
@@ -178,4 +182,4 @@ Role auto-selection guidance:
 
 ---
 
-*Version: 2026-03-12*
+*Version: 2026-03-28*

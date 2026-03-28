@@ -62,7 +62,7 @@ bullets:
     tags: [dotnet, aspnet, web, mvc]
     original: "Developed ASP.NET Web Forms and MVC applications"
     variants:
-      - "Built enterprise web applications using ASP.NET Web Forms and MVC"
+      - "Delivered enterprise web applications on ASP.NET Web Forms and MVC"
       - "Developed real-time web dashboards with ASP.NET and SignalR"
       - "Created RESTful APIs using ASP.NET MVC and WCF services"
     evidence: [live-streaming-system]
@@ -74,7 +74,7 @@ bullets:
     original: "Designed multi-language system architecture with .NET, C++, Python, and Lua"
     variants:
       - "Architected multi-language systems combining .NET, C++, Python, and Lua"
-      - "Built .NET-based platforms with native C++ modules and Python analytics"
+      - "Integrated .NET platforms with native C++ modules and Python analytics pipelines"
       - "Integrated Lua scripting engine for dynamic business rules in .NET applications"
     evidence: [live-streaming-system]
     skills: [Multi-language Architecture, .NET, C++, Python, Lua, System Integration]

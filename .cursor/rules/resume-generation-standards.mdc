@@ -21,6 +21,16 @@ Apply these when generating or adjusting CVs in this project.
 - Do not include Publications section.
 - De-emphasize team-management wording for developer roles.
 
+## Experience ordering
+- **Recency first:** When the candidate has a clearly newer academic/thesis block (e.g. AUT **ChatClothes**) and older employer-group projects (e.g. Chunxiao), Experience should read **newest first**.
+- **Android role (`--role android`):** Pin **`chatclothes` first** in the selected project list, then `forest-patrol-inspection`, `enterprise-messaging`, `iot-solutions`, `smart-factory` (see `_select_projects_with_relations` → `pinned_ids` in `app/backend/generate_cv_from_kb.py`). This yields: AUT single entry first, then the merged Chunxiao employer block.
+- **Chunxiao sub-projects:** Keep internal sort by timeline **end date descending** (newer phases first inside the employer group); do not reverse that for “narrative” unless the user asks.
+
+## PDF / print layout
+- **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
+- **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
+- Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
+
 ## Summary rules
 - Summary should be ATS-friendly and match JD requirements.
 - Keep Summary around 4-5 lines (not too short), with complete final sentence.
@@ -47,3 +57,36 @@ Apply these when generating or adjusting CVs in this project.
 - Prioritize codifying reusable changes (layout, wording, ranking, keyword filters) over one-off manual edits.
 - When a user gives repeated preferences, convert them into defaults in generator logic.
 - Keep generated outputs clean and consistent so future resumes benefit without re-specifying requirements.
+
+## CLI — resume generation workflow (session commands)
+
+Run from **repository root** (e.g. `e:\Coding\leozhang2056` on Windows, or `cd` equivalent on macOS/Linux).
+
+**Regenerate CV PDF (most common):**
+```bash
+python generate.py cv --role android
+python generate.py cv --role fullstack
+python generate.py cv --role backend
+python generate.py cv --role ai
+```
+
+**Optional flags (when user asks):**
+```bash
+python generate.py cv --role android --with-zh
+python generate.py cv --role android --with-review-bundle
+python generate.py cv --role android --with-jd-annotated
+```
+
+**Tests (after changing generator or KB wiring):**
+```bash
+python -m pytest tests/test_generate_cv.py -q --tb=short
+```
+If pytest fails on `conftest.py` / `generate_cv_html_to_pdf` import, fix the mock target or `PYTHONPATH` first; do not treat that as a successful regression run.
+
+**Ad-hoc Python checks against `generate_cv_from_kb`:** that module imports `generate_cv_html_to_pdf` with repo-relative paths; use **`app/backend` as cwd** so imports resolve, e.g.:
+```bash
+cd app/backend
+python -c "from generate_cv_from_kb import generate_summary, generate_project_bullet_points; ..."
+```
+
+**After edits:** prefer **executing** the relevant `python generate.py cv ...` command yourself (do not only tell the user to run it) unless the environment cannot run Python.

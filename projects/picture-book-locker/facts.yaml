@@ -17,19 +17,19 @@ team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Smart library locker system for schools and libraries providing 24/7 self-service 
-  book borrowing. Developed Android control system for locker hardware and Android client 
-  application for users. Features face recognition, QR code scanning, and UV disinfection.'
+summary: 'School and library smart-locker product: 24/7 self-service borrowing with cabinet-side
+  Android control (locks, UV, sensors) and a separate borrower Android app. Face recognition,
+  QR check-in, and multi-cabinet networking—distinct from fleet IoT switch/gateway work.'
 
 summary_cn: '智能图书馆储物柜系统，为学校及图书馆提供24/7自助借书服务。
   开发储物柜硬件的安卓控制系统及用户使用的安卓客户端应用。
   具备人脸识别、二维码扫描和紫外线消毒功能。'
 highlights:
-- Developed Android control system for locker hardware (electromagnetic locks, UV disinfection, sensors)
-- Built Android client application for user book borrowing and returning
-- Integrated face recognition and QR code scanning for authentication
-- Implemented 24/7 self-service operation with multi-cabinet networking
-- Deployed in multiple schools and libraries
+- Programmed Android control stack for locker hardware (electromagnetic locks, UV disinfection, sensors)
+- Shipped borrower-facing Android app for self-service check-out and return
+- Combined face recognition and QR code scanning for authentication at the cabinet
+- Sustained 24/7 self-service operation with stable multi-cabinet networking
+- Extended deployments to additional schools and library sites
 
 highlights_cn:
 - 开发储物柜硬件的安卓控制系统（电磁锁、紫外线消毒、传感器）

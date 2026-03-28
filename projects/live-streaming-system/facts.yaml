@@ -28,15 +28,15 @@ summary: >
   supporting live room interactions, product showcases, and in-stream purchases.
 
 highlights:
-  - Developed Android live streaming client using Java/Kotlin with custom C++ streaming core inside an 8-person delivery team
-  - Built ASP.NET Web Forms admin dashboard and Node.js real-time notification service over a 3-year product cycle
+  - Delivered Android live-streaming client in Java/Kotlin with a custom C++ core as part of an 8-person delivery team
+  - Implemented ASP.NET Web Forms admin dashboard and Node.js real-time notification service over a 3-year product cycle
   - Implemented WebSocket and Socket.IO for real-time chat and live room interactions
   - Delivered HLS (M3U8) adaptive streaming with multi-bitrate support (360p to 1080p)
   - Created hybrid backend architecture: .NET (business logic) + Node.js (real-time) + C++ (media)
   - Used Python for stream analytics and Lua for dynamic configuration management
   - Integrated multiple streaming protocols: RTMP ingestion, HLS/M3U8 delivery, WebRTC low-latency
   - Optimized playback stability under varying network conditions (3G/4G/WiFi)
-  - Delivered end-to-end live commerce experience across Android, Web, and Admin platforms supporting 1000+ peak concurrent viewers
+  - Delivered live-commerce workflows across Android, Web, and Admin platforms, supporting 1000+ peak concurrent viewers
 
 tech_stack:
   languages:

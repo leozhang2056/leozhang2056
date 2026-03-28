@@ -18,22 +18,24 @@ team_size: 6
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Smart manufacturing platform deployed across 10+ factories, enabling automation and 
-  digital transformation to meet fast-changing market demands. Led a 6-person cross-functional team 
-  over a 6-year delivery cycle to design and develop a full-stack solution including frontend portals, 
-  backend microservices, Android apps, and IoT device integration for electronic scales, washing 
-  machines, and conveyor systems.'
+summary: >
+  Smart manufacturing platform rolled out to 10+ factories over six years: Android shop-floor apps,
+  Spring Boot microservices, and IoT hooks (RFID, scales, conveyors) with 30%+ efficiency gains and
+  99.9% uptime on critical workflows.
+
+  Also delivered Vue.js portals and cross-functional delivery spanning customer, operations, and worker journeys.
 
 summary_cn: '智能制造平台，已部署于10多家工厂，实现自动化和数字化转型，以满足快速变化的市场需求。
   设计和开发全栈解决方案，包括前端门户、后端微服务、安卓应用和物联网设备集成，
   涵盖电子秤、工业洗衣机和传送系统。'
 highlights:
-  - Led a 6-person cross-functional team to deliver a smart factory platform rolled out to 10+ factories over 6 years
-  - Built Spring Boot microservices and multi-tenant Vue.js portals that improved production efficiency by 30%+
+  - Delivered a smart factory platform rolled out to 10+ factories over six years, spanning Android shop-floor apps, microservices, and IoT integrations
+  - Dockerized Spring Boot microservices for repeatable releases across 10+ factory deployments, supporting 30%+ production efficiency gains and 99.9% uptime on critical shop-floor workflows
   - Maintained 99.9% uptime for business-critical production workflows across 5+ manufacturing locations
   - Designed end-to-end factory workflows covering customer, factory, worker, and operations portals
   - Integrated industrial IoT devices including RFID, electronic scales, and conveyor systems
   - Implemented polyglot persistence layer with MySQL, Redis, and MongoDB for real-time data sync
+  - Led a 6-person cross-functional engineering team through planning, sprint execution, and production rollout
 
 highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构
@@ -115,7 +117,7 @@ achievements:
 - Successfully scaled from 1 to 5+ factory sites
 - Achieved 30%+ production efficiency improvement
 - Maintained 99.9% uptime over multiple years
-- Led and mentored a 6-person development team through multi-year delivery and production rollout
+- Led and mentored a 6-person engineering team through multi-year delivery and production rollout
 - Integrated diverse IoT hardware ecosystem
 - Delivered reliable electronic scale data pipeline for production operations
 evidence:

@@ -9,30 +9,29 @@ category:
 - Network Programming
 timeline:
   start: '2014'
-  end: '2025'
-  duration_years: 11
+  end: '2024'
+  duration_years: 10
 role: Developer & System Designer
 role_cn: 开发工程师与系统设计师
 team_size: null
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
-summary: 'Large-scale enterprise communication platform with multi-terminal support (Android, Web, PC). 
-  Designed and developed multiple subsystems including user management, messaging, file system, 
-  workflow management, and audit systems. Focused on real-time communication technologies 
-  and audio/video processing. Responsible for mobile client, web frontend, backend services, 
-  database design, and server maintenance over an 11-year product lifecycle supporting 10,000+ DAU.'
+summary: >
+  Android-led enterprise communication platform (Android, Web, PC) with 10,000+ DAU over a 10-year
+  lifecycle; owned real-time messaging, file and workflow subsystems, and mobile client architecture
+  including NDK TCP/UDP paths for sub-200ms latency.
 
 summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   设计和开发多个子系统，包括用户管理、消息系统、文件系统、工作流管理和审计系统。
   专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
 highlights:
-  - Built Android messaging client with NDK-level TCP/UDP, achieving sub-200ms message latency
+  - Engineered Android transport in NDK (C/C++) over TCP/UDP, optimizing connection paths to sustain sub-200ms message latency at production load
   - Scaled the platform to 10,000+ DAU and 500K+ messages per day across Android, Web, and PC
-  - Maintained 99.9% availability across an 11-year product lifecycle
+  - Spearheaded reliability practices that maintained 99.9% availability across a 10-year product lifecycle
   - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
-  - Designed distributed database and file storage supporting real-time collaboration
-  - Built ETL pipelines with Kettle and BI dashboards with PowerBI for system analytics
+  - Optimized distributed database and file storage layouts for real-time collaboration workloads
+  - Integrated ETL pipelines with Kettle and PowerBI dashboards for operational analytics
 
 highlights_cn:
 - 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输
@@ -111,7 +110,7 @@ achievements:
 - Achieved sub-200ms message latency through protocol optimization
 - Successfully scaled to 10,000+ daily active users
 - Processed over 500,000 messages daily
-- Maintained 99.9% availability over 11 years of continuous operation
+- Maintained 99.9% availability over 10 years of continuous operation
 - Delivered consistent cross-platform experience
 evidence:
 - type: architecture

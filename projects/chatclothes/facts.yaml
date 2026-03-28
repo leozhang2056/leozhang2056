@@ -43,25 +43,29 @@ academic_info:
   thesis_status: passed
 
 summary: >
-  ChatClothes is a modular and multimodal virtual try-on system that integrates 
-  controllable diffusion-based generation with dialogue-driven garment interaction. 
-  The system employs DeepSeek LLM for natural language instruction understanding, 
-  LoRA fine-tuning for enhanced OOTDiffusion performance, ComfyUI for visual 
-  workflow orchestration, and YOLO12n-LC for efficient garment classification. 
-  Optimized for edge deployment with complete offline capability.
+  Master's thesis (AUT): multimodal virtual try-on combining diffusion generation, YOLO12n-LC garment
+  classification, and local LLM control (ComfyUI/Dify/Ollama), with offline-capable deployment including
+  Raspberry Pi 5 targets. For demos and thesis evaluation, shipped an Android-friendly progressive web
+  control shell on handheld devices to trigger try-on jobs, stream pipeline status, and issue LLM garment
+  commands against the same backends used on Pi-class hardware.
+
+  Full detail: modular pipeline integrating controllable diffusion, LoRA-tuned OOTDiffusion, and
+  dialogue-driven garment interaction for research-grade evaluation (DressCode / VITON-HD).
 
 summary_cn: >
   ChatClothes 是一个模块化、多模态的虚拟试衣系统，集成了可控的扩散生成技术和对话驱动的服装交互功能。
   系统采用 DeepSeek 大语言模型进行自然语言指令理解，使用 LoRA 微调技术优化 OOTDiffusion 性能，
   通过 ComfyUI 进行可视化工作流编排，并使用 YOLO12n-LC 实现高效的服装分类。
-  针对边缘部署优化，具备完全的离线运行能力。
+  针对本地与资源受限环境优化推理与编排，具备完全的离线运行能力。
 
 highlights:
+  # 首条保留移动端可演示面，便于 Android 岗扫描；其余按重要性排列
+  - Shipped handheld-facing control UX (PWA tuned for Android Chrome) so diffusion/LLM jobs and status surface on the same mobile surfaces used beside Pi deployments
   - Designed and implemented complete multimodal VTON system independently
   - Applied LoRA fine-tuning to OOTDiffusion for enhanced pose alignment and texture reconstruction
-  - Optimized YOLO12n to YOLO12n-LC lightweight classifier for local deployment
-  - Integrated DeepSeek LLM via Ollama for natural language control and dialogue-driven interaction
-  - Deployed full system on Raspberry Pi 5 for offline edge inference
+  - Optimized YOLO12n to YOLO12n-LC for on-device and resource-constrained targets, pairing lightweight CV with local diffusion/LLM orchestration for handheld and Raspberry Pi–class deployments
+  - Orchestrated DeepSeek LLM via Ollama for natural language control and dialogue-driven interaction
+  - Deployed full system on Raspberry Pi 5 for offline-capable inference on ARM-class hardware
   - Validated system on DressCode and VITON-HD datasets; thesis passed with First Class Honours
 
 highlights_cn:

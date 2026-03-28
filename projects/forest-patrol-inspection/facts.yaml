@@ -9,9 +9,9 @@ category:
 - Mobile Inspection
 - Field Data Collection
 timeline:
-  start: '2014'
+  start: '2021'
   end: '2022'
-  duration_years: 8
+  duration_years: 1
 role: Android Mobile Client Developer
 team_size: null
 company:
@@ -19,16 +19,13 @@ company:
   location: China
 summary: 'Mobile forest patrol system for no-signal field scenarios. Supports offline
   map loading, GPS route recording, GIS point annotation, and incident reporting (fire/pest/other
-  risks), with deferred synchronization when network is available. Delivered and iterated over an
-  8-year product lifecycle for field operations in low-connectivity environments.
+  risks), with deferred synchronization when network is available. Delivered and iterated over a
+  1-year product lifecycle for field operations in low-connectivity environments.
 
   '
 highlights:
-  - Built offline-first Android GIS app for forest patrol in no-signal environments over an 8-year delivery lifecycle
-  - Implemented continuous GPS trajectory recording for field operation
-  - Integrated offline map packages enabling navigation without network connectivity
-  - Designed deferred sync architecture with auto-upload on network recovery
-  - Supported fire/pest risk reporting workflows across forest regions
+  - Delivered offline-first Android GIS for forest patrol in no-signal areas: custom offline maps, GPS tracks, GIS annotations, and fire/pest/risk reporting over a one-year cycle
+  - Synced patrol and incident data after connectivity returned, keeping field workflows aligned with regional forestry operations
 tech_stack:
   languages:
   - Java
@@ -55,7 +52,7 @@ metrics: []
 achievements:
 - Enabled patrol operations in no-signal forest environments
 - Improved field risk reporting continuity with offline-first architecture
-- Built GIS-visible patrol and risk data pipeline for management review
+- Surfaced patrol and risk telemetry to management dashboards for operational review
 evidence:
 - type: app_ui
   path: images/app-photo-capture.jpg
