@@ -2538,12 +2538,6 @@ def generate_html_from_kb(
     country  = loc.get('country', '')
     linkedin = (contact.get('linkedin') or '').strip()
     github   = (contact.get('github') or 'https://github.com/leozhang2056').strip()
-    resume_contact = personal.get('resume_contact') or {}
-    work_rights_line = (
-        (resume_contact.get('work_rights_en') or '').strip()
-        if lang == 'en'
-        else (resume_contact.get('work_rights_zh') or '').strip()
-    )
 
     # ── 生成各部分 ──
     summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords)
@@ -2590,18 +2584,7 @@ def generate_html_from_kb(
         name_bits.append(f'<a href="{_gh}">{_GITHUB_SVG}</a>')
     name_row = " ".join(name_bits)
 
-    sec_bits: List[str] = []
-    if linkedin:
-        sec_bits.append(f'<a href="{_li}">LinkedIn</a>')
-    if github:
-        sec_bits.append(f'<a href="{_gh}">GitHub</a>')
-    if work_rights_line:
-        sec_bits.append(html.escape(work_rights_line))
-    contact_secondary = (
-        f'<div class="cv-contact cv-contact-secondary">{"&nbsp;|&nbsp;".join(sec_bits)}</div>'
-        if sec_bits
-        else ""
-    )
+    contact_secondary = ""
 
     html_doc = f'''<!DOCTYPE html>
 <html lang="{lang}">
