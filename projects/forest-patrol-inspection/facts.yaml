@@ -19,11 +19,12 @@ company:
   location: China
 summary: 'Mobile forest patrol system for no-signal field scenarios. Supports offline
   map loading, GPS route recording, GIS point annotation, and incident reporting (fire/pest/other
-  risks), with deferred synchronization when network is available.
+  risks), with deferred synchronization when network is available. Delivered and iterated over an
+  8-year product lifecycle for field operations in low-connectivity environments.
 
   '
 highlights:
-  - Built offline-first Android GIS app for forest patrol in no-signal environments
+  - Built offline-first Android GIS app for forest patrol in no-signal environments over an 8-year delivery lifecycle
   - Implemented continuous GPS trajectory recording for field operation
   - Integrated offline map packages enabling navigation without network connectivity
   - Designed deferred sync architecture with auto-upload on network recovery

@@ -582,7 +582,7 @@ async def run(args) -> None:
 
     elif args.command == 'cv-iterate':
         from cv_auto_review_iterate import run_cv_iterate
-        asyncio.run(run_cv_iterate(args))
+        await run_cv_iterate(args)
 
 
 def main():

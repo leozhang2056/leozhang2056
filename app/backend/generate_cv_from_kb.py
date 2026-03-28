@@ -241,27 +241,6 @@ def load_projects(projects_dir: str) -> List[Dict[str, Any]]:
 # 项目排序 —— 静态优先级 + JD 关键词得分
 # ---------------------------------------------------------------------------
 
-# 静态基础优先级（不依赖 JD，作为 tiebreaker）
-_BASE_PRIORITY: Dict[str, int] = {
-    'chatclothes': 10,
-    'enterprise-messaging': 20,
-    'smart-factory': 30,
-    'live-streaming-system': 40,
-    'visual-gateway': 50,
-    'device-maintenance-prediction': 60,
-    'chinese-herbal-recognition': 70,
-    'iot-solutions': 80,
-    'exhibition-robot': 90,
-    'picture-book-locker': 100,
-    'forest-patrol-inspection': 110,
-    'smart-power': 120,
-    'boobit': 130,
-    'broadcast-control': 140,
-    'visit-system': 150,
-    'school-attendance': 160,
-    'patent-search-system': 170,
-}
-
 # 角色预设：当没有 JD 关键词时使用的固定排序
 _ROLE_PROJECT_ORDER: Dict[str, List[str]] = {
     'android': [
@@ -346,7 +325,7 @@ def score_project_by_jd(
         if end_date and len(end_date) >= 4:
             try:
                 end_year = int(end_date[:4])
-                current_year = 2024  # 假设当前年份
+                current_year = datetime.now().year
                 years_old = current_year - end_year
                 recency_bonus = max(0, 0.3 - years_old * 0.05)
                 score += recency_bonus

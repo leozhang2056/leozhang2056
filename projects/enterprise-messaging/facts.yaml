@@ -21,16 +21,16 @@ summary: 'Large-scale enterprise communication platform with multi-terminal supp
   Designed and developed multiple subsystems including user management, messaging, file system, 
   workflow management, and audit systems. Focused on real-time communication technologies 
   and audio/video processing. Responsible for mobile client, web frontend, backend services, 
-  database design, and server maintenance.'
+  database design, and server maintenance over an 11-year product lifecycle supporting 10,000+ DAU.'
 
 summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   设计和开发多个子系统，包括用户管理、消息系统、文件系统、工作流管理和审计系统。
   专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
 highlights:
-  - Built Android messaging client with NDK-level TCP/UDP for real-time messaging
-  - Scaled platform to support daily active users across Android, Web, and PC terminals
-  - Maintained high availability over years of operation
-  - Architected multi-subsystem platform with Spring Cloud microservices and Node.js
+  - Built Android messaging client with NDK-level TCP/UDP, achieving sub-200ms message latency
+  - Scaled the platform to 10,000+ DAU and 500K+ messages per day across Android, Web, and PC
+  - Maintained 99.9% availability across an 11-year product lifecycle
+  - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
   - Designed distributed database and file storage supporting real-time collaboration
   - Built ETL pipelines with Kettle and BI dashboards with PowerBI for system analytics
 
@@ -111,7 +111,7 @@ achievements:
 - Achieved sub-200ms message latency through protocol optimization
 - Successfully scaled to 10,000+ daily active users
 - Processed over 500,000 messages daily
-- Maintained high availability over 9 years
+- Maintained 99.9% availability over 11 years of continuous operation
 - Delivered consistent cross-platform experience
 evidence:
 - type: architecture

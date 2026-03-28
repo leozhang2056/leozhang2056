@@ -19,7 +19,7 @@ company:
   location: China
 summary: 'IoT device management platform integrating multiple sensors and smart devices.
   Designed and developed gateway software for device connectivity and data forwarding.
-  Built platform backend for device management, remote control, and data processing.'
+  Built platform backend for device management, remote control, and data processing across a 10-year product line covering smart switches and gateways.'
 
 summary_cn: '物联网设备管理平台，集成多种传感器和智能设备。
   设计和开发网关软件，实现设备连接和数据转发。
@@ -121,8 +121,7 @@ keywords:
 - MQTT
 last_updated: '2026-03-05'
 highlights:
-- IoT management platform where users manage their purchased IoT devices
-- Company sells smart switches and gateways
-- I developed the gateway (gateway software/firmware), developed the mobile (phone)
-  app for device control and management, and participated in platform (backend/web)
-  development, with Android mobile client work as the primary responsibility
+- Built an IoT management platform for purchased smart switches and gateways across a 10-year product line
+- Developed gateway software and firmware for device connectivity, protocol handling, and cloud data forwarding
+- Owned the Android mobile app for device discovery, binding, remote control, and day-to-day device management
+- Contributed to backend and web platform delivery for device APIs, management workflows, and monitoring
