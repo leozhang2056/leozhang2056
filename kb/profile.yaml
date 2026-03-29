@@ -53,8 +53,7 @@ career_identity:
       NDK networking, offline-first patterns, and automated tests (JUnit/MockK/Espresso), with ongoing
       adoption of Compose, Coroutines/Flow, and Hilt. Representative outcomes include multi-year offline GIS
       for field crews; enterprise messaging at 10,000+ DAU and sub-200ms latency; and Android plus gateway
-      work for IoT device control and telemetry. Seeking Android roles where CI/CD, Play releases, and
-      production debugging matter; based in Auckland, New Zealand.
+      work for IoT device control and telemetry. Based in Auckland, New Zealand.
     
     ai_focus: >
       AI-focused software engineer with a Master's in Computer and Information Sciences from Auckland
@@ -101,8 +100,8 @@ education:
     location: NZ
     location_cn: 新西兰
     start_date: "2024-07"
-    # 毕业时间：2026-02（简历上仅显示年份）
-    end_date: "2026-02"
+    # 与 thesis 完成 / work.yaml AUT 段、一等荣誉叙事对齐（简历教育块仅显示年份）
+    end_date: "2025-04"
     status: Completed
     status_cn: 已完成
     research_focus:

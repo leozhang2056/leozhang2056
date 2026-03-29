@@ -68,7 +68,7 @@ ai_ml:
     level: advanced
     evidence:
       - ChatClothes diffusion model implementation
-      - Model optimization for edge devices
+      - Model optimization for resource-constrained and on-device targets
     
   - name: TensorFlow
     level: intermediate
@@ -486,7 +486,7 @@ iot_hardware:
     level: advanced
     years: 5
     evidence:
-      - ChatClothes edge deployment
+      - ChatClothes on-device deployment (Raspberry Pi)
       - IoT projects
     
   - name: UART/Serial
