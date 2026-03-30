@@ -8,7 +8,6 @@ from typing import Dict, List, Any, Optional
 from dataclasses import dataclass
 
 from .data_models import (
-    validate_project_facts,
     validate_skills_data,
     validate_profile_data,
     validate_bullet_entry,
@@ -19,6 +18,7 @@ from .data_models import (
     BulletEntry,
     AchievementsData,
 )
+from .kb_validation import validate_project_data
 
 logger = logging.getLogger(__name__)
 
@@ -119,11 +119,18 @@ class KBLoader:
         validated_projects = []
         for project in raw_projects:
             try:
-                validated = validate_project_facts(project)
-                validated_projects.append(validated)
+                validated, errors = validate_project_data(project)
+                if errors:
+                    logger.error(
+                        "Failed to validate project %s: %s",
+                        project.get('_project_dir', 'unknown'),
+                        "; ".join(errors),
+                    )
+                    continue
+                if validated is not None:
+                    validated_projects.append(validated)
             except Exception as e:
                 logger.error(f"Failed to validate project {project.get('_project_dir', 'unknown')}: {e}")
-                # Continue with other projects rather than failing completely
 
         return validated_projects
 

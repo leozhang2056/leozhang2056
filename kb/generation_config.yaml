@@ -1,0 +1,100 @@
+# Generation-time tunables shared by role inference and project ranking.
+
+role_inference:
+  keywords:
+    android:
+      - android
+      - kotlin
+      - jetpack
+      - compose
+      - gradle
+      - adb
+      - ndk
+      - jni
+      - mvvm
+      - room
+      - coroutines
+      - retrofit
+      - okhttp
+    ai:
+      - pytorch
+      - tensorflow
+      - llm
+      - diffusion
+      - computer vision
+      - cv
+      - onnx
+      - cuda
+      - transformer
+      - fine-tuning
+      - finetuning
+      - rag
+      - embedding
+      - prompt
+      - ml
+      - machine learning
+    backend:
+      - spring
+      - spring boot
+      - spring cloud
+      - java
+      - microservice
+      - rest
+      - api
+      - mybatis
+      - hibernate
+      - jpa
+      - redis
+      - kafka
+
+project_ranking:
+  default_priority: 9999
+  priority_offset: 200
+  role_project_order:
+    android:
+      - chatclothes
+      - forest-patrol-inspection
+      - enterprise-messaging
+      - iot-solutions
+      - smart-factory
+      - picture-book-locker
+      - visual-gateway
+    ai:
+      - chatclothes
+      - device-maintenance-prediction
+      - chinese-herbal-recognition
+      - exhibition-robot
+      - enterprise-messaging
+      - smart-factory
+    backend:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - chatclothes
+      - iot-solutions
+      - visual-gateway
+    fullstack:
+      - chatclothes
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - iot-solutions
+  base_priority:
+    chatclothes: 10
+    enterprise-messaging: 20
+    smart-factory: 30
+    live-streaming-system: 40
+    visual-gateway: 50
+    device-maintenance-prediction: 60
+    chinese-herbal-recognition: 70
+    iot-solutions: 80
+    exhibition-robot: 90
+    picture-book-locker: 100
+    forest-patrol-inspection: 110
+    smart-power: 120
+    boobit: 130
+    broadcast-control: 140
+    visit-system: 150
+    school-attendance: 160
+    patent-search-system: 170
+

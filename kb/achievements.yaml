@@ -113,16 +113,8 @@ professional_achievements:
     description: Led 6-person cross-functional team
 
 publications:
-  - title: "ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models"
-    venue: AUT Open Repository (Master's Thesis)
-    year: 2025
-    type: thesis
-    url: "http://hdl.handle.net/10292/20210"
-    status: passed
-    note: "Passed April 2025; completed 6 months ahead of schedule"
-
   - title: "ChatClothes: Conversational Virtual Try-On with Diffusion Models"
-    venue: "Image and Vision Computing New Zealand (IVCNZ 2025)"
+    venue: "Image and Vision Computing New Zealand, IVCNZ 2025"
     year: 2025
     type: conference_paper
     doi: "10.1109/IVCNZ67716.2025.11281834"
@@ -130,6 +122,13 @@ publications:
       - Kien Tran
       - Minh Nguyen
       - Wei Qi Yan
+
+  - title: "Clothes Recognition Based on Lightweight Deep Learning Models"
+    venue: "IGI Global — Aesthetics in Creative Technology"
+    year: 2026
+    type: book_chapter
+    status: under review
+    note: "Chapter submission ID: 211225-092240; currently under review in IGI eEditorial Discovery"
 
 presentations:
   - title: "ChatClothes: Virtual Try-On System Demo"
@@ -145,4 +144,4 @@ languages:
     proficiency: Professional Working Proficiency
     # 可根据实际情况调整：IELTS/PTE 分数等
 
-last_updated: "2025-02-11"
+last_updated: "2026-03-30"

@@ -193,6 +193,44 @@ def _backup_files(repo_root: Path, files: Set[Path], backup_root: Path) -> None:
         shutil.copy2(fp, dest)
 
 
+def _build_change_summary(
+    en_patch: Dict[str, Any],
+    zh_patch: Dict[str, Any],
+    project_append: Dict[str, Any],
+    modified_labels: List[str],
+) -> str:
+    en_keys = [k for k, v in (en_patch or {}).items() if isinstance(v, str) and v.strip()]
+    zh_keys = [k for k, v in (zh_patch or {}).items() if isinstance(v, str) and v.strip()]
+    appended = {
+        str(pid): len([b for b in (bullets or []) if isinstance(b, str) and b.strip()])
+        for pid, bullets in (project_append or {}).items()
+    }
+    appended = {pid: cnt for pid, cnt in appended.items() if cnt > 0}
+
+    lines = ["\n--- KB change summary ---"]
+    lines.append(f"- Files changed: {len(modified_labels)}")
+    lines.append(f"- EN summary variants updated: {', '.join(en_keys) if en_keys else 'none'}")
+    lines.append(f"- ZH summary variants updated: {', '.join(zh_keys) if zh_keys else 'none'}")
+    if appended:
+        parts = [f"{pid} (+{cnt} bullet{'s' if cnt > 1 else ''})" for pid, cnt in sorted(appended.items())]
+        lines.append(f"- Project highlights appended: {', '.join(parts)}")
+    else:
+        lines.append("- Project highlights appended: none")
+    return "\n".join(lines)
+
+
+def _print_rollback_hint(repo_root: Path, backup_dir: Path, modified_labels: List[str]) -> None:
+    if not modified_labels:
+        return
+    print("\n--- Rollback hint ---")
+    print(f"Backup root: {backup_dir}")
+    print("To rollback manually, copy files from backup back to repository paths:")
+    for rel in modified_labels:
+        src = backup_dir / rel
+        dst = repo_root / rel
+        print(f"  - {src}  ->  {dst}")
+
+
 def _apply_profile_summary_edits(
     repo_root: Path,
     en_patch: Dict[str, Any],
@@ -331,6 +369,9 @@ def run_llm_review_and_apply(
 
     if not modified_labels:
         print("  No KB files changed (LLM returned empty edits).")
+    else:
+        print(_build_change_summary(en_patch, zh_patch, pha, modified_labels))
+        _print_rollback_hint(repo_root, backup_dir, modified_labels)
 
     return result, modified_labels
 

@@ -23,39 +23,7 @@ from generate_cv_from_kb import (
     generate_html_from_kb,
 )
 from jd_fetch import derive_keywords_from_url, extract_keywords_from_text, load_jd_text_from_file
-
-
-def _infer_role_from_text(text: str) -> str:
-    t = (text or "").lower()
-    if not t:
-        return "fullstack"
-
-    android_hits = (
-        "android", "kotlin", "jetpack", "compose", "gradle", "adb", "ndk", "jni",
-        "mvvm", "room", "coroutines", "retrofit", "okhttp",
-    )
-    ai_hits = (
-        "pytorch", "tensorflow", "llm", "diffusion", "computer vision", "onnx",
-        "cuda", "transformer", "rag", "embedding", "machine learning",
-    )
-    backend_hits = (
-        "spring", "spring boot", "spring cloud", "java", "microservice",
-        "rest", "api", "mybatis", "hibernate", "jpa", "redis", "kafka",
-    )
-
-    def _count(hits: Tuple[str, ...]) -> int:
-        return sum(1 for h in hits if h in t)
-
-    a = _count(android_hits)
-    i = _count(ai_hits)
-    b = _count(backend_hits)
-    if a >= max(i, b) and a > 0:
-        return "android"
-    if i >= max(a, b) and i > 0:
-        return "ai"
-    if b >= max(a, i) and b > 0:
-        return "backend"
-    return "fullstack"
+from role_inference import infer_role_from_text
 
 
 def _load_jd_input(url: Optional[str], file_path: Optional[str], max_keywords: int) -> Tuple[str, List[str], str]:
@@ -113,7 +81,7 @@ def build_match_report(
         if manual_keywords:
             raw_kws = list(manual_keywords)
 
-        inferred = _infer_role_from_text(text)
+        inferred = infer_role_from_text(text)
         effective_role = inferred if role_type == "auto" else role_type
         scored = _score_one_jd(effective_role, raw_kws, max_projects=max_projects)
         rows.append(

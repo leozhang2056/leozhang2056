@@ -220,7 +220,8 @@ Use these defaults unless the user explicitly overrides them.
 - **Business impact framing**: prioritize outcomes with measurable signals (uptime, latency, rollout scale, efficiency gains), not only feature statements.
 - **Progression readability**: prefer compact progression wording over dense semicolon timelines.
 - **Artifact hygiene (CLI pipeline)**: PDF is the deliverable; remove transient `.html` after successful PDF generation when the tooling supports it—do not treat HTML as a handoff file unless the user asks.
+- **Publications policy**: keep Publications at the end of the resume; default order is conference publication first (`ChatClothes: Conversational Virtual Try-On with Diffusion Models`, IVCNZ 2025), then `Clothes Recognition Based on Lightweight Deep Learning Models` (IGI Global, under review) unless user overrides.
 
 ---
 
-*Version: 2026-03-30 (+ canonical section order: Exp → Education → Licenses; header contact row conventions in `resume-generation-standards.mdc`)*
+*Version: 2026-03-30 (+ canonical section order: Exp → Education → Licenses; header contact row conventions in `resume-generation-standards.mdc`; publications order locked as IVCNZ first, IGI under-review second)*

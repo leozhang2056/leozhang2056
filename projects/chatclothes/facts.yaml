@@ -231,6 +231,19 @@ evidence:
     description: Master's thesis submitted and passed 6 months early
     url: "http://hdl.handle.net/10292/20210"
     doi: "10.1109/IVCNZ67716.2025.11281834"
+  - type: publication
+    status: published
+    date: "2025"
+    title: "ChatClothes: Conversational Virtual Try-On with Diffusion Models"
+    venue: "Image and Vision Computing New Zealand, IVCNZ 2025"
+    doi: "10.1109/IVCNZ67716.2025.11281834"
+  - type: publication
+    status: under_review
+    date: "2026"
+    title: "Clothes Recognition Based on Lightweight Deep Learning Models"
+    venue: "IGI Global — Aesthetics in Creative Technology"
+    submission_id: "211225-092240"
+    note: "Chapter manuscript currently under review in IGI eEditorial Discovery"
   - type: demo
     status: available
     description: Working demonstration with full functionality

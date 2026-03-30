@@ -2,8 +2,8 @@
 Data validation models using Pydantic for type safety and validation.
 """
 
-from typing import Dict, List, Any, Optional
-from pydantic import BaseModel, Field, validator
+from typing import Dict, List, Any, Optional, Union
+from pydantic import BaseModel, Field, validator, model_validator
 from datetime import datetime
 
 
@@ -11,6 +11,7 @@ class ProjectFacts(BaseModel):
     """Validation model for project facts.yaml"""
 
     project_id: Optional[str] = None
+    type: Optional[str] = None
     name: Optional[str] = None
     name_cn: Optional[str] = None
     summary: Optional[str] = None
@@ -21,22 +22,54 @@ class ProjectFacts(BaseModel):
     role_cn: Optional[str] = None
     company: Optional[Dict[str, Any]] = None
     institution: Optional[Dict[str, Any]] = None
-    timeline: Optional[Dict[str, str]] = None
+    timeline: Optional[Dict[str, Any]] = None
     start_date: Optional[str] = None
     end_date: Optional[str] = None
     keywords: List[str] = Field(default_factory=list)
     related_to_roles: List[str] = Field(default_factory=list)
     tech_stack: Dict[str, List[str]] = Field(default_factory=dict)
-    highlights: List[str] = Field(default_factory=list)
-    highlights_cn: List[str] = Field(default_factory=list)
+    highlights: List[Any] = Field(default_factory=list)
+    highlights_cn: List[Any] = Field(default_factory=list)
     impact: List[str] = Field(default_factory=list)
-    achievements: List[Dict[str, Any]] = Field(default_factory=list)
+    achievements: List[Union[Dict[str, Any], str]] = Field(default_factory=list)
+    skills_demonstrated: Optional[Union[Dict[str, Any], List[Any], str]] = None
+    last_updated: Optional[str] = None
 
     @validator('keywords', 'related_to_roles', each_item=True)
     def validate_non_empty_strings(cls, v):
         if isinstance(v, str) and v.strip():
             return v.strip()
         return v
+
+    @model_validator(mode='after')
+    def validate_required_minimum(self):
+        required = [
+            'project_id', 'name', 'type', 'timeline', 'role',
+            'summary', 'highlights', 'tech_stack', 'keywords',
+            'last_updated', 'skills_demonstrated', 'related_to_roles',
+        ]
+
+        missing = []
+        for field_name in required:
+            value = getattr(self, field_name, None)
+            if value is None:
+                missing.append(field_name)
+            elif isinstance(value, str) and not value.strip():
+                missing.append(field_name)
+            elif isinstance(value, (list, dict)) and not value:
+                missing.append(field_name)
+
+        if missing:
+            raise ValueError(f"missing required fields: {', '.join(missing)}")
+
+        if not isinstance(self.timeline, dict):
+            raise ValueError("timeline must be an object")
+        if not self.timeline.get('start'):
+            raise ValueError("timeline.start is required")
+        if not self.timeline.get('end'):
+            raise ValueError("timeline.end is required")
+
+        return self
 
     class Config:
         allow_extra = True  # Allow additional fields for flexibility

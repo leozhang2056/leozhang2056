@@ -1,0 +1,62 @@
+# AGENTS.md
+
+## Purpose
+- This repo is a KB-driven "resume compiler": structured YAML facts in `kb/` + `projects/*/facts.yaml` are transformed into CV/cover-letter/email outputs (not handwritten each time).
+- Treat generated artifacts in `outputs/` and templates in `templates/` as outputs/reference, not truth sources.
+
+## Big Picture Architecture
+- Single entrypoint: `generate.py` dispatches subcommands (`cv`, `cl`, `email`, `interview`, `match`, `cv-iterate`) and injects `app/backend` into import path.
+- Core pipeline lives in `app/backend/generate_cv_from_kb.py`:
+  - load YAML (`load_yaml`, `load_projects`)
+  - rank projects by role + JD keywords (`sort_projects`, `score_project_by_jd`)
+  - generate HTML, then PDF via `app/backend/generate_cv_html_to_pdf.py::html_to_pdf`.
+- Data contracts are YAML-first: `kb/profile.yaml`, `kb/skills.yaml`, `kb/achievements.yaml`, `kb/project_relations.yaml`, and per-project `projects/<id>/facts.yaml`.
+- Validation boundary:
+  - unified validation helpers: `app/backend/kb_validation.py`
+  - CLI validator: `app/backend/validate.py`
+  - typed loader/validators: `app/backend/kb_loader.py` + `app/backend/data_models.py` (Pydantic).
+
+## Critical Workflows (Commands)
+- Install deps:
+```bash
+pip install -r requirements.txt
+```
+- Validate KB after any `facts.yaml` edits:
+```bash
+python app/backend/validate.py
+```
+- Main generation flows:
+```bash
+python generate.py cv --role android
+python generate.py cl --role backend --company "Acme"
+python generate.py email --role fullstack --company "Acme"
+python generate.py match --role auto --jd-file jd.txt
+python generate.py interview --category technical
+```
+- Run tests:
+```bash
+pytest
+```
+
+## Project-Specific Conventions
+- Non-negotiable anti-hallucination rule: only use facts from `kb/*.yaml` and `projects/*/facts.yaml` (see `kb/resume_generation_rules.md`, `kb/ai_input_spec.md`, `.cursorrules`).
+- If required facts are missing/conflicting, prefer explicit markers (`MISSING_INFO`, `FACT_CONFLICT`) over guessing.
+- Source priority for AI context assembly: `kb/profile.yaml` -> `kb/skills.yaml` -> `kb/project_relations.yaml` -> `projects/*/facts.yaml` -> `kb/bullets/*.yaml`.
+- Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
+- Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
+- Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
+
+## Integrations and Cross-Component Behavior
+- JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.
+- PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic.
+- Iterative AI patch loop: `python generate.py cv-iterate ...` in `app/backend/cv_auto_review_iterate.py`:
+  - extracts PDF text via `pypdf`
+  - calls OpenAI-compatible `/chat/completions` (`OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, `OPENAI_MODEL`)
+  - backs up touched YAML to `outputs/<date>/kb_backup_auto_*` before patching.
+  - prints a KB change summary and file-level rollback copy hints after patching.
+- Interview QA loader prefers `interview_qa/` at repo root, then falls back to `kb/interview_qa/` (`app/backend/interview_qa_cli.py`).
+
+## Practical Debugging Notes
+- If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).
+- `app/backend/generate_cv_html_to_pdf.py` contains legacy hardcoded template code; production flow should go through `generate.py`.
+- For schema-sensitive additions, mirror required fields from `kb/schema/project_facts_schema.yaml` and re-run `validate.py`.

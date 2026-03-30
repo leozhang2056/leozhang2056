@@ -98,6 +98,17 @@ Default length:
 - Reduce awkward line breaks in institution rendering where possible
 - **Narrative lockstep**: if `profile.yaml` marks the degree **Completed** with a concrete `end_date`, Summary and `experience/work.yaml` must not still describe “Master’s student”, “graduating Feb 2026”, or Chinese “硕士在读 / 2026年2月毕业”. Treat conflicting YAML as a KB fix before shipping a CV. (Full guardrails: `kb/ai_prompts/resume_generation.md` Section 8.)
 
+### Publications
+
+- Keep `Publications` as the final section (after `Licenses & Certifications`).
+- Render publication title as clickable when DOI/URL exists, and show explicit `Link:` text when available.
+- Current primary publication baseline to keep unless user overrides:
+  - `ChatClothes: Conversational Virtual Try-On with Diffusion Models` (IVCNZ 2025, published)
+  - `Clothes Recognition Based on Lightweight Deep Learning Models` (IGI Global, under review)
+- Persist publication facts in both places for consistency:
+  - `kb/achievements.yaml` (`publications`)
+  - `projects/chatclothes/facts.yaml` (`evidence` with `type: publication`)
+
 ---
 
 ## 4. Writing Rules

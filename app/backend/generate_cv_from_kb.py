@@ -1967,25 +1967,33 @@ def generate_publications_section(achievements: Dict, lang: str = 'en') -> str:
         doi    = pub.get('doi', '')
         url    = pub.get('url', '')
         status = pub.get('status', '')
-        note   = pub.get('note', '')
 
-        # 链接
-        link = doi or url
-        title_html = (f'<a href="https://doi.org/{doi}" style="color:#1a3a6a;">{title}</a>'
-                      if doi else
-                      (f'<a href="{url}" style="color:#1a3a6a;">{title}</a>' if url else title))
+        # 链接：标题可点击，同时显式展示链接文本，便于 HR 打印/复制
+        link = f"https://doi.org/{doi}" if doi else (url or "")
+        title_html = (
+            f'<a href="{html.escape(link, quote=True)}" style="color:#1a3a6a;">{html.escape(str(title))}</a>'
+            if link
+            else html.escape(str(title))
+        )
 
-        suffix_parts = []
-        if status:
-            suffix_parts.append(status.capitalize())
-        if note:
-            suffix_parts.append(note)
-        suffix = f' <span style="color:#555;font-size:9.5pt;">({"; ".join(suffix_parts)})</span>' if suffix_parts else ''
+        # 不显示状态标签（如 Under review），保持展示简洁
+        suffix = ""
+
+        year_text = html.escape(str(year))
+        venue_text = html.escape(str(venue))
+        venue_year = venue_text if (year_text and year_text in venue_text) else f"{venue_text}, {year_text}"
+
+        link_html = (
+            f'<span style="color:#1a4a8a;font-size:9.2pt;"> | '
+            f'<a href="{html.escape(link, quote=True)}" style="color:#1a4a8a;">{html.escape(link)}</a></span>'
+            if link
+            else ""
+        )
 
         lines.append(
-            f'<li><div class="lc-row">'
+            f'<li><div class="lc-row lc-row-pub">'
             f'<span><strong>{title_html}</strong>{suffix}<br>'
-            f'<span style="color:#444;font-size:9.5pt;">{venue}, {year}</span></span>'
+            f'<span style="color:#444;font-size:9.5pt;">{venue_year}</span>{link_html}</span>'
             f'<span class="lc-date"></span>'
             f'</div></li>'
         )
@@ -2008,9 +2016,9 @@ _CSS = """
     }
 
     body {
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.34;
+      font-family: 'Times New Roman', Cambria, Georgia, serif;
+      font-size: 11.6pt;
+      line-height: 1.36;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -2103,16 +2111,22 @@ _CSS = """
     /* ── Section title ───────────────────────────────── */
     .section-title {
       font-family: 'Times New Roman', Georgia, serif;
-      font-size: 14pt;
-      font-weight: 700;
-      color: #123f93;
-      text-transform: uppercase;
+      font-size: 13.2pt;
+      font-weight: 600;
+      color: #1a4d96;
       font-variant: small-caps;
-      margin-top: 10px;
-      margin-bottom: 4px;
-      border-bottom: 1px solid #666;
-      padding-bottom: 2px;
-      letter-spacing: 1px;
+      margin-top: 9px;
+      margin-bottom: 5px;
+      border-bottom: 0.8px solid #8a8a8a;
+      padding-bottom: 1px;
+      letter-spacing: 0.7px;
+      line-height: 1.1;
+    }
+
+    .section-title::first-letter {
+      font-size: 1.12em;
+      position: relative;
+      top: 0.04em;
     }
 
     /* ── Summary ─────────────────────────────────────── */
@@ -2138,10 +2152,10 @@ _CSS = """
     }
 
     .job-tech {
-      font-size: 9.6pt;
+      font-size: 10.4pt;
       color: #444;
       margin-bottom: 2px;
-      line-height: 1.3;
+      line-height: 1.35;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -2155,7 +2169,7 @@ _CSS = """
 
     .jh-title {
       font-weight: 700;
-      font-size: 10.5pt;
+      font-size: 11.2pt;
       width: 38%;
       padding: 0;
       vertical-align: baseline;
@@ -2172,7 +2186,7 @@ _CSS = """
 
     .jh-date {
       color: #777;
-      font-size: 9.8pt;
+      font-size: 10.5pt;
       width: 20%;
       text-align: right;
       padding: 0;
@@ -2181,7 +2195,7 @@ _CSS = """
     }
 
     .job-role {
-      font-size: 10pt;
+      font-size: 10.9pt;
       color: #333;
       margin-bottom: 3px;
       hyphens: none;
@@ -2192,7 +2206,7 @@ _CSS = """
     .job-list {
       margin: 0;
       padding-left: 18px;
-      font-size: 10pt;
+      font-size: 10.9pt;
       color: #222;
     }
 
@@ -2210,18 +2224,18 @@ _CSS = """
 
     .employer-company {
       font-weight: 700;
-      font-size: 10.6pt;
+      font-size: 11.2pt;
     }
 
     .employer-loc {
       font-weight: 400;
       font-style: italic;
       color: #444;
-      font-size: 10pt;
+      font-size: 10.7pt;
     }
 
     .employer-progression {
-      font-size: 9.7pt;
+      font-size: 10.4pt;
       color: #444;
       margin-bottom: 4px;
       line-height: 1.35;
@@ -2271,12 +2285,12 @@ _CSS = """
       padding: 0;
       vertical-align: baseline;
       white-space: nowrap;
-      font-size: 9.8pt;
+      font-size: 10.5pt;
     }
 
     .eh-date {
       color: #777;
-      font-size: 9.8pt;
+      font-size: 10.5pt;
       width: 18%;
       text-align: right;
       padding: 0;
@@ -2285,7 +2299,7 @@ _CSS = """
     }
 
     .edu-detail {
-      font-size: 9.8pt;
+      font-size: 10.4pt;
       color: #444;
       margin-top: 2px;
     }
@@ -2295,17 +2309,19 @@ _CSS = """
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 10pt;
+      font-size: 10.4pt;
     }
 
     .lc-list li {
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .lc-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      line-height: 1.28;
+      gap: 10px;
     }
 
     .lc-date {
@@ -2313,6 +2329,12 @@ _CSS = """
       font-size: 9.5pt;
       margin-left: 8px;
       white-space: nowrap;
+      text-align: right;
+      min-width: 44px;
+    }
+
+    .lc-row-pub {
+      display: block;
     }
 
     /* ── Print ───────────────────────────────────────── */
@@ -2379,6 +2401,7 @@ def generate_html_from_kb(
             'exp':      'Experience',
             'edu':      'Education',
             'licenses': 'Licenses & Certifications',
+            'pub':      'Publications',
         },
         'zh': {
             'summary':  '个人简介',
@@ -2386,6 +2409,7 @@ def generate_html_from_kb(
             'exp':      '工作经历',
             'edu':      '教育背景',
             'licenses': '证书与认证',
+            'pub':      '发表成果',
         },
     }
     lbl = labels.get(lang, labels['en'])
@@ -2435,8 +2459,13 @@ def generate_html_from_kb(
     )
     edu_html     = generate_education_section(profile, lang)
     lic_html     = generate_licenses_section(achievements, lang)
-    # Publications：按需求不在简历中展示
-    pub_section = ''
+    pub_html     = generate_publications_section(achievements, lang)
+    pub_section = (
+        f'<div class="section-title">{lbl["pub"]}</div>\n'
+        f'  <ul class="lc-list">\n{pub_html}\n  </ul>'
+        if pub_html
+        else ''
+    )
 
     # ── 目标职位 / 公司（仅用于内部命名，不在简历顶部显示） ──
     default_titles = {
@@ -2519,7 +2548,6 @@ def generate_html_from_kb(
   <!-- Experience -->
   <div class="section-title">{lbl['exp']}</div>
   {exp_html}
-  {pub_section}
 
   <!-- Education（置于 Experience 与 Licenses 之间） -->
   <div class="section-title">{lbl['edu']}</div>
@@ -2530,6 +2558,8 @@ def generate_html_from_kb(
   <ul class="lc-list">
 {lic_html}
   </ul>
+
+  {pub_section}
 
 </body>
 </html>'''

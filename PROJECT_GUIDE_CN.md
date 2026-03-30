@@ -94,6 +94,7 @@
 │   ├── project_relations.yaml   # 项目关联关系（叙事线索）
 │   ├── resume_generation_rules.md  # 简历生成规则与约束
 │   ├── ai_input_spec.md         # AI 输入规范
+│   ├── generation_config.yaml    # 生成参数配置（角色推断关键词/项目排序权重）
 │   ├── experience/              # 工作 / 研究经历（YAML）
 │   ├── bullets/                 # 可复用要点库（按方向/岗位）
 │   ├── schema/                  # 数据 Schema 定义
@@ -113,6 +114,7 @@
 │       ├── generate_cv_html_to_pdf.py  # HTML→PDF 导出
 │       ├── generate_cv_latex.py        # LaTeX 导出
 │       ├── generate_cv_pdf.py          # PDF 导出
+│       ├── kb_validation.py            # 统一验证逻辑（供 CLI 与 Loader 复用）
 │       ├── validate.py                 # KB 数据验证（修改 facts.yaml 后必须运行）
 │       ├── kb_query.py                 # KB 查询工具
 │       ├── facts_normalizer.py         # 数据规范化（内部使用）
@@ -245,7 +247,7 @@ python generate.py cv --role android
 python generate.py cv --role backend
 
 # 生成求职信
-python generate.py cover-letter --role android --company "Target Corp"
+python generate.py cl --role android --company "Target Corp"
 ```
 
 ### 面试 Q&A
