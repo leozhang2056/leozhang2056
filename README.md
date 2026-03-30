@@ -18,16 +18,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/leozhang2056">
-    <img height="165" src="https://github-readme-stats.vercel.app/api?username=leozhang2056&show_icons=true&include_all_commits=true" alt="GitHub profile stats" />
-  </a>
-  &nbsp;
-  <a href="https://github.com/leozhang2056">
-    <img height="165" src="https://github-readme-streak-stats.demolab.com/?user=leozhang2056&theme=default" alt="GitHub contribution streak" />
-  </a>
-</p>
-
 ---
 
 ## 👋 Professional Summary
