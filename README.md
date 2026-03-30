@@ -181,27 +181,6 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 | [Enterprise Messaging BI](projects/enterprise-messaging/) | BI and analytics infrastructure | Kettle ETL, PowerBI, FineReport |
 | [Smart Factory DevOps](projects/smart-factory/) | CI/CD and infrastructure | Jenkins, Docker, Kubernetes, Nginx |
 
-### 📂 Complete Project Index (All Project Folders)
-| Project | Status |
-|---------|--------|
-| [boobit](projects/boobit/) | Included |
-| [broadcast-control](projects/broadcast-control/) | Included |
-| [chatclothes](projects/chatclothes/) | Included |
-| [chinese-herbal-recognition](projects/chinese-herbal-recognition/) | Included |
-| [device-maintenance-prediction](projects/device-maintenance-prediction/) | Included |
-| [enterprise-messaging](projects/enterprise-messaging/) | Included |
-| [exhibition-robot](projects/exhibition-robot/) | Included |
-| [forest-patrol-inspection](projects/forest-patrol-inspection/) | Included |
-| [iot-solutions](projects/iot-solutions/) | Included |
-| [live-streaming-system](projects/live-streaming-system/) | Included |
-| [patent-search-system](projects/patent-search-system/) | Included |
-| [picture-book-locker](projects/picture-book-locker/) | Included |
-| [school-attendance](projects/school-attendance/) | Included |
-| [smart-factory](projects/smart-factory/) | Included |
-| [smart-power](projects/smart-power/) | Included |
-| [visit-system](projects/visit-system/) | Included |
-| [visual-gateway](projects/visual-gateway/) | Included |
-
 ---
 
 ## 🎓 Education
@@ -221,7 +200,7 @@ Hebei University of Science and Technology, China | 2009 – 2013
 ## 📄 Publications
 
 - Zhang, Y. et al. **ChatClothes: Conversational Virtual Try-On with Diffusion Models** — IVCNZ 2025 · [DOI 10.1109/IVCNZ67716.2025.11281834](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
-- Zhang, Y. **Clothes Recognition Based on Lightweight Deep Learning Models** — *Aesthetics in Creative Technology*, IGI Global · 2026 · *Under review* (Chapter submission ID: 211225-092240)
+- Zhang, Y. **Clothes Recognition Based on Lightweight Deep Learning Models** — *Aesthetics in Creative Technology*, IGI Global · 2026
 - Zhang, Y. **ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models** — AUT Master's Thesis, 2025 · [AUT Repository](http://hdl.handle.net/10292/20210)
 
 ---
