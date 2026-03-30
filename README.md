@@ -8,13 +8,13 @@
 
 ## GitHub activity
 
-Open-source work and day-to-day commits across this portfolio; **live contribution history** is on [github.com/leozhang2056](https://github.com/leozhang2056).
+Public commit calendar (same idea as the **contribution heatmap** on your GitHub profile). Chart via [ghchart.rshah.org](https://ghchart.rshah.org/) (SVG from public contribution data); open [github.com/leozhang2056](https://github.com/leozhang2056) for the official calendar.
 
 <p align="center">
   <a href="https://github.com/leozhang2056">
     <img
-      src="https://github-readme-activity-graph.vercel.app/graph?username=leozhang2056&theme=github-compact&hide_border=true&area=true"
-      alt="GitHub contribution activity over the last year"
+      src="https://ghchart.rshah.org/216e39/leozhang2056"
+      alt="GitHub contribution heatmap (last ~1 year)"
       width="100%"
     />
   </a>
