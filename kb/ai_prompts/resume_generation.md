@@ -115,6 +115,8 @@ Return JSON:
 
 ## 4. Optional Final Output Format
 
+Section order should match the **canonical HTML/PDF renderer** (`generate_html_from_kb`): Summary → Key Skills → **Experience** → **Education** → Licenses & Certifications.
+
 ```markdown
 # [Name]
 [Target Title] | [Location] | [Contact]
@@ -132,6 +134,9 @@ Return JSON:
 
 ## Education
 [Entry]
+
+## Licenses & Certifications
+- [Entry]
 ```
 
 ---
@@ -218,4 +223,4 @@ Use these defaults unless the user explicitly overrides them.
 
 ---
 
-*Version: 2026-03-28 (guardrails: education/work alignment, anti-edge default wording, Android summary closers, interview-KB precedence)*
+*Version: 2026-03-30 (+ canonical section order: Exp → Education → Licenses; header contact row conventions in `resume-generation-standards.mdc`)*

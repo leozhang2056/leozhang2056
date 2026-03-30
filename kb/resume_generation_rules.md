@@ -21,12 +21,14 @@
 
 Recommended structure:
 
-1. Header
-2. Professional Summary
-3. Core Skills
-4. Professional Experience
-5. Education
-6. Certifications or Selected Projects if needed
+1. Header  
+2. Professional Summary  
+3. Core Skills (= **Key Skills** in `generate_cv_from_kb` HTML)  
+4. Professional Experience  
+5. **Education** — in the KB HTML renderer, this block is **after Experience and before Licenses** (not at top after Summary).  
+6. Licenses & Certifications  
+
+> Canonical order in code: `generate_html_from_kb()` → Summary → Key Skills → Experience → Education → Licenses & Certifications. See also `.cursor/rules/resume-generation-standards.mdc` § CV HTML section order.
 
 Default length:
 - ~2 pages preferred for this profile
@@ -165,6 +167,7 @@ Role auto-selection guidance:
 
 ## 7. Notes
 
+- **Header contact (HTML/PDF):** single centered row — email, phone, map-pin icon + location (`Auckland,NZ`-style from `profile.yaml`), then LinkedIn and GitHub as icon + label links without visible URLs; implementation and CSS live in `app/backend/generate_cv_from_kb.py`.
 - Presentation style, colors, fonts, and layout belong to rendering templates, not to generation rules.
 - Human-oriented historical guidance lives in `templates/resume_generation_guide.md`.
 - Output behavior preference:
@@ -182,4 +185,4 @@ Role auto-selection guidance:
 
 ---
 
-*Version: 2026-03-28*
+*Version: 2026-03-30*

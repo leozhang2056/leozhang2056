@@ -1,4 +1,4 @@
-﻿# AI Input Specification
+# AI Input Specification
 # AI 输入规范
 
 > Purpose: keep AI context small, factual, and deterministic.
@@ -131,6 +131,7 @@ Avoid passing large descriptive sections unless needed:
 - `kb/ai_input_spec.md`: what data to send
 - `kb/resume_generation_rules.md`: how the output should behave
 - `kb/ai_prompts/resume_generation.md`: execution prompt template
+- `.cursor/rules/resume-generation-standards.mdc`: Cursor defaults for KB→PDF layout (section order, header/contact row, CLI)
 - `templates/resume_generation_guide.md`: human-facing style guide and historical reference
 
 ---

@@ -417,10 +417,10 @@ async def html_to_pdf(html_content, output_path):
         browser = await p.chromium.launch()
         page = await browser.new_page()
         
-        # 加载 HTML 内容
-        await page.set_content(html_content)
+        # 加载 HTML 内容（wait_until 避免偶发未渲染完就导出 PDF）
+        await page.set_content(html_content, wait_until='load')
         
-        # 等待字体加载
+        # 等待布局稳定
         await page.wait_for_timeout(1000)
         
         # 生成 PDF

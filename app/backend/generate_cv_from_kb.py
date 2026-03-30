@@ -29,6 +29,11 @@ try:
 except ModuleNotFoundError:
     from app.backend.generate_cv_html_to_pdf import html_to_pdf
 
+try:
+    from project_ranking import score_project_by_jd, sort_projects
+except ModuleNotFoundError:
+    from app.backend.project_ranking import score_project_by_jd, sort_projects
+
 # 导入增强质量验证器
 try:
     from cv_quality_validator import (
@@ -50,31 +55,6 @@ except ImportError:
 # ============================================================================
 # 常量定义
 # ============================================================================
-
-# 项目优先级常量
-_BASE_PRIORITY: Dict[str, int] = {
-    'chatclothes': 10,
-    'enterprise-messaging': 20,
-    'smart-factory': 30,
-    'live-streaming-system': 40,
-    'visual-gateway': 50,
-    'device-maintenance-prediction': 60,
-    'chinese-herbal-recognition': 70,
-    'iot-solutions': 80,
-    'exhibition-robot': 90,
-    'picture-book-locker': 100,
-    'forest-patrol-inspection': 110,
-    'smart-power': 120,
-    'boobit': 130,
-    'broadcast-control': 140,
-    'visit-system': 150,
-    'school-attendance': 160,
-    'patent-search-system': 170,
-}
-
-# 默认优先级值
-DEFAULT_PRIORITY = 9999
-PRIORITY_OFFSET = 200
 
 # 项目选择常量（控制篇幅：A4 约不超过两页）
 DEFAULT_MAX_PROJECTS = 6
@@ -250,141 +230,8 @@ def load_projects(projects_dir: str) -> List[Dict[str, Any]]:
     return projects
 
 
-# ---------------------------------------------------------------------------
-# 项目排序 —— 静态优先级 + JD 关键词得分
-# ---------------------------------------------------------------------------
-
-# 角色预设：当没有 JD 关键词时使用的固定排序
-_ROLE_PROJECT_ORDER: Dict[str, List[str]] = {
-    'android': [
-        'enterprise-messaging', 'smart-factory', 'iot-solutions',
-        'chatclothes', 'picture-book-locker', 'visual-gateway',
-    ],
-    'ai': [
-        'chatclothes', 'device-maintenance-prediction', 'chinese-herbal-recognition',
-        'exhibition-robot', 'enterprise-messaging', 'smart-factory',
-    ],
-    'backend': [
-        'enterprise-messaging', 'smart-factory', 'live-streaming-system',
-        'chatclothes', 'iot-solutions', 'visual-gateway',
-    ],
-    'fullstack': [
-        'chatclothes', 'enterprise-messaging', 'smart-factory',
-        'live-streaming-system', 'iot-solutions',
-    ],
-}
-
-
-def score_project_by_jd(
-    project: Dict[str, Any],
-    jd_keywords: Optional[List[str]],
-) -> float:
-    """根据 JD 关键词对单个项目打分（复用 kb_query.py 的逻辑）。"""
-    project_dict = project
-    jd_keywords_list = [k for k in (jd_keywords or []) if isinstance(k, str) and k.strip()]
-
-    if not jd_keywords_list:
-        return 0.0
-
-    score = 0.0
-    kws_lower = [k.lower() for k in jd_keywords_list]
-
-    # keywords 字段命中 +1.5（核心匹配）
-    proj_kws = [k.lower() for k in project_dict.get('keywords', [])]
-    for kw in kws_lower:
-        if kw in proj_kws:
-            score += 1.5
-
-    # related_to_roles 命中 +0.8（角色相关性）
-    roles = [r.lower() for r in project_dict.get('related_to_roles', [])]
-    for kw in kws_lower:
-        if any(kw in r for r in roles):
-            score += 0.8
-
-    # tech_stack 命中 +1.2（技术栈匹配更重要）
-    tech_stack = project_dict.get('tech_stack', {})
-    all_techs: List[str] = []
-    tech_count = 0
-    for tech_list in tech_stack.values():
-        if isinstance(tech_list, list):
-            all_techs.extend([t.lower() for t in tech_list if isinstance(t, str)])
-            tech_count += len(tech_list)
-    
-    for kw in kws_lower:
-        if any(kw in t for t in all_techs):
-            score += 1.2
-    
-    # 项目复杂度加成：技术栈越多得分越高（最多+0.5）
-    complexity_bonus = min(tech_count / 10.0, 0.5)
-    score += complexity_bonus
-
-    # highlights 命中 +0.4（文本相关性；highlights 项可能是 str 或 dict）
-    raw_highlights = project_dict.get('highlights', [])
-    parts = []
-    for h in raw_highlights:
-        if isinstance(h, str):
-            parts.append(h)
-        elif isinstance(h, dict):
-            parts.append(h.get('en') or h.get('zh') or h.get('text') or '')
-    highlights_text = ' '.join(parts).lower()
-    for kw in kws_lower:
-        if kw in highlights_text:
-            score += 0.4
-
-    # 时间新鲜度加成：最近项目略高（最多+0.3）
-    timeline = project_dict.get('timeline', {})
-    if isinstance(timeline, dict):
-        end_date = timeline.get('end', '')
-        if end_date and len(end_date) >= 4:
-            try:
-                end_year = int(end_date[:4])
-                current_year = datetime.now().year
-                years_old = current_year - end_year
-                recency_bonus = max(0, 0.3 - years_old * 0.05)
-                score += recency_bonus
-            except ValueError:
-                pass
-
-    return score
-
-
-def sort_projects(
-    projects: List[Dict],
-    role_type: str = 'fullstack',
-    jd_keywords: Optional[List[str]] = None,
-    max_projects: int = DEFAULT_MAX_PROJECTS,
-) -> List[Dict]:
-    """
-    排序逻辑：
-    1. 如果有 JD 关键词 → JD 得分为主键（降序），静态优先级为次键（升序）
-    2. 如果没有 JD 关键词 → 用角色预设顺序
-    返回前 max_projects 个
-    """
-    role_order = _ROLE_PROJECT_ORDER.get(role_type, _ROLE_PROJECT_ORDER['fullstack'])
-
-    def get_base_priority(p: Dict) -> int:
-        pid = p.get('_project_dir', '')
-        # 先查角色预设
-        for idx, role_pid in enumerate(role_order):
-            if role_pid in pid.lower():
-                return idx
-        # 再查全局静态优先级
-        for key, val in _BASE_PRIORITY.items():
-            if key in pid.lower():
-                return PRIORITY_OFFSET + val
-        return DEFAULT_PRIORITY
-
-    if jd_keywords:
-        for p in projects:
-            p["_jd_score"] = score_project_by_jd(p, jd_keywords)
-        sorted_projects = sorted(
-            projects,
-            key=lambda p: (-p.get('_jd_score', 0), get_base_priority(p))
-        )
-    else:
-        sorted_projects = sorted(projects, key=get_base_priority)
-
-    return sorted_projects[:max_projects]
+# 排序和 JD 打分逻辑已抽离到 project_ranking.py，
+# 本文件继续通过同名函数调用保持兼容。
 
 
 # ---------------------------------------------------------------------------
@@ -594,11 +441,12 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     ],
     'fullstack': [
         {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 6, 'field': 'name'},
-        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 6, 'field': 'name'},
-        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
-        {'key': 'backend',        'label_en': 'Full-Stack',           'label_zh': '全栈开发',         'max': 6, 'field': 'name'},
-        {'key': 'devops',         'label_en': 'DevOps & Cloud',       'label_zh': 'DevOps & 云',     'max': 6, 'field': 'name'},
+        {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端与 API',       'max': 7, 'field': 'name'},
+        {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 7, 'field': 'name'},
         {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
+        {'key': 'methodology_practices', 'label_en': 'Quality & Practices', 'label_zh': '质量与工程实践', 'max': 5, 'field': 'name'},
+        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 5, 'field': 'name'},
+        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 4, 'field': 'name'},
         {'key': 'iot_hardware',   'label_en': 'IoT / Hardware',       'label_zh': 'IoT / 硬件',      'max': 4, 'field': 'name'},
     ],
 }
@@ -788,58 +636,23 @@ def _build_jd_summary_tail(concrete_terms: List[str], lang: str) -> str:
 
 
 def _role_evidence_sentence(role_type: str, lang: str) -> str:
-    """基于已确认事实补充一条可证据化成果句，添加变体避免AI腔。"""
-    import random
-    
+    """补充一条证据导向成果句（固定表达，避免随机模板腔）。"""
     variants_zh = {
-        "android": [
-            "在高并发移动项目中积累了扎实的实战经验，确保了多平台稳定运行。",
-            "负责移动端开发，项目覆盖数万用户，性能优化显著提升用户体验。",
-            "主导Android应用开发，从概念到上线全程参与，积累了完整的产品开发经验。",
-        ],
-        "backend": [
-            "构建并维护高可用后端服务，服务于多个生产环境，保障了系统的可靠性。",
-            "在微服务架构中工作，优化了系统性能，提高了整体效率。",
-            "负责后端开发，支持企业级应用，经历了从原型到规模化的全过程。",
-        ],
-        "ai": [
-            "部署AI模型于实际场景，处理大规模数据，提升了预测准确性。",
-            "专注于AI应用开发，结合计算机视觉技术解决了实际业务问题。",
-            "在AI项目中工作，从模型训练到部署，积累了端到端的经验。",
-        ],
-        "fullstack": [
-            "全栈开发经验丰富，从前端交互到后端逻辑都能独立完成。",
-            "参与完整的产品开发周期，负责前后端集成和优化。",
-            "在全栈项目中工作，注重用户体验和系统性能的平衡。",
-        ],
+        "android": "在移动端交付中持续关注稳定性与可维护性，具备复杂现场问题排查与上线保障经验。",
+        "backend": "在后端交付中强调可观测性、性能与稳定发布，能够支撑长期生产负载。",
+        "ai": "在 AI 项目中兼顾模型效果与工程落地，能够将原型推进到可运行流程。",
+        "fullstack": "具备跨前后端协同交付能力，关注可测试性、发布节奏与线上稳定性。",
     }
-    
+
     variants_en = {
-        "android": [
-            "Delivered stable Android apps for high-traffic environments, focusing on user experience and performance.",
-            "Led mobile development initiatives, optimizing for scale and reliability across platforms.",
-            "Built and maintained Android applications from ground up, with hands-on deployment experience.",
-        ],
-        "backend": [
-            "Developed robust backend systems with high uptime, supporting enterprise workloads.",
-            "Optimized server-side architecture for better performance and maintainability.",
-            "Engineered backend solutions that scaled with business needs, from prototype to production.",
-        ],
-        "ai": [
-            "Implemented AI solutions in production, achieving high accuracy on real-world data.",
-            "Worked on computer vision projects, delivering models that solved practical problems.",
-            "Managed end-to-end AI pipelines, from data processing to model deployment.",
-        ],
-        "fullstack": [
-            "Handled full-stack development, bridging frontend and backend for seamless user experiences.",
-            "Developed complete web applications, focusing on both functionality and aesthetics.",
-            "Balanced frontend creativity with backend efficiency in diverse project environments.",
-        ],
+        "android": "Delivery focus includes runtime stability, maintainable architecture, and production debugging under field constraints.",
+        "backend": "Delivery focus includes observability, performance tuning, and stable release practices for long-lived services.",
+        "ai": "Delivery focus balances model quality with production readiness, from prototype to runnable pipelines.",
+        "fullstack": "Delivery focus spans frontend-backend integration, testability, and reliable production rollout.",
     }
-    
+
     variants = variants_zh if lang == "zh" else variants_en
-    role_variants = variants.get(role_type, variants.get("fullstack", []))
-    return random.choice(role_variants) if role_variants else ""
+    return variants.get(role_type) or variants.get("fullstack", "")
 
 
 def generate_summary(
@@ -1096,8 +909,9 @@ def generate_summary(
                 if tail:
                     text = f"{text} {tail}"
 
-    # 随机「成果句」易显模板腔；Android 省略，其它角色保留
-    if role_type != "android":
+    # 固定成果句（非随机），提升稳定性并降低模板腔；
+    # 对 fullstack / android 省略，避免与 profile 总结重复堆叠。
+    if role_type not in {"android", "fullstack"}:
         evidence_sentence = _role_evidence_sentence(role_type, lang)
         if evidence_sentence and evidence_sentence not in text:
             text = f"{text} {evidence_sentence}"
@@ -2219,34 +2033,65 @@ _CSS = """
     }
 
     .cv-name {
-      font-size: 22pt;
-      font-weight: 700;
-      color: #1a3a6a;
-      letter-spacing: 0.5px;
+      font-family: 'Times New Roman', Georgia, serif;
+      font-size: 21pt;
+      font-weight: 600;
+      color: #111;
+      letter-spacing: 0.2px;
       margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
+      text-align: center;
     }
 
-    .cv-name a { color: #1a3a6a; }
-
-    .social-icon {
-      width: 17px;
-      height: 17px;
-      vertical-align: middle;
-      display: inline-block;
-      flex-shrink: 0;
-    }
+    .cv-name a { color: #111; }
 
     .cv-contact {
       font-size: 10pt;
       color: #1a4a8a;
-      line-height: 1.6;
+      line-height: 1.55;
+      text-align: center;
     }
 
     .cv-contact a { color: #1a4a8a; }
+
+    .cv-contact-primary {
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    /* 页眉内联 SVG（定位 / 品牌），与 10pt 正文视觉中线一致 */
+    .cv-header-icon {
+      width: 14px;
+      height: 14px;
+      vertical-align: -0.2em;
+      display: inline-block;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .cv-header-icon-loc {
+      color: #1a4a8a;
+    }
+
+    /* 社交：图标与文字在链接内垂直居中；整段链接与同行用 middle 对齐 */
+    a.cv-social-link {
+      color: #1a4a8a;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      line-height: 1;
+      vertical-align: middle;
+      font-size: inherit;
+    }
+
+    a.cv-social-link .cv-header-icon {
+      vertical-align: middle;
+      margin-right: 0;
+    }
+
+    a.cv-social-link:hover {
+      text-decoration: underline;
+    }
 
     .cv-contact-secondary {
       font-size: 9.5pt;
@@ -2257,14 +2102,17 @@ _CSS = """
 
     /* ── Section title ───────────────────────────────── */
     .section-title {
-      font-size: 11.5pt;
+      font-family: 'Times New Roman', Georgia, serif;
+      font-size: 14pt;
       font-weight: 700;
-      color: #1a3a6a;
-      margin-top: 8px;
+      color: #123f93;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      margin-top: 10px;
       margin-bottom: 4px;
-      border-bottom: 1.5px solid #1a3a6a;
+      border-bottom: 1px solid #666;
       padding-bottom: 2px;
-      letter-spacing: 0.2px;
+      letter-spacing: 1px;
     }
 
     /* ── Summary ─────────────────────────────────────── */
@@ -2478,13 +2326,39 @@ _CSS = """
 # HTML 组装
 # ---------------------------------------------------------------------------
 
-_LINKEDIN_SVG = """<svg class="social-icon" viewBox="0 0 24 24" fill="#0077B5">
-  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-</svg>"""
+# 页眉用内联 SVG；实心对称 map pin（仅外轮廓、无中心圆孔，小字号/PDF 更清晰）
+_CV_ICON_LOC_SVG = (
+    '<svg class="cv-header-icon cv-header-icon-loc" xmlns="http://www.w3.org/2000/svg" '
+    'viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" '
+    'd="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/>'
+    '</svg>'
+)
 
-_GITHUB_SVG = """<svg class="social-icon" viewBox="0 0 24 24" fill="#181717">
-  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-</svg>"""
+_CV_ICON_LINKEDIN_SVG = (
+    '<svg class="cv-header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+    'aria-hidden="true" focusable="false">'
+    '<path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 '
+    '0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 '
+    '3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 '
+    '0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 '
+    '2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 '
+    '23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>'
+    '</svg>'
+)
+
+_CV_ICON_GITHUB_SVG = (
+    '<svg class="cv-header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+    'aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 '
+    '11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 '
+    '1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 '
+    '0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 '
+    '1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 '
+    '0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 '
+    '0-6.627-5.373-12-12-12z"/>'
+    '</svg>'
+)
 
 
 def generate_html_from_kb(
@@ -2534,10 +2408,12 @@ def generate_html_from_kb(
     email    = contact.get('email', '')
     phone    = contact.get('phone', '')
     loc      = contact.get('location', {})
-    city     = loc.get('city', '')
-    country  = loc.get('country', '')
-    linkedin = (contact.get('linkedin') or '').strip()
-    github   = (contact.get('github') or 'https://github.com/leozhang2056').strip()
+    city        = (loc.get('city') or '').strip()
+    country     = (loc.get('country') or '').strip()
+    city_cn     = (loc.get('city_cn') or '').strip()
+    country_cn  = (loc.get('country_cn') or '').strip()
+    linkedin    = (contact.get('linkedin') or '').strip()
+    github      = (contact.get('github') or 'https://github.com/leozhang2056').strip()
 
     # ── 生成各部分 ──
     summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords)
@@ -2574,15 +2450,41 @@ def generate_html_from_kb(
     _safe_name = html.escape(name)
     _li = html.escape(linkedin, quote=True) if linkedin else ""
     _gh = html.escape(github, quote=True) if github else ""
-    name_bits: List[str] = []
-    if linkedin:
-        name_bits.append(f'<a href="{_li}">{_safe_name}</a>')
-        name_bits.append(f'<a href="{_li}">{_LINKEDIN_SVG}</a>')
+    _safe_email = html.escape(email or "", quote=True)
+    _disp_email = html.escape(email or "")
+    _disp_phone = html.escape(phone or "")
+
+    if lang == 'zh':
+        loc_city = city_cn or city
+        loc_ctry = country_cn or country
     else:
-        name_bits.append(_safe_name)
+        loc_city = city
+        loc_ctry = country
+    if loc_city and loc_ctry:
+        # EN: e.g. Auckland,NZ; ZH: 奥克兰，新西兰
+        location_line = f"{loc_city}，{loc_ctry}" if lang == 'zh' else f"{loc_city},{loc_ctry}"
+    else:
+        location_line = (loc_city or loc_ctry or "").strip()
+
+    contact_primary_bits: List[str] = [
+        f'<a href="mailto:{_safe_email}">&#9993;&nbsp;{_disp_email}</a>',
+        f'&#9990;&nbsp;{_disp_phone}',
+    ]
+    if location_line:
+        contact_primary_bits.append(f'{_CV_ICON_LOC_SVG}{html.escape(location_line)}')
+    if linkedin:
+        contact_primary_bits.append(
+            f'<a href="{_li}" class="cv-social-link">{_CV_ICON_LINKEDIN_SVG}LinkedIn</a>'
+        )
     if github:
-        name_bits.append(f'<a href="{_gh}">{_GITHUB_SVG}</a>')
-    name_row = " ".join(name_bits)
+        contact_primary_bits.append(
+            f'<a href="{_gh}" class="cv-social-link">{_CV_ICON_GITHUB_SVG}GitHub</a>'
+        )
+    contact_primary_row = (
+        f'<div class="cv-contact-primary">'
+        f'{"&nbsp;|&nbsp;".join(contact_primary_bits)}'
+        f'</div>'
+    )
 
     contact_secondary = ""
 
@@ -2598,12 +2500,10 @@ def generate_html_from_kb(
   <!-- Header -->
   <div class="cv-header">
     <div class="cv-name">
-      {name_row}
+      {_safe_name}
     </div>
     <div class="cv-contact">
-      <a href="mailto:{email}">&#9993;&nbsp;{email}</a>
-      &nbsp;|&nbsp; &#9990;&nbsp;{phone}
-      &nbsp;|&nbsp; &#9679;&nbsp;{city}, {country}
+      {contact_primary_row}
     </div>
     {contact_secondary}
   </div>
@@ -2611,10 +2511,6 @@ def generate_html_from_kb(
   <!-- Summary -->
   <div class="section-title">{lbl['summary']}</div>
   <div class="cv-summary">{summary}</div>
-
-  <!-- Education (early for NZ / local credential visibility) -->
-  <div class="section-title">{lbl['edu']}</div>
-  {edu_html}
 
   <!-- Key Skills -->
   <div class="section-title">{lbl['skills']}</div>
@@ -2624,6 +2520,10 @@ def generate_html_from_kb(
   <div class="section-title">{lbl['exp']}</div>
   {exp_html}
   {pub_section}
+
+  <!-- Education（置于 Experience 与 Licenses 之间） -->
+  <div class="section-title">{lbl['edu']}</div>
+  {edu_html}
 
   <!-- Licenses & Certifications -->
   <div class="section-title">{lbl['licenses']}</div>
@@ -3195,6 +3095,7 @@ async def generate_cv_from_kb(
     generate_jd_annotated_pdf: bool = False,
     min_jd_match_pct: float = 85.0,
     write_review_bundle: bool = False,
+    keep_html: bool = False,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -3211,6 +3112,7 @@ async def generate_cv_from_kb(
         generate_jd_annotated_pdf: 是否额外生成 JD 标注版 PDF（默认 False）
         min_jd_match_pct: 对「KB 支持的」JD 词的目标最低覆盖率（默认 85）；<=0 关闭自动补词
         write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 False）
+        keep_html: 为 True 时保留与 PDF 同名的中间 .html，便于核对版式（默认删中间件）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
     _min_slots = 3 if role_type == "android" else 2
@@ -3313,11 +3215,14 @@ async def generate_cv_from_kb(
         print(f"  EN PDF (JD Annotated) → {annotated_path}  ({os.path.getsize(annotated_path)/1024:.1f} KB)")
     else:
         print("  EN PDF (JD Annotated) → skipped (use --with-jd-annotated)")
-    # 清理中间产物：HTML
-    try:
-        os.remove(html_en_path)
-    except Exception:
-        pass
+    # 清理中间产物：HTML（默认删除，避免误以为旧 PDF 未更新时可加 --keep-html 对照）
+    if not keep_html:
+        try:
+            os.remove(html_en_path)
+        except Exception:
+            pass
+    else:
+        print(f"  EN HTML (kept) → {html_en_path}")
 
     # 中文版（可选）
     if generate_zh and zh_path:
@@ -3332,11 +3237,13 @@ async def generate_cv_from_kb(
         print(f"  CN HTML → {html_zh_path}")
         await html_to_pdf(html_zh, zh_path)
         print(f"  CN PDF  → {zh_path}  ({os.path.getsize(zh_path)/1024:.1f} KB)")
-        # 清理中间产物：HTML
-        try:
-            os.remove(html_zh_path)
-        except Exception:
-            pass
+        if not keep_html:
+            try:
+                os.remove(html_zh_path)
+            except Exception:
+                pass
+        else:
+            print(f"  CN HTML (kept) → {html_zh_path}")
     else:
         print("  CN PDF  → skipped")
 

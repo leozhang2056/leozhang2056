@@ -11,10 +11,12 @@ personal_info:
     phone: "+64 27 385 0794"
     linkedin: "https://www.linkedin.com/in/leo-zhang-305626280/"
     github: "https://github.com/leozhang2056"
-    location: 
-      city: North Shore
-      country: Auckland
+    location:
+      city: Auckland
+      country: NZ
       country_code: NZ
+      city_cn: 奥克兰
+      country_cn: 新西兰
 
   # Shown on CV header (English) — keep factual to your current visa situation.
   resume_contact:
@@ -64,7 +66,8 @@ career_identity:
     java_focus: >
       Software engineer with a Master's in Computer and Information Sciences from AUT (First Class Honours).
       Over 10 years in Java backend and full-stack development, including Spring Boot, MyBatis, and
-      microservice architecture. Built and maintained enterprise systems across manufacturing, messaging, and IoT.
+      microservice architecture. Delivered enterprise systems across manufacturing, messaging, and IoT with
+      quantified outcomes in uptime, latency, and release efficiency.
 
   summary_variants_zh:
     default: >
@@ -177,4 +180,4 @@ keywords:
   - Agile
   - CI/CD
 
-last_updated: "2025-03-10"
+last_updated: "2026-03-30"

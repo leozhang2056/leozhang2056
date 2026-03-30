@@ -11,7 +11,7 @@ Apply these when generating or adjusting CVs in this project.
 - Infer role from JD input (`android` / `backend` / `ai` / `fullstack`) when user does not force a role.
 - Output filename must include company tag when provided.
 - Save resume outputs under dated folder: `outputs/YYYY-MM-DD/`.
-- Generate PDFs only; delete intermediate `.html` files after successful PDF generation.
+- Generate PDFs only; **by default** delete intermediate `.html` after successful PDF generation (`generate_cv_from_kb`). Use `python generate.py cv ... --keep-html` when you need to inspect layout vs a “stale” PDF preview.
 - Before writing resume/cover letter, gather company context first (business domain, tech stack, culture/values, role expectations).
 - Content must explicitly show company-fit, not only generic JD keyword match.
 
@@ -30,6 +30,23 @@ Apply these when generating or adjusting CVs in this project.
 - **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
 - **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
 - Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
+
+## CV HTML section order (canonical)
+Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. **Do not reorder** without an explicit product decision:
+
+1. Header (name + contact row)
+2. Summary  
+3. **Key Skills**  
+4. **Experience**  
+5. **Education** (between Experience and Licenses)  
+6. **Licenses & Certifications**
+
+## Header / contact row (KB HTML)
+- **Single line** in `.cv-contact-primary`: `✉ email | ☎ phone | [map-pin SVG] location | LinkedIn | GitHub`.
+- **Location text**: from `kb/profile.yaml` → `personal_info.contact.location` — EN example `Auckland,NZ` (`city` + `,` + `country`, no space after comma unless changed in generator); optional `city_cn` / `country_cn` for ZH.
+- **Map pin**: solid symmetric teardrop (`_CV_ICON_LOC_SVG`), `fill: currentColor` — not emoji (Playwright PDF consistency).
+- **LinkedIn / GitHub**: brand SVG (`_CV_ICON_LINKEDIN_SVG`, `_CV_ICON_GITHUB_SVG`) + visible labels `LinkedIn` / `GitHub`; **do not** print full URLs — `href` only. Use `a.cv-social-link` (`inline-flex`, `align-items: center`, `vertical-align: middle` on the anchor) so icon and label align.
+- **Chunxiao employer header dates**: year-only range via `_work_entry_date_label` (e.g. `2013 – 2024`), not `Mon YYYY`.
 
 ## Summary rules
 - Summary should be ATS-friendly and match JD requirements.
@@ -70,11 +87,17 @@ python generate.py cv --role backend
 python generate.py cv --role ai
 ```
 
+**Stable output path** (overwrites one file; avoids opening an older dated folder by mistake):
+```bash
+python generate.py cv --role android --output outputs/CV_Leo_Zhang_android_latest.pdf
+```
+
 **Optional flags (when user asks):**
 ```bash
 python generate.py cv --role android --with-zh
 python generate.py cv --role android --with-review-bundle
 python generate.py cv --role android --with-jd-annotated
+python generate.py cv --role android --output outputs/CV_....pdf --keep-html
 ```
 
 **Tests (after changing generator or KB wiring):**

@@ -48,6 +48,8 @@ Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/JD_Match_Report_<YYYYMMDD>.md
   outputs/<YYYY-MM-DD>/CV_*_AI_REVIEW_BUNDLE.md (optional, with --with-review-bundle)
   The dated subfolder is created automatically if it does not exist.
+  If your PDF preview looks unchanged, you may be opening an older dated file; use
+  `--output outputs/my_cv.pdf` to overwrite one path, or `--keep-html` to inspect the HTML.
 """
 
 import sys
@@ -139,6 +141,11 @@ def build_parser() -> argparse.ArgumentParser:
         help='Also write *_AI_REVIEW_BUNDLE.md for external AI review. Default: off',
     )
     cv_parser.set_defaults(review_bundle=False)
+    cv_parser.add_argument(
+        '--keep-html',
+        action='store_true',
+        help='Keep intermediate .html next to the PDF (default: delete after PDF for cleanliness)',
+    )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
@@ -513,10 +520,11 @@ async def run(args) -> None:
             generate_quality_report=bool(getattr(args, 'with_quality_report', False)),
             generate_jd_annotated_pdf=bool(getattr(args, 'with_jd_annotated', False)),
             min_jd_match_pct=float(getattr(args, 'min_jd_match_pct', 85.0)),
-            write_review_bundle=bool(getattr(args, 'review_bundle', True)),
+            write_review_bundle=bool(getattr(args, 'review_bundle', False)),
+            keep_html=bool(getattr(args, 'keep_html', False)),
         )
         print(f"\nDone.")
-        print(f"  EN: {en_path}")
+        print(f"  EN: {Path(en_path).resolve()}")
         if annotated_path:
             print(f"  EN (JD Annotated): {annotated_path}")
         if zh_path:
