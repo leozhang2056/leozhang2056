@@ -2,6 +2,35 @@
 
 **Senior Android Developer · Java Backend · Full-stack Engineer**  
 📧 leozhang2056@gmail.com | 📱 +64 27 385 0794 | 📍 Auckland, New Zealand
+🔗 LinkedIn: [linkedin.com/in/leo-zhang-305626280](https://www.linkedin.com/in/leo-zhang-305626280/)
+
+---
+
+## GitHub activity
+
+Open-source work and day-to-day commits across this portfolio; **live contribution history** is on [github.com/leozhang2056](https://github.com/leozhang2056).
+
+<p align="center">
+  <a href="https://github.com/leozhang2056">
+    <img
+      src="https://github-readme-activity-graph.vercel.app/graph?username=leozhang2056&theme=github-compact&hide_border=true&area=true"
+      alt="GitHub contribution activity over the last year"
+      width="100%"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/leozhang2056">
+    <img height="165" src="https://github-readme-stats.vercel.app/api?username=leozhang2056&show_icons=true&include_all_commits=true" alt="GitHub profile stats" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/leozhang2056">
+    <img height="165" src="https://github-readme-streak-stats.demolab.com/?user=leozhang2056&theme=default" alt="GitHub contribution streak" />
+  </a>
+</p>
+
+<p align="center"><sub><a href="https://github.com/leozhang2056"><strong>Open full contribution calendar on GitHub →</strong></a></sub></p>
 
 ---
 
@@ -166,13 +195,34 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 | [Enterprise Messaging BI](projects/enterprise-messaging/) | BI and analytics infrastructure | Kettle ETL, PowerBI, FineReport |
 | [Smart Factory DevOps](projects/smart-factory/) | CI/CD and infrastructure | Jenkins, Docker, Kubernetes, Nginx |
 
+### 📂 Complete Project Index (All Project Folders)
+| Project | Status |
+|---------|--------|
+| [boobit](projects/boobit/) | Included |
+| [broadcast-control](projects/broadcast-control/) | Included |
+| [chatclothes](projects/chatclothes/) | Included |
+| [chinese-herbal-recognition](projects/chinese-herbal-recognition/) | Included |
+| [device-maintenance-prediction](projects/device-maintenance-prediction/) | Included |
+| [enterprise-messaging](projects/enterprise-messaging/) | Included |
+| [exhibition-robot](projects/exhibition-robot/) | Included |
+| [forest-patrol-inspection](projects/forest-patrol-inspection/) | Included |
+| [iot-solutions](projects/iot-solutions/) | Included |
+| [live-streaming-system](projects/live-streaming-system/) | Included |
+| [patent-search-system](projects/patent-search-system/) | Included |
+| [picture-book-locker](projects/picture-book-locker/) | Included |
+| [school-attendance](projects/school-attendance/) | Included |
+| [smart-factory](projects/smart-factory/) | Included |
+| [smart-power](projects/smart-power/) | Included |
+| [visit-system](projects/visit-system/) | Included |
+| [visual-gateway](projects/visual-gateway/) | Included |
+
 ---
 
 ## 🎓 Education
 
 **Master of Computer and Information Sciences**  
 Auckland University of Technology (AUT), New Zealand | 2024 – Feb 2026
-- First Class Honours · GPA 8.25/9.0
+- First Class Honours · GPA 7.41/9.0
 - Research Focus: AI, Computer Vision, Edge Computing
 - Thesis: ChatClothes Virtual Try-On System — passed ahead of schedule
 
@@ -189,13 +239,5 @@ Hebei University of Science and Technology, China | 2009 – 2013
 
 ---
 
-## 📊 GitHub Stats
 
-- **16+** Production Projects
-- **10+** Years Software Development Experience
-- **6+** Industrial IoT Deployments
-- **Enterprise-scale** Systems Delivered (10,000+ DAU)
-
----
-
-*Last updated: March 2026*
+*Last updated: March 2026* (profile.yaml last updated: 2026-03-30)

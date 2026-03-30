@@ -172,14 +172,4 @@ Hebei University of Science and Technology, China | 2009 – 2013
 
 ---
 
-## GitHub Stats
-
-- **16+** Production Projects
-- **12+** Years Software Development Experience
-- **6+** Industrial IoT Deployments
-- **High-scale** Enterprise Systems Delivered (10K+ DAU)
-- **99.9%** Infrastructure Uptime Maintained
-
----
-
 *Last updated: March 2026*
