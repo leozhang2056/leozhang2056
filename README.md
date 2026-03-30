@@ -221,6 +221,7 @@ Hebei University of Science and Technology, China | 2009 – 2013
 ## 📄 Publications
 
 - Zhang, Y. et al. **ChatClothes: Conversational Virtual Try-On with Diffusion Models** — IVCNZ 2025 · [DOI 10.1109/IVCNZ67716.2025.11281834](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
+- Zhang, Y. **Clothes Recognition Based on Lightweight Deep Learning Models** — *Aesthetics in Creative Technology*, IGI Global · 2026 · *Under review* (Chapter submission ID: 211225-092240)
 - Zhang, Y. **ChatClothes: A Virtual Try-On System Using Conversational AI and Diffusion Models** — AUT Master's Thesis, 2025 · [AUT Repository](http://hdl.handle.net/10292/20210)
 
 ---
