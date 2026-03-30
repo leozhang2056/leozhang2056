@@ -8,8 +8,6 @@
 
 ## GitHub activity
 
-Public commit calendar (same idea as the **contribution heatmap** on your GitHub profile). Chart via [ghchart.rshah.org](https://ghchart.rshah.org/) (SVG from public contribution data); open [github.com/leozhang2056](https://github.com/leozhang2056) for the official calendar.
-
 <p align="center">
   <a href="https://github.com/leozhang2056">
     <img
@@ -29,8 +27,6 @@ Public commit calendar (same idea as the **contribution heatmap** on your GitHub
     <img height="165" src="https://github-readme-streak-stats.demolab.com/?user=leozhang2056&theme=default" alt="GitHub contribution streak" />
   </a>
 </p>
-
-<p align="center"><sub><a href="https://github.com/leozhang2056"><strong>Open full contribution calendar on GitHub →</strong></a></sub></p>
 
 ---
 
