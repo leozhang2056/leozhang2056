@@ -113,3 +113,8 @@ python -c "from generate_cv_from_kb import generate_summary, generate_project_bu
 ```
 
 **After edits:** prefer **executing** the relevant `python generate.py cv ...` command yourself (do not only tell the user to run it) unless the environment cannot run Python.
+
+## GitHub profile README
+- Root **`README.md`** doubles as the GitHub **profile** README when this repo is `username/username`.
+- **Activity:** use **ghchart.rshah.org** for a contribution-style heatmap; do **not** embed `github-readme-stats` or streak widgets (unreliable on GitHub).
+- **Publications:** when KB publications change, mirror **`README.md`** `Publications` from `kb/achievements.yaml` + `projects/chatclothes/facts.yaml` publication evidence (order: IVCNZ → IGI chapter if listed → thesis).

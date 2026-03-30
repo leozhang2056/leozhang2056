@@ -60,3 +60,8 @@ pytest
 - If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).
 - `app/backend/generate_cv_html_to_pdf.py` contains legacy hardcoded template code; production flow should go through `generate.py`.
 - For schema-sensitive additions, mirror required fields from `kb/schema/project_facts_schema.yaml` and re-run `validate.py`.
+
+## GitHub profile README (`README.md`)
+- In the `username/username` repo layout, root **`README.md`** is rendered on the GitHub **profile** page.
+- **Contribution grid:** GitHub does not provide an embeddable copy of the official profile calendar for arbitrary READMEs; use **ghchart.rshah.org** SVG (`/HEXCOLOR/username`, or `/username` fallback). Do **not** re-add `github-readme-stats` or `github-readme-streak-stats` image widgets — they often time out and show broken images.
+- **Publications:** Keep the README list aligned with **`kb/achievements.yaml`** → `publications` and **`projects/chatclothes/facts.yaml`** → `evidence` where `type: publication`. Typical order: IVCNZ (published) → IGI chapter (**under review** if applicable) → thesis.

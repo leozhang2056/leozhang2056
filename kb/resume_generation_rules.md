@@ -108,6 +108,7 @@ Default length:
 - Persist publication facts in both places for consistency:
   - `kb/achievements.yaml` (`publications`)
   - `projects/chatclothes/facts.yaml` (`evidence` with `type: publication`)
+- **GitHub profile README:** after changing `publications` / publication `evidence`, update repo root **`README.md`** `## 📄 Publications` so public profile text does not drift from KB (same titles, venues, years, *under review* / DOI / links).
 
 ---
 

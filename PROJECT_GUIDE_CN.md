@@ -137,6 +137,17 @@
 
 ---
 
+## 三·附、GitHub Profile README（本仓库根目录 `README.md`）
+
+本仓库 **`username/username`** 形态时，根目录 `README.md` 会显示在 **GitHub 个人主页**顶部，维护约定如下：
+
+* **贡献热力图**：官方个人主页上的贡献日历 **不能** 嵌进任意 README；可用第三方 SVG 近似。当前采用 [ghchart.rshah.org](https://ghchart.rshah.org/)，URL 形态 `https://ghchart.rshah.org/<可选十六进制色>/<GitHub用户名>`（例：配色 `216e39`）。若偶发加载失败，可试无配色 `https://ghchart.rshah.org/<用户名>`。
+* **不要嵌入**：`github-readme-stats`、`github-readme-streak-stats` 等易被限流或超时，在 GitHub 上常显示 **裂图**，本仓库 **不再使用**。
+* **Publications**：与 **`kb/achievements.yaml`** 的 `publications`、**`projects/chatclothes/facts.yaml`** 里 `evidence` / `type: publication` **保持一致**；在 KB 增删改论文/书稿后，记得 **同步改 `README.md`**。建议顺序：IVCNZ 已发表论文 → IGI Global 书章（若在审须写明）→ 硕士学位论文。
+* **版式**：`GitHub activity` 可只保留标题 + 图，减少长说明与易失效外链。
+
+---
+
 ## 四、知识库（KB）设计原则
 
 * **单一事实来源（Single Source of Truth）**
