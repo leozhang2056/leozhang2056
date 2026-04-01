@@ -8,6 +8,9 @@
 
 Led the development of a **full value-chain smart manufacturing platform** for textile factories, connecting **brands/customers, factories, and frontline workers** on one system.  
 The platform not only manages production workflows, inventory, and IoT equipment, but also **accepts customer orders, allocates them to suitable factories, tracks per-garment production progress, and synchronizes shipping status back to the customer side**, supporting hundreds of workers across multiple sites.
+
+**Android shop-floor app:** Workers carry a **mobile production client** for daily tasks—**today’s output counter**, **search by customer style or package ID**, **tabs for not-started / in-progress / completed work**, and a **center “scan” action** tied to barcode/QR flows on the line. **Task detail** surfaces progress (e.g. completed vs planned pieces), **tech pack / process tabs**, and **quality requirements** (e.g. textile industry standards) on the device. **My / profile** ties **employee ID, on-duty status, work log, messages**, and **scan configuration** to the same floor workflow.
+
 In addition, I implemented a **weighing integration module**: electronic scale data is collected through serial communication, monitored by a Windows service, and synchronized to web pages and core business systems in real time.
 
 **Project Type:** Enterprise System / Industrial IoT  
@@ -22,6 +25,7 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 - **End-to-end order platform:** From customer order → factory scheduling → production → shipment
 - **Multi-role portals:** Separate experiences for brands/customers, factory management, and workers
+- **Android mobile client:** Task list with status filters, task detail (progress, tech pack, process & quality text), scan-centric navigation, and worker profile (duty status, logs, messages, scan settings)
 - **Order allocation engine:** Distributes orders to different factories based on capacity and skills
 - **Per-garment progress tracking:** Realtime view of each garment’s process and station
 - **Microservice architecture:** Scalable, modular backend services
@@ -184,6 +188,10 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 **Problem:** Integrating diverse IoT devices with different protocols  
 **Solution:** Unified device abstraction layer and protocol adapters
 
+### Challenge 6: Usable Shop-Floor Mobile UX
+**Problem:** Workers need fast lookup, scanning, and spec viewing on phones without leaving the line  
+**Solution:** Android client with filtered task queues, task detail tabs for tech pack / process / requirements, and profile + scan configuration aligned to floor roles
+
 ### Challenge 3: High Availability Requirements
 **Problem:** Manufacturing cannot tolerate system downtime  
 **Solution:** Redundant deployments, automated failover, and comprehensive monitoring
@@ -209,6 +217,27 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 ---
 
 ## Evidence
+
+### Mobile worker app (Android) / 手机端工人应用
+
+Real screenshots from the **shop-floor Android** experience: production task list, task detail with progress and requirements, and worker profile with duty status and scan-related settings.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/ScreenShot_2026-04-01_161701_214.png" width="280" alt="Mobile task list: daily count, search, status tabs, scan"/><br/>
+      <sub>Task list: today’s output, search, 未制作/制作中/已制作 tabs, bottom nav + 扫一扫</sub>
+    </td>
+    <td align="center">
+      <img src="./images/ScreenShot_2026-04-01_161723_937.png" width="280" alt="Mobile task detail: progress, tech pack tabs"/><br/>
+      <sub>Task detail: ID, spec, progress bar, 工艺单/工艺指示/基本要求 tabs, quality notes</sub>
+    </td>
+    <td align="center">
+      <img src="./images/ScreenShot_2026-04-01_161819_162.png" width="280" alt="Mobile profile: employee, on-duty, work log, scan config"/><br/>
+      <sub>我的: employee ID, 上班中, work log / messages / 扫码配置 / password, etc.</sub>
+    </td>
+  </tr>
+</table>
 
 ### BI & Monitoring / BI 与监控大屏
 

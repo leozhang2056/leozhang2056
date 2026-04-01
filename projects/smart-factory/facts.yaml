@@ -127,6 +127,15 @@ evidence:
   path: images/equipment-dashboard-list.png
 - type: iot_setup
   path: images/mom-quality-station.png
+- type: images
+  path: images/ScreenShot_2026-04-01_161701_214.png
+  description: Android shop-floor task list (daily output, search, status tabs, scan nav)
+- type: images
+  path: images/ScreenShot_2026-04-01_161723_937.png
+  description: Android task detail (progress, tech pack / process / requirements tabs)
+- type: images
+  path: images/ScreenShot_2026-04-01_161819_162.png
+  description: Android worker profile (duty status, work log, messages, scan settings)
 technical_innovations:
 - name: Multi-site Cloud-Edge Sync
   description: Synchronized production data across 5+ manufacturing bases with local
@@ -201,4 +210,4 @@ keywords:
 - Redis
 - Team Leadership
 - Industrial Automation
-last_updated: '2025-02-11'
+last_updated: '2026-04-01'
