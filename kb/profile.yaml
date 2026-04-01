@@ -52,7 +52,7 @@ career_identity:
     android_focus: >
       Android engineer with 10+ years shipping production mobile apps; Master's from Auckland University
       of Technology (AUT) with First Class Honours. Primary stack is Kotlin/Java, Android SDK, Jetpack/MVVM,
-      NDK networking, offline-first patterns, and automated tests (JUnit/MockK/Espresso), with ongoing
+      NDK networking and offline-first patterns, with ongoing
       adoption of Compose, Coroutines/Flow, and Hilt. Representative outcomes include multi-year offline GIS
       for field crews; enterprise messaging at 10,000+ DAU and sub-200ms latency; and Android plus gateway
       work for IoT device control and telemetry. Based in Auckland, New Zealand.

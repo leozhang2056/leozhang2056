@@ -55,6 +55,8 @@ Output naming convention (auto, when --output is not specified):
 import sys
 import argparse
 import asyncio
+from datetime import datetime
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -503,14 +505,49 @@ def _auto_company(args) -> str:
     return company or ""
 
 
+def _slugify_company(name: str | None) -> str:
+    """Keep filename-safe company tag."""
+    if not name:
+        return ""
+    s = re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_")
+    return s[:48]
+
+
+def _normalize_cv_output_path(output: str | None, role: str, company: str) -> str | None:
+    """
+    CV 输出路径规范化：
+    - 未指定时保持 None（由后端自动写入 outputs/YYYY-MM-DD/）
+    - 若指定到 outputs 下（含根目录或日期目录），统一改写为
+      outputs/YYYY-MM-DD/CV_Leo_Zhang_YYYYMMDD_<role>[_<company>].pdf，
+      保持单一命名规则并避免出现 latest/check 等临时命名
+    - 其它路径保持用户原意
+    """
+    if not output:
+        return None
+    p = Path(output)
+    parts_lower = [part.lower() for part in p.parts]
+    if "outputs" in parts_lower:
+        idx = parts_lower.index("outputs")
+        date_dir = datetime.now().strftime("%Y-%m-%d")
+        today = datetime.now().strftime("%Y%m%d")
+        company_slug = _slugify_company(company)
+        suffix = f"_{company_slug}" if company_slug else ""
+        canonical_name = f"CV_Leo_Zhang_{today}_{role.lower()}{suffix}.pdf"
+        normalized = Path(*p.parts[:idx + 1]) / date_dir / canonical_name
+        print(f"Normalize --output to canonical dated path: {normalized}")
+        return str(normalized)
+    return output
+
+
 async def run(args) -> None:
     if args.command == 'cv':
         from generate_cv_from_kb import generate_cv_from_kb
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)
+        cv_output = _normalize_cv_output_path(args.output, role=role, company=company)
         en_path, zh_path, annotated_path = await generate_cv_from_kb(
-            output_path=args.output,
+            output_path=cv_output,
             role_type=role,
             jd_keywords=jd_keywords or [],
             max_projects=args.max_projects,

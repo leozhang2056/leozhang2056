@@ -544,9 +544,18 @@ def generate_skills_section(
     """
     config = _ROLE_SKILL_CONFIG.get(role_type, _ROLE_SKILL_CONFIG['fullstack'])
     lines: List[str] = []
+    kws_lower = [k.lower() for k in (jd_keywords or [])]
 
     for cfg in config:
         key = cfg['key']
+        # Android targeted CVs: hide explicit testing row unless JD asks for testing.
+        if (
+            role_type == 'android'
+            and key == 'android_testing'
+            and kws_lower
+            and not any(t in " ".join(kws_lower) for t in ['test', 'testing', 'junit', 'mockk', 'espresso'])
+        ):
+            continue
         label = cfg['label_en'] if lang == 'en' else cfg['label_zh']
         raw = skills_data.get(key)
         if not raw:
@@ -558,7 +567,6 @@ def generate_skills_section(
 
         # JD 命中的技能排前面
         if jd_keywords:
-            kws_lower = [k.lower() for k in jd_keywords]
             hit = [n for n in names if any(k in n.lower() for k in kws_lower)]
             miss = [n for n in names if n not in hit]
             names = hit + miss
