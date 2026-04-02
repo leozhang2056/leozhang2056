@@ -5,6 +5,8 @@ Data validation models using Pydantic for type safety and validation.
 from typing import Dict, List, Any, Optional, Union
 from pydantic import BaseModel, Field, ConfigDict, field_validator, model_validator
 
+SkillItem = Union[str, Dict[str, Any]]
+
 
 class ProjectFacts(BaseModel):
     """Validation model for project facts.yaml"""
@@ -86,14 +88,18 @@ class SkillsData(BaseModel):
 
     model_config = ConfigDict(extra="allow")
 
-    android: Optional[List[str]] = None
-    programming_languages: Optional[List[str]] = None
-    ai_coding_tools: Optional[List[str]] = None
-    backend: Optional[List[str]] = None
-    devops: Optional[List[str]] = None
-    databases: Optional[List[str]] = None
-    ai_ml: Optional[List[str]] = None
-    iot_hardware: Optional[List[str]] = None
+    # skills.yaml 中每类技能的条目形态并不完全统一：
+    # - 有时是字符串：["Java", "Kotlin", ...]
+    # - 有时是对象：[{name: "Java", level: "..."} , ...]
+    # 生成阶段只依赖 name，因此这里在 strict 校验时也要放宽输入类型。
+    android: Optional[List[SkillItem]] = None
+    programming_languages: Optional[List[SkillItem]] = None
+    ai_coding_tools: Optional[List[SkillItem]] = None
+    backend: Optional[List[SkillItem]] = None
+    devops: Optional[List[SkillItem]] = None
+    databases: Optional[List[SkillItem]] = None
+    ai_ml: Optional[List[SkillItem]] = None
+    iot_hardware: Optional[List[SkillItem]] = None
 
 class ProfileData(BaseModel):
     """Validation model for profile.yaml"""

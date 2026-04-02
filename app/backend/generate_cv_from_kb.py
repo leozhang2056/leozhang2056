@@ -3134,6 +3134,7 @@ async def generate_cv_from_kb(
     min_jd_match_pct: float = 85.0,
     write_review_bundle: bool = False,
     keep_html: bool = False,
+    strict_kb: bool = True,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -3151,6 +3152,7 @@ async def generate_cv_from_kb(
         min_jd_match_pct: 对「KB 支持的」JD 词的目标最低覆盖率（默认 85）；<=0 关闭自动补词
         write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 False）
         keep_html: 为 True 时保留与 PDF 同名的中间 .html，便于核对版式（默认删中间件）
+        strict_kb: 为 True 时在生成前进行 KB 严格校验，失败则直接中止生成（默认 True）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
     _min_slots = 3 if role_type == "android" else 2
@@ -3180,6 +3182,17 @@ async def generate_cv_from_kb(
 
     role_tag = role_type.upper()
     print(f"\nGenerating CV [{role_tag}] from Career KB...")
+
+    # Fail-fast: KB 不通过结构校验时直接中止，避免输出“悄悄降级”的 PDF。
+    if strict_kb:
+        try:
+            from kb_loader import KBLoader  # type: ignore
+        except ModuleNotFoundError:
+            from app.backend.kb_loader import KBLoader  # type: ignore
+
+        kb_loader = KBLoader(repo_root)
+        kb_loader.load_all(strict=True)
+
     safe_jd_keywords, filtered_jd_keywords = _filter_jd_keywords_by_kb_evidence(
         jd_keywords,
         repo_root,
