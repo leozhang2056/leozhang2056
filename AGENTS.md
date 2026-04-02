@@ -58,7 +58,6 @@ pytest
 
 ## Practical Debugging Notes
 - If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).
-- `app/backend/generate_cv_html_to_pdf.py` contains legacy hardcoded template code; production flow should go through `generate.py`.
 - For schema-sensitive additions, mirror required fields from `kb/schema/project_facts_schema.yaml` and re-run `validate.py`.
 
 ## GitHub profile README (`README.md`)

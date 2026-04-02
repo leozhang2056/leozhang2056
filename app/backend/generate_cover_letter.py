@@ -10,6 +10,10 @@ Generate Cover Letter PDF from Career KB YAML files
   python generate_cover_letter.py --role ai --company "OpenAI" --output outputs/cover_letter.pdf
 """
 
+# Ensure sibling imports work regardless of invocation method
+from _path_setup import setup_backend_path
+setup_backend_path()
+
 import yaml
 import os
 import re

@@ -9,6 +9,10 @@ Usage examples:
 
 from __future__ import annotations
 
+# Ensure sibling imports work regardless of invocation method
+from _path_setup import setup_backend_path
+setup_backend_path()
+
 import argparse
 import re
 from datetime import datetime

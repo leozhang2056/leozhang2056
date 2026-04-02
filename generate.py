@@ -193,6 +193,11 @@ def build_parser() -> argparse.ArgumentParser:
         '--output', default=None,
         help='PDF output path',
     )
+    cl_parser.add_argument(
+        '--no-strict-kb',
+        action='store_true',
+        help='Disable strict KB validation before generating the cover letter (fail-fast).',
+    )
 
     # ── email (application email) ───────────────────────────────────────────
     email_parser = sub.add_parser('email', help='Generate application email TXT')
@@ -232,6 +237,11 @@ def build_parser() -> argparse.ArgumentParser:
     email_parser.add_argument(
         '--output', default=None,
         help='TXT output path',
+    )
+    email_parser.add_argument(
+        '--no-strict-kb',
+        action='store_true',
+        help='Disable strict KB validation before generating the application email (fail-fast).',
     )
 
     # ── interview (Q&A 库) ────────────────────────────────────────────────────
@@ -542,6 +552,16 @@ async def run(args) -> None:
 
     elif args.command == 'cl':
         from generate_cover_letter import generate_cover_letter
+
+        if not bool(getattr(args, 'no_strict_kb', False)):
+            try:
+                from kb_loader import KBLoader  # type: ignore
+            except ModuleNotFoundError:
+                from app.backend.kb_loader import KBLoader  # type: ignore
+
+            repo_root = Path(__file__).parent
+            KBLoader(repo_root).load_all(strict=True)
+
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)
@@ -569,6 +589,16 @@ async def run(args) -> None:
 
     elif args.command == 'email':
         from generate_application_email import generate_application_email
+
+        if not bool(getattr(args, 'no_strict_kb', False)):
+            try:
+                from kb_loader import KBLoader  # type: ignore
+            except ModuleNotFoundError:
+                from app.backend.kb_loader import KBLoader  # type: ignore
+
+            repo_root = Path(__file__).parent
+            KBLoader(repo_root).load_all(strict=True)
+
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)

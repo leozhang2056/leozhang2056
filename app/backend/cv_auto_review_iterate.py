@@ -19,6 +19,10 @@ This does not send raw PDF bytes to the model by default (text extraction only).
 
 from __future__ import annotations
 
+# Ensure sibling imports work regardless of invocation method
+from _path_setup import setup_backend_path
+setup_backend_path()
+
 import argparse
 import asyncio
 import json
