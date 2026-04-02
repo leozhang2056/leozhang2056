@@ -3,12 +3,13 @@ Data validation models using Pydantic for type safety and validation.
 """
 
 from typing import Dict, List, Any, Optional, Union
-from pydantic import BaseModel, Field, validator, model_validator
-from datetime import datetime
+from pydantic import BaseModel, Field, ConfigDict, field_validator, model_validator
 
 
 class ProjectFacts(BaseModel):
     """Validation model for project facts.yaml"""
+
+    model_config = ConfigDict(extra="allow")
 
     project_id: Optional[str] = None
     type: Optional[str] = None
@@ -35,10 +36,19 @@ class ProjectFacts(BaseModel):
     skills_demonstrated: Optional[Union[Dict[str, Any], List[Any], str]] = None
     last_updated: Optional[str] = None
 
-    @validator('keywords', 'related_to_roles', each_item=True)
+    @field_validator('keywords', 'related_to_roles', mode='before')
+    @classmethod
     def validate_non_empty_strings(cls, v):
-        if isinstance(v, str) and v.strip():
-            return v.strip()
+        if isinstance(v, list):
+            out = []
+            for item in v:
+                if isinstance(item, str):
+                    s = item.strip()
+                    if s:
+                        out.append(s)
+                else:
+                    out.append(item)
+            return out
         return v
 
     @model_validator(mode='after')
@@ -71,12 +81,10 @@ class ProjectFacts(BaseModel):
 
         return self
 
-    class Config:
-        allow_extra = True  # Allow additional fields for flexibility
-
-
 class SkillsData(BaseModel):
     """Validation model for skills.yaml"""
+
+    model_config = ConfigDict(extra="allow")
 
     android: Optional[List[str]] = None
     programming_languages: Optional[List[str]] = None
@@ -87,46 +95,49 @@ class SkillsData(BaseModel):
     ai_ml: Optional[List[str]] = None
     iot_hardware: Optional[List[str]] = None
 
-    class Config:
-        allow_extra = True
-
-
 class ProfileData(BaseModel):
     """Validation model for profile.yaml"""
+
+    model_config = ConfigDict(extra="allow")
 
     personal_info: Dict[str, Any] = Field(default_factory=dict)
     career_identity: Dict[str, Any] = Field(default_factory=dict)
     education: List[Dict[str, Any]] = Field(default_factory=list)
 
-    class Config:
-        allow_extra = True
-
-
 class BulletEntry(BaseModel):
     """Validation model for bullet entries"""
+
+    model_config = ConfigDict(extra="allow")
 
     original: Optional[str] = None
     variants: List[str] = Field(default_factory=list)
     tags: List[str] = Field(default_factory=list)
     evidence: List[str] = Field(default_factory=list)
 
-    @validator('variants', 'tags', 'evidence', each_item=True)
+    @field_validator('variants', 'tags', 'evidence', mode='before')
+    @classmethod
     def validate_non_empty_strings(cls, v):
-        if isinstance(v, str) and v.strip():
-            return v.strip()
+        if isinstance(v, list):
+            out = []
+            for item in v:
+                if isinstance(item, str):
+                    s = item.strip()
+                    if s:
+                        out.append(s)
+                else:
+                    out.append(item)
+            return out
         return v
 
 
 class AchievementsData(BaseModel):
     """Validation model for achievements.yaml"""
 
+    model_config = ConfigDict(extra="allow")
+
     certifications: List[Dict[str, Any]] = Field(default_factory=list)
     awards: List[Dict[str, Any]] = Field(default_factory=list)
     publications: List[Dict[str, Any]] = Field(default_factory=list)
-
-    class Config:
-        allow_extra = True
-
 
 def validate_project_facts(data: Dict[str, Any]) -> ProjectFacts:
     """Validate project facts data"""
