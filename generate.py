@@ -298,6 +298,11 @@ def build_parser() -> argparse.ArgumentParser:
         '--output', default=None,
         help='Output report path (Markdown)',
     )
+    match_parser.add_argument(
+        '--no-strict-kb',
+        action='store_true',
+        help='Disable strict KB validation before generating match report (fail-fast).',
+    )
 
     # ── cv-iterate (LLM: PDF + JD → KB patches → regenerate CV PDF) ──────────
     cit_parser = sub.add_parser(
@@ -615,6 +620,16 @@ async def run(args) -> None:
 
     elif args.command == 'match':
         from match_cv_to_jds import generate_match_report_file
+
+        if not bool(getattr(args, 'no_strict_kb', False)):
+            try:
+                from kb_loader import KBLoader  # type: ignore
+            except ModuleNotFoundError:
+                from app.backend.kb_loader import KBLoader  # type: ignore
+
+            repo_root = Path(__file__).parent
+            KBLoader(repo_root).load_all(strict=True)
+
         report_path = generate_match_report_file(
             role_type=args.role,
             jd_urls=getattr(args, 'jd_urls', None),
