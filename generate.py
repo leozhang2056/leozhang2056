@@ -148,6 +148,11 @@ def build_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='Keep intermediate .html next to the PDF (default: delete after PDF for cleanliness)',
     )
+    cv_parser.add_argument(
+        '--no-strict-kb',
+        action='store_true',
+        help='Disable strict KB validation before generating the CV (fail-fast).',
+    )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
@@ -325,46 +330,11 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _infer_role_from_text(text: str) -> str:
-    """
-    Very small heuristic classifier: infer role from JD/title/keywords.
-    Returns one of: android | ai | backend | fullstack
-    """
-    t = (text or "").lower()
-    if not t:
-        return "fullstack"
-
-    # Android signals
-    android_hits = (
-        "android", "kotlin", "jetpack", "compose", "gradle", "adb", "ndk", "jni",
-        "mvvm", "room", "coroutines", "retrofit", "okhttp",
-    )
-    # AI signals
-    ai_hits = (
-        "pytorch", "tensorflow", "llm", "diffusion", "computer vision", "cv",
-        "onnx", "cuda", "transformer", "fine-tuning", "finetuning", "rag",
-        "embedding", "prompt", "ml", "machine learning",
-    )
-    # Backend/Java signals
-    backend_hits = (
-        "spring", "spring boot", "spring cloud", "java", "microservice",
-        "rest", "api", "mybatis", "hibernate", "jpa", "redis", "kafka",
-    )
-
-    def _count(hits: tuple[str, ...]) -> int:
-        return sum(1 for h in hits if h in t)
-
-    a = _count(android_hits)
-    i = _count(ai_hits)
-    b = _count(backend_hits)
-
-    if a >= max(i, b) and a > 0:
-        return "android"
-    if i >= max(a, b) and i > 0:
-        return "ai"
-    if b >= max(a, i) and b > 0:
-        return "backend"
-    return "fullstack"
+# Import shared role inference from dedicated module
+try:
+    from app.backend.role_inference import infer_role_from_text as _infer_role_from_text
+except ImportError:
+    from role_inference import infer_role_from_text as _infer_role_from_text
 
 
 def _auto_keywords_from_jd(args) -> list[str]:
@@ -559,6 +529,7 @@ async def run(args) -> None:
             min_jd_match_pct=float(getattr(args, 'min_jd_match_pct', 85.0)),
             write_review_bundle=bool(getattr(args, 'review_bundle', False)),
             keep_html=bool(getattr(args, 'keep_html', False)),
+            strict_kb=not bool(getattr(args, 'no_strict_kb', False)),
         )
         print(f"\nDone.")
         print(f"  EN: {Path(en_path).resolve()}")
