@@ -1,8 +1,19 @@
-# Behavioral Interview 常用题库与示例答案
+# Behavioral Interview — Leo Zhang（张玉超）个人回复库
 
-> 适用对象：Software Engineer / Android / Full-Stack / Backend
-> 
-> 使用建议：面试时按 STAR（Situation, Task, Action, Result）回答，每题控制在 60-120 秒。
+> **定位**：软件工程师（Android / Java 后端 / 全栈 / AI 工程化），现居新西兰奥克兰；简历与事实以 `kb/profile.yaml`、`projects/*/facts.yaml` 为准。  
+> **工作资格**：新西兰全职工作资格（Post-Study Work Visa，可为任意雇主全职）— 与面试官提及时可简述为 *full-time work rights in NZ*。  
+> **用法**：STAR（Situation, Task, Action, Result）+ 一句 **Reflection**；每题约 60–120 秒；用口语复述，避免整段背诵。
+
+### 故事库映射（一材多用）
+
+| 面试主题 | 主故事 | 备选 |
+|----------|--------|------|
+| 复杂技术 / 性能 / 架构权衡 | **ChatClothes**（剖延迟、Ollama 本地 LLM、YOLO12n-LC） | **Smart Factory**（电子秤采集、持久监听 / watchdog / 重连） |
+| 生产稳定 / 优先级 / 压力 | **Smart Factory**（关键流程 99.9% 可用、产线问题优先） | **Enterprise Messaging**（发布前阻塞、多端协调） |
+| 冲突 / 难合作 / 评审 | **Enterprise Messaging**（对代码评审敏感 → 私下沟通 + 结对） | **Smart Factory**（上线前功能范围分歧 → 数据 + 分期试点） |
+| 失败 / 估算 / 延期 | **Chinese Herbal Recognition**（标注周期低估 → 小样试点） | 同上 Smart Factory 范围故事（沟通与计划调整） |
+| 主动性与交付完整性 | **ChatClothes**（部署文档、API 说明、可复现交付） | **Smart Factory**（ADR、onboarding、文档习惯） |
+| 长期可靠与工程深度 | **Enterprise Messaging**（NDK TCP/UDP、万级 DAU、十余年生命周期） | Smart Factory 多厂 rollout |
 
 ---
 
@@ -56,46 +67,48 @@
 
 ---
 
-## 二、常见问题与示例答案（STAR 简版）
+## 二、常见问题与示例答案（STAR 简版 · 已按本人经历改写）
 
 ## 1) Tell me about yourself.
 
-**Sample Answer**
+**Sample Answer（口头可压缩到 45–60 秒）**
 
-I am a software engineer focused on mobile and backend-integrated products. Over the past several years, I have worked end-to-end from requirement clarification to implementation, release, and post-release optimization. My strengths are structured problem-solving and reliable delivery under time constraints. Recently, I have been focusing on mobile performance, API reliability, and engineering efficiency. I am now looking for an opportunity where I can contribute to high-impact products and keep growing in architecture and cross-team execution.
+I'm Leo Zhang, a software engineer with 10+ years delivering production systems across Android, Java backends, and IoT. Most recently I completed my Master of Computer and Information Sciences at Auckland University of Technology with First Class Honours, where my thesis project **ChatClothes** combined diffusion-based virtual try-on, a lightweight garment classifier, and local LLM orchestration for offline-capable demos—including handheld-friendly control surfaces. Before that, at Chunxiao I spent years on **Smart Factory** (10+ factory rollouts, 30%+ efficiency gains, 99.9% uptime on critical workflows) and **Enterprise Messaging** (NDK networking for sub-200ms delivery at 10,000+ DAU). I'm based in Auckland with full-time work rights in New Zealand, and I'm looking for a role where I can ship reliable client and backend software while continuing to grow in architecture and applied AI.
 
 ---
 
 ## 2) Tell me about a complex technical problem you solved.
 
-**Sample Answer (STAR)**
+**Sample Answer (STAR) — ChatClothes 延迟与离线约束**
 
-- **Situation:** We had intermittent app freezes and occasional crashes in a critical workflow, and logs were not enough to identify the root cause.
-- **Task:** I needed to quickly identify the root cause and stabilize the feature without delaying the upcoming release.
-- **Action:** I grouped incidents by device/OS, added targeted telemetry, reproduced the issue in a controlled environment, and traced it to a thread contention plus lifecycle handling problem.
-- **Result:** After the fix, crash rate dropped significantly and response time improved. We also kept the release schedule and added a regression check to prevent recurrence.
+- **Situation:** For my thesis system, end-to-end try-on felt too slow on constrained targets, and I also needed a credible offline deployment story—not only model quality on paper.
+- **Task:** Find the real bottleneck, improve perceived latency, and make the pipeline runnable without relying on cloud LLM round-trips where inappropriate.
+- **Action:** I profiled the full path. Diffusion was costly, but a bigger surprise was LLM latency from cloud-style calls; I moved the control path to a local stack (Ollama + DeepSeek) and tightened the vision side by customizing **YOLO12n → YOLO12n-LC** for classification-only needs. I iterated like production work: milestones, measurable checks, and tracing code paths that mattered for my use case.
+- **Result:** The system became demonstrably more responsive and aligned with offline / Pi-class constraints; I finished on an accelerated thesis timeline with First Class Honours. **Reflection:** measure before optimizing assumptions—bottlenecks are not always where the literature suggests.
+
+*备选（更偏 Android / 产线）：Smart Factory 电子秤采集丢数 → 持久监听、watchdog、自动重连与连接池化，消除数据丢失并提高可观测性。*
 
 ---
 
 ## 3) Tell me about a time you had a conflict with a teammate.
 
-**Sample Answer (STAR)**
+**Sample Answer (STAR) — Enterprise Messaging 代码评审**
 
-- **Situation:** A teammate and I disagreed on implementation strategy for a core module.
-- **Task:** My goal was to resolve the disagreement quickly and choose the best option for long-term maintainability.
-- **Action:** I scheduled a focused discussion, compared both options with data (complexity, performance, maintainability, risk), and invited one neutral reviewer.
-- **Result:** We adopted a hybrid approach that reduced delivery risk and kept code maintainable. The feature was delivered on time and team collaboration improved.
+- **Situation:** On the enterprise messaging platform, a teammate was resistant to code review feedback, which slowed fixes and created tension.
+- **Task:** Keep code quality and release coordination on track without damaging trust.
+- **Action:** I talked to them privately, learned public criticism had burned them before, then shifted to private, specific feedback and short pairing sessions on changes.
+- **Result:** Review cycles became productive again; quality improved and releases stayed coordinated. **Reflection:** feedback is a process design problem, not only a technical one.
 
 ---
 
 ## 4) Tell me about a time you failed.
 
-**Sample Answer (STAR)**
+**Sample Answer (STAR) — Chinese Herbal Recognition 标注估算**
 
-- **Situation:** In one release, I underestimated an edge-case and it caused a production issue on a subset of devices.
-- **Task:** I had to recover quickly and restore user confidence.
-- **Action:** I acknowledged the mistake, rolled back the high-risk change, prepared a patch, expanded regression coverage, and added release checklist items.
-- **Result:** The issue was resolved quickly with minimal user impact. I learned to front-load risk analysis and improved my release discipline.
+- **Situation:** On a computer vision project for herbal medicine recognition, I needed a labeled dataset before training.
+- **Task:** Hit the training milestone without compromising label quality.
+- **Action:** I initially estimated ~two weeks of annotation from image counts; real images had lighting, occlusion, and angle variance, so careful labeling took ~six weeks and rushing created noisy labels that hurt the first training run.
+- **Result:** I owned the slip, reset the timeline, and fixed the process: pilot 50–100 images first, measure throughput and error rate, then extrapolate. **Reflection:** data work is schedule-critical—validate the workflow before committing the plan.
 
 ---
 
@@ -103,10 +116,10 @@ I am a software engineer focused on mobile and backend-integrated products. Over
 
 **Sample Answer (STAR)**
 
-- **Situation:** 48 hours before a major release, a blocking bug appeared in the core user flow.
-- **Task:** Fix the issue, protect release quality, and keep stakeholders informed.
-- **Action:** I broke the work into triage, fix, verification, and rollout monitoring; coordinated with QA and backend; and shared short status updates every few hours.
-- **Result:** We released on schedule with no major follow-up incidents.
+- **Situation:** Near a Smart Factory release window, shop-floor workflows depended on stable mobile + device + backend integration; a blocking issue in a critical path would have delayed factory operations.
+- **Task:** Restore confidence quickly, protect release quality, and keep QA / stakeholders aligned.
+- **Action:** I split work into triage → fix → verification → monitoring; pulled in the right owners for device vs API vs app layers; posted short, frequent status updates so decisions didn’t wait for surprises.
+- **Result:** We landed the release without a major follow-up incident on the critical path. **Reflection:** pressure is easier when uncertainty is reduced early and comms are tight.
 
 ---
 
@@ -114,10 +127,10 @@ I am a software engineer focused on mobile and backend-integrated products. Over
 
 **Sample Answer (STAR)**
 
-- **Situation:** I was handling a new feature, a production incident, and technical debt at the same time.
-- **Task:** Prioritize work for maximum business impact.
-- **Action:** I used a simple matrix: user impact, risk, and deadline. I addressed the production issue first, then the milestone-critical feature, and deferred non-urgent debt with a clear follow-up plan.
-- **Result:** We stabilized production quickly and still met the release milestone.
+- **Situation:** On Smart Factory, production-line reliability work competed with milestone features and ongoing maintenance.
+- **Task:** Maximize business impact without hiding risk.
+- **Action:** I ranked by user impact, operational risk, and deadline: stabilize production-impacting issues first, then milestone-critical features, and park non-urgent debt with explicit follow-up dates. I was transparent when priorities shifted.
+- **Result:** We kept **99.9%**-class reliability on critical workflows while still advancing planned delivery. **Reflection:** a visible framework beats “everything is P0.”
 
 ---
 
@@ -125,10 +138,10 @@ I am a software engineer focused on mobile and backend-integrated products. Over
 
 **Sample Answer (STAR)**
 
-- **Situation:** Our release process had too many manual steps and frequent human errors.
-- **Task:** Improve release reliability and efficiency.
-- **Action:** I proposed and implemented a CI/CD pipeline with quality gates and rollback readiness, then documented the process and trained the team.
-- **Result:** Release time was reduced significantly and deployment errors dropped.
+- **Situation:** Multi-site factory rollouts needed repeatable releases; manual steps created variance across 10+ deployments.
+- **Task:** Make releases safer and faster for the team.
+- **Action:** I pushed containerized Spring Boot services, Jenkins-based automation, clearer release checklists, and documentation so new environments didn’t depend on tribal knowledge.
+- **Result:** Fewer deployment surprises and more predictable rollouts across sites. **Reflection:** process wins compound when docs and automation move together.
 
 ---
 
@@ -136,21 +149,21 @@ I am a software engineer focused on mobile and backend-integrated products. Over
 
 **Sample Answer (STAR)**
 
-- **Situation:** I received feedback that part of my code was hard to maintain.
-- **Task:** Improve maintainability while keeping delivery pace.
-- **Action:** I aligned with reviewers on standards, refactored module boundaries, improved naming, and added tests for critical paths.
-- **Result:** Review feedback improved, onboarding became easier, and future changes were faster.
+- **Situation:** On Smart Factory, my manager said architectural decisions weren’t documented well enough for handover.
+- **Task:** Improve knowledge transfer without freezing delivery.
+- **Action:** I introduced ADR-style notes for key decisions, a lightweight onboarding guide, and made “document the why” part of my default finish line for significant changes.
+- **Result:** Onboarding sped up and repeated questions dropped. **Reflection:** documentation is part of the feature when systems live for years.
 
 ---
 
 ## 9) Tell me about a time you adapted to change.
 
-**Sample Answer (STAR)**
+**Sample Answer (STAR) — ChatClothes**
 
-- **Situation:** Product requirements changed late in the sprint and invalidated part of our original solution.
-- **Task:** Adapt without causing major delay.
-- **Action:** I identified reusable components, redesigned only the change-sensitive parts, and re-estimated scope with PM and QA.
-- **Result:** We delivered the revised scope on time with controlled risk.
+- **Situation:** Early thesis assumptions didn’t match real constraints: latency and offline requirements forced a design shift mid-stream.
+- **Task:** Adapt without losing the research contribution or missing the submission timeline.
+- **Action:** I re-measured end-to-end behavior, changed the LLM path to local hosting where appropriate, kept scope disciplined, and reused stable pipeline pieces while redesigning only what the measurements justified.
+- **Result:** The final system matched deployability goals and I submitted ahead of the nominal schedule with First Class Honours. **Reflection:** treat research delivery like engineering—instrument, then decide.
 
 ---
 
@@ -158,7 +171,7 @@ I am a software engineer focused on mobile and backend-integrated products. Over
 
 **Sample Answer**
 
-I combine hands-on execution with strong ownership. I can break down complex problems, align with cross-functional teams, and deliver reliable results under constraints. Beyond feature delivery, I care about long-term maintainability, quality, and scalability. I believe I can create immediate impact on execution and long-term value through engineering improvements.
+You get someone who has repeatedly shipped under real constraints: **Android + NDK** performance work at scale, **Java / Spring** services in production, and **applied AI** from thesis-level experimentation to something you can run locally. I’m strong at breaking problems down, aligning across mobile, backend, and hardware-adjacent integrations, and I care about outcomes that last—uptime, latency, and maintainability—not just demo code. I’m in Auckland with full-time NZ work rights and ready to contribute on day one while growing with the team’s stack.
 
 ---
 
@@ -179,12 +192,12 @@ I combine hands-on execution with strong ownership. I can break down complex pro
 
 ---
 
-## 四、使用注意事项
+## 四、使用注意事项（Leo 版）
 
-- 不要背模板原句，替换成你自己的真实经历和指标。
-- 每个答案准备一个“主故事”和一个“备选故事”。
-- 避免负面表达，不甩锅，强调行动和复盘。
-- 远程岗位重点强调：沟通透明、异步协作、任务自驱。
+- 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**10,000+ DAU**、**sub-200ms**、**First Class Honours**、**April 2025** 毕业等；不要临场夸大。
+- 每个主题准备 **1 个主故事 + 1 个备选**（见文首映射表）；Action 写清“你具体做了什么”，少用泛化的 *we*。
+- 语气：不甩锅，强调行动、衡量与复盘；开发者岗避免过度“管理团队”表述，用 **协调、接口契约、交付所有权** 更准确。
+- 远程 / 混合岗位：补充异步沟通习惯、文档化决策、时区友好更新（可与 Smart Factory 多现场 rollout 类比）。
 
 ---
 ## 五、项目化 Behavioral Question 题库（英文，可直接背诵/改写）
@@ -343,7 +356,7 @@ I combine hands-on execution with strong ownership. I can break down complex pro
 >
 > We also ran weekly cross-functional demos — not status reports, but actual working software — which forced frequent integration and surfaced breakage early.
 >
-> Over six years, we scaled from one pilot factory to ten sites with the same core team. Sustained delivery like that is mostly a communication problem, and we solved it.
+> Over six years, we scaled from pilot rollout to **10+ factory deployments** with a stable core team. Sustained delivery like that is mostly a communication and integration problem, and we addressed it with contracts + frequent integrated demos.
 
 ### 13) Tell me about feedback you received and how you acted on it.
 **Script**
@@ -403,14 +416,14 @@ I combine hands-on execution with strong ownership. I can break down complex pro
 > I would ask a quick clarifying question to understand what the interviewer is specifically looking for, and then I’d say what I know confidently based on my experience. If I don’t have the exact detail, I’d outline how I would find the answer — checking documentation, relevant code, or past incident notes — and offer to follow up after the interview.
 
 ### 20) Describe a time when you led a team. What was the outcome?
-**Script**
-> The clearest example of leading a team is the Smart Factory project. I worked in a six-person cross-functional group and took responsibility for driving delivery across mobile, backend, and device integration work.
+**Script**（开发者岗：强调协调与交付，弱化“纯管理”叙事）
+> The clearest example is **Smart Factory**: I was part of a six-person cross-functional team—mobile, backend, frontend, hardware/IoT, QA—shipping a platform rolled out to **10+ factories** over multiple years.
 >
-> The coordination challenge was that each part had different timelines and dependencies, and integration issues could block progress late in the sprint.
+> The hard part wasn’t any single module; it was integration risk. Different tracks had different timelines, and late interface drift could block everyone.
 >
-> What I did was make interfaces and change expectations explicit: we used a shared interface contract and a clear comment window before API changes. We also ran weekly cross-functional demos so we integrated frequently.
+> What I drove on the engineering side was making contracts explicit: a shared API/interface doc with a short review window before breaking changes, plus weekly demos of **working integrated software** (not slide updates). That forced early breakage detection.
 >
-> The outcome was sustained delivery over years with production reliability, including 99.9% uptime. The system ran reliably across multiple factory sites because the integration process was under control.
+> The outcome was sustained delivery with **99.9% uptime** on critical shop-floor workflows and repeatable multi-site rollouts—mostly because we treated coordination as an engineering problem with clear interfaces and frequent integration.
 
 ### 21) Describe a time when you had to give someone difficult feedback. How did you handle it?
 **Script**
@@ -521,12 +534,12 @@ I combine hands-on execution with strong ownership. I can break down complex pro
 > The result was a working end-to-end system and an early thesis submission — the key was treating it like production engineering rather than only research exploration.
 
 ### 32) Why do you want to change your current company?
-**Script**
-> I’m looking for a change primarily because I’m completing my Master’s at AUT in February 2026, and I’m ready to return to full-time engineering.
+**Script**（与 `kb/profile.yaml` 时间线一致：MCIS 已于 **2025-04** 完成，一等荣誉）
+> I’m at a planned transition point: I completed my Master’s in Computer and Information Sciences at **Auckland University of Technology** in **April 2025** with **First Class Honours**, after investing focused time in applied AI / systems work (my **ChatClothes** thesis is the clearest artifact).
 >
-> It was a deliberate decision to invest 18 months into formal AI education, and my thesis outcomes confirmed the direction was worthwhile. Now I want to apply that learning in a role where I can ship reliable production software.
+> I’m now based in **Auckland** with **full-time work rights in New Zealand** (Post-Study Work Visa), and I want my next role to be full-time engineering where I can ship production Android/backend systems and keep growing—especially where applied AI and reliable client software intersect.
 >
-> I’m not looking to “escape” a difficult situation — I’m making a planned transition into the next stage of my career.
+> This isn’t about escaping a bad situation; it’s a deliberate move from a study-intensive phase back into sustained product delivery.
 
 ### 33) Tell me about a time when you had a different opinion than the rest of the team. How did you handle it?
 **Script**
