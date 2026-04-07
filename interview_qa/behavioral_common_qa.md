@@ -190,6 +190,18 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - As a result, we ...
 - What I learned was ...
 
+### 30 / 60 / 120 秒分层模板（临场提速）
+- **30 秒版（电梯版）**：`背景一句 + 关键动作一句 + 结果一句`
+- **60 秒版（默认版）**：`Situation 1句 + Task 1句 + Action 2句 + Result/Reflection 1句`
+- **120 秒版（深挖版）**：在 60 秒版基础上补 `权衡/指标/追问点`（如 hardest part、specific role、next time）
+
+### 面试前 10 分钟检查清单（Leo 专用）
+- 主故事是否覆盖 5 类：复杂技术、冲突、失败、压力、主动性
+- 每个故事是否有 1 个可核验指标（10+ factories / 99.9% uptime / 10,000+ DAU / sub-200ms / First Class Honours）
+- “Why this company” 是否替换了公司名、产品名、技术栈（避免模板味）
+- Q32 转职原因是否保持一致：`2025-04 完成 MCIS + 回到全职工程交付`
+- 每题结尾是否有一句 Reflection（我学到什么 / 下次如何做）
+
 ---
 
 ## 四、使用注意事项（Leo 版）
