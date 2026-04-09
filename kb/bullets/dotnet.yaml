@@ -53,7 +53,7 @@ bullets:
     variants:
       - "Supported legacy .NET systems with bug fixes and feature enhancements"
       - "Migrated legacy desktop applications to newer .NET Framework versions"
-      - "Maintained 99.9% uptime for critical business applications"
+      - "Maintained high availability for critical business applications"
     evidence: [patent-search-system]
     skills: [.NET Maintenance, Legacy Support, System Migration]
 

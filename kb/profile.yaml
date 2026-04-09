@@ -46,8 +46,7 @@ career_identity:
       Senior Full-Stack Engineer with 10+ years of experience across Java/Spring Boot, Android,
       and IoT platform delivery, with First Class Honours in MCIS from AUT. Based in Auckland with
       full-time work rights in New Zealand. Delivered measurable outcomes including 10+ factory
-      rollouts, 30%+ production efficiency gains, and 99.9% uptime in production systems. Experienced
-      in leading 2-6 engineer squads and driving architecture, delivery, and operational stability.
+      rollouts and long-running production stability in complex enterprise systems.
     
     android_focus: >
       Android engineer with 10+ years shipping production mobile apps; Master's from Auckland University
@@ -104,7 +103,7 @@ education:
     location_cn: 新西兰
     start_date: "2024-07"
     # 与 thesis 完成 / work.yaml AUT 段、一等荣誉叙事对齐（简历教育块仅显示年份）
-    end_date: "2025-04"
+    end_date: "2026-02"
     status: Completed
     status_cn: 已完成
     research_focus:

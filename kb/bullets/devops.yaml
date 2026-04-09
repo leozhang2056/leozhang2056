@@ -29,7 +29,7 @@ bullets:
     tags: [devops, linux, centos, ubuntu, system-admin]
     original: "Managed Linux servers (CentOS/Ubuntu) for production application hosting"
     variants:
-      - "Administered CentOS/Ubuntu production servers with 99.9% uptime"
+      - "Administered CentOS/Ubuntu production servers with strong uptime and stability"
       - "Configured Linux systems for high-availability application deployment"
       - "Automated Linux server configuration with shell scripting and cron jobs"
     evidence: [smart-factory, enterprise-messaging]
@@ -62,7 +62,7 @@ bullets:
     tags: [devops, monitoring, alerting, logging]
     original: "Implemented infrastructure monitoring and alerting for production systems"
     variants:
-      - "Set up system monitoring and alerting for 99.9% uptime SLA maintenance"
+      - "Set up system monitoring and alerting to sustain production uptime targets"
       - "Configured log aggregation and analysis for troubleshooting and optimization"
       - "Implemented proactive monitoring with automated incident response workflows"
     evidence: [smart-factory]

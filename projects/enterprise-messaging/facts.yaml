@@ -28,7 +28,7 @@ summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
 highlights:
   - Engineered Android transport in NDK (C/C++) over TCP/UDP, optimizing connection paths to sustain sub-200ms message latency at production load
   - Scaled the platform to 10,000+ DAU and 500K+ messages per day across Android, Web, and PC
-  - Spearheaded reliability practices that maintained 99.9% availability across a 10-year product lifecycle
+  - Spearheaded reliability practices that maintained strong availability across a 10-year product lifecycle
   - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
   - Optimized distributed database and file storage layouts for real-time collaboration workloads
   - Integrated ETL pipelines with Kettle and PowerBI dashboards for operational analytics
@@ -102,15 +102,15 @@ metrics:
   label: platforms
   description: Android, Web, PC support
   unit: platforms
-- value: 99.9%
-  label: uptime
-  description: System availability
-  unit: uptime
+- value: High
+  label: availability
+  description: System availability maintained
+  unit: reliability
 achievements:
 - Achieved sub-200ms message latency through protocol optimization
 - Successfully scaled to 10,000+ daily active users
 - Processed over 500,000 messages daily
-- Maintained 99.9% availability over 10 years of continuous operation
+- Maintained strong availability over 10 years of continuous operation
 - Delivered consistent cross-platform experience
 evidence:
 - type: architecture

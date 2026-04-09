@@ -97,10 +97,10 @@ professional_achievements:
     project: Smart Factory Backend System
     description: Increased production efficiency by over 30%
     
-  - metric: "99.9%"
-    unit: "uptime"
+  - metric: "High"
+    unit: "availability"
     project: Multiple systems
-    description: Maintained 99.9% system uptime
+    description: Maintained high system availability
     
   - metric: "6+"
     unit: "legacy migrations"

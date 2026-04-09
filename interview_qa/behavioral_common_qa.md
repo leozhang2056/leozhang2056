@@ -199,14 +199,14 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - 主故事是否覆盖 5 类：复杂技术、冲突、失败、压力、主动性
 - 每个故事是否有 1 个可核验指标（10+ factories / 99.9% uptime / 10,000+ DAU / sub-200ms / First Class Honours）
 - “Why this company” 是否替换了公司名、产品名、技术栈（避免模板味）
-- Q32 转职原因是否保持一致：`2025-04 完成 MCIS + 回到全职工程交付`
+- Q32 转职原因是否保持一致：`2026-02 完成 MCIS + 回到全职工程交付`
 - 每题结尾是否有一句 Reflection（我学到什么 / 下次如何做）
 
 ---
 
 ## 四、使用注意事项（Leo 版）
 
-- 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**10,000+ DAU**、**sub-200ms**、**First Class Honours**、**April 2025** 毕业等；不要临场夸大。
+- 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**10,000+ DAU**、**sub-200ms**、**First Class Honours**、**February 2026** 毕业等；不要临场夸大。
 - 每个主题准备 **1 个主故事 + 1 个备选**（见文首映射表）；Action 写清“你具体做了什么”，少用泛化的 *we*。
 - 语气：不甩锅，强调行动、衡量与复盘；开发者岗避免过度“管理团队”表述，用 **协调、接口契约、交付所有权** 更准确。
 - 远程 / 混合岗位：补充异步沟通习惯、文档化决策、时区友好更新（可与 Smart Factory 多现场 rollout 类比）。
@@ -546,8 +546,8 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 > The result was a working end-to-end system and an early thesis submission — the key was treating it like production engineering rather than only research exploration.
 
 ### 32) Why do you want to change your current company?
-**Script**（与 `kb/profile.yaml` 时间线一致：MCIS 已于 **2025-04** 完成，一等荣誉）
-> I’m at a planned transition point: I completed my Master’s in Computer and Information Sciences at **Auckland University of Technology** in **April 2025** with **First Class Honours**, after investing focused time in applied AI / systems work (my **ChatClothes** thesis is the clearest artifact).
+**Script**（与 `kb/profile.yaml` 时间线一致：MCIS 已于 **2026-02** 完成，一等荣誉）
+> I’m at a planned transition point: I completed my Master’s in Computer and Information Sciences at **Auckland University of Technology** in **February 2026** with **First Class Honours**, after investing focused time in applied AI / systems work (my **ChatClothes** thesis is the clearest artifact).
 >
 > I’m now based in **Auckland** with **full-time work rights in New Zealand** (Post-Study Work Visa), and I want my next role to be full-time engineering where I can ship production Android/backend systems and keep growing—especially where applied AI and reliable client software intersect.
 >

@@ -60,9 +60,9 @@ bullets:
   - id: backend_high_availability
     category: technical
     tags: [backend, reliability, monitoring, uptime]
-    original: "Maintained 99.9% uptime across production systems"
+    original: "Maintained high availability across production systems"
     variants:
-      - "Achieved 99.9% system availability through redundancy and monitoring"
+      - "Achieved high system availability through redundancy and monitoring"
       - "Implemented comprehensive logging, monitoring, and alerting systems"
       - "Designed fault-tolerant architecture with automatic failover"
     evidence: [smart-factory]

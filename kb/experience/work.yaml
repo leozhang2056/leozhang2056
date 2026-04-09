@@ -106,7 +106,7 @@ experiences:
           - Deployed across 5+ factory sites
           - Supported hundreds of workers daily
           - 30%+ production efficiency improvement
-          - 99.9% uptime maintained
+          - High uptime maintained
       
       - name: Enterprise Messaging Platform
         period: "2014 - 2023"
@@ -251,7 +251,7 @@ experiences:
         - Administered shared folders, RDP, firewall rules, FTP, and scheduled tasks
         - Implemented automated backups with cron, Task Scheduler, and rsync
         - Integrated OneDrive, Dropbox, and remote storage for team collaboration
-        - Migrated 6+ legacy systems to new servers, ensuring 99.9% uptime
+        - Migrated 6+ legacy systems to new servers while maintaining service continuity
       
       tech_stack:
         - Windows Server
@@ -266,7 +266,7 @@ experiences:
         - Dropbox
       
       achievements:
-        - 99.9% uptime maintained
+        - High uptime maintained
         - 6+ legacy system migrations completed
         - Automated backup and monitoring systems
 
@@ -276,7 +276,7 @@ key_achievements:
   - "Delivered enterprise messaging platform serving 10,000+ daily users with <200ms latency"
   - "Led smart factory system deployment across 5+ manufacturing sites, improving efficiency by 30%+"
   - "Completed AI thesis project 6 months early with working on-device deployment"
-  - "Maintained 99.9% system uptime across multiple production systems"
+  - "Maintained high system uptime across multiple production systems"
   - "Managed 6-person cross-functional team through full development cycles"
 
 last_updated: "2026-03-30"

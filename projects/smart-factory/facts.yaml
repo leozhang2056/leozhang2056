@@ -20,8 +20,7 @@ company:
   location: China
 summary: >
   Smart manufacturing platform rolled out to 10+ factories over six years: Android shop-floor apps,
-  Spring Boot microservices, and IoT hooks (RFID, scales, conveyors) with 30%+ efficiency gains and
-  99.9% uptime on critical workflows.
+  Spring Boot microservices, and IoT hooks (RFID, scales, conveyors) focused on stable shop-floor workflows.
 
   Also delivered Vue.js portals and cross-functional delivery spanning customer, operations, and worker journeys.
 
@@ -30,9 +29,7 @@ summary_cn: '智能制造平台，已部署于10多家工厂，实现自动化�
   涵盖电子秤、工业洗衣机和传送系统。'
 highlights:
   - Delivered a smart factory platform rolled out to 10+ factories over six years, spanning Android shop-floor apps, microservices, and IoT integrations
-  - Dockerized Spring Boot microservices for repeatable releases across 10+ factory deployments, supporting 30%+ production efficiency gains and 99.9% uptime on critical shop-floor workflows
-  - Maintained 99.9% uptime for business-critical production workflows across 5+ manufacturing locations
-  - Designed end-to-end factory workflows covering customer, factory, worker, and operations portals
+  - Dockerized Spring Boot microservices for repeatable releases across multi-site factory deployments and safer rollout operations
   - Integrated industrial IoT devices including RFID, electronic scales, and conveyor systems
   - Implemented polyglot persistence layer with MySQL, Redis, and MongoDB for real-time data sync
   - Led a 6-person cross-functional engineering team through planning, sprint execution, and production rollout
@@ -89,7 +86,7 @@ features:
 - Weighing data sync to web pages and backend systems
 - Real-time production tracking
 - Workflow orchestration
-- High availability (99.9% uptime)
+- High availability for critical workflows
 - Automated CI/CD pipeline
 - Cross-platform support
 metrics:
@@ -101,10 +98,10 @@ metrics:
   label: +
   description: Production efficiency increase
   unit: efficiency improvement
-- value: 99.9%
-  label: uptime
+- value: High
+  label: availability
   description: System availability maintained
-  unit: uptime
+  unit: reliability
 - value: '6'
   label: team members
   description: Cross-functional team led
@@ -116,7 +113,7 @@ metrics:
 achievements:
 - Successfully scaled from 1 to 5+ factory sites
 - Achieved 30%+ production efficiency improvement
-- Maintained 99.9% uptime over multiple years
+- Maintained high uptime over multiple years
 - Led and mentored a 6-person engineering team through multi-year delivery and production rollout
 - Integrated diverse IoT hardware ecosystem
 - Delivered reliable electronic scale data pipeline for production operations
@@ -162,7 +159,7 @@ performance_metrics:
     achievement: '>30% increase in overall production efficiency'
   availability:
     description: System uptime in industrial environments
-    achievement: 99.9% uptime maintained over 6 years of operation
+    achievement: High uptime maintained over 6 years of operation
   scale:
     description: Multi-site expansion
     achievement: Scaled from a single pilot to 5+ full-scale manufacturing bases
