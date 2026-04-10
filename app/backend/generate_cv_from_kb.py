@@ -907,16 +907,6 @@ def generate_summary(
             if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
                 text = _bold_first(text, kw_norm)
 
-        # Android：不在 Summary 再追一句 JD 技术尾巴（易与 profile 叠成「AI 简历腔」）
-        if role_type != "android":
-            hit_count = sum(1 for kw in normed_kws if re.search(re.escape(kw), text, flags=re.IGNORECASE))
-            target_hits = 4
-            if hit_count < target_hits:
-                concrete = _pick_concrete_jd_terms_for_summary(normed_kws, 4)
-                tail = _build_jd_summary_tail(concrete, lang)
-                if tail:
-                    text = f"{text} {tail}"
-
     # 固定成果句（非随机），提升稳定性并降低模板腔；
     # 对 fullstack / android 省略，避免与 profile 总结重复堆叠。
     if role_type not in {"android", "fullstack"}:
@@ -992,6 +982,66 @@ def _bullet_leading_verb(text: str) -> str:
     """取 bullet 英文首词（常为动词），用于同一项目下避免 Built/Developed 连打。"""
     m = _BULLET_LEADING_VERB_RE.match(text or "")
     return m.group(1).lower() if m else ""
+
+
+def _score_bullet_variant_quality(text: str, jd_keywords: Optional[List[str]] = None) -> float:
+    """Prefer bullet variants that read like strong, evidence-backed resume lines."""
+    if not isinstance(text, str):
+        return 0.0
+
+    raw = text.strip()
+    if not raw:
+        return 0.0
+
+    score = 0.0
+    text_lower = raw.lower()
+    first_word = _bullet_leading_verb(raw)
+
+    strong_verbs = {
+        "built", "developed", "implemented", "designed", "architected", "optimized",
+        "delivered", "shipped", "integrated", "engineered", "launched", "automated",
+        "reduced", "improved", "deployed", "created",
+    }
+    weak_verbs = {"helped", "assisted", "supported", "worked", "participated"}
+
+    if first_word in strong_verbs:
+        score += 1.0
+    elif first_word in weak_verbs:
+        score -= 0.4
+    elif first_word:
+        score += 0.2
+
+    if any(char.isdigit() for char in raw) or "%" in raw:
+        score += 0.8
+
+    tech_patterns = [
+        r"\b(Java|Kotlin|Python|Spring|Android|Compose|Redis|Docker|Kubernetes|MySQL|PostgreSQL|MongoDB|AWS|Azure|GCP|REST|API|SDK|NDK|JNI|GIS|MQTT|WebSocket)\b",
+        r"\b(microservice|pipeline|offline|telemetry|latency|uptime|cache|queue|encryption|deployment|monitoring)\b",
+    ]
+    if any(re.search(p, raw, re.IGNORECASE) for p in tech_patterns):
+        score += 0.6
+
+    scope_patterns = [
+        r"\b(users?|customers?|sites?|factories?|devices?|services?|modules?|apps?|projects?)\b",
+        r"\b(production|enterprise|field|regional|national|global|cross-team)\b",
+    ]
+    if any(re.search(p, raw, re.IGNORECASE) for p in scope_patterns):
+        score += 0.35
+
+    word_count = len(raw.split())
+    if 11 <= word_count <= 28:
+        score += 0.5
+    elif word_count < 8:
+        score -= 0.5
+    elif word_count > 34:
+        score -= 0.35
+
+    if jd_keywords:
+        kws_lower = [k.lower() for k in jd_keywords if isinstance(k, str) and k.strip()]
+        hit_count = sum(1 for kw in kws_lower if kw in text_lower)
+        score += min(hit_count * 0.25, 0.75)
+
+    return score
 
 
 def _score_bullet_for_project(
@@ -1086,7 +1136,6 @@ def _select_bullets_for_project(
     scored.sort(key=lambda x: x['score'], reverse=True)
 
     result: List[str] = []
-    kws_lower = [k.lower() for k in (jd_keywords or [])]
     used_leading_verbs: set[str] = set()
 
     for item in scored:
@@ -1103,38 +1152,20 @@ def _select_bullets_for_project(
                 result.append(original)
             continue
 
-        # 如果有 JD 关键词，优先选择包含关键词的变体；同分档内优先未用过的句首动词
+        # 变体选择同时看质量与 JD 贴合度，不只按关键词命中数排序。
         chosen = None
-        if kws_lower:
-            scored_variants: List[tuple] = []
-            for v in variants:
-                if not isinstance(v, str):
-                    continue
-                v_lower = v.lower()
-                kw_count = sum(1 for kw in kws_lower if kw in v_lower)
-                scored_variants.append((kw_count, v))
-            if scored_variants:
-                scored_variants.sort(key=lambda x: x[0], reverse=True)
-                top_kw = scored_variants[0][0]
-                candidates = [v for k, v in scored_variants if k == top_kw]
-                for v in candidates:
-                    vb = _bullet_leading_verb(v)
-                    if vb and vb not in used_leading_verbs:
-                        chosen = v
-                        break
-                if not chosen and candidates:
-                    chosen = candidates[0]
+        scored_variants: List[tuple[float, int, str]] = []
+        for v in variants:
+            if not isinstance(v, str):
+                continue
+            vb = _bullet_leading_verb(v)
+            verb_freshness = 1 if vb and vb not in used_leading_verbs else 0
+            quality_score = _score_bullet_variant_quality(v, jd_keywords)
+            scored_variants.append((quality_score, verb_freshness, v))
 
-        if not chosen:
-            for v in variants:
-                if not isinstance(v, str):
-                    continue
-                vb = _bullet_leading_verb(v)
-                if vb and vb not in used_leading_verbs:
-                    chosen = v
-                    break
-            if not chosen:
-                chosen = variants[0]
+        if scored_variants:
+            scored_variants.sort(key=lambda x: (x[0], x[1]), reverse=True)
+            chosen = scored_variants[0][2]
 
         if isinstance(chosen, str):
             cvb = _bullet_leading_verb(chosen)

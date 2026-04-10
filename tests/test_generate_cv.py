@@ -56,3 +56,61 @@ class TestLoadYaml:
 
         result = load_yaml(123)
         assert result == {}
+
+
+class TestGenerationQuality:
+    def test_generate_summary_does_not_append_mechanical_jd_tail(self):
+        from app.backend.generate_cv_from_kb import generate_summary
+
+        profile = {
+            "career_identity": {
+                "summary_variants": {
+                    "default": (
+                        "Software engineer with 10+ years across Java backend, Android delivery, "
+                        "and IoT systems. Delivered enterprise systems with measurable production outcomes."
+                    )
+                }
+            }
+        }
+
+        summary = generate_summary(
+            profile,
+            role_type="backend",
+            lang="en",
+            jd_keywords=["Kafka", "Redis", "Kubernetes", "Observability"],
+        )
+
+        assert "Hands-on with" not in summary
+        assert "stable release discipline" not in summary
+
+    def test_select_bullets_prefers_stronger_evidence_backed_variant(self):
+        from app.backend.generate_cv_from_kb import _select_bullets_for_project
+
+        project = {
+            "project_id": "enterprise-messaging",
+            "keywords": ["messaging", "java"],
+            "related_to_roles": ["backend"],
+            "tech_stack": {"backend": ["Java", "Redis"]},
+        }
+        bullets = [
+            {
+                "evidence": ["enterprise-messaging"],
+                "tags": ["backend", "java", "redis"],
+                "variants": [
+                    "Helped with backend messaging features.",
+                    "Built Java messaging services handling 10000+ DAU with Redis-backed session routing.",
+                ],
+            }
+        ]
+
+        selected = _select_bullets_for_project(
+            project,
+            bullets,
+            role_type="backend",
+            jd_keywords=["Java", "Redis"],
+            max_bullets=1,
+        )
+
+        assert selected == [
+            "Built Java messaging services handling 10000+ DAU with Redis-backed session routing."
+        ]
