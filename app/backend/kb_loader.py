@@ -9,6 +9,12 @@ from dataclasses import dataclass
 
 try:
     # Package import (when called as `app.backend.kb_loader`)
+    from .kb_io import (
+        load_yaml,
+        load_projects,
+        load_all_bullets,
+        load_project_relations,
+    )
     from .data_models import (
         validate_skills_data,
         validate_profile_data,
@@ -22,7 +28,13 @@ try:
     )
     from .kb_validation import validate_project_data
 except ImportError:  # pragma: no cover
-    # Top-level module import (when `app/backend` is on sys.path and `kb_loader` is imported directly)
+    # Top-level module import (when `app/backend` is on sys.path)
+    from kb_io import (  # type: ignore
+        load_yaml,
+        load_projects,
+        load_all_bullets,
+        load_project_relations,
+    )
     from data_models import (  # type: ignore
         validate_skills_data,
         validate_profile_data,
@@ -106,11 +118,6 @@ class KBLoader:
         if not profile_file.exists():
             raise FileNotFoundError(f"Profile file not found: {profile_file}")
 
-        try:
-            from .generate_cv_from_kb import load_yaml  # type: ignore
-        except ImportError:  # pragma: no cover
-            from generate_cv_from_kb import load_yaml  # type: ignore
-
         data = load_yaml(str(profile_file))
         if not data:
             raise ValueError("Empty profile data")
@@ -126,11 +133,6 @@ class KBLoader:
             logger.warning(f"Skills file not found: {skills_file}, using empty skills")
             return validate_skills_data({})
 
-        try:
-            from .generate_cv_from_kb import load_yaml  # type: ignore
-        except ImportError:  # pragma: no cover
-            from generate_cv_from_kb import load_yaml  # type: ignore
-
         data = load_yaml(str(skills_file))
         return validate_skills_data(data or {})
 
@@ -145,11 +147,6 @@ class KBLoader:
         # Use strict-friendly loader:
         # - In strict mode we must not skip empty/invalid `facts.yaml` files, otherwise fail-fast loses signal.
         if strict:
-            try:
-                from .generate_cv_from_kb import load_yaml  # type: ignore
-            except ImportError:  # pragma: no cover
-                from generate_cv_from_kb import load_yaml  # type: ignore
-
             raw_projects: List[Dict[str, Any]] = []
             for project_dir in self.projects_path.iterdir():
                 if not project_dir.is_dir():
@@ -161,11 +158,6 @@ class KBLoader:
                 facts["_project_dir"] = project_dir.name
                 raw_projects.append(facts)
         else:
-            try:
-                from .generate_cv_from_kb import load_projects  # type: ignore
-            except ImportError:  # pragma: no cover
-                from generate_cv_from_kb import load_projects  # type: ignore
-
             raw_projects = load_projects(str(self.projects_path))
 
         validated_projects = []
@@ -201,12 +193,7 @@ class KBLoader:
 
     def _load_bullets(self, strict: bool = False) -> List[BulletEntry]:
         """Load and validate bullet entries"""
-        try:
-            from .generate_cv_from_kb import _load_all_bullets  # type: ignore
-        except ImportError:  # pragma: no cover
-            from generate_cv_from_kb import _load_all_bullets  # type: ignore
-
-        raw_bullets = _load_all_bullets(self.base_path)
+        raw_bullets = load_all_bullets(self.base_path)
 
         validated_bullets = []
         bullet_errors: List[str] = []
@@ -236,22 +223,12 @@ class KBLoader:
             logger.warning(f"Achievements file not found: {achievements_file}, using empty achievements")
             return validate_achievements_data({})
 
-        try:
-            from .generate_cv_from_kb import load_yaml  # type: ignore
-        except ImportError:  # pragma: no cover
-            from generate_cv_from_kb import load_yaml  # type: ignore
-
         data = load_yaml(str(achievements_file))
         return validate_achievements_data(data or {})
 
     def _load_relations(self) -> Dict[str, Any]:
         """Load project relations data"""
-        try:
-            from .generate_cv_from_kb import _load_project_relations  # type: ignore
-        except ImportError:  # pragma: no cover
-            from generate_cv_from_kb import _load_project_relations  # type: ignore
-
-        return _load_project_relations(self.base_path)
+        return load_project_relations(self.base_path)
 
     def get_project_by_id(self, project_id: str) -> Optional[ProjectFacts]:
         """Get a project by ID"""

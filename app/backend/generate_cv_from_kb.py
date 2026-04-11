@@ -23,6 +23,28 @@ import logging
 # 设置日志
 logger = logging.getLogger(__name__)
 
+# ---------------------------------------------------------------------------
+# 底层 IO 函数 —— 从 kb_io 导入（避免 kb_loader → generate_cv_from_kb 的循环依赖）
+# ---------------------------------------------------------------------------
+try:
+    from kb_io import (  # type: ignore
+        load_yaml,
+        load_projects,
+        load_all_bullets,
+        load_project_relations,
+    )
+except ModuleNotFoundError:
+    from app.backend.kb_io import (  # type: ignore
+        load_yaml,
+        load_projects,
+        load_all_bullets,
+        load_project_relations,
+    )
+
+# 保留私有名称供内部使用（历史调用方 / 测试不需要改动）
+_load_all_bullets = load_all_bullets
+_load_project_relations = load_project_relations
+
 # 导入 PDF 生成函数（支持 `python generate.py` 将 app/backend 加入 path，或包导入 `app.backend.*`）
 try:
     from generate_cv_html_to_pdf import html_to_pdf
@@ -150,85 +172,9 @@ def _compact_tech_stack_one_line(
 # ============================================================================
 # 数据加载
 # ============================================================================
-
-def load_yaml(file_path: Union[str, Path, os.PathLike[str]]) -> Dict[str, Any]:
-    """
-    加载 YAML 文件，支持错误处理和日志记录。
-    接受 str 或 Path；在 Windows 上允许反斜杠路径（原先误将 '\\' 视为不安全导致永远读不到 KB）。
-    """
-    try:
-        raw_path = Path(file_path)
-    except TypeError:
-        logger.error(f"Invalid file_path type: {type(file_path)}")
-        return {}
-
-    if "\x00" in str(file_path):
-        logger.error("Invalid file_path: null byte")
-        return {}
-
-    try:
-        safe_path = raw_path.expanduser().resolve(strict=False)
-    except (OSError, RuntimeError) as e:
-        logger.error(f"Could not resolve path {file_path!r}: {e}")
-        return {}
-
-    try:
-        with open(safe_path, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
-        if data is None:
-            logger.warning(f"YAML file is empty: {safe_path}")
-            return {}
-        return data
-    except FileNotFoundError:
-        logger.error(f"YAML file not found: {safe_path}")
-        return {}
-    except yaml.YAMLError as e:
-        logger.error(f"YAML parsing error in {safe_path}: {e}")
-        return {}
-    except PermissionError:
-        logger.error(f"Permission denied reading {safe_path}")
-        return {}
-    except Exception as e:
-        logger.error(f"Unexpected error loading YAML {safe_path}: {e}")
-        return {}
-
-
-def load_projects(projects_dir: str) -> List[Dict[str, Any]]:
-    """加载所有项目的 facts.yaml，支持错误处理和日志记录。"""
-    projects: List[Dict[str, Any]] = []
-    projects_path = Path(projects_dir)
-
-    if not projects_path.exists():
-        logger.error(f"Projects directory does not exist: {projects_dir}")
-        return projects
-
-    if not projects_path.is_dir():
-        logger.error(f"Projects path is not a directory: {projects_dir}")
-        return projects
-
-    for project_dir in projects_path.iterdir():
-        if not project_dir.is_dir():
-            continue
-
-        facts_file = project_dir / 'facts.yaml'
-        if not facts_file.exists():
-            logger.debug(f"No facts.yaml found in {project_dir.name}, skipping")
-            continue
-
-        try:
-            facts = load_yaml(str(facts_file))
-            if facts:
-                facts['_project_dir'] = project_dir.name
-                projects.append(facts)
-                logger.debug(f"Loaded project: {project_dir.name}")
-            else:
-                logger.warning(f"Empty facts.yaml in {project_dir.name}")
-        except Exception as e:
-            logger.error(f"Failed to load project {project_dir.name}: {e}")
-
-    logger.info(f"Loaded {len(projects)} projects from {projects_dir}")
-    return projects
-
+# load_yaml / load_projects / _load_project_relations / _load_all_bullets
+# 已迁移到 app/backend/kb_io.py，在模块顶部通过 kb_io 导入并绑定别名。
+# 此处保留注释，便于代码搜索时定位。
 
 # 排序和 JD 打分逻辑已抽离到 project_ranking.py，
 # 本文件继续通过同名函数调用保持兼容。
@@ -237,30 +183,7 @@ def load_projects(projects_dir: str) -> List[Dict[str, Any]]:
 # ---------------------------------------------------------------------------
 # 利用 project_relations 增强项目组合（同一时间线/叙事线）
 # ---------------------------------------------------------------------------
-
-
-def _load_project_relations(base: Path) -> Dict[str, Any]:
-    """加载 kb/project_relations.yaml，支持错误处理。"""
-    kb_dir = base / 'kb'
-    rel_file = kb_dir / 'project_relations.yaml'
-    if not rel_file.exists():
-        logger.debug("project_relations.yaml not found, using empty relations")
-        return {}
-
-    try:
-        with open(rel_file, 'r', encoding='utf-8') as f:
-            data = yaml.safe_load(f)
-            if data is None:
-                logger.warning("project_relations.yaml is empty")
-                return {}
-            logger.debug("Loaded project relations successfully")
-            return data
-    except yaml.YAMLError as e:
-        logger.error(f"YAML parsing error in project_relations.yaml: {e}")
-        return {}
-    except Exception as e:
-        logger.error(f"Unexpected error loading project_relations.yaml: {e}")
-        return {}
+# _load_project_relations 已迁移到 kb_io.py，顶部通过别名绑定保持向后兼容。
 
 
 def _build_project_id(project: Dict) -> str:
@@ -282,27 +205,24 @@ def _select_projects_with_relations(
     """
     在 sort_projects 的基础上，利用 project_relations 中的时间线/叙事信息
     尝试补充 1–2 个与核心项目同一阶段或强关联的项目，让故事更连贯。
+
+    excluded_ids / pinned_ids / preferred_replacements 均从
+    generation_config.yaml 的 project_selection 块读取，不硬编码。
     """
     if not all_projects:
         return []
 
-    # 需要排除/替换的项目（会话偏好）
-    excluded_ids = {"exhibition-robot"}
+    try:
+        from generation_config import load_generation_config  # type: ignore
+    except ModuleNotFoundError:
+        from app.backend.generation_config import load_generation_config  # type: ignore
 
-    # 强制保留的核心项目（须出现在列表中）；顺序影响置顶展示
-    if role_type == "android":
-        # 按时间：最新在前 — ChatClothes（AUT 论文）置顶；其后为春晓项目（块内再按 end 年降序）
-        pinned_ids = [
-            "chatclothes",
-            "forest-patrol-inspection",
-            "enterprise-messaging",
-            "iot-solutions",
-            "smart-factory",
-        ]
-    else:
-        pinned_ids = ["chatclothes", "smart-factory"]
-    # 优先替换展会机器人为更相关项目（智慧电力/IoT）
-    preferred_replacements = ["smart-power", "iot-solutions"]
+    _sel_cfg = load_generation_config().get("project_selection", {})
+    excluded_ids: set = set(_sel_cfg.get("excluded_ids", []))
+    _pinned_map: Dict = _sel_cfg.get("pinned_ids", {})
+    pinned_ids: List[str] = _pinned_map.get(role_type, _pinned_map.get("default", []))
+    preferred_replacements: List[str] = _sel_cfg.get("preferred_replacements", [])
+
     max_projects = max(max_projects, len(pinned_ids))
 
     ranked = sort_projects(all_projects, role_type, jd_keywords, max_projects=max_projects)
@@ -327,7 +247,7 @@ def _select_projects_with_relations(
             if p:
                 replacements.append(p)
         # 去重并保持原顺序（先 pinned，再 items）
-        seen: set[str] = set()
+        seen: set = set()
         out: List[Dict] = []
         for p in pinned + replacements + items:
             pid = _build_project_id(p)
@@ -380,7 +300,7 @@ def _select_projects_with_relations(
 
     # 按原 ranked 顺序过滤 extra，避免完全打乱优先级
     ordered_extra: List[Dict] = []
-    seen_extra: set[str] = set()
+    seen_extra: set = set()
     extra_set = set(extra_candidates)
     for p in ranked[core_count:]:
         pid = _build_project_id(p)
@@ -401,6 +321,7 @@ def _select_projects_with_relations(
                 break
 
     return _apply_pins(combined)[:max_projects]
+
 
 
 # ---------------------------------------------------------------------------

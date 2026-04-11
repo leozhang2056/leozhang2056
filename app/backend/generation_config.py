@@ -29,7 +29,8 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "priority_offset": 200,
         "role_project_order": {
             "android": [
-                "enterprise-messaging", "smart-factory", "iot-solutions", "chatclothes", "picture-book-locker", "visual-gateway",
+                "chatclothes", "forest-patrol-inspection", "enterprise-messaging",
+                "iot-solutions", "smart-factory", "picture-book-locker", "visual-gateway",
             ],
             "ai": [
                 "chatclothes", "device-maintenance-prediction", "chinese-herbal-recognition", "exhibition-robot", "enterprise-messaging", "smart-factory",
@@ -60,6 +61,17 @@ DEFAULT_CONFIG: Dict[str, Any] = {
             "school-attendance": 160,
             "patent-search-system": 170,
         },
+    },
+    "project_selection": {
+        "excluded_ids": ["exhibition-robot"],
+        "pinned_ids": {
+            "android": [
+                "chatclothes", "forest-patrol-inspection", "enterprise-messaging",
+                "iot-solutions", "smart-factory",
+            ],
+            "default": ["chatclothes", "smart-factory"],
+        },
+        "preferred_replacements": ["smart-power", "iot-solutions"],
     },
 }
 

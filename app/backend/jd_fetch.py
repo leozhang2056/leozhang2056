@@ -119,6 +119,7 @@ def extract_keywords_from_text(text: str, max_keywords: int = 20) -> List[str]:
     - 拆分出由字母/数字/+/# 组成的 token；
     - 过滤长度 < 3 的 token；
     - 过滤常见英语停用词 和 通用职位词（engineer, developer 等）；
+    - **按出现频次降序排序**：高频词更可能是 JD 核心要求，单次噪声词排后；
     - 保留顺序去重，最多 max_keywords 个。
     """
     if not text:
@@ -206,9 +207,9 @@ def extract_keywords_from_text(text: str, max_keywords: int = 20) -> List[str]:
         "smartrecruiters",
     }
 
-    keywords: List[str] = []
-    seen = set()
-
+    # Step 1: count occurrences of each normalized token
+    freq: dict[str, int] = {}
+    canonical: dict[str, str] = {}  # norm -> first seen display form
     for tk in tokens:
         norm = tk.strip().strip(".").lower()
         if not norm or len(norm) < 3:
@@ -218,14 +219,25 @@ def extract_keywords_from_text(text: str, max_keywords: int = 20) -> List[str]:
         # 过滤纯数字
         if norm.isdigit():
             continue
-        # 保留大小写形式供展示（如 Kotlin、C#, .NET）
-        if norm not in seen:
-            seen.add(norm)
-            keywords.append(tk)
+        freq[norm] = freq.get(norm, 0) + 1
+        if norm not in canonical:
+            canonical[norm] = tk  # keep original casing of first occurrence
+
+    if not freq:
+        return []
+
+    # Step 2: sort by frequency descending, then alphabetically for ties
+    sorted_norms = sorted(freq.keys(), key=lambda n: (-freq[n], n))
+
+    # Step 3: emit up to max_keywords display-form tokens
+    keywords: List[str] = []
+    for norm in sorted_norms:
+        keywords.append(canonical[norm])
         if len(keywords) >= max_keywords:
             break
 
     return keywords
+
 
 
 def derive_keywords_from_url(

@@ -12,59 +12,48 @@ try:
 except ModuleNotFoundError:
     from app.backend.data_models import validate_project_facts
 
-REQUIRED_PROJECT_FIELDS = [
-    "project_id",
-    "name",
-    "type",
-    "timeline",
-    "role",
-    "summary",
-    "highlights",
-    "tech_stack",
-    "keywords",
-    "last_updated",
-    "skills_demonstrated",
-    "related_to_roles",
-]
-
 
 def validate_project_data(data: Dict[str, Any]) -> Tuple[Optional[Any], List[str]]:
-    """Validate one project dict with required-field + model checks."""
-    errors: List[str] = []
+    """Validate one project dict.
 
+    Delegates entirely to the Pydantic model (``ProjectFacts``) which is the
+    single source of truth for required fields and type constraints.  All error
+    messages are derived from Pydantic's ``ValidationError`` so that required-
+    field lists never need to be maintained in two places.
+    """
     if not data:
         return None, ["文件为空"]
 
-    for field in REQUIRED_PROJECT_FIELDS:
-        if field not in data:
-            errors.append(f"缺少必需字段: {field}")
-
-    timeline = data.get("timeline")
-    if "timeline" in data:
-        if isinstance(timeline, dict):
-            if not timeline.get("start"):
-                errors.append("timeline.start 为空")
-            if not timeline.get("end"):
-                errors.append("timeline.end 为空")
+    try:
+        model = validate_project_facts(data)
+    except Exception as exc:
+        # Pydantic v2 raises ValidationError; convert to list of strings
+        errors: List[str] = []
+        if hasattr(exc, "errors"):
+            for e in exc.errors():
+                loc = " -> ".join(str(l) for l in e.get("loc", []))
+                msg = e.get("msg", str(e))
+                errors.append(f"{loc}: {msg}" if loc else msg)
         else:
-            errors.append("timeline 必须是对象")
+            errors = [str(exc)]
+        return None, errors
 
+    # Additional structural checks not covered by Pydantic field types
+    extra_errors: List[str] = []
     metrics = data.get("metrics")
     if isinstance(metrics, list):
         for i, m in enumerate(metrics):
             if isinstance(m, dict):
                 if "value" not in m:
-                    errors.append(f"metrics[{i}] 缺少 value")
+                    extra_errors.append(f"metrics[{i}] 缺少 value")
                 if "label" not in m:
-                    errors.append(f"metrics[{i}] 缺少 label")
+                    extra_errors.append(f"metrics[{i}] 缺少 label")
 
-    try:
-        model = validate_project_facts(data)
-    except Exception as e:
-        errors.append(f"模型校验失败: {e}")
-        model = None
+    if extra_errors:
+        return model, extra_errors
 
-    return model, errors
+    return model, []
+
 
 
 def validate_project_file(file_path: Path) -> List[str]:

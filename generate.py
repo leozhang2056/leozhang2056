@@ -352,6 +352,18 @@ except ImportError:
     from role_inference import infer_role_from_text as _infer_role_from_text
 
 
+def _strict_kb_pre_check(repo_root: Path) -> None:
+    """
+    Shared strict KB validation used by cl / email / match commands.
+    Raises ValueError if any KB file is invalid, aborting generation early.
+    """
+    try:
+        from app.backend.kb_loader import KBLoader
+    except ModuleNotFoundError:
+        from kb_loader import KBLoader  # type: ignore
+    KBLoader(repo_root).load_all(strict=True)
+
+
 def _auto_keywords_from_jd(args) -> list[str]:
     """
     如果用户没有显式提供 jd_keywords，但提供了 jd_url 或 jd_file，
@@ -558,14 +570,9 @@ async def run(args) -> None:
     elif args.command == 'cl':
         from generate_cover_letter import generate_cover_letter
 
+        repo_root = Path(__file__).parent
         if not bool(getattr(args, 'no_strict_kb', False)):
-            try:
-                from kb_loader import KBLoader  # type: ignore
-            except ModuleNotFoundError:
-                from app.backend.kb_loader import KBLoader  # type: ignore
-
-            repo_root = Path(__file__).parent
-            KBLoader(repo_root).load_all(strict=True)
+            _strict_kb_pre_check(repo_root)
 
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
@@ -595,14 +602,9 @@ async def run(args) -> None:
     elif args.command == 'email':
         from generate_application_email import generate_application_email
 
+        repo_root = Path(__file__).parent
         if not bool(getattr(args, 'no_strict_kb', False)):
-            try:
-                from kb_loader import KBLoader  # type: ignore
-            except ModuleNotFoundError:
-                from app.backend.kb_loader import KBLoader  # type: ignore
-
-            repo_root = Path(__file__).parent
-            KBLoader(repo_root).load_all(strict=True)
+            _strict_kb_pre_check(repo_root)
 
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
@@ -621,14 +623,9 @@ async def run(args) -> None:
     elif args.command == 'match':
         from match_cv_to_jds import generate_match_report_file
 
+        repo_root = Path(__file__).parent
         if not bool(getattr(args, 'no_strict_kb', False)):
-            try:
-                from kb_loader import KBLoader  # type: ignore
-            except ModuleNotFoundError:
-                from app.backend.kb_loader import KBLoader  # type: ignore
-
-            repo_root = Path(__file__).parent
-            KBLoader(repo_root).load_all(strict=True)
+            _strict_kb_pre_check(repo_root)
 
         report_path = generate_match_report_file(
             role_type=args.role,

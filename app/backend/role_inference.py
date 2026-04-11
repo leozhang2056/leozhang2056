@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 try:
     from generation_config import load_generation_config
 except ModuleNotFoundError:
@@ -11,23 +13,43 @@ except ModuleNotFoundError:
 _CFG = load_generation_config()
 _ROLE_KEYWORDS = _CFG.get("role_inference", {}).get("keywords", {})
 
+# Pre-compile word-boundary patterns for each keyword set.
+# Using \b ensures "cv" in "my_cv.pdf" or "/cv/" won't fire;
+# only standalone occurrences like "cv engineer" will match.
+def _compile_patterns(keywords: list[str]) -> list[re.Pattern]:
+    patterns = []
+    for kw in keywords:
+        # Multi-word phrases: require surrounding whitespace / start-of-string / end
+        if " " in kw:
+            # e.g. "computer vision", "spring boot"
+            pat = re.compile(r"(?<!\w)" + re.escape(kw) + r"(?!\w)", re.IGNORECASE)
+        else:
+            pat = re.compile(r"\b" + re.escape(kw) + r"\b", re.IGNORECASE)
+        patterns.append(pat)
+    return patterns
+
+
+_ANDROID_PATTERNS = _compile_patterns(_ROLE_KEYWORDS.get("android", []))
+_AI_PATTERNS      = _compile_patterns(_ROLE_KEYWORDS.get("ai", []))
+_BACKEND_PATTERNS = _compile_patterns(_ROLE_KEYWORDS.get("backend", []))
+
 
 def infer_role_from_text(text: str) -> str:
-    """Infer one of android|ai|backend|fullstack from free text."""
-    t = (text or "").lower()
-    if not t:
+    """Infer one of android|ai|backend|fullstack from free text.
+
+    Uses word-boundary regex matching so that short tokens like 'cv' in a
+    URL path or filename do not accidentally trigger an 'ai' classification.
+    """
+    t = (text or "")
+    if not t.strip():
         return "fullstack"
 
-    android_hits = tuple(_ROLE_KEYWORDS.get("android", []))
-    ai_hits = tuple(_ROLE_KEYWORDS.get("ai", []))
-    backend_hits = tuple(_ROLE_KEYWORDS.get("backend", []))
+    def _count(patterns: list[re.Pattern]) -> int:
+        return sum(1 for p in patterns if p.search(t))
 
-    def _count(hits: tuple[str, ...]) -> int:
-        return sum(1 for h in hits if h in t)
-
-    a = _count(android_hits)
-    i = _count(ai_hits)
-    b = _count(backend_hits)
+    a = _count(_ANDROID_PATTERNS)
+    i = _count(_AI_PATTERNS)
+    b = _count(_BACKEND_PATTERNS)
 
     if a >= max(i, b) and a > 0:
         return "android"

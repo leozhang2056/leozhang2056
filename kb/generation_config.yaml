@@ -98,3 +98,26 @@ project_ranking:
     school-attendance: 160
     patent-search-system: 170
 
+# Project selection policy — controls which projects are included/excluded/pinned.
+# Keeping this here means you never need to touch Python code to adjust the CV narrative.
+project_selection:
+  # Projects never shown on CV regardless of JD score
+  excluded_ids:
+    - exhibition-robot
+
+  # Projects always included; per-role overrides take precedence over 'default'
+  pinned_ids:
+    android:
+      - chatclothes
+      - forest-patrol-inspection
+      - enterprise-messaging
+      - iot-solutions
+      - smart-factory
+    default:
+      - chatclothes
+      - smart-factory
+
+  # When a slot is freed (e.g. exclusion), prefer these projects to fill it
+  preferred_replacements:
+    - smart-power
+    - iot-solutions
