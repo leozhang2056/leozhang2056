@@ -13,6 +13,9 @@ Usage examples:
   # Generate AI CV with JD keywords:
   python generate.py cv --role ai --jd-keywords Python PyTorch ONNX "model optimization"
 
+  # Noisy job boards (e.g. SEEK): paste JD into a local .txt and use --jd-file, then optional
+  # --jd-keywords aligned with kb/skills.yaml so ranking/coverage stay meaningful.
+
   # Generate Cover Letter:
   python generate.py cl --role auto --jd-url "<job-url>" --company "Entelect" --title "Senior Android Engineer"
 

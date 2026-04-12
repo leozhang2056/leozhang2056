@@ -362,8 +362,9 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     ],
     'fullstack': [
         {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 6, 'field': 'name'},
+        {'key': 'frontend',       'label_en': 'Frontend',             'label_zh': '前端',             'max': 4, 'field': 'name'},
         {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端与 API',       'max': 7, 'field': 'name'},
-        {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 7, 'field': 'name'},
+        {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 9, 'field': 'name'},
         {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
         {'key': 'methodology_practices', 'label_en': 'Quality & Practices', 'label_zh': '质量与工程实践', 'max': 5, 'field': 'name'},
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 5, 'field': 'name'},
