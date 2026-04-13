@@ -23,6 +23,15 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 
+TECH_TOKEN_WHITELIST = {
+    "python", "java", "kotlin", "javascript", "typescript", "node.js", "nodejs",
+    "react", "next.js", "angular", "angularjs", "graphql", "rest", "api",
+    "docker", "kubernetes", "azure", "aws", "gcp", "redis", "mysql", "postgresql",
+    "mongodb", "c#", "c++", "golang", "go", "jenkins", "sentry", "bugsnag",
+    "rabbitmq", "playwright", "selenium", "cursor", "claude",
+}
+
+
 def _parse_cookie_string(cookie_str: str) -> dict:
     """把 'name1=value1; name2=value2' 转为 requests 可用的 Cookie 字典。"""
     out = {}
@@ -221,15 +230,36 @@ def extract_keywords_from_text(text: str, max_keywords: int = 20) -> List[str]:
             continue
         freq[norm] = freq.get(norm, 0) + 1
         if norm not in canonical:
-            canonical[norm] = tk  # keep original casing of first occurrence
+            canonical[norm] = tk.strip().strip(".,;:")  # keep first display form, trim punctuation
 
     if not freq:
         return []
 
-    # Step 2: sort by frequency descending, then alphabetically for ties
-    sorted_norms = sorted(freq.keys(), key=lambda n: (-freq[n], n))
+    def _is_likely_technical(norm_token: str, raw_token: str) -> bool:
+        if norm_token in TECH_TOKEN_WHITELIST:
+            return True
+        if any(ch in raw_token for ch in {"+", "#", ".", "/"}):
+            return True
+        # Mixed-case/upper acronyms often indicate tech terms (API, SQL, JWT)
+        if any(ch.isupper() for ch in raw_token):
+            return True
+        return False
 
-    # Step 3: emit up to max_keywords display-form tokens
+    # Step 2: apply frequency floor for non-technical one-off tokens
+    # This helps noisy job pages (e.g. site navigation text) without dropping stack terms.
+    filtered_norms: List[str] = []
+    for norm in freq.keys():
+        raw = canonical.get(norm, norm)
+        if freq[norm] >= 2 or _is_likely_technical(norm, raw):
+            filtered_norms.append(norm)
+
+    if not filtered_norms:
+        return []
+
+    # Step 3: sort by frequency descending, then alphabetically for ties
+    sorted_norms = sorted(filtered_norms, key=lambda n: (-freq[n], n))
+
+    # Step 4: emit up to max_keywords display-form tokens
     keywords: List[str] = []
     for norm in sorted_norms:
         keywords.append(canonical[norm])

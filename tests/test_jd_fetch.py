@@ -90,6 +90,19 @@ class TestExtractKeywordsFromText:
         assert result.count("Python") == 1
         assert result.count("Java") == 1
 
+    def test_filters_singleton_noise_but_keeps_tech_terms(self):
+        text = (
+            "Career advice and salary insights for members. "
+            "Need Node.js experience. "
+            "Career growth in a collaborative team."
+        )
+        result = extract_keywords_from_text(text)
+        lowered = [kw.lower() for kw in result]
+        assert "career" in lowered
+        assert "node.js" in lowered
+        # singleton non-tech noise should be filtered by frequency floor
+        assert "salary" not in lowered
+
     def test_real_jd_sample(self):
         jd_text = """
         Senior Android Developer
