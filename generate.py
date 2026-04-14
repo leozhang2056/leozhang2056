@@ -67,6 +67,13 @@ from urllib.parse import urlparse
 _BACKEND = Path(__file__).parent / 'app' / 'backend'
 sys.path.insert(0, str(_BACKEND))
 
+# Memory/CONVERSATION_HISTORY imports
+try:
+    from memory import ConversationHistory, InteractionType
+    _HAS_MEMORY = True
+except ImportError:
+    _HAS_MEMORY = False
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -567,6 +574,17 @@ async def run(args) -> None:
             print(f"  EN (JD Annotated): {annotated_path}")
         if zh_path:
             print(f"  ZH: {zh_path}")
+        
+        # Log to conversation history
+        if _HAS_MEMORY:
+            repo_root = Path(__file__).parent
+            history = ConversationHistory(repo_root)
+            history.log(
+                type=InteractionType.CV_GENERATE,
+                input={"role": role, "company": company, "jd_keywords": jd_keywords},
+                output={"en_pdf": str(en_path), "zh_pdf": str(zh_path) if zh_path else None},
+                metadata={"max_projects": args.max_projects},
+            )
         else:
             print("  ZH: skipped (use --with-zh to generate)")
 

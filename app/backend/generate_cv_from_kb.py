@@ -104,37 +104,15 @@ MIN_JD_MATCH_PCT = 85.0
 BUNDLE_SIZE_LIMIT = 120_000
 
 
-def _strip_parenthetical_notes(text: str) -> str:
-    """
-    去掉技术名后置的括号说明（中英文括号），例如
-    ``Dify (Workflow Orchestration)`` → ``Dify``；避免 Tag 冗长，也便于单行展示。
-    """
-    if not isinstance(text, str) or not text.strip():
-        return ""
-    t = text.strip()
-    t = re.sub(r"\s*（[^）]*）\s*", " ", t)
-    t = re.sub(r"\s*\([^)]*\)\s*", " ", t)
-    return re.sub(r"\s{2,}", " ", t).strip()
-
-
-def _join_comma_items_within_char_budget(items: List[str], max_chars: int) -> str:
-    """
-    在长度上限内拼接条目，只丢整条、不在词中间截断（避免出现 ``YOLO1…`` 这种残缺）。
-    若超出预算，仅保留可完整容纳的条目，不追加省略号，避免“被截断感”。
-    """
-    if not items:
-        return ""
-    parts: List[str] = []
-    total = 0
-    for it in items:
-        sep = ", " if parts else ""
-        chunk = sep + it
-        if total + len(chunk) > max_chars:
-            break
-        parts.append(it)
-        total += len(chunk)
-    out = ", ".join(parts)
-    return out
+# Use functions from text_utils module
+from text_utils import (
+    strip_parenthetical_notes as _strip_parenthetical_notes,
+    join_items_within_budget as _join_comma_items_within_char_budget,
+    compact_tech_stack as _compact_tech_stack_one_line,
+    strip_html_tags,
+    normalize_text_for_match,
+    keyword_variant_candidates,
+)
 
 
 def _compact_tech_stack_one_line(
