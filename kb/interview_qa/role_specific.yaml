@@ -199,3 +199,100 @@ company_research_questions:
       - "Review company values and culture"
       - "Understand product offerings and target market"
       - "Know recent funding news or major announcements"
+
+  - id: foodstuffs_brief_self_intro
+    question: "Briefly describe yourself."
+    company: "Foodstuffs"
+    answer_points:
+      - "Full-stack engineer with 10+ years in Android, Java backend, and distributed systems"
+      - "Recent AUT Master's in Computer and Information Sciences (graduating Feb 2026, First Class Honours)"
+      - "Strong track record in production systems: Smart Factory platform and Enterprise Messaging at scale"
+      - "Now focused on backend/software roles in Auckland where reliability and business impact matter"
+    evidence:
+      - project: smart-factory
+        highlight: "Scaled to multi-site operations with long-term stable delivery"
+      - project: enterprise-messaging
+        highlight: "High-concurrency messaging with low-latency requirements"
+      - project: chatclothes
+        highlight: "Master's thesis submitted early with practical deployment"
+
+  - id: foodstuffs_why_apply
+    question: "What motivated you to apply for this role with Foodstuffs?"
+    company: "Foodstuffs"
+    answer_points:
+      - "Foodstuffs runs mission-critical retail and supply-chain systems where reliability has direct customer impact"
+      - "Role aligns with my background in backend services, integration, and multi-system coordination"
+      - "Interested in contributing to large-scale operational platforms that support stores and distribution"
+      - "Strong fit with my practical, delivery-focused engineering style"
+    tips:
+      - "Mention one specific team function from the JD (e.g., platform, integration, data, security)"
+      - "Keep motivation concrete: customer impact + system reliability + long-term growth in NZ"
+
+  - id: foodstuffs_microservices_experience
+    question: "Can you describe your experience with microservices architecture?"
+    company: "Foodstuffs"
+    answer_points:
+      - "Designed and evolved systems from modular monolith toward microservices as scale and domain boundaries became clear"
+      - "Used Spring Boot/Spring Cloud for service registration, routing, resilience, and service-to-service communication"
+      - "Handled cross-service consistency with event-driven workflows and compensating actions instead of distributed 2PC"
+      - "Operational focus: API contracts, observability, fault isolation, and safe incremental rollout"
+    evidence:
+      - project: smart-factory
+        highlight: "Multi-module platform with service evolution and multi-site deployment"
+      - project: enterprise-messaging
+        highlight: "Real-time communication backend under sustained load"
+    followup_prompts:
+      - "How did you split service boundaries?"
+      - "How did you handle failures between services?"
+      - "What did you monitor in production?"
+
+  - id: foodstuffs_backend_tooling_recent
+    question: "Which backend tools, frameworks, and technologies have you used recently?"
+    company: "Foodstuffs"
+    answer_points:
+      - "Languages/frameworks: Java, Spring Boot, Spring Cloud; also Node.js for selected service components"
+      - "Data: MySQL and Redis; API styles include REST and event-driven integration patterns"
+      - "Delivery stack: Docker, Jenkins, Nginx, Git-based CI/CD workflows"
+      - "Quality and operations: automated testing, logging/metrics/alerting, production troubleshooting discipline"
+    evidence:
+      - project: smart-factory
+        highlight: "Backend platform and long-term operations"
+      - project: enterprise-messaging
+        highlight: "Backend services supporting high-concurrency messaging"
+      - project: chatclothes
+        highlight: "Recent engineering work integrating AI pipeline and deployment tooling"
+
+  - id: foodstuffs_salary_expectation
+    question: "What are your salary expectations for this role?"
+    company: "Foodstuffs"
+    answer_framework:
+      - "Give a researched Auckland market range instead of a single fixed number"
+      - "State flexibility based on total package and role scope"
+      - "Reinforce interest in long-term contribution, not only base salary"
+    suggested_range_nzd:
+      - "NZD 105,000 - 130,000 (adjust based on JD seniority and responsibilities)"
+    tips:
+      - "If pressed early: provide range and ask for their budget band"
+      - "If not pressed: defer to later-stage compensation discussion"
+
+  - id: foodstuffs_work_right_nz
+    question: "Please describe the work right that you hold for employment in NZ."
+    company: "Foodstuffs"
+    answer_points:
+      - "Current: New Zealand student visa while completing Master's at AUT — state work conditions exactly as on visa label / Immigration account"
+      - "Transition: applying for Post-study Open Work Visa (postgraduate pathway); once granted, typically open full-time work for any employer"
+      - "Until new visa is granted, do not imply broader rights than student visa conditions allow; align start date and hours with HR"
+      - "Offer visa letters, application status, or INZ correspondence when HR needs verification"
+    critical_rule:
+      - "Do not guess or overstate work rights; keep this answer strictly factual."
+
+  - id: foodstuffs_landing_drive_location_fit
+    question: "This position is based at Landing Drive in Mangere. Can you tell me how this location would work for you?"
+    company: "Foodstuffs"
+    answer_points:
+      - "Live in Hillcrest (North Shore), Auckland; Mangere / Landing Drive is workable"
+      - "Commute primarily by private car or bus; plan buffer for Auckland peak traffic (give minutes only if accurate)"
+      - "Comfortable with regular onsite work and reliability for operational teams"
+      - "Flexible for early starts or urgent onsite support when needed"
+    tips:
+      - "If asked for exact commute time, use a real typical range you have measured; otherwise keep it qualitative"

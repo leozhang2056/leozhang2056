@@ -284,3 +284,90 @@ questions:
       - "Show structured learning, not just 'I read a lot'"
       - "Connect prior experience to faster learning"
       - "Mention deliverable or outcome"
+
+  - id: stay_current_with_technology
+    category: learning
+    question: "How do you keep your technical knowledge up to date?"
+    difficulty: easy
+    answer_points:
+      - "Use a layered routine: official docs/releases, trusted engineering blogs, and weekly hands-on experiments"
+      - "Convert learning into outputs: short notes, mini prototypes, or internal sharing"
+      - "Prioritize topics that map to current work instead of random trend-following"
+      - "Example: ChatClothes - moved from paper reading to LoRA experiments, then production-ready edge pipeline"
+    evidence:
+      - project: chatclothes
+        highlight: "Turned fast AI learning into a complete deployed system"
+    tips:
+      - "Show a repeatable method, not just 'I watch videos'"
+      - "Mention how you validate and apply new knowledge"
+      - "Connect learning directly to business delivery"
+
+  - id: code_quality_practice
+    category: execution
+    question: "How do you assure code quality in your team?"
+    difficulty: medium
+    answer_points:
+      - "Quality gates: coding standards, mandatory code review, CI checks, and regression tests"
+      - "Risk-based testing for critical user journeys before release"
+      - "Post-release discipline: monitoring, fast rollback path, and incident review"
+      - "Example: long-running Smart Factory platform maintained stable releases and high uptime"
+    evidence:
+      - project: smart-factory
+        highlight: "Sustained delivery quality with 99.9% uptime"
+      - project: enterprise-messaging
+        highlight: "High-concurrency releases coordinated with QA and backend teams"
+    tips:
+      - "Cover prevention, detection, and recovery"
+      - "Use one concrete release example"
+      - "Emphasize team process, not heroics"
+
+  - id: agile_workflow_experience
+    category: collaboration
+    question: "Describe the project workflow in your previous team"
+    difficulty: medium
+    answer_points:
+      - "Two-week sprint cadence with planning, daily stand-up, review/demo, and retrospective"
+      - "Backlog refinement aligned business priority with engineering effort"
+      - "Interface contracts and early integration reduced cross-team rework"
+      - "Outcome: predictable delivery across mobile, backend, and IoT dependencies"
+    evidence:
+      - project: smart-factory
+        highlight: "Cross-functional delivery over multiple years and sites"
+    tips:
+      - "Describe the real loop, not textbook terms"
+      - "Include one mechanism that improved predictability"
+      - "Tie workflow to measurable outcomes"
+
+  - id: mentor_junior_developer
+    category: leadership
+    question: "How do you support and track a junior developer's progress?"
+    difficulty: medium
+    answer_points:
+      - "Set clear 30/60/90-day goals with scoped tasks and expected outcomes"
+      - "Use pairing + code review comments as daily coaching channels"
+      - "Run weekly 1:1 check-ins for blockers, feedback, and learning plan adjustments"
+      - "Measure progress by quality, independence, and delivery reliability, not just ticket count"
+    evidence:
+      - project: smart-factory
+        highlight: "Mentored team members with structured onboarding and documentation"
+    tips:
+      - "Balance support and ownership"
+      - "Use objective checkpoints"
+      - "Show how feedback turns into action"
+
+  - id: disagree_and_commit
+    category: conflict_resolution
+    question: "How do you handle professional disagreement in a team?"
+    difficulty: medium
+    answer_points:
+      - "First align on shared goal: user impact and delivery risk"
+      - "Use evidence (metrics, prototype, or user feedback) instead of opinions"
+      - "Debate openly during planning, then commit fully once a decision is made"
+      - "If trade-offs remain, record follow-up improvement tickets instead of blocking progress"
+    evidence:
+      - project: smart-factory
+        highlight: "Resolved scope and design disagreements through phased rollout decisions"
+    tips:
+      - "Show backbone and collaboration together"
+      - "Avoid personal language"
+      - "Demonstrate 'disagree and commit' maturity"

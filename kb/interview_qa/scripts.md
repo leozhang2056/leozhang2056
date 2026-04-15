@@ -574,4 +574,237 @@
 
 ---
 
-*Last updated: 2026-03-12*
+## PART 7 — FOODSTUFFS CUSTOM SET (HR + BACKEND)
+
+---
+
+### Q34. Briefly describe yourself.
+
+**Script**
+> I'm a software engineer with over ten years of hands-on experience across Android, Java backend, and distributed systems.
+>
+> Recently, I've been completing a Master's in Computer and Information Sciences at AUT in Auckland, graduating in February 2026 with First Class Honours. My thesis project, ChatClothes, was submitted six months early and strengthened my ability to ship end-to-end systems under tight constraints.
+>
+> Before that, I built and maintained production platforms including a Smart Factory system and a high-concurrency enterprise messaging platform. I'm now focused on backend/software engineering roles in Auckland where reliability, scale, and business impact are critical.
+
+---
+
+### Q35. What motivated you to apply for this role with Foodstuffs?
+
+**Script**
+> I'm motivated by roles where engineering has direct day-to-day impact, and Foodstuffs is exactly that kind of environment.
+>
+> The scale of retail and supply-chain operations means backend reliability, integration quality, and operational stability genuinely matter to stores and customers. That's a strong match for my background in building production systems that need to run consistently over the long term.
+>
+> I'm also looking for a role where I can contribute in Auckland for the long term, and Foodstuffs' technology focus and operational complexity make this a very good fit for my experience and goals.
+
+---
+
+### Q36. Can you describe your experience with microservices architecture?
+
+**Script**
+> In my backend work, I typically treat microservices as an evolution path, not a default starting point.
+>
+> On the Smart Factory platform, we began with a more centralized design and then separated services as domain boundaries and scale requirements became clearer. I worked with Spring Boot and Spring Cloud for service organization, routing, and resilience, and focused on clean API contracts between modules.
+>
+> One key challenge was cross-service consistency. Instead of using heavyweight distributed transactions, we used event-driven workflows with compensating actions to handle failures safely. Operationally, I paid close attention to observability, rollback safety, and fault isolation so problems in one area would not cascade across the system.
+
+---
+
+### Q37. Which backend tools, frameworks, and technologies have you used recently?
+
+**Script**
+> Recently, my core backend stack has been Java with Spring Boot and Spring Cloud, with some Node.js in selected components.
+>
+> For data, I have used MySQL and Redis extensively. For service integration, I've worked with REST APIs and event-driven patterns, depending on latency and coupling requirements.
+>
+> On delivery and operations, I've used Docker, Jenkins, Nginx, and Git-based CI/CD workflows. I also put strong emphasis on testability, logging, metrics, and alerting, because in production systems reliability depends as much on observability as on code quality.
+
+---
+
+### Q38. What are your salary expectations for this role?
+
+**Script**
+> Based on my research of the Auckland market and the scope of this role, I'm targeting a range around NZD 105,000 to 130,000.
+>
+> That said, I'm flexible depending on the full package, role scope, and growth path. For me, the fit of the role and long-term contribution opportunity are also very important.
+
+---
+
+### Q39. Please describe the work right that you hold for employment in NZ.
+
+**Script (Leo — Student visa → Post-study Open Work Visa)**
+> Right now I'm on a New Zealand student visa while I complete my Master's at AUT.
+>
+> I'm transitioning to a Post-study Open Work Visa — the standard pathway after eligible postgraduate study — and I'm actively working through that application with Immigration New Zealand. Once it's granted, I expect to have open work rights to work full-time for any employer, which is what this role would need.
+>
+> Until the new visa is granted, my ability to work follows the conditions printed on my current student visa. I'm happy to align those details with your HR team so we're fully compliant, and I can provide visa letters or application status as needed.
+
+---
+
+### Q40. This role is based at Landing Drive in Mangere. How does this location work for you?
+
+**Script (Leo — Hillcrest, car or bus)**
+> That location works well for me.
+>
+> I live in Hillcrest on the North Shore, and I plan to commute to Landing Drive mainly by car or by bus, depending on the day. I'm used to Auckland peak-hour variability, so I build buffer time and aim to be consistently on time for onsite collaboration.
+>
+> I also understand this site is connected to operational work, so I'm comfortable being flexible when the team needs earlier starts or urgent onsite support.
+
+---
+
+### Foodstuffs — Combined HR pitch (~90 seconds)
+
+**Script**
+> I'm Leo, a software engineer with over ten years of experience across Android, Java backend, and distributed systems. I'm finishing a Master's at AUT in Auckland — First Class Honours, graduating February 2026 — and my thesis work strengthened how I ship end-to-end systems under constraints.
+>
+> I'm applying to Foodstuffs because your technology underpins retail and supply-chain operations at real scale: reliability, integration, and operational stability genuinely matter here, and that's where my production background is strongest — from Smart Factory platforms to high-concurrency messaging backends.
+>
+> I'm Auckland-based in Hillcrest, Mangere is workable for me by car or bus, and I'm transitioning from a student visa to a Post-study Open Work Visa so I can work full-time for any employer once it's granted. I'm targeting roughly NZD 105k–130k but I'm flexible on total package if the role is a strong mutual fit.
+
+---
+
+### Foodstuffs — Technical hiring-manager intro (~2 minutes)
+
+**Script**
+> Technically, I spend most of my backend time in Java with Spring Boot and Spring Cloud, with MySQL and Redis, plus Docker, Jenkins, and Nginx in delivery. I've also used Node.js where it fit specific service needs.
+>
+> On architecture, I don't treat microservices as a default — I treat them as an evolution. On Smart Factory–style platforms, we started more centralized and split services as domain boundaries and scale needs became clear. I care a lot about API contracts, fault isolation, and safe rollout.
+>
+> For distributed workflows, I prefer pragmatic consistency: event-driven steps and compensating actions rather than heavy two-phase commit, and I pair that with strong observability — logging, metrics, and alerting — because production reliability is as much about operations as code.
+>
+> Separately, my recent Master's work on ChatClothes is relevant in a different way: it reinforced how I integrate components end-to-end, optimize for constraints, and document systems so other people can run them. For Foodstuffs, I'm looking to apply that engineering discipline to backend services that support real operations day to day.
+
+---
+
+### Foodstuffs — Follow-up one-liners (quick)
+
+| If they ask… | One-liner |
+| --- | --- |
+| "Can you start immediately?" | "My notice period isn't the constraint — visa/work-right timing is; I'm happy to align start date with HR once we confirm conditions." |
+| "Are you legally allowed to work full-time today?" | "Today I'm on a student visa with specific conditions; full-time open work is what the Post-study Open Work Visa is for, and I'm actively progressing that application." |
+| "Prove microservices — what did you own?" | "I owned service boundaries and interfaces, rollout and operational behavior, and cross-service workflows — not just coding a single endpoint." |
+| "Biggest microservices pain?" | "Debugging failures across services — that's why contracts, idempotency, and observability are non-negotiable for me." |
+| "Why not remote-only?" | "I'm happy with hybrid or onsite when the work is operational; Mangere is workable and I optimize commute time by mode." |
+
+---
+
+## PART 8 — COMPETENCY-BASED SUPPLEMENT
+
+---
+
+### Q41. How do you keep your technical knowledge up to date?
+
+**Script**
+> I treat learning as a weekly engineering routine, not an occasional activity.
+>
+> I usually combine three layers: first, official release notes and documentation for the tools I actively use; second, a small set of trusted engineering blogs and talks; and third, hands-on experiments where I build a tiny prototype to test whether the idea is practical.
+>
+> I also convert learning into output. If I cannot summarize it clearly in notes or share it with teammates, I assume I do not understand it deeply enough.
+>
+> A recent example is ChatClothes. I did not stop at reading diffusion papers. I moved quickly to LoRA experiments, measured trade-offs, and then integrated the result into an edge-deployed pipeline. That helped me turn new knowledge into production value.
+
+---
+
+### Q42. How do you assure code quality in your team?
+
+**Script**
+> I approach quality in three layers: prevention, detection, and recovery.
+>
+> For prevention, we keep coding standards clear, enforce pull-request reviews, and use small, focused changes. For detection, we rely on CI checks, automated tests, and risk-based manual verification for critical user paths before release.
+>
+> For recovery, we prepare rollback paths and monitor production signals closely so we can react quickly if something slips through.
+>
+> In long-running projects like Smart Factory, this discipline was essential. It allowed us to keep delivery speed while maintaining stable releases and high uptime over multiple years.
+
+---
+
+### Q43. Describe your project workflow in your previous team.
+
+**Script**
+> Our default rhythm was a two-week sprint cycle: backlog refinement, sprint planning, daily stand-up, review/demo, and retrospective.
+>
+> Refinement was important because it aligned business priority with engineering complexity before implementation started. During sprint execution, we tracked dependencies explicitly across backend, mobile, and IoT workstreams.
+>
+> We also used interface contracts and early integration demos to surface mismatches early instead of discovering them at release time.
+>
+> That workflow gave us predictable delivery and reduced cross-team rework in the Smart Factory program.
+
+---
+
+### Q44. How do you support and track a junior developer's progress?
+
+**Script**
+> I use a structured but practical approach.
+>
+> First, I set clear 30/60/90-day expectations so the junior developer knows what "good progress" looks like. Then I combine pair programming, focused code reviews, and weekly 1:1 check-ins to identify blockers early.
+>
+> I track progress with three signals: code quality, level of independence, and reliability of delivery - not just number of completed tickets.
+>
+> I also document recurring guidance, so onboarding knowledge becomes reusable team assets rather than one-time verbal advice.
+
+---
+
+### Q45. How do you handle disagreement in a team?
+
+**Script**
+> I separate the discussion into two phases: open debate, then full commitment.
+>
+> In the debate phase, I focus on evidence - user impact, delivery risk, and measurable trade-offs - instead of personal preference. I will challenge ideas directly if needed, but I keep the tone professional and solution-focused.
+>
+> Once a decision is made, I commit to execution even if my original view was different. If there are known trade-offs, I document them and create follow-up improvement tickets.
+>
+> This "disagree and commit" habit helps teams move fast without hiding important concerns.
+
+---
+
+## PART 9 — HR QUICK ANSWERS (30-45 SECONDS)
+
+---
+
+### Q41-Quick. How do you keep your technical knowledge up to date?
+
+**Quick Script (30-45s)**
+> I keep learning through a weekly routine: official docs, a few trusted engineering sources, and one small hands-on experiment.  
+> I also force output - notes, a demo, or team sharing - so I know I truly understand it.  
+> For example, in ChatClothes I moved from reading diffusion papers to LoRA experiments and then shipped an edge-ready pipeline.
+
+---
+
+### Q42-Quick. How do you assure code quality in your team?
+
+**Quick Script (30-45s)**
+> I use a three-layer approach: prevention, detection, and recovery.  
+> Prevention is standards and PR review; detection is CI and tests; recovery is monitoring plus rollback readiness.  
+> This discipline helped us keep Smart Factory releases stable over years while still delivering quickly.
+
+---
+
+### Q43-Quick. Describe your project workflow in your previous team.
+
+**Quick Script (30-45s)**
+> We worked in two-week sprints with refinement, planning, daily stand-up, review, and retrospective.  
+> The key was early dependency alignment across backend, mobile, and IoT, plus interface contracts before coding.  
+> That made delivery more predictable and reduced late-stage integration issues.
+
+---
+
+### Q44-Quick. How do you support and track a junior developer's progress?
+
+**Quick Script (30-45s)**
+> I set clear 30/60/90-day goals, then support with pairing, focused code reviews, and weekly 1:1 check-ins.  
+> I measure progress by code quality, independence, and delivery reliability - not just ticket count.  
+> I also document repeat guidance so onboarding gets faster for the whole team.
+
+---
+
+### Q45-Quick. How do you handle disagreement in a team?
+
+**Quick Script (30-45s)**
+> I use "debate openly, commit fully."  
+> During discussion I focus on evidence - user impact, risk, and trade-offs - not personal preference.  
+> After a decision is made, I commit to execution and log follow-up improvements if needed, so the team keeps moving.
+
+---
+
+*Last updated: 2026-04-15 (Foodstuffs: visa + Hillcrest commute finalized in Q39–Q40)*
