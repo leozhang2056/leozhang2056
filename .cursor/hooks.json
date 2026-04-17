@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "python .cursor/hooks/session_memory_start.py",
+        "timeout": 10
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "python .cursor/hooks/session_memory_end.py",
+        "timeout": 10
+      }
+    ]
+  }
+}

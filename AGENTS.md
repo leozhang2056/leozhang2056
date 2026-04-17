@@ -4,6 +4,17 @@
 - This repo is a KB-driven "resume compiler": structured YAML facts in `kb/` + `projects/*/facts.yaml` are transformed into CV/cover-letter/email outputs (not handwritten each time).
 - Treat generated artifacts in `outputs/` and templates in `templates/` as outputs/reference, not truth sources.
 
+## Layered Memory Startup (Important)
+- To reduce cold-start scanning, read in this fixed order:
+  1. `memory/L0_BOOTSTRAP.md`
+  2. `memory/L1_SESSION_STATE.md`
+  3. `memory/L2_DEEP_INDEX.md` (then jump to only necessary deep files)
+- Do not load large documents by default if L0/L1 already provide enough execution context.
+- Keep memory layers clean:
+  - L0 = stable minimal facts + startup protocol
+  - L1 = current session continuity (goal/progress/next action)
+  - L2 = deep-document index only (no duplicated long content)
+
 ## Big Picture Architecture
 - Single entrypoint: `generate.py` dispatches subcommands (`cv`, `cl`, `email`, `interview`, `match`, `cv-iterate`) and injects `app/backend` into import path.
 - Core pipeline lives in `app/backend/generate_cv_from_kb.py`:
