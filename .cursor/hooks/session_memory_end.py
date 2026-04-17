@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import threading
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -31,8 +32,25 @@ STOP_TOKENS = {
 }
 
 
-def _read_stdin_json() -> dict:
-    raw = sys.stdin.read().strip()
+def _read_stdin_json(timeout_sec: float = 1.5) -> dict:
+    """Best-effort stdin read.
+
+    Hooks provide JSON via stdin, but manual command execution may leave stdin open
+    and block forever. This timeout keeps the script non-blocking in both modes.
+    """
+
+    buf: dict[str, str] = {"raw": ""}
+
+    def _reader() -> None:
+        try:
+            buf["raw"] = sys.stdin.read()
+        except Exception:
+            buf["raw"] = ""
+
+    t = threading.Thread(target=_reader, daemon=True)
+    t.start()
+    t.join(timeout_sec)
+    raw = (buf.get("raw") or "").strip()
     if not raw:
         return {}
     try:
@@ -305,6 +323,24 @@ def _weekly_compact(learning_queue: Path, weekly_file: Path, state_file: Path, t
     return True, len(top)
 
 
+def _retain_recent_sections(path: Path, section_prefix: str, keep: int) -> int:
+    """Keep only recent N markdown sections by heading prefix."""
+    if not path.exists():
+        return 0
+    lines = path.read_text(encoding="utf-8").splitlines()
+    idx: list[int] = []
+    for i, line in enumerate(lines):
+        if line.startswith(section_prefix):
+            idx.append(i)
+    if len(idx) <= keep:
+        return 0
+    cut_count = len(idx) - keep
+    cut_line = idx[cut_count]
+    new_lines = lines[: max(0, idx[0])] + lines[cut_line:]
+    path.write_text("\n".join(new_lines).rstrip() + "\n", encoding="utf-8")
+    return cut_count
+
+
 def main() -> int:
     payload = _read_stdin_json()
     root = Path(__file__).resolve().parents[2]
@@ -332,6 +368,8 @@ def main() -> int:
     failure_count = _append_failure_patterns(failure_file, summary, ts)
     merged, promoted, merged_line = _daily_merge_learning(learning_queue, evolved_rules, merge_state, today)
     compacted, compact_count = _weekly_compact(learning_queue, weekly_file, merge_state, now)
+    pruned_session = _retain_recent_sections(session_state, "## Session Memory - ", keep=120)
+    pruned_learning = _retain_recent_sections(learning_queue, "## Learning Candidate - ", keep=240)
 
     with log_file.open("a", encoding="utf-8") as f:
         f.write(
@@ -339,7 +377,7 @@ def main() -> int:
             f"missing={','.join(missing) if missing else '-'} "
             f"daily_merge={'yes' if merged else 'no'} promoted={len(promoted)} merged_line={merged_line} "
             f"weekly_compact={'yes' if compacted else 'no'} weekly_items={compact_count} "
-            f"failure_patterns={failure_count}\n"
+            f"failure_patterns={failure_count} pruned_session={pruned_session} pruned_learning={pruned_learning}\n"
         )
     return 0
 

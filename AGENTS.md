@@ -44,6 +44,7 @@ python generate.py email --role fullstack --company "Acme"
 python generate.py match --role auto --jd-file jd.txt
 python generate.py interview --category technical
 ```
+- After each `cv` run, the generator prints a **post-generation check** (fluency heuristics, HTML layout signals, JD keyword coverage) and writes `*_POST_CHECK.md` next to the PDF. Use `python generate.py cv ... --no-post-check` to skip.
 - Run tests:
 ```bash
 pytest

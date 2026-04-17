@@ -39,6 +39,9 @@ Usage examples:
   # LLM loop: extract text from PDF + JD → OpenAI JSON edits → patch KB → new PDF:
   # Requires OPENAI_API_KEY (optional OPENAI_BASE_URL, OPENAI_MODEL); install pypdf.
   python generate.py cv-iterate --pdf outputs/.../CV_....pdf --jd-file jd.txt --role android --company "Acme"
+
+  # Multi-agent orchestration: pre-discussion + post-review + arbiter:
+  python generate.py cv-best --role android --jd-file jd.txt --company "Acme" --auto-refine
 Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
@@ -162,6 +165,11 @@ def build_parser() -> argparse.ArgumentParser:
         '--no-strict-kb',
         action='store_true',
         help='Disable strict KB validation before generating the CV (fail-fast).',
+    )
+    cv_parser.add_argument(
+        '--no-post-check',
+        action='store_true',
+        help='Skip post-generation checks (fluency/layout/JD coverage) and *_POST_CHECK.md.',
     )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
@@ -350,6 +358,32 @@ def build_parser() -> argparse.ArgumentParser:
     cit_parser.add_argument(
         '--model', default=None,
         help='Chat model (default: env OPENAI_MODEL or gpt-4o-mini)',
+    )
+
+    # ── cv-best (multi-agent discuss + review + arbitration) ───────────────
+    best_parser = sub.add_parser(
+        'cv-best',
+        help='Multi-agent orchestration: pre-generation discussion + post-generation review',
+    )
+    best_parser.add_argument(
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Target role type (default: auto; inferred from JD/title)',
+    )
+    best_parser.add_argument('--title', default=None, help='Target job title')
+    best_parser.add_argument('--company', default=None, help='Company name')
+    best_parser.add_argument('--jd-url', default=None, help='JD URL')
+    best_parser.add_argument('--jd-file', default=None, help='Local JD text file')
+    best_parser.add_argument('--jd-keywords', nargs='*', dest='jd_keywords', metavar='KW')
+    best_parser.add_argument('--max-keywords', type=int, default=24)
+    best_parser.add_argument('--max-projects', type=int, default=6)
+    best_parser.add_argument('--output', default=None, help='Final PDF output path')
+    best_parser.add_argument('--min-jd-match-pct', type=float, default=85.0)
+    best_parser.add_argument('--model', default=None, help='LLM model for multi-agent orchestration')
+    best_parser.add_argument(
+        '--auto-refine',
+        action='store_true',
+        help='If arbiter says needs_refine, run one auto-refine round (cv-iterate logic).',
     )
 
     return parser
@@ -567,6 +601,7 @@ async def run(args) -> None:
             write_review_bundle=bool(getattr(args, 'review_bundle', False)),
             keep_html=bool(getattr(args, 'keep_html', False)),
             strict_kb=not bool(getattr(args, 'no_strict_kb', False)),
+            run_post_check=not bool(getattr(args, 'no_post_check', False)),
         )
         print(f"\nDone.")
         print(f"  EN: {Path(en_path).resolve()}")
@@ -663,6 +698,46 @@ async def run(args) -> None:
     elif args.command == 'cv-iterate':
         from cv_auto_review_iterate import run_cv_iterate
         await run_cv_iterate(args)
+
+    elif args.command == 'cv-best':
+        from cv_multi_agent_pipeline import run_cv_best_pipeline
+        jd_keywords = _auto_keywords_from_jd(args)
+        role = _auto_role(args)
+        company = _auto_company(args)
+        cv_output = _normalize_cv_output_path(args.output, role=role, company=company)
+
+        jd_text = ""
+        if getattr(args, "jd_file", None):
+            try:
+                from jd_fetch import load_jd_text_from_file  # type: ignore
+            except Exception:
+                from app.backend.jd_fetch import load_jd_text_from_file  # type: ignore
+            jd_text = load_jd_text_from_file(args.jd_file) or ""
+        elif getattr(args, "jd_url", None):
+            try:
+                from jd_fetch import fetch_jd_text_from_url, _get_linkedin_cookies  # type: ignore
+            except Exception:
+                from app.backend.jd_fetch import fetch_jd_text_from_url, _get_linkedin_cookies  # type: ignore
+            jd_text = fetch_jd_text_from_url(args.jd_url, cookies=_get_linkedin_cookies()) or ""
+        if not jd_text:
+            jd_text = "Keywords-only context:\n" + ", ".join(jd_keywords or [])
+
+        result = await run_cv_best_pipeline(
+            role_type=role,
+            company_name=company,
+            target_role_title=getattr(args, "title", None),
+            jd_text=jd_text,
+            jd_keywords=jd_keywords or [],
+            max_projects=int(getattr(args, "max_projects", 6)),
+            output_path=cv_output,
+            min_jd_match_pct=float(getattr(args, "min_jd_match_pct", 85.0)),
+            model=getattr(args, "model", None),
+            auto_refine=bool(getattr(args, "auto_refine", False)),
+        )
+        print("\nDone.")
+        print(f"  FINAL PDF: {Path(result.final_pdf).resolve()}")
+        print(f"  REVIEW REPORT: {Path(result.report_md).resolve()}")
+        print(f"  GATE: {'PASS' if result.gate_pass else 'FAIL'} ({result.final_score:.1f})")
 
 
 def main():

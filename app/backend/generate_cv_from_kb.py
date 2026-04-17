@@ -73,6 +73,24 @@ except ImportError:
     except ImportError:
         ENHANCED_VALIDATOR_AVAILABLE = False
 
+try:
+    from cv_post_generation_check import (
+        build_post_check_markdown,
+        print_post_check_summary,
+        run_post_generation_check,
+    )
+    POST_CHECK_AVAILABLE = True
+except ImportError:
+    try:
+        from app.backend.cv_post_generation_check import (
+            build_post_check_markdown,
+            print_post_check_summary,
+            run_post_generation_check,
+        )
+        POST_CHECK_AVAILABLE = True
+    except ImportError:
+        POST_CHECK_AVAILABLE = False
+
 
 # ============================================================================
 # 常量定义
@@ -315,6 +333,7 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'mobile_platform_tools', 'label_en': 'Mobile & Release', 'label_zh': '移动端与发布', 'max': 5, 'field': 'name'},
         {'key': 'methodology_practices', 'label_en': 'Practices',    'label_zh': '工程实践',         'max': 3, 'field': 'name'},
         {'key': 'programming_languages', 'label_en': 'Languages',    'label_zh': '编程语言',         'max': 5, 'field': 'name'},
+        {'key': 'frontend',       'label_en': 'Cross-platform / Web', 'label_zh': '跨平台 / Web',     'max': 3, 'field': 'name'},
         {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
         {'key': 'backend',        'label_en': 'API Integration',      'label_zh': 'API 集成',        'max': 6, 'field': 'name'},
         {'key': 'devops',         'label_en': 'DevOps & CI/CD',       'label_zh': 'DevOps & CI/CD',  'max': 7, 'field': 'name'},
@@ -339,15 +358,14 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
     ],
     'fullstack': [
-        {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 6, 'field': 'name'},
-        {'key': 'frontend',       'label_en': 'Frontend',             'label_zh': '前端',             'max': 4, 'field': 'name'},
-        {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端与 API',       'max': 7, 'field': 'name'},
-        {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 9, 'field': 'name'},
-        {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
-        {'key': 'methodology_practices', 'label_en': 'Quality & Practices', 'label_zh': '质量与工程实践', 'max': 5, 'field': 'name'},
-        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 5, 'field': 'name'},
-        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 4, 'field': 'name'},
-        {'key': 'iot_hardware',   'label_en': 'IoT / Hardware',       'label_zh': 'IoT / 硬件',      'max': 4, 'field': 'name'},
+        {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 5, 'field': 'name'},
+        {'key': 'frontend',       'label_en': 'Frontend',             'label_zh': '前端',             'max': 3, 'field': 'name'},
+        {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端与 API',       'max': 5, 'field': 'name'},
+        {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 6, 'field': 'name'},
+        {'key': 'methodology_practices', 'label_en': 'Quality & Practices', 'label_zh': '质量与工程实践', 'max': 3, 'field': 'name'},
+        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 3, 'field': 'name'},
+        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 3, 'field': 'name'},
+        {'key': 'iot_hardware',   'label_en': 'IoT / Hardware',       'label_zh': 'IoT / 硬件',      'max': 3, 'field': 'name'},
     ],
 }
 
@@ -446,6 +464,49 @@ def generate_skills_section(
     lines: List[str] = []
     kws_lower = [k.lower() for k in (jd_keywords or [])]
 
+    def _prioritize_by_jd(names: List[str]) -> List[str]:
+        if not jd_keywords:
+            return names
+        hit = [n for n in names if any(k in n.lower() for k in kws_lower)]
+        miss = [n for n in names if n not in hit]
+        return hit + miss
+
+    # fullstack：中度合并技能行；保持密度同时避免单行过长换行导致版面空洞
+    if role_type == 'fullstack':
+        merged_rows = [
+            ('core', 'Core', '核心', ['programming_languages', 'backend'], 8),
+            ('frontend', 'Frontend', '前端', ['frontend'], 4),
+            ('delivery', 'DevOps & Delivery', 'DevOps 与交付', ['devops', 'methodology_practices'], 8),
+            ('ai_tools', 'AI / Tooling', 'AI / 工具链', ['ai_ml', 'ai_coding_tools'], 6),
+            ('iot', 'IoT / Hardware', 'IoT / 硬件', ['iot_hardware'], 3),
+        ]
+        for _, label_en, label_zh, keys, max_count in merged_rows:
+            merged_names: List[str] = []
+            seen = set()
+            for key in keys:
+                extract_cap = max_count * 2 if key == 'devops' else max_count
+                raw = skills_data.get(key)
+                if not raw:
+                    continue
+                names = _extract_skill_names(raw, extract_cap)
+                if role_type == 'fullstack' and key == 'devops':
+                    names = [
+                        n for n in names
+                        if n not in {'IIS', 'Windows Server', 'Linux System Administration'}
+                        and 'administration' not in n.lower()
+                    ]
+                for n in names:
+                    k = n.lower().strip()
+                    if k and k not in seen:
+                        seen.add(k)
+                        merged_names.append(n)
+            merged_names = _prioritize_by_jd(merged_names)[:max_count]
+            if not merged_names:
+                continue
+            label = label_en if lang == 'en' else label_zh
+            lines.append(f'<strong>{label}:</strong> {", ".join(merged_names)}')
+        return '<br>\n        '.join(lines)
+
     for cfg in config:
         key = cfg['key']
         # Android targeted CVs: hide explicit testing row unless JD asks for testing.
@@ -461,15 +522,25 @@ def generate_skills_section(
         if not raw:
             continue
 
-        names = _extract_skill_names(raw, cfg['max'])
+        extract_cap = cfg['max']
+        if role_type == 'fullstack' and key == 'devops':
+            extract_cap = cfg['max'] * 2
+        names = _extract_skill_names(raw, extract_cap)
         if not names:
             continue
 
+        # fullstack：省略过于基础/人人会写的项，避免 DevOps 行过长换行
+        if role_type == 'fullstack' and key == 'devops':
+            names = [
+                n for n in names
+                if n not in {'IIS', 'Windows Server', 'Linux System Administration'}
+                and 'administration' not in n.lower()
+            ]
+            if not names:
+                continue
+
         # JD 命中的技能排前面
-        if jd_keywords:
-            hit = [n for n in names if any(k in n.lower() for k in kws_lower)]
-            miss = [n for n in names if n not in hit]
-            names = hit + miss
+        names = _prioritize_by_jd(names)
 
         names = names[:cfg['max']]
         lines.append(f'<strong>{label}:</strong> {", ".join(names)}')
@@ -1846,7 +1917,7 @@ def generate_education_section(profile: Dict, lang: str = 'en') -> str:
 
 
 # ---------------------------------------------------------------------------
-# Licenses & Certifications + Publications
+# Licenses & Certifications + Publications + Interests
 # ---------------------------------------------------------------------------
 
 def _achievement_year_sort_key(item: Dict) -> int:
@@ -1899,24 +1970,18 @@ def generate_publications_section(achievements: Dict, lang: str = 'en') -> str:
 
     lines = []
     for pub in pubs:
-        title  = pub.get('title', '')
-        venue  = pub.get('venue', '')
-        year   = pub.get('year', '')
-        ptype  = pub.get('type', '')
-        doi    = pub.get('doi', '')
-        url    = pub.get('url', '')
-        status = pub.get('status', '')
+        title = pub.get('title', '')
+        venue = pub.get('venue', '')
+        year = pub.get('year', '')
+        doi = pub.get('doi', '')
+        url = pub.get('url', '')
 
-        # 链接：标题可点击，同时显式展示链接文本，便于 HR 打印/复制
         link = f"https://doi.org/{doi}" if doi else (url or "")
         title_html = (
             f'<a href="{html.escape(link, quote=True)}" style="color:#1a3a6a;">{html.escape(str(title))}</a>'
             if link
             else html.escape(str(title))
         )
-
-        # 不显示状态标签（如 Under review），保持展示简洁
-        suffix = ""
 
         year_text = html.escape(str(year))
         venue_text = html.escape(str(venue))
@@ -1931,13 +1996,27 @@ def generate_publications_section(achievements: Dict, lang: str = 'en') -> str:
 
         lines.append(
             f'<li><div class="lc-row lc-row-pub">'
-            f'<span><strong>{title_html}</strong>{suffix}<br>'
+            f'<span><strong>{title_html}</strong><br>'
             f'<span style="color:#444;font-size:9.5pt;">{venue_year}</span>{link_html}</span>'
             f'<span class="lc-date"></span>'
             f'</div></li>'
         )
 
     return '\n'.join(lines)
+
+
+def generate_interests_section(profile: Dict, lang: str = 'en') -> str:
+    """从 profile.yaml 生成 Interests（始终放在最后，低优先级补充信息）。"""
+    career = profile.get('career_identity', {}) if isinstance(profile, dict) else {}
+    if lang == 'zh':
+        interests = career.get('interests_zh') or []
+    else:
+        interests = career.get('interests_en') or []
+
+    if not interests or not isinstance(interests, list):
+        return ''
+
+    return '\n'.join(f'<li>{html.escape(str(x))}</li>' for x in interests if str(x).strip())
 
 
 # ---------------------------------------------------------------------------
@@ -2341,6 +2420,7 @@ def generate_html_from_kb(
             'edu':      'Education',
             'licenses': 'Licenses & Certifications',
             'pub':      'Publications',
+            'interests': 'Interests',
         },
         'zh': {
             'summary':  '个人简介',
@@ -2349,6 +2429,7 @@ def generate_html_from_kb(
             'edu':      '教育背景',
             'licenses': '证书与认证',
             'pub':      '发表成果',
+            'interests': '兴趣',
         },
     }
     lbl = labels.get(lang, labels['en'])
@@ -2403,6 +2484,15 @@ def generate_html_from_kb(
         f'<div class="section-title">{lbl["pub"]}</div>\n'
         f'  <ul class="lc-list">\n{pub_html}\n  </ul>'
         if pub_html
+        else ''
+    )
+    interests_html = generate_interests_section(profile, lang)
+    career = profile.get('career_identity', {}) if isinstance(profile, dict) else {}
+    include_interests = bool(interests_html) and bool(career.get('include_interests_in_cv', False))
+    interests_section = (
+        f'<div class="section-title">{lbl["interests"]}</div>\n'
+        f'  <ul class="lc-list">\n{interests_html}\n  </ul>'
+        if include_interests
         else ''
     )
 
@@ -2499,6 +2589,8 @@ def generate_html_from_kb(
   </ul>
 
   {pub_section}
+
+  {interests_section}
 
 </body>
 </html>'''
@@ -3066,6 +3158,7 @@ async def generate_cv_from_kb(
     write_review_bundle: bool = False,
     keep_html: bool = False,
     strict_kb: bool = True,
+    run_post_check: bool = True,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -3084,6 +3177,7 @@ async def generate_cv_from_kb(
         write_review_bundle: 是否写出供第二个 AI 评审的 Markdown 包（默认 False）
         keep_html: 为 True 时保留与 PDF 同名的中间 .html，便于核对版式（默认删中间件）
         strict_kb: 为 True 时在生成前进行 KB 严格校验，失败则直接中止生成（默认 True）
+        run_post_check: 为 True 时在生成英文 PDF 后运行流畅度/版式/JD 覆盖检查并写出 *_POST_CHECK.md（默认 True）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
     _min_slots = 3 if role_type == "android" else 2
@@ -3156,6 +3250,26 @@ async def generate_cv_from_kb(
     _print_quality_metrics(html_en, safe_jd_keywords, role_type, min_target_pct=min_jd_match_pct)
 
     rb_hits, rb_misses, rb_cov = _jd_match_hits_misses_coverage(html_en, safe_jd_keywords)
+    if run_post_check and POST_CHECK_AVAILABLE:
+        try:
+            post_report = run_post_generation_check(
+                html_en,
+                safe_jd_keywords,
+                rb_hits,
+                rb_misses,
+                rb_cov,
+                min_jd_match_pct,
+            )
+            print_post_check_summary(post_report, min_jd_match_pct)
+            post_md_path = str(Path(en_path).with_name(f"{Path(en_path).stem}_POST_CHECK.md"))
+            with open(post_md_path, "w", encoding="utf-8") as pf:
+                pf.write(build_post_check_markdown(post_report, min_jd_match_pct))
+            print(f"  POST CHECK MD → {post_md_path}")
+        except Exception as e:
+            print(f"  Warning: post-generation check failed: {e}")
+    elif run_post_check and not POST_CHECK_AVAILABLE:
+        print("  POST CHECK → skipped (cv_post_generation_check not importable)")
+
     if write_review_bundle:
         bundle_md = build_cv_review_bundle_markdown(
             repo_root=repo_root,

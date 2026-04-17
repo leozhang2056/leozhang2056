@@ -10,7 +10,8 @@
     "sessionEnd": [
       {
         "command": "python .cursor/hooks/session_memory_end.py",
-        "timeout": 10
+        "timeout": 10,
+        "failClosed": true
       }
     ]
   }
