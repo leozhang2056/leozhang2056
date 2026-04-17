@@ -719,6 +719,8 @@ async def run(args) -> None:
             except Exception:
                 from app.backend.jd_fetch import fetch_jd_text_from_url, _get_linkedin_cookies  # type: ignore
             jd_text = fetch_jd_text_from_url(args.jd_url, cookies=_get_linkedin_cookies()) or ""
+        if not jd_text and not (jd_keywords or []):
+            raise SystemExit("cv-best requires JD context: provide --jd-file, --jd-url, or --jd-keywords.")
         if not jd_text:
             jd_text = "Keywords-only context:\n" + ", ".join(jd_keywords or [])
 

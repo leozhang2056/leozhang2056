@@ -11,13 +11,29 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from generate_cv_from_kb import generate_cv_from_kb
 from cv_auto_review_iterate import extract_text_from_pdf, iterate_cv_from_pdf_jd
+
+
+def _parse_json_object(raw: str) -> Dict[str, Any]:
+    s = (raw or "").strip()
+    try:
+        return json.loads(s)
+    except Exception:
+        pass
+    m = re.search(r"```(?:json)?\s*([\s\S]*?)```", s)
+    if m:
+        return json.loads(m.group(1).strip())
+    m2 = re.search(r"(\{[\s\S]*\})\s*$", s)
+    if m2:
+        return json.loads(m2.group(1))
+    raise ValueError(f"Invalid JSON response: {s[:300]!r}")
 
 
 def _openai_chat_json(
@@ -50,7 +66,7 @@ def _openai_chat_json(
     resp.raise_for_status()
     data = resp.json()
     content = data["choices"][0]["message"]["content"]
-    return json.loads(content)
+    return _parse_json_object(content)
 
 
 PRE_AGENT_PROMPTS = [
@@ -157,6 +173,48 @@ def _read_if_exists(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="ignore")
 
 
+def _collect_str_list(v: Any) -> List[str]:
+    if isinstance(v, str) and v.strip():
+        return [v.strip()]
+    if isinstance(v, list):
+        return [str(x).strip() for x in v if str(x).strip()]
+    return []
+
+
+def _apply_pre_consensus(
+    pre_outputs: List[Dict[str, Any]],
+    jd_keywords: List[str],
+    max_projects: int,
+    min_jd_match_pct: float,
+) -> Tuple[List[str], int, float]:
+    kw_votes: Dict[str, int] = {k: 0 for k in jd_keywords}
+    long_risk_count = 0
+    coverage_push_count = 0
+
+    for out in pre_outputs:
+        for key in ("keyword_priority", "must_cover", "focus", "risks"):
+            for item in _collect_str_list(out.get(key)):
+                li = item.lower()
+                for kw in jd_keywords:
+                    if kw.lower() in li:
+                        kw_votes[kw] = kw_votes.get(kw, 0) + 1
+                if any(t in li for t in ["too long", "page", "dense", "verbosity", "length"]):
+                    long_risk_count += 1
+                if any(t in li for t in ["coverage", "ats", "keyword", "must cover"]):
+                    coverage_push_count += 1
+
+    sorted_kws = sorted(jd_keywords, key=lambda k: (-kw_votes.get(k, 0), k.lower()))
+    tuned_max_projects = max_projects
+    tuned_min_cov = float(min_jd_match_pct)
+
+    if long_risk_count >= 2:
+        tuned_max_projects = max(4, min(max_projects, 6))
+    if coverage_push_count >= 2:
+        tuned_min_cov = max(tuned_min_cov, 88.0)
+
+    return sorted_kws, tuned_max_projects, tuned_min_cov
+
+
 async def run_cv_best_pipeline(
     *,
     role_type: str,
@@ -175,6 +233,8 @@ async def run_cv_best_pipeline(
         raise RuntimeError("OPENAI_API_KEY is required for cv-best.")
     base_url = _safe_get_env("OPENAI_BASE_URL", "https://api.openai.com/v1")
     use_model = (model or _safe_get_env("OPENAI_MODEL", "gpt-4o-mini")) or "gpt-4o-mini"
+    if not jd_text.strip() and not jd_keywords:
+        raise RuntimeError("cv-best requires JD context: provide jd_text or jd_keywords.")
 
     # 1) Pre-generation discussion
     pre_payload = _build_pre_payload(role_type, company_name, target_role_title, jd_text, jd_keywords)
@@ -183,6 +243,12 @@ async def run_cv_best_pipeline(
         out = _openai_chat_json(sp, pre_payload, use_model, api_key, base_url)
         out["_agent"] = name
         pre_outputs.append(out)
+    jd_keywords, max_projects, min_jd_match_pct = _apply_pre_consensus(
+        pre_outputs=pre_outputs,
+        jd_keywords=jd_keywords,
+        max_projects=max_projects,
+        min_jd_match_pct=min_jd_match_pct,
+    )
 
     # 2) Generate CV using existing pipeline (with all checks)
     en_path, _zh, _ann = await generate_cv_from_kb(
@@ -206,28 +272,38 @@ async def run_cv_best_pipeline(
     post_check_path = pdf_path.with_name(f"{pdf_path.stem}_POST_CHECK.md")
     quality_path = pdf_path.with_name(f"{pdf_path.stem}_QUALITY.md")
 
-    post_check_text = _read_if_exists(post_check_path)
-    quality_text = _read_if_exists(quality_path)
-    cv_text = extract_text_from_pdf(pdf_path)
+    async def _run_post_round(pdf_for_review: Path, round_name: str) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+        round_post_check = _read_if_exists(pdf_for_review.with_name(f"{pdf_for_review.stem}_POST_CHECK.md"))
+        round_quality = _read_if_exists(pdf_for_review.with_name(f"{pdf_for_review.stem}_QUALITY.md"))
+        round_cv_text = extract_text_from_pdf(pdf_for_review)
+        round_payload = _build_post_payload(
+            role_type,
+            jd_keywords,
+            round_cv_text,
+            round_post_check,
+            round_quality,
+        )
+        post_outputs_local: List[Dict[str, Any]] = []
+        for name, sp in POST_AGENT_PROMPTS:
+            out = _openai_chat_json(sp, round_payload, use_model, api_key, base_url)
+            out["_agent"] = name
+            out["_round"] = round_name
+            post_outputs_local.append(out)
+        arb_payload_local = json.dumps(
+            {
+                "pre_discussion": pre_outputs,
+                "post_reviews": post_outputs_local,
+                "round": round_name,
+                "post_check_path": str(pdf_for_review.with_name(f"{pdf_for_review.stem}_POST_CHECK.md")),
+                "quality_path": str(pdf_for_review.with_name(f"{pdf_for_review.stem}_QUALITY.md")),
+            },
+            ensure_ascii=False,
+        )
+        arb_local = _openai_chat_json(ARBITER_PROMPT, arb_payload_local, use_model, api_key, base_url)
+        return post_outputs_local, arb_local
 
-    # 3) Post-generation review
-    post_payload = _build_post_payload(role_type, jd_keywords, cv_text, post_check_text, quality_text)
-    post_outputs: List[Dict[str, Any]] = []
-    for name, sp in POST_AGENT_PROMPTS:
-        out = _openai_chat_json(sp, post_payload, use_model, api_key, base_url)
-        out["_agent"] = name
-        post_outputs.append(out)
-
-    arb_payload = json.dumps(
-        {
-            "pre_discussion": pre_outputs,
-            "post_reviews": post_outputs,
-            "post_check_path": str(post_check_path),
-            "quality_path": str(quality_path),
-        },
-        ensure_ascii=False,
-    )
-    arb = _openai_chat_json(ARBITER_PROMPT, arb_payload, use_model, api_key, base_url)
+    # 3) Post-generation review (round-1)
+    post_outputs, arb = await _run_post_round(pdf_path, "round-1")
 
     final_pdf = en_path
     decision = str(arb.get("decision", "")).strip().lower()
@@ -253,6 +329,11 @@ async def run_cv_best_pipeline(
         )
         if refined:
             final_pdf = refined
+            # Re-review refined output so gate/score reflect final artifact.
+            post_outputs, arb = await _run_post_round(Path(final_pdf), "round-2")
+            decision = str(arb.get("decision", "")).strip().lower()
+            gate_pass = bool(arb.get("gate_pass", False))
+            final_score = float(arb.get("final_score", 0.0) or 0.0)
 
     report_path = Path(final_pdf).with_name(f"{Path(final_pdf).stem}_MULTI_AGENT_REVIEW.md")
     md_lines: List[str] = [
