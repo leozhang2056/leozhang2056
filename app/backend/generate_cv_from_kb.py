@@ -122,15 +122,17 @@ MIN_JD_MATCH_PCT = 85.0
 BUNDLE_SIZE_LIMIT = 120_000
 
 
-# Use functions from text_utils module
-from text_utils import (
-    strip_parenthetical_notes as _strip_parenthetical_notes,
-    join_items_within_budget as _join_comma_items_within_char_budget,
-    compact_tech_stack as _compact_tech_stack_one_line,
-    strip_html_tags,
-    normalize_text_for_match,
-    keyword_variant_candidates,
-)
+# Use functions from text_utils module（与 kb_io 相同：支持从仓库根 pytest 导入 app.backend.*）
+try:
+    from text_utils import (  # type: ignore
+        strip_parenthetical_notes as _strip_parenthetical_notes,
+        join_items_within_budget as _join_comma_items_within_char_budget,
+    )
+except ModuleNotFoundError:
+    from app.backend.text_utils import (  # type: ignore
+        strip_parenthetical_notes as _strip_parenthetical_notes,
+        join_items_within_budget as _join_comma_items_within_char_budget,
+    )
 
 
 def _compact_tech_stack_one_line(
@@ -362,10 +364,9 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'frontend',       'label_en': 'Frontend',             'label_zh': '前端',             'max': 3, 'field': 'name'},
         {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端与 API',       'max': 5, 'field': 'name'},
         {'key': 'devops',         'label_en': 'Cloud & DevOps',       'label_zh': '云与 DevOps',      'max': 6, 'field': 'name'},
-        {'key': 'methodology_practices', 'label_en': 'Quality & Practices', 'label_zh': '质量与工程实践', 'max': 3, 'field': 'name'},
-        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 3, 'field': 'name'},
+        {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
+        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 8, 'field': 'name'},
         {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 3, 'field': 'name'},
-        {'key': 'iot_hardware',   'label_en': 'IoT / Hardware',       'label_zh': 'IoT / 硬件',      'max': 3, 'field': 'name'},
     ],
 }
 
@@ -471,42 +472,6 @@ def generate_skills_section(
         miss = [n for n in names if n not in hit]
         return hit + miss
 
-    # fullstack：中度合并技能行；保持密度同时避免单行过长换行导致版面空洞
-    if role_type == 'fullstack':
-        merged_rows = [
-            ('core', 'Core', '核心', ['programming_languages', 'backend'], 8),
-            ('frontend', 'Frontend', '前端', ['frontend'], 4),
-            ('delivery', 'DevOps & Delivery', 'DevOps 与交付', ['devops', 'methodology_practices'], 8),
-            ('ai_tools', 'AI / Tooling', 'AI / 工具链', ['ai_ml', 'ai_coding_tools'], 6),
-            ('iot', 'IoT / Hardware', 'IoT / 硬件', ['iot_hardware'], 3),
-        ]
-        for _, label_en, label_zh, keys, max_count in merged_rows:
-            merged_names: List[str] = []
-            seen = set()
-            for key in keys:
-                extract_cap = max_count * 2 if key == 'devops' else max_count
-                raw = skills_data.get(key)
-                if not raw:
-                    continue
-                names = _extract_skill_names(raw, extract_cap)
-                if role_type == 'fullstack' and key == 'devops':
-                    names = [
-                        n for n in names
-                        if n not in {'IIS', 'Windows Server', 'Linux System Administration'}
-                        and 'administration' not in n.lower()
-                    ]
-                for n in names:
-                    k = n.lower().strip()
-                    if k and k not in seen:
-                        seen.add(k)
-                        merged_names.append(n)
-            merged_names = _prioritize_by_jd(merged_names)[:max_count]
-            if not merged_names:
-                continue
-            label = label_en if lang == 'en' else label_zh
-            lines.append(f'<strong>{label}:</strong> {", ".join(merged_names)}')
-        return '<br>\n        '.join(lines)
-
     for cfg in config:
         key = cfg['key']
         # Android targeted CVs: hide explicit testing row unless JD asks for testing.
@@ -536,8 +501,22 @@ def generate_skills_section(
                 if n not in {'IIS', 'Windows Server', 'Linux System Administration'}
                 and 'administration' not in n.lower()
             ]
+            # 仅缩短展示文案，保留语义，减少换行风险
+            names = [
+                'CI/CD' if n == 'CI/CD Pipeline Design' else n
+                for n in names
+            ]
             if not names:
                 continue
+
+        # fullstack：AI 行做轻量缩写，避免出现单词挤到下一行
+        if role_type == 'fullstack' and key == 'ai_ml':
+            ai_alias = {
+                'Diffusion Models': 'Diffusion',
+                'LLM Fine-tuning': 'LLM FT',
+                'Computer Vision': 'CV',
+            }
+            names = [ai_alias.get(n, n) for n in names]
 
         # JD 命中的技能排前面
         names = _prioritize_by_jd(names)
@@ -673,7 +652,11 @@ def generate_summary(
         already = re.search(rf"<strong>\s*{re.escape(term)}\s*</strong>", s, flags=re.IGNORECASE)
         if already:
             return s
-        pattern = re.compile(re.escape(term), re.IGNORECASE)
+        # 仅匹配“完整词/短语”，避免命中单词内部（例如 AI 命中 maintAInable）。
+        pattern = re.compile(
+            rf"(?<![A-Za-z0-9]){re.escape(term)}(?![A-Za-z0-9])",
+            re.IGNORECASE,
+        )
         return pattern.sub(lambda m: f"<strong>{m.group()}</strong>", s, count=1)
 
     def _normalize_jd_keywords(kws: Optional[List[str]]) -> List[str]:
@@ -743,7 +726,7 @@ def generate_summary(
         'android': ['Android', 'Kotlin', 'Jetpack Compose', 'Coroutines', 'NDK'],
         'ai':      ['AI', 'LLM', 'RAG', 'diffusion', 'computer vision'],
         'backend': ['Spring Boot', 'Java', 'microservice', 'REST', 'API'],
-        'fullstack': ['full-stack', 'Android', 'Spring Boot', 'AI'],
+        'fullstack': [],
     }
     for term in bold_terms.get(role_type, []):
         text = _bold_first(text, term)
@@ -885,10 +868,12 @@ def generate_summary(
         if evidence_sentence and evidence_sentence not in text:
             text = f"{text} {evidence_sentence}"
 
-    # 控制 Summary 长度（目标：5–6 行左右）；Android 英文略放宽，减少句号截断吃掉末尾地点句
+    # 控制 Summary 长度（目标：5–6 行左右）；英文角色按版式需求适度放宽
     _sum_budget = SUMMARY_MAX_CHARS_ZH if lang == "zh" else SUMMARY_MAX_CHARS_EN
     if lang == "en" and role_type == "android":
         _sum_budget = min(900, _sum_budget + 140)
+    if lang == "en" and role_type == "fullstack":
+        _sum_budget = min(980, _sum_budget + 240)
     text = _trim_summary(text, _sum_budget)
     text = _ensure_summary_tail_phrase(text, lang, role_type)
     text = _final_summary_sanity_fix(text)

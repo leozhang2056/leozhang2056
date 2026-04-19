@@ -14,11 +14,14 @@ Apply these when generating or adjusting CVs in this project.
 - Generate PDFs only; **by default** delete intermediate `.html` after successful PDF generation (`generate_cv_from_kb`). Use `python generate.py cv ... --keep-html` when you need to inspect layout vs a “stale” PDF preview.
 - Before writing resume/cover letter, gather company context first (business domain, tech stack, culture/values, role expectations).
 - Content must explicitly show company-fit, not only generic JD keyword match.
+- Treat JD wording as high-signal: perform line-by-line requirement mapping and cover all critical points with evidence-backed wording.
+- For closed/login/noisy job pages, request or build a clean JD text block first, then generate from that source.
 
 ## Content priorities
 - Keep these key projects in CV project list: `chatclothes`, `smart-factory`.
 - For Android-targeted CVs, also prioritize `forest-patrol-inspection` (offline map/GIS relevance).
-- Do not include Publications section.
+- **Publications** are required when present in `kb/achievements.yaml` (always render the section).
+- **Interests** are optional layout padding only: controlled by `career_identity.include_interests_in_cv` in `kb/profile.yaml` (default **false**); when enabled, render **after** Publications as the **last** section.
 - De-emphasize team-management wording for developer roles.
 
 ## Experience ordering
@@ -30,6 +33,10 @@ Apply these when generating or adjusting CVs in this project.
 - **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
 - **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
 - Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
+- **Page completeness preference:** Final PDFs should end on a full page count target (1, 2, or 3 pages) with minimal trailing whitespace; default target is **2 full pages** unless user requests otherwise.
+- Tune page fullness by adjusting `--max-projects`, bullet density, and summary/skills compactness while preserving factual accuracy.
+- If content spills beyond 2 pages and page 3 has visible whitespace, you may enable **Interests** (`include_interests_in_cv`) as the **last** section to improve page balance (optional).
+- **Interests placement rule:** Interests must always be the final section (after **Publications**), because it is low priority.
 
 ## CV HTML section order (canonical)
 Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. **Do not reorder** without an explicit product decision:
@@ -39,7 +46,9 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
 3. **Key Skills**  
 4. **Experience**  
 5. **Education** (between Experience and Licenses)  
-6. **Licenses & Certifications**
+6. **Licenses & Certifications**  
+7. **Publications** (when `achievements.yaml` has entries)  
+8. **Interests** (optional; last; only if `include_interests_in_cv` is true and interests list is non-empty)
 
 ## Header / contact row (KB HTML)
 - **Single line** in `.cv-contact-primary`: `✉ email | ☎ phone | [map-pin SVG] location | LinkedIn | GitHub`.
@@ -56,6 +65,8 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
 - Emphasize fast execution/iteration and strong self-management for developer roles.
 - Reduce "AI resume" tone: do not dump full JD keyword lists into Summary; at most one short sentence with a few concrete tools/terms; put most JD fit in project bullets and Key Skills.
 - Prefer evidence-backed phrasing over generic buzzwords; follow `kb/resume_writing_best_practices.md`.
+- Avoid overusing the same headline metrics/phrases repeatedly (e.g., `5,000 DAU`, `sub-200ms latency`, `telemetry`) in Summary; rotate to scenario- and outcome-oriented wording when possible.
+- Prioritize differentiators from company context (e.g., risk awareness, secure delivery, DevOps discipline, mentoring, enterprise complexity) over generic stack lists.
 
 ## Key Skills rules
 - Do not show labels like `JD Match`.
@@ -64,6 +75,12 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
   `Cursor, GitHub Copilot, Claude Code, Antigravity, OpenCode`.
 - Prefer visually balanced one-line skill rows where possible.
 - Allow relevant skills such as `Reverse Engineering` and `.NET` when layout permits.
+- For `fullstack` CVs:
+  - Filter out baseline ops terms: `IIS`, `Windows Server`, and any `*Administration*` phrasing.
+  - Keep `Databases` row present and comprehensive (default set: `MySQL, Redis, MongoDB, SQL Server, SQLite`).
+  - Prefer `AI / ML` + `AI-Assisted Development` as two separate rows (avoid over-merged long lines that wrap).
+  - Apply minimal text shortening when needed to prevent wraps (e.g., `CI/CD Pipeline Design` -> `CI/CD`, `LLM Fine-tuning` -> `LLM FT`).
+  - For layout fixes, use minimal-delta edits (remove/change one term at a time), then regenerate and re-check.
 
 ## Education formatting
 - Use full name `Auckland University of Technology` (do not abbreviate to AUT).
@@ -74,6 +91,15 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
 - Prioritize codifying reusable changes (layout, wording, ranking, keyword filters) over one-off manual edits.
 - When a user gives repeated preferences, convert them into defaults in generator logic.
 - Keep generated outputs clean and consistent so future resumes benefit without re-specifying requirements.
+
+## Cover Letter rules
+- Narrative priority: `why this company` + `why me (vs. other candidates)` + evidence.
+- Avoid generic praise; connect company mission/context to candidate's proven delivery patterns.
+- Use concrete differentiators in the "why me" section:
+  - cross-layer execution (mobile + backend + hardware integration),
+  - production outcomes (e.g., throughput/latency/site rollout metrics),
+  - disciplined delivery habits (CI/CD, code review, troubleshooting under deadlines).
+- Keep tone personal but professional: warm motivation + factual proof, no flattery.
 
 ## CLI — resume generation workflow (session commands)
 

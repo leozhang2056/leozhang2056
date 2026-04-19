@@ -98,7 +98,7 @@ class TestGenerationQuality:
                 "tags": ["backend", "java", "redis"],
                 "variants": [
                     "Helped with backend messaging features.",
-                    "Built Java messaging services handling 10000+ DAU with Redis-backed session routing.",
+                    "Built Java messaging services handling 5000 DAU with Redis-backed session routing.",
                 ],
             }
         ]
@@ -112,5 +112,5 @@ class TestGenerationQuality:
         )
 
         assert selected == [
-            "Built Java messaging services handling 10000+ DAU with Redis-backed session routing."
+            "Built Java messaging services handling 5000 DAU with Redis-backed session routing."
         ]

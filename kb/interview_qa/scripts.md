@@ -23,7 +23,7 @@
 >
 > For the past year and a half, I've been completing a Master's in Computer and Information Sciences at AUT in Auckland, graduating February 2026 with First Class Honours. My thesis — ChatClothes — is a multimodal virtual try-on system combining diffusion models, LLMs, and computer vision, deployed entirely on edge hardware. I submitted it six months ahead of schedule.
 >
-> Before that, I spent about ten years at a tech company in China where I built and led development on two flagship products: a Smart Factory platform deployed across 10+ manufacturing sites with a team of six, and an enterprise messaging platform serving over 10,000 daily active users with sub-200ms latency built on Android NDK.
+> Before that, I spent about ten years at a tech company in China where I built and led development on two flagship products: a Smart Factory platform deployed across 10+ manufacturing sites with a team of six, and an enterprise messaging platform serving about 5,000 daily active users with sub-200ms latency built on Android NDK.
 >
 > I'm now looking for a [Android developer / backend engineer / software engineer] role here in Auckland where I can apply both my engineering depth and the AI skills I've developed through my Master's.
 
@@ -160,7 +160,7 @@
 **Script**
 > My Android experience spans about ten years in production environments.
 >
-> The deepest technical work was on an enterprise messaging platform, where I built the Android client using NDK-based TCP/UDP for real-time messaging. The requirement was sub-200ms message delivery for 10,000+ daily users — Java-layer sockets couldn't reliably hit that target, so I implemented the protocol layer in C with a JNI bridge. That gave us consistent latency and handled over 500,000 messages a day.
+> The deepest technical work was on an enterprise messaging platform, where I built the Android client using NDK-based TCP/UDP for real-time messaging. The requirement was sub-200ms message delivery for about 5,000 daily users — Java-layer sockets couldn't reliably hit that target, so I implemented the protocol layer in C with a JNI bridge. That gave us consistent latency and handled over 500,000 messages a day.
 >
 > On the Smart Factory project I built the Android app for factory floor workers — barcode scanning, RFID integration, real-time production tracking, offline-first data capture for when connectivity dropped on the shop floor.
 >
@@ -568,7 +568,7 @@
 **Script**
 > The messaging platform NDK work. Not because it's the biggest project, but because it's the one where I had to go somewhere most Android developers don't go — C-level socket programming, JNI bridging, custom protocol design — and it actually worked at production scale for over a decade.
 >
-> The requirement was sub-200ms message delivery for 10,000 concurrent users. The Java layer couldn't consistently hit that. I built the TCP/UDP stack in C, with a JNI bridge back to the Kotlin/Java application layer, custom connection pooling, and a heartbeat mechanism.
+> The requirement was sub-200ms message delivery for about 5,000 concurrent users. The Java layer couldn't consistently hit that. I built the TCP/UDP stack in C, with a JNI bridge back to the Kotlin/Java application layer, custom connection pooling, and a heartbeat mechanism.
 >
 > It's still running. That's the thing — systems that survive production for ten-plus years are genuinely hard to build. Most software doesn't last that long.
 

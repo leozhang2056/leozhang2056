@@ -111,7 +111,7 @@ experiences:
       - name: Enterprise Messaging Platform
         period: "2014 - 2023"
         role: Core Android & Backend Developer
-        description: Real-time IM platform with 10,000+ daily active users
+        description: Real-time IM platform with 5,000 daily active users
         
         highlights:
           - Developed Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++
@@ -134,7 +134,7 @@ experiences:
           - Redis
         
         metrics:
-          - 10,000+ daily active users
+          - 5,000 daily active users
           - <200ms message latency
           - 500K+ messages processed daily
           - Cross-platform (Android, Web, PC)
@@ -273,7 +273,7 @@ experiences:
 total_years_experience: 10
 
 key_achievements:
-  - "Delivered enterprise messaging platform serving 10,000+ daily users with <200ms latency"
+  - "Delivered enterprise messaging platform serving 5,000 daily users with <200ms latency"
   - "Led smart factory system deployment across 5+ manufacturing sites, improving efficiency by 30%+"
   - "Completed AI thesis project 6 months early with working on-device deployment"
   - "Maintained high system uptime across multiple production systems"

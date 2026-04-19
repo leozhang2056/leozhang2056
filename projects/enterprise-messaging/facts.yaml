@@ -18,7 +18,7 @@ company:
   name: Chunxiao Technology Co., Ltd.
   location: China
 summary: >
-  Android-led enterprise communication platform (Android, Web, PC) with 10,000+ DAU over a 10-year
+  Android-led enterprise communication platform (Android, Web, PC) with 5,000 DAU over a 10-year
   lifecycle; owned real-time messaging, file and workflow subsystems, and mobile client architecture
   including NDK TCP/UDP paths for sub-200ms latency.
 
@@ -27,7 +27,7 @@ summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
 highlights:
   - Engineered Android transport in NDK (C/C++) over TCP/UDP, optimizing connection paths to sustain sub-200ms message latency at production load
-  - Scaled the platform to 10,000+ DAU and 500K+ messages per day across Android, Web, and PC
+  - Scaled the platform to 5,000 DAU and 500K+ messages per day across Android, Web, and PC
   - Spearheaded reliability practices that maintained strong availability across a 10-year product lifecycle
   - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
   - Optimized distributed database and file storage layouts for real-time collaboration workloads
@@ -86,8 +86,8 @@ features:
 - PowerBI dashboards for user behavior and system metrics
 - FineReport for operational reporting and data export
 metrics:
-- value: '10'
-  label: ',000+'
+- value: '5'
+  label: ',000'
   description: Company-wide adoption
   unit: daily active users
 - value: <200ms
@@ -108,7 +108,7 @@ metrics:
   unit: reliability
 achievements:
 - Achieved sub-200ms message latency through protocol optimization
-- Successfully scaled to 10,000+ daily active users
+- Successfully scaled to 5,000 daily active users
 - Processed over 500,000 messages daily
 - Maintained strong availability over 10 years of continuous operation
 - Delivered consistent cross-platform experience

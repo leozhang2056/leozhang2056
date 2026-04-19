@@ -100,6 +100,13 @@ ai_ml:
     evidence:
       - LLM-driven user control
       - Prompt engineering
+
+  - name: RAG
+    level: intermediate
+    evidence:
+      - Retrieval-augmented generation for domain-aware responses
+      - Knowledge-grounded prompt workflows
+
     
   - name: Computer Vision
     level: advanced
@@ -156,7 +163,7 @@ android:
     level: expert
     years: 10
     evidence:
-      - Enterprise messaging platform (10K+ DAU)
+      - Enterprise messaging platform (5K DAU)
       - Smart factory mobile apps
       - IoT device integration
     
@@ -298,6 +305,11 @@ frontend:
     evidence:
       - Industrial dashboards
       - IoT visualization
+
+  - name: React Native
+    level: beginner
+    evidence:
+      - Cross-platform mobile exploration alongside native Android delivery
     
   - name: HTML/CSS
     level: advanced

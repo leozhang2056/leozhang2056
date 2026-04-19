@@ -14,7 +14,7 @@ questions:
     answer_points:
       - "Full-stack software engineer with 10+ years of experience across Android, Java backend, and AI/ML"
       - "Recently completed Master's in AI at AUT, graduating Oct 2025"
-      - "Led 6-person teams and delivered enterprise systems serving 10K+ users"
+      - "Led 6-person teams and delivered enterprise systems serving 5K+ users"
       - "Transitioning from traditional software engineering to AI engineering"
     evidence:
       - project: chatclothes
@@ -22,7 +22,7 @@ questions:
       - project: smart-factory
         highlight: "Led 6-person team, 99.9% uptime over 6 years"
       - project: enterprise-messaging
-        highlight: "10,000+ DAU, <200ms latency"
+        highlight: "5,000 DAU, <200ms latency"
     narrative_thread: full_stack_evolution
     tips:
       - "Start with current status (Master's student)"
@@ -148,7 +148,7 @@ questions:
         metrics:
           - "<200ms message latency"
           - "500K+ messages processed daily"
-          - "10,000+ daily active users"
+          - "5,000 daily active users"
     technical_details:
       - "Custom protocol over TCP/UDP"
       - "JNI layer for Java-C communication"

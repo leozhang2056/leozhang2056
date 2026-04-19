@@ -1,6 +1,6 @@
 # Enterprise Messaging Platform
 
-> Real-time internal messaging system serving 10,000+ daily active users
+> Real-time internal messaging system serving 5,000 daily active users
 
 ---
 
@@ -13,7 +13,7 @@ The platform is organized as multiple core subsystems, including **User Center**
 **Timeline:** 2014 - 2023  
 **Role:** Core Android & Backend Developer  
 **Company:** Chunxiao Technology Co., Ltd., China  
-**Scale:** 10,000+ daily active users
+**Scale:** 5,000 daily active users
 
 ---
 
@@ -104,7 +104,7 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 ## Key Achievements
 
-- ✅ **10,000+ daily active users** - Company-wide adoption
+- ✅ **5,000 daily active users** - Company-wide adoption
 - ✅ **<200ms latency** - Sub-200ms message delivery
 - ✅ **500K+ messages/day** - High throughput handling
 - ✅ **Cross-platform support** - Android, Web, PC clients
@@ -167,7 +167,7 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 ## Results & Impact
 
-- **User Adoption:** 10,000+ daily active users across the company
+- **User Adoption:** 5,000 daily active users across the company
 - **Performance:** Consistent sub-200ms message delivery
 - **Reliability:** Maintained high availability over 9 years
 - **Efficiency:** Significantly improved internal communication

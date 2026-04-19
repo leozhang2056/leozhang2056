@@ -5,13 +5,39 @@
 
 ---
 
+## Role descriptions (online forms — copy & paste)
+
+Use the blocks below for **Role description** fields. Adjust dates if your application uses different months.
+
+### 1) Auckland University of Technology (AUT) — New Zealand
+
+- **Job title (example):** Master’s Researcher (AI / Computer Vision) / Sole Developer — ChatClothes thesis  
+- **Dates (KB):** Jul 2024 – Apr 2025
+
+**Role description:**
+
+Conducted Master’s research in Computer and Information Sciences, delivering ChatClothes, a multimodal virtual try-on system combining diffusion models, lightweight garment classification (YOLO), and local LLM orchestration. Designed the end-to-end pipeline, integrated ComfyUI and Dify for workflow and control, and optimized for resource-constrained and offline-capable targets including Raspberry Pi–class hardware. Shipped a working demo with documentation; completed the thesis ahead of schedule.
+
+---
+
+### 2) Chunxiao Technology Co., Ltd. — China
+
+- **Job title (example):** Technical Lead / Senior Software Engineer  
+- **Dates (KB):** Jul 2013 – Feb 2024
+
+**Role description:**
+
+Led and contributed to enterprise software delivery across Android, Java backend, and full-stack surfaces. As Technical Lead, owned the smart manufacturing platform (Spring Boot / Spring Cloud microservices, Docker/Jenkins-based releases) rolled out to multiple factory sites, with IoT integration (RFID, barcode, scales, conveyors) and long-running production stability. Built and maintained the enterprise messaging platform: Android client with NDK TCP/UDP for low-latency messaging, Spring Cloud/Node.js services, and cross-platform clients; scaled to ~5,000 DAU with high daily message throughput. Collaborated with product, QA, and operations; mentored engineers, drove code quality and release discipline, and supported production incidents as needed.
+
+---
+
 ## Professional Summary
 
 Senior Android Developer with 12+ years of experience and Master's in Computer and Information Sciences from AUT. Delivered enterprise solutions across Android development, Java backend systems, AI/ML integration, and DevOps/Infrastructure. Proven track record leading technical teams, architecting scalable systems, deploying IoT solutions in industrial environments, and managing production infrastructure with 99.9% uptime SLA.
 
 **Key Strengths:**
 - **Android Expertise**: 12+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
-- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
+- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 5,000 DAU systems
 - **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
 - **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
 - **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle)
@@ -104,7 +130,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 
 - **Enterprise Messaging Platform** — Core developer for internal IM system (2014–2023)
   - Built Android client using NDK-based TCP/UDP achieving <200ms message latency
-  - Developed backend with Spring Cloud + C++ supporting 10,000+ DAU
+  - Developed backend with Spring Cloud + C++ supporting 5,000 DAU
   - Processed 500K+ messages daily with cross-platform support (Android, Web, PC)
   - Implemented BI analytics with Kettle ETL, PowerBI dashboards, FineReport
 
@@ -137,7 +163,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 ### 📱 Android & Mobile
 | Project | Description | Highlights |
 |---------|-------------|------------|
-| Enterprise Messaging | Enterprise IM with 10K+ DAU | NDK, <200ms latency, Reverse Engineering |
+| Enterprise Messaging | Enterprise IM with 5K DAU | NDK, <200ms latency, Reverse Engineering |
 | Smart Factory Mobile | Industrial IoT Android apps | RFID, offline-first, hardware integration |
 | Forest Patrol | GIS app for forest inspections | Offline maps, GPS tracking, field data |
 | Picture Book Locker | Smart library locker system | Hardware control, REST API, sensors |
@@ -172,4 +198,4 @@ Hebei University of Science and Technology, China | 2009 – 2013
 
 ---
 
-*Last updated: March 2026*
+*Last updated: April 2026*

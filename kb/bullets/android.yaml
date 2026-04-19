@@ -56,7 +56,7 @@ bullets:
     tags: [android, performance, optimization, memory]
     original: "Optimized Android app performance and memory usage for large-scale deployment"
     variants:
-      - "Profiled and optimized Android apps for 10K+ DAU with minimal crash rates"
+      - "Profiled and optimized Android apps for 5K DAU with minimal crash rates"
       - "Implemented memory-efficient image handling and caching strategies"
       - "Reduced APK size and improved startup time through code optimization"
     evidence: [enterprise-messaging]

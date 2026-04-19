@@ -72,10 +72,10 @@ academic_achievements:
       - On-device inference
 
 professional_achievements:
-  - metric: "10,000+"
+  - metric: "5,000"
     unit: "daily active users"
     project: Enterprise Messaging Platform
-    description: Built and maintained IM platform serving 10,000+ internal users
+    description: Built and maintained IM platform serving 5,000 internal users
     
   - metric: "<200ms"
     unit: "latency"

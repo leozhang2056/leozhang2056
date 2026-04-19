@@ -34,6 +34,7 @@ highlights:
   - Developed secure wallet-related data handling with encrypted local storage.
   - Designed a clear trading workflow UI to reduce user operation complexity.
   - Integrated recharge and exchange APIs with robust error handling and retries.
+  - Delivered fintech trading flows (wallet, exchange, recharge) with banking-style reliability expectations for sensitive financial actions.
 highlights_cn:
   - 基于 WebSocket 实现行情实时推送与价格更新。
   - 通过加密本地存储提升钱包相关数据安全性。
@@ -95,9 +96,12 @@ keywords:
   - Kotlin
   - WebSocket
   - Fintech
+  - Banking
   - Cryptocurrency
   - Secure Storage
   - Mobile App
+  - Payments
+  - Trading
 
 skills_demonstrated:
   - Android

@@ -28,7 +28,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 
 **Key Strengths:**
 - **Android Expertise**: 10+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
-- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 10,000+ DAU systems
+- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 5,000 DAU systems
 - **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
 - **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
 - **AI-Assisted Development**: Daily use of **Claude Code**, Cursor, and GitHub Copilot for code generation, refactoring, and review — comfortable integrating AI tools into the full development workflow
@@ -128,7 +128,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 
 - **[Enterprise Messaging Platform](projects/enterprise-messaging/)** — Core developer for internal IM system (2014–2023)
   - Built Android client using NDK-based TCP/UDP achieving <200ms message latency
-  - Developed backend with Spring Cloud supporting 10,000+ DAU
+  - Developed backend with Spring Cloud supporting 5,000 DAU
   - Processed 500K+ messages daily with cross-platform support (Android, Web, PC)
   - Implemented BI analytics with Kettle ETL, PowerBI dashboards, FineReport
 
@@ -161,7 +161,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 ### 📱 Android & Mobile
 | Project | Description | Highlights |
 |---------|-------------|------------|
-| [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 10K+ DAU | NDK, <200ms latency, Reverse Engineering |
+| [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 5K DAU | NDK, <200ms latency, Reverse Engineering |
 | [Smart Factory Mobile](projects/smart-factory/) | Industrial IoT Android apps | RFID, offline-first, hardware integration |
 | [Forest Patrol](projects/forest-patrol-inspection/) | GIS app for forest inspections | Offline maps, GPS tracking, field data |
 | [Picture Book Locker](projects/picture-book-locker/) | Smart library locker system | Hardware control, REST API, sensors |

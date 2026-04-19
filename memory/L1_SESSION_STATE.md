@@ -53,3 +53,41 @@
   - （未检测到）
 - Quality Gate: QUALITY_FAIL
 - Missing Required Fields: goal, next_action, improvements
+
+## Session Memory - 2026-04-17 17:03:38
+- Goal: （自动总结缺少 goal，需补充）
+- Completed:
+  - （自动总结缺少 completed，需补充）
+- In Progress: （自动总结缺少 in_progress，需补充）
+- Blockers:
+  - （无）
+- Next Action: （自动总结缺少 next_action，需补充）
+- Last Touched Files:
+  - （未检测到）
+- Quality Gate: QUALITY_FAIL
+- Missing Required Fields: goal, next_action, improvements
+
+## Session Memory - 2026-04-17 Resume Optimization (EROAD fullstack)
+- Goal:
+  - 将 EROAD fullstack 简历优化为两页内、信息密度高、无冗余、无不必要换行。
+- Completed:
+  - 多轮迭代 Summary：改为 JD 对齐导向，减少与下方内容重复。
+  - 优化 Key Skills：移除基础项（IIS/Windows Server/Administration）；恢复 Databases；AI 技术与 AI 编程工具分行展示。
+  - 处理换行问题：逐项缩短词面并按用户指令删除 LangChain/LangGraph、ONNX Runtime。
+  - 多次重生 `CV_Leo_Zhang_20260417_fullstack_EROAD.pdf` 供视觉校验。
+  - 识别并修复“加内容但被截断”根因：放宽 fullstack 英文 Summary 长度预算。
+- In Progress:
+  - 等待用户最终确认排版与内容版本，必要时做最小词级微调。
+- Blockers:
+  - 无技术阻塞；主要由版式视觉偏好驱动。
+- Next Action:
+  - 若用户继续微调，优先执行“最小改动策略”：一次只改一行或一个词，避免连锁排版变化。
+- Last Touched Files:
+  - `app/backend/generate_cv_from_kb.py`
+  - `kb/profile.yaml`
+  - `kb/skills.yaml`
+  - `projects/chatclothes/facts.yaml`
+  - `memory/L1_LEARNING_QUEUE.md`
+  - `memory/L1_SESSION_STATE.md`
+- Improvements:
+  - 将本次偏好沉淀为可复用规则：Summary 去重复、Key Skills 防换行优先、AI 双行展示、数据库必保留。

@@ -73,7 +73,7 @@
 
 **Sample Answer（口头可压缩到 45–60 秒）**
 
-I'm Leo Zhang, a software engineer with 10+ years delivering production systems across Android, Java backends, and IoT. Most recently I completed my Master of Computer and Information Sciences at Auckland University of Technology with First Class Honours, where my thesis project **ChatClothes** combined diffusion-based virtual try-on, a lightweight garment classifier, and local LLM orchestration for offline-capable demos—including handheld-friendly control surfaces. Before that, at Chunxiao I spent years on **Smart Factory** (10+ factory rollouts, 30%+ efficiency gains, 99.9% uptime on critical workflows) and **Enterprise Messaging** (NDK networking for sub-200ms delivery at 10,000+ DAU). I'm based in Auckland with full-time work rights in New Zealand, and I'm looking for a role where I can ship reliable client and backend software while continuing to grow in architecture and applied AI.
+I'm Leo Zhang, a software engineer with 10+ years delivering production systems across Android, Java backends, and IoT. Most recently I completed my Master of Computer and Information Sciences at Auckland University of Technology with First Class Honours, where my thesis project **ChatClothes** combined diffusion-based virtual try-on, a lightweight garment classifier, and local LLM orchestration for offline-capable demos—including handheld-friendly control surfaces. Before that, at Chunxiao I spent years on **Smart Factory** (10+ factory rollouts, 30%+ efficiency gains, 99.9% uptime on critical workflows) and **Enterprise Messaging** (NDK networking for sub-200ms delivery at 5,000 DAU). I'm based in Auckland with full-time work rights in New Zealand, and I'm looking for a role where I can ship reliable client and backend software while continuing to grow in architecture and applied AI.
 
 ---
 
@@ -197,7 +197,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 
 ### 面试前 10 分钟检查清单（Leo 专用）
 - 主故事是否覆盖 5 类：复杂技术、冲突、失败、压力、主动性
-- 每个故事是否有 1 个可核验指标（10+ factories / 99.9% uptime / 10,000+ DAU / sub-200ms / First Class Honours）
+- 每个故事是否有 1 个可核验指标（10+ factories / 99.9% uptime / 5,000 DAU / sub-200ms / First Class Honours）
 - “Why this company” 是否替换了公司名、产品名、技术栈（避免模板味）
 - Q32 转职原因是否保持一致：`2026-02 完成 MCIS + 回到全职工程交付`
 - 每题结尾是否有一句 Reflection（我学到什么 / 下次如何做）
@@ -206,7 +206,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 
 ## 四、使用注意事项（Leo 版）
 
-- 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**10,000+ DAU**、**sub-200ms**、**First Class Honours**、**February 2026** 毕业等；不要临场夸大。
+- 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**5,000 DAU**、**sub-200ms**、**First Class Honours**、**February 2026** 毕业等；不要临场夸大。
 - 每个主题准备 **1 个主故事 + 1 个备选**（见文首映射表）；Action 写清“你具体做了什么”，少用泛化的 *we*。
 - 语气：不甩锅，强调行动、衡量与复盘；开发者岗避免过度“管理团队”表述，用 **协调、接口契约、交付所有权** 更准确。
 - 远程 / 混合岗位：补充异步沟通习惯、文档化决策、时区友好更新（可与 Smart Factory 多现场 rollout 类比）。
@@ -410,7 +410,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 **Script**
 > I’m genuinely proud of the messaging platform NDK work. Not because it was the biggest project, but because it’s where I had to go beyond typical Android development — C-level socket programming, JNI bridging, and custom protocol design — and it still worked at production scale for over a decade.
 >
-> The requirement was sub-200ms message delivery for 10,000 concurrent users, which the Java layer couldn’t consistently hit. I built the TCP/UDP stack in C, with a JNI bridge back to the Kotlin/Java layer, plus connection pooling and a heartbeat mechanism.
+> The requirement was sub-200ms message delivery for about 5,000 concurrent users, which the Java layer couldn’t consistently hit. I built the TCP/UDP stack in C, with a JNI bridge back to the Kotlin/Java layer, plus connection pooling and a heartbeat mechanism.
 >
 > The reason it stands out is that it’s still running. Systems that survive production for ten-plus years are genuinely hard to build.
 
@@ -593,7 +593,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 **Script**
 > I’m most proud of the messaging platform NDK work. It’s not just a project I built — it’s a system that proved itself in production for over a decade.
 >
-> The requirement was sub-200ms message delivery for 10,000 concurrent users, and the Java layer couldn’t hit that consistently. I built the TCP/UDP protocol layer in C, with a JNI bridge back to the Kotlin/Java application layer, plus connection pooling and a heartbeat mechanism.
+> The requirement was sub-200ms message delivery for about 5,000 concurrent users, and the Java layer couldn’t hit that consistently. I built the TCP/UDP protocol layer in C, with a JNI bridge back to the Kotlin/Java application layer, plus connection pooling and a heartbeat mechanism.
 >
 > What I value most is reliability and longevity: systems that survive real production conditions for ten-plus years are truly hard to build.
 

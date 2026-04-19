@@ -64,6 +64,38 @@ _ROLE_NARRATIVE_HINT = {
     },
 }
 
+# 公司共鸣叙事钩子（不写硬事实，避免与 JD/官网信息冲突）
+_COMPANY_FIT_HOOKS = {
+    'eroad': {
+        'en': (
+            'What resonates with me about EROAD is the practical impact of software on real-world operations. '
+            'My experience building IoT-connected systems, production APIs, and reliability-focused delivery fits this '
+            'mission style: turning complex data and workflows into stable tools teams can trust every day.'
+        ),
+        'zh': (
+            '我与 EROAD 的共鸣点在于：用软件直接改善一线真实业务。'
+            '我长期做 IoT 连接系统、生产级 API 与稳定性交付，擅长把复杂数据与流程落成团队每天可依赖的工具。'
+        ),
+    },
+}
+
+_WHY_ME_HOOKS = {
+    'eroad': {
+        'en': (
+            'I believe I am a strong fit because I combine three qualities that are hard to find together: '
+            'cross-layer execution (mobile, backend, and hardware integration), proven production outcomes '
+            '(500K+ messages/day, sub-200ms latency, and multi-site rollout impact), and disciplined delivery '
+            'habits (CI/CD, code review, and pragmatic troubleshooting under real deadlines). '
+            'This means I can contribute quickly with minimal ramp-up and deliver reliable results from early iterations.'
+        ),
+        'zh': (
+            '我认为自己适合这个岗位，关键在于三点同时具备：跨层交付能力（移动端、后端与硬件集成）、'
+            '可验证的生产结果（50 万+消息/天、亚 200ms 延迟、多站点上线效果），以及稳定的工程交付习惯'
+            '（CI/CD、代码评审、在真实截止期下的问题闭环）。这让我可以低磨合快速上手，并持续交付可落地结果。'
+        ),
+    }
+}
+
 
 # ---------------------------------------------------------------------------
 # Content builder
@@ -258,6 +290,12 @@ def build_cover_letter_content(
                 'I enjoy working closely with stakeholders, translating technical trade-offs clearly for non-technical audiences, '
                 'and continuously improving engineering practices in fast-moving environments.'
             )
+        if 'eroad' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["eroad"]["en"]} '
+                f'{_WHY_ME_HOOKS["eroad"]["en"]}'
+            )
         if pub_note and role_type == 'ai':
             body2 = f'{body2} {pub_note}'
 
@@ -311,6 +349,8 @@ def build_cover_letter_content(
                 '我也非常认同 Theta 务实、以结果为导向的咨询文化，以及对关键系统安全性的重视。'
                 '我擅长与业务和非技术干系人沟通技术取舍，并在快节奏环境中持续优化工程实践。'
             )
+        if 'eroad' in company_lower:
+            body2 = f'{body2}{_COMPANY_FIT_HOOKS["eroad"]["zh"]}{_WHY_ME_HOOKS["eroad"]["zh"]}'
         if pub_note and role_type == 'ai':
             body2 = f'{body2}{pub_note}'
 

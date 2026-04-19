@@ -53,6 +53,7 @@ project_ranking:
   role_project_order:
     android:
       - chatclothes
+      - boobit
       - forest-patrol-inspection
       - enterprise-messaging
       - iot-solutions
@@ -82,6 +83,7 @@ project_ranking:
   base_priority:
     chatclothes: 10
     enterprise-messaging: 20
+    boobit: 22
     smart-factory: 30
     live-streaming-system: 40
     visual-gateway: 50
@@ -92,7 +94,6 @@ project_ranking:
     picture-book-locker: 100
     forest-patrol-inspection: 110
     smart-power: 120
-    boobit: 130
     broadcast-control: 140
     visit-system: 150
     school-attendance: 160

@@ -73,7 +73,7 @@ bullets:
     tags: [backend, api, rest, design]
     original: "Designed RESTful APIs for mobile and web clients"
     variants:
-      - "Built RESTful API platform serving 10K+ daily active users"
+      - "Built RESTful API platform serving 5K daily active users"
       - "Designed versioned APIs with backward compatibility guarantees"
       - "Implemented API authentication, rate limiting, and documentation"
     evidence: [enterprise-messaging, smart-factory]

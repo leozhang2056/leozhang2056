@@ -44,8 +44,8 @@ academic_info:
 
 summary: >
   Master's thesis (AUT): multimodal virtual try-on combining diffusion generation, YOLO12n-LC garment
-  classification, and local LLM control (ComfyUI/Dify/Ollama), with offline-capable deployment including
-  Raspberry Pi 5 targets. For demos and thesis evaluation, shipped an Android-friendly progressive web
+  classification, and local LLM control (ComfyUI/Dify/Ollama). For demos and thesis evaluation, shipped an
+  Android-friendly progressive web
   control shell on handheld devices to trigger try-on jobs, stream pipeline status, and issue LLM garment
   commands against the same backends used on Pi-class hardware.
 
