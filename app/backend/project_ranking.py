@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
@@ -21,6 +22,37 @@ PRIORITY_OFFSET = int(_CFG.get("priority_offset", 200))
 ROLE_PROJECT_ORDER: Dict[str, List[str]] = dict(_CFG.get("role_project_order", {}))
 
 
+def _normalize_for_match(text: str) -> str:
+    t = (text or "").lower()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+
+def _keyword_variants(keyword: str) -> List[str]:
+    raw = (keyword or "").strip().lower()
+    if not raw:
+        return []
+    variants = {raw}
+    variants.add(raw.replace("apis", "api"))
+    variants.add(raw.replace("api", "apis"))
+    variants.add(raw.replace("restful", "rest"))
+    variants.add(raw.replace("&", "and"))
+    variants.add(raw.replace("/", " "))
+    variants.add(raw.replace("-", " "))
+    return [v for v in variants if v]
+
+
+def _text_contains_keyword(text: str, keyword: str) -> bool:
+    if not text or not keyword:
+        return False
+    normalized_text = _normalize_for_match(text)
+    for variant in _keyword_variants(keyword):
+        normalized_variant = _normalize_for_match(variant)
+        if normalized_variant and normalized_variant in normalized_text:
+            return True
+    return False
+
+
 def score_project_by_jd(project: Dict[str, Any], jd_keywords: Optional[List[str]]) -> float:
     """Score a project by JD keywords using weighted evidence fields."""
     jd_keywords_list = [k for k in (jd_keywords or []) if isinstance(k, str) and k.strip()]
@@ -30,14 +62,14 @@ def score_project_by_jd(project: Dict[str, Any], jd_keywords: Optional[List[str]
     score = 0.0
     kws_lower = [k.lower() for k in jd_keywords_list]
 
-    proj_kws = [k.lower() for k in project.get("keywords", [])]
+    proj_kws = [k.lower() for k in project.get("keywords", []) if isinstance(k, str)]
     for kw in kws_lower:
-        if kw in proj_kws:
+        if kw in proj_kws or any(_text_contains_keyword(pk, kw) for pk in proj_kws):
             score += 1.5
 
-    roles = [r.lower() for r in project.get("related_to_roles", [])]
+    roles = [r.lower() for r in project.get("related_to_roles", []) if isinstance(r, str)]
     for kw in kws_lower:
-        if any(kw in r for r in roles):
+        if any(_text_contains_keyword(r, kw) for r in roles):
             score += 0.8
 
     tech_stack = project.get("tech_stack", {})
@@ -49,7 +81,7 @@ def score_project_by_jd(project: Dict[str, Any], jd_keywords: Optional[List[str]
             tech_count += len(tech_list)
 
     for kw in kws_lower:
-        if any(kw in t for t in all_techs):
+        if any(_text_contains_keyword(t, kw) for t in all_techs):
             score += 1.2
 
     score += min(tech_count / 10.0, 0.5)
@@ -64,7 +96,7 @@ def score_project_by_jd(project: Dict[str, Any], jd_keywords: Optional[List[str]
 
     highlights_text = " ".join(parts).lower()
     for kw in kws_lower:
-        if kw in highlights_text:
+        if _text_contains_keyword(highlights_text, kw):
             score += 0.4
 
     timeline = project.get("timeline", {})

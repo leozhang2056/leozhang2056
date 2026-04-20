@@ -80,6 +80,8 @@ project_ranking:
       - smart-factory
       - live-streaming-system
       - iot-solutions
+      - visual-gateway
+      - forest-patrol-inspection
   base_priority:
     chatclothes: 10
     enterprise-messaging: 20

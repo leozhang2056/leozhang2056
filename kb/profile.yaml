@@ -45,10 +45,10 @@ career_identity:
   
   summary_variants:
     default: >
-      Full-stack software engineer with 10+ years of hands-on delivery across Android, Spring Boot backend, and production
-      systems. Proven end-to-end execution from client and API integration to CI/CD rollout and live issue resolution in
-      IoT-connected and enterprise environments. Master's in Computer and Information Sciences from Auckland University of
-      Technology (AUT), awarded First Class Honours, with a practical focus on shipping reliable software under real-world constraints.
+      Full-stack software engineer with 10+ years of hands-on delivery across Android, Java backend, Vue.js frontend, and
+      production systems. Proven end-to-end execution from API design and client integration to CI/CD rollout and live
+      issue resolution in IoT-connected and enterprise environments. Based in Auckland, New Zealand, with a Master's in
+      Computer and Information Sciences from AUT and First Class Honours.
     
     android_focus: >
       Android engineer with 10+ years shipping production mobile apps; Master's from Auckland University
@@ -158,11 +158,7 @@ education:
 
 career_objectives:
   target_roles:
-    - Android Developer
-    - Backend Engineer (Java)
-    - AI/ML Engineer
     - Full-stack Developer
-    - DevOps Engineer
   
   preferred_locations:
     - Auckland, New Zealand

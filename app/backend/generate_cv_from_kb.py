@@ -2530,6 +2530,9 @@ def generate_html_from_kb(
     )
 
     contact_secondary = ""
+    work_rights_text = _extract_work_rights_text(profile, lang)
+    if work_rights_text:
+        contact_secondary = f'<div class="cv-contact-secondary">{html.escape(work_rights_text)}</div>'
 
     html_doc = f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -2695,6 +2698,21 @@ def _build_kb_evidence_corpus(base: Path) -> str:
         pass
 
     return _normalize_text_for_match(" ".join(texts))
+
+
+def _extract_work_rights_text(profile: Dict, lang: str) -> str:
+    """从 profile 里提取可展示的工作权限说明。"""
+    if not isinstance(profile, dict):
+        return ""
+    personal_info = profile.get('personal_info', {})
+    if not isinstance(personal_info, dict):
+        return ""
+    resume_contact = personal_info.get('resume_contact', {})
+    if not isinstance(resume_contact, dict):
+        return ""
+    work_rights_en = str(resume_contact.get('work_rights_en') or '').strip()
+    work_rights_zh = str(resume_contact.get('work_rights_zh') or '').strip()
+    return work_rights_zh if lang == 'zh' else work_rights_en
 
 
 def _filter_jd_keywords_by_kb_evidence(

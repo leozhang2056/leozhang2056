@@ -28,7 +28,7 @@ programming_languages:
       - Computer vision pipelines
     
   - name: JavaScript
-    level: intermediate
+    level: advanced
     years: 6
     evidence:
       - Vue.js frontend development

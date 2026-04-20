@@ -83,6 +83,20 @@ class TestGenerationQuality:
         assert "Hands-on with" not in summary
         assert "stable release discipline" not in summary
 
+    def test_generate_html_includes_work_rights_in_contact_header(self):
+        from app.backend.generate_cv_from_kb import generate_html_from_kb
+
+        html = generate_html_from_kb(
+            role_type="fullstack",
+            lang="en",
+            jd_keywords=[],
+            max_projects=3,
+            company_name=None,
+            target_role_title="Senior Full-Stack Engineer",
+        )
+
+        assert "Full-time work rights in New Zealand" in html
+
     def test_select_bullets_prefers_stronger_evidence_backed_variant(self):
         from app.backend.generate_cv_from_kb import _select_bullets_for_project
 

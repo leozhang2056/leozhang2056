@@ -45,3 +45,17 @@ def test_sort_projects_with_jd_uses_score_first():
     ranked = sort_projects(projects, role_type="fullstack", jd_keywords=["spring"], max_projects=2)
     assert ranked[0]["_project_dir"] == "enterprise-messaging"
 
+
+def test_score_project_by_jd_handles_common_variants():
+    project = _project(
+        "enterprise-messaging",
+        keywords=["rest api"],
+        roles=["backend engineer"],
+        tech=["Spring Boot", "RESTful APIs"],
+        highlights=["Built an API gateway with stable releases"],
+    )
+
+    score = score_project_by_jd(project, ["REST APIs", "backend-engineer"])
+
+    assert score > 0
+
