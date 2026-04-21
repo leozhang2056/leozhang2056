@@ -77,6 +77,32 @@ _COMPANY_FIT_HOOKS = {
             '我长期做 IoT 连接系统、生产级 API 与稳定性交付，擅长把复杂数据与流程落成团队每天可依赖的工具。'
         ),
     },
+    'l3harris': {
+        'en': (
+            "What resonates with me about L3Harris is your values-led engineering culture: dedication to mission, "
+            "commitment to excellence, and building trusted technology for high-stakes environments. "
+            "I am motivated by teams that pair technical depth with accountability, where secure and reliable delivery "
+            "matters as much as feature speed."
+        ),
+        'zh': (
+            "我与 L3Harris 的共鸣点在于其以价值观驱动的工程文化：强调使命感、追求卓越，"
+            "并在高要求场景中交付可信技术。"
+            "我认同“技术深度 + 交付责任”并重的团队方式，在这里系统安全与稳定和功能迭代同样重要。"
+        ),
+    },
+    'aut': {
+        'en': (
+            "What resonates with me most about AUT is its values-led culture and practical mission: "
+            "Pono, Tika, and Aroha, together with \"Knowledge that Works,\" reflect the kind of environment "
+            "where I do my best work. As a recent AUT graduate, I have experienced this culture directly and "
+            "genuinely value how AUT supports students, staff, and diverse communities through real-world impact."
+        ),
+        'zh': (
+            "我与 AUT 最深的共鸣来自其价值观导向的文化与务实使命："
+            "Pono、Tika、Aroha，以及“Knowledge that Works”。"
+            "作为刚毕业的 AUT 学生，我亲身感受过这种文化，也真心认同 AUT 通过实际成果服务学生、教职员工与多元社区。"
+        ),
+    },
 }
 
 _WHY_ME_HOOKS = {
@@ -94,6 +120,34 @@ _WHY_ME_HOOKS = {
             '（CI/CD、代码评审、在真实截止期下的问题闭环）。这让我可以低磨合快速上手，并持续交付可落地结果。'
         ),
     }
+    ,
+    'l3harris': {
+        'en': (
+            "I believe I can add value quickly because I bring cross-stack delivery habits aligned with this role: "
+            "building maintainable backend services and APIs, shipping production web/mobile features, and closing issues "
+            "through testing, CI/CD, and pragmatic troubleshooting. "
+            "I also work comfortably in distributed Agile teams and communicate technical trade-offs clearly."
+        ),
+        'zh': (
+            "我能较快产生价值，是因为我具备与该岗位一致的跨栈交付习惯："
+            "能构建可维护的后端服务与 API，也能稳定交付前端/移动端功能，并通过测试、CI/CD 和问题闭环保障质量。"
+            "同时我适应分布式敏捷协作，能够清晰沟通技术取舍。"
+        ),
+    },
+    'aut': {
+        'en': (
+            "I would be proud to continue my journey at AUT and contribute as an engineer in the same community that shaped me. "
+            "I have been waiting for an opportunity like this. "
+            "More than anything, I hope to work alongside my AUT teachers and mentors as colleagues, and keep building meaningful outcomes together. "
+            "This role is deeply personal to me, and I am genuinely excited and strongly committed to growing my career at AUT."
+        ),
+        'zh': (
+            "能够以工程师身份继续留在 AUT 这个培养我的社区，我会感到非常自豪。"
+            "我非常愿意并且有强烈动力投入 AUT 的 AI 与数字体验平台建设，"
+            "以稳定交付、务实集成和协作方式持续贡献。这个岗位对我有很强的个人意义，"
+            "我也真心期待并坚定希望在 AUT 长期发展。"
+        ),
+    },
 }
 
 
@@ -228,9 +282,10 @@ def build_cover_letter_content(
 
     if lang == 'en':
         opening = (
-            f'I am writing to apply for the {target_role_title} position at {company_name}. '
-            f'As a {hint_text} with {years_str} years of professional experience, '
-            f'I bring hands-on Android engineering experience that matches this role’s product and technical requirements.'
+            f'I am genuinely excited to apply for the {target_role_title} position at {company_name}. '
+            f'I have been waiting for an opportunity like this for a long time, and this role feels like a very strong fit. '
+            f'As a recent AUT graduate and a {hint_text}, this opportunity feels especially meaningful to me. '
+            f'I care deeply about AUT and the people here, and I would be honoured to contribute back to this community.'
         )
 
         proj1 = top_projects[0] if top_projects else {}
@@ -257,6 +312,17 @@ def build_cover_letter_content(
                 + (f'Additionally, through {proj2_name}, I {proj2.get("highlights", ["built and maintained a production system"])[0].lower() if proj2 else ""}.'
                    if proj2_name else '')
             )
+        company_lower = (company_name or '').lower()
+        if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
+            body1 = (
+                "At AUT, I completed my Master's in Computer and Information Sciences with First Class Honours, "
+                "where I strengthened my practical knowledge across software architecture, AI applications, "
+                "integration workflows, and production-oriented delivery. "
+                "My core AUT project was ChatClothes, where I independently designed and implemented an end-to-end system, "
+                "from model workflow orchestration to a usable application experience and evaluation outputs. "
+                "I also contributed through applied research and publication work, including my thesis and peer-reviewed output, "
+                "which reflects my commitment to turning learning into real, useful outcomes."
+            )
 
         # 第三段专注“岗位匹配能力”，避免与项目段重复
         role_match_map = {
@@ -282,7 +348,6 @@ def build_cover_letter_content(
         }
         body2 = role_match_map.get(role_type, role_match_map['fullstack'])
         # Company-fit highlights: add non-resume narrative hooks without inventing hard facts
-        company_lower = (company_name or '').lower()
         if 'theta' in company_lower:
             body2 = (
                 f'{body2} '
@@ -296,10 +361,24 @@ def build_cover_letter_content(
                 f'{_COMPANY_FIT_HOOKS["eroad"]["en"]} '
                 f'{_WHY_ME_HOOKS["eroad"]["en"]}'
             )
+        if 'l3harris' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["l3harris"]["en"]} '
+                f'{_WHY_ME_HOOKS["l3harris"]["en"]}'
+            )
+        if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["aut"]["en"]} '
+                f'{_WHY_ME_HOOKS["aut"]["en"]}'
+            )
         if pub_note and role_type == 'ai':
             body2 = f'{body2} {pub_note}'
 
         closing = (
+            f'I am deeply grateful for the education and support I received at {company_name}, '
+            f'and I sincerely hope to earn this opportunity to contribute in return. '
             f'I would welcome the opportunity to discuss how my experience can contribute to {company_name}.'
         )
 
@@ -351,6 +430,10 @@ def build_cover_letter_content(
             )
         if 'eroad' in company_lower:
             body2 = f'{body2}{_COMPANY_FIT_HOOKS["eroad"]["zh"]}{_WHY_ME_HOOKS["eroad"]["zh"]}'
+        if 'l3harris' in company_lower:
+            body2 = f'{body2}{_COMPANY_FIT_HOOKS["l3harris"]["zh"]}{_WHY_ME_HOOKS["l3harris"]["zh"]}'
+        if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
+            body2 = f'{body2}{_COMPANY_FIT_HOOKS["aut"]["zh"]}{_WHY_ME_HOOKS["aut"]["zh"]}'
         if pub_note and role_type == 'ai':
             body2 = f'{body2}{pub_note}'
 
@@ -496,13 +579,6 @@ def generate_cover_letter_html(
       <a href="mailto:{content["email"]}">{content["email"]}</a>
       &nbsp;|&nbsp; {content["phone"]}
     </div>
-  </div>
-
-  <div class="cl-date">{today_fmt}</div>
-
-  <div class="cl-recipient">
-    <strong>{company_name}</strong><br>
-    Hiring Team
   </div>
 
   <div class="cl-salutation">{salutation}</div>

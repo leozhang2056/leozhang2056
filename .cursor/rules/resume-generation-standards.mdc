@@ -38,6 +38,14 @@ Apply these when generating or adjusting CVs in this project.
 - If content spills beyond 2 pages and page 3 has visible whitespace, you may enable **Interests** (`include_interests_in_cv`) as the **last** section to improve page balance (optional).
 - **Interests placement rule:** Interests must always be the final section (after **Publications**), because it is low priority.
 
+## Post-generation review (mandatory)
+- After every CV PDF generation, run post-check and output `*_POST_CHECK.md`.
+- `*_POST_CHECK.md` must include two qualitative sections in addition to quantitative checks:
+  - **Recruiter Review (Screening Lens)**: screening risks, ATS/readability issues, and prioritized resume edits.
+  - **Interviewer Review (Technical Lens)**: depth/credibility of project evidence, likely interview follow-ups, and strengthening suggestions.
+- Treat these review sections as part of the default generation pipeline, not optional add-ons.
+- When providing results to user, always surface key actionable recommendations from both lenses.
+
 ## CV HTML section order (canonical)
 Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. **Do not reorder** without an explicit product decision:
 

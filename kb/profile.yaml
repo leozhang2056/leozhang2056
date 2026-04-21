@@ -18,12 +18,6 @@ personal_info:
       city_cn: 奥克兰
       country_cn: 新西兰
 
-  # Shown on CV header (English) — keep factual to your current visa situation.
-  resume_contact:
-    # Post-Study Work Visa: open full-time work for any employer (update if still on student visa).
-    work_rights_en: "Full-time work rights in New Zealand (Post-Study Work Visa; open work for any employer)."
-    work_rights_zh: "新西兰全职工作资格（毕业后工签 PSWV，可为任意雇主全职工作）。"
-    
   visa_status: 
     type: Post-Study Work Visa
     work_rights: Open full-time work for any employer
@@ -32,11 +26,12 @@ personal_info:
 career_identity:
   # Optional layout padding: when true, append Interests after Publications (last section).
   include_interests_in_cv: false
-  current_role: Software Engineer (Android & backend)
+  current_role: AI Engineer (Python / Computer Vision)
   primary_titles:
+    - AI/ML Engineer
+    - Python AI Engineer
     - Full-stack Software Engineer
     - Android Developer
-    - AI/ML Engineer
     - Backend Engineer
   
   tagline: >
@@ -51,14 +46,13 @@ career_identity:
       Computer and Information Sciences from AUT and First Class Honours.
     
     android_focus: >
-      Android engineer with 10+ years shipping production mobile apps; Master's from Auckland University
-      of Technology (AUT) with First Class Honours. Kotlin/Java, Jetpack/MVVM, NDK networking, offline-first patterns,
-      Compose, Coroutines/Flow, and Hilt. fintech and banking-adjacent delivery includes a cryptocurrency trading
-      Android client with encryption, WebSocket market data, and resilient APIs; also multi-year offline GIS,
-      enterprise mobile reliability, and Android plus gateway integration for industrial control. Comfortable in
-      Scrum, technical validation and prototyping, secure releases, CI/CD discipline, and mentoring via code review.
-      Uses AI-assisted tools (Cursor, Copilot, Claude Code) for faster refactors and tests with engineering ownership.
-      Based in Auckland, New Zealand.
+      Senior Android engineer with 10+ years delivering production mobile products across fintech-adjacent,
+      enterprise, and industrial environments; Master's from Auckland University of Technology (AUT) with
+      First Class Honours. Strong in architecture, secure release discipline, and end-to-end delivery from
+      requirements validation to integration, testing, deployment, and post-release support. Proven in
+      offline-capable mobile workflows, API integration, incident response, and cross-functional Agile collaboration.
+      Comfortable mentoring teammates through code review and prototyping while maintaining high quality under
+      tight delivery timelines. Based in Auckland, New Zealand.
     
     ai_focus: >
       AI-focused software engineer with a Master's in Computer and Information Sciences from Auckland

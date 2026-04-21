@@ -110,7 +110,6 @@ OVERVIEW_MAX_CHARS = 245
 SUMMARY_TRUNCATE_POINT = 120
 SUMMARY_SAFE_TAIL_PHRASES_EN = (
     "based in Auckland, New Zealand.",
-    "Full-time work rights in New Zealand.",
 )
 
 # 字符串处理常量

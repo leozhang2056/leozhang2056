@@ -75,13 +75,15 @@ project_ranking:
       - iot-solutions
       - visual-gateway
     fullstack:
-      - chatclothes
-      - enterprise-messaging
       - smart-factory
-      - live-streaming-system
       - iot-solutions
-      - visual-gateway
+      - picture-book-locker
+      - smart-power
       - forest-patrol-inspection
+      - enterprise-messaging
+      - live-streaming-system
+      - chatclothes
+      - visual-gateway
   base_priority:
     chatclothes: 10
     enterprise-messaging: 20
@@ -116,11 +118,17 @@ project_selection:
       - enterprise-messaging
       - iot-solutions
       - smart-factory
+    fullstack:
+      - smart-factory
+      - iot-solutions
+      - picture-book-locker
+      - smart-power
     default:
       - chatclothes
       - smart-factory
 
   # When a slot is freed (e.g. exclusion), prefer these projects to fill it
   preferred_replacements:
+    - picture-book-locker
     - smart-power
     - iot-solutions

@@ -4,7 +4,7 @@
 experiences:
   - company: Auckland University of Technology (AUT)
     location: New Zealand
-    role: Master's Researcher (AI / Computer Vision)
+    role: AI Engineer (Python / Computer Vision)
     start_date: "2024-07"
     end_date: "2025-04"
     current: false
@@ -13,7 +13,7 @@ experiences:
     projects:
       - name: ChatClothes Virtual Try-On
         duration: "Nov 2024 - Apr 2025"
-        role: Sole Developer & System Designer
+        role: AI Engineer & Python Developer (Sole Builder)
         description: AI-driven virtual try-on platform with LLM control and on-device deployment targets
         
         highlights:

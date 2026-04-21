@@ -44,6 +44,56 @@ class PostGenerationThresholdResult:
     checks: List[Tuple[str, bool, str]]
 
 
+def _build_recruiter_recommendations(
+    report: "PostGenerationCheck",
+    min_target_pct: float,
+) -> List[str]:
+    """招聘官视角：聚焦筛选通过率（JD匹配、可读性、岗位对齐信号）。"""
+    recs: List[str] = []
+    if report.jd_total > 0 and report.jd_coverage_pct < min_target_pct:
+        recs.append(
+            f"[High] JD覆盖率仅 `{report.jd_coverage_pct:.1f}%`，建议在 Summary 与 Experience 前3条要点补齐缺失词："
+            f" `{', '.join(report.jd_misses[:6])}`。"
+        )
+    if report.summary_kw_hits < SUMMARY_MIN_KW_HITS:
+        recs.append(
+            f"[High] Summary 关键词命中 `{report.summary_kw_hits}` 偏低，建议首段增加岗位关键能力与业务场景证据。"
+        )
+    if report.skills_kw_hits < SKILLS_MIN_KW_HITS:
+        recs.append(
+            f"[Medium] Key Skills 命中 `{report.skills_kw_hits}` 偏低，建议补齐JD核心栈（如语言/框架/平台）。"
+        )
+    if report.fluency_notes:
+        recs.append(
+            "[Medium] 文案存在重复短语，建议减少相同技术词反复出现，提升首轮HR阅读流畅度。"
+        )
+    if not recs:
+        recs.append("[Info] 招聘官筛选信号整体良好，建议仅做小幅岗位定制。")
+    return recs
+
+
+def _build_interviewer_recommendations(
+    report: "PostGenerationCheck",
+) -> List[str]:
+    """面试官视角：聚焦可追问深度（系统设计、取舍、稳定性与结果）。"""
+    recs: List[str] = []
+    if report.bullets_kw_hits < max(3, int(report.jd_total * 0.35)) and report.jd_total > 0:
+        recs.append(
+            "[High] 项目要点中的JD命中不足，建议每个核心项目至少补1条“问题-方案-结果”型技术要点。"
+        )
+    if report.layout_notes:
+        recs.append(
+            "[Medium] 版式提示存在潜在分页风险，建议检查 Experience 是否出现大段断层，避免影响技术叙事连续性。"
+        )
+    recs.append(
+        "[Medium] 增加可面试追问的证据：架构取舍、性能优化前后、故障排查与线上稳定性指标。"
+    )
+    recs.append(
+        "[Low] 为每个重点项目准备1句口头扩展（挑战/决策/结果），便于面试时快速展开。"
+    )
+    return recs
+
+
 def _sentence_split(text: str) -> List[str]:
     text = text.strip()
     if not text:
@@ -232,6 +282,14 @@ def build_post_check_markdown(report: PostGenerationCheck, min_target_pct: float
             "",
         ]
     )
+    lines.append("## Recruiter Review (Screening Lens)")
+    for rec in _build_recruiter_recommendations(report, min_target_pct):
+        lines.append(f"- {rec}")
+    lines.append("")
+    lines.append("## Interviewer Review (Technical Lens)")
+    for rec in _build_interviewer_recommendations(report):
+        lines.append(f"- {rec}")
+    lines.append("")
     return "\n".join(lines)
 
 
