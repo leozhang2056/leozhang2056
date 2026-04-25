@@ -44,7 +44,7 @@ Company: {{COMPANY_NAME}}
 Output language: {{LANGUAGE}}
 
 Structure:
-1. Opening paragraph: connect to role and company (1-2 sentences on why this role/company)
+1. Opening paragraph: start with a concise attention hook, then connect to role and company (1-2 sentences on why this role/company)
 2. Body paragraph 1: strongest technical evidence (1-2 projects, specific metrics)
 3. Body paragraph 2: broader experience / soft skills / unique value
 4. Closing: value proposition + next steps (avoid duplicate contact line when header already includes contact)
@@ -54,6 +54,7 @@ Requirements:
 - Use only KB facts
 - Include 2-3 specific metrics or outcomes
 - Do not simply repeat resume bullets — synthesize them into a narrative
+- Opening hook must be evidence-safe and JD-aligned: no exaggerated slogans, no unverifiable claims
 - Keep it under 400 words
 - For developer roles, reflect fast execution and strong self-management where relevant
 - Do not explain your reasoning unless requested

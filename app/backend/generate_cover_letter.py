@@ -66,6 +66,19 @@ _ROLE_NARRATIVE_HINT = {
 
 # 公司共鸣叙事钩子（不写硬事实，避免与 JD/官网信息冲突）
 _COMPANY_FIT_HOOKS = {
+    'windcave': {
+        'en': (
+            'What resonates with me about Windcave is the combination of product depth and operational seriousness. '
+            'Payments software sits close to real business risk, so mobile quality, integration discipline, and reliability '
+            'matter in a very concrete way. I am motivated by engineering environments where stable releases, careful testing, '
+            'and dependable user journeys are part of the product value, not just delivery hygiene.'
+        ),
+        'zh': (
+            '鎴戜笌 Windcave 鐨勫叡楦ｇ偣鍦ㄤ簬锛屽畠鎶婁骇鍝佹繁搴﹀拰涓氬姟绋冲畾鎬х粨鍚堝湪浜嗕竴璧枫€?'
+            '鏀粯绯荤粺闈㈠悜鐪熷疄浜ゆ槗鍦烘櫙锛屽洜姝ょЩ鍔ㄧ璐ㄩ噺銆侀泦鎴愮邯寰嬪拰鍙潬鎬ч兘鏄潪甯稿叧閿殑浠峰€笺€?'
+            '鎴戝緢璁ゅ悓杩欑被宸ョ▼鐜锛氱ǔ瀹氬彂甯冦€佷弗璋ㄦ祴璇曞拰鍙俊鐢ㄦ埛浣撻獙锛屾湰韬氨鏄骇鍝佺珵浜夊姏鐨勪竴閮ㄥ垎銆?'
+        ),
+    },
     'eroad': {
         'en': (
             'What resonates with me about EROAD is the practical impact of software on real-world operations. '
@@ -106,6 +119,18 @@ _COMPANY_FIT_HOOKS = {
 }
 
 _WHY_ME_HOOKS = {
+    'windcave': {
+        'en': (
+            'I believe I can contribute well in this context because my Android experience has consistently involved more than UI delivery alone: '
+            'I have worked across app architecture, backend integration, device-adjacent workflows, release pipelines, and production troubleshooting. '
+            'That combination fits environments where mobile software must be maintainable, integration-friendly, and reliable under real usage.'
+        ),
+        'zh': (
+            '鎴戣涓鸿嚜宸遍€傚悎杩欑被鍦烘櫙锛屽洜涓烘垜鐨?Android 缁忛獙涓嶅彧鏄仛鐣岄潰鍔熻兘锛?'
+            '鑰屾槸闀挎湡鍚屾椂瑕嗙洊搴旂敤鏋舵瀯銆佸悗绔泦鎴愩€佽澶囩浉鍏虫祦绋嬨€佸彂甯冩祦姘村拰鐢熶骇闂闂幆銆?'
+            '杩欑缁勫悎姝ｅソ閫傚悎瀵圭淮鎶ゆ€с€侀泦鎴愯兘鍔涘拰鍙潬鎬ф湁楂樿姹傜殑浜т笟绾у洟闃熴€?'
+        ),
+    },
     'eroad': {
         'en': (
             'I believe I am a strong fit because I combine three qualities that are hard to find together: '
@@ -149,6 +174,64 @@ _WHY_ME_HOOKS = {
         ),
     },
 }
+
+
+# ---------------------------------------------------------------------------
+# JD hook helpers
+# ---------------------------------------------------------------------------
+def _normalize_jd_keywords_for_hook(jd_keywords: Optional[List[str]]) -> List[str]:
+    """清洗 JD 关键词用于开场 hook，避免无意义词。"""
+    if not jd_keywords:
+        return []
+    bad = {
+        "senior", "junior", "developer", "engineer", "role", "position", "job",
+        "experience", "team", "company", "skills", "responsibilities", "requirements",
+        "full", "time", "remote", "hybrid", "onsite", "new", "posted", "apply",
+    }
+    out: List[str] = []
+    seen = set()
+    for kw in jd_keywords:
+        t = str(kw or "").strip()
+        if len(t) < 3:
+            continue
+        tl = t.lower()
+        if tl in bad:
+            continue
+        if tl in seen:
+            continue
+        seen.add(tl)
+        out.append(t)
+    return out[:12]
+
+
+def _build_jd_fit_hook(role_type: str, lang: str, jd_keywords: Optional[List[str]]) -> str:
+    """
+    根据 JD 关键词生成契合型 hook 短句。
+    不引入新事实，仅表明交付关注点。
+    """
+    kws = _normalize_jd_keywords_for_hook(jd_keywords)
+    if not kws:
+        return ""
+
+    joined_en = ", ".join(kws[:2]) if len(kws) > 1 else kws[0]
+    joined_zh = "、".join(kws[:2]) if len(kws) > 1 else kws[0]
+
+    if lang == "zh":
+        role_map_zh = {
+            "android": f"从 JD 看，该岗位重视 {joined_zh}，这与我在 Android 生产交付中的长期实践高度一致。",
+            "backend": f"从 JD 看，该岗位重视 {joined_zh}，这与我在后端稳定性与可维护性交付中的实践高度一致。",
+            "ai": f"从 JD 看，该岗位重视 {joined_zh}，这与我在 AI 工程落地中的实践高度一致。",
+            "fullstack": f"从 JD 看，该岗位重视 {joined_zh}，这与我跨前后端端到端交付的经验高度一致。",
+        }
+        return role_map_zh.get(role_type, role_map_zh["fullstack"])
+
+    role_map_en = {
+        "android": f"The JD emphasizes {joined_en}, which aligns closely with how I deliver Android systems in production.",
+        "backend": f"The JD emphasizes {joined_en}, which aligns closely with how I deliver reliable backend systems.",
+        "ai": f"The JD emphasizes {joined_en}, which aligns closely with how I deliver practical AI systems.",
+        "fullstack": f"The JD emphasizes {joined_en}, which aligns closely with how I deliver end-to-end systems.",
+    }
+    return role_map_en.get(role_type, role_map_en["fullstack"])
 
 
 # ---------------------------------------------------------------------------
@@ -267,6 +350,24 @@ def build_cover_letter_content(
     years_match = re.search(r'(\d+)\+?\s*years?', work_exp, re.IGNORECASE)
     years_str = f'{years_match.group(1)}+' if years_match else '10+'
 
+    def _opening_hook_text(_role_type: str, _lang: str) -> str:
+        """开场钩子：首句先抓注意力，再进入岗位匹配。"""
+        if _lang == 'zh':
+            hook_map_zh = {
+                'android': '我擅长把复杂业务需求快速落成稳定、可维护、可持续迭代的 Android 生产系统。',
+                'backend': '我擅长把复杂业务规则落成高可用、可扩展、可长期演进的后端系统。',
+                'ai': '我擅长把 AI 方案从原型推进到可运行、可评估、可持续迭代的工程形态。',
+                'fullstack': '我擅长把模糊需求收敛为可上线、可运维的端到端系统交付。',
+            }
+            return hook_map_zh.get(_role_type, hook_map_zh['fullstack'])
+        hook_map_en = {
+            'android': 'I turn complex product requirements into stable Android systems that hold up in production.',
+            'backend': 'I turn complex business requirements into reliable backend systems that scale and remain maintainable.',
+            'ai': 'I turn AI ideas into production-ready workflows that are runnable, measurable, and iteratively improved.',
+            'fullstack': 'I turn ambiguous requirements into production-ready end-to-end systems teams can rely on.',
+        }
+        return hook_map_en.get(_role_type, hook_map_en['fullstack'])
+
     # Thesis / publication highlight
     pubs = achievements.get('publications', [])
     pub_note = ''
@@ -281,11 +382,14 @@ def build_cover_letter_content(
         pub_note = pub_note_en if lang == 'en' else pub_note_zh
 
     if lang == 'en':
+        opening_hook = _opening_hook_text(role_type, 'en')
+        jd_fit_hook = _build_jd_fit_hook(role_type, 'en', jd_keywords)
         opening = (
-            f'I am genuinely excited to apply for the {target_role_title} position at {company_name}. '
-            f'I have been waiting for an opportunity like this for a long time, and this role feels like a very strong fit. '
-            f'As a recent AUT graduate and a {hint_text}, this opportunity feels especially meaningful to me. '
-            f'I care deeply about AUT and the people here, and I would be honoured to contribute back to this community.'
+            f'{opening_hook} '
+            f'I am excited to apply for the {target_role_title} position at {company_name}. '
+            f'This role is a strong fit for my background as a {hint_text} with {years_str} years of delivery experience. '
+            f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
+            f'{jd_fit_hook}'.strip()
         )
 
         proj1 = top_projects[0] if top_projects else {}
@@ -361,6 +465,12 @@ def build_cover_letter_content(
                 f'{_COMPANY_FIT_HOOKS["eroad"]["en"]} '
                 f'{_WHY_ME_HOOKS["eroad"]["en"]}'
             )
+        if 'windcave' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["windcave"]["en"]} '
+                f'{_WHY_ME_HOOKS["windcave"]["en"]}'
+            )
         if 'l3harris' in company_lower:
             body2 = (
                 f'{body2} '
@@ -377,16 +487,19 @@ def build_cover_letter_content(
             body2 = f'{body2} {pub_note}'
 
         closing = (
-            f'I am deeply grateful for the education and support I received at {company_name}, '
-            f'and I sincerely hope to earn this opportunity to contribute in return. '
-            f'I would welcome the opportunity to discuss how my experience can contribute to {company_name}.'
+            f'I would welcome the opportunity to discuss how my Android background, integration experience, and reliability-focused delivery habits can contribute to {company_name}. '
+            'Thank you for your time and consideration.'
         )
 
     else:  # zh
+        opening_hook = _opening_hook_text(role_type, 'zh')
+        jd_fit_hook = _build_jd_fit_hook(role_type, 'zh', jd_keywords)
         opening = (
+            f'{opening_hook}'
             f'我诚挚地申请贵公司 {company_name} 的{target_role_title}职位。'
             f'作为一名{hint_text}，拥有 {years_str} 年专业经验，'
             f'我相信我的背景与该职位要求高度匹配。'
+            f'{jd_fit_hook}'
         )
 
         proj1 = top_projects[0] if top_projects else {}

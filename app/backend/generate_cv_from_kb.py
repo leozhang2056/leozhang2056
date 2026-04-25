@@ -612,6 +612,48 @@ def _role_evidence_sentence(role_type: str, lang: str) -> str:
     return variants.get(role_type) or variants.get("fullstack", "")
 
 
+def _build_summary_hook(role_type: str, lang: str, normed_kws: Optional[List[str]] = None) -> str:
+    """
+    生成 Summary 首句钩子：
+    - 吸引阅读注意力
+    - 保持事实安全（不新增具体数字）
+    - 可按 JD 术语轻量贴合
+    """
+    kws = normed_kws or []
+    concrete_terms = _pick_concrete_jd_terms_for_summary(kws, limit=2)
+
+    if lang == "zh":
+        base_map = {
+            "android": "擅长把复杂业务需求转成稳定、可维护的 Android 生产系统。",
+            "backend": "擅长把复杂业务规则落成高可用、可持续演进的后端系统。",
+            "ai": "擅长把研究型 AI 方案推进为可运行、可评估、可迭代的产品能力。",
+            "fullstack": "擅长把模糊需求快速收敛为可上线、可运维的跨端完整方案。",
+        }
+        hook = base_map.get(role_type, base_map["fullstack"])
+        if concrete_terms:
+            if len(concrete_terms) > 1:
+                hook = f"{hook} 与 JD 关注的 {concrete_terms[0]}、{concrete_terms[1]} 保持高契合。"
+            else:
+                hook = f"{hook} 与 JD 关注的 {concrete_terms[0]} 保持高契合。"
+        return hook
+
+    base_map_en = {
+        "android": "I turn complex product requirements into stable, maintainable Android systems that hold up in production.",
+        "backend": "I turn complex business requirements into reliable backend systems that scale and stay maintainable.",
+        "ai": "I turn AI ideas into runnable, evaluable production workflows with clear engineering trade-offs.",
+        "fullstack": "I turn ambiguous requirements into production-ready end-to-end systems teams can rely on.",
+    }
+    hook = base_map_en.get(role_type, base_map_en["fullstack"])
+    if concrete_terms:
+        a = concrete_terms[0]
+        if len(concrete_terms) > 1:
+            b = concrete_terms[1]
+            hook = f"{hook} Recent delivery aligns with {a} and {b}."
+        else:
+            hook = f"{hook} Recent delivery aligns with {a}."
+    return hook
+
+
 def generate_summary(
     profile: Dict,
     role_type: str = 'fullstack',
@@ -719,6 +761,14 @@ def generate_summary(
             seen.add(key)
             normed.append(kw_norm)
         return normed
+
+    # 先提取 JD 关键词，供 Hook 与加粗共用
+    normed_kws = _normalize_jd_keywords(jd_keywords)
+
+    # 在开头注入一条简短 hook，提升可读性和注意力抓取
+    hook = _build_summary_hook(role_type=role_type, lang=lang, normed_kws=normed_kws)
+    if hook:
+        text = f"{hook} {text}"
 
     # 加粗关键词（角色相关的核心词）
     bold_terms: Dict[str, List[str]] = {
@@ -851,7 +901,6 @@ def generate_summary(
         return s
 
     # JD：少量加粗即可（过多 <strong> 像模板/AI 堆砌；关键词更应落在 Experience bullet）
-    normed_kws = _normalize_jd_keywords(jd_keywords)
     if normed_kws:
         jd_bold_limit = 2 if role_type == "android" else 5
         for i, kw_norm in enumerate(normed_kws):
@@ -2020,7 +2069,7 @@ _CSS = """
     body {
       font-family: 'Times New Roman', Cambria, Georgia, serif;
       font-size: 11.6pt;
-      line-height: 1.36;
+      line-height: 1.34;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -2117,8 +2166,8 @@ _CSS = """
       font-weight: 600;
       color: #1a4d96;
       font-variant: small-caps;
-      margin-top: 9px;
-      margin-bottom: 5px;
+      margin-top: 8px;
+      margin-bottom: 4px;
       border-bottom: 0.8px solid #8a8a8a;
       padding-bottom: 1px;
       letter-spacing: 0.7px;
@@ -2149,7 +2198,7 @@ _CSS = """
 
     /* ── Experience ──────────────────────────────────── */
     .job {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       page-break-inside: avoid;
     }
 
@@ -2199,7 +2248,7 @@ _CSS = """
     .job-role {
       font-size: 10.9pt;
       color: #333;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -2213,13 +2262,13 @@ _CSS = """
     }
 
     .job-list li {
-      margin-bottom: 1px;
-      line-height: 1.35;
+      margin-bottom: 0;
+      line-height: 1.32;
     }
 
     /* 允许春晓雇主块跨页，避免上一页大块留白（子项目可在页间断开） */
     .job-employer {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       page-break-inside: auto;
       break-inside: auto;
     }
@@ -2239,12 +2288,12 @@ _CSS = """
     .employer-progression {
       font-size: 10.4pt;
       color: #444;
-      margin-bottom: 4px;
-      line-height: 1.35;
+      margin-bottom: 3px;
+      line-height: 1.32;
     }
 
     .sub-project {
-      margin: 4px 0 6px 10px;
+      margin: 3px 0 4px 10px;
       padding-left: 10px;
       border-left: 2px solid #cfd8ea;
       page-break-inside: auto;

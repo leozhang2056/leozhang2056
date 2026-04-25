@@ -75,6 +75,7 @@ Requirements:
 - Use only KB facts
 - Include metrics when available
 - Keep bullets concise
+- Start Summary with a 1-sentence attention hook grounded in evidence and explicit JD fit (no hype, no fabricated claims)
 - Integrate highlights naturally into Summary prose (no explicit "Highlights:" tag)
 - For developer roles, emphasize fast execution and strong self-management
 - Keep hard skills prioritized; include soft skills only when role explicitly emphasizes collaboration/mentoring
