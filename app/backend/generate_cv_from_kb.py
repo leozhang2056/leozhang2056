@@ -133,6 +133,27 @@ except ModuleNotFoundError:
         join_items_within_budget as _join_comma_items_within_char_budget,
     )
 
+try:
+    from cv_keyword_utils import (  # type: ignore
+        build_kb_evidence_corpus as _shared_build_kb_evidence_corpus,
+        filter_jd_keywords_by_kb_evidence as _shared_filter_jd_keywords_by_kb_evidence,
+        keyword_hits_in_text as _shared_keyword_hits_in_text,
+        keyword_variant_candidates as _shared_keyword_variant_candidates,
+        normalize_keywords as _shared_normalize_keywords,
+        normalize_text_for_match as _shared_normalize_text_for_match,
+        strip_html_tags as _shared_strip_html_tags,
+    )
+except ModuleNotFoundError:
+    from app.backend.cv_keyword_utils import (  # type: ignore
+        build_kb_evidence_corpus as _shared_build_kb_evidence_corpus,
+        filter_jd_keywords_by_kb_evidence as _shared_filter_jd_keywords_by_kb_evidence,
+        keyword_hits_in_text as _shared_keyword_hits_in_text,
+        keyword_variant_candidates as _shared_keyword_variant_candidates,
+        normalize_keywords as _shared_normalize_keywords,
+        normalize_text_for_match as _shared_normalize_text_for_match,
+        strip_html_tags as _shared_strip_html_tags,
+    )
+
 
 def _compact_tech_stack_one_line(
     tech_stack: Dict[str, Any],
@@ -2434,6 +2455,30 @@ _CV_ICON_GITHUB_SVG = (
 )
 
 
+def _load_resume_inputs(base: Path, kb_data: Optional[Any] = None) -> Dict[str, Any]:
+    """Load resume generation inputs, reusing preloaded KB data when available."""
+    kb_dir = base / "kb"
+
+    def _plain(value: Any) -> Any:
+        if hasattr(value, "model_dump"):
+            return value.model_dump()
+        if isinstance(value, list):
+            return [_plain(item) for item in value]
+        if isinstance(value, dict):
+            return {key: _plain(item) for key, item in value.items()}
+        return value
+
+    return {
+        "profile": _plain(getattr(kb_data, "profile", None)) or load_yaml(kb_dir / "profile.yaml"),
+        "skills_data": _plain(getattr(kb_data, "skills", None)) or load_yaml(kb_dir / "skills.yaml"),
+        "achievements": _plain(getattr(kb_data, "achievements", None)) or load_yaml(kb_dir / "achievements.yaml"),
+        "work_exp_yaml": load_yaml(kb_dir / "experience" / "work.yaml"),
+        "all_projects": _plain(getattr(kb_data, "projects", None)) or load_projects(base / "projects"),
+        "bullets_data": _plain(getattr(kb_data, "bullets", None)) or _load_all_bullets(base),
+        "relations_data": _plain(getattr(kb_data, "relations", None)) or _load_project_relations(base),
+    }
+
+
 def generate_html_from_kb(
     role_type: str = 'fullstack',
     lang: str = 'en',
@@ -2441,6 +2486,7 @@ def generate_html_from_kb(
     max_projects: int = DEFAULT_MAX_PROJECTS,
     company_name: Optional[str] = None,
     target_role_title: Optional[str] = None,
+    kb_data: Optional[Any] = None,
 ) -> str:
     """从 KB 生成完整 HTML"""
 
@@ -2469,14 +2515,14 @@ def generate_html_from_kb(
 
     # ── 加载数据 ──
     base = Path(__file__).parent.parent.parent   # repo root
-    kb_dir = base / 'kb'
-    profile         = load_yaml(kb_dir / 'profile.yaml')
-    skills_data     = load_yaml(kb_dir / 'skills.yaml')
-    achievements    = load_yaml(kb_dir / 'achievements.yaml')
-    work_exp_yaml   = load_yaml(kb_dir / 'experience' / 'work.yaml')
-    all_projects    = load_projects(base / 'projects')
-    bullets_data    = _load_all_bullets(base)
-    relations_data  = _load_project_relations(base)
+    loaded = _load_resume_inputs(base, kb_data=kb_data)
+    profile = loaded["profile"]
+    skills_data = loaded["skills_data"]
+    achievements = loaded["achievements"]
+    work_exp_yaml = loaded["work_exp_yaml"]
+    all_projects = loaded["all_projects"]
+    bullets_data = loaded["bullets_data"]
+    relations_data = loaded["relations_data"]
 
     # ── 个人信息 ──
     personal = profile.get('personal_info', {})
@@ -2654,33 +2700,17 @@ def _slugify_company(company_name: Optional[str]) -> str:
 
 def _strip_html_tags(text: str) -> str:
     """移除 HTML 标签，返回纯文本。"""
-    if not isinstance(text, str):
-        return ""
-    return re.sub(r"<[^>]+>", " ", text)
+    return _shared_strip_html_tags(text)
 
 
 def _normalize_keywords(jd_keywords: Optional[List[str]]) -> List[str]:
     """规范化 JD 关键词（去重、过滤空值）。"""
-    if not jd_keywords:
-        return []
-    out: List[str] = []
-    seen = set()
-    for kw in jd_keywords:
-        if not kw:
-            continue
-        k = str(kw).strip().lower()
-        if not k or k in seen:
-            continue
-        seen.add(k)
-        out.append(k)
-    return out
+    return _shared_normalize_keywords(jd_keywords)
 
 
 def _normalize_text_for_match(text: str) -> str:
     """统一匹配文本，减少大小写/符号差异导致的误判。"""
-    t = (text or "").lower()
-    t = re.sub(r"[^a-z0-9]+", " ", t)
-    return re.sub(r"\s{2,}", " ", t).strip()
+    return _shared_normalize_text_for_match(text)
 
 
 def _keyword_variant_candidates(keyword: str) -> List[str]:
@@ -2688,33 +2718,12 @@ def _keyword_variant_candidates(keyword: str) -> List[str]:
     生成关键词的常见变体，提升与 JD 语义一致的匹配鲁棒性。
     例如: REST APIs -> REST API, restful api
     """
-    raw = (keyword or "").strip().lower()
-    if not raw:
-        return []
-    variants = {raw}
-    variants.add(raw.replace("apis", "api"))
-    variants.add(raw.replace("restful", "rest"))
-    variants.add(raw.replace("&", "and"))
-    variants.add(raw.replace("/", " "))
-    return [v for v in variants if v]
+    return _shared_keyword_variant_candidates(keyword)
 
 
 def _keyword_hits_in_text(text: str, keywords: List[str]) -> List[str]:
     """返回在文本中命中的关键词列表。"""
-    if not text or not keywords:
-        return []
-    t = _normalize_text_for_match(text)
-    hits: List[str] = []
-    for kw in keywords:
-        kw_hit = False
-        for v in _keyword_variant_candidates(kw):
-            nv = _normalize_text_for_match(v)
-            if nv and nv in t:
-                kw_hit = True
-                break
-        if kw_hit:
-            hits.append(kw)
-    return hits
+    return _shared_keyword_hits_in_text(text, keywords)
 
 
 def _build_kb_evidence_corpus(base: Path) -> str:
@@ -2723,29 +2732,7 @@ def _build_kb_evidence_corpus(base: Path) -> str:
     - skills.yaml
     - projects/*/facts.yaml 的关键词/技术栈/亮点/角色关联
     """
-    texts: List[str] = []
-    try:
-        skills_data = load_yaml(base / "kb" / "skills.yaml")
-        texts.append(str(skills_data))
-    except Exception:
-        pass
-
-    try:
-        projects = load_projects(base / "projects")
-        for p in projects:
-            texts.extend([str(x) for x in p.get("keywords", []) if x])
-            texts.extend([str(x) for x in p.get("related_to_roles", []) if x])
-            for h in p.get("highlights", []) or []:
-                if isinstance(h, str):
-                    texts.append(h)
-            tech_stack = p.get("tech_stack", {}) or {}
-            for vals in tech_stack.values():
-                if isinstance(vals, list):
-                    texts.extend([str(v) for v in vals if v])
-    except Exception:
-        pass
-
-    return _normalize_text_for_match(" ".join(texts))
+    return _shared_build_kb_evidence_corpus(base)
 
 
 def _extract_work_rights_text(profile: Dict, lang: str) -> str:
@@ -2771,25 +2758,7 @@ def _filter_jd_keywords_by_kb_evidence(
     反幻觉过滤：仅保留在 KB 证据语料中可支撑的 JD 关键词。
     返回: (supported_keywords, filtered_out_keywords)
     """
-    normalized_kws = _normalize_keywords(jd_keywords)
-    if not normalized_kws:
-        return [], []
-
-    corpus = _build_kb_evidence_corpus(base)
-    supported: List[str] = []
-    filtered: List[str] = []
-    for kw in normalized_kws:
-        hit = False
-        for v in _keyword_variant_candidates(kw):
-            nv = _normalize_text_for_match(v)
-            if nv and nv in corpus:
-                hit = True
-                break
-        if hit:
-            supported.append(kw)
-        else:
-            filtered.append(kw)
-    return supported, filtered
+    return _shared_filter_jd_keywords_by_kb_evidence(jd_keywords, base)
 
 
 def _jd_match_hits_misses_coverage(
@@ -3018,6 +2987,7 @@ def _build_quality_report_markdown(
     max_projects: int,
     company_name: Optional[str],
     target_role_title: Optional[str],
+    kb_data: Optional[Any] = None,
 ) -> str:
     """
     生成质量报告（Markdown）：
@@ -3028,13 +2998,13 @@ def _build_quality_report_markdown(
     - 候选替换项目建议
     """
     base = Path(__file__).parent.parent.parent
-    kb_dir = base / 'kb'
+    loaded = _load_resume_inputs(base, kb_data=kb_data)
 
-    profile = load_yaml(kb_dir / 'profile.yaml')
-    skills_data = load_yaml(kb_dir / 'skills.yaml')
-    all_projects = load_projects(base / 'projects')
-    bullets_data = _load_all_bullets(base)
-    relations_data = _load_project_relations(base)
+    profile = loaded["profile"]
+    skills_data = loaded["skills_data"]
+    all_projects = loaded["all_projects"]
+    bullets_data = loaded["bullets_data"]
+    relations_data = loaded["relations_data"]
 
     selected_projects = _select_projects_with_relations(
         all_projects,
@@ -3260,6 +3230,7 @@ async def generate_cv_from_kb(
     print(f"\nGenerating CV [{role_tag}] from Career KB...")
 
     # Fail-fast: KB 不通过结构校验时直接中止，避免输出“悄悄降级”的 PDF。
+    loaded_kb_data = None
     if strict_kb:
         try:
             from kb_loader import KBLoader  # type: ignore
@@ -3267,7 +3238,7 @@ async def generate_cv_from_kb(
             from app.backend.kb_loader import KBLoader  # type: ignore
 
         kb_loader = KBLoader(repo_root)
-        kb_loader.load_all(strict=True)
+        loaded_kb_data = kb_loader.load_all(strict=True)
 
     safe_jd_keywords, filtered_jd_keywords = _filter_jd_keywords_by_kb_evidence(
         jd_keywords,
@@ -3285,6 +3256,7 @@ async def generate_cv_from_kb(
         role_type, 'en', safe_jd_keywords, max_projects,
         company_name=company_name,
         target_role_title=target_role_title,
+        kb_data=loaded_kb_data,
     )
     html_en = _ensure_min_jd_keyword_coverage_html(
         html_en,
@@ -3377,6 +3349,7 @@ async def generate_cv_from_kb(
             role_type, 'zh', safe_jd_keywords, max_projects,
             company_name=company_name,
             target_role_title=target_role_title,
+            kb_data=loaded_kb_data,
         )
         html_zh_path = zh_path.replace('.pdf', '.html')
         with open(html_zh_path, 'w', encoding='utf-8') as f:
@@ -3404,6 +3377,7 @@ async def generate_cv_from_kb(
                 max_projects=max_projects,
                 company_name=company_name,
                 target_role_title=target_role_title,
+                kb_data=loaded_kb_data,
             )
             
             # 增强质量验证（ATS、AI腔、Bullet质量等）

@@ -7,6 +7,8 @@ from typing import Any, Dict
 
 import yaml
 
+_CONFIG_CACHE: Dict[str, Any] | None = None
+
 DEFAULT_CONFIG: Dict[str, Any] = {
     "role_inference": {
         "keywords": {
@@ -86,19 +88,33 @@ def _deep_merge(base: Dict[str, Any], override: Dict[str, Any]) -> Dict[str, Any
     return result
 
 
-def load_generation_config() -> Dict[str, Any]:
+def load_generation_config(force_reload: bool = False) -> Dict[str, Any]:
     """Load kb/generation_config.yaml and merge with defaults."""
+    global _CONFIG_CACHE
+    if _CONFIG_CACHE is not None and not force_reload:
+        return _CONFIG_CACHE
+
     repo_root = Path(__file__).resolve().parent.parent.parent
     cfg_path = repo_root / "kb" / "generation_config.yaml"
     if not cfg_path.exists():
-        return dict(DEFAULT_CONFIG)
+        _CONFIG_CACHE = dict(DEFAULT_CONFIG)
+        return _CONFIG_CACHE
 
     try:
         with open(cfg_path, "r", encoding="utf-8") as f:
             loaded = yaml.safe_load(f) or {}
         if not isinstance(loaded, dict):
-            return dict(DEFAULT_CONFIG)
-        return _deep_merge(DEFAULT_CONFIG, loaded)
+            _CONFIG_CACHE = dict(DEFAULT_CONFIG)
+            return _CONFIG_CACHE
+        _CONFIG_CACHE = _deep_merge(DEFAULT_CONFIG, loaded)
+        return _CONFIG_CACHE
     except Exception:
-        return dict(DEFAULT_CONFIG)
+        _CONFIG_CACHE = dict(DEFAULT_CONFIG)
+        return _CONFIG_CACHE
+
+
+def clear_generation_config_cache() -> None:
+    """Clear cached generation config for tests or long-running sessions."""
+    global _CONFIG_CACHE
+    _CONFIG_CACHE = None
 

@@ -77,7 +77,10 @@ def fetch_jd_text_from_url(url: str, cookies: Optional[dict] = None) -> str:
         from bs4 import BeautifulSoup  # type: ignore
     except ImportError:
         # 依赖缺失时不中断主流程，由上层决定是否降级为手动 jd_keywords
-        print("Warning: requests / beautifulsoup4 not installed; cannot fetch JD URL automatically.")
+        print(
+            "Warning: requests / beautifulsoup4 not installed; cannot fetch JD URL automatically. "
+            "Install dependencies from `requirements.txt` or provide --jd-keywords manually."
+        )
         return ""
 
     headers = {
@@ -88,7 +91,7 @@ def fetch_jd_text_from_url(url: str, cookies: Optional[dict] = None) -> str:
         resp = requests.get(url, timeout=15, cookies=cookies or {}, headers=headers)
         resp.raise_for_status()
     except Exception as e:
-        print(f"Warning: failed to fetch JD URL: {e}")
+        print(f"Warning: failed to fetch JD URL `{url}`: {e}")
         return ""
 
     try:
@@ -101,7 +104,7 @@ def fetch_jd_text_from_url(url: str, cookies: Optional[dict] = None) -> str:
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
         return "\n".join(lines)
     except Exception as e:
-        print(f"Warning: failed to parse JD HTML: {e}")
+        print(f"Warning: failed to parse JD HTML from `{url}`: {e}")
         return ""
 
 

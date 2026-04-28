@@ -52,13 +52,13 @@ project_ranking:
   priority_offset: 200
   role_project_order:
     android:
-      - chatclothes
-      - boobit
-      - forest-patrol-inspection
       - enterprise-messaging
-      - iot-solutions
       - smart-factory
+      - boobit
       - picture-book-locker
+      - iot-solutions
+      - forest-patrol-inspection
+      - chatclothes
       - visual-gateway
     ai:
       - chatclothes
@@ -113,11 +113,13 @@ project_selection:
   # Projects always included; per-role overrides take precedence over 'default'
   pinned_ids:
     android:
-      - chatclothes
-      - forest-patrol-inspection
       - enterprise-messaging
-      - iot-solutions
       - smart-factory
+      - boobit
+      - picture-book-locker
+      - iot-solutions
+      - forest-patrol-inspection
+      - chatclothes
     fullstack:
       - smart-factory
       - iot-solutions

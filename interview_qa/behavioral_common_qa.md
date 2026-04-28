@@ -2,8 +2,25 @@
 
 > **定位**：软件工程师（Android / Java 后端 / 全栈 / AI 工程化），现居新西兰奥克兰；简历与事实以 `kb/profile.yaml`、`projects/*/facts.yaml` 为准。  
 > **工作资格**：新西兰全职工作资格（Post-Study Work Visa，可为任意雇主全职）— 与面试官提及时可简述为 *full-time work rights in NZ*。  
-> **用法**：STAR（Situation, Task, Action, Result）+ 一句 **Reflection**；每题约 60–120 秒；用口语复述，避免整段背诵。
+> **用法**：**临场先练 [口语专页](#section-oral-only)**（像聊天那样说）；第二节是 **STAR 备忘**；第五节是书面 **Script** 备查。念的时候改成自己的词，比整段背诵更不「像 AI」。
 
+### 文档导航（本页结构）
+
+| 区块 | 内容 |
+|------|------|
+| [**口语专页**](#section-oral-only) | 10 题英文口语稿，**单独成块**，与 STAR/脚本分开 |
+| [故事库映射](#section-story-map) | 主题 → 主故事 / 备选 |
+| [一、高频分类题库](#section-1-topics) | 英文题干 + 中文题意 |
+| [二、STAR 备忘](#section-2-star-brief) | 10 题关键词 + 链到口语专页对应条 |
+| [三、速用模板](#section-3-templates) | 30/60/120 秒与 checklist |
+| [四、注意事项](#section-4-notes) | 数字口径与语气 |
+| [五、完整英文稿](#section-5-scripts) | Q1–Q42 英文脚本（题库最全） |
+| [六、方法论](#section-6-methods) | STAR(R)、Big Three、Mock |
+| [七、Action 句型](#section-7-phrases) | 会议 / 评审 / 应急英语 |
+
+**重复叙事提示（省背功）**：失败与标注低估 → 统一用 **Q4 / Q22 / Q38** 同一故事；与经理分歧 / 团队不同意见 → **Q5 / Q27 / Q33**；代码评审难合作 → **Q6 / Q24 / Q42**；NDK 骄傲成就 → **Q17 / Q37**。深挖时再展开细节。
+
+<a id="section-story-map"></a>
 ### 故事库映射（一材多用）
 
 | 面试主题 | 主故事 | 备选 |
@@ -17,164 +34,195 @@
 
 ---
 
+<a id="section-oral-only"></a>
+## 口语专页（单独练 · 与 STAR / Q1–Q42 脚本分开）
+
+> **怎么用**：下面全是**口头英文**，句子偏短、好改写成你自己的习惯；**不要**和第二节 STAR 或第五节长稿混成一大段背。项目名、数字少写在这里，对方追问再展开。  
+> **怎么念才自然**：允许用 *I mean / honestly / turns out / yeah* 这种口头垫词，但一两处就够；换换句式开头，别每句都以 *I'm* 起头。
+
+<a id="oral-01"></a>
+### ① Tell me about yourself
+
+I'm Leo, I'm in Auckland — software engineer. Over the years I've kind of bounced between whatever the product needed: a lot of **Android**, a lot of **Java** on the **backend**, sometimes **frontend** when we had to ship a UI, and I'm fine if you hand me a **full-stack** slice — like, APIs plus client plus whatever glues them. Recently I finished my Master's at AUT, first class honours; thesis side was **applied AI** where the annoying part wasn't only the model, it was speed, offline-ish demos, that whole engineering layer. Before that, roughly a decade in industry — same deal, production code, phones talking to services, sometimes hardware in the loop. I can work **full time** here on my visa. I'm chatting with you because roles that mix **AI, mobile, Java, a bit of front** — that's basically what I've been doing anyway.
+
+<a id="oral-02"></a>
+### ② Complex technical problem
+
+So this was my thesis pipeline — try-on felt slow, and we didn't want to lean on a cloud LLM for every tap. I actually measured it instead of assuming. Everyone points at diffusion, but **turns out** the LLM round-trips were hurting us more. I moved that part local, simplified the vision bit because I only needed classification, not full detection. Felt way better to use, and the story made sense for a demo. **Honestly** the lesson was boring but useful: **profile first**, the bottleneck isn't always where you think.
+
+<a id="oral-03"></a>
+### ③ Conflict with a teammate
+
+Enterprise messaging project — there was someone who really didn't vibe with code review. Things stalled, people got edgy. I grabbed them **one on one**, not in a group thread. They'd had a bad experience with public callouts before, so anything that felt like a pile-on shut them down. After that I kept feedback private and concrete, sometimes we'd **pair** for ten minutes instead of dumping paragraphs. Reviews picked up again. Made me think: half of feedback is **how** you say it, not just what's wrong.
+
+<a id="oral-04"></a>
+### ④ Failure
+
+Herbal recognition thing — I needed labelled images. I did quick math, said **two weeks**. Reality was more like **six** because the photos were messy: lighting, overlap, weird angles; good labels just take forever. I rushed once, labels were noisy, first model looked bad — so we paid for it anyway. I flagged it early, reset expectations, and since then I always do a **tiny pilot** first — fifty images, time it, count mistakes — *then* I trust my estimate. Bit painful at the time, cheap lesson after.
+
+<a id="oral-05"></a>
+### ⑤ Under pressure
+
+Smart Factory, right before a release — shop floor doesn't care about your sprint board. Something in mobile / device / backend could've blocked real production. I didn't try to look heroic; I split it into **triage, fix, verify, watch**. Pulled whoever actually owned the broken layer. Short updates so nobody was guessing in silence. We got it out without wrecking the line. For me the trick is **shrink the unknown quickly** — that's what makes pressure manageable.
+
+<a id="oral-06"></a>
+### ⑥ Prioritize quickly
+
+Same world — line issues, PM wants features, old debt still there. Can't call everything P0. I'd knock over what **hurts operators** first, then what's **actually on the milestone**, and I'd be straight about dates on the rest instead of quietly starving it. Keeps reliability where it needs to be and the roadmap still moves. A visible order beats a perfect spreadsheet nobody follows.
+
+<a id="oral-07"></a>
+### ⑦ Process improvement
+
+We were rolling factories and every site had its own **fifteen manual steps**. I pushed for Spring in containers, Jenkins doing the repetitive stuff, checklists that matched reality, docs so the new person on site wasn't hunting three people in chat. Fewer weird deploys, more boring Fridays. **Yeah**, it's not glamorous — automation plus writing it down — but it worked.
+
+<a id="oral-08"></a>
+### ⑧ Tough feedback
+
+My manager basically said: your architecture calls aren't written down enough — the next person will be lost. Fair cop. I started lightweight **ADRs**, tiny onboarding notes — not novels, just **why** this table exists. Onboarding got faster, fewer repeat pings. Should've done it earlier, honestly.
+
+<a id="oral-09"></a>
+### ⑨ Adapted to change
+
+Thesis halfway through — offline and latency became real constraints. I could've defended the first design, but the numbers didn't support it. Re-measured, moved the LLM path local, cut scope where it hurt, kept the research bit that still made sense. Landed in good shape with honours. Same as work: **instrument, then change your mind**.
+
+<a id="oral-10"></a>
+### ⑩ Why should we hire you?
+
+You get someone who's shipped **real** stuff for a long time — mobile, backends, the messy middle — and recently went deeper on **applied AI** without forgetting it has to **run** for real people. I'm in Auckland, full-time work rights, I'm not precious about whether today is Kotlin, Spring, or some experimental model work. Point me at a problem users care about and I'll push it over the line with the team.
+
+---
+
+<a id="section-1-topics"></a>
 ## 一、常用 Behavioral Question 题库（高频分类）
 
+> **速查**：**念** → [口语专页](#section-oral-only)；**备忘** → [第二节 STAR](#section-2-star-brief)；**长稿** → [第五节](#section-5-scripts) Q1–Q42。
+
 ### 1) 自我认知与动机
-- Tell me about yourself.
-- What are your strengths and weaknesses?
-- Why are you looking for a new opportunity?
-- Why do you want to join this company?
+- Tell me about yourself.（口语：开场 → **AI / Android / Java / 全栈 / 前·后端**概括 → 最近学位 → 以前行业 → NZ 资格 + 意向）
+- What are your strengths and weaknesses?（优劣势各 1 个 + 证据 / 改进）
+- Why are you looking for a new opportunity?（与 **Q32** 叙事一致：学业阶段结束 → 全职交付）
+- Why do you want to join this company?（替换公司名 / 产品 / 栈，见 **Q29**）
 
 ### 2) 团队协作与冲突处理
-- Tell me about a conflict with a teammate and how you resolved it.
-- Describe a disagreement with your manager.
-- Tell me about a time you had to collaborate cross-functionally.
+- Tell me about a conflict with a teammate and how you resolved it.（Enterprise Messaging 评审敏感 → 私下 + 结对）
+- Describe a disagreement with your manager.（Smart Factory 上线前范围：数据 + 分期试点）
+- Tell me about a time you had to collaborate cross-functionally.（接口契约 + 集成 Demo，见 **Q12**）
 
 ### 3) 压力管理与优先级
-- Tell me about a time you worked under pressure.
-- How do you prioritize when everything feels urgent?
-- Tell me about a time you had multiple deadlines.
+- Tell me about a time you worked under pressure.（产线关键路径发布窗口）
+- How do you prioritize when everything feels urgent?（影响 × 风险 × 透明沟通，见 **Q8** / **Q36**）
+- Tell me about a time you had multiple deadlines.（可与上题或 Smart Factory 排优先合并准备）
 
 ### 4) 失败与复盘
-- Tell me about a time you failed.
-- Tell me about a time you missed a deadline.
-- Describe a production issue you handled.
+- Tell me about a time you failed.（中草药标注周期低估 → 小样试点）
+- Tell me about a time you missed a deadline.（同上故事，见 **Q22**）
+- Describe a production issue you handled.（电子秤采集 / 发布窗口 triage，用 Smart Factory）
 
 ### 5) 复杂问题解决与技术判断
-- Tell me about a complex technical problem you solved.
-- Tell me about a difficult decision you made.
-- Describe a trade-off you had to make (speed vs quality, etc.).
+- Tell me about a complex technical problem you solved.（ChatClothes 剖延迟 + 本地 LLM + YOLO12n-LC）
+- Tell me about a difficult decision you made.（范围 / 技术路径取舍，可接 ChatClothes 或产线优先）
+- Describe a trade-off you had to make (speed vs quality, etc.).（速度 vs 可观测性 / 范围 vs 信任，用 Smart Factory 分期上线）
 
 ### 6) 主动性与影响力
-- Tell me about a time you took initiative.
-- Describe a process improvement you drove.
-- Tell me about a time you influenced without authority.
+- Tell me about a time you took initiative.（论文交付物超出要求：部署文档 + API 说明，见 **Q7**）
+- Describe a process improvement you drove.（容器化 + Jenkins + checklist）
+- Tell me about a time you influenced without authority.（用数据推动分期试点，与经理分歧题同源）
 
 ### 7) 反馈与成长
-- Describe a time you received critical feedback.
-- Tell me about a time you gave difficult feedback.
-- What did you learn from your biggest mistake?
+- Describe a time you received critical feedback.（ADR / onboarding 文档习惯）
+- Tell me about a time you gave difficult feedback.（Junior 文档反馈 + 结对，见 **Q21**）
+- What did you learn from your biggest mistake?（标注估算 → 先 pilot，与失败题同源）
 
 ### 8) 适应变化
-- Tell me about a time requirements changed suddenly.
-- Describe a major change at work and how you adapted.
-- Tell me about a time you had to learn a new technology quickly.
+- Tell me about a time requirements changed suddenly.（ChatClothes 约束变化 → 可测再改）
+- Describe a major change at work and how you adapted.（同上或读硕士阶段转型）
+- Tell me about a time you had to learn a new technology quickly.（扩散模型 / LoRA，见 **Q14**）
 
 ### 9) 客户导向
-- Describe a difficult customer/stakeholder situation.
-- Tell me about a time you managed unclear requirements.
-- How do you handle conflicting stakeholder expectations?
+- Describe a difficult customer/stakeholder situation.（范围拉扯 → 数据 + 试点）
+- Tell me about a time you managed unclear requirements.（先澄清指标与「完成定义」，见 **Q30**）
+- How do you handle conflicting stakeholder expectations?（透明优先级 + 书面契约 / ADR）
 
 ---
 
-## 二、常见问题与示例答案（STAR 简版 · 已按本人经历改写）
+<a id="section-2-star-brief"></a>
+## 二、STAR 备忘（关键词 · 与 [口语专页](#section-oral-only) ①–⑩ 对应）
 
-## 1) Tell me about yourself.
+> **编号说明**：本节 **1)–10)** 与 **[第五节](#section-5-scripts) Q1–Q42** 不是同一套编号；「Qxx」一律指第五节。  
+> **念法**：每条下 **口语** 链到专页；这里只保留 STAR 骨架，方便扫一眼、补追问里的数字与专名。
 
-**Sample Answer（口头可压缩到 45–60 秒）**
+### 1) Tell me about yourself.
 
-I'm Leo Zhang, a software engineer with 10+ years delivering production systems across Android, Java backends, and IoT. Most recently I completed my Master of Computer and Information Sciences at Auckland University of Technology with First Class Honours, where my thesis project **ChatClothes** combined diffusion-based virtual try-on, a lightweight garment classifier, and local LLM orchestration for offline-capable demos—including handheld-friendly control surfaces. Before that, at Chunxiao I spent years on **Smart Factory** (10+ factory rollouts, 30%+ efficiency gains, 99.9% uptime on critical workflows) and **Enterprise Messaging** (NDK networking for sub-200ms delivery at 5,000 DAU). I'm based in Auckland with full-time work rights in New Zealand, and I'm looking for a role where I can ship reliable client and backend software while continuing to grow in architecture and applied AI.
-
----
-
-## 2) Tell me about a complex technical problem you solved.
-
-**Sample Answer (STAR) — ChatClothes 延迟与离线约束**
-
-- **Situation:** For my thesis system, end-to-end try-on felt too slow on constrained targets, and I also needed a credible offline deployment story—not only model quality on paper.
-- **Task:** Find the real bottleneck, improve perceived latency, and make the pipeline runnable without relying on cloud LLM round-trips where inappropriate.
-- **Action:** I profiled the full path. Diffusion was costly, but a bigger surprise was LLM latency from cloud-style calls; I moved the control path to a local stack (Ollama + DeepSeek) and tightened the vision side by customizing **YOLO12n → YOLO12n-LC** for classification-only needs. I iterated like production work: milestones, measurable checks, and tracing code paths that mattered for my use case.
-- **Result:** The system became demonstrably more responsive and aligned with offline / Pi-class constraints; I finished on an accelerated thesis timeline with First Class Honours. **Reflection:** measure before optimizing assumptions—bottlenecks are not always where the literature suggests.
-
-*备选（更偏 Android / 产线）：Smart Factory 电子秤采集丢数 → 持久监听、watchdog、自动重连与连接池化，消除数据丢失并提高可观测性。*
+**口语 →** [专页 ①](#oral-01)  
+**STAR 备忘**：Auckland 工程师；Android + Java backend + 可补 frontend + full-stack slice；AUT Master's / honours + applied AI 能落地；~10y 生产；NZ full-time；意向 = 混合栈。
 
 ---
 
-## 3) Tell me about a time you had a conflict with a teammate.
+### 2) Tell me about a complex technical problem you solved.
 
-**Sample Answer (STAR) — Enterprise Messaging 代码评审**
-
-- **Situation:** On the enterprise messaging platform, a teammate was resistant to code review feedback, which slowed fixes and created tension.
-- **Task:** Keep code quality and release coordination on track without damaging trust.
-- **Action:** I talked to them privately, learned public criticism had burned them before, then shifted to private, specific feedback and short pairing sessions on changes.
-- **Result:** Review cycles became productive again; quality improved and releases stayed coordinated. **Reflection:** feedback is a process design problem, not only a technical one.
+**口语 →** [专页 ②](#oral-02)  
+**STAR — ChatClothes**：慢 + 离线；profile；LLM 路径瓶颈 → 本地；vision 收束分类；结果可演示 + honours。**Reflection：**先测再优化。  
+*备选：Smart Factory 秤采集 — listener / watchdog / 重连 / 池化。*
 
 ---
 
-## 4) Tell me about a time you failed.
+### 3) Tell me about a time you had a conflict with a teammate.
 
-**Sample Answer (STAR) — Chinese Herbal Recognition 标注估算**
-
-- **Situation:** On a computer vision project for herbal medicine recognition, I needed a labeled dataset before training.
-- **Task:** Hit the training milestone without compromising label quality.
-- **Action:** I initially estimated ~two weeks of annotation from image counts; real images had lighting, occlusion, and angle variance, so careful labeling took ~six weeks and rushing created noisy labels that hurt the first training run.
-- **Result:** I owned the slip, reset the timeline, and fixed the process: pilot 50–100 images first, measure throughput and error rate, then extrapolate. **Reflection:** data work is schedule-critical—validate the workflow before committing the plan.
+**口语 →** [专页 ③](#oral-03)  
+**STAR — Enterprise Messaging**：评审抵触 → 1:1；过往公开批评伤信任 → 私下具体反馈 + 短结对；review 恢复。**Reflection：**反馈 = 流程 + 语气。
 
 ---
 
-## 5) Tell me about a time you worked under pressure.
+### 4) Tell me about a time you failed.
 
-**Sample Answer (STAR)**
-
-- **Situation:** Near a Smart Factory release window, shop-floor workflows depended on stable mobile + device + backend integration; a blocking issue in a critical path would have delayed factory operations.
-- **Task:** Restore confidence quickly, protect release quality, and keep QA / stakeholders aligned.
-- **Action:** I split work into triage → fix → verification → monitoring; pulled in the right owners for device vs API vs app layers; posted short, frequent status updates so decisions didn’t wait for surprises.
-- **Result:** We landed the release without a major follow-up incident on the critical path. **Reflection:** pressure is easier when uncertainty is reduced early and comms are tight.
+**口语 →** [专页 ④](#oral-04)  
+**STAR — Herbal CV**：标注估 2w → 实 6w；赶工标签脏 → 首训差；认栽、改期、pilot 50–100 再估。**Reflection：**数据活先验证工作流。
 
 ---
 
-## 6) Tell me about a time you had to prioritize quickly.
+### 5) Tell me about a time you worked under pressure.
 
-**Sample Answer (STAR)**
-
-- **Situation:** On Smart Factory, production-line reliability work competed with milestone features and ongoing maintenance.
-- **Task:** Maximize business impact without hiding risk.
-- **Action:** I ranked by user impact, operational risk, and deadline: stabilize production-impacting issues first, then milestone-critical features, and park non-urgent debt with explicit follow-up dates. I was transparent when priorities shifted.
-- **Result:** We kept **99.9%**-class reliability on critical workflows while still advancing planned delivery. **Reflection:** a visible framework beats “everything is P0.”
+**口语 →** [专页 ⑤](#oral-05)  
+**STAR — Smart Factory 发布窗**：关键路径；triage→fix→verify→watch；拉对人；短更新；上线未砸线。**Reflection：**先减不确定。
 
 ---
 
-## 7) Tell me about a process improvement you drove.
+### 6) Tell me about a time you had to prioritize quickly.
 
-**Sample Answer (STAR)**
-
-- **Situation:** Multi-site factory rollouts needed repeatable releases; manual steps created variance across 10+ deployments.
-- **Task:** Make releases safer and faster for the team.
-- **Action:** I pushed containerized Spring Boot services, Jenkins-based automation, clearer release checklists, and documentation so new environments didn’t depend on tribal knowledge.
-- **Result:** Fewer deployment surprises and more predictable rollouts across sites. **Reflection:** process wins compound when docs and automation move together.
+**口语 →** [专页 ⑥](#oral-06)  
+**STAR — Smart Factory**：产线 vs 里程碑 vs 维护；先产线影响 → 再里程碑；其余标日期透明。**Reflection：**可见顺序 > 全是 P0。可接 **99.9%** 口径若追问。
 
 ---
 
-## 8) Describe a time you received tough feedback.
+### 7) Tell me about a process improvement you drove.
 
-**Sample Answer (STAR)**
-
-- **Situation:** On Smart Factory, my manager said architectural decisions weren’t documented well enough for handover.
-- **Task:** Improve knowledge transfer without freezing delivery.
-- **Action:** I introduced ADR-style notes for key decisions, a lightweight onboarding guide, and made “document the why” part of my default finish line for significant changes.
-- **Result:** Onboarding sped up and repeated questions dropped. **Reflection:** documentation is part of the feature when systems live for years.
+**口语 →** [专页 ⑦](#oral-07)  
+**STAR**：多厂部署手顺乱；Spring 容器 + Jenkins + checklist + 文档；rollout 更可预期。**Reflection：**自动化与文档一起上。
 
 ---
 
-## 9) Tell me about a time you adapted to change.
+### 8) Describe a time you received tough feedback.
 
-**Sample Answer (STAR) — ChatClothes**
-
-- **Situation:** Early thesis assumptions didn’t match real constraints: latency and offline requirements forced a design shift mid-stream.
-- **Task:** Adapt without losing the research contribution or missing the submission timeline.
-- **Action:** I re-measured end-to-end behavior, changed the LLM path to local hosting where appropriate, kept scope disciplined, and reused stable pipeline pieces while redesigning only what the measurements justified.
-- **Result:** The final system matched deployability goals and I submitted ahead of the nominal schedule with First Class Honours. **Reflection:** treat research delivery like engineering—instrument, then decide.
+**口语 →** [专页 ⑧](#oral-08)  
+**STAR — Smart Factory**：经理点架构未写清；ADR + onboarding；默认「写完再收工」。**Reflection：**文档 = 长期功能。
 
 ---
 
-## 10) Why should we hire you?
+### 9) Tell me about a time you adapted to change.
 
-**Sample Answer**
-
-You get someone who has repeatedly shipped under real constraints: **Android + NDK** performance work at scale, **Java / Spring** services in production, and **applied AI** from thesis-level experimentation to something you can run locally. I’m strong at breaking problems down, aligning across mobile, backend, and hardware-adjacent integrations, and I care about outcomes that last—uptime, latency, and maintainability—not just demo code. I’m in Auckland with full-time NZ work rights and ready to contribute on day one while growing with the team’s stack.
+**口语 →** [专页 ⑨](#oral-09)  
+**STAR — ChatClothes**：中程约束变；重测；LLM 本地化 + 控 scope；honours + 提前节奏。**Reflection：**研究也按工程习惯 instrument。
 
 ---
 
+### 10) Why should we hire you?
+
+**口语 →** [专页 ⑩](#oral-10)  
+**STAR 备忘**：久经生产（Android / Java / 集成）；applied AI 能落地；Auckland + full-time；不挑栈、跟团队把事推上线。追问可补 **NDK / Spring / 论文** 等专名。
+
+---
+
+<a id="section-3-templates"></a>
 ## 三、面试回答速用模板（30 秒）
 
 ### STAR 模板
@@ -194,6 +242,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - **30 秒版（电梯版）**：`背景一句 + 关键动作一句 + 结果一句`
 - **60 秒版（默认版）**：`Situation 1句 + Task 1句 + Action 2句 + Result/Reflection 1句`
 - **120 秒版（深挖版）**：在 60 秒版基础上补 `权衡/指标/追问点`（如 hardest part、specific role、next time）
+- **口语感**：允许一两句「跑题式」连接（*long story short*, *anyway*），避免排比三件套句句对称 —— 详见 [口语专页](#section-oral-only) 文首说明。
 
 ### 面试前 10 分钟检查清单（Leo 专用）
 - 主故事是否覆盖 5 类：复杂技术、冲突、失败、压力、主动性
@@ -204,6 +253,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 
 ---
 
+<a id="section-4-notes"></a>
 ## 四、使用注意事项（Leo 版）
 
 - 数字与项目名以 KB 为准：**10+ factories**、**99.9% uptime**（关键流程）、**5,000 DAU**、**sub-200ms**、**First Class Honours**、**February 2026** 毕业等；不要临场夸大。
@@ -212,8 +262,11 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - 远程 / 混合岗位：补充异步沟通习惯、文档化决策、时区友好更新（可与 Smart Factory 多现场 rollout 类比）。
 
 ---
+
+<a id="section-5-scripts"></a>
 ## 五、项目化 Behavioral Question 题库（英文，可直接背诵/改写）
-> 资料来源：`kb/interview_qa/behavioral.yaml` + `kb/interview_qa/scripts.md`（均为已确认的真实项目事实）。
+> 资料来源：`kb/interview_qa/behavioral.yaml` + `kb/interview_qa/scripts.md`（均为已确认的真实项目事实）。  
+> **和口语的关系**：下面偏**书面、信息密度高**；临场想自然一点，可先按 **[口语专页](#section-oral-only)** 的节奏说，再从本题 Script 里挑 1–2 个专有事实补上。
 
 ### 回答最佳实践（吸收 `awesome-behavioral-interviews` 的通用方法）
 - 先听清题目含义；如果不确定要点，先问一个澄清问题再回答。
@@ -226,6 +279,34 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - “How did you measure success?”
 - “What would you do differently next time?”
 - “What was your specific role?”
+
+### Q1–Q42 速览（主故事标签）
+
+| Q | 主题 | 主故事 / 关键词 |
+|---|------|-----------------|
+| 1–2 | 优势 / 劣势 | 产研桥接 + ChatClothes；讲解过深 → 分层说明 + ADR |
+| 3 | 挑战项目 | ChatClothes **或** Smart Factory 电子秤 |
+| 4, 22, 38 | 失败 / 延期 / 做不完 | Chinese Herbal 标注低估 → pilot |
+| 5, 27, 33 | 与上级或团队分歧 | Smart Factory 分期上线 + 数据 |
+| 6, 24, 42 | 难合作 / 冲突 | Enterprise Messaging 评审 → 私下 + 结对 |
+| 7 | Above and beyond | ChatClothes 文档与可复现交付 |
+| 8, 34, 36, 40 | 优先级 / 多解 | Smart Factory 影响 × 风险 |
+| 9 | 压力 | 里程碑 + 可控动作 + 恢复习惯 |
+| 10–11 | 工作风格 / 动机 | 证据驱动；真实业务影响 |
+| 12, 20 | 团队 / 主导协调 | 接口契约 + 集成 Demo；弱化纯管理 |
+| 13, 21 | 收反馈 / 给反馈 | ADR；Junior 文档 + 结对 |
+| 14, 25, 41 | 快速学习 / 走出舒适区 / 新学 | 扩散模型 + LoRA；可测迭代 |
+| 15–16 | Agile / Code review | 六年 Sprint；先理解再反驳 |
+| 17, 37 | 骄傲成就 | Enterprise Messaging NDK |
+| 18–19, 39 | 风险决策 / 不会答 / 全新任务 | 周五部署谨慎；诚实 + 澄清 |
+| 23 | 重大变化 | ChatClothes 约束转向 |
+| 26 | DEI 产品设计 | 诚实范围 + 可测包容标准 |
+| 28, 35 | 持续学习 | 论文式深读 + 小实验 |
+| 29–32 | Why company / 转职 | 替换占位符；**2026-02 MCIS 完成** 与 Q32 一致 |
+| 30 | 模糊需求 / 系统设计 | 澄清指标 + 轻量原型 |
+| 31 | 最大技术挑战 | ChatClothes 延迟剖解 |
+
+（本节脚本共 **Q42** 题。）
 
 ### 1) What is your greatest strength?
 **Script**
@@ -640,6 +721,8 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 > As a result, code quality improved and the team relationship got better, while release and coordination stayed on schedule.
 
 ---
+
+<a id="section-6-methods"></a>
 ## 六、把外部资源吸收为“题库使用方法”（可直接照做）
 > 资源来源：`resource.txt` 的链接
 > - `techinterviewhandbook.org/behavioral-interview/`：STAR(R)、关键故事组织、Big Three、Mock 等
@@ -654,7 +737,7 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - 重点看你在每个故事里的“可复用行为”（repeatable behaviors），而不是你做过的具体项目名称。
 
 ### 3) Big Three：优先把这三类题准备到“自然输出”
-- `Tell me about yourself`：建议按“当前状态 -> 关键证据项目 -> 你想要的方向”结构讲，而不是长篇经历堆叠。
+- `Tell me about yourself`：用 **Present → Recent → Past → Why here**；口头稿见 **[口语专页 ①](#oral-01)**，STAR 备忘见第二节；少堆数字和模型名，项目与指标留给追问。
 - `Favorite / most impactful project`：选一个“影响 + 你的深度参与 + 你做的关键动作”的项目。
 - `Resolved a conflict`：准备至少 1 个冲突故事，Action 要讲清楚你如何澄清、如何对齐、如何让协作继续推进。
 
@@ -677,6 +760,8 @@ You get someone who has repeatedly shipped under real constraints: **Android + N
 - 然后回到你的关键故事库，补 Action 的细节、补 Reflection、再练一轮。
 
 ---
+
+<a id="section-7-phrases"></a>
 ## 七、IT 行业英语口语句型库（用于 Behavioral answers 的 Action 部分）
 > 资料来源：`interview_qa/IT常见面试问题` + `interview_qa/IT行业英语_42课时_QA`
 

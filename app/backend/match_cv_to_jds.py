@@ -19,13 +19,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from generate_cv_from_kb import (
-    _filter_jd_keywords_by_kb_evidence,
-    _keyword_hits_in_text,
-    _normalize_keywords,
-    _strip_html_tags,
-    generate_html_from_kb,
+from cv_keyword_utils import (
+    filter_jd_keywords_by_kb_evidence,
+    keyword_hits_in_text,
+    normalize_keywords,
+    strip_html_tags,
 )
+from generate_cv_from_kb import generate_html_from_kb
 from jd_fetch import derive_keywords_from_url, extract_keywords_from_text, load_jd_text_from_file
 from role_inference import infer_role_from_text
 
@@ -47,16 +47,16 @@ def _score_one_jd(
     max_projects: int,
 ) -> Dict[str, object]:
     repo_root = Path(__file__).parent.parent.parent
-    supported, filtered = _filter_jd_keywords_by_kb_evidence(raw_keywords, repo_root)
+    supported, filtered = filter_jd_keywords_by_kb_evidence(raw_keywords, repo_root)
     html = generate_html_from_kb(
         role_type=role_type,
         lang="en",
         jd_keywords=supported,
         max_projects=max_projects,
     )
-    cv_text = _strip_html_tags(html)
-    norm_supported = _normalize_keywords(supported)
-    hits = sorted(set(_keyword_hits_in_text(cv_text, norm_supported)))
+    cv_text = strip_html_tags(html)
+    norm_supported = normalize_keywords(supported)
+    hits = sorted(set(keyword_hits_in_text(cv_text, norm_supported)))
     misses = [k for k in norm_supported if k not in hits]
     coverage = (len(hits) / len(norm_supported) * 100.0) if norm_supported else 0.0
     return {

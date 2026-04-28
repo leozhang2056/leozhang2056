@@ -8,3 +8,15 @@
 - Promoted count: 0
 - Promoted items:
   - （今日无满足>=3次的新增经验）
+
+## Daily Merge - 2026-04-21
+- Processed learning lines: 48
+- Promoted count: 0
+- Promoted items:
+  - （今日无满足>=3次的新增经验）
+
+## Daily Merge - 2026-04-22
+- Processed learning lines: 50
+- Promoted count: 0
+- Promoted items:
+  - （今日无满足>=3次的新增经验）

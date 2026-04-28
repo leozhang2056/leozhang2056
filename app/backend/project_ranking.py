@@ -11,15 +11,13 @@ try:
 except ModuleNotFoundError:
     from app.backend.generation_config import load_generation_config
 
-
-_CFG = load_generation_config().get("project_ranking", {})
-
-BASE_PRIORITY: Dict[str, int] = dict(_CFG.get("base_priority", {}))
-
-DEFAULT_PRIORITY = int(_CFG.get("default_priority", 9999))
-PRIORITY_OFFSET = int(_CFG.get("priority_offset", 200))
-
-ROLE_PROJECT_ORDER: Dict[str, List[str]] = dict(_CFG.get("role_project_order", {}))
+def _get_ranking_config() -> tuple[Dict[str, int], int, int, Dict[str, List[str]]]:
+    cfg = load_generation_config().get("project_ranking", {})
+    base_priority: Dict[str, int] = dict(cfg.get("base_priority", {}))
+    default_priority = int(cfg.get("default_priority", 9999))
+    priority_offset = int(cfg.get("priority_offset", 200))
+    role_project_order: Dict[str, List[str]] = dict(cfg.get("role_project_order", {}))
+    return base_priority, default_priority, priority_offset, role_project_order
 
 
 def _normalize_for_match(text: str) -> str:
@@ -120,18 +118,19 @@ def sort_projects(
     max_projects: int = 6,
 ) -> List[Dict[str, Any]]:
     """Sort projects by JD relevance first, then role/static priority."""
-    fallback_order = ROLE_PROJECT_ORDER.get("fullstack", [])
-    role_order = ROLE_PROJECT_ORDER.get(role_type, fallback_order)
+    base_priority, default_priority, priority_offset, role_project_order = _get_ranking_config()
+    fallback_order = role_project_order.get("fullstack", [])
+    role_order = role_project_order.get(role_type, fallback_order)
 
     def get_base_priority(project: Dict[str, Any]) -> int:
         pid = str(project.get("_project_dir", "")).lower()
         for idx, role_pid in enumerate(role_order):
             if role_pid in pid:
                 return idx
-        for key, val in BASE_PRIORITY.items():
+        for key, val in base_priority.items():
             if key in pid:
-                return PRIORITY_OFFSET + val
-        return DEFAULT_PRIORITY
+                return priority_offset + val
+        return default_priority
 
     if jd_keywords:
         for p in projects:

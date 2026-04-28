@@ -63,3 +63,63 @@
   - 默认以“最小改动”进行排版修复（一次只减 1 个词或 1 项）。
 - Promote Policy:
   - 若后续 2 次以上简历会话重复这些偏好，提升为长期规则并写入规则层文件。
+
+## Learning Candidate - 2026-04-21 21:09:02
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。
+
+## Learning Candidate - 2026-04-21 22:37:35
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。
+
+## Learning Candidate - 2026-04-21 22:39:21
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。
+
+## Learning Candidate - 2026-04-21 22:41:18
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。
+
+## Learning Candidate - 2026-04-21 22:41:26
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。
+
+## Learning Candidate - 2026-04-22 10:32:50
+- Preferences:
+  - （未提供）
+- Mistakes/Regressions:
+  - （未提供）
+- Improvement Proposals:
+  - （未提供）
+- Promote Policy:
+  - 若同类偏好连续出现 >= 3 次，提升到 L0/L2 规则层。

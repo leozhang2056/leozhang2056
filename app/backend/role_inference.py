@@ -9,10 +9,6 @@ try:
 except ModuleNotFoundError:
     from app.backend.generation_config import load_generation_config
 
-
-_CFG = load_generation_config()
-_ROLE_KEYWORDS = _CFG.get("role_inference", {}).get("keywords", {})
-
 # Pre-compile word-boundary patterns for each keyword set.
 # Using \b ensures "cv" in "my_cv.pdf" or "/cv/" won't fire;
 # only standalone occurrences like "cv engineer" will match.
@@ -29,9 +25,14 @@ def _compile_patterns(keywords: list[str]) -> list[re.Pattern]:
     return patterns
 
 
-_ANDROID_PATTERNS = _compile_patterns(_ROLE_KEYWORDS.get("android", []))
-_AI_PATTERNS      = _compile_patterns(_ROLE_KEYWORDS.get("ai", []))
-_BACKEND_PATTERNS = _compile_patterns(_ROLE_KEYWORDS.get("backend", []))
+def _get_role_patterns() -> tuple[list[re.Pattern], list[re.Pattern], list[re.Pattern]]:
+    cfg = load_generation_config()
+    role_keywords = cfg.get("role_inference", {}).get("keywords", {})
+    return (
+        _compile_patterns(role_keywords.get("android", [])),
+        _compile_patterns(role_keywords.get("ai", [])),
+        _compile_patterns(role_keywords.get("backend", [])),
+    )
 
 
 def infer_role_from_text(text: str) -> str:
@@ -47,9 +48,11 @@ def infer_role_from_text(text: str) -> str:
     def _count(patterns: list[re.Pattern]) -> int:
         return sum(1 for p in patterns if p.search(t))
 
-    a = _count(_ANDROID_PATTERNS)
-    i = _count(_AI_PATTERNS)
-    b = _count(_BACKEND_PATTERNS)
+    android_patterns, ai_patterns, backend_patterns = _get_role_patterns()
+
+    a = _count(android_patterns)
+    i = _count(ai_patterns)
+    b = _count(backend_patterns)
 
     if a >= max(i, b) and a > 0:
         return "android"

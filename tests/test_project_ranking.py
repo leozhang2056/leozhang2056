@@ -33,7 +33,7 @@ def test_sort_projects_without_jd_uses_role_priority():
     ]
 
     ranked = sort_projects(projects, role_type="android", jd_keywords=None, max_projects=3)
-    assert ranked[0]["_project_dir"] == "chatclothes"
+    assert ranked[0]["_project_dir"] == "enterprise-messaging"
 
 
 def test_sort_projects_with_jd_uses_score_first():
