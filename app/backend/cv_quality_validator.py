@@ -65,12 +65,18 @@ class QualityReport:
 
 # 强动词列表 (按强度分级)
 STRONG_VERBS = {
-    'tier1': ['built', 'led', 'developed', 'architected', 'designed', 'launched', 'shipped', 'delivered'],
-    'tier2': ['implemented', 'created', 'engineered', 'optimized', 'refactored', 'integrated', 'deployed', 'automated'],
-    'tier3': ['built', 'made', 'worked on', 'helped', 'participated', 'assisted', 'supported'],
+    'tier1': ['built', 'led', 'developed', 'architected', 'designed', 'launched', 'shipped', 'delivered', 'owned', 'drove'],
+    'tier2': ['implemented', 'created', 'engineered', 'optimized', 'refactored', 'integrated', 'deployed', 'automated', 'scaled', 'hardened', 'streamlined'],
+    'tier3': ['built', 'made', 'worked on', 'helped', 'participated', 'assisted', 'supported', 'handled', 'worked'],
 }
 
-WEAK_VERBS = ['helped', 'participated', 'was responsible for', 'worked on', 'assisted', 'supported']
+WEAK_VERBS = [
+    'helped', 'participated', 'was responsible for', 'responsible for', 'worked on', 'assisted', 'supported',
+    'involved in', 'contributed to', 'took part in', 'helped to', 'worked with',
+]
+
+_LEADING_MARKER_RE = re.compile(r"^\s*(?:[•\-*]\s*)")
+_WORD_RE = re.compile(r"[A-Za-z]+")
 
 # AI 腔检测关键词
 AI_BUZZWORDS = [
@@ -164,41 +170,51 @@ def check_bullet_quality(bullet: str, jd_keywords: List[str] = None) -> BulletSc
     bullet_lower = bullet.lower().strip()
     score = BulletScore(text=bullet)
     
-    # 1. 动词强度检查
-    first_words = bullet_lower.split()[:3] if bullet_lower else []
+    # 1. 动词强度检查（仅匹配起手词/短语）
     verb_found = False
-    
-    for verb in STRONG_VERBS['tier1']:
-        if any(verb in w for w in first_words):
+    cleaned = _LEADING_MARKER_RE.sub("", bullet_lower or "")
+    words = _WORD_RE.findall(cleaned)
+    leading_candidates: List[str] = []
+    if words:
+        if len(words) >= 3:
+            leading_candidates.append(" ".join(words[:3]))
+        if len(words) >= 2:
+            leading_candidates.append(" ".join(words[:2]))
+        leading_candidates.append(words[0])
+
+    def _match_leading(verbs: List[str]) -> Optional[str]:
+        for candidate in leading_candidates:
+            if candidate in verbs:
+                return candidate
+        return None
+
+    if leading_candidates:
+        if _match_leading(STRONG_VERBS['tier1']):
             score.verb_strength = 1.0
             verb_found = True
-            break
-    
-    if not verb_found:
-        for verb in STRONG_VERBS['tier2']:
-            if any(verb in w for w in first_words):
-                score.verb_strength = 0.7
-                verb_found = True
-                break
-    
-    if not verb_found:
-        for verb in WEAK_VERBS:
-            if verb in bullet_lower[:50]:
+        elif _match_leading(STRONG_VERBS['tier2']):
+            score.verb_strength = 0.7
+            verb_found = True
+        else:
+            weak_hit = _match_leading(WEAK_VERBS)
+            if weak_hit:
                 score.verb_strength = 0.3
-                score.issues.append(f'Weak verb detected: "{verb}"')
-                break
-    
+                score.issues.append(f'Weak verb detected: "{weak_hit}"')
+                verb_found = True
+
     if not verb_found:
         score.verb_strength = 0.5
-    
+
     # 2. 量化指标检查
     metrics_patterns = [
         r'\d+%',  # 百分比
-        r'\$\d+',  # 金额
-        r'\d+x',  # 倍数
+        r'\$\d+(?:\.\d+)?',  # 金额
+        r'\d+(?:\.\d+)?x',  # 倍数
         r'\d+\+',
-        r'\d{3,}',  # 大数字（可能是指标）
-        r'(increased|decreased|reduced|improved|grew|saved).*\d',  # 变化动词+数字
+        r'\b\d{3,}\b',  # 大数字（可能是指标）
+        r'\b\d+(?:\.\d+)?\s*(?:k|m|bn)\b',  # k/m/bn
+        r'\b(?:~|≈|about|around|approx\.?|over|under|less than|more than)\s*\d',
+        r'(increased|decreased|reduced|improved|grew|saved|cut|lowered|boosted|accelerated).*\d',
     ]
     score.has_metrics = any(re.search(p, bullet, re.IGNORECASE) for p in metrics_patterns)
     if not score.has_metrics:

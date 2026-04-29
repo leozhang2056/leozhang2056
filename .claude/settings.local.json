@@ -3,7 +3,14 @@
     "allow": [
       "Bash(pip show:*)",
       "Bash(pip list:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(xargs -I {} bash -c 'echo \"=== {} ===\" && grep -E \"^def |^class \" {} | head -10')",
+      "Bash(xargs ls *)",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Bash(grep -E \"\\\\.\\(py|js|ts|java|go\\)$\")",
+      "Read(//app/backend/**)",
+      "Read(//c/Users/MagicBook/app/backend/**)",
+      "Read(//kb/**)"
     ]
   }
 }
