@@ -177,7 +177,7 @@ An intelligent exhibition service robot system that provides guided tours, recep
 
 ## Evidence
 
-Add screenshots to the `images/` folder with these names to display them here:
+These files live in `images/` and render on GitHub via relative paths. **Current files are solid-color placeholders** so links never 404; replace them with real screenshots anytime (keep the same filenames).
 
 | File | Description |
 |------|-------------|
@@ -185,13 +185,14 @@ Add screenshots to the `images/` folder with these names to display them here:
 | `images/navigation-ui.png` | Autonomous navigation and map interface |
 | `images/voice-interaction.png` | Voice dialogue interaction |
 
-After adding the files, you can show them in the README with:
-
-```markdown
 ![Robot exterior](images/robot-exterior.png)
+*Exhibition service robot (exterior) — replace with photo*
+
 ![Navigation UI](images/navigation-ui.png)
+*Autonomous navigation / map UI — replace with screenshot*
+
 ![Voice interaction](images/voice-interaction.png)
-```
+*Voice dialogue interaction — replace with screenshot*
 
 ---
 

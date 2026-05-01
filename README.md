@@ -158,7 +158,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 | [Device Maintenance Prediction](projects/device-maintenance-prediction/) | Predictive maintenance with ML | Python, Scikit-learn, Time Series |
 | [Chinese Herbal Recognition](projects/chinese-herbal-recognition/) | TCM image classification platform | PyTorch, OpenCV, Flask |
 
-### 📱 Android & Mobile
+### Android & Mobile
 | Project | Description | Highlights |
 |---------|-------------|------------|
 | [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 5K DAU | NDK, <200ms latency, Reverse Engineering |

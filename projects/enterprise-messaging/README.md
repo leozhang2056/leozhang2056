@@ -177,14 +177,10 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 ## Evidence
 
-![Architecture](images/arch.png)
-*System architecture overview*
+Representative client UI from the enterprise messaging rollout (screenshot, 2018). Architecture diagrams can be added under `images/` later if needed.
 
-![Android Client](images/android-client.png)
-*Android messaging interface*
-
-![Message Flow](images/message-flow.png)
-*Message delivery flow diagram*
+![Enterprise messaging — client UI](images/client-screenshot-2018.jpg)
+*Enterprise messaging client (representative interface)*
 
 ---
 
