@@ -3,7 +3,13 @@ templates/
 outputs/
 
 # Privacy / personal narrative (local only; do not commit)
+# Interview Q&A (any local folder name — content stays private)
 interview_qa/
+Interview question/
+Interview questions/
+interview_question/
+interview-question/
+interview-questions/
 kb/interview_qa/
 memory/
 transcripts/
