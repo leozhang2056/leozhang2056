@@ -56,6 +56,8 @@ class QualityReport:
     summary_score: float = 0.0
     ats_score: float = 0.0
     ai_tone_score: float = 0.0
+    authenticity_score: float = 0.0
+    authenticity_issues: List[QualityIssue] = field(default_factory=list)
     checklist: Dict[str, bool] = field(default_factory=dict)
 
 
@@ -454,6 +456,93 @@ def check_ai_tone(text: str) -> Tuple[float, List[QualityIssue]]:
     
     return score, issues
 
+def check_ai_authenticity(html: str) -> Tuple[float, List[QualityIssue]]:
+    """Evaluate evidence-based authenticity signals for AI-assisted content.
+    This is a lightweight heuristic to encourage providing verifiable evidence
+    (URLs, repositories, demos). It is not a detector but a gating aid for
+    human reviewers.
+    """
+    issues: List[QualityIssue] = []
+    score = 100.0
+    if not html:
+        score = 0.0
+        issues.append(QualityIssue(
+            severity='warning',
+            category='authenticity',
+            location='Document',
+            message='Empty CV HTML input',
+            suggestion='Provide verifiable evidence links to projects, repos, or demos.'
+        ))
+        return score, issues
+
+    text = extract_text_from_html(html)
+    urls = re.findall(r"https?://[^\s)\"']+", text)
+    url_count = len(urls)
+    if url_count == 0:
+        score -= 20
+        issues.append(QualityIssue(
+            severity='warning',
+            category='authenticity',
+            location='Evidence',
+            message='No verifiable evidence found in CV.',
+            suggestion='Add links to projects, repositories, demos, or publications.'
+        ))
+    elif url_count < 3:
+        score -= 5
+        issues.append(QualityIssue(
+            severity='info',
+            category='authenticity',
+            location='Evidence',
+            message=f'Limited verifiable evidence ({url_count} URL(s)).',
+            suggestion='Add 2-3 more evidence links.'
+        ))
+    return max(0, min(100, int(score))), issues
+
+def estimate_ai_flavor(cv_text: str) -> dict:
+    """Heuristic assessment of AI flavor in a CV text (human aid, not detector)."""
+    if not cv_text:
+        return {"ai_score": 0, "ai_likely": False, "notes": ["empty_cv"]}
+    import re
+    import statistics
+    sentences = re.split(r'(?<=[.!?])\s+', cv_text.strip())
+    sentences = [s.strip() for s in sentences if s.strip()]
+    n_sentences = len(sentences) or 1
+    words_per_sent = [len(s.split()) for s in sentences] or [0]
+    avg_ws = sum(words_per_sent) / len(words_per_sent) if words_per_sent else 0
+    std_ws = statistics.pstdev(words_per_sent) if len(words_per_sent) > 1 else 0
+    lower = cv_text.lower()
+    pronoun_count = sum(lower.count(p) for p in [" i ", " my ", " we ", " our ", " me ", " mine "])
+    total_words = len(cv_text.split()) or 1
+    pronoun_ratio = pronoun_count / total_words
+    digit_count = len(re.findall(r'\d+', cv_text))
+    has_url = 1 if re.search(r'https?://', cv_text) else 0
+    score = 0
+    if 6 <= n_sentences <= 80:
+        score += 6
+    if 8 <= avg_ws <= 25:
+        score += 6
+    if std_ws > 0:
+        score += 2
+    if pronoun_ratio > 0:
+        score += 4
+    if digit_count > 0:
+        score += 6
+    if has_url:
+        score += 6
+    generic_hits = sum(1 for w in ["results", "highlights", "experience", "responsible for", "driven"] if w in cv_text.lower())
+    if generic_hits >= 3:
+        score -= 4
+    ai_score = max(0, min(100, int(score * 2.5)))
+    ai_likely = ai_score > 60
+    notes = []
+    if ai_score <= 40:
+        notes.append("add concrete, verifiable details (STAR, metrics, URLs)")
+    if pronoun_ratio > 0.25:
+        notes.append("reduce excessive first-person pronouns; diversify sentence structures")
+    if digit_count == 0:
+        notes.append("include numerical metrics to quantify impact")
+    return {"ai_score": ai_score, "ai_likely": ai_likely, "notes": notes}
+
 
 def check_consistency(html: str, profile_data: Dict = None) -> List[QualityIssue]:
     """检查一致性问题"""
@@ -637,6 +726,12 @@ def generate_quality_report(
     # 5. AI 腔检测
     ai_tone_score, ai_issues = check_ai_tone(extract_text_from_html(html))
     issues.extend(ai_issues)
+    # 6. AI Authenticitiy / verifiability checks
+    auth_score, auth_issues = check_ai_authenticity(html)
+    issues.extend(auth_issues)
+    # 将 Authenticitiy 分数记录在报告中
+    # report 对象尚未创建，后续将赋值
+    
     
     # 计算总分
     passed_items = sum(1 for p in checklist.values() if p[0])
@@ -650,7 +745,8 @@ def generate_quality_report(
         ats_score * 0.15 +
         summary_score * 0.2 +
         avg_bullet_score * 0.25 +
-        ai_tone_score * 0.1
+        ai_tone_score * 0.1 +
+        auth_score * 0.05
     )
     
     passed = overall_score >= 70 and all(
@@ -666,6 +762,8 @@ def generate_quality_report(
         summary_score=summary_score,
         ats_score=ats_score,
         ai_tone_score=ai_tone_score,
+        authenticity_score=auth_score,
+        authenticity_issues=auth_issues,
         checklist={k: v[0] for k, v in checklist.items()}
     )
 
@@ -694,6 +792,7 @@ def format_quality_report_markdown(report: QualityReport) -> str:
     lines.append(f'| ATS Compatibility | `{report.ats_score:.1f}` |')
     lines.append(f'| Summary Quality | `{report.summary_score:.1f}` |')
     lines.append(f'| AI Tone | `{report.ai_tone_score:.1f}` |')
+    lines.append(f'| Authenticity | `{report.authenticity_score:.1f}` |')
     lines.append('')
     
     # Bullet 得分

@@ -66,6 +66,18 @@ _ROLE_NARRATIVE_HINT = {
 
 # 公司共鸣叙事钩子（不写硬事实，避免与 JD/官网信息冲突）
 _COMPANY_FIT_HOOKS = {
+    'halter': {
+        'en': (
+            "What resonates with me about Halter is your mission to improve how farmers operate day to day, with software that changes real behavior in the field rather than staying as a prototype. "
+            "That reflects the kind of engineering values I care about: meaningful impact, high standards, and execution under real constraints. "
+            "I also strongly identify with your culture of tackling hard problems with a high-performing team and shipping systems that are built to last."
+        ),
+        'zh': (
+            "我与 Halter 的共鸣点在于：你们的产品不是停留在原型，而是持续改变农场一线的真实作业方式。"
+            "这和我认同的工程价值观一致——做有意义的事、保持高标准、并在真实约束下稳定交付。"
+            "我也非常认同你们“高绩效团队 + 挑战硬问题 + 长期可持续产品”的文化方向。"
+        ),
+    },
     'windcave': {
         'en': (
             'What resonates with me about Windcave is the combination of product depth and operational seriousness. '
@@ -119,6 +131,22 @@ _COMPANY_FIT_HOOKS = {
 }
 
 _WHY_ME_HOOKS = {
+    'halter': {
+        'en': (
+            "I believe I am a particularly strong fit because I combine three capabilities that this role depends on: "
+            "full-stack execution across mobile, backend, and AI integration; production-first delivery habits built through long-cycle systems; "
+            "and comfort turning ambiguous requirements into reliable tools teams actually use every day. "
+            "I am based in Auckland and value in-person collaboration, which aligns with Halter's office-first culture and the pace needed to ship high-quality internal AI tooling. "
+            "I can contribute quickly by owning meaningful slices end-to-end while collaborating closely with product and cross-functional stakeholders."
+        ),
+        'zh': (
+            "我之所以非常匹配这个岗位，是因为我同时具备三项关键能力："
+            "跨移动端/后端/AI 集成的全栈交付能力；面向生产环境的长期稳定交付习惯；"
+            "以及把模糊需求快速收敛为可用、可维护工具的能力。"
+            "我目前在奥克兰，也认同并习惯高强度线下协作方式，这与 Halter 的 office-first 文化非常一致。"
+            "我能在与产品及跨职能团队紧密协作的同时，端到端负责有价值的模块并快速产出结果。"
+        ),
+    },
     'windcave': {
         'en': (
             'I believe I can contribute well in this context because my Android experience has consistently involved more than UI delivery alone: '
@@ -471,6 +499,12 @@ def build_cover_letter_content(
                 f'{_COMPANY_FIT_HOOKS["windcave"]["en"]} '
                 f'{_WHY_ME_HOOKS["windcave"]["en"]}'
             )
+        if 'halter' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["halter"]["en"]} '
+                f'{_WHY_ME_HOOKS["halter"]["en"]}'
+            )
         if 'l3harris' in company_lower:
             body2 = (
                 f'{body2} '
@@ -486,10 +520,25 @@ def build_cover_letter_content(
         if pub_note and role_type == 'ai':
             body2 = f'{body2} {pub_note}'
 
-        closing = (
-            f'I would welcome the opportunity to discuss how my Android background, integration experience, and reliability-focused delivery habits can contribute to {company_name}. '
-            'Thank you for your time and consideration.'
-        )
+        closing_map = {
+            'android': (
+                f'I would welcome the opportunity to discuss how my Android delivery background, integration experience, and reliability-focused habits can contribute to {company_name}. '
+                'Thank you for your time and consideration.'
+            ),
+            'backend': (
+                f'I would welcome the opportunity to discuss how my backend engineering depth, API design experience, and reliability-focused delivery habits can contribute to {company_name}. '
+                'Thank you for your time and consideration.'
+            ),
+            'ai': (
+                f'I would welcome the opportunity to discuss how my AI engineering practice, full-stack implementation experience, and production-focused delivery habits can contribute to {company_name}. '
+                'Thank you for your time and consideration.'
+            ),
+            'fullstack': (
+                f'I would welcome the opportunity to discuss how my full-stack delivery experience, integration discipline, and reliability-focused execution can contribute to {company_name}. '
+                'Thank you for your time and consideration.'
+            ),
+        }
+        closing = closing_map.get(role_type, closing_map['fullstack'])
 
     else:  # zh
         opening_hook = _opening_hook_text(role_type, 'zh')
@@ -543,6 +592,8 @@ def build_cover_letter_content(
             )
         if 'eroad' in company_lower:
             body2 = f'{body2}{_COMPANY_FIT_HOOKS["eroad"]["zh"]}{_WHY_ME_HOOKS["eroad"]["zh"]}'
+        if 'halter' in company_lower:
+            body2 = f'{body2}{_COMPANY_FIT_HOOKS["halter"]["zh"]}{_WHY_ME_HOOKS["halter"]["zh"]}'
         if 'l3harris' in company_lower:
             body2 = f'{body2}{_COMPANY_FIT_HOOKS["l3harris"]["zh"]}{_WHY_ME_HOOKS["l3harris"]["zh"]}'
         if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:

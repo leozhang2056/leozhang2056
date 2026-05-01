@@ -270,26 +270,41 @@ backend:
     evidence:
       - Microservice architecture
       - Distributed systems
-    
-  - name: MyBatis
+
+  - name: Event-driven Architecture
     level: advanced
-    years: 7
     evidence:
-      - Data access layer
-      - ORM implementation
-    
-  - name: Hibernate
+      - Service decoupling and asynchronous workflow design in smart-factory systems
+
+  - name: Kafka
     level: intermediate
-    years: 5
     evidence:
-      - JPA implementation
-    
+      - Event stream integration for distributed factory services
+
+  - name: ActiveMQ
+    level: intermediate
+    evidence:
+      - Message queue based coordination across microservices in production workflows
+
   - name: RESTful API
     level: expert
     years: 10
     evidence:
       - API design and implementation
       - Multiple enterprise systems
+
+  - name: MyBatis
+    level: advanced
+    years: 7
+    evidence:
+      - Data access layer
+      - ORM implementation
+
+  - name: Hibernate
+    level: intermediate
+    years: 5
+    evidence:
+      - JPA implementation
     
   - name: .NET
     level: intermediate
@@ -305,6 +320,12 @@ frontend:
     evidence:
       - Industrial dashboards
       - IoT visualization
+
+  - name: Flutter
+    level: intermediate
+    evidence:
+      - Cross-platform development
+      - Mobile feature delivery with reusable UI components
 
   - name: React Native
     level: beginner

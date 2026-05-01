@@ -41,6 +41,17 @@ except ModuleNotFoundError:
         load_project_relations,
     )
 
+# Lightweight company profile utilities for targeted alignment
+try:
+    from app.backend.company_profile_utils import (
+        load_company_profile,
+        render_alignment_snippet,
+        extract_company_name_from_text,
+    )
+except Exception:
+    load_company_profile = None  # type: ignore
+    render_alignment_snippet = None  # type: ignore
+
 # 保留私有名称供内部使用（历史调用方 / 测试不需要改动）
 _load_all_bullets = load_all_bullets
 _load_project_relations = load_project_relations
@@ -2628,6 +2639,25 @@ def generate_html_from_kb(
     if work_rights_text:
         contact_secondary = f'<div class="cv-contact-secondary">{html.escape(work_rights_text)}</div>'
 
+    # 生成对齐文本（若提供公司信息则注入到 CV 里，以实现定制化输出）
+    alignment_html_insert = ""
+    if company_name and load_company_profile is not None and render_alignment_snippet is not None:
+        c_profile = load_company_profile(company_name)
+        if c_profile:
+            alignment_text = render_alignment_snippet(c_profile)
+            if alignment_text:
+                alignment_html_insert = f'<p class="company-alignment" style="font-style: italic; color:#555;">{alignment_text}</p>'
+    # 如果未明确提供公司名，则尝试从 JD 关键词文本中提取公司名并对齐
+    if not alignment_html_insert and extract_company_name_from_text is not None and jd_keywords:
+        jd_text = " ".join([str(x) for x in jd_keywords if isinstance(x, str)])
+        inferred_company = extract_company_name_from_text(jd_text)
+        if inferred_company:
+            c_profile = load_company_profile(inferred_company)
+            if c_profile:
+                alignment_text = render_alignment_snippet(c_profile)
+                if alignment_text:
+                    alignment_html_insert = f'<p class="company-alignment" style="font-style: italic; color:#555;">{alignment_text}</p>'
+
     html_doc = f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -2651,6 +2681,7 @@ def generate_html_from_kb(
   <!-- Summary -->
   <div class="section-title">{lbl['summary']}</div>
   <div class="cv-summary">{summary}</div>
+  {alignment_html_insert}
 
   <!-- Key Skills -->
   <div class="section-title">{lbl['skills']}</div>
