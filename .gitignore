@@ -2,6 +2,12 @@
 templates/
 outputs/
 
+# Privacy / personal narrative (local only; do not commit)
+interview_qa/
+kb/interview_qa/
+memory/
+transcripts/
+
 # Python cache
 __pycache__/
 *.pyc
@@ -37,7 +43,4 @@ node_modules/
 *.tar.gz
 *.rar
 
-# Local-only memory runtime (hooks regenerate; do not commit machine state)
-memory/.daily_merge_state.json
-memory/.session_end_log.md
-memory/.session_hint_start.txt
+# memory/ is fully ignored above (session + layered memory; may contain personal context)

@@ -1,7 +1,7 @@
 # Leo Zhang
 
 **Senior Android Developer · Java Backend · Full-stack Engineer**  
-📧 leozhang2056@gmail.com | 📱 +64 27 385 0794 | 📍 Auckland, New Zealand
+📧 leozhang2056@gmail.com | 📍 Auckland, New Zealand
 🔗 LinkedIn: [linkedin.com/in/leo-zhang-305626280](https://www.linkedin.com/in/leo-zhang-305626280/)
 
 ---
