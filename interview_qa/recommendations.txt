@@ -1,0 +1,44 @@
+## 行为面试题优化建议
+
+### 1. 新增关键问题类型 (12个新增方向)
+
+- **领导力示例**: "Describe a time you led a team through a significant challenge"
+- **创新采用**: "How do you incorporate new technologies into existing systems?"
+- **决策制定**: "Describe a time you made a major technical decision"
+- **变革领导**: "How did you persuade your team to adopt a new methodology?"
+- **风险管理**: "How do you handle high-risk technical choices?"
+- **价值观冲突**: "How do you handle conflicts between team values?"
+- **时间紧迫**: "How do you maintain quality under tight deadlines?"
+- **跨职能协作**: "Describe a time you collaborated across departments"
+- **技术债务管理**: "How do you balance feature development with tech debt reduction?"
+- **客户导向**: "How do you ensure your solutions meet real user needs?"
+- **AI伦理实践**: "How do you handle AI bias incidents?"
+- **IoT边缘计算**: "How do you optimize ML models for edge devices?"
+
+### 2. 优化现有问题 (5个改进方向)
+
+- **增强STAR完整性**: 为所有问题添加完整的 Situation/Task/Action/Result 结构
+- **增加metrics数据**: 在evidence中添加具体指标（99.9% uptime, 35% latency improvement）
+- **丰富项目证据**: 在更多问题中引用 iot-solutions, visual-gateway, visit-system 等项目
+- **细化难度评估**: 让 easy/medium/hard 更有意义，基于复杂度和影响范围
+- **丰富回答技巧**: 提供更具体的实战建议而非通用提示
+
+### 3. 结构优化 (3个组织改进)
+
+- **重新组织分类**: 按技能维度（核心技能、团队动态、技术卓越、创新、领导力）而非应用场景
+- **标准化格式**: 统一所有问题的字段结构（id, category, question, difficulty, answer_points, evidence, star_method, tips）
+- **添加评分标准**: 包含 difficulty_scale 和 scoring_rubric 字段
+
+### 4. 行业特定问题 (3个新增领域)
+
+- **IoT/AI领域**: 针对边缘计算、模型优化、实时处理等场景
+- **AI伦理**: 针对偏见处理、透明度、责任归属等
+- **企业级开发**: 针对大规模系统、长期维护、多团队协作等
+
+### 5. 实施优先级
+
+1. **立即添加**: 优先补充12个新增问题类型
+2. **完善现有**: 为所有问题添加metrics和完整STAR示例
+3. **重组分类**: 按技能维度组织问题
+4. **增强评分**: 添加量化评分标准
+5. **行业扩展**: 添加IoT/AI伦理等特定领域问题
