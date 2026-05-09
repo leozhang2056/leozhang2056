@@ -1,0 +1,77 @@
+project_id: banknote-paper-mill
+name: Banknote Paper Mill Customer Integration
+name_cn: 造币印纸厂现场集成与交付
+type: Enterprise System
+category:
+- On-site Integration
+- High-Security Deployment
+- Manufacturing IT
+timeline:
+  start: '2018'
+  end: '2020'
+role: Developer & Integrator
+role_cn: 开发工程师与现场集成
+team_size: null
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+summary: >
+  High-secrecy banknote paper mill customer: facility prohibited internet access on site.
+  Work used air-gapped laptops to analyze and export data formats, test inside the plant network,
+  then continue development externally and return for validation — tight schedules, heavy coordination
+  pressure, and days where access friction meant no visible delivery progress until the next checkpoint.
+  Each entry and exit required customer approval; a typical on-site visit needed to be requested about
+  one week in advance, so debugging time on the floor was scarce and had to be prepared off-site as much as possible.
+  Deploying or upgrading inside the air-gapped plant was also painful: no casual downloads, everything had to be
+  transferred and verified through controlled paths, with more manual steps and rollback planning than in a normal online environment.
+
+summary_cn: >
+  造币印纸厂类高保密客户：现场禁止联网，仅以断网笔记本进场分析、导出数据格式并在内网验证；
+  外部开发后再次进场联调。每次进场与出场均需申请审批，通常进场需提前约一周申请，现场调试窗口稀缺，
+  必须在场外做足准备。**断网环境下的部署/升级同样麻烦**：无法随意外网拉包，介质与校验路径受控，步骤更手工、回滚与验证成本更高。
+  流程重、周期紧，易出现整日无可展示进展；需与客户及团队对齐预期与检查点。
+highlights:
+  - Delivered integration work under strict secrecy and no on-site internet; used offline-capable laptops for format analysis, export, and in-plant testing cycles
+  - Operated under formal access controls: each entry and exit required approval, with roughly one week lead time typical to secure a site visit — forcing disciplined off-site preparation so limited on-floor debugging time was not wasted
+  - Managed repeated enter-site / off-site development loops with customer stakeholders under aggressive timelines, including days blocked by access or environment where progress was non-obvious to non-technical observers
+  - Aligned expectations via small provable checkpoints per visit and transparent communication about air-gap scheduling risk
+  - Planned air-gapped deployments with offline artifacts and controlled transfer: extra packaging, verification, and rollback discipline because on-site systems could not rely on open internet access during install or upgrade
+highlights_cn:
+- 造币印纸厂等高保密场景：现场断网，离线设备进场完成数据格式分析与内网侧验证
+- 进出场地均需申请，通常需提前约一周办进场；现场调试时间极宝贵，场外充分准备脚本、数据包与回滚预案
+- 外发开发与再次进场联调交替，周期紧、协调压力大；通过每次进场的可验证小目标管理「无进展日」预期
+- 与客户及开发方同步真实节拍，避免审批与断网导致的阻塞被误解为拖延
+- 断网环境部署/升级：依赖离线介质与受控传递，安装与验证步骤更重，需预先打包、校验与回滚预案
+tech_stack:
+  languages:
+  - Java
+  domain:
+  - Air-gapped site workflow
+  - Data format analysis
+  - Secure manufacturing integration
+  - Offline deployment packaging
+skills_demonstrated:
+  technical:
+  - Secure customer-site integration
+  - Offline analysis and validation workflows
+  - Cross-environment testing
+  - Air-gapped deployment and controlled release artifacts
+  soft:
+  - Stakeholder communication under secrecy and schedule pressure
+  - Expectation management for air-gapped delivery
+related_to_roles:
+- Backend Developer
+- Android Developer
+- Full-stack Developer
+- Systems Integrator
+keywords:
+- Banknote paper mill
+- High-security manufacturing
+- Air-gapped deployment
+- Offline laptop
+- Data format integration
+- On-site integration
+- Secrecy compliance
+- Access approval workflow
+- Offline deployment
+last_updated: '2026-05-12'

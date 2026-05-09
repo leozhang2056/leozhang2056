@@ -140,7 +140,7 @@ We **rebuilt** the environment and **restored** from **backups**. After that the
 <a id="oral-05"></a>
 ### ⑤ Under pressure
 
-**提示（STAR）**：三选一。**Case A** **Smart Factory** 发布窗口；**Case B** **`enterprise-messaging`（企业即时通讯）** 早期**单人安卓**、几周原型上线、爆 bug、**日更**清优先级 + **产品**帮对接用户；**Case C** **`banknote-paper-mill`（造币印纸厂 / 保密断网）**：**断网**、仅可带离线笔记本进场；**每次进出需申请**，通常**提前约一周**才能进场；**断网部署/升级也麻烦**（离线包、受控传递、重验证）；内外环境反复联调、周期紧，**调试须场外充分准备**，易出现「一整天无可见进展」。
+**提示（STAR）**：二选一。**Case A** **Smart Factory** 发布窗口；**Case B** **`enterprise-messaging`（企业即时通讯）** 早期**单人安卓**、几周原型上线、爆 bug、**日更**清优先级 + **产品**帮对接用户。
 
 **Case A — Smart Factory（发布窗）**  
 **Smart Factory** before release — **shop floor** doesn't wait. I split it: **triage**, **fix**, **verify**, **watch**. Pull the **owner** of the broken layer, **short** updates. We got it **out** without **breaking** the line. **Shrink unknowns fast** — that's how I handle heat.
@@ -156,23 +156,10 @@ I wasn't alone on the **people** side — **product / design** helped **explain*
 
 **Lesson**: under pressure, **visible order** + **daily rhythm** beats panic; **cross-team** user comms is part of the fix, not extra work.
 
-**Case C — Air-gapped site（造币印纸厂 / 保密断网）**  
-We had a **banknote paper mill** customer — **high secrecy** — **no internet** on site. I could only go in with an **offline laptop**: **export** their **data formats**, **inspect** samples, **test** what we could **inside**, then **leave** and **build** in our normal environment, then **come back** to **validate** in their **locked-down** network again.
-
-**Every** **entry** and **exit** needed **customer** **approval**. In practice, **one** **on-site** **visit** often meant **asking** about **a week** **ahead** — so **floor** **time** was **rare** and **expensive**. I **prepared** **hard** **before** I walked in: **repro** steps, **builds**, **sample** **files**, **fallback** plans — because I couldn't **afford** to **improvise** there.
-
-**Deploying** there was **not** like a **normal** **office** **push** — **no** **open** **internet** to **pull** **deps** or **patch** **fast**. We **carried** **offline** **packages**, **checked** **everything** through their **rules**, and **planned** **rollback** because **fix** **forward** was **slow** when **each** **visit** **cost** **so** much **calendar** **time**.
-
-The **loop** was **heavy**: travel, **access** friction, and **tight** deadlines. Some days I **burned** a **whole day** and still had **nothing** that **looked** like **progress** — just **setup**, **permissions**, or a **dead** path. **Their** team was **stressed**; **we** were **stressed** too.
-
-What helped: **tiny** goals per **visit** — "today I only prove **X** format / **one** import path"; **write down** every **artifact** I could take out; **tell** PM and the customer **early** that **air-gap** work has **empty-looking** days, and **re-scope** dates from **real** **cycle** time — including **approval** **lead** **time**, not **ideal** **office** time.
-
-**Lesson**: **classified / offline** sites change what **pressure** means — you manage it with **honest** **expectations**, **checkpoint-sized** wins, **prep** that respects **access** **lead** **time**, and **release** **packages** built for **no-net** **installs**, not **last-minute** **downloads**.
-
 <a id="oral-06"></a>
 ### ⑥ Prioritize quickly
 
-**提示（STAR）**：三选一。**Case A** 产线问题 + PM 要功能；**Case B** 无对标、**下车间**澄清模糊需求、**快原型**迭代、大版本演进；**Case C** **多项目并行**：外部（`smart-factory`、`enterprise-messaging` 等）+ 自营（`picture-book-locker` 图书馆借阅柜、互联网产品线等），**按交付/风险/难点**排每日焦点，必要时**跨组协调人力**。
+**提示（STAR）**：二选一。**Case A** 产线问题 + PM 要功能；**Case B** 无对标、**下车间**澄清模糊需求、**快原型**迭代、大版本演进（压力 + 交付后仍可能改向）。
 
 **Case A — 产线 vs 里程碑**  
 **Smart Factory** — **line** issues, **PM** wants features. I fix what **hurts operators** first, then what's **on the milestone**, and I'm **honest** about dates on the rest. **Clear order** beats a **pretty** plan nobody follows.
@@ -184,25 +171,12 @@ We had to **ship prototypes fast**, then **keep changing** them as understanding
 
 **Lesson**: when nobody has a crisp spec, **prototype + tight feedback** sets the real priority list; **big** replans aren't shame — they're how **shop-floor** software matures.
 
-**Case C — Many projects at once（外部 + 自营）**  
-At **Chunxiao** I often had **several projects moving at once** — not just one backlog. Some were **external**: **factory** work (**Smart Factory**), **enterprise messaging** for customers. Some were **our own products**: **library smart lockers** (**picture-book-locker**), plus other **internal internet-facing** lines.
-
-I couldn't treat every ping as **P0**. Each day I wrote down: which **release** is **nearest**, where I'm still **stuck** on a **hard** problem, and what can **slide** a little without **breaking trust**. **Impact** and **deadline** first — then **depth** time on **blockers**.
-
-When I couldn't **unblock** alone, I **asked early**: **borrow** time from **another group**, **pair** for a day, or **split ownership** clearly so nobody assumed **magic capacity**.
-
-**Lesson**: **portfolio** pressure is **scheduling** plus **escalation** — a **visible** order for yourself and **honest asks** when **parallel** streams need **more hands**.
-
 <a id="oral-07"></a>
 ### ⑦ Process improvement
 
-**提示（STAR）**：（S）多厂上线曾以**手动复制文件**为主；（A）**Jenkins** 连 **GitLab**、**CI/CD**，**首期配置麻烦**；**工厂项目先试点**，再**全线迁移**同一套流程；辅以容器、清单、文档；（R）部署更可重复、少人为漏操作。
+**提示（STAR）**：（S）多厂上线步骤乱；（A）**Spring** 容器、**Jenkins**、清单、文档；（R）部署更稳、少踩坑。
 
-For a long time we mostly **deployed by hand** — copy builds, sync files, easy to miss a step or ship the wrong piece. **Smart Factory** had many sites, so the pain scaled.
-
-We brought in **Jenkins** hooked to **GitLab**: **CI/CD pipelines** for build and deploy, less tribal knowledge, fewer midnight surprises. The **early setup was tedious** — wiring repos, agents, secrets, getting the first pipeline green — but we paid that cost once.
-
-**Smart Factory** was the **first** place we ran it for real. After it looked stable, **the rest of the team moved to the same flow** so we didn't maintain two different release worlds. I still used **Dockerized Spring** where it helped, plus checklists and short docs so new people weren't chasing chat. Boring infra — but rollouts got predictable.
+Every **factory** had **long manual** deploy steps. I pushed **Spring** in **containers**, **Jenkins** for repeat work, **checklists** that matched reality, **docs** so new people weren't **chasing** chat. **Boring** — but it **worked**.
 
 <a id="oral-08"></a>
 ### ⑧ Tough feedback
@@ -250,9 +224,9 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="b1-03"></a>
 ### 3) 压力管理与优先级
-- Tell me about a time you worked under pressure.（产线发布窗；或 **造币印纸厂** 等断网进场联调，见 [A ⑤ Case C](#oral-05)）
-- How do you prioritize when everything feels urgent?（影响 × 风险 × 透明沟通；多线并行见 [A ⑥ Case C](#oral-06)、**Q8** / **Q36**）
-- Tell me about a time you had multiple deadlines.（多项目并行 + 内外部混排，见 [A ⑥ Case C](#oral-06)；或与 Smart Factory 单项目排优先合并准备）
+- Tell me about a time you worked under pressure.（产线关键路径发布窗口）
+- How do you prioritize when everything feels urgent?（影响 × 风险 × 透明沟通，见 **Q8** / **Q36**）
+- Tell me about a time you had multiple deadlines.（可与上题或 Smart Factory 排优先合并准备）
 
 <a id="b1-04"></a>
 ### 4) 失败与复盘
@@ -269,7 +243,7 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 <a id="b1-06"></a>
 ### 6) 主动性与影响力
 - Tell me about a time you took initiative.（论文交付物超出要求：部署文档 + API 说明，见 **Q7**）
-- Describe a process improvement you drove.（手动复制 → **Jenkins + GitLab CI/CD**；容器/清单/文档，见 [A ⑦](#oral-07)）
+- Describe a process improvement you drove.（容器化 + Jenkins + checklist）
 - Tell me about a time you influenced without authority.（用数据推动分期试点，与经理分歧题同源）
 
 <a id="b1-07"></a>
@@ -341,8 +315,7 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 **口语 →** [专页 ⑤](#oral-05)  
 **STAR — Smart Factory 发布窗**：关键路径；triage→fix→verify→watch；拉对人；短更新；上线未砸线。**Reflection：**先减不确定。  
-**STAR — `enterprise-messaging`（早期单人安卓，可选）**：企业即时通讯客户端；几周原型→上线→bug 洪峰；每日列单、优先级、日更包、测试收敛；产品侧对用户解释与排期、日更说明。**Reflection：**高压靠节奏 + 对外透明，不靠一个人硬扛话术。  
-**STAR — `banknote-paper-mill`（断网保密现场，可选）**：造币印纸厂类涉密环境禁止联网；仅离线笔记本进场分析/导出数据格式、内网测试；外场开发后再进场验证；**每次进出须申请，通常提前约一周才能进场**；**断网部署/升级依赖离线包与受控传递，步骤与验证更重**；现场调试窗口极短，**场外做足脚本/安装包/回滚与复现准备**；流程冗长、周期紧；易出现整日无可交付进展；客户与开发方双重焦虑。**Reflection：**排期要计入审批提前量 + 离线发布成本；进场分钟级宝贵，不能把「到现场再想」当常态。
+**STAR — `enterprise-messaging`（早期单人安卓，可选）**：企业即时通讯客户端；几周原型→上线→bug 洪峰；每日列单、优先级、日更包、测试收敛；产品侧对用户解释与排期、日更说明。**Reflection：**高压靠节奏 + 对外透明，不靠一个人硬扛话术。
 
 ---
 
@@ -351,8 +324,7 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 **口语 →** [专页 ⑥](#oral-06)  
 **STAR — Smart Factory（产线窗）**：产线 vs 里程碑 vs 维护；先产线影响 → 再里程碑；其余标日期透明。**Reflection：**可见顺序 > 全是 P0。可接 **high uptime** 口径若追问。  
-**STAR — Smart Factory（模糊需求，可选）**：无对标、下车间理解工人/工厂真实痛点；与团队对齐开发节奏与任务切分；快原型 → 反复确认 → 需求逐步精确；首版上线后可能仍需大版本调整；多轮大版本边加边减功能。**Reflection：**模糊需求时优先级由「验证假设」驱动，而非一开始的文档。  
-**STAR — 多项目组合（可选，`cross-project`）**：同时推进外部客户项目（如 `smart-factory`、`enterprise-messaging`）与自营产品线（如 `picture-book-locker` 图书馆借阅柜、互联网相关自营项目）；按**临近交付、未攻克难点、影响与承诺**排每日任务；进度与阻塞透明；需支援时**尽早跨组协调**。**Reflection：**组合压力=个人日程可见性+敢于升级要资源，而不是假装能并行无限深度工作。
+**STAR — Smart Factory（模糊需求，可选）**：无对标、下车间理解工人/工厂真实痛点；与团队对齐开发节奏与任务切分；快原型 → 反复确认 → 需求逐步精确；首版上线后可能仍需大版本调整；多轮大版本边加边减功能。**Reflection：**模糊需求时优先级由「验证假设」驱动，而非一开始的文档。
 
 ---
 
@@ -360,7 +332,7 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 ### 7) Tell me about a process improvement you drove.
 
 **口语 →** [专页 ⑦](#oral-07)  
-**STAR — `smart-factory`（DevOps）**：长期以手动复制/同步为主、易漏易错；引入 **Jenkins** 对接 **GitLab**，落地 **CI/CD**；**前期流水线/凭证/执行机等配置耗时**，先在**工厂项目试点**，验证稳定后**各项目统一迁移**到同一套发布流程；结合容器化 Spring、清单与短文档，多厂 rollout 更可预期。**Reflection：**一次性付清「标准化」成本，比长期维持多套手搓发布更省团队总时间。
+**STAR**：多厂部署手顺乱；Spring 容器 + Jenkins + checklist + 文档；rollout 更可预期。**Reflection：**自动化与文档一起上。
 
 ---
 
@@ -640,18 +612,16 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-08"></a>
 ### 8) How do you prioritize when you have multiple deadlines?
-**提示（STAR）**：**影响 × 风险**；**Smart Factory** **产线** 优先；需求模糊时 **下车间 + 快原型**（见 [A ⑥ Case B](#oral-06)）；**多项目并行**见 [A ⑥ Case C](#oral-06)；早说 **排序变化**。
+**提示（STAR）**：**影响 × 风险**；**Smart Factory** **产线** 优先；需求模糊时 **下车间 + 快原型** 定下一刀切什么（见 [A ⑥ Case B](#oral-06)）；早说 **排序变化**。
 **Script（口语）**
 > I sort by **impact** and **risk**, not loudest voice. **Smart Factory** — **production** issues before **nice-to-have** features when users are **on the line**. Then **milestone** work. I **say early** when order **changes**. We kept **uptime** and still **shipped**.
-> When **several** **projects** ran **together** — **external** **factories**, **enterprise** **messaging**, plus **our** **own** **products** like **library** **lockers** — I **listed** **nearest** **deadlines**, **open** **blockers**, and **what** could **wait**. I **reached** **out** **early** for **help** from **other** **teams** when I **couldn't** **unblock** **alone**.
 
 <a id="q-09"></a>
 ### 9) How do you handle stress and pressure?
-**提示（STAR）**：**习惯**：里程碑 + 范围 + 节奏；**故事（可选）**：`enterprise-messaging` 早期单人安卓日更救火，见 [A ⑤ Case B](#oral-05)；**造币印纸厂（`banknote-paper-mill`）断网进场**见 [A ⑤ Case C](#oral-05)。
+**提示（STAR）**：**习惯**：里程碑 + 范围 + 节奏；**故事（可选）**：`enterprise-messaging` 早期单人安卓日更救火，见 [A ⑤ Case B](#oral-05)。
 **Script（口语）**
 > I **cut unknowns early** — **milestones**, **check-ins**. Under heat: **smaller scope**, **stable core** first, then grow. **Routine** and **exercise** to reset. **ChatClothes** was tight — **early plan** helped me **finish ahead**.
 > When it was really hot — like **solo Android** on our **enterprise IM** app after a fast launch with **many bugs** — I used a **daily** list, **priority** order, **ship a build** every day, and let **product** help users with **honest** timelines. **Rhythm + clarity** beats panic.
-> Another kind of pressure was **air-gapped** customers — a **banknote paper mill**: **no internet** on site and **strict secrecy**. **Every** **in** and **out** needed **approval** — usually **~a week** to **book** **one** **visit**. **Offline laptop** only: **grab** formats, **test** inside, **code** outside, **return** to verify. **Deploying** there was **slow** too — **offline** **bundles**, **controlled** **transfer**, **heavy** **check** steps, not a quick **online** **push**. I **prepped** **before** each **visit** so **short** **floor** **time** wasn't **wasted**. Some days **zero** visible **progress** — still **cost** a full day. I set **small** checkpoints per **visit**, **documented** exports, and **reset** timelines with PM and the customer so **nobody** thought we were **stalling** when **access** and **process** were the **bottleneck**.
 
 <a id="q-10"></a>
 ### 10) How would you describe your work style?
@@ -775,7 +745,7 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-30"></a>
 ### 30) Assume you are given a task to design a system. How would you do it? How would you resolve ambiguity?
-**提示（STAR）**：问清 **目标/约束**；**画架构**；**spike** 模糊点；**写**大决策；模糊需求时 **下车间/用户** + **快原型** 验证（见 **A ⑥ Case B**）；若含 **断网/保密现场**，把**进场节拍**、**进出审批与提前量（如约一周）**、**离线部署/升级成本（制品、传递、校验、回滚）**与可带出资产写进约束（见 **A ⑤ Case C**）。
+**提示（STAR）**：问清 **目标/约束**；**画架构**；**spike** 模糊点；**写**大决策；模糊需求时 **下车间/用户** + **快原型** 验证（见 **A ⑥ Case B**）。
 **Script（口语）**
 > I **ask** until **goals** and **constraints** are clear — put **unknowns** on the table. Sketch **architecture** and **interfaces**, **spike** if two paths are fuzzy. **Document** big calls, **iterate** with **feedback** and **numbers**. When users only have a **fuzzy** picture, I **go to the floor**, **prototype fast**, and **tighten** requirements from **what they actually do**.
 
@@ -811,10 +781,9 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-36"></a>
 ### 36) How do you prioritize your workload? What do you do when your work feels like it's just too much to get done?
-**提示（STAR）**：**影响+风险**；**切块**；**早说**；必要时 **砍范围**保核心；多线并行时见 [A ⑥ Case C](#oral-06)。
+**提示（STAR）**：**影响+风险**；**切块**；**早说**；必要时 **砍范围**保核心。
 **Script（口语）**
 > **Too much** work — I sort **impact** and **risk**, break into **chunks**, **say early** if dates move. If needed I **cut** scope to save the **must-have**, then **grow** back when **stable**.
-> With **many** **queues** **at** **once**, I **pick** **today's** **focus** from **who** **waits** on **me** **next** and **what** **still** **needs** **deep** **thinking** — and I **ask** for **backup** **before** I'm **late**, not **after**.
 
 <a id="q-37"></a>
 ### 37) What’s the Number One Accomplishment You’re Most Proud Of?
@@ -860,10 +829,9 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-44"></a>
 ### 44) Describe the project workflow in your previous team.
-**提示（STAR）**：**双周 Sprint** **六年**；**demo**；**接口契约**；交付侧从**手动部署**演进到 **GitLab + Jenkins CI/CD**；**先工厂项目试点、后统一迁移**（见 [A ⑦](#oral-07)）。
+**提示（STAR）**：**双周 Sprint** **六年**；**demo**；**接口契约**。
 **Script（口语）**
 > **Smart Factory** — **two-week sprints** **~six years**: plan, standup, review, retro. Every sprint **demo** with **real** software. **Shared API contracts** before **breaking** changes — **mobile**, **backend**, **IoT** stayed aligned.
-> On **release**, we moved from mostly manual copy deploys to **Jenkins** tied to **GitLab** — **CI/CD pipelines** so build and deploy were repeatable, not hero runs. **Setup was painful at first** — we **piloted on Smart Factory**, then **everyone migrated to the same pattern** so we didn't run old and new side by side forever.
 
 <a id="q-45"></a>
 ### 45) How do you support and track a junior developer's progress?
@@ -967,17 +935,3 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
   - Result: 服务从备份与重建路径恢复；文件存储架构向云端与更强管控演进（具体停机时长、影响用户数待补：`MISSING_INFO`）。
   - Reflection: 用户上传路径必须按攻击面设计：最小权限、内容类型与白名单、上传目录与可执行环境隔离；备份与可重建演练不是“可选项”。若与「勒索病毒/灾难恢复」条目在事实层面为同一事件链，口试时可合并为一条叙事；若确认为独立事件则分开讲。
   - Suggested line (EN): "We treated avatar uploads like a product feature — but the server treated that folder like a trusted path. Tight ACLs, validation, and moving blobs to cloud storage with least-privilege access became non-negotiable after we paid the restore tax once."
-- 【2026-05-10 新增】`banknote-paper-mill` / 造币印纸厂断网现场与联调压力（可用于：Under pressure / Ambiguity / Stakeholder / 交付节奏）
-  - Situation: 客户为造币印纸厂类高保密场景，现场不允许联网；仅能以断网笔记本进入，分析、导出数据格式并在内网环境测试；在外部常网环境开发后，需再次进入客户内网验证。**每次进场与出场均需申请审批；通常单次进场需提前约一周办理**，现场可用调试时间稀缺。**断网环境下部署/升级同样麻烦**：无法依赖外网即时拉包与热修，需离线打包、受控介质传递与更重的安装校验与回滚准备。流程环节多、开发周期紧；易出现整日工作但无「可展示」进展，客户与开发团队均高度焦虑。
-  - Task: 在强约束下仍推进集成与验证，并管理各方对进度与「无进展日」的预期；在极短的现场窗口内完成有效验证。
-  - Action: 将每次进场目标拆为可验证的最小检查点；**场外完成充分准备**（复现步骤、**离线安装/升级包**、样例数据、回滚与备选路径、校验说明），避免把「到现场再排查」或「到现场再下依赖」当作默认；完整记录可带出的样本与格式说明；与 PM/客户提前对齐断网联调的真实节拍，排期按「**审批提前量** + **离线发布准备** + 进场—外发—再进场」循环而非纯办公室迭代；空转日主动说明阻塞原因（权限、环境、路径试错）避免被误解为拖延。
-  - Result: 在约束下逐步完成格式对齐与内网验证（具体客户名、进场次数、周期量化待补：`MISSING_INFO`）。
-  - Reflection: 物理隔离与保密流程本身就是风险与工期来源；**审批周期**、**单次进场成本**与**断网发布/部署摩擦**必须写进计划。压力管理的核心是预期对齐、检查点粒度、离线制品与场外准备，而非单纯加班。事实条目见 `projects/banknote-paper-mill/facts.yaml`（`timeline` 若与履历需精确对齐可再改）。
-  - Suggested line (EN): "One plant visit cost a week of paperwork — and you couldn’t patch like the cloud: offline bundles, controlled transfer, and rollback had to be designed in, not improvised after a failed push."
-- 【2026-05-12 新增】`cross-project` / 多项目并行：外部交付 vs 自营产品线（可用于：Prioritization / Time management / Stakeholder / 资源协调）
-  - Situation: 同一时期并行的项目多；既有外部客户交付（如工厂类 `smart-factory`、企业即时通讯 `enterprise-messaging`），也有公司自营产品线（如图书馆智能借阅柜 `picture-book-locker`、互联网相关自营项目等）；个人需同时跟进多条线的开发与问题处理。
-  - Task: 在有限时间内为各项目推进度、满足临近节点，并对未攻克难点分配深度工作时间；避免「全是 P0」导致全线失控。
-  - Action: 以日/周为单位列出各项目：临近交付项、当前阻塞与难点、可延后但不伤信任项；按影响、承诺日期与风险排序；进度与排序对 PM/相关方保持透明；在自身无法单独解阻塞时尽早申请其他组人力支援（短时结对、并行分担或明确责任边界）。
-  - Result: 多线并行下仍维持可预期交付与问题收敛（具体并行项目数、周期量化待补：`MISSING_INFO`）。
-  - Reflection: 组合工作的瓶颈常是「可见的优先级 + 及时的资源升级」，而非单纯延长单人工时。口稿与锚点见 [A ⑥ Case C](#oral-06)、**Q8**、**Q36**、**B2-06**。
-  - Suggested line (EN): "External factory deadlines and internal product lines don’t share one inbox — I pick today’s fire from who’s waiting and what’s still a real unknown, and I borrow hands early when parallel streams need more than one brain."

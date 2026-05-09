@@ -15,6 +15,8 @@ import os
 import re
 import html
 import random
+import hashlib
+import json
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Union
@@ -112,6 +114,7 @@ DEFAULT_MAX_PROJECTS = 6
 CV_MAX_PROJECTS_CAP = 7
 CORE_PROJECT_COUNT = 3
 DEFAULT_MAX_BULLETS = 3
+KB_VALIDATION_CACHE_FILE = ".kb_validation_cache.json"
 
 # 文本长度限制
 SUMMARY_MAX_CHARS_EN = 700
@@ -670,7 +673,7 @@ def _build_summary_hook(role_type: str, lang: str, normed_kws: Optional[List[str
         return hook
 
     base_map_en = {
-        "android": "I turn complex product requirements into stable, maintainable Android systems that hold up in production.",
+        "android": "I build reliable Android features from complex requirements and ship them safely to production.",
         "backend": "I turn complex business requirements into reliable backend systems that scale and stay maintainable.",
         "ai": "I turn AI ideas into runnable, evaluable production workflows with clear engineering trade-offs.",
         "fullstack": "I turn ambiguous requirements into production-ready end-to-end systems teams can rely on.",
@@ -765,6 +768,8 @@ def generate_summary(
             # Single letters/numbers
             "a", "an", "the", "and", "or", "but", "if", "then", "when", "where",
             "how", "why", "what", "who", "which", "this", "that", "these", "those",
+            # Low-signal glue words often leaked from JD extraction
+            "all", "aligned", "through", "full",
         }
         normed: List[str] = []
         seen = set()
@@ -3196,6 +3201,47 @@ def _build_quality_report_markdown(
     return '\n'.join(lines).rstrip() + '\n'
 
 
+def _kb_validation_fingerprint(repo_root: Path) -> str:
+    """
+    Build a lightweight fingerprint from YAML path/mtime/size so we can skip
+    repeated strict validation when KB files are unchanged.
+    """
+    digest = hashlib.sha256()
+    roots = [repo_root / "kb", repo_root / "projects"]
+    for root in roots:
+        if not root.exists():
+            continue
+        for p in sorted(root.rglob("*.yaml")):
+            rel = p.relative_to(repo_root).as_posix()
+            st = p.stat()
+            digest.update(f"{rel}|{st.st_mtime_ns}|{st.st_size}".encode("utf-8"))
+    return digest.hexdigest()
+
+
+def _is_kb_validation_cache_hit(repo_root: Path) -> bool:
+    cache_path = repo_root / "outputs" / KB_VALIDATION_CACHE_FILE
+    if not cache_path.exists():
+        return False
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+        current = _kb_validation_fingerprint(repo_root)
+        return cache.get("fingerprint") == current
+    except Exception:
+        return False
+
+
+def _write_kb_validation_cache(repo_root: Path) -> None:
+    cache_path = repo_root / "outputs" / KB_VALIDATION_CACHE_FILE
+    payload = {
+        "fingerprint": _kb_validation_fingerprint(repo_root),
+        "updated_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    try:
+        cache_path.write_text(json.dumps(payload, ensure_ascii=True, indent=2), encoding="utf-8")
+    except Exception:
+        pass
+
+
 async def generate_cv_from_kb(
     output_path: Optional[str] = None,
     role_type: str = 'fullstack',
@@ -3268,8 +3314,13 @@ async def generate_cv_from_kb(
         except ModuleNotFoundError:
             from app.backend.kb_loader import KBLoader  # type: ignore
 
-        kb_loader = KBLoader(repo_root)
-        loaded_kb_data = kb_loader.load_all(strict=True)
+        if _is_kb_validation_cache_hit(repo_root):
+            print("  KB strict validation → cache hit (unchanged YAML), skip")
+        else:
+            kb_loader = KBLoader(repo_root)
+            loaded_kb_data = kb_loader.load_all(strict=True)
+            _write_kb_validation_cache(repo_root)
+            print("  KB strict validation → completed and cached")
 
     safe_jd_keywords, filtered_jd_keywords = _filter_jd_keywords_by_kb_evidence(
         jd_keywords,

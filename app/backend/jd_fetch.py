@@ -20,6 +20,7 @@ from __future__ import annotations
 import os
 import re
 from pathlib import Path
+import json
 from typing import List, Optional, Tuple
 
 
@@ -96,13 +97,75 @@ def fetch_jd_text_from_url(url: str, cookies: Optional[dict] = None) -> str:
 
     try:
         soup = BeautifulSoup(resp.text, "html.parser")
-        # 去掉 script/style
+
+        # SPA / Workday 等站点：可见正文在 #root 注入前几乎为空，但 og:description 与 JSON-LD 含完整 JD。
+        embedded_chunks: List[str] = []
+
+        og_desc = soup.find("meta", attrs={"property": "og:description"})
+        if og_desc and og_desc.get("content"):
+            embedded_chunks.append(str(og_desc["content"]).strip())
+
+        meta_desc = soup.find("meta", attrs={"name": "description"})
+        if meta_desc and meta_desc.get("content"):
+            c = str(meta_desc["content"]).strip()
+            if c and c not in embedded_chunks:
+                embedded_chunks.append(c)
+
+        def _collect_jobposting_descriptions(obj: object) -> None:
+            if isinstance(obj, dict):
+                types = obj.get("@type")
+                is_posting = types == "JobPosting" or (
+                    isinstance(types, list) and "JobPosting" in types
+                )
+                if is_posting:
+                    desc = obj.get("description")
+                    if desc and str(desc).strip():
+                        embedded_chunks.append(str(desc).strip())
+                for v in obj.values():
+                    _collect_jobposting_descriptions(v)
+            elif isinstance(obj, list):
+                for it in obj:
+                    _collect_jobposting_descriptions(it)
+
+        for script in soup.find_all("script"):
+            stype = (script.get("type") or "").lower()
+            if "ld+json" not in stype:
+                continue
+            raw = (script.string or script.get_text() or "").strip()
+            if not raw:
+                continue
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                continue
+            _collect_jobposting_descriptions(data)
+
+        def _dedupe_chunks(chunks: List[str]) -> List[str]:
+            out: List[str] = []
+            seen: set[str] = set()
+            for ch in chunks:
+                key = re.sub(r"\s+", " ", ch)[:240].lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(ch)
+            return out
+
+        embedded_chunks = _dedupe_chunks(embedded_chunks)
+
+        # 去掉 script/style（在提取 JSON-LD 之后）
         for tag in soup(["script", "style", "noscript"]):
             tag.decompose()
         text = soup.get_text(separator="\n")
-        # 清理多余空白
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-        return "\n".join(lines)
+        body_text = "\n".join(lines)
+
+        if len(body_text) < 400 and embedded_chunks:
+            return "\n\n".join(embedded_chunks)
+        if embedded_chunks:
+            merged = "\n\n".join(embedded_chunks + [body_text]).strip()
+            return merged
+        return body_text
     except Exception as e:
         print(f"Warning: failed to parse JD HTML from `{url}`: {e}")
         return ""

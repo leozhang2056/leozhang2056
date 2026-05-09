@@ -27,6 +27,15 @@
 
 ---
 
+## 英文面试稿表达偏好（用户固定）
+
+- **口语化**：短句、好换气、像聊天；可少量自然填充（如 *I mean* / *honestly* / *yeah*）。
+- **简单词**：优先常见高频英语；少堆术语——能用 *fast*、*chat app*、*small computer*、*stay up* 就别用 *low latency*、*real-time messaging*、*edge*、*ship* 等（**项目名、技术栈专名可保留**）。
+- **适用范围**：`interview_qa/` 下口语稿、**Tell me about yourself**、行为题英文口播等。
+- **硬约束不变**：量化与经历仍**只能**来自 `kb/`、`projects/*/facts.yaml`；**禁止**为“好念”而编造指标或项目。
+
+---
+
 ## 数据架构
 
 ### 核心数据文件（事实来源）
@@ -100,6 +109,7 @@
 3. 新增项目**必须**遵循 `kb/schema/project_facts_schema.yaml`
 4. 新增 bullets 必须包含 `id, category, tags, variants, evidence`
 5. 如果 KB 中缺少信息，输出 `MISSING_INFO`，提示用户补充后再生成
+6. 对话中出现的真实项目情形（问题、取舍、复盘）要**持久化到工程**：先记入 `interview_qa/behavioral_common_qa.md` 附录/对应题，再在可核对时同步到对应 `projects/*/facts.yaml`
 
 ---
 

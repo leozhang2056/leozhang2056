@@ -31,9 +31,11 @@ highlights:
   - Delivered a smart factory platform rolled out to 10+ factories over six years, spanning Android shop-floor apps, microservices, and IoT integrations
   - Implemented event-driven service coordination using ActiveMQ and Kafka to decouple production workflows across microservices
   - Dockerized Spring Boot microservices for repeatable releases across multi-site factory deployments and safer rollout operations
+  - Replaced copy-and-sync manual releases with Jenkins integrated to GitLab, implementing CI/CD pipelines for automated build and deploy; initial pipeline and environment wiring was heavy, piloted on the factory program first, then migrated remaining delivery streams to the same workflow (alongside checklists and concise runbooks)
   - Integrated industrial IoT devices including RFID, electronic scales, and conveyor systems
   - Implemented polyglot persistence layer with MySQL, Redis, and MongoDB for real-time data sync
   - Led a 6-person cross-functional engineering team through planning, sprint execution, and production rollout
+  - Field-led prioritization with no off-the-shelf reference product; deep shop-floor engagement to clarify fuzzy requirements; fast prototyping and iterative validation with users; successive major releases expanded and trimmed scope as real adoption and feedback emerged under high ambiguity and delivery pressure
 
 highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构
@@ -42,6 +44,8 @@ highlights_cn:
 - 使用 Spring Boot 和 .NET/C# 开发后端微服务，实现设备通信
 - 实现 Windows 服务用于串口通信和实时设备监控
 - 管理10多个制造基地的完整系统部署和维护
+- 部署由长期以手动复制/同步为主，演进为 Jenkins 对接 GitLab 的 CI/CD 流水线；前期配置与打通成本较高，先在工厂项目试点验证，后续各交付线统一迁移至同一套流程，提升可重复性并降低人为漏操作
+- 缺乏现成对标时以现场驱动：深入车间理解工人与工厂需求，快速原型迭代澄清模糊诉求，经多轮大版本演进，随真实使用增加或精简功能
 tech_stack:
   languages:
   - Java
@@ -174,7 +178,7 @@ skills_demonstrated:
   - Spring Boot / Spring Cloud (Microservices)
   - Java (Backend Development)
   - MySQL / Redis / MongoDB (Polyglot Persistence)
-  - Docker / Jenkins / Nginx (DevOps)
+  - Docker / Jenkins / GitLab CI/CD / Nginx (DevOps)
   - Industrial IoT (RFID, Barcode, Serial)
   - Electronic Scale Integration (RS232/RS485)
   - Windows Service Monitoring and Recovery
@@ -209,9 +213,11 @@ keywords:
 - Windows Service
 - Docker
 - Jenkins
+- GitLab
+- CI/CD
 - DevOps
 - MySQL
 - Redis
 - Team Leadership
 - Industrial Automation
-last_updated: '2026-04-01'
+last_updated: '2026-05-13'

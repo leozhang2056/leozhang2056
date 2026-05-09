@@ -89,6 +89,15 @@ relations:
       - Device Control
       - Android Gateway
 
+  - from: smart-factory
+    to: banknote-paper-mill
+    type: domain_extension
+    description: "高保密制造现场（造币印纸厂）断网联调与数据格式集成，与智能工厂类现场交付经验相邻"
+    shared_skills:
+      - Manufacturing IT
+      - On-site Integration
+      - Stakeholder Communication
+
   # ============================================
   # 技术栈演进 (Tech Stack Evolution)
   # ============================================

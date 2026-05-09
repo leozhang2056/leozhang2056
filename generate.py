@@ -13,7 +13,12 @@ Usage examples:
   # Generate AI CV with JD keywords:
   python generate.py cv --role ai --jd-keywords Python PyTorch ONNX "model optimization"
 
-  # Noisy job boards (e.g. SEEK): paste JD into a local .txt and use --jd-file, then optional
+  # JD-driven CV (paste JD into a .txt, auto-extract keywords; role inferred if --role auto):
+  python generate.py cv --jd path/to/jd.txt --role auto --company "Acme" --title "Senior Android Engineer"
+  # Same with long flag; optional URL improves company slug when --company omitted (Workday/Greenhouse):
+  python generate.py cv --jd-file jd.txt --jd-url "https://..." --role auto
+
+  # Noisy job boards (e.g. SEEK): paste JD into a local .txt and use --jd / --jd-file, then optional
   # --jd-keywords aligned with kb/skills.yaml so ranking/coverage stay meaningful.
 
   # Generate Cover Letter:
@@ -110,9 +115,11 @@ def build_parser() -> argparse.ArgumentParser:
              'keywords will be auto-derived from the page content.',
     )
     cv_parser.add_argument(
-        '--jd-file',
-        help='Path to a local JD text file; if provided and --jd-keywords is empty, '
-             'keywords will be auto-derived from the file content.',
+        '--jd-file', '--jd',
+        dest='jd_file',
+        metavar='PATH',
+        help='Path to a local JD text file (--jd is an alias); if provided and --jd-keywords '
+             'is empty, keywords will be auto-derived from the file content.',
     )
     cv_parser.add_argument(
         '--company',
