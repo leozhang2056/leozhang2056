@@ -33,6 +33,7 @@ highlights:
   - Dockerized Spring Boot microservices for repeatable releases across multi-site factory deployments and safer rollout operations
   - Replaced copy-and-sync manual releases with Jenkins integrated to GitLab, implementing CI/CD pipelines for automated build and deploy; initial pipeline and environment wiring was heavy, piloted on the factory program first, then migrated remaining delivery streams to the same workflow (alongside checklists and concise runbooks)
   - Integrated industrial IoT devices including RFID, electronic scales, and conveyor systems
+  - Reduced shop-floor weighing friction on Windows + web workflows by bridging scale serial output through a local Windows service (serial listener + embedded WebSocket server) to the browser client, auto-inserting weight at the active field so operators no longer read the scale and re-type into the form
   - Implemented polyglot persistence layer with MySQL, Redis, and MongoDB for real-time data sync
   - Led a 6-person cross-functional engineering team through planning, sprint execution, and production rollout
   - Field-led prioritization with no off-the-shelf reference product; deep shop-floor engagement to clarify fuzzy requirements; fast prototyping and iterative validation with users; successive major releases expanded and trimmed scope as real adoption and feedback emerged under high ambiguity and delivery pressure
@@ -41,6 +42,7 @@ highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构
 - 构建用户门户、管理控制台、组长工作台和平台管理端
 - 集成工业物联网设备：吊挂传送系统、电子秤、工业洗衣机、工业平板
+- 针对网页端克重录入：在工人 Windows 电脑上以本地服务监听电子秤串口并内嵌 WebSocket 服务，将重量推送到浏览器客户端，在光标所在输入框自动填入，减少读数再手敲的环节与输错风险，便于连续称重换料
 - 使用 Spring Boot 和 .NET/C# 开发后端微服务，实现设备通信
 - 实现 Windows 服务用于串口通信和实时设备监控
 - 管理10多个制造基地的完整系统部署和维护
@@ -62,6 +64,7 @@ tech_stack:
   - Kafka
   - Event-driven Architecture
   - RESTful API
+  - WebSocket (local PC bridge to browser)
   databases:
   - MySQL
   - Redis
@@ -92,6 +95,7 @@ features:
 - Serial protocol parsing and data normalization
 - Windows service watchdog and auto-reconnect
 - Weighing data sync to web pages and backend systems
+- Local serial-to-WebSocket bridge for browser weight auto-fill at focused fields (Windows service + web client)
 - Real-time production tracking
 - Workflow orchestration
 - High availability for critical workflows
@@ -155,10 +159,13 @@ technical_innovations:
   - Simplified integration of new hardware types
   - Real-time synchronization of physical movement and digital records
 - name: Weighing Data Bridge via Windows Service
-  description: Persistent serial listener service for electronic scales with monitoring
-    and reconnect strategy
+  description: Persistent serial listener on Windows for electronic scales (RS232/RS485),
+    paired with a local WebSocket server that forwards stabilized weight readings to the
+    browser; the web client receives streams and inserts weight at the focused input to
+    eliminate read-and-retype steps on the factory PC workflow
   benefits:
   - Stable weight data ingestion from shop-floor scales
+  - Hands-free weight capture into the web form at cursor focus — fewer transcription errors and faster operator loop (swap item on scale → auto-fill)
   - Reliable synchronization to web UI and business systems
   - Lower manual input errors in weighing workflows
 performance_metrics:
@@ -181,6 +188,7 @@ skills_demonstrated:
   - Docker / Jenkins / GitLab CI/CD / Nginx (DevOps)
   - Industrial IoT (RFID, Barcode, Serial)
   - Electronic Scale Integration (RS232/RS485)
+  - Serial-to-browser WebSocket bridge for weighing UX
   - Windows Service Monitoring and Recovery
   - REST API Design
   - Database Optimization
@@ -220,4 +228,6 @@ keywords:
 - Redis
 - Team Leadership
 - Industrial Automation
-last_updated: '2026-05-13'
+- WebSocket
+- Shop-floor UX
+last_updated: '2026-05-14'

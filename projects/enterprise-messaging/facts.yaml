@@ -22,9 +22,16 @@ summary: >
   lifecycle; owned real-time messaging, file and workflow subsystems, and mobile client architecture
   including NDK TCP/UDP paths for sub-200ms latency.
 
+  File volume from chat attachments and business modules (e.g. contracts, design drawings) outgrew
+  single-server storage; adopted self-hosted distributed file storage on FastDFS for capacity and
+  confidentiality instead of public cloud file services, with attention to sharding, redundancy,
+  backup, and access control across integrated subsystems.
+
 summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   设计和开发多个子系统，包括用户管理、消息系统、文件系统、工作流管理和审计系统。
-  专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。'
+  专注于实时通信技术和音视频处理。负责移动客户端、Web 前端、后端服务、数据库设计和服务器维护。
+  随用户上传与聊天文件、合同/设计图等业务文档增长，单机存储难以承载，基于数据私密性等因素采用自建类方案，
+  引入开源 FastDFS 构建分布式文件能力，并处理分片、冗余备份与权限等工程问题。'
 highlights:
   - Engineered Android transport in NDK (C/C++) over TCP/UDP, optimizing connection paths to sustain sub-200ms message latency at production load
   - Designed Android real-time delivery resilience under background kill constraints using a layered keep-alive strategy (battery whitelist guidance, home-screen widget priority boost, and third-party push wake-up channel)
@@ -34,19 +41,23 @@ highlights:
   - Early IM client phase: sole Android engineer shipping a time-boxed prototype to launch; post-launch stabilized through daily prioritized defect lists and frequent builds under heavy user pressure, with product/design providing transparent timelines to stakeholders
   - Spearheaded reliability practices that maintained strong availability across a 10-year product lifecycle
   - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
+  - Evolved file architecture from single-server hosting that could not sustain growing user uploads, chat attachments, and document-heavy modules (contract management, design-asset management, etc.); selected self-hosted FastDFS-based distributed storage for scale and confidentiality rather than public cloud file SaaS, and engineered around chunk distribution, redundancy, backup, and access-control integration across User, Message, and Workflow subsystems
   - Optimized distributed database and file storage layouts for real-time collaboration workloads
   - Integrated ETL pipelines with Kettle and PowerBI dashboards for operational analytics
+  - Managed Android device long-tail and OEM ROM variance (e.g. Xiaomi, Huawei, OPPO): many edge issues surfaced only in real user environments, so exhaustive pre-release catch of every minor defect was infeasible; balanced release timing, test cost, and device-lab investment with mainstream-first QA (rough floor around Android 7–8 in lab; older devices generally out of matrix); user reports often required physical-device reproduction beyond emulator parity; issue-driven targeted testing and occasional hardware purchase or on-site/remote user-environment sessions instead of pretending full-matrix coverage before every ship
 
 highlights_cn:
 - 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输
 - 使用 Spring Cloud 和 Node.js 构建 Web 前端和后端服务
 - 架构多子系统平台，包括用户管理、消息系统、文件系统、工作流和审计系统
+- 文件从单机存储演进：用户上传、聊天附件及合同管理、设计图管理等业务文档激增导致容量瓶颈；出于私密性等考虑未采用公有云文件服务，基于开源 FastDFS 自建分布式文件存储，并处理存储分片、冗余、备份与权限等与各子系统对接的问题
 - 实现音视频通信技术，支持企业协作
 - 设计和维护分布式数据库架构和服务器基础设施
 - 开发登录系统、考勤系统和审批工作流
 - 创建实时监控仪表板和商业智能报表
 - 产品早期作为唯一 Android 开发，在数周级窗口内完成即时通讯客户端原型并推动上线；上线后以每日优先级清单与密集发版节奏收敛缺陷，并与产品/设计协作对用户保持修复预期与进度透明
 - 用户头像曾存放于 Windows 文件服务器；因上传权限与校验不足导致恶意可执行文件写入、服务器中毒与数据风险；经备份恢复与重建后强化权限与防毒，并将头像/用户文件迁移至云端存储与更严管控
+- Android 客户端面临类 C 端的系统版本与厂商 ROM 差异（如小米、华为、OPPO）；不少问题仅在用户真实环境中暴露，测试难以在发版前穷尽所有小问题；需在发布时间、测试成本与测试机型投入之间权衡；常规以主流版本与约 Android 7/8 为实验室测试下限，更老机型一般不入常规矩阵；模拟器难以 1:1 复现时需反馈驱动真机验证，必要时购机或贴近用户现场，而非假设发版前可做满全矩阵
 tech_stack:
   languages:
   - Java
@@ -59,6 +70,7 @@ tech_stack:
   - Android SDK
   - NDK
   - TCP/UDP
+  - OEM ROM compatibility testing
   backend:
   - Spring Cloud
   - Node.js
@@ -87,7 +99,7 @@ features:
 - Cross-terminal login
 - Connection stability optimization
 - Session management
-- Distributed file storage for message attachments
+- Distributed file storage for message attachments and business documents (FastDFS-backed, self-hosted)
 - Multi-subsystem collaboration (User Center, Message Center, File System)
 - ETL data pipelines using Kettle for message analytics
 - PowerBI dashboards for user behavior and system metrics
@@ -141,10 +153,12 @@ skills_demonstrated:
   - Redis
   - Distributed Database
   - FastDFS
+  - Distributed file system design (capacity, redundancy, backup, access control)
   - REST API
   - WebSocket
   - Performance Optimization
   - Android Process Priority & Battery Optimization
+  - OEM ROM compatibility and device-matrix QA trade-offs
   - Low-latency Systems
   - ETL Development (Kettle/Pentaho)
   - Business Intelligence (PowerBI)
@@ -162,6 +176,8 @@ related_to_roles:
 - Real-time Systems Engineer
 keywords:
 - Android
+- OEM ROM fragmentation
+- Device compatibility testing
 - Android background process management
 - Battery optimization whitelist
 - Home-screen widget priority strategy
@@ -182,6 +198,8 @@ keywords:
 - Microservices
 - Distributed Database
 - FastDFS
+- Self-hosted file storage
+- Data sovereignty
 - Kettle
 - Pentaho
 - ETL
@@ -189,4 +207,4 @@ keywords:
 - Business Intelligence
 - FineReport
 - Data Visualization
-last_updated: '2026-05-09'
+last_updated: '2026-05-15'

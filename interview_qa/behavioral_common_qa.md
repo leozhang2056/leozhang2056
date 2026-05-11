@@ -5,7 +5,7 @@
 | 块 | 概要 | 跳转 |
 |----|------|------|
 | 一 | **文档说明 + 规则**：简报、事实来源、自填临场规则 | [→](#section-doc-about) |
-| A | **临场口语**：10 题；**①** 两档时长，**②—⑩** 每题一版 | [→](#section-oral-only) |
+| A | **临场口语**：10 题；**①** 两档时长，**②—⑩** 每题一版；**补充** [创意 · 电子秤](#oral-creative)、[企业 IM · FastDFS 文件](#oral-enterprise-files) | [→](#section-oral-only) |
 | B | **题型与 STAR**：B1 高频分类题 + B2 十题骨架备忘 | [→](#section-part-b) |
 | D | **工具箱**：模板、注意事项、练习方法论、口语句型（D1–D4） | [→](#section-toolbox) |
 | C | **逐题英文稿**：Q1–Q45 口语 Script + 主故事速览 | [→](#section-5-scripts) |
@@ -62,7 +62,7 @@ I'm on a **work visa** with **full-time** rights. I want a team where I mix **so
 <a id="oral-02"></a>
 ### ② Complex technical problem
 
-**提示（STAR）**：（S）企业即时通讯要后台也实时收消息；（T）Android 省电会杀后台，且要平衡耗电；（A）系统优先级 + 白名单 + widget + 第三方通道（如 JPush）+ 被杀后重同步 + 已读未读对账；（R）消息更及时、漏消息更少、一致性更稳。
+**提示（STAR）**：**主线**（S）企业即时通讯 Android 要后台也实时收消息；（T）省电杀后台 + 耗电；（A）优先级 + 白名单 + widget + 第三方推送（如 JPush）+ 重同步 + 状态对账；（R）更及时、更稳。**延展（可选口稿）**：**设备矩阵**像 **C 端**一样碎 — **小米/华为/OPPO** 等 **ROM** 定制；**很多问题只在用户真实环境里才冒头**，实验室无法穷尽所有「小问题」。需在 **发布时间**、**测试深度/人力成本**、**测试机型与设备投入** 之间做显式权衡；常规测 **主流版本**（约 **Android 7/8** 为下限）；报障 **模拟器未必复现** → **反馈驱动真机**、必要时 **购机** 或贴近用户现场/远程。**另一延展**：单机存不下聊天与业务文档 → **自建 FastDFS** 分布式文件能力（见 [oral-enterprise-files](#oral-enterprise-files)）。
 
 One hard problem I worked on was **real-time messaging** on Android. The app needed to receive messages in the background, but Android may kill background apps to save battery.
 
@@ -77,6 +77,34 @@ Another hard part was the trade-off between **real-time** and **battery**. If ke
 We also planned for process death. If the app got killed, we restored session and ran fast re-sync on reconnect/resume. We used sent/delivered/read state checks to reduce message loss risk.
 
 And yes, we saw edge bugs like "read state updated, but UI did not show it." We added stronger state reconciliation between local cache and server state, plus UI refresh triggers after ack.
+
+**（延展）Enterprise IM — Android OEM / version fragmentation**  
+Another messy side wasn't only **logic** — it was **where** the app ran. **Enterprise IM** still hits a **consumer-style Android long tail**: many OS levels, and in China **Xiaomi**, **Huawei**, **OPPO** ROMs change behavior again.
+
+We focused routine QA on **mainstream** devices and versions — roughly down to **Android 7 or 8** as our lab floor; older phones we usually didn't keep. Brand-new OS drops sometimes lagged because we didn't own the hardware yet.
+
+Users still reported bugs we couldn't replay on an emulator with the same API level — **vendor layers matter**. When we were stuck, we **bought a target phone**, or worked with the user **remotely / on-site** to see their real settings.
+
+A lot of issues only **showed up in real user environments** — permissions, power policies, OEM tweaks we didn't mirror in the lab. The **usage surface** is too wide to **pre-catch** every **small** defect without paying **huge** time, people, and **device** money.
+
+So we **balanced** three things: **release clock**, **how deep we test**, and **what hardware we can afford** to keep in-house. **Perfect** pre-release coverage wasn't the goal — **good** mainstream gates plus **fast** **narrow** follow-up when **signals** were **strong** was.
+
+Ideally you'd run a **full matrix** before every ship — reality is **cycle time** and **cost**. We shipped on strong mainstream coverage, then closed repro on the **exact device path** when tickets came in.
+
+<a id="oral-enterprise-files"></a>
+### （补充）Enterprise IM — 自建文件平台（FastDFS）
+
+**提示（STAR）**：（S）早期文件堆在一台服务器；用户上传、**聊天附件**、**合同管理**、**设计图**等子系统文件暴涨；（T）单机容量不够 + **数据私密性** → 不愿依赖**公有云文件 SaaS**；（A）选型 **开源 FastDFS**，做分布式存储、与 **User / Message / Workflow** 等子系统对接；处理**分片/冗余、备份、权限**；（R）容量与可控性上来，多业务共用同一套文档能力。**与事实对齐**：头像等路径曾出过安全事件后**迁移云端对象存储**（见 [A ④ Case C](#oral-04)）；**业务文档层**仍以**自建分布式文件**为主叙事，口试可一句话分层说明。
+
+Early on, almost everything lived on **one file server**. As usage grew, it wasn't just "a few uploads" — **chat attachments** piled up, and other modules needed files too: **contracts**, **design drawings**, things you don't want to lose or leak.
+
+We couldn't keep **all** of that on a single box forever. At the same time, **privacy / data control** mattered for the customer, so we didn't want to push **all** enterprise documents to a **public cloud file service** as the default answer.
+
+So we built a **self-hosted** style file layer around **FastDFS** (an open-source distributed file system). The idea was **scale-out storage**, **redundancy**, and a **single document backbone** that **User**, **Messaging**, and **workflow-style** subsystems could all call into — not three different ad-hoc upload folders.
+
+Operationally, that forced real engineering work: how files are **sharded**, how we think about **backup and restore**, and how **access control** stays consistent when many features touch the same files. It wasn't "install and forget" — it was **capacity + reliability + security** together.
+
+*(Layering note for interviews: later, after a serious incident on a **Windows avatar upload path**, we tightened controls and moved some **user-facing blobs** to **cloud object storage**. That's a different slice of the same product — the **business document** story here is still **on-prem / self-managed** **FastDFS** for the heavy volume.)*
 
 <a id="oral-03"></a>
 ### ③ Conflict with a teammate
@@ -207,9 +235,17 @@ We brought in **Jenkins** hooked to **GitLab**: **CI/CD pipelines** for build an
 <a id="oral-08"></a>
 ### ⑧ Tough feedback
 
-**提示（STAR）**：（S）**Smart Factory**；（T）经理说架构没写清；（A）**ADR** + 短 **onboarding** 笔记；（R）新人更快、问题更少。
+**提示（STAR）**：**二选一**。**Case A** **经理**直接反馈：架构/大决策**没写清** → **ADR** + **onboarding**。**Case B** **需求侧难协同**（`smart-factory` / `picture-book-locker` 等）：用户要功能但**不懂实现**；产品+技术定方案后**讲解用户仍听不懂** → 靠**原型**对齐；**多人各执一词** → 反复改、开发量大、互相抱怨 → **过滤需求**、明确范围，找**客户方唯一拍板人**决定做/不做，**不对多头负责**；与**产品、设计、需求方**书面对齐方案与「完成定义」。*注：Case B 更偏 **Stakeholder / 需求治理**；题干若严格要求「上司给你的批评」优先 **Case A**。*
 
+**Case A — Manager（文档习惯）**  
 Manager said my **big decisions** weren't **written** enough — next hire would get **lost**. Fair. I added **light ADRs** and **short** onboarding notes — **why**, not **novels**. **Onboarding** sped up. I should've started earlier.
+
+**Case B — Many user voices（原型 + 单一决策人）**  
+On **Smart Factory** and **library / picture-book** work, **users** asked for **features** but **didn't** know what each **option** **cost**. **Product** and **engineering** **shaped** the **plan** **together** — then we tried to **explain** **how** we'd **build** it, and **honestly** **many** **operators** and **managers** **couldn't** **follow** **internals**. A **working** **prototype** **moved** the **talk** **faster** than **slides**.
+
+The **hard** part was **several** **people** **pulling** **different** **ways** — **scope** **churn**, **blame** between **teams**, **huge** **rewrite** **risk**. We **stopped** **treating** **every** **chat** as a **spec**: **filtered** **asks** into **clear** **buckets**, and got **one** **named** **customer** **owner** to **decide** **what** **ships** — **not** **ten** **part-time** **bosses** for **dev**. **PM**, **design**, and **that** **owner** **aligned** on **plan**, **timeline**, and **what** **done** **means**; then **engineering** **executed**.
+
+**Lesson**: **noise** isn't a **requirements** **doc** — **one** **named** **customer** **owner** plus a **prototype** **beats** **ten** **part-time** **architects**.
 
 <a id="oral-09"></a>
 ### ⑨ Adapted to change
@@ -224,6 +260,18 @@ Thesis mid-way — **offline** and **speed** became **hard** rules. Numbers didn
 **提示（STAR）**：（T）为什么选我；（A）**十年**交付 + 最近 **AI**；（R）奥克兰 + **full-time** + 愿意扛事。
 
 You get **~ten years** shipping **mobile**, **backends**, and the **messy** middle — plus recent **applied AI** where it still has to **run** for users. I'm in **Auckland**, **full-time** **OK**, flexible on **Kotlin** / **Spring** / **new** AI bits. Point me at a **real user problem** — I'll **push** it **over the line** with the team.
+
+<a id="oral-creative"></a>
+### （补充）Creative idea — Smart Factory（电子秤串口 → WebSocket → 网页自动填重）
+
+**提示（STAR）**：（S）网页端要录**材料克重**，工人原先**上秤 → 读数 → 手敲**，易错、慢、占手；（T）尽量少操作、保证准确；（A）确认秤可**串口输出**；在工人 **Windows** 电脑上跑**本地服务**：**串口监听** + 内嵌 **WebSocket server**，浏览器作 **WS client** 收重量，**填入光标所在输入框**；（R）免手敲、连续称重换料更顺。
+
+**Script（口语）**  
+On **Smart Factory**, workers used a **web** screen to record **fabric weight**. The old loop was **annoying**: put the roll on the **scale**, **read** the number, **type** it into the box — slow, easy to **mistype**, and it **ties up** **hands**.
+
+I checked the **scale** — it could **push** weight over **serial**. On the **Windows** **PC** next to the scale, I shipped a **small** **local** **service**: **listen** to **COM**, normalize the reading, and run a tiny **WebSocket** **server**. The **browser** **page** opened a **WS** **client**, got **stable** **grams**, and **dropped** the value **into** **whatever** **field** had **focus**.
+
+So the operator just **keeps** **weighing** and **swapping** **pieces** — **no** **re-keying**, **fewer** **errors**, **faster** **line**. Same **idea** I like elsewhere: **remove** **dumb** **friction** **between** **physical** **truth** and **software**.
 
 ---
 
@@ -262,19 +310,19 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="b1-05"></a>
 ### 5) 复杂问题解决与技术判断
-- Tell me about a complex technical problem you solved.（ChatClothes 剖延迟 + 本地 LLM + YOLO12n-LC）
-- Tell me about a difficult decision you made.（范围 / 技术路径取舍，可接 ChatClothes 或产线优先）
-- Describe a trade-off you had to make (speed vs quality, etc.).（速度 vs 可观测性 / 范围 vs 信任，用 Smart Factory 分期上线）
+- Tell me about a complex technical problem you solved.（ChatClothes 剖延迟 + 本地 LLM + YOLO12n-LC；**或** `enterprise-messaging` **Android OEM/版本碎片化**与复现策略，见 [A ② 延展](#oral-02)；**或** **FastDFS** 自建文件平台：容量 + 私密性 + 备份/权限，见 [A ② · 文件](#oral-enterprise-files)）
+- Tell me about a difficult decision you made.（范围 / 技术路径取舍，可接 ChatClothes 或产线优先；**云文件 SaaS vs 自建 FastDFS** 见 [oral-enterprise-files](#oral-enterprise-files)）
+- Describe a trade-off you had to make (speed vs quality, etc.).（速度 vs 可观测性 / 范围 vs 信任，用 Smart Factory 分期上线；**Android** 全机型矩阵 vs 发版周期，见 [A ② 延展](#oral-02)；**运维成本 vs 数据可控**：自建分布式文件 vs 公有云，见 [oral-enterprise-files](#oral-enterprise-files)）
 
 <a id="b1-06"></a>
 ### 6) 主动性与影响力
-- Tell me about a time you took initiative.（论文交付物超出要求：部署文档 + API 说明，见 **Q7**）
+- Tell me about a time you took initiative.（论文交付物超出要求：部署文档 + API 说明，见 **Q7**；**或** **Smart Factory** 串口秤 + **WebSocket** 网页自动填重，见 [创意 · 电子秤](#oral-creative)）
 - Describe a process improvement you drove.（手动复制 → **Jenkins + GitLab CI/CD**；容器/清单/文档，见 [A ⑦](#oral-07)）
 - Tell me about a time you influenced without authority.（用数据推动分期试点，与经理分歧题同源）
 
 <a id="b1-07"></a>
 ### 7) 反馈与成长
-- Describe a time you received critical feedback.（ADR / onboarding 文档习惯）
+- Describe a time you received critical feedback.（**Case A** 经理 + ADR / onboarding；**Case B** 多方用户与需求拉扯 → 原型 + 客户方拍板人，见 [A ⑧](#oral-08)）
 - Tell me about a time you gave difficult feedback.（Junior 文档反馈 + 结对，见 **Q21**）
 - What did you learn from your biggest mistake?（标注估算 → 先 pilot，与失败题同源）
 - How do you assure code quality in your team?（Q43：Smart Factory 门禁 + CI + 回滚；Enterprise Messaging 高并发）
@@ -289,9 +337,9 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="b1-09"></a>
 ### 9) 客户导向
-- Describe a difficult customer/stakeholder situation.（范围拉扯 → 数据 + 试点）
-- Tell me about a time you managed unclear requirements.（先澄清指标与「完成定义」，见 **Q30**）
-- How do you handle conflicting stakeholder expectations?（透明优先级 + 书面契约 / ADR）
+- Describe a difficult customer/stakeholder situation.（范围拉扯 → 数据 + 试点；**多头需求** → [A ⑧ Case B](#oral-08)）
+- Tell me about a time you managed unclear requirements.（先澄清指标与「完成定义」，见 **Q30**；**听不懂实现** → **原型** + 拍板人，见 [A ⑧ Case B](#oral-08)）
+- How do you handle conflicting stakeholder expectations?（透明优先级 + 书面契约；**单一客户决策人**，见 [A ⑧ Case B](#oral-08)）
 
 ---
 
@@ -314,6 +362,9 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 **口语 →** [专页 ②](#oral-02)  
 **STAR — ChatClothes**：慢 + 离线；profile；LLM 路径瓶颈 → 本地；vision 收束分类；结果可演示 + honours。**Reflection：**先测再优化。  
+**STAR — `smart-factory`（创意/减负，可选）**：网页录克重原需读秤手敲；**Windows 本地服务**串口监听 + **WebSocket** 推浏览器，**光标处自动填重**；工人连续换料称重。**Reflection：**把物理读数直接接进 UI，砍掉无意义复制。口稿见 [oral-creative](#oral-creative)。  
+**STAR — `enterprise-messaging`（Android 碎片化，可选）**：类 C 端设备长尾；**小米/华为/OPPO** 等 ROM 差异；**大量问题仅在用户真实环境暴露**，测试无法前置穷尽所有小问题；在 **发版节奏 / 测试成本 / 测试机型投入** 间权衡；常规测主流版本（约 **Android 7/8** 为下限）；报障模拟器未必复现 → **反馈驱动真机**、必要时购机或贴近用户环境。**Reflection：**接受「实验室 ⊂ 真实长尾」，用主流守门 + 强信号下的真机补洞，而不是无限拉长测试或无限买机。  
+**STAR — `enterprise-messaging`（FastDFS 文件平台，可选）**：单机扛不住用户上传 + **聊天附件** + **合同/设计图**等业务文档；**私密性** → 不默认走**公有云文件服务**；**开源 FastDFS** 自建分布式存储；对接多子系统；**分片、冗余、备份、权限**一体化考虑。**Reflection：**文件是共享基础设施，选型要同时付「容量 + 可靠 + 安全」的运维账；与头像路径事后**迁云**可分层叙述（见 [oral-enterprise-files](#oral-enterprise-files)、facts `highlights`）。  
 *备选：Smart Factory 秤采集 — listener / watchdog / 重连 / 池化。*
 
 ---
@@ -368,7 +419,8 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 ### 8) Describe a time you received tough feedback.
 
 **口语 →** [专页 ⑧](#oral-08)  
-**STAR — Smart Factory**：经理点架构未写清；ADR + onboarding；默认「写完再收工」。**Reflection：**文档 = 长期功能。
+**STAR — Case A（经理）**：经理点架构未写清；ADR + onboarding；默认「写完再收工」。**Reflection：**文档 = 长期功能。  
+**STAR — Case B（多方需求，可选）**：`smart-factory` / `picture-book-locker`；用户要功能不懂实现；产品+技术定方案讲解困难 → **原型**对齐；多人意见不一反复改 → **过滤需求**、**客户方唯一拍板人**、不对多头负责；与产品/设计对齐计划与验收。**Reflection：**没有决策人的「众人需求」会变成无限返工。
 
 ---
 
@@ -634,9 +686,10 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-07"></a>
 ### 7) Tell me about a time you went above and beyond.
-**提示（STAR）**：**ChatClothes** 额外 **部署文档 / API / 手册**；（R）导师认可 + **提前交**。
+**提示（STAR）**：**Option A** **ChatClothes** 额外 **部署文档 / API / 手册**；（R）导师认可 + **提前交**。**Option B** **Smart Factory** 创意简化称重录入（[创意 · 电子秤](#oral-creative)）。
 **Script（口语）**
 > **ChatClothes** — school asked demo + thesis; I added **deploy docs**, **API** spec, **user manual** so others could **run** it alone. Supervisor **praised** the docs. I **submitted six months early** — writing forced **clear** design choices.
+> **Smart Factory** — workers were **re-typing** **scale** **readings** into a **web** **form**. I **bridged** **serial** **weight** through a **Windows** **service** with a **local** **WebSocket** **server**; the **browser** **client** **filled** the **focused** **field**. **Less** **typing**, **fewer** **mistakes**, **faster** **hands** on the **floor**.
 
 <a id="q-08"></a>
 ### 8) How do you prioritize when you have multiple deadlines?
@@ -781,9 +834,11 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
 
 <a id="q-31"></a>
 ### 31) What is the biggest technical challenge you have worked on?
-**提示（STAR）**：**ChatClothes** **端到端延迟** + 离线；（A）**profile** → **LLM** 本地 + **YOLO12n-LC**；（R）可演示 + **早交论文**。
+**提示（STAR）**：**Option A** **ChatClothes** **端到端延迟** + 离线；（A）**profile** → **LLM** 本地 + **YOLO12n-LC**；（R）可演示 + **早交论文**。**Option B** **`enterprise-messaging`**：**Android** **OEM/版本**碎片化、难复现、测试矩阵 vs 周期（见 [A ② 延展](#oral-02)）。**Option C** **`enterprise-messaging`**：**FastDFS** 自建分布式文件 — 聊天与业务文档体积、**私密性**、子系统统一接入、备份与权限（见 [oral-enterprise-files](#oral-enterprise-files)）。
 **Script（口语）**
 > **ChatClothes** — make the **whole** path **fast** on **small** hardware **offline**. I thought **diffusion** was the problem — **profiling** showed **LLM** **cloud** trips were. I went **local LLM**, lighter **vision** (**YOLO12n-LC**). **System worked**; thesis **handed in early**.
+> Another big one was **enterprise IM on Android** — not one Android, thousands of real phones. **Xiaomi / Huawei / OPPO** ROMs bend the rules again. A lot of bugs only showed up in **real user settings**, and we couldn't pre-find every small issue without blowing **schedule**, **test cost**, and **device** budget. We tested mainstream versions (**~7/8 floor** in lab), then closed hard tickets on **real hardware** — sometimes **buying** a phone, sometimes **sitting** with the user. Full matrix every release wasn't affordable; we **traded** **depth** for **ship date** and **paid** for the **exact** repro path when it **mattered**.
+> A third challenge was **file volume** at scale. **Chat attachments** and business modules like **contracts** and **drawings** outgrew **one server**. For **privacy / control**, we didn't default to **public cloud file SaaS**. We used **self-hosted** **FastDFS** for **distributed** storage, wired it into multiple subsystems, and had to own **sharding**, **redundancy**, **backup**, and **access control** — not just "upload works".
 
 <a id="q-32"></a>
 ### 32) Why do you want to change your current company?
@@ -981,3 +1036,31 @@ You get **~ten years** shipping **mobile**, **backends**, and the **messy** midd
   - Result: 多线并行下仍维持可预期交付与问题收敛（具体并行项目数、周期量化待补：`MISSING_INFO`）。
   - Reflection: 组合工作的瓶颈常是「可见的优先级 + 及时的资源升级」，而非单纯延长单人工时。口稿与锚点见 [A ⑥ Case C](#oral-06)、**Q8**、**Q36**、**B2-06**。
   - Suggested line (EN): "External factory deadlines and internal product lines don’t share one inbox — I pick today’s fire from who’s waiting and what’s still a real unknown, and I borrow hands early when parallel streams need more than one brain."
+- 【2026-05-13 新增】`enterprise-messaging` / Android 厂商 ROM 与版本碎片化、复现与测试策略（可用于：Complex technical / Trade-off / Quality / 客户问题）
+  - Situation: 企业即时通讯 Android 客户端在用户侧呈现类 C 端的设备与系统长尾；国内 **小米、华为、OPPO** 等对系统有深度定制，同一应用在不同真机上表现可能不一致。**不少缺陷只在用户真实使用环境中才暴露**，实验室与常规用例难以在发版前穷尽所有「小问题」。实验室以主流机型与版本为主（常规测试下限约 **Android 7/8**，更老机型一般不入常规矩阵；很新的系统也可能暂缺测试机）。用户反馈的问题有时在相同 API 级别的模拟器上仍无法稳定复现。
+  - Task: 在有限开发周期与测试预算下保持可发布质量，并对线上疑难问题形成可验证的复现与修复闭环；在 **发布时间**、**测试成本（人力/时长）**、**测试机型与设备投入** 之间做出可沟通、可执行的权衡。
+  - Action: 发版前以主流覆盖 + 核心路径守门，控制测试范围与周期；对无法复现或影响面大的工单，以反馈驱动在目标真机上验证，必要时采购对应机型，或通过远程/现场方式贴近用户真实设置与环境后再定位；与产品/发布节奏对齐「已知风险窗」与后续补丁策略（定性表述，非编造 SLA）。
+  - Result: 在「理想全矩阵」与「可承受成本/节奏」之间取得可操作平衡；疑难问题多通过真机路径收敛（具体机型库规模、成本与工单比例待补：`MISSING_INFO`）。
+  - Reflection: 移动交付需显式接受「实验室覆盖 ⊂ 全国 ROM × 用户设置」；策略是 **主流守门 + 成本可控的测试深度 + 强信号下的真机补洞**，而不是假装测试能消灭长尾上所有细问题。口稿见 [A ② 延展](#oral-02)、**B2-02**、**Q31 Option B**。
+  - Suggested line (EN): "Users outnumbered our test rack — we balanced ship date, test hours, and how many phones we could own; mainstream gates first, then we paid for the exact device path when the bug report was serious enough."
+- 【2026-05-15 新增】`enterprise-messaging` / 自建文件平台：FastDFS、容量与私密性、多子系统文档（可用于：Complex technical / Architecture / Trade-off / Security 与运维交叉）
+  - Situation: 早期文档集中在一台服务器；用户上传、即时通讯**聊天附件**、**合同管理**、**设计图管理**等模块带来持续增长的文件量，单机存储难以承载。
+  - Task: 提供可扩展、可运维的文件能力，供多个子系统复用；在**数据私密性/可控性**约束下，不默认采用**公有云文件服务**。
+  - Action: 基于**开源 FastDFS**构建自建分布式文件存储；与 **User、Message、Workflow** 等子系统对接统一文档访问；工程上处理**存储分片、冗余、备份与恢复**，并与**权限/访问控制**策略对齐。
+  - Result: 文件基础设施从单机演进为可横向扩展的自建方案，支撑高附件量与多业务文档场景（具体节点数、容量、RPO/RTO 等待补：`MISSING_INFO`）。
+  - Reflection: 自建分布式文件要同时付「容量、可靠性、安全、备份」账，不是装完即忘；与**头像路径安全事件后迁移云端对象存储**可分**分层存储/分阶段**叙述，避免口试时听起来自相矛盾。口稿见 [oral-enterprise-files](#oral-enterprise-files)、**B2-02**、**B1-05**、**Q31 Option C**；事实见 `projects/enterprise-messaging/facts.yaml`。
+  - Suggested line (EN): "Attachments and contract PDFs don’t belong on one disk forever — we scaled with self-hosted FastDFS, and we still had to own redundancy, backups, and who can read what."
+- 【2026-05-14 新增】`smart-factory` / 创意：串口电子秤 → 本地 WebSocket → 网页光标处自动填重（可用于：Creative / Initiative / Customer-centric / 复杂技术小题）
+  - Situation: 工厂网页流程需录入材料克重；原流程为工人将物料置于电子秤、读数后在网页输入框**手动键入**，易出错、耗时且占用双手。
+  - Task: 减少操作步骤、提高录入准确性，使工人可更顺畅地连续称重、换料。
+  - Action: 确认电子秤可通过串口输出重量数据；在工人使用的 **Windows** 电脑侧实现本地服务：**监听串口**、解析/稳定读数，并内嵌 **WebSocket 服务端**；浏览器页面作为 **WebSocket 客户端**接收重量，并将数值写入**当前焦点**的输入框（或等价目标字段），替代读数再手敲。
+  - Result: 称重与录入环节简化，减少人工转录错误，提升产线操作节奏（量化如节省单次录入秒数、差错率待补：`MISSING_INFO`）。
+  - Reflection: 创意常来自「观察多余动作」：设备已输出数字，就不应再让人当二次传感器。口稿见 [oral-creative](#oral-creative)、**Q7 Option B**、**B2-02**。
+  - Suggested line (EN): "The scale already knew the grams — I stopped making humans re-type what the serial port already said."
+- 【2026-05-14 新增】`cross-project` / 多头用户与需求：原型对齐 + 单一决策人（可用于：**⑧ Tough feedback Case B** / Stakeholder / 需求治理 / 与产品协作）
+  - Situation: 在 `smart-factory`、`picture-book-locker` 等项目中，工人或管理人员提出功能诉求，但往往不清楚实现方式与成本；产品与技术共同讨论方案后，向用户解释实现细节，用户仍难以理解，常需依赖**可触摸的原型**才能对齐预期。现场**多名用户**想法不一，容易导致范围摇摆、反复修改与开发工作量膨胀，团队间易出现抱怨。
+  - Task: 将模糊、分散的口头需求转为可执行的开发范围；降低「开发对多人同时负责」带来的返工与冲突。
+  - Action: 与产品、设计共同收敛候选方案；优先用**原型/可演示版本**与用户对齐「长什么样、怎么用」；对需求进行过滤与条目化；推动明确**客户侧唯一决策负责人**对需求做**拍板**（哪些做、哪些不做、何时做），开发不对接多头随意变更；将方案、里程碑与验收标准与产品、设计及需求方书面或可追溯方式对齐。
+  - Result: 需求变更从「无序拉扯」转为「有主人的决策链」；开发节奏与预期更可管理（具体项目、轮次、量化待补：`MISSING_INFO`）。
+  - Reflection: 「众人提需求」不等于「众人都是产品经理」；没有单一决策责任人，工程团队会被无限队列拖垮。口稿见 [A ⑧ Case B](#oral-08)、**B2-08**、**B1-09**。
+  - Suggested line (EN): "Ten friendly users still make ten conflicting specs — we needed one customer owner to say yes or no, and a prototype so operators didn’t have to understand our architecture to understand the feature."
