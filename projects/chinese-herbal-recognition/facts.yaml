@@ -25,6 +25,7 @@ summary: 'Platform-style AI project that uses traditional Chinese medicine recog
 
   '
 highlights:
+- Surveyed GitHub and open-source references for comparable image-recognition work; common patterns at the time led to a YOLO-family baseline experiment (YOLOv4-era) for initial herbal-image classification, then hardening into a reusable training workflow
 - Designed end-to-end AI platform workflow from category setup to recognition inference
 - Implemented category management for custom herbal classification tasks
 - Built image annotation process for supervised dataset generation
@@ -39,6 +40,7 @@ tech_stack:
   - TypeScript
   ai_ml:
   - Image Classification
+  - YOLOv4 (exploratory baseline informed by OSS / literature survey)
   - ResNet
   - MobileNetV3
   - EfficientNet
@@ -136,4 +138,4 @@ keywords:
 - Model Serving
 - MLOps
 - Inference
-last_updated: '2026-03-05'
+last_updated: '2026-05-09'

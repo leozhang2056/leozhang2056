@@ -30,6 +30,12 @@ highlights:
 - Combined face recognition and QR code scanning for authentication at the cabinet
 - Sustained 24/7 self-service operation with stable multi-cabinet networking
 - Extended deployments to additional schools and library sites
+- >-
+  After a colleague left, inherited their smart-locker backlog alongside legacy maintenance and new features while
+  still carrying other project work; workload became infeasible for one owner. Re-balanced scope with leadership: split
+  borrower-facing (To-C) Android client work to another engineer while retaining cabinet-side Android (host / hardware
+  control) responsibilities, then coordinated handover so delivery stayed on track—escalated early rather than
+  silently risking the milestone; reciprocated team support when others needed help
 
 highlights_cn:
 - 开发储物柜硬件的安卓控制系统（电磁锁、紫外线消毒、传感器）
@@ -37,6 +43,12 @@ highlights_cn:
 - 集成人脸识别和二维码扫描进行身份验证
 - 实现24/7自助服务运营，支持多柜联网
 - 部署于多所学校和图书馆
+- >-
+  同事离职后接手其绘本智能柜相关交付：遗留代码维护、新功能开发叠加本人其他项目并行，单人无法按期扛住全部。
+  与主管/团队及早沟通后做范围拆分：将偏 To-C 的借还书客户端 Android 交由另一位同事承接，本人保留柜体主机侧
+  （硬件控制、柜端 Android 等）开发与维护，协同完成交接与节奏对齐，避免以个人沉默拖累里程碑；团队内互相支援、
+  以项目整体交付为先
+
 tech_stack:
   languages:
   - Java
@@ -150,4 +162,4 @@ keywords:
 - Library System
 - Hardware Integration
 - UV Disinfection
-last_updated: '2025-02-11'
+last_updated: '2026-05-09'

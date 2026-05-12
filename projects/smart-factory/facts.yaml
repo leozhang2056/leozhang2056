@@ -37,6 +37,14 @@ highlights:
   - Implemented polyglot persistence layer with MySQL, Redis, and MongoDB for real-time data sync
   - Led a 6-person cross-functional engineering team through planning, sprint execution, and production rollout
   - Field-led prioritization with no off-the-shelf reference product; deep shop-floor engagement to clarify fuzzy requirements; fast prototyping and iterative validation with users; successive major releases expanded and trimmed scope as real adoption and feedback emerged under high ambiguity and delivery pressure
+  - >-
+    Production MySQL grew quickly (notably a high-volume daily task table on the order of ~100k+ new rows per day,
+    reaching millions of rows within roughly half a year) while many portal queries joined that table; UI list/detail
+    queries slowed enough to affect shop-floor operations. Trade-off between pausing feature work for a deep rewrite vs
+    keeping shipping: temporarily migrated the database workload to cloud-hosted MySQL with higher provisioned capacity
+    and read-scaling (primary plus read-replica style routing for heavy read paths) to buy time; scheduled root-cause
+    slow-query and schema/index work after committed feature milestones, then planned repatriation back on-prem to reduce
+    recurring hosting cost once optimizations landed
 
 highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构
@@ -48,6 +56,10 @@ highlights_cn:
 - 管理10多个制造基地的完整系统部署和维护
 - 部署由长期以手动复制/同步为主，演进为 Jenkins 对接 GitLab 的 CI/CD 流水线；前期配置与打通成本较高，先在工厂项目试点验证，后续各交付线统一迁移至同一套流程，提升可重复性并降低人为漏操作
 - 缺乏现成对标时以现场驱动：深入车间理解工人与工厂需求，快速原型迭代澄清模糊诉求，经多轮大版本演进，随真实使用增加或精简功能
+- >-
+  生产库随任务表等业务表快速增长（任务表日增量约十万级、约半年达百万级量级），大量界面查询关联该表导致门户查询变慢并影响现场使用。
+  在“停功能做深度优化”与“不停则现场持续受影响、新功能亦承压”之间做权衡：阶段性将 MySQL 迁至云端托管并提升规格，辅以主库+只读副本等读写分流缓解查询压力；
+  先保障在研功能交付，再在后续窗口做慢查询与结构/索引等根治；优化完成后再回迁本地以降低持续运营成本（云端阶段成本上升为可接受的交换）。
 tech_stack:
   languages:
   - Java
@@ -230,4 +242,4 @@ keywords:
 - Industrial Automation
 - WebSocket
 - Shop-floor UX
-last_updated: '2026-05-14'
+last_updated: '2026-05-09'
