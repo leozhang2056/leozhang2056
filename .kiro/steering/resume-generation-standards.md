@@ -1,0 +1,153 @@
+---
+inclusion: always
+---
+
+# Resume Generation Standards
+
+Apply these when generating or adjusting CVs in this project.
+
+## Role and output
+- Infer role from JD input (`android` / `backend` / `ai` / `fullstack`) when user does not force a role.
+- Output filename must include company tag when provided.
+- Save resume outputs under dated folder: `outputs/YYYY-MM-DD/`.
+- Generate PDFs only; **by default** delete intermediate `.html` after successful PDF generation (`generate_cv_from_kb`). Use `python generate.py cv ... --keep-html` when you need to inspect layout vs a “stale” PDF preview.
+- Before writing resume/cover letter, gather company context first (business domain, tech stack, culture/values, role expectations).
+- Content must explicitly show company-fit, not only generic JD keyword match.
+- Treat JD wording as high-signal: perform line-by-line requirement mapping and cover all critical points with evidence-backed wording.
+- For closed/login/noisy job pages, request or build a clean JD text block first, then generate from that source.
+
+## Content priorities
+- Keep these key projects in CV project list: `chatclothes`, `smart-factory`.
+- For Android-targeted CVs, also prioritize `forest-patrol-inspection` (offline map/GIS relevance).
+- **Publications** are required when present in `kb/achievements.yaml` (always render the section).
+- **Interests** are optional layout padding only: controlled by `career_identity.include_interests_in_cv` in `kb/profile.yaml` (default **false**); when enabled, render **after** Publications as the **last** section.
+- De-emphasize team-management wording for developer roles.
+
+## Experience ordering
+- **Recency first:** When the candidate has a clearly newer academic/thesis block (e.g. AUT **ChatClothes**) and older employer-group projects (e.g. Chunxiao), Experience should read **newest first**.
+- **Android role (`--role android`):** Pin **`chatclothes` first** in the selected project list, then `forest-patrol-inspection`, `enterprise-messaging`, `iot-solutions`, `smart-factory` (see `_select_projects_with_relations` → `pinned_ids` in `app/backend/generate_cv_from_kb.py`). This yields: AUT single entry first, then the merged Chunxiao employer block.
+- **Chunxiao sub-projects:** Keep internal sort by timeline **end date descending** (newer phases first inside the employer group); do not reverse that for “narrative” unless the user asks.
+
+## PDF / print layout
+- **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
+- **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
+- Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
+- **Page completeness preference:** Final PDFs should end on a full page count target (1, 2, or 3 pages) with minimal trailing whitespace; default target is **2 full pages** unless user requests otherwise.
+- Tune page fullness by adjusting `--max-projects`, bullet density, and summary/skills compactness while preserving factual accuracy.
+- If content spills beyond 2 pages and page 3 has visible whitespace, you may enable **Interests** (`include_interests_in_cv`) as the **last** section to improve page balance (optional).
+- **Interests placement rule:** Interests must always be the final section (after **Publications**), because it is low priority.
+
+## Post-generation review (mandatory)
+- After every CV PDF generation, run post-check and output `*_POST_CHECK.md`.
+- `*_POST_CHECK.md` must include two qualitative sections in addition to quantitative checks:
+  - **Recruiter Review (Screening Lens)**: screening risks, ATS/readability issues, and prioritized resume edits.
+  - **Interviewer Review (Technical Lens)**: depth/credibility of project evidence, likely interview follow-ups, and strengthening suggestions.
+- Treat these review sections as part of the default generation pipeline, not optional add-ons.
+- When providing results to user, always surface key actionable recommendations from both lenses.
+
+## CV HTML section order (canonical)
+Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. **Do not reorder** without an explicit product decision:
+
+1. Header (name + contact row)
+2. Summary  
+3. **Key Skills**  
+4. **Experience**  
+5. **Education** (between Experience and Licenses)  
+6. **Licenses & Certifications**  
+7. **Publications** (when `achievements.yaml` has entries)  
+8. **Interests** (optional; last; only if `include_interests_in_cv` is true and interests list is non-empty)
+
+## Header / contact row (KB HTML)
+- **Single line** in `.cv-contact-primary`: `✉ email | ☎ phone | [map-pin SVG] location | LinkedIn | GitHub`.
+- **Location text**: from `kb/profile.yaml` → `personal_info.contact.location` — EN example `Auckland,NZ` (`city` + `,` + `country`, no space after comma unless changed in generator); optional `city_cn` / `country_cn` for ZH.
+- **Map pin**: solid symmetric teardrop (`_CV_ICON_LOC_SVG`), `fill: currentColor` — not emoji (Playwright PDF consistency).
+- **LinkedIn / GitHub**: brand SVG (`_CV_ICON_LINKEDIN_SVG`, `_CV_ICON_GITHUB_SVG`) + visible labels `LinkedIn` / `GitHub`; **do not** print full URLs — `href` only. Use `a.cv-social-link` (`inline-flex`, `align-items: center`, `vertical-align: middle` on the anchor) so icon and label align.
+- **Chunxiao employer header dates**: year-only range via `_work_entry_date_label` (e.g. `2013 – 2024`), not `Mon YYYY`.
+
+## Summary rules
+- Summary should be ATS-friendly and match JD requirements.
+- Keep Summary around 4-5 lines (not too short), with complete final sentence.
+- Integrate highlights naturally into Summary text; do not add explicit "Highlights:" label.
+- Remove edge-related wording (e.g., edge AI, edge deployment, 边缘部署/边缘计算/端侧).
+- Emphasize fast execution/iteration and strong self-management for developer roles.
+- Reduce "AI resume" tone: do not dump full JD keyword lists into Summary; at most one short sentence with a few concrete tools/terms; put most JD fit in project bullets and Key Skills.
+- Prefer evidence-backed phrasing over generic buzzwords; follow `kb/resume_writing_best_practices.md`.
+- Avoid overusing the same headline metrics/phrases repeatedly (e.g., `5,000 DAU`, `sub-200ms latency`, `telemetry`) in Summary; rotate to scenario- and outcome-oriented wording when possible.
+- Prioritize differentiators from company context (e.g., risk awareness, secure delivery, DevOps discipline, mentoring, enterprise complexity) over generic stack lists.
+
+## Key Skills rules
+- Do not show labels like `JD Match`.
+- Use `Android` label (not `Android Development`) for Android skills row.
+- Include AI-assisted development tools as:
+  `Cursor, GitHub Copilot, Claude Code, Antigravity, OpenCode`.
+- Prefer visually balanced one-line skill rows where possible.
+- Allow relevant skills such as `Reverse Engineering` and `.NET` when layout permits.
+- For `fullstack` CVs:
+  - Filter out baseline ops terms: `IIS`, `Windows Server`, and any `*Administration*` phrasing.
+  - Keep `Databases` row present and comprehensive (default set: `MySQL, Redis, MongoDB, SQL Server, SQLite`).
+  - Prefer `AI / ML` + `AI-Assisted Development` as two separate rows (avoid over-merged long lines that wrap).
+  - Apply minimal text shortening when needed to prevent wraps (e.g., `CI/CD Pipeline Design` -> `CI/CD`, `LLM Fine-tuning` -> `LLM FT`).
+  - For layout fixes, use minimal-delta edits (remove/change one term at a time), then regenerate and re-check.
+
+## Education formatting
+- Use full name `Auckland University of Technology` (do not abbreviate to AUT).
+- Reduce awkward hard line breaks in school/company display where possible.
+
+## Continuous project evolution
+- After each CV generation session, extract stable improvements and persist them to project rules/config.
+- Prioritize codifying reusable changes (layout, wording, ranking, keyword filters) over one-off manual edits.
+- When a user gives repeated preferences, convert them into defaults in generator logic.
+- Keep generated outputs clean and consistent so future resumes benefit without re-specifying requirements.
+
+## Cover Letter rules
+- Narrative priority: `why this company` + `why me (vs. other candidates)` + evidence.
+- Avoid generic praise; connect company mission/context to candidate's proven delivery patterns.
+- Use concrete differentiators in the "why me" section:
+  - cross-layer execution (mobile + backend + hardware integration),
+  - production outcomes (e.g., throughput/latency/site rollout metrics),
+  - disciplined delivery habits (CI/CD, code review, troubleshooting under deadlines).
+- Keep tone personal but professional: warm motivation + factual proof, no flattery.
+
+## CLI — resume generation workflow (session commands)
+
+Run from **repository root** (e.g. `e:\Coding\leozhang2056` on Windows, or `cd` equivalent on macOS/Linux).
+
+**Regenerate CV PDF (most common):**
+```bash
+python generate.py cv --role android
+python generate.py cv --role fullstack
+python generate.py cv --role backend
+python generate.py cv --role ai
+```
+
+**Stable output path** (overwrites one file; avoids opening an older dated folder by mistake):
+```bash
+python generate.py cv --role android --output outputs/CV_Leo_Zhang_android_latest.pdf
+```
+
+**Optional flags (when user asks):**
+```bash
+python generate.py cv --role android --with-zh
+python generate.py cv --role android --with-review-bundle
+python generate.py cv --role android --with-jd-annotated
+python generate.py cv --role android --output outputs/CV_....pdf --keep-html
+```
+
+**Tests (after changing generator or KB wiring):**
+```bash
+python -m pytest tests/test_generate_cv.py -q --tb=short
+```
+If pytest fails on `conftest.py` / `generate_cv_html_to_pdf` import, fix the mock target or `PYTHONPATH` first; do not treat that as a successful regression run.
+
+**Ad-hoc Python checks against `generate_cv_from_kb`:** that module imports `generate_cv_html_to_pdf` with repo-relative paths; use **`app/backend` as cwd** so imports resolve, e.g.:
+```bash
+cd app/backend
+python -c "from generate_cv_from_kb import generate_summary, generate_project_bullet_points; ..."
+```
+
+**After edits:** prefer **executing** the relevant `python generate.py cv ...` command yourself (do not only tell the user to run it) unless the environment cannot run Python.
+
+## GitHub profile README
+- Root **`README.md`** doubles as the GitHub **profile** README when this repo is `username/username`.
+- **Activity:** use **ghchart.rshah.org** for a contribution-style heatmap; do **not** embed `github-readme-stats` or streak widgets (unreliable on GitHub).
+- **Publications:** when KB publications change, mirror **`README.md`** `Publications` from `kb/achievements.yaml` + `projects/chatclothes/facts.yaml` publication evidence (order: IVCNZ → IGI chapter if listed → thesis).
