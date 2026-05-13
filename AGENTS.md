@@ -67,6 +67,7 @@ pytest
   - backs up touched YAML to `outputs/<date>/kb_backup_auto_*` before patching.
   - prints a KB change summary and file-level rollback copy hints after patching.
 - Interview QA loader prefers `interview_qa/` at repo root, then falls back to `kb/interview_qa/` (`app/backend/interview_qa_cli.py`).
+- Behavioral interview **full script** (STAR, Q1–Q45, appendix): `Interview/behavioral_common_qa.md` (see `interview_qa/README.md` for navigation).
 
 ## Practical Debugging Notes
 - If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).

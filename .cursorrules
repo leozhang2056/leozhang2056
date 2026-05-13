@@ -109,7 +109,7 @@
 3. 新增项目**必须**遵循 `kb/schema/project_facts_schema.yaml`
 4. 新增 bullets 必须包含 `id, category, tags, variants, evidence`
 5. 如果 KB 中缺少信息，输出 `MISSING_INFO`，提示用户补充后再生成
-6. 对话中出现的真实项目情形（问题、取舍、复盘）要**持久化到工程**：先记入 `interview_qa/behavioral_common_qa.md` 附录/对应题，再在可核对时同步到对应 `projects/*/facts.yaml`
+6. 对话中出现的真实项目情形（问题、取舍、复盘）要**持久化到工程**：先记入 `Interview/behavioral_common_qa.md` 附录/对应题，再在可核对时同步到对应 `projects/*/facts.yaml`
 
 ---
 
