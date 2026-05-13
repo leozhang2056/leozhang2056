@@ -2,23 +2,23 @@
 
 ## 目录（概要）
 
-| 块 | 概要 | 跳转 |
+| Part | 内容 | 跳转 |
 |----|------|------|
-| 一 | **文档说明 + 规则**：简报、事实来源、自填临场规则 | [→](#section-doc-about) |
-| A | **临场口语**：10 题；**①、⑩** 两档时长，**②—⑨** 每题一版；**补充** [创意 · 电子秤](#oral-creative)、[企业 IM · FastDFS 文件](#oral-enterprise-files) | [→](#section-oral-only) |
-| B | **题型与 STAR**：B1 高频分类（**每题干 → 口稿链接** + [B1-05/06 补稿](#oral-b1-05-supplement)）+ B2 十题骨架 | [→](#section-part-b) |
-| D | **工具箱**：模板、注意事项、练习方法论、口语句型（D1–D4） | [→](#section-toolbox) |
-| C | **逐题英文稿**：Q1–Q45 口语 Script + 主故事速览 | [→](#section-5-scripts) |
-| 附录 | **个人素材**：草稿模板与收件箱 | [→](#section-appendix) |
+| Part 1 | **Core Behavioral Answers**：10 个最高频主答，先看这个 | [→](#section-oral-only) |
+| Part 2 | **Project Story Bank**：按项目归类的故事仓库 + B1/B2 分类索引 | [→](#section-part-b) |
+| Part 3 | **Technical Deep Dive Notes**：Q1–Q45 全文脚本 + 深挖细节 | [→](#section-5-scripts) |
+| Part 4 | **Quick Review Sheet**：工具、速查关键词、草稿模板、收件箱 | [→](#section-toolbox) / [→](#section-appendix) |
 
-> 细粒度锚点（如 `oral-01`、`b1-03`、`q-12`、`d3-04`）在**正文各小节标题上方**；需要时搜索 `id="q-12"` 或先打开 C 节再按 `### 12)` 等标题浏览。
+> 细粒度锚点（如 `oral-01`、`b1-03`、`q-12`、`d3-04`）在**正文各小节标题上方**；需要时搜索 `id="q-12"` 或先打开对应 Part 再按 `### 12)` 等标题浏览。
 
 ---
 
 <a id="section-doc-about"></a>
-## 第一部分 · 文档说明 + 规则
+## Part 1 — Core Behavioral Answers
 
-本文件是 **Behavioral 面试**用：英文口稿（**A**）、题型与 STAR（**B**）、工具句（**D**）、逐题（**C**）。
+This is the main speaking path. Use Part 1 first, then jump to the story bank, deep-dive scripts, or quick review only when you need more detail.
+
+本文件是 **Behavioral 面试**用：**Part 1** 放 10 个最高频主答，**Part 2** 放故事库，**Part 3** 放 Q1–Q45 全文脚本/深挖，**Part 4** 放速查/工具。
 
 ### 规则（可在此往下加你自己的）
 
@@ -32,51 +32,57 @@
 
 ---
 <a id="section-oral-only"></a>
-## A. 临场开口
+### A. 临场开口
 
 > **版面**：**①、⑩** = **30 秒 + 1 分钟**；**②—⑨** = **每题一版**。下方 **提示（STAR）** 为中文关键词，英文为口稿。
 
 <a id="oral-01"></a>
 ### ① Tell me about yourself
 
-**提示（STAR）**：（S）奥克兰工程师；（T）让对方记住方向 + 资格；（A）Android / Java 后端 / Web + 最近 AUT + 代表项目一句；（R）**full-time** NZ + 想加入对方团队。
+**Key idea:** 先年限和方向，再 AUT / ChatClothes / 现在能做什么。
 
 #### 30 秒版（约 30s）
 
-Hi, I'm **Leo Zhang**, a software engineer in **Auckland, New Zealand**. About **ten years** — **Android**, **Java** on the **server**, **web** when needed, plus **AI**.
+Hi, I'm **Leo Zhang**, a software engineer based in **Auckland**. I've spent about **ten years** building real-world systems — mainly **Android** and **Java backend** development, plus some **AI** and **full-stack** work when projects needed it.
 
-I just finished **AUT**, **Master of Computer and Information Sciences**, **First Class Honours**, **applied AI**. Main stories: **ChatClothes** (**Pi 5**, local **LLM**, **LoRA**), **Smart Factory** (**many plants**, **IoT**, **~30%** efficiency), **Enterprise Messaging** (**NDK**, **fast** messages, **5,000 DAU**).
+I recently completed my **Master of Computer and Information Sciences** at **AUT** with **First Class Honours**. My thesis, **ChatClothes**, focused on running AI offline on lightweight hardware using local **LLMs** and **LoRA** models.
 
-**Full-time work rights** in NZ — I'd love to bring **mobile + backend + AI** to your team.
+Before that, I worked on projects like **Smart Factory** systems for manufacturing sites and an **Enterprise Messaging** platform with real-time communication and high daily traffic.
+
+I have **full-time work rights** in New Zealand, and I'm looking for a role where I can combine strong engineering with practical AI work.
 
 #### 1 分钟版（约 60–90s）
 
-Hi, I'm **Leo Zhang**, in **Auckland**. I've built **real products** for about **ten years** — mostly **Android** and **Java** **backends**, sometimes **web** when we ship the **whole** stack.
+Hi, I'm **Leo Zhang**, based in **Auckland**. I've been working in software engineering for about **ten years**, mainly across **Android**, **Java backend** systems, and some **full-stack** development when products needed end-to-end delivery.
 
-I recently finished **AUT** — **First Class Honours**, **applied AI**. **ChatClothes** was my thesis: **AI** that runs **offline** on **small hardware** — **local LLM** (**Ollama**), **LoRA**, **Raspberry Pi 5**, and I **handed in six months early**.
+Most of my experience is in real production environments. One major project was a **Smart Factory** platform — shop-floor systems, devices, Java services, and long-term rollout across multiple manufacturing sites. Another was an **Enterprise Messaging** platform involving **Android NDK** work, real-time communication, and backend services handling large daily message volume.
 
-At work I've been on **Smart Factory** — **shop-floor** apps, **devices**, **Java** services, rolled out to **many factory sites** over **years**, about **30%** **efficiency** gain, **strong uptime**. And **Enterprise Messaging** — **NDK** **C/C++** path, **sub-200ms**, **Spring Cloud** on the server side, **5,000** **daily users**, **heavy** message volume.
+More recently, I completed my **Master of Computer and Information Sciences** at **AUT** with **First Class Honours**, focused on applied AI. My thesis project, **ChatClothes**, was about making AI run efficiently on lightweight hardware using local **LLMs**, **LoRA** models, and **Raspberry Pi** devices — with an emphasis on offline performance and practical deployment.
 
-I'm on a **work visa** with **full-time** rights. I want a team where I mix **solid coding** with **AI** — and **get products out** to users.
+What I enjoy most is solving real engineering problems and getting products into users' hands. I'm now looking for a team where I can combine solid software engineering with AI-focused work.
 
 <a id="oral-02"></a>
 ### ② Complex technical problem
 
-**提示（STAR）**：**主线**（S）企业即时通讯 Android 要后台也实时收消息；（T）省电杀后台 + 耗电；（A）优先级 + 白名单 + widget + **环信 Easemob** IM 路径 + **极光 JPush** 作**通知类推送备用通道** + 重同步 + 状态对账；（R）更及时、更稳。**延展（可选口稿）**：**设备矩阵**像 **C 端**一样碎 — **小米/华为/OPPO** 等 **ROM** 定制；**很多问题只在用户真实环境里才冒头**，实验室无法穷尽所有「小问题」。需在 **发布时间**、**测试深度/人力成本**、**测试机型与设备投入** 之间做显式权衡；常规测 **主流版本**（约 **Android 7/8** 为下限）；报障 **模拟器未必复现** → **反馈驱动真机**、必要时 **购机** 或贴近用户现场/远程。**另一延展**：单机存不下聊天与业务文档 → **自建 FastDFS** 分布式文件能力（见 [oral-enterprise-files](#oral-enterprise-files)）。
+**Key idea:** 讲 Android 后台收消息，强调多层保活和主通道/备用通道。
 
-One hard problem I worked on was **real-time messaging** on Android. The app needed to receive messages in the background, but Android may kill background apps to save battery.
+One complex problem I worked on was **real-time messaging** on Android.
 
-So first I had to understand Android system behavior: **process priority**, **why apps get killed**, and what we could do to reduce that risk.
+The challenge was that Android aggressively kills background processes to save battery, especially on some OEM systems like Xiaomi or Huawei. But for an enterprise messaging app, users still expect messages to arrive reliably and quickly.
 
-I used a layered approach. We guided users to add the app to the battery whitelist. We added a home-screen widget to improve app priority. On the **transport** side, **Easemob** handled the **core IM** path. We also wired **Jiguang** (**JPush**) as a **backup push channel** for **notification-style** traffic — things like **alerts** and **wake-ups** — so delivery didn't depend on **one** pipe when the OS was aggressive about background work. On top of that, we added other small reliability steps to improve survival chance.
+So the problem wasn't just "send a message." It was really about background survival, reconnect reliability, and balancing real-time performance against battery usage.
 
-The result was better message timeliness and fewer missed messages in background cases. What I learned is: on Android, one trick is not enough - you need multiple layers.
+We used a layered approach.
 
-Another hard part was the trade-off between **real-time** and **battery**. If keep-alive is too aggressive, battery gets worse. If it's too weak, messages arrive late. So we tuned heartbeat/reconnect strategy and used push wake-up where possible.
+For the main messaging path, we used **Easemob** for core IM delivery. Then we added **JPush** as a secondary push channel for notification-style wake-ups, so we weren't depending on only one mechanism when Android became aggressive about background restrictions.
 
-We also planned for process death. If the app got killed, we restored session and ran fast re-sync on reconnect/resume. We used sent/delivered/read state checks to reduce message loss risk.
+On the client side, we also optimized heartbeat and reconnect strategy, handled fast session recovery after process death, and added state reconciliation between local cache and server state to reduce message inconsistency issues.
 
-And yes, we saw edge bugs like "read state updated, but UI did not show it." We added stronger state reconciliation between local cache and server state, plus UI refresh triggers after ack.
+Another difficult part was **Android fragmentation**. Different OEM ROMs behaved differently, and some bugs only appeared on real user devices — not in emulators. So we had to balance release speed, test coverage, and device cost realistically. We focused on strong mainstream device coverage first, then reproduced edge cases on exact hardware when important issues came in.
+
+The result was much better background message reliability and fewer missed-message complaints.
+
+What I learned is that on Android, reliability usually doesn't come from one trick — it comes from **multiple layers** working together.
 
 **（延展）Enterprise IM — Android OEM / version fragmentation**  
 Another messy side wasn't only **logic** — it was **where** the app ran. **Enterprise IM** still hits a **consumer-style Android long tail**: many OS levels, and in China **Xiaomi**, **Huawei**, **OPPO** ROMs change behavior again.
@@ -94,7 +100,7 @@ Ideally you'd run a **full matrix** before every ship — reality is **cycle tim
 <a id="oral-enterprise-files"></a>
 ### （补充）Enterprise IM — 自建文件平台（FastDFS）
 
-**提示（STAR）**：（S）早期文件堆在一台服务器；用户上传、**聊天附件**、**合同管理**、**设计图**等子系统文件暴涨；（T）单机容量不够 + **数据私密性** → 不愿依赖**公有云文件 SaaS**；（A）选型 **开源 FastDFS**，做分布式存储、与 **User / Message / Workflow** 等子系统对接；处理**分片/冗余、备份、权限**；（R）容量与可控性上来，多业务共用同一套文档能力。**与事实对齐**：头像等路径曾出过安全事件后**迁移云端对象存储**（见 [A ④ Case C](#oral-04)）；**业务文档层**仍以**自建分布式文件**为主叙事，口试可一句话分层说明。
+**Key idea:** 单机文件扛不住时，讲 FastDFS、自建分层和权限控制。
 
 Early on, almost everything lived on **one file server**. As usage grew, it wasn't just "a few uploads" — **chat attachments** piled up, and other modules needed files too: **contracts**, **design drawings**, things you don't want to lose or leak.
 
@@ -109,31 +115,37 @@ Operationally, that forced real engineering work: how files are **sharded**, how
 <a id="oral-03"></a>
 ### ③ Conflict with a teammate
 
-**提示（STAR）**：（S）同事抗拒 code review；（T）不伤关系也要保质量；（A）先 1:1 听原因，再改成私下、具体、短结对；（R）评审恢复，质量和节奏都回来。
+**Key idea:** 先讲 1:1 和反馈方式怎么改，而不是对错。
 
-In **Enterprise Messaging**, I had a teammate who pushed back on **code review** a lot.  
-At first it looked like a skill issue, but after a **1:1** talk I found it was more about trust — they had bad experiences with public criticism before.
+In one project, I worked with a teammate who often pushed back during code reviews.
 
-So I changed the way we worked: feedback was **private**, **specific**, and focused on code, not person. For tricky parts, we did short **pairing** sessions instead of long comment threads.
+At first, I thought the problem was mainly technical. But after a private 1:1 conversation, I realized it was more about trust and communication style. He had some bad experiences with public criticism before, so even normal review comments felt very personal to him.
 
-After that, review speed got better, code quality improved, and our release rhythm stayed stable.  
-What I learned is simple: in team conflict, fixing the **communication style** is often as important as fixing the code.
+After that, I changed the way I approached reviews. I kept feedback more private, more specific, and focused on the code itself instead of the person. For more complicated changes, we stopped arguing through long comment threads and just did short pairing sessions instead.
+
+Over time, the tension dropped a lot. Reviews became faster, discussions became more productive, and the team worked more smoothly during releases.
+
+What I learned from that experience is that technical disagreements are often not purely technical. Sometimes the way people communicate matters just as much as the actual solution.
 
 **Case B（可选：技术选型分歧）**
-**提示（STAR）**：（S）新项目技术栈分歧；（T）平衡熟悉度与长期适配；（A）拉 PM/TL/团队做时间与风险评估；（R）共识方案，减少争执。
+**Key idea:** 讲技术选型时的约束、风险和团队共识。
 
-In one new project, I had a teammate with very deep experience in older stacks like **C#** and **C++**.  
-He preferred familiar tools for delivery control, while I thought some newer parts fit the new requirements better.
+In another project, we had a disagreement about technical direction.
 
-Instead of arguing by preference, we brought in the **PM**, **team lead**, and the team to evaluate options together: delivery time, risk, maintainability, and how well each stack matched the project direction.
+One teammate had deep experience with older tools like **Delphi** and preferred staying with a familiar stack for stability and delivery speed. I was leaning toward using more modern components because I thought long-term maintenance and integration would be easier.
 
-That changed the discussion from "my tech vs your tech" to "what is best for this project now and later."  
-We aligned on a practical plan, and the team moved forward with less friction.
+Instead of turning it into a personal argument, we discussed the trade-offs openly with the team — delivery risk, maintainability, existing system constraints, and who would support the system later.
+
+In the end, we chose a more practical middle ground. Some legacy parts stayed because replacing them immediately would add too much risk, while newer components were introduced gradually around them.
+
+Even when the final decision wasn't exactly my preferred direction, I still focused on making the delivery successful and reducing future risk through documentation and cleaner interfaces.
+
+That experience taught me that good engineering decisions are usually about balancing reality, not proving one technology is "better."
 
 **（更贴近你经历的展开）**：**Delphi vs 团队主流栈**、**入口地磅/称重联动**（超重预警、抬杆/报警）、**负责人拍板后仍专业执行 + 文档降风险** → 详见 **[Q42 Option B](#q-42)**（事实未入库前口试勿编客户/项目正式名）。
 
 **Case C（可选：跨部门沟通冲突）**
-**提示（STAR）**：（S）产品给高压需求且技术成本高；（T）避免空口答应又不伤协作；（A）讲清技术边界 + 成本 + 分期折中；（R）达成可上线版本。
+**Key idea:** 讲清边界和折中，不要硬答“能”。
 
 In cross-team work, product teams sometimes ask for features that look simple from user view, but are expensive or risky to build, and still want them live very fast.
 
@@ -146,179 +158,257 @@ That way, we avoid fake promises, still ship something useful on time, and keep 
 <a id="oral-04"></a>
 ### ④ Failure
 
-**提示（STAR）**：三选一。**Case A** 数据标注估错；**Case B** 发版未切 **prod** 配置连到测试库 → 二次升级 + 流程加固；**Case C** **`enterprise-messaging`** 头像目录上传权限过松 → 被传可执行文件、服务器中毒、备份恢复与加固（见下）。
+**Key idea:** 选一个真失误，讲修复和防再犯。
 
 **Case A — Chinese herbal（标注估时）**  
 **Chinese herbal** project — I **guessed two weeks** for **labels**; real work was more like **six** (messy photos). I **said so early**, **reset** the plan, **pilot** a small batch first. **Lesson**: **pilot before you trust** the estimate.
 
 **Case B — App release（测试配置打进正式包）**  
-We shipped an **app upgrade** but I left **test settings** on — build still pointed at the **test database** and **test APIs**. Users saw **wrong data**. We had to **ship again** to fix it.
+One failure I remember clearly was during an app release.
 
-Our team was **small** and we didn't have **dedicated QA** yet, so the release checklist was **weak**.
+We shipped a new version, but I accidentally left some test environment settings in the production build. The app was still pointing to test APIs and a test database, so users started seeing incorrect data after the release.
 
-After that I changed how we work: **split configs** for dev/test/prod, **multi-round** checks with **more than one person**, and **test every build** even for small changes. We also pushed **more automation** over time to cut **human mistakes** — it wasn't **fully** automated at first, but it got **much safer**.
+The mistake was completely on our side, and I took responsibility for it. At that time, our team was still quite small, and our release process relied too much on manual checking. We didn't yet have strong separation between development, test, and production configurations.
 
-Since then I've treated **every release path** the same way — **database** changes, **mobile** builds, and **web** deploys — same care, same checks, no "this one is small so we can skip."
+We fixed the issue quickly with a new release, but the more important part was changing the process afterward.
+
+I introduced clearer environment separation, added multi-person release checks, and made sure every build — even small ones — went through proper validation before deployment. Over time, we also added more automation to reduce human error in the release pipeline.
+
+That experience changed the way I think about delivery. I became much more disciplined about release processes, configuration management, and production safety instead of relying on memory or "it should be fine."
 
 **Case C — Enterprise IM（头像上传目录 → 入侵）**  
-**Enterprise messaging** — user **avatars** lived on a **Windows** **file server**. **Upload** rules were **too loose**: someone got **executables** into the **avatar** folder, the box was **compromised**, and we **lost data** we couldn't trust on that host.
+Another hard lesson came from file upload security in an enterprise messaging system.
 
-We **rebuilt** the environment and **restored** from **backups**. After that the team took **security** seriously: **tighter permissions**, **antivirus** on servers, and we **moved** those **files** to **cloud** storage with **stricter** controls.
+At that time, avatar uploads were stored on a Windows file server, and our upload restrictions were not strict enough. Eventually, malicious files were uploaded into the wrong location, which caused a serious security incident on that server.
 
-**Lesson**: **any** user-facing **upload** path is an **attack** surface — **least privilege**, **validate file type**, **never** mix **upload** dirs with **execution**, and **assume** you'll need **clean** **restore** paths.
+We rebuilt the environment from backups and tightened the entire upload pipeline afterward — stricter file validation, stronger permissions, better isolation between uploaded content and executable paths, and more controlled storage management.
+
+That experience made me much more aware that upload systems are security boundaries, not just "file features."
 
 <a id="oral-05"></a>
 ### ⑤ Under pressure
 
-**提示（STAR）**：三选一。**Case A** **Smart Factory** 发布窗口；**Case B** **`enterprise-messaging`（企业即时通讯）** 早期**单人安卓**、几周原型上线、爆 bug、**日更**清优先级 + **产品**帮对接用户；**Case C** **`banknote-paper-mill`（造币印纸厂 / 保密断网）**：**断网**、仅可带离线笔记本进场；**每次进出需申请**，通常**提前约一周**才能进场；**断网部署/升级也麻烦**（离线包、受控传递、重验证）；内外环境反复联调、周期紧，**调试须场外充分准备**，易出现「一整天无可见进展」。
+**Key idea:** 先说压力来源，再说你怎么稳住节奏。
 
 **Case A — Smart Factory（发布窗）**  
 **Smart Factory** before release — **shop floor** doesn't wait. I split it: **triage**, **fix**, **verify**, **watch**. Pull the **owner** of the broken layer, **short** updates. We got it **out** without **breaking** the line. **Shrink unknowns fast** — that's how I handle heat.
 
 **Case B — Enterprise IM（单人原型 + 上线救火）**  
-Early on the **enterprise instant messaging** app — I was the **only Android dev**. We had **a few weeks** to build a **prototype**, test it, and **go live**.
+One of the most stressful periods I had was early in an enterprise messaging project.
 
-After launch we hit **a lot of bugs**, and I was still the **only one** fixing them. Pressure was real — **users** wanted fixes fast, and I also had to **keep shipping**.
+At that time, I was the only Android developer on the project. We had only a few weeks to build a prototype, test it, and get it into users' hands.
 
-So I worked in a tight loop: every day I **listed** issues, **ranked** them by **priority**, fixed **high** items first, **shipped a build** every day, then **tested** again. Some fixes created **new** bugs — I kept **re-prioritizing** and focused on what hurt users most until things got **stable**.
+After launch, we immediately started hitting bugs and edge cases from real users. The pressure came from two directions at the same time: users wanted fixes quickly, but we also still had to keep moving the product forward.
 
-I wasn't alone on the **people** side — **product / design** helped **explain** to users **why** things broke, **how long** fixes take, and they aligned **priority** and **dates**. They also shared **what we shipped each day** and **what we fixed**.
+What helped me was creating a very tight working rhythm instead of reacting emotionally.
 
-**Lesson**: under pressure, **visible order** + **daily rhythm** beats panic; **cross-team** user comms is part of the fix, not extra work.
+Every day, I would collect issues, rank them by impact, fix the highest-priority problems first, ship a new build, and then verify again. Some fixes introduced new bugs, so priorities constantly changed, but I stayed focused on reducing the biggest user pain first instead of trying to solve everything at once.
+
+The product and design teams also helped a lot by communicating clearly with users about what we fixed, what was still being worked on, and realistic timelines. That reduced pressure on engineering and kept expectations under control.
+
+Eventually the system became much more stable, and the release cycle became manageable again.
+
+That experience taught me that under pressure, structure and communication matter more than panic. A clear rhythm is usually more effective than trying to solve everything at once.
 
 **Case C — Air-gapped site（造币印纸厂 / 保密断网）**  
-We had a **banknote paper mill** customer — **high secrecy** — **no internet** on site. I could only go in with an **offline laptop**: **export** their **data formats**, **inspect** samples, **test** what we could **inside**, then **leave** and **build** in our normal environment, then **come back** to **validate** in their **locked-down** network again.
+Another very high-pressure situation was working at a classified air-gapped customer site.
 
-**Every** **entry** and **exit** needed **customer** **approval**. In practice, **one** **on-site** **visit** often meant **asking** about **a week** **ahead** — so **floor** **time** was **rare** and **expensive**. I **prepared** **hard** **before** I walked in: **repro** steps, **builds**, **sample** **files**, **fallback** plans — because I couldn't **afford** to **improvise** there.
+The environment was heavily restricted — no internet access, controlled entry approval, offline deployment only, and very limited on-site debugging time. Even getting access to the site could take close to a week of coordination.
 
-**Deploying** there was **not** like a **normal** **office** **push** — **no** **open** **internet** to **pull** **deps** or **patch** **fast**. We **carried** **offline** **packages**, **checked** **everything** through their **rules**, and **planned** **rollback** because **fix** **forward** was **slow** when **each** **visit** **cost** **so** much **calendar** **time**.
+That meant I couldn't rely on the normal engineering workflow of "deploy, patch, retry." Every visit had to be carefully prepared in advance: offline packages, rollback plans, test data, repro steps, everything.
 
-The **loop** was **heavy**: travel, **access** friction, and **tight** deadlines. Some days I **burned** a **whole day** and still had **nothing** that **looked** like **progress** — just **setup**, **permissions**, or a **dead** path. **Their** team was **stressed**; **we** were **stressed** too.
+The pressure wasn't just technical — it was also operational. Sometimes an entire day could disappear into approvals, setup, or environment issues without visible progress, while deadlines were still moving.
 
-What helped: **tiny** goals per **visit** — "today I only prove **X** format / **one** import path"; **write down** every **artifact** I could take out; **tell** PM and the customer **early** that **air-gap** work has **empty-looking** days, and **re-scope** dates from **real** **cycle** time — including **approval** **lead** **time**, not **ideal** **office** time.
+What helped me was breaking the work into very small goals for each visit and communicating realistic timelines early instead of pretending the cycle time was normal office development speed.
 
-**Lesson**: **classified / offline** sites change what **pressure** means — you manage it with **honest** **expectations**, **checkpoint-sized** wins, **prep** that respects **access** **lead** **time**, and **release** **packages** built for **no-net** **installs**, not **last-minute** **downloads**.
+That experience taught me that in highly restricted environments, preparation and expectation management become just as important as coding itself.
 
 <a id="oral-06"></a>
 ### ⑥ Prioritize quickly
 
-**提示（STAR）**：三选一。**Case A** 产线问题 + PM 要功能；**Case B** 无对标、**下车间**澄清模糊需求、**快原型**迭代、大版本演进；**Case C** **多项目并行**：外部（`smart-factory`、`enterprise-messaging` 等）+ 自营（`picture-book-locker` 图书馆借阅柜、互联网产品线等），**按交付/风险/难点**排每日焦点，必要时**跨组协调人力**。
+**Key idea:** 用 impact / risk / dependency 排序，再早沟通。
 
 **Case A — 产线 vs 里程碑**  
 **Smart Factory** — **line** issues, **PM** wants features. I fix what **hurts operators** first, then what's **on the milestone**, and I'm **honest** about dates on the rest. **Clear order** beats a **pretty** plan nobody follows.
 
 **Case B — 下车间 + 模糊需求 + 原型迭代**  
-**Smart Factory** had **no product we could copy** — we went **into the workshops**, watched **how people really worked**, and turned **vague** asks into plans we could **negotiate** with the team: **what** to build first, **how long** a slice could take.
+In **Smart Factory** projects, one challenge was that requirements were often unclear at the beginning.
 
-We had to **ship prototypes fast**, then **keep changing** them as understanding improved. Requirements stayed **fuzzy** for a long time — people felt something was wrong but couldn't spell the **exact** flow — so we **validated on real screens**, not only in meetings. **Pressure** was on the **whole** team. Even after **first delivery**, users sometimes **weren't fully on board**; we needed **bigger** follow-on releases — **second**, **third** major versions — **adding** what stuck and **trimming** what didn't.
+Operators knew parts of the workflow were painful, but they usually couldn't describe the exact solution in technical terms. So instead of relying only on meetings or documents, we went into the workshops, watched how people actually worked, and built prototypes very quickly.
 
-**Lesson**: when nobody has a crisp spec, **prototype + tight feedback** sets the real priority list; **big** replans aren't shame — they're how **shop-floor** software matures.
+The prototypes helped users react to something concrete, which gave us much better feedback than abstract discussions. Over time, the product evolved through several major iterations — some features expanded, others were removed completely after real usage feedback.
+
+That experience taught me that in operational software, prototypes and real usage feedback are often more valuable than trying to perfect the spec too early.
 
 **Case C — Many projects at once（外部 + 自营）**  
-At **Chunxiao** I often had **several projects moving at once** — not just one backlog. Some were **external**: **factory** work (**Smart Factory**), **enterprise messaging** for customers. Some were **our own products**: **library smart lockers** (**picture-book-locker**), plus other **internal internet-facing** lines.
+At one point, I was handling several projects at the same time — not just one backlog.
 
-I couldn't treat every ping as **P0**. Each day I wrote down: which **release** is **nearest**, where I'm still **stuck** on a **hard** problem, and what can **slide** a little without **breaking trust**. **Impact** and **deadline** first — then **depth** time on **blockers**.
+Some projects were external customer work, like **Smart Factory** systems and **enterprise messaging** platforms. At the same time, we also had internal product work, including smart locker systems and other internet-facing projects.
 
-When I couldn't **unblock** alone, I **asked early**: **borrow** time from **another group**, **pair** for a day, or **split ownership** clearly so nobody assumed **magic capacity**.
+The biggest challenge was that everything always looked urgent from somebody's perspective. I couldn't treat every request as P0, or nothing would actually move forward.
 
-**Lesson**: **portfolio** pressure is **scheduling** plus **escalation** — a **visible** order for yourself and **honest asks** when **parallel** streams need **more hands**.
+So I built a very visible prioritization habit for myself.
+
+Each day, I looked at three things first:
+
+which release or customer deadline was closest,
+which technical blocker was currently slowing the team down the most,
+and which tasks could safely move a little without damaging trust.
+
+I focused on impact and delivery risk first, instead of just whoever messaged me most recently.
+
+Another important part was escalating early. If I saw that something would not realistically fit into one person's capacity, I raised it early — borrowing help from another developer, pairing on difficult issues, or splitting ownership more clearly instead of silently carrying the overload.
+
+That approach helped us keep multiple projects moving without constantly falling into chaos or fake urgency.
+
+What I learned is that prioritization is not just task sorting — it's also expectation management and knowing when to ask for help early.
 
 <a id="oral-07"></a>
 ### ⑦ Process improvement
 
-**提示（STAR）**：（S）多厂上线曾以**手动复制文件**为主；（A）**Jenkins** 连 **GitLab**、**CI/CD**，**首期配置麻烦**；**工厂项目先试点**，再**全线迁移**同一套流程；辅以容器、清单、文档；（R）部署更可重复、少人为漏操作。
+**Key idea:** 从手工到自动化，讲为什么更稳。
 
-For a long time we mostly **deployed by hand** — copy builds, sync files, easy to miss a step or ship the wrong piece. **Smart Factory** had many sites, so the pain scaled.
+One process improvement I helped drive was moving our deployment workflow from mostly manual releases to a more automated CI/CD setup.
 
-We brought in **Jenkins** hooked to **GitLab**: **CI/CD pipelines** for build and deploy, less tribal knowledge, fewer midnight surprises. The **early setup was tedious** — wiring repos, agents, secrets, getting the first pipeline green — but we paid that cost once.
+At the beginning, deployments were handled manually — copying builds, syncing files, updating services by hand. That worked when projects were smaller, but **Smart Factory** eventually expanded to many sites, and the operational risk started scaling with it. Small mistakes during deployment could easily turn into rollback work or production issues.
 
-**Smart Factory** was the **first** place we ran it for real. After it looked stable, **the rest of the team moved to the same flow** so we didn't maintain two different release worlds. I still used **Dockerized Spring** where it helped, plus checklists and short docs so new people weren't chasing chat. Boring infra — but rollouts got predictable.
+So we introduced **Jenkins** integrated with **GitLab** to standardize build and deployment pipelines.
+
+The setup itself took time — configuring repositories, agents, credentials, deployment steps, and getting the first stable pipeline running — but once the flow became reliable, releases became much more predictable.
+
+We first rolled it out on the **Smart Factory** project, then gradually moved other projects onto the same workflow so the team wasn't maintaining different deployment habits everywhere.
+
+We also combined that with **containerized Spring services**, lightweight deployment checklists, and short internal docs so onboarding and releases depended less on tribal knowledge.
+
+The biggest improvement wasn't just speed — it was consistency. Releases became easier to repeat, easier to recover, and much less dependent on individual memory.
 
 <a id="oral-08"></a>
 ### ⑧ Tough feedback
 
-**提示（STAR）**：**二选一**。**Case A** **经理**直接反馈：架构/大决策**没写清** → **ADR** + **onboarding**。**Case B** **需求侧难协同**（`smart-factory` / `picture-book-locker` 等）：用户要功能但**不懂实现**；产品+技术定方案后**讲解用户仍听不懂** → 靠**原型**对齐；**多人各执一词** → 反复改、开发量大、互相抱怨 → **过滤需求**、明确范围，找**客户方唯一拍板人**决定做/不做，**不对多头负责**；与**产品、设计、需求方**书面对齐方案与「完成定义」。*注：Case B 更偏 **Stakeholder / 需求治理**；题干若严格要求「上司给你的批评」优先 **Case A**。*
+**Key idea:** 先承认反馈合理，再讲你怎么改。
 
 **Case A — Manager（文档习惯）**  
-Manager said my **big decisions** weren't **written** enough — next hire would get **lost**. Fair. I added **light ADRs** and **short** onboarding notes — **why**, not **novels**. **Onboarding** sped up. I should've started earlier.
+One piece of tough feedback I received came from a manager during a long-running project.
+
+He pointed out that some of my bigger technical decisions lived mostly in my head or in scattered chats, and that new team members would struggle to understand the reasoning later.
+
+Honestly, the feedback was fair. At that time, I was very focused on delivery speed and solving problems quickly, so I treated documentation as secondary unless it became a blocker for the team.
+
+After that conversation, I changed my approach. I started writing lightweight ADR-style notes for bigger decisions — not huge documents, just short explanations of why we chose a certain approach, what alternatives we considered, and what trade-offs existed.
+
+I also added shorter onboarding notes for systems that new developers often found confusing.
+
+Over time, onboarding became smoother, repeated questions decreased, and technical discussions became easier because more context was already written down.
+
+That feedback changed how I think about engineering communication. Good documentation is not about writing more — it's about reducing confusion and making systems easier to understand and maintain later.
 
 **Case B — Many user voices（原型 + 单一决策人）**  
-On **Smart Factory** and **library / picture-book** work, **users** asked for **features** but **didn't** know what each **option** **cost**. **Product** and **engineering** **shaped** the **plan** **together** — then we tried to **explain** **how** we'd **build** it, and **honestly** **many** **operators** and **managers** **couldn't** **follow** **internals**. A **working** **prototype** **moved** the **talk** **faster** than **slides**.
+In some **Smart Factory** and smart locker projects, one challenge was that different stakeholders wanted different things, but nobody had a fully clear picture of the workflow.
 
-The **hard** part was **several** **people** **pulling** **different** **ways** — **scope** **churn**, **blame** between **teams**, **huge** **rewrite** **risk**. We **stopped** **treating** **every** **chat** as a **spec**: **filtered** **asks** into **clear** **buckets**, and got **one** **named** **customer** **owner** to **decide** **what** **ships** — **not** **ten** **part-time** **bosses** for **dev**. **PM**, **design**, and **that** **owner** **aligned** on **plan**, **timeline**, and **what** **done** **means**; then **engineering** **executed**.
+At first, we spent a lot of time discussing requirements in meetings, but many operators and managers couldn't easily follow technical explanations or abstract plans. That often led to **conflicting directions, repeated requirement changes, and potential rewrite risk** for the engineering team.
 
-**Lesson**: **noise** isn't a **requirements** **doc** — **one** **named** **customer** **owner** plus a **prototype** **beats** **ten** **part-time** **architects**.
+What worked much better was building quick prototypes and putting them in front of real users. Once people could interact with something concrete, feedback became much more practical and decisions became faster.
+
+We also realized we needed a clearer ownership structure. Instead of treating every conversation as a requirement change, we aligned with one primary customer-side decision maker who could prioritize requests and define what "done" actually meant.
+
+That reduced **scope churn, avoided constant rework**, and gave the engineering team a much more stable delivery target.
 
 <a id="oral-09"></a>
 ### ⑨ Adapted to change
 
-**提示（STAR）**：**二选一**。**Case A** **ChatClothes**：中程约束变紧（离线 + 速度）→ **重测**、**LLM** 本地、砍 scope → **honours**。**Case B** **`enterprise-messaging`**：**产品演进** — 独立 IM → **用户中心**（复用 IM 身份、**认证/类 SSO**）→ **文件服务/文件中心** → **子系统平台**（签到、工程管理、财务审批、硬件管理、权限等），并对标业界 **SSO、集中文件/类云对象存储、七牛云式文件拖拽/分片直传体验、飞书式组织权限** 等范式（见 `projects/enterprise-messaging/facts.yaml`）；**技术约束** — 文件 **单机 → FastDFS**；消息 **C++ 自建 → 环信 Easemob + 多端 SDK**；**极光 JPush** 通知备用；团队流程 **飞书/文档/审批** + 自动化；个人 **单点 → 全栈 → 协调资源**。
+**Key idea:** 讲约束变了，你也跟着改方案。
 
 **Case A — ChatClothes**  
-Thesis mid-way — **offline** and **speed** became **hard** rules. Numbers didn't support the **old** design. I **re-measured**, **LLM** **local**, **cut** scope where needed. Finished **strong** with **honours**. **Measure, then change your mind**.
+During my **ChatClothes** thesis project, I had to adapt the design quite significantly halfway through development.
+
+Originally, some parts of the pipeline depended more heavily on cloud-side processing. But as the project evolved, **offline capability and response speed became hard requirements** because I wanted the system to run on lightweight hardware like **Raspberry Pi** devices.
+
+Once I started measuring real performance numbers, it became clear that the original approach wouldn't meet those constraints reliably.
+
+So instead of forcing the original design to work, I stepped back and re-evaluated the system architecture. I moved more of the AI pipeline **locally** using **lightweight LLM deployment** and **LoRA-based optimization**, reduced parts of the scope that weren't essential, and focused more on **practical responsiveness** than theoretical completeness.
+
+That shift changed both the technical direction and the project priorities, but it allowed the final system to run **offline** with much better performance on limited hardware.
+
+In the end, the project finished successfully with **First Class Honours**.
+
+What I learned is that **adapting to change sometimes means letting go of your original design** instead of trying to defend it. Real measurements matter more than attachment to an early idea.
 
 **Case B — Enterprise IM（约束变了，系统跟时代一起改）**  
-On our **enterprise IM** product, nothing stayed frozen for ten years — **constraints changed**.
+Another example was our long-running enterprise messaging platform.
 
-The **product shape** evolved too: we started as a **standalone** **enterprise** **chat** **client**, not a **platform**. **Then** we **turned** **IM** **identity** into a **real** **user** **center** and **reused** it for **login** and **SSO-style** **access** **across** **modules**. **Next** we **added** a **central** **file** **service** that **grew** into the **shared** **file** **backbone** for **chat** **and** **business** **docs**. **Once** those **bases** **existed**, **other** **subsystems** **plugged** **in** — **attendance**, **engineering** **tools**, **finance** **approvals**, **hardware** **management**, **permissions** — **all** **on** the **same** **primitives**. We **borrowed** **ideas** from **how** the **industry** does **SSO**, **central** **file** **hosting**, **drag-and-drop** **upload** **flows** **like** **Qiniu** **Kodo-style** **products**, **Aliyun** **OSS-style** **object** **storage**, and **org** **permissions** (**Feishu**/**Lark**-style **patterns**), **but** **kept** **what** **had** to **stay** **self-hosted** **under** **control**.
+Over the years, the **constraints changed completely**. What started as a standalone messaging product gradually evolved into a larger internal **platform** with **shared identity**, **file services**, **permissions**, and **multiple business modules** connected together.
 
-**Files** first: we started with **one file server**, but **chat attachments** and business docs like **contracts** and **drawings** grew fast. We needed **distributed storage** with control over data, so we moved to **self-hosted FastDFS** — **open source** we could **tune**, not a black box we couldn't touch.
+That forced us to continuously adapt the architecture.
 
-**Messaging** changed too. Our first **in-house** path was **C++** servers — **stability hurt us**: bugs kept coming back and the backlog never felt **done**. We **stopped** trying to **own every low-level detail** ourselves. We **migrated** **personal**, **group**, and **baseline** messaging to **Easemob** (**Hyphenate** / **环信**) — **cloud** **relay** plus **multi-platform** **SDKs**. It gave us **calmer** operations: **better** **APIs**, **rich** **message** **types**, **read** **receipts**, **resend** / **retry** semantics, and **clients** on **more** **surfaces** without reinventing the wheel. **Separately**, we kept **Jiguang** (**JPush**) as a **backup push** path for **notification-style** traffic — **alerts** and **wake-ups** — layered **next to** Easemob so we weren't **single-channel fragile** when Android got strict about background work. Our own stack moved **up** the stack — **business** rules, **permissions**, **files**, **user** **center** — **platform** **subsystems** on top of **shared** **infrastructure**.
+For example, early on we tried maintaining more **low-level messaging infrastructure** ourselves, including C++ server components. But as scale and operational pressure increased, **stability became harder to maintain**. Eventually we moved core messaging capabilities onto **Easemob** while focusing our own engineering effort higher up the stack — **permissions**, **workflows**, **user systems**, and **platform integration**.
 
-**People and process** changed as well. When the team was small, everyone wore many hats. When projects **overlapped** and approvals got heavier, we adopted **Feishu** (**Lark**), **collaborative docs** (e.g. **Shimo** where we used it), **PM / budget / approval** discipline, and more **automation** so engineering didn't drown in admin.
+We also evolved file storage from a **single server** into a **distributed FastDFS-based system** as attachments and business documents grew over time.
 
-My own role moved with that — from **one focused developer**, to **full-stack delivery**, to **owning schedule**, **coordination**, and **who gets bandwidth** when several fires burn.
+At the same time, the **team process evolved** too — more automation, better collaboration tools, clearer approval flows, and more structured project coordination as the organization became larger.
 
-**Lesson**: **Good** teams don't romanticize the first design — they **re-price** reality when **volume**, **cost**, or **risk** moves, and they **let tools** (open source **or** vendor cloud) **earn** their place.
+What I learned from that experience is that **good systems are rarely static**. As scale, cost, and operational reality change, architecture and process both need to evolve with them.
 
 <a id="oral-10"></a>
 ### ⑩ Why should we hire you?
 
-**提示（STAR）**：（T）对方为什么要发 offer；（A）**交付跨度**（移动 + 后端 + 集成）+ **可核对代表作** + **最近 AI 能落地**；（R）人在 **Auckland**、**full-time** 合法工作、能进团队把事推上线。
+**Key idea:** 先说你能交付什么，再说为什么对岗。
 
 #### 30 秒版（约 30s）
 
-You should hire me because I **ship end-to-end** — about **ten years** of **Android**, **Java** **backends**, and **web** when the product needs the **whole** stack — not just slides.
+You should hire me because I'm comfortable taking **complex real-world problems** and turning them into **reliable software delivery**.
 
-I recently finished **AUT** — **Master of Computer and Information Sciences**, **First Class Honours**, **applied AI**. **ChatClothes** shows I can make **AI** **work** on **real hardware**, **offline**, with **clear** **metrics**.
+I've spent about **ten years** across **Android**, **Java backend** systems, and **full-stack** product work, mainly in **production-heavy environments** like **enterprise messaging** and **Smart Factory** platforms.
 
-Before that, **Enterprise Messaging** and **Smart Factory** are my **proof** at **scale** — **latency**, **load**, **devices**, **factories**, **long** **releases**.
+More recently, I completed my **Master's at AUT** with **First Class Honours**, focused on **applied AI** and **lightweight offline deployment**.
 
-I'm in **Auckland** with **full-time** **work** **rights**. Point me at your **hardest** **user** **problem** — I'll **own** it with the team until it's **in** **production**.
+I'm based in **Auckland** with **full-time work rights**, and I'm looking for a role where I can contribute **strong engineering execution**, **practical problem-solving**, and **AI-focused development**.
 
 #### 1 分钟版（约 60–75s）
 
-Here's why I'm a **strong** **hire**: I **don't** **only** **code** **one** **layer** — I've spent roughly **ten years** turning **messy** **real-world** **constraints** into **software** **people** **use** **every** **day**.
+I think I'm a strong fit because my background combines **software engineering**, **real-world delivery**, and **applied AI**.
 
-On **Android**, I'm comfortable **deep** in the stack — **NDK**, **TCP/UDP**, **battery** and **push** **reality**, **OEM** **differences** — not just UI. On the **server**, I've lived in **Java**, **Spring**-style **services**, **integration**, **releases**, and **keeping** **systems** **up** when users depend on them.
+Over the past **ten years**, I've worked across **Android**, **Java backend** systems, **integration work**, and **full-stack delivery** — mostly in environments where **reliability**, **rollout**, and **operational reality** mattered just as much as writing features.
 
-I just finished **AUT** — **First Class Honours**, **applied AI**. My thesis, **ChatClothes**, is the **simplest** **proof** of how I work: **measure**, **cut** **what** **doesn't** **fit** the **hardware**, and **ship** a **full** **pipeline** — **local** **LLM**, **vision**, **offline** — that **still** **feels** **fast** to a **user**.
+For example, I've worked on **enterprise messaging** systems with **real-time communication** challenges, **Smart Factory** platforms involving **devices** and **multi-site deployment**, and more recently **AI-focused** systems during my **Master's at AUT**.
 
-Before **AUT**, my **big** **production** **stories** are **Enterprise Messaging** — **real-time** **IM** at **thousands** of **DAU** and **very** **high** **daily** **message** **volume** — and **Smart Factory** — **IoT**, **shop-floor** **workflows**, **many** **sites**, **years** of **rollout** discipline.
+My thesis project, **ChatClothes**, focused on **running AI efficiently on lightweight hardware with offline support**. That project reflects how I usually work: **measure constraints early**, **adapt the design when needed**, and focus on **practical usability** instead of unnecessary complexity.
 
-I'm **based** in **Auckland** with **full-time** **work** **rights** in **New Zealand**. I'm **flexible** on **stack** details — **Kotlin**, **Spring**, **new** **AI** **tooling** — what I care about is **outcomes**: **clear** **ownership**, **honest** **trade-offs**, and **shipping** **with** the **team**.
+I'm also comfortable working across different parts of a system — **client**, **backend**, **deployment**, and **operational processes** — which helps when projects become messy or requirements change over time.
+
+I'm based in **Auckland** with **full-time work rights**, and I'm looking for a team where I can contribute **strong engineering execution**, **reliability**, and **practical problem-solving**.
 
 #### 精简一句版（收尾用）
 
-> Point me at a **real user problem** — I'll **push** it **over the line** with the team.
+> I enjoy working on **difficult real-world problems** and helping turn them into **stable products** people can actually use.
 
 <a id="oral-creative"></a>
 ### （补充）Creative idea — Smart Factory（电子秤串口 → WebSocket → 网页自动填重）
 
-**提示（STAR）**：（S）网页端要录**材料克重**，工人原先**上秤 → 读数 → 手敲**，易错、慢、占手；（T）尽量少操作、保证准确；（A）确认秤可**串口输出**；在工人 **Windows** 电脑上跑**本地服务**：**串口监听** + 内嵌 **WebSocket server**，浏览器作 **WS client** 收重量，**填入光标所在输入框**；（R）免手敲、连续称重换料更顺。
+**Key idea:** 讲串口秤到 WebSocket 的减负思路。
 
 **Script（口语）**  
-On **Smart Factory**, workers used a **web** screen to record **fabric weight**. The old loop was **annoying**: put the roll on the **scale**, **read** the number, **type** it into the box — slow, easy to **mistype**, and it **ties up** **hands**.
+One small but creative improvement I worked on was in a **Smart Factory** system for recording fabric weight.
 
-I checked the **scale** — it could **push** weight over **serial**. On the **Windows** **PC** next to the scale, I shipped a **small** **local** **service**: **listen** to **COM**, normalize the reading, and run a tiny **WebSocket** **server**. The **browser** **page** opened a **WS** **client**, got **stable** **grams**, and **dropped** the value **into** **whatever** **field** had **focus**.
+Originally, operators had to place fabric on a scale, read the number manually, then type it into a web form. It sounds simple, but on a busy production line it created a **lot of friction** — slower workflow, typing mistakes, and operators constantly stopping what they were doing just to enter numbers.
 
-So the operator just **keeps** **weighing** and **swapping** **pieces** — **no** **re-keying**, **fewer** **errors**, **faster** **line**. Same **idea** I like elsewhere: **remove** **dumb** **friction** **between** **physical** **truth** and **software**.
+I checked the hardware and found the scale could output weight data through a **serial connection**.
+
+So on the Windows PC beside the scale, I built a **lightweight local service** that listened to the COM port, cleaned up the incoming data, and exposed it through a small **WebSocket server**. The browser page connected to it directly and automatically filled the current weight into the **active input field**.
+
+After that, operators could just keep weighing and moving materials without manually retyping values every time.
+
+The improvement itself was **technically small**, but it removed a lot of **repetitive friction** from the workflow and **reduced input errors** on the production line.
+
+I like that kind of engineering work — connecting **real-world operations** with software in a way that makes **daily work smoother** for users.
 
 ---
 
 <a id="section-part-b"></a>
-## B. 题型与 STAR
+## Part 2 — Story Bank & Question Index
+
+This section is the reusable story bank and question-family index. Use it to avoid rewriting the same story in multiple places.
+
+This section keeps the project-level stories and the question-family index, so the same example doesn't need to be rewritten in multiple places.
 
 <a id="section-1-topics"></a>
 ### B1. 高频分类题库（英文题干 + 中文提示）
@@ -486,16 +576,42 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 **Script（约 45–60s）**
 
-> On **enterprise IM**, we had a **real fork**: keep **fighting** our **own** **C++** **message** **servers**, or **move** **personal**, **group**, and **core** **chat** to **Easemob** (**Hyphenate** / **环信**). Staying **in-house** sounded **free**, but **reality** wasn't — **bugs** kept **coming** **back**, and we **never** **felt** **done**. **Switching** meant **vendor** **lock-in** **risk** and **integration** **work** — but it **bought** **stability** and **good** **SDK** **features** (**read** **receipts**, **resend**, **rich** **types**, **multi-platform** **clients**). We also kept **Jiguang** (**JPush**) as a **backup** **push** **lane** for **notification-style** **wake-ups**, **next to** Easemob, not **replacing** the **whole** **story**. Our **own** **team** **focused** **up** the **stack**: **permissions**, **files**, **user** **center**, **workflow** — **platform** **services** on **shared** **infra**. **Lesson**: **don't** **romanticize** **owning** **every** **layer** — **pay** for **maturity** where **commodity** **hurts** you.
+> One difficult technical decision we made was around the **messaging infrastructure** in an enterprise IM platform.
+>
+> Originally, we **maintained more of the low-level messaging stack ourselves**, including some C++ server-side components. Over time, the **operational cost became harder** to justify. **Stability issues kept reappearing**, **maintenance effort stayed high**, and too much engineering time was being spent **solving infrastructure problems** repeatedly instead of improving **product capabilities**.
+>
+> At that point, we had to decide whether to continue investing heavily in our own messaging infrastructure or **move core messaging capabilities onto Easemob**.
+>
+> Moving to Easemob wasn't a perfect decision either. It introduced **vendor dependency** and **integration overhead**, and **giving up direct control** over part of the stack was uncomfortable at first.
+>
+> But after evaluating the trade-offs, we decided the **operational stability** and **mature messaging capabilities** were worth it. We also kept **JPush** as a **secondary notification path** for wake-up and alert-style traffic.
+>
+> That decision also changed where our **engineering effort** went. Instead of continuously rebuilding messaging infrastructure, the team **focused more on higher-level platform capabilities** like **permissions**, **workflows**, **file systems**, and **integration services**.
+>
+> In the long run, the system became **more stable** and the engineering team could spend more time **building business value** instead of repeatedly fighting infrastructure reliability problems.
+>
+> That experience taught me that difficult engineering decisions are often less about "Can we build it ourselves?" and more about **where engineering effort creates the most value over time**.
 
 <a id="oral-b1-05-tradeoff"></a>
 **Describe a trade-off you had to make (speed vs quality, etc.).**
 
 **提示（STAR）**：（T）Android 全矩阵测试 vs 发版节奏；（A）主流守门 + 强信号真机；（R）可发布节奏 + 疑难工单收敛。
 
-**Script（约 45s）**
+**Script（约 45–60s）**
 
-> **Enterprise IM on Android** — **perfect** **device** **coverage** **vs** **ship** **date** **vs** **money** for **phones**. We **couldn't** **pre-test** **every** **ROM** **setting**. We **chose** **mainstream** **first** (**~Android 7/8** **floor** in our **lab**), **shipped** on **that** **bar**, then **spent** **extra** **only** when a **bug** **report** was **serious** — **buy** a **phone**, **sit** with the **user**, **remote** **session**. **Trade**: **schedule** and **test** **hours** **for** **depth** **on** **the** **exact** **repro** **path** **when** it **mattered** — not **pretending** **full** **matrix** **every** **release**.
+> One trade-off we had to make in an **enterprise Android messaging product** was balancing **release speed**, **test coverage**, and the **reality of device fragmentation**.
+>
+> In **theory**, the ideal approach would be **full testing coverage** across many Android versions, manufacturers, and ROM customizations. But in **practice**, that wasn't realistic from either a **time** or **hardware-cost** perspective.
+>
+> So instead of trying to test every possible device combination equally, we **focused first on strong coverage** for **mainstream Android versions** and the most **common production devices** in our test lab.
+>
+> For less common or harder-to-reproduce issues, we used a **more targeted approach**. If a bug report showed **strong signals** — for example repeated failures on a specific device or ROM — we would invest deeper: **buy the device** if needed, **work directly with the user**, or **reproduce the issue remotely** on the exact hardware path.
+>
+> The trade-off was accepting that we **couldn't guarantee perfect pre-release coverage everywhere**, while making sure our **release cadence and overall quality stayed practical and sustainable**.
+>
+> That approach helped us keep **shipping reliably** while still narrowing down difficult device-specific issues when they genuinely mattered.
+>
+> The experience taught me that engineering trade-offs are often about **focusing effort where risk and impact are highest** instead of pretending unlimited coverage is possible.
 
 <a id="oral-b1-06-influence"></a>
 #### B1-06 补稿：Influence without authority
@@ -519,249 +635,119 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 <a id="b2-01"></a>
 ### 1) Tell me about yourself.
 
-**张嘴念** → **[A ①](#oral-01)**（**30 秒 + 1 分钟**两档）。  
-**嘴里关键词**：Auckland；Android + Java backend + front if needed + full-stack；AUT + **First Class Honours** + applied AI **能跑**；~10y 产线；**PSW full-time**；想干 **AI / mobile / Java** 混合活。
+**核心画像**：Messy real-world systems → reliable delivery
+
+**Trigger**：Auckland / AUT First Class Honours / Android + backend + AI / Enterprise IM / Smart Factory / ChatClothes / production + operational reality / full-time rights
+
+**收尾**：practical AI + engineering delivery
 
 ---
 
 <a id="b2-02"></a>
 ### 2) Tell me about a complex technical problem you solved.
 
-**口语 →** [专页 ②](#oral-02)  
-**STAR — ChatClothes**：慢 + 离线；profile；LLM 路径瓶颈 → 本地；vision 收束分类；结果可演示 + honours。**Reflection：**先测再优化。  
-**STAR — `smart-factory`（创意/减负，可选）**：网页录克重原需读秤手敲；**Windows 本地服务**串口监听 + **WebSocket** 推浏览器，**光标处自动填重**；工人连续换料称重。**Reflection：**把物理读数直接接进 UI，砍掉无意义复制。口稿见 [oral-creative](#oral-creative)。  
-**STAR — `enterprise-messaging`（Android 碎片化，可选）**：类 C 端设备长尾；**小米/华为/OPPO** 等 ROM 差异；**大量问题仅在用户真实环境暴露**，测试无法前置穷尽所有小问题；在 **发版节奏 / 测试成本 / 测试机型投入** 间权衡；常规测主流版本（约 **Android 7/8** 为下限）；报障模拟器未必复现 → **反馈驱动真机**、必要时购机或贴近用户环境。**Reflection：**接受「实验室 ⊂ 真实长尾」，用主流守门 + 强信号下的真机补洞，而不是无限拉长测试或无限买机。  
-**STAR — `enterprise-messaging`（FastDFS 文件平台，可选）**：单机扛不住用户上传 + **聊天附件** + **合同/设计图**等业务文档；**私密性** → 不默认走**公有云文件服务**；**开源 FastDFS** 自建分布式存储；对接多子系统；**分片、冗余、备份、权限**一体化考虑。**Reflection：**文件是共享基础设施，选型要同时付「容量 + 可靠 + 安全」的运维账；与头像路径事后**迁云**可分层叙述（见 [oral-enterprise-files](#oral-enterprise-files)、facts `highlights`）。  
-*备选：Smart Factory 秤采集 — listener / watchdog / 重连 / 池化。*
+**核心冲突**：Android 后台保活 vs 系统杀进程；离线 + 轻量 vs AI 性能
+
+**关键动作**：分层方案（Easemob 主通道 + JPush 备用）+ 心跳调优 + 状态同步；本地 LLM + LoRA 优化；主流机守门 + 反馈驱动真机
+
+**职业人格**：reliability comes from layers, not one trick
 
 ---
 
 <a id="b2-03"></a>
 ### 3) Tell me about a time you had a conflict with a teammate.
 
-**口语 →** [专页 ③](#oral-03)  
-**STAR — Enterprise Messaging**：评审抵触 → 1:1；过往公开批评伤信任 → 私下具体反馈 + 短结对；review 恢复。**Reflection：**反馈 = 流程 + 语气。
+**核心冲突**：评审抵触 feeling personal
+
+**关键动作**：1:1 私聊 + 具体反馈 + 短结对
+
+**职业人格**：fix communication style, not just code
 
 ---
 
 <a id="b2-04"></a>
 ### 4) Tell me about a time you failed.
 
-**口语 →** [专页 ④](#oral-04)  
-**STAR — Herbal CV**：标注估 2w → 实 6w；赶工标签脏 → 首训差；认栽、改期、pilot 50–100 再估。**Reflection：**数据活先验证工作流。  
-**STAR — Release（可选）**：测试配置未切 prod → 连测试库/API → 数据异常 → 二次发版；小团队无专职测试 → 多环境配置 + 多人多轮验证 + 逐步自动化。**Reflection：**发版靠流程和检查清单，不靠记忆。  
-**STAR — Security（可选，`enterprise-messaging`）**：Windows 服务器存用户头像；上传权限/校验不足，头像目录被写入可执行文件致服务器中毒与数据不可用；备份恢复 + 重建部署；事后强化权限、部署防毒，并将文件迁移至云端与更严管控。**Reflection：**上传即攻击面，最小权限 + 类型校验 + 与执行环境隔离；备份与可重建流程是底线。
+**核心冲突**：test config shipped to prod
+
+**关键动作**：env separation + multi-person checks + release checklists
+
+**职业人格**：systemic fixes over blame
 
 ---
 
 <a id="b2-05"></a>
 ### 5) Tell me about a time you worked under pressure.
 
-**口语 →** [专页 ⑤](#oral-05)  
-**STAR — Smart Factory 发布窗**：关键路径；triage→fix→verify→watch；拉对人；短更新；上线未砸线。**Reflection：**先减不确定。  
-**STAR — `enterprise-messaging`（早期单人安卓，可选）**：企业即时通讯客户端；几周原型→上线→bug 洪峰；每日列单、优先级、日更包、测试收敛；产品侧对用户解释与排期、日更说明。**Reflection：**高压靠节奏 + 对外透明，不靠一个人硬扛话术。  
-**STAR — `banknote-paper-mill`（断网保密现场，可选）**：造币印纸厂类涉密环境禁止联网；仅离线笔记本进场分析/导出数据格式、内网测试；外场开发后再进场验证；**每次进出须申请，通常提前约一周才能进场**；**断网部署/升级依赖离线包与受控传递，步骤与验证更重**；现场调试窗口极短，**场外做足脚本/安装包/回滚与复现准备**；流程冗长、周期紧；易出现整日无可交付进展；客户与开发方双重焦虑。**Reflection：**排期要计入审批提前量 + 离线发布成本；进场分钟级宝贵，不能把「到现场再想」当常态。
+**核心冲突**：solo Android post-launch bug flood / air-gapped site access constraints
+
+**关键动作**：daily triage + ship daily + product communication / small goals per visit + realistic timelines
+
+**职业人格**：rhythm beats panic, preparation respects constraints
 
 ---
 
 <a id="b2-06"></a>
 ### 6) Tell me about a time you had to prioritize quickly.
 
-**口语 →** [专页 ⑥](#oral-06)  
-**STAR — Smart Factory（产线窗）**：产线 vs 里程碑 vs 维护；先产线影响 → 再里程碑；其余标日期透明。**Reflection：**可见顺序 > 全是 P0。可接 **high uptime** 口径若追问。  
-**STAR — Smart Factory（模糊需求，可选）**：无对标、下车间理解工人/工厂真实痛点；与团队对齐开发节奏与任务切分；快原型 → 反复确认 → 需求逐步精确；首版上线后可能仍需大版本调整；多轮大版本边加边减功能。**Reflection：**模糊需求时优先级由「验证假设」驱动，而非一开始的文档。  
-**STAR — 多项目组合（可选，`cross-project`）**：同时推进外部客户项目（如 `smart-factory`、`enterprise-messaging`）与自营产品线（如 `picture-book-locker` 图书馆借阅柜、互联网相关自营项目）；按**临近交付、未攻克难点、影响与承诺**排每日任务；进度与阻塞透明；需支援时**尽早跨组协调**。**Reflection：**组合压力=个人日程可见性+敢于升级要资源，而不是假装能并行无限深度工作。
+**核心冲突**：everything looks urgent / ambiguous requirements / multi-project overlap
+
+**关键动作**：impact × risk sorting / prototype validation / early escalation
+
+**职业人格**：visible order + honest asks when parallel streams need more hands
 
 ---
 
 <a id="b2-07"></a>
 ### 7) Tell me about a process improvement you drove.
 
-**口语 →** [专页 ⑦](#oral-07)  
-**STAR — `smart-factory`（DevOps）**：长期以手动复制/同步为主、易漏易错；引入 **Jenkins** 对接 **GitLab**，落地 **CI/CD**；**前期流水线/凭证/执行机等配置耗时**，先在**工厂项目试点**，验证稳定后**各项目统一迁移**到同一套发布流程；结合容器化 Spring、清单与短文档，多厂 rollout 更可预期。**Reflection：**一次性付清「标准化」成本，比长期维持多套手搓发布更省团队总时间。
+**核心冲突**：manual releases don't scale with multi-site rollout
+
+**关键动作**：Jenkins + GitLab CI/CD + pilot first + team-wide migration
+
+**职业人格**：less dependent on individual memory
 
 ---
 
 <a id="b2-08"></a>
 ### 8) Describe a time you received tough feedback.
 
-**口语 →** [专页 ⑧](#oral-08)  
-**STAR — Case A（经理）**：经理点架构未写清；ADR + onboarding；默认「写完再收工」。**Reflection：**文档 = 长期功能。  
-**STAR — Case B（多方需求，可选）**：`smart-factory` / `picture-book-locker`；用户要功能不懂实现；产品+技术定方案讲解困难 → **原型**对齐；多人意见不一反复改 → **过滤需求**、**客户方唯一拍板人**、不对多头负责；与产品/设计对齐计划与验收。**Reflection：**没有决策人的「众人需求」会变成无限返工。
+**核心冲突**：big decisions lived in my head / stakeholder chaos
+
+**关键动作**：lightweight ADR + onboarding notes / prototype + single decision owner
+
+**职业人格**：documentation = long-term feature / noise isn't a requirements doc
 
 ---
 
 <a id="b2-09"></a>
 ### 9) Tell me about a time you adapted to change.
 
-**口语 →** [专页 ⑨](#oral-09)  
-**STAR — ChatClothes（Case A）**：中程约束变；重测；LLM 本地化 + 控 scope；honours + 提前节奏。**Reflection：**研究也按工程习惯 instrument。  
-**STAR — `enterprise-messaging`（Case B，工作向）**：单机文件 → **FastDFS**；消息 **C++ 自建 → 环信 Easemob 云 + SDK**（单聊/群聊、已读/重发、多类型、多端）；**极光 JPush** = **通知推送备用**；IM **平台化** 子系统；团队扩大 → **飞书/文档/审批预算** + 自动化；个人 **开发 → 全栈 → 协调进度与资源**。**Reflection：**底层不稳就别硬扛——IM 用环信换确定性；到达再用 **JPush** 做通知兜底，别绑死单通道。
+**核心冲突**：constraints changed (offline / hardware) / operational cost too high
+
+**关键动作**：measure → re-evaluate design / stop rebuilding commodity infra
+
+**职业人格**：good systems are rarely static
 
 ---
 
 <a id="b2-10"></a>
 ### 10) Why should we hire you?
 
-**口语 →** [专页 ⑩](#oral-10)（**30 秒 + 约 1 分钟**两档；末行「精简一句版」可作收尾）  
-**STAR 备忘**：久经生产（Android / Java / 集成）；applied AI 能落地；Auckland + full-time；不挑栈、跟团队把事推上线。追问可补 **NDK / Spring / 论文** 等专名。
+**核心画像**：I stabilize messy real-world systems
 
----
+**Trigger**：10y production / Android + backend + AI / Enterprise IM + Smart Factory + ChatClothes / operational reality / full-time rights
 
-<a id="section-toolbox"></a>
-## D. 工具箱（模板 · 注意 · 练习法 · 句型）
-
-<a id="section-3-templates"></a>
-### D1. 面试回答速用模板
-
-### STAR 模板
-- **Situation:** 背景是什么，为什么重要
-- **Task:** 你负责达成什么目标
-- **Action:** 你做了哪 2-3 个关键动作
-- **Result:** 最终结果（尽量量化）+ 学到什么
-
-### 常用英文句式
-- The context was that ...
-- My responsibility was to ...
-- I took three actions: first ..., second ..., third ...
-- As a result, we ...
-- What I learned was ...
-
-### 30 / 60 / 120 秒分层模板（临场提速）
-- **30 秒版（电梯版）**：`背景一句 + 关键动作一句 + 结果一句`
-- **60 秒版（默认版）**：`Situation 1句 + Task 1句 + Action 2句 + Result/Reflection 1句`
-- **120 秒版（深挖版）**：在 60 秒版基础上补 `权衡/指标/追问点`（如 hardest part、specific role、next time）
-- **口语感**：允许一两句「跑题式」连接（*long story short*, *anyway*），避免排比三件套句句对称 —— 详见 [口语专页](#section-oral-only) 文首说明。
-
-### 面试前 10 分钟检查清单（Leo 专用）
-- 主故事是否覆盖 5 类：复杂技术、冲突、失败、压力、主动性
-- 每个故事是否有 1 个可核验指标（10+ factories / high uptime（关键流程）/ 5,000 DAU / sub-200ms / First Class Honours）
-- “Why this company” 是否替换了公司名、产品名、技术栈（避免模板味）
-- Q32 转职原因是否保持一致：**主因家庭**（**中国 → 新西兰**、新生活）→ **离开原公司**；**来纽后** `2026-02 MCIS` + **稳定全职** + **延续工程技能**（与 [Q32](#q-32) / [oral-b1-01-why-move](#oral-b1-01-why-move) 对齐）
-- 每题结尾是否有一句 Reflection（我学到什么 / 下次如何做）
-- 失败题是否说明「如何防止再犯」（例如 pilot、门禁、可观测性），而不只讲一次事故经过
-
----
-
-<a id="section-4-notes"></a>
-### D2. 使用注意事项（Leo 版）
-
-- 数字与项目名以 KB 为准：**10+ factories**、**high uptime**（smart-factory，关键流程；口语常提 99.9% 系 smart-power 数据准确率）、**5,000 DAU**、**sub-200ms**、**First Class Honours**、**February 2026** 毕业等；不要临场夸大。
-- 每个主题准备 **1 个主故事 + 1 个备选**（可与 [C 节 Q 速览表](#section-5-scripts) 对照）；Action 写清“你具体做了什么”，少用泛化的 *we*。
-- 语气：不甩锅，强调行动、衡量与复盘；开发者岗避免过度“管理团队”表述，用 **协调、接口契约、交付所有权** 更准确。
-- 远程 / 混合岗位：补充异步沟通习惯、文档化决策、时区友好更新（可与 Smart Factory 多现场 rollout 类比）。
-
----
-
-<a id="section-6-methods"></a>
-### D3. 练习与方法论（STAR(R)、故事库、Mock）
-> 资源来源：`resource.txt` 的链接
-> - `techinterviewhandbook.org/behavioral-interview/`：STAR(R)、关键故事组织、Big Three、Mock 等
-> - `seek.co.nz/...common-interview-questions-and-how-to-answer-them`：常见题回答结构与 avoid/can-do 要点
-
-<a id="d3-01"></a>
-### 1) 用 STAR(R)：在 Result 后加一句 Reflection
-- 你已经用了 STAR；再补一层 `Reflection`：一句“我学到了什么/下次会怎么做”，让面试官看到成长和可迁移的行为。
-
-<a id="d3-02"></a>
-### 2) 不要为每题单独背：先准备 3–5 个“关键故事库”
-- 从你的简历/项目里挑 3–5 个高影响、高复杂度、你参与度高的项目（例如：ChatClothes、Smart Factory、Enterprise Messaging、失败/复盘类项目）。
-- 为每个关键项目整理一份 STAR(R) 故事后，面试时只需要把它“映射”到问题上，而不是为每个问题重写一套叙事。
-- 重点看你在每个故事里的“可复用行为”（repeatable behaviors），而不是你做过的具体项目名称。
-
-<a id="d3-03"></a>
-### 3) Big Three：优先把这三类题准备到“自然输出”
-- `Tell me about yourself`：用 **Present → Recent → Past → Why here**；口头稿见 **[口语专页 ①](#oral-01)**，STAR 备忘见 **B2**；少堆数字和模型名，项目与指标留给追问。
-- `Favorite / most impactful project`：选一个“影响 + 你的深度参与 + 你做的关键动作”的项目。
-- `Resolved a conflict`：准备至少 1 个冲突故事，Action 要讲清楚你如何澄清、如何对齐、如何让协作继续推进。
-
-<a id="d3-04"></a>
-### 4) 日常练习策略：用“问题-追问”而不是“背题-复述”
-- 练习时每答完一题，主动补一句可能的追问，例如：
-  - `What was the hardest part?`
-  - `How did you measure success?`
-  - `What would you do differently next time?`
-  - `What was your specific role?`
-- 目标不是把追问也背出来，而是让你的故事天然支持它们。
-
-<a id="d3-05"></a>
-### 5) SEEK 的常见题“可用模板”（把结果变得更像真人回答）
-- Strength：选“3 个不同维度但与岗位相关”的优势，每个优势都要落到一个具体证据/经历。
-- Weakness：选“真实但不致命”的短板，并说清你正在如何改进；避免陈词滥调（例如“我太完美主义”）。
-- Motivation：动机要和岗位/团队价值对齐，用 1 个具体例子支撑。
-- Challenge / stress / prioritization：尽量讲清楚你怎么拆解问题、怎么沟通、怎么保护质量与进度。
-
-<a id="d3-06"></a>
-### 6) 模拟面试与“发现缺口”
-- 做一次 mock behavioral interview：让别人用追问逼你暴露“叙事不够清楚/指标不够明确/你的 Action 不够具体”等缺口。
-- 然后回到你的关键故事库，补 Action 的细节、补 Reflection、再练一轮。
-
----
-
-<a id="section-7-phrases"></a>
-### D4. IT 口语句型库（Behavioral 的 Action 部分）
-> 资料来源：`interview_qa/IT常见面试问题` + `interview_qa/IT行业英语_42课时_QA`
-
-<a id="d4-01"></a>
-### 1) 会议沟通 / 项目更新（Meeting & Project Status）
-- `Hey, I just received the meeting invitation. What about the agenda?`
-- `Let's quickly go through the project progress. Currently, this task is 80% complete, but we've hit a roadblock with the database migration.`
-- `I'm worried about the long-term maintainability cost of this technical solution.`
-- `Additionally, we need to evaluate potential performance bottlenecks this new solution might cause to the existing system.`
-- `This architecture may introduce new security risks, so we need to involve the security team in advance.`
-- `Let’s wrap up the discussion here. Now I’ll quickly demonstrate the core workflow of the new feature.`
-- `At the end of the meeting, I’ll quickly summarize and confirm the action items. For the next phase, X and I will be responsible for Y.`
-- `I’ll send out the meeting minutes after this session. Please pay attention to your follow-up items and deadlines.`
-
-<a id="d4-02"></a>
-### 2) 研发协作 / 调试与定位（Code Review & Debugging）
-- `I've got something to talk to you about the code you submitted. I reviewed it and left comments on code style and exception handling.`
-- `After debugging, I found that the NPE was just a symptom. The root cause is still under investigation.`
-- `Anyway, this bug is critical and should be fixed with priority, otherwise users cannot log in.`
-- `The logic here is quite complex. Are you free this afternoon? We could do some pair programming to figure it out.`
-- `To completely decouple these two core services, could we refactor by introducing a message queue?`
-- `If we adopt the refactoring plan, we’ll need to align with the SRE team to assess whether we should apply for more computing resources.`
-- `This solution also depends on a third-party service to provide a new API for pulling user profiles.`
-- `I’ll go analyze the relevant application logs to identify the main performance bottleneck.`
-
-<a id="d4-03"></a>
-### 3) 敏捷与交付管理（Agile / Delivery / Prioritization）
-- `At the last sprint planning meeting, we estimated this user story as 8 story points because it’s quite complex.`
-- `I finished the refactoring of the front-end components. Today I plan to write unit tests for it, and I’ll sync progress in tomorrow’s daily standup.`
-- `Considering the potential technical risks, we’d better reserve some buffer time in the schedule.`
-- `The product manager just raised a change request. We need to confirm whether this must be included in the next release.`
-- `We have two urgent tasks competing for backend resources right now. We need to hold a meeting to decide which one has higher priority.`
-- `Taking testing and deployment into account, the earliest we can deliver this feature is by next weekend.`
-- `Later we’ll have a sprint retrospective meeting to discuss resource conflicts and frequent change requests, and how we can improve.`
-
-<a id="d4-04"></a>
-### 4) 跨团队与管理层沟通（Cross-team / Reporting）
-- `Hello everyone, welcome to the kick-off meeting. Let’s start with a quick round of introductions.`
-- `I’ve already broken down the tasks. After this meeting, I’ll assign them to the offshore development team in India via Jira.`
-- `Given the time difference, we’ll schedule the daily stand-up during my evening, which is your morning.`
-- `When communicating with non-technical colleagues, we need to use plain language to explain why certain features are not feasible for now due to technical constraints.`
-- `When reporting to management, we should focus on the business value and expected return of this technical path.`
-
-<a id="d4-05"></a>
-### 5) 故障应急 / 生产支持（Incident Response）
-- `Emergency! Our primary database is down, causing a large-scale service outage. We need to activate the emergency plan immediately.`
-- `Our support engineers suggested that we immediately roll back the production environment to the last stable version.`
-- `I’ve created a P0 incident in the ticketing system, and I’ll keep updating the latest progress and relevant log files in real time.`
-- `Meanwhile, this data access issue needs to be communicated to the information security team immediately.`
-- `During deployment on the cloud platform, we encountered a configuration issue. We need to contact the cloud service provider’s technical support right away.`
-
-<a id="d4-06"></a>
-### 6) 如何把这些句型用到 Behavioral answers
-- 在 `Action` 里用它们把你的“执行行为”说清楚：你做了什么 + 你如何沟通对齐 + 你如何控制风险（roadblock / security risks / performance bottleneck / rollback plan / escalation）。
-- 在每题结尾加一句 `Reflection`：例如 `What I learned was that early alignment on risk and communication reduces late surprises.` 或 `I improved my estimation process by validating assumptions with a pilot first.`
-
----
+**收尾**：I enjoy working on difficult real-world problems and helping turn them into stable products people can actually use
 
 ---
 
 <a id="section-5-scripts"></a>
-## C. 逐题英文稿（Q1–Q45 · **口语版**）
-> 与 **[第一部分 · 规则](#section-doc-about)** 一致：**短句、常用词、STAR 心里过**；每题 **一行中文提示（关键词）** + **一版英文**；**Q29–Q45** 已附 **追问 + 短答要点**（**Q1–Q28** 可按同模板自补）。事实只来自 KB。
+## Part 3 — Technical Deep Dive Notes
+
+This section keeps the longer Q1–Q45 scripts and deeper notes. It is still answer material, but it is not the first thing you scan before the interview.
+
+> 与 **[第一部分 · 规则](#section-doc-about)** 一致：**短句、常用词、STAR 心里过**；每题尽量保持 **一行中文提示 + 一版英文主答**；**Q29–Q45** 已附 **追问 + 短答要点**。事实只来自 KB。
 
 ### 临场（极简）
 - 没听清 → **clarify**。一题 **~60–120s**：**Action** 多一句。不会 → 说**怎么查、第一步干啥**。
@@ -782,7 +768,7 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 | 3 | 挑战项目 | ChatClothes **或** Smart Factory 电子秤 |
 | 4, 22, 38 | 失败 / 延期 / 做不完 | **Q38 主答** **绘本智能柜**（同事离职接手 + **范围拆分** To-C 客户端 vs **柜体主机侧** + **早与主管沟通**）；**Q4/Q22** 仍可用 **中草药标注** → **pilot** |
 | 5, 27, 33 | 与上级或团队分歧 | Smart Factory 分期上线 + 数据 |
-| 6, 24, 42 | 难合作 / 冲突 | **Q42**：**Option A** Enterprise IM 评审冻结；**Option B** **Delphi vs 团队栈**（地磅/入口称重联动，**`field-weighing-access-control`**） |
+| 6, 24, 42 | 难合作 / 冲突 | **Q42**：**Option A** Enterprise IM 评审冻结；**Option B** **Delphi vs 团队栈**（地磅/入口称重联动，**口述待入库 facts**） |
 | 7 | Above and beyond | ChatClothes 文档与可复现交付 |
 | 8, 34, 36, 40 | 优先级 / 多解 | **Q40**：**紧急/影响用户与生产** 优先 → **非紧急** → **长线**；同日 **时间盒**（先救火再迭代）；**Q34/Q36** 见 Smart Factory / 影响×风险 |
 | 9 | 压力 | 里程碑 + 可控动作 + 恢复习惯 |
@@ -807,16 +793,28 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-01"></a>
 ### 1) What is your greatest strength?
-**提示（STAR）**：（A/R）产研桥接；（证据）**ChatClothes** **Pi 5** + **Ollama** + **LoRA** + **~four months** 系统交付 + 论文；**~十年**产线习惯。
-**Script（口语）**
-> I link **lab ideas** to **real apps**. Proof: **ChatClothes** — **LoRA**, **Ollama** local LLM, **Raspberry Pi 5**, **~four months** on the system build, then thesis — **submitted six months early**, **First Class Honours**.
-> **~Ten years** in real products — I care if it **runs**, not only demos.
+> My biggest strength is probably that I'm **comfortable working across messy real-world systems** and helping turn them into **reliable delivery**.
+>
+> Over the past **ten years**, I've worked across **Android**, **Java backend** systems, **integration work**, and **production support** — from **enterprise messaging** systems with real users to **Smart Factory** platforms involving **devices**, **workflows**, and **long rollout cycles**.
+>
+> I'm also very **evidence-driven** when solving problems. For example, during my **ChatClothes** thesis project, I **profiled the actual system bottlenecks** before changing the architecture. Once the measurements showed the original approach wouldn't meet **offline and hardware constraints**, I **adjusted the design** instead of forcing the old plan to work.
+>
+> So in a team, my strength is not only coding one feature. I can connect **business pressure**, **technical trade-offs**, and **production reality**, then help move the system toward something people can actually rely on.
 
 <a id="q-02"></a>
 ### 2) What is your greatest weakness?
-**提示（STAR）**：（真弱点）讲太细；（改）先 **大图** 再代码；（证据）**Smart Factory** 带人 + **ADR**。
+**提示（STAR）**：别说假弱点；用 **manager feedback → ADR / onboarding**，强调已经改变。
+
 **Script（口语）**
-> I sometimes go **too deep** when I explain — juniors need the **big picture** first. On **Smart Factory** I learned to **layer**: **what/why** first, code when they ask. **Short ADRs** help me stay at the right level. I'm **better** than I used to be.
+> One weakness I had earlier was that I sometimes kept too much technical context in my head.
+>
+> For small tasks, that was fine. But when a project became bigger, it made onboarding and maintenance harder because people had to ask me why a decision was made.
+>
+> A manager gave me that feedback, and I agreed with it. After that, I started writing lighter decision notes — not long documents, just enough to explain the reason, trade-off, and what to watch out for later.
+>
+> I also used short onboarding notes when a feature or module became important for the team.
+>
+> I'm still not trying to document everything, but now when a decision affects other people, I make sure the key reasoning is written down.
 
 <a id="q-03"></a>
 ### 3) Tell me about a challenging project and how you handled it.
@@ -844,9 +842,19 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-05"></a>
 ### 5) Tell me about a time you disagreed with your manager or a decision.
-**提示（STAR）**：**Smart Factory** 先加功能 vs 先上线；（A）影响表 + **分期** + **试点**；（R）采纳、上线稳。
-**Script（口语）**
-> **Smart Factory** — PM wanted **more features** before first launch; I wanted a **tight core** — factories **trust** stable software. I **mapped impact**, pushed **phased** rollout: **core**, **pilots**, **~sixty days**, then add from **real** feedback. They agreed; pilots **worked**. **Data**, not ego.
+> One time I had to **influence a decision without formal authority** was during an early **Smart Factory** rollout.
+>
+> Before the first release, the **product side wanted to include more functionality**, while from the **engineering and operational perspective** I felt the **rollout risk was becoming too high** because some workflows still hadn't been validated properly on the production floor.
+>
+> I wasn't the final decision maker, so instead of **arguing from opinion**, I focused on **making the trade-offs visible**.
+>
+> I broke the discussion down into **practical impact**: which features were **essential for stable rollout**, which items could **safely wait** for a later phase, and how a **smaller pilot release** could **reduce operational risk** while still giving the business **real feedback** within the first couple of months.
+>
+> Once the discussion became more **concrete and evidence-based**, alignment became much easier.
+>
+> The team agreed to **launch a smaller stable core first**, validate it with **real operators**, and then **expand functionality** based on **actual production feedback**.
+>
+> That experience taught me that **influencing without authority** is usually less about **pushing harder** and more about **reducing uncertainty** so people can make decisions with confidence.
 
 <a id="q-06"></a>
 ### 6) Tell me about a time you worked with a difficult person.
@@ -972,9 +980,19 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-24"></a>
 ### 24) Describe a time when there was a conflict within your team. How did you help resolve it? Did you do anything to prevent it in the future?
-**提示（STAR）**：同 **Q6**：**主** **Enterprise Messaging**（**[Q42](#q-42) Option A**）；**备选** **技术栈协作**（**Option B**）。**处理**：**私下** + **具体** + **预防**：反馈方式。
-**Script（口语）**
-> **Enterprise Messaging** — review felt **personal** to one person. **1:1**, **private** feedback, **pairing**. Later I kept feedback **specific** and **kind** — **review** as **help**, not **attack**.
+> One difficult stakeholder situation I dealt with happened during a **Smart Factory-style project** where many different stakeholders had opinions about the workflow, but **nobody had a complete picture** of the operational process.
+>
+> **Operators**, **managers**, and **product stakeholders** often wanted different things, and requirements kept changing because each group focused on a different part of the workflow.
+>
+> At first, too much time was spent in **abstract discussions**, and engineering risk started increasing because priorities and definitions of "done" were constantly shifting.
+>
+> What helped was moving discussions toward **working prototypes** instead of only meetings or documents. Once users could interact with real screens and workflows, feedback became much more practical and misunderstandings dropped quickly.
+>
+> We also aligned around a **single customer-side decision maker** who could prioritize requests and confirm final workflow direction instead of every conversation becoming a requirement change.
+>
+> That **reduced scope churn significantly** and made delivery much more stable.
+>
+> The experience taught me that difficult stakeholder situations are often caused more by **unclear ownership** and **unclear workflows** than by technical problems themselves.
 
 <a id="q-25"></a>
 ### 25) Describe a time when you went out of your comfort zone. Why did you do it? What lessons did you learn from the experience?
@@ -990,9 +1008,17 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-27"></a>
 ### 27) Tell me about a time you disagreed with a colleague. How did you handle the situation?
-**提示（STAR）**：同 **Q5** **Smart Factory** **分期**。
-**Script（口语）**
-> **Smart Factory** — I wanted **stable core** first; others wanted **more features** before launch. I used **data**, proposed **phased** rollout and **pilots**. Team agreed; **real** feedback guided the next steps.
+> When **stakeholder expectations conflicted**, I found the most important thing was creating **clarity around priorities** and **ownership** early.
+>
+> In some **Smart Factory** projects, **operators** wanted workflow convenience, **managers** focused on reporting and control, and **engineering teams** worried about delivery risk and maintainability. If every request was treated equally, the project quickly became **unstable**.
+>
+> What helped was **separating requests into clear categories** — **immediate operational needs**, **longer-term improvements**, and **lower-priority ideas** — instead of trying to **satisfy everything** at once.
+>
+> We also worked with the customer side to establish **one primary decision maker** who could make **final trade-off decisions** when priorities conflicted.
+>
+> That gave the engineering team a **much more stable delivery target** and reduced **constant scope changes** during implementation.
+>
+> I learned that conflicting expectations usually become manageable once **ownership** and **prioritization** are made explicit.
 
 <a id="q-28"></a>
 ### 28) How do you stay up-to-date with the latest technological advancements?
@@ -1003,10 +1029,27 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 <a id="q-29"></a>
 ### 29) Why are you interested in working at [company name]?
 **提示（STAR）**：**主练** **[Air New Zealand](#oral-b1-01-why-company)**（管理理念 + 真产品影响 + Smart Factory / smart-power / enterprise messaging 证据）；**投前**做 **[业务 + JD 对齐](#oral-b1-01-why-company-research)**。备选公司名 **Hotter** 见同锚点「备选」段（**请确认正式英文公司名**后替换）。其他雇主仍可用模板方括号。
-**Script（口语）** — **Air New Zealand**
-> I'm interested in **Air New Zealand** because it's **real** **customer-facing** **product** work at **scale** — **travelers** **feel** every **rough** **edge**, and **operations** **has** to be **boringly** **reliable**. I also want a **team** **culture** that **trusts** engineers — **clear** **ownership**, **less** **micromanagement**, **adult** **defaults**.
+**Script（口语）** — **Air New Zealand（30 秒版）**
+> I'm interested in **Air New Zealand** because it's a **product and operations environment** where software quality **really matters at scale**.
 >
-> I've already shipped that **kind** of **impact** in other domains: **Smart Factory** — we **helped** **plants** **run** **faster** with **less** **manual** **pain** on the **floor**; **smart-power** — **live** **energy** **data** and **sub-second** **alarms** so **people** **see** the **benefit**; **enterprise messaging** — **mobile** + **backend** at **thousands** of **DAU**. I want to **bring** the **same** **evidence-driven** **habits** to **Air** **New** **Zealand** — **quality** **software** **millions** of **people** **touch**.
+> **Travelers** directly feel the impact of **reliability**, **clarity**, and **responsiveness**, especially during **real travel situations**, so engineering work has **very visible user value**.
+>
+> That matches the kind of work I've already done — **enterprise messaging**, **Smart Factory** systems, and **real-time operational platforms** where **stability** and **user experience** matter in **production**, not just in demos.
+>
+> I'm also looking for a **professional engineering culture** with **strong ownership** and **long-term product thinking**, which is one reason this role stands out to me.
+
+**Script（口语）** — **Air New Zealand（60 秒版）**
+> I'm interested in **Air New Zealand** for two main reasons: **impact** and **engineering culture**.
+>
+> First, I like working on **products where users directly feel the quality** of the software. In an **airline environment**, **reliability**, **responsiveness**, and **clear user experience** really matter because they affect **real travel situations** and **operational flow at scale**.
+>
+> That connects well with the kind of work I've already done. I've spent years working on **enterprise messaging** systems, **Smart Factory** platforms, and **real-time operational systems** where software had to work **reliably in production** and support **real users under operational pressure**.
+>
+> Second, I'm looking for an **engineering environment** with **strong ownership**, **mature collaboration**, and **long-term thinking**. I enjoy working on **systems that evolve over time** instead of short-lived prototypes.
+>
+> I also think my background fits well with that kind of environment because I'm comfortable working across different layers — **client**, **backend**, **integration**, **deployment**, and **operational processes** — especially when systems become **complex** or **requirements change over time**.
+>
+> So for me, this role feels like a **good match** between the type of engineering work I enjoy and the kind of value **Air New Zealand** delivers at scale.
 **Script（口语）** — **备选 Hotter（公司全名请自换）**
 > Same **motivation** as **Air** **New** **Zealand** — **trust-based** **culture** plus **products** **users** **feel** — but at **[Hotter — fix name]** I'd **[one line: what they build — fill after you confirm the company]**. My **proof** stays the **same**: **Smart Factory**, **smart-power**, **Android**/**Java** **delivery** under **real** **constraints**.
 
@@ -1020,21 +1063,17 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-30"></a>
 ### 30) Assume you are given a task to design a system. How would you do it? How would you resolve ambiguity?
-**提示（STAR）**（已对齐你的表述）：**业务与流程优先** — 需求与 **端到端业务流程**（行业/公司/客户、**要解决什么**、**通过哪些实现路径** 可选方案与取舍）。**方案可视化与用户对齐** — **原型图 / 线框** 与 **用户确认流程与界面**，把不确定性在写死代码前消掉。**再转交付计划** — 拆成 **开发任务与接口**、**开发周期**、**成本与依赖**（人天、第三方、基础设施）。**资源与选型**：服务器/部署、第三方、数据库、通知、Web/App、分析可观测。**进入开发后**：列清 **项目里程碑**、标出 **关键关口 / 技术或业务难关**（依赖、集成、性能、合规等），排期里 **预留足够测试与回归** 窗口。**新 / 陌生领域**：不凭想象定稿，**快速原型 + 用户确认** 压不确定性（见 **A ⑥ Case B**）。**已熟悉领域**：可 **复用成熟模式与做法**，加快收敛、控成本。**断网/保密现场**：进场节拍、审批提前量、离线部署/升级（见 **A ⑤ Case C**）。**与 AI（一句）**：工具加速实现，竞争力仍在 **业务界定与可验证结果** — 口试用 **Smart Factory / smart-power / enterprise messaging** 举例更稳。
-
-**Script（口语）** — **展开版（约 75–95s）**
-
-> I start from the **business problem** and the **real workflow** — **who** the **customer** is, what **pain** we're removing, and **which solution paths** are realistic. **Implementation** is faster than before with **better tools**, but I still **design** from **process** first, not from **code** first.
+> One challenge I often faced in **Smart Factory** projects was dealing with **unclear requirements** at the beginning.
 >
-> Before we **lock** scope, I like **wireframes** or a **quick prototype** and **walk users through** **flows** and **UI** — that removes **guesswork** early. Then I translate what we agreed into **engineering** language — **components**, **interfaces**, **milestones**, **timeline**, and **cost** (**people**, **infra**, **third parties**).
+> **Operators** usually knew parts of the workflow were painful or inefficient, but they often **couldn't clearly describe** the ideal process in technical terms.
 >
-> In **build**, I keep **milestones** explicit and flag **risky gates** early — **integrations**, **performance**, **compliance**, **data** **ownership**. I **always** **buffer** for **testing** and **regression**; **shipping** without **time** for that is a **false** **economy**. For **new** **domains**, I rely on **fast** **prototypes** and **user** **sign-off**; in **areas** I **already** **know**, I'll **reuse** **proven** **patterns** so we **don't** **re-learn** the same **traps**.
+> So instead of relying only on **requirement documents** or **long meetings**, we spent time on the **production floor** observing how people actually worked and identifying where **friction** existed in the real workflow.
 >
-> I **size** **compute**, **databases**, **third-party** services, **notifications**, **web** vs **app**, and **observability** so we can **prove** impact. When it's still **fuzzy**, I **spike** **risky** branches and **validate** **on** the **floor** or with **real** **users** — **document** big calls, then **iterate** with **numbers**.
-
-**Script（极简 backup · ~30–35s）**
-
-> I **ask** until **goals** and **constraints** are clear — put **unknowns** on the table. **Wireframe** or **prototype** **flows** with **users** when it's **new**; **reuse** **patterns** when I **already** **know** the **domain**. Sketch **architecture** and **interfaces**, **spike** if two paths are fuzzy. **Milestones** with **time** for **test** and **regression**. **Document** big calls, **iterate** with **feedback** and **numbers**. When it's still **fuzzy**, I **go to the floor**, **prototype fast**, and **tighten** from **what they actually do**.
+> We then built **quick prototypes** and validated them directly with users. That worked much better because people **reacted more accurately** to something **concrete** than to **abstract discussions**.
+>
+> Over time, the product evolved through several **iterations** based on **real usage feedback**, with some features **expanded** and others **removed completely** after testing in production environments.
+>
+> That experience taught me that when requirements are unclear, **fast feedback loops** and **real workflow observation** are often more valuable than trying to **perfect the specification** upfront.
 
 **追问**
 - **Give a concrete example.** → **Smart Factory** 下车间 + 分期试点；或 **断网厂区** 见 **A ⑤ Case C**。
@@ -1064,17 +1103,27 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 ### 32) Why do you want to change your current company?
 **提示（STAR）**（与 `kb/profile.yaml` 一致，并含你的叙事）：**首要原因：家庭** — 从 **中国** **迁至** **新西兰**，希望 **重新开始生活**；因此 **离开原公司**（**地理与家庭决策**，**非** 绩效或关系问题）。**来纽后**：**AUT MCIS** **2026-02** **First Class**，**ChatClothes**；现居 **Auckland**，求 **稳定全职** 工程交付。**对前职**：**仍很认可** 原工作与技能；下一份希望 **同一套栈**（**Android / backend / 企业与工业场景 / applied AI**）。**PSWV**。**口试边界**：简短、事实导向；**不贬** 原居地或原雇主。
 
-**Script（口语）** — **展开版（约 55–70s）**
+**Script（口语）** — **推荐版（约 45–60s）**
 
-> **Honestly**, the **main** **reason** is **family**. My **family** and I **relocated** from **China** to **New Zealand** — we wanted a **fresh** **start** **here** and to **build** **life** in **Auckland**. That **move** naturally meant **leaving** my **previous** **company**; it was **life** **planning** first, **not** a **performance** **story** and **not** **drama** with people.
+> I'm looking for a new opportunity mainly because my **life direction** changed over the past few years.
 >
-> **Since** **arriving**, I **finished** my **Master's** (**MCIS**) at **Auckland University of Technology** in **Feb 2026**, **First Class Honours** — **ChatClothes** is my main **applied** **AI** piece.
+> I moved from **China** to **New Zealand** for **family** and **long-term lifestyle** reasons, which also meant **stepping away** from my **previous role** and **rebuilding my career locally**.
 >
-> I **really** **valued** my **past** **engineering** **work** — **Android**, **Java** **backends**, **enterprise** and **factory** **systems**. Now I'm **looking** for a **stable**, **full-time** **role** in **NZ** where I can **keep** **shipping** with the **same** **skills** — **Android** / **backend** / **applied** **AI** — with **clear** **full-time** **rights** (**PSWV**).
+> After arriving here, I completed my **Master of Computer and Information Sciences** at **AUT** with **First Class Honours**, focused on **applied AI** and **practical system deployment** through my **ChatClothes** project.
+>
+> Now that I've finished my degree, I'm looking to **move back into full-time engineering work** in **Auckland**.
+>
+> What I'm looking for next is actually quite consistent with my previous experience — **Android**, **backend systems**, **real-world product delivery**, and increasingly **AI-related engineering work**. I still value the experience I gained from my previous projects, especially **enterprise systems** and **Smart Factory** environments, and I'd like to continue building on that foundation here in New Zealand.
+>
+> I also have **full-time work rights**, so I'm ready to commit long-term to the right team and role.
 
-**Script（极简 backup · ~30–38s）**
+**Script（极简版 · ~20–30s）**
 
-> **Main** **reason** is **family** — we **moved** from **China** to **New Zealand** for a **new** **start**, so I **left** my **previous** **company** for **relocation**, **not** **performance**. I **finished** **MCIS** at **AUT** in **Feb 2026**, **First Class** — **ChatClothes**. I **liked** my **old** **engineering** **work** and want a **stable** **full-time** **job** **here** — **Android**, **backend**, **applied** **AI** — **PSWV**.
+> I moved from **China** to **New Zealand** for **family** and **long-term lifestyle** reasons, which meant **stepping away** from my **previous role** and **rebuilding my career locally**.
+>
+> Since then, I completed my **Master's at AUT** with **First Class Honours**, focused on **applied AI** and **practical systems**.
+>
+> Now I'm looking to **move back into full-time engineering work** in **Auckland**, ideally continuing the kind of work I've already spent years doing — **Android**, **backend systems**, **real-world delivery**, and **applied AI**.
 
 **追问**
 - **Why this role / why leave last employer?** → 主叙事：**学业阶段结束 + 留纽家庭**；**非** 与老板不和。
@@ -1082,7 +1131,7 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 - **Salary / start date?** → **诚实** + **flexible**；工作权利 **PSWV**。
 
 **短答英文**
-> **Relocation** for **family**, **finished** **MCIS** in **NZ**, now I'm **ready** for **full-time** **engineering** again — **not** a **performance** **exit**.
+> **Life direction changed** — relocated to NZ for family, finished Master's, now looking to **move back into full-time engineering** with the same stack I spent years building.
 
 <a id="q-33"></a>
 ### 33) Tell me about a time when you had a different opinion than the rest of the team. How did you handle it?
@@ -1316,7 +1365,7 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 <a id="q-42"></a>
 ### 42) Tell me about a time when you had a hard time working with someone in your team. How did you handle it?
-**提示（STAR）**：**二选一**。**Option A**（同 **Q6/Q24**）：**Enterprise Messaging** — 同事在 **review** 上退缩、参与度低 → **1:1** + **私下具体反馈** + **短结对**。**Option B**（与 `projects/field-weighing-access-control/facts.yaml` 对齐；口试 **勿编造** 客户/项目正式名称，可统称 **入口称重/地磅联动** 类交付）：团队里 **资深同事** 习惯用 **Delphi** 做**新项目**（车辆 **上秤称重 → 超重预警 → 联动抬杆/报警** 等现场逻辑）；你当时 **~5–6 年**经验，对方 **行业经验更长**但 **工具链偏旧**、更倾向 **老栈**；你认为 **.NET 等团队已在用的栈** 更利于 **封装复用、协作与工期压缩时他人能接手**。**分歧处理**：先 **1:1** 表达对其 **现场经验** 的尊重，再把讨论落到 **可维护性 / 知识传承 / 工期与接手面** 等**可验证风险**；**同时**承认 **新技术需要学习窗口**。**结果**：**工程/甲方侧决策**采纳 **Delphi 路线** — 你 **书面保留技术顾虑** 后仍 **专业配合交付**，并尽量补 **文档/边界说明** 降低后续维护成本。**Reflection**：**尊重人 ≠ 回避栈决策**；**负责人拍板**后 **执行到位**；长期仍应推动 **团队默认技术栈** 与 **学习节奏** 对齐。
+**提示（STAR）**：**二选一**。**Option A**（同 **Q6/Q24**）：**Enterprise Messaging** — 同事在 **review** 上退缩、参与度低 → **1:1** + **私下具体反馈** + **短结对**。**Option B**（**口述经历**，尚未写入 `projects/*/facts.yaml`；口试 **勿编造** 客户/项目正式名称，可统称 **入口称重/地磅联动** 类交付）：团队里 **资深同事** 习惯用 **Delphi** 做**新项目**（车辆 **上秤称重 → 超重预警 → 联动抬杆/报警** 等现场逻辑）；你当时 **~5–6 年**经验，对方 **行业经验更长**但 **工具链偏旧**、更倾向 **老栈**；你认为 **.NET 等团队已在用的栈** 更利于 **封装复用、协作与工期压缩时他人能接手**。**分歧处理**：先 **1:1** 表达对其 **现场经验** 的尊重，再把讨论落到 **可维护性 / 知识传承 / 工期与接手面** 等**可验证风险**；**同时**承认 **新技术需要学习窗口**。**结果**：**工程/甲方侧决策**采纳 **Delphi 路线** — 你 **书面保留技术顾虑** 后仍 **专业配合交付**，并尽量补 **文档/边界说明** 降低后续维护成本。**Reflection**：**尊重人 ≠ 回避栈决策**；**负责人拍板**后 **执行到位**；长期仍应推动 **团队默认技术栈** 与 **学习节奏** 对齐。
 
 **Script（口语）** — **Option A（约 25–35s）**
 
@@ -1415,25 +1464,25 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 
 **Script（口语）** — **Option A（约 60–80s）**
 
-> On **`smart-factory`**, I **helped** **mentor** people inside a **~six-person** **cross-functional** team over **years** — that's in my **facts** as **delivery** **leadership**, not **HR** **management**.
+> On **`smart-factory`**, I helped mentor people inside a **~six-person cross-functional team** over several years. I describe that as delivery leadership, not HR management.
 >
-> **Day-to-day** rhythm: **morning** **standup** — everyone says **today's** **plan** so dependencies surface early. **Later** **that** **day** I **glance** at the **task** **board** for **what** **landed** **vs** **what** **slid** — it's not **surveillance**, it's **visibility**. If someone is **blocked**, the **rule** is **ask** **early** — **don't** **wait** for **hero** **hours**.
+> Day to day, I used a simple rhythm: morning standup for today's plan, then a quick board check later to see what landed, what slipped, and who was blocked. It wasn't surveillance; it was visibility.
 >
-> For **juniors**, I **check** **in** **on** a **steady** **cadence**: **what** **they** **tried**, **where** **they're** **stuck**. I **share** **how** **I'd** **think** **about** it — **direction**, **trade-offs**, **a** **sketch** — **then** **they** **implement**. I'm **not** **trying** to **type** **their** **keyboard** **forever**.
+> For juniors, I check in on a steady cadence: what they tried, where they're stuck, and what decision they are unsure about. I share how I would think about it — direction, trade-offs, maybe a sketch — then they implement it themselves.
 >
-> I still **watch** **their** **commits** and **MRs** — **reviews** are **coaching**: **what** **worked**, **then** **specific** **fixes** and **why** it matters for the **next** **reader**.
+> I still review their commits and MRs. Review is coaching: first what worked, then specific fixes, and why those fixes matter for the next person reading the code.
 >
-> We also ran **regular** **internal** **tech** **talks** — **not** **theater**: **what** **tool** **we** **actually** **tried**, **what** **pain** it **solved**, **what** **it's** **good** **at**, **and** **where** it **breaks**. That **helps** **juniors** **hear** **the** **why** **before** **the** **first** **angry** **review**.
+> We also ran regular internal tech talks. The point was practical: what tool we actually tried, what problem it solved, what it was good at, and where it broke. That helped juniors understand the reason before they first met it in a review.
 >
-> Bigger picture: **30/60/90** milestones, **small** **vertical** slices, and **weekly integrated demos** so **progress** stays **real**, not **ticket** **theatre**.
+> Bigger picture: **30/60/90** milestones, small vertical slices, and weekly integrated demos, so progress stayed visible as working software.
 
 **Script（口语）** — **Option B（约 35–45s）**
 
-> Another **track** is **writing** **culture** — overlaps **[Q21](#q-21)** and **[Q13](#q-13)**.
+> Another track is writing culture — it overlaps with **[Q21](#q-21)** and **[Q13](#q-13)**.
 >
-> Juniors often **ship** **code** that **works**, but **docs** are **thin** — the **next** **hire** **pays** **tax**. I gave a **small** **template**, **paired** once on a **real** PR, and **kept** feedback **kind** **but** **specific**.
+> Juniors can often ship code that works, but the docs are thin, so the next person pays the cost. I gave a small template, paired once on a real PR, and kept feedback kind but specific.
 >
-> After **manager** feedback, I made **light** **ADRs** and a **short** **onboarding** page — **why**, not **novels**. **Ramp** got faster and **reviews** stopped **repeating** the **same** **lecture**. That's **mentoring** the **system**, not only **one** **person**.
+> After manager feedback, I also started writing light ADRs and short onboarding pages — enough to explain the why, not huge documents. Ramp-up became easier, and reviews stopped repeating the same explanations. That's mentoring the system, not only one person.
 
 **追问**
 - **Option A**：**Micromanagement?** → **目标清晰 + 切片小**；**只在风险面**（集成点、生产配置）加密；日常 **放手** + **review 守门**；**任务板**是 **对齐完成度** 不是 **盯人**。**Evening board = surveillance?** → **短扫一眼**状态与阻塞；**信任** + **早求助** 文化并存。**Tech talks 流于形式?** → **必须绑定真实采用或试点结论**；**短**（如 **15–25 分钟**）+ **Q&A**；**不讲未落地的 PPT 选型**。**How delegate under deadline?** → **先拆可并行**；Junior 做 **边界清晰** 子任务，你保留 **契约/集成**。**Burnout?** → **轮换任务类型** + **承认工厂现场噪音**；与 **Q9** 一致。
@@ -1441,13 +1490,46 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
 - **共用**：**Junior underperforming — when escalate?** → **先结对 + 书面期望**；**连续两轮 review 无改善**再与经理对齐。**How measure progress?** → **demo 可集成度** + **独立关单质量** + **review 往返次数下降**。**Remote onboarding?** → **录屏** + **时区重叠窗** + **异步文档**（与 **[Q43](#q-43)** checklist 一致）。**与 Q2「讲太细」?** → 对 Junior **先大图再代码**；对自己用 **ADR 分层**。
 
 **短答英文**
-> **Standup** **for** **plan**, **board** **for** **truth**, **reviews** **for** **coaching** — **I** **give** **direction**, **they** **ship** **the** **implementation**. **Short** **internal** **tech** **talks** **for** **shared** **context**. **Plus** **30/60/90** **milestones** **and** **light** **docs** **so** **ramp** **isn't** **mystery** **tickets**.
+> **Standup for plan, board for truth, reviews for coaching** — I give direction, they ship the implementation. Short internal tech talks build shared context. **30/60/90** milestones and light docs make ramp-up less mysterious.
 
 ---
 
+<a id="section-toolbox"></a>
+## Part 4 — Quick Review Sheet
+
+Use this section in the last few minutes before an interview. It is a memory trigger, not another long script.
+
+### 3-minute warm-up
+
+| 面试官想听 | 你先想 | 可用故事 |
+|---|---|---|
+| Who are you? | **10y production + AUT AI + Auckland full-time** | [① Tell me about yourself](#oral-01) |
+| Hard technical problem | **Android reliability is layered** | [② Enterprise IM](#oral-02) / [Q31](#q-31) |
+| Pressure / workload | **triage, communicate, shrink risk** | [⑤ Under pressure](#oral-05) / [Q38](#q-38) |
+| Conflict / disagreement | **respect people, argue trade-offs** | [③ Conflict](#oral-03) / [Q42](#q-42) |
+| Failure | **own it, fix it, change process** | [④ Failure](#oral-04) / [Q4](#q-04) |
+| Leadership / junior | **direction, review, visible progress** | [Q45](#q-45) |
+| Why company / why move | **family move + stable NZ engineering role** | [Q29](#q-29) / [Q32](#q-32) |
+
+### Oral guardrails
+
+- **Start short**: answer in **60–90s**, then invite depth: *"I can go deeper into the Android side if useful."*
+- **Use plain words**: messy system, real users, trade-off, release risk, fast recovery.
+- **Do not overclaim**: when a number is not in YAML, say the effect qualitatively or mark `MISSING_INFO`.
+- **One story, one lesson**: do not stack three projects unless the question asks for breadth.
+- **End with behavior**: what you now do differently, not only what happened.
+
+### Reusable closing lines
+
+- *What I learned is that reliability usually comes from layers, not one trick.*
+- *I try to make risk visible early, before it becomes a deadline surprise.*
+- *I don't see disagreement as a problem by itself; I try to move it toward evidence and constraints.*
+- *For production work, speed matters, but repeatable release habits matter just as much.*
+- *I enjoy turning unclear, messy problems into something users can actually rely on.*
+
 <a id="section-appendix"></a>
 <a id="section-personal-drafts"></a>
-## 附录 · 个人素材
+## Appendix · Personal Drafts
 
 ### 个人素材补全（草稿 · 与工程事实对齐）
 
@@ -1519,13 +1601,13 @@ So the operator just **keeps** **weighing** and **swapping** **pieces** — **no
   - Action: 紧急二次升级切换为正式环境配置；事后拆分多环境配置文件、加强发布前多人多轮验证；逐步引入更多自动化以减少人为漏操作（当时尚未完全自动化）。
   - Result: 问题通过二次发版收敛；团队发布纪律与检查机制加强（具体影响范围、时长待补：`MISSING_INFO`）。
   - Reflection: 发版不能依赖“记得改一处配置”；要靠环境隔离、清单与自动化兜底。此后对各类更新一律同等认真：**数据库**、**APP**、**网页**发布均按同一套纪律执行，不因“改动小”而省略验证。
-- 【2026-05-09 新增】`field-weighing-access-control` / **入口地磅称重联动**（车辆上秤 → 超重预警 → 抬杆/报警）— **Delphi vs 团队主流栈（如 .NET）**（可用于：**[Q42](#q-42) Option B**、Conflict、技术选型、难合作）→ 事实见 `projects/field-weighing-access-control/facts.yaml`（时间窗为估计，待与档案核对）
+- 【2026-05-09 新增】`MISSING_INFO(project_id)` / **入口地磅称重联动**（车辆上秤 → 超重预警 → 抬杆/报警）— **Delphi vs 团队主流栈（如 .NET）**（可用于：**[Q42](#q-42) Option B**、Conflict、技术选型、难合作）
   - Situation: 新项目现场逻辑复杂；团队里资深同事习惯用 **Delphi** 全栈交付；你更倾向团队已在用的栈（封装、协作面、工期紧时他人能接手）。工程/甲方侧最终采纳 Delphi。
   - Task: 不伤协作的前提下把分歧从「偏好」落到可讨论条款（可维护性、接手面、工期、学习窗口）。
   - Action: 1:1 先尊重对方现场经验；书面或评审中列风险与选项；决策后仍配合交付并补文档/接口说明。
-  - Result: 按组织决策用 Delphi 交付（客户名与精确年窗待补时可口述 `MISSING_INFO`，YAML 已给估计区间）。
+  - Result: 按组织决策用 Delphi 交付（具体客户、年份、量化待补：`MISSING_INFO`）。
   - Reflection: 软件栈会迭代，团队需要默认技术车道与学习节奏；个人不认同决策时仍可专业执行并把维护成本显性化。
-  - 合并状态：☑ 已建 `projects/field-weighing-access-control/facts.yaml` 并 `validate.py` · □ 已同步 Q42 英文稿细节（若有年窗修正）
+  - 合并状态：□ 已建 `projects/<id>/facts.yaml` 并 `validate.py` □ 已同步 Q42 英文稿细节
 - 【2026-05-09 新增】`smart-factory` / 下车间 + 无对标 + 模糊需求下的优先级（可用于：Prioritization / Ambiguity / Stakeholder / 产品迭代）
   - Situation: 智能工厂类项目缺乏可直接对标的产品；需深入车间了解工人与工厂侧诉求；用户侧往往只有模糊目标，需求高度不确定；团队需在强时间压力下快速出可用原型并持续调整。
   - Task: 在信息不完整的情况下，与团队商议制定可执行的开发周期与任务切分；通过迭代把「模糊要求」逐步变成可交付、可验证的范围。
