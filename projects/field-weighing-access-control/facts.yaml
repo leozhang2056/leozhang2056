@@ -1,0 +1,83 @@
+# Oral / behavioral narrative captured from Interview/behavioral_common_qa.md (Q42 Option B).
+# Timeline band is approximate within Chunxiao employment (2013–2024); narrow when customer record is confirmed.
+project_id: field-weighing-access-control
+name: Entrance Road Weighing & Access Interlock Integration
+name_cn: 入口地磅称重与道闸/报警联动
+type: Enterprise System
+category:
+- Industrial IoT
+- Field Integration
+- Windows Desktop / Services
+timeline:
+  start: '2015'
+  end: '2017'
+  duration_years: 2
+role: Developer (field software integration)
+role_cn: 开发工程师（现场软件集成）
+team_size: null
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+summary: >
+  Customer-site style delivery for vehicle weigh-in at an entrance scale: read stable weight from the scale,
+  raise overload warnings, and interlock with barrier / signal hardware. Strong dependency on a very senior
+  colleague’s deep on-site experience; they preferred delivering a new greenfield module in Delphi for speed
+  under their familiar toolchain. You raised maintainability and bus-factor risks—few teammates could quickly
+  review or debug Delphi under compressed schedules—and argued for a team-aligned .NET-oriented approach for
+  shared libraries and handover. The engineering / customer decision owner chose Delphi anyway; you still executed
+  professionally, documented interfaces and risks, and avoided passive resistance.
+
+summary_cn: >
+  入口称重类现场交付：车辆上秤读数、超重预警，并与抬杆/信号等硬件联动。团队内有资深同事现场经验强、倾向用 Delphi
+  做新项目以沿用熟悉工具链；你从可维护性、评审覆盖面与工期紧时的接手面（bus factor）出发，更倾向与团队主流栈（如 .NET）
+  对齐以便封装复用与他人协助。工程/甲方侧最终选定 Delphi；你在保留书面技术顾虑的前提下仍专业配合交付，并补充文档与边界说明。
+  时间窗为估计区间，待与客户/项目档案核对后收紧。
+highlights:
+  - >-
+    Field workflow integration: vehicle rolls onto a weigh scale, software reads weight, triggers overload alarms,
+    and coordinates barrier / signal interlocks with hardware—high coupling between serial/device semantics and on-site constraints
+  - >-
+    Technical disagreement (not personal): senior colleague preferred Delphi for a new module; you framed trade-offs as
+    maintainability, review coverage, and who can help under tight deadlines—advocated a team-default .NET-style stack where more engineers could read and extend the code
+  - >-
+    Decision owner selected Delphi; you accepted the call, shipped cleanly, and wrote down interfaces and operational risks so the next maintainer would not inherit only tribal knowledge
+  - >-
+    Reflection captured for interviews: respect on-site experience while still making stack risks explicit; when the org picks a lane you do not own, execution quality and written-down risk beat hallway debate
+highlights_cn:
+- 现场流程：车辆上秤称重、超重预警，并与道闸/报警等联动；软件与串口/设备语义及现场约束高度耦合
+- 技术分歧（对事不对人）：资深同事倾向 Delphi 新交付；你从可维护性、评审与接手面出发更倾向团队默认栈（如 .NET）；由决策责任人拍板
+- 决策采纳 Delphi 后仍专业执行，并书面化接口、风险与运维边界，降低后续维护的隐性成本
+- 面试复盘口径：尊重现场经验，同时把栈风险显性化；组织拍板后靠交付质量与文档而非消极对抗
+tech_stack:
+  languages:
+  - Delphi
+  - .NET
+  domain:
+  - Weigh-scale integration
+  - Barrier / access interlocks
+  - Overload detection workflows
+skills_demonstrated:
+  technical:
+  - Field integration and device-driven workflows
+  - Stack trade-off analysis (maintainability vs individual familiarity)
+  - Technical writing for handover under non-preferred stack decisions
+  soft:
+  - Conflict handling with senior specialists
+  - Stakeholder-visible risk articulation
+  - Professional execution after leadership decisions
+related_to_roles:
+- Software Engineer
+- Systems Integrator
+- Industrial IoT Engineer
+keywords:
+- Weighbridge
+- Vehicle weighing
+- Overload alarm
+- Barrier interlock
+- Delphi
+- .NET
+- Field delivery
+- Stack disagreement
+- Maintainability
+- Bus factor
+last_updated: '2026-05-13'

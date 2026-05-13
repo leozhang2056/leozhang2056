@@ -91,6 +91,13 @@ highlights:
   - Managed Android device long-tail and OEM ROM variance (e.g. Xiaomi, Huawei, OPPO): many edge issues surfaced only in real user environments, so exhaustive pre-release catch of every minor defect was infeasible; balanced release timing, test cost, and device-lab investment with mainstream-first QA (rough floor around Android 7–8 in lab; older devices generally out of matrix); user reports often required physical-device reproduction beyond emulator parity; issue-driven targeted testing and occasional hardware purchase or on-site/remote user-environment sessions instead of pretending full-matrix coverage before every ship
   - Replaced chronically unstable in-house C++ messaging servers (persistent defect churn) by migrating personal chat, group chat, and core message infrastructure to Easemob (Hyphenate / 环信) cloud services and multi-platform SDKs—gaining stability, richer built-ins (message types, read receipts, resend/retry), and clearer separation so platform subsystems (files, permissions, user center) sit on top instead of owning the whole low-level stack
   - Integrated Jiguang (JPush) as a backup/supplementary push channel for notification-style payloads and wake-up reliability, layered alongside Easemob-centric IM transport
+  - >-
+    Android stability (early phase): when mature third-party crash SDKs were not ubiquitous, implemented an in-house
+    crash capture path with automatic upload so incidents were diagnosable without relying on users to manually collect logs;
+    paired with image-loader and memory-boundary work to reduce large-bitmap OOM crashes in chat-heavy UI paths
+  - >-
+    User-education pattern for Android background limits: explain OEM/vendor policy differences vs mega-apps (e.g. whitelist
+    treatment), pair with practical guidance (battery whitelist, notification permissions, widget/priority boosts) and product-backed messaging on realistic expectations while improving post-kill resync paths
   - Matched engineering and collaboration practices to team growth and multi-project parallelism—e.g. Feishu (Lark) and collaborative documentation for PM, budgeting, and approvals, plus progressive automation—while broadening personal scope from focused development through full-stack ownership into coordination of schedule, staffing, and resource allocation
 
 highlights_cn:
@@ -111,6 +118,12 @@ highlights_cn:
 - 消息架构演进：早期消息服务端以 **C++** 自建为主，稳定性不足、缺陷持续暴露、维护成本高；后整体迁移至 **环信 Easemob** 云消息服务与 **多端 SDK**，个人消息、群消息与底层消息基础设施由其承载，稳定性与封装能力（群聊、多消息类型、已读等状态、重发/补发、多平台 SDK）显著提升，自研聚焦业务与中台及各子系统
 - Android 通知与到达：**环信** 主 IM 路径之外，集成 **极光（JPush）** 作为**推送备用通道**，侧重**通知类**下发与唤醒补充，与 IM 主链路分层、降低单通道风险
 - 团队扩大与多项目并行后，引入飞书及协作文档（如石墨等）、项目管理、预算与审批等流程，并辅以自动化改进研发与组织协作；个人从单一开发走向全栈交付，并承担进度协调、人员与资源分配等管理职责
+- >-
+  Android 稳定性（早期阶段）：在成熟第三方崩溃 SDK 尚未普及时，自研崩溃捕获与自动上报路径，减少对「用户手工捞日志」的依赖；
+  并结合图片加载与内存边界策略，降低聊天大图等场景下的 OOM 风险
+- >-
+  Android 后台与厂商策略的用户沟通口径：解释 OEM/大厂白名单等现实差异，配合可执行引导（电池白名单、通知权限、桌面 widget 等），
+  由产品侧同步合理预期，同时持续优化被杀后快速恢复与消息重同步
 tech_stack:
   languages:
   - Java
@@ -225,13 +238,14 @@ skills_demonstrated:
   - Platform architecture (shared messaging, file, identity services for subsystems)
   - Third-party IM integration (Easemob / Hyphenate SDKs and cloud services)
   - Push notification integration (Jiguang/JPush backup path for notices)
+  - Android crash capture and automated upload (early in-house path before mature third-party crash SDKs); image-loader hardening to reduce OOM on large chat images
+  - OEM policy communication for background limits vs mega-apps; user guidance on whitelists, permissions, and widget boosts paired with product messaging on realistic expectations
   soft:
   - Cross-functional Collaboration
   - Release Management
   - QA Coordination
   - Technical Documentation
   - Project scheduling and stakeholder coordination
-  - Resource allocation across parallel workstreams
 related_to_roles:
 - Android Developer
 - Backend Engineer
@@ -289,4 +303,4 @@ keywords:
 - Feishu
 - Lark
 - Organizational change
-last_updated: '2026-05-09'
+last_updated: '2026-05-13'

@@ -45,6 +45,20 @@ highlights:
     and read-scaling (primary plus read-replica style routing for heavy read paths) to buy time; scheduled root-cause
     slow-query and schema/index work after committed feature milestones, then planned repatriation back on-prem to reduce
     recurring hosting cost once optimizations landed
+  - >-
+    Team cadence layered on two-week sprints: daily standups for same-day plan alignment; end-of-day task-board review for
+    landed vs slipped work; encourage early asks when blocked instead of surprising the team at week-end
+  - >-
+    Engineering hygiene on top of GitLab/Jenkins CI/CD: CI/static-analysis gates for low-level defects; merge requests
+    through pair or cross-review before main; spot-check risky diffs on major releases; junior onboarding with concise
+    checklists and common style baselines (e.g. Alibaba Java Development Guide) under Spring/Spring Cloud convention-first practice
+  - >-
+    Mentoring within the ~6-person cross-functional team: qualitative 30/60/90 milestones, weekly integrated demos as the
+    visible progress bar, coaching-style code review (give direction, let juniors implement), periodic junior check-ins,
+    and MR/commit hygiene reviews—not ticket-count theater
+  - >-
+    Regular internal tech talks anchored to real pilots or shipped tools: what customer pain was solved, what the tool is
+    good at, and when not to use it; kept sessions short with Q&A so juniors heard the “why” before the first painful review thread
 
 highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构
@@ -60,6 +74,16 @@ highlights_cn:
   生产库随任务表等业务表快速增长（任务表日增量约十万级、约半年达百万级量级），大量界面查询关联该表导致门户查询变慢并影响现场使用。
   在“停功能做深度优化”与“不停则现场持续受影响、新功能亦承压”之间做权衡：阶段性将 MySQL 迁至云端托管并提升规格，辅以主库+只读副本等读写分流缓解查询压力；
   先保障在研功能交付，再在后续窗口做慢查询与结构/索引等根治；优化完成后再回迁本地以降低持续运营成本（云端阶段成本上升为可接受的交换）。
+- >-
+  在双周 Sprint 之外叠加日常节奏：晨间站会对齐当日计划；下班前扫任务板看完成与阻塞；鼓励卡住即早求助，避免周末才爆 surprise
+- >-
+  在 GitLab/Jenkins CI/CD 之上叠加工程习惯：CI/静态扫描门禁低级问题；MR 走结对或交叉评审再合 main；大版本对高风险 diff 做 spot-check；
+  新人 onboarding 用短 checklist + 常见规范基线（如《阿里巴巴 Java 开发手册》）+ Spring/Spring Cloud 约定优于配置
+- >-
+  约 6 人跨职能团队内的辅导：30/60/90 定性里程碑、周集成 demo 作为可见进度条、教练式 code review（给方向、由 junior 落实现）、
+  定时关注 junior 与 MR/提交质量，而非只看工单数
+- >-
+  定期内部技术分享：绑定真实试点或已落地工具，讲清解决的问题、优势与不该用的边界；短会 + Q&A，减少「只在 review 里第一次听说」的摩擦
 tech_stack:
   languages:
   - Java
@@ -84,9 +108,13 @@ tech_stack:
   devops:
   - Docker
   - Jenkins
+  - GitLab
   - Nginx
   - CentOS
   - Git
+  - CI static analysis gates (SonarQube-class tooling where adopted)
+  - GitHub (some delivery streams)
+  - Alibaba Cloud DevOps / Yunxiao (some delivery streams)
   iot:
   - RFID
   - Barcode Scanners
@@ -242,4 +270,9 @@ keywords:
 - Industrial Automation
 - WebSocket
 - Shop-floor UX
-last_updated: '2026-05-09'
+- Daily standup
+- Task board cadence
+- Internal tech talks
+- Mentoring
+- Code review culture
+last_updated: '2026-05-13'

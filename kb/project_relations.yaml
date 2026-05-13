@@ -72,6 +72,15 @@ relations:
       - "工厂设备 → 智能家居设备"
 
   - from: smart-factory
+    to: field-weighing-access-control
+    type: domain_extension
+    description: "同属春晓交付体系下的现场侧软件：工厂电子秤/串口与网页桥接经验，与入口地磅称重、道闸/报警联动类集成在沟通节奏、可维护性与设备语义上可互相类比"
+    shared_skills:
+      - Industrial field integration
+      - Serial-driven workflows
+      - Stack trade-off discussions under deadline pressure
+
+  - from: smart-factory
     to: picture-book-locker
     type: skill_progression
     description: "RFID/条码经验应用于智能柜产品"
