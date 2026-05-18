@@ -50,10 +50,16 @@ async def _render_with_playwright(html_content: str, output: Path) -> None:
 
             page = await browser.new_page()
             await asyncio.wait_for(
-                page.set_content(html_content, wait_until="domcontentloaded", timeout=20000),
-                timeout=22,
+                page.set_content(html_content, wait_until="load", timeout=25000),
+                timeout=27,
             )
-            # Keep a short stabilization wait only.
+            try:
+                await asyncio.wait_for(
+                    page.evaluate("() => document.fonts.ready"),
+                    timeout=8,
+                )
+            except asyncio.TimeoutError:
+                pass
             await page.wait_for_timeout(150)
             await asyncio.wait_for(
                 page.pdf(

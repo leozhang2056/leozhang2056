@@ -22,6 +22,48 @@ LAYOUT_MIN_SCORE = 82.0
 SUMMARY_MIN_KW_HITS = 2
 SKILLS_MIN_KW_HITS = 2
 
+TECH_TERM_REPEAT_WARN = 4
+TECH_TERM_REPEAT_PENALTY = 3.0
+FIRST_PERSON_SUMMARY_WARN = 3
+FIRST_PERSON_TOTAL_WARN = 10
+
+TECH_TERMS = (
+    "android",
+    "android sdk",
+    "aws",
+    "azure",
+    "c#",
+    ".net",
+    "docker",
+    "gitlab",
+    "java",
+    "javascript",
+    "jenkins",
+    "kotlin",
+    "kubernetes",
+    "linux",
+    "mysql",
+    "nginx",
+    "node.js",
+    "python",
+    "redis",
+    "spring boot",
+    "spring cloud",
+    "sql server",
+    "typescript",
+    "windows server",
+)
+
+TEMPLATE_TONE_PATTERNS = (
+    (r"\bproven track record\b", "Template phrase: proven track record"),
+    (r"\bresults[- ]driven\b", "Template phrase: results-driven"),
+    (r"\bstrong fit\b", "Template phrase: strong fit"),
+    (r"\bhighly motivated\b", "Template phrase: highly motivated"),
+    (r"\bpassionate about\b", "Template phrase: passionate about"),
+    (r"\baligns? with\b", "Template phrase: aligns with"),
+    (r"\bleverage (?:my|a|the)\b", "Template phrase: leverage"),
+)
+
 
 @dataclass
 class PostGenerationCheck:
@@ -55,11 +97,11 @@ def _build_recruiter_recommendations(
             f"[High] JD覆盖率仅 `{report.jd_coverage_pct:.1f}%`，建议在 Summary 与 Experience 前3条要点补齐缺失词："
             f" `{', '.join(report.jd_misses[:6])}`。"
         )
-    if report.summary_kw_hits < SUMMARY_MIN_KW_HITS:
+    if report.jd_total > 0 and report.summary_kw_hits < SUMMARY_MIN_KW_HITS:
         recs.append(
             f"[High] Summary 关键词命中 `{report.summary_kw_hits}` 偏低，建议首段增加岗位关键能力与业务场景证据。"
         )
-    if report.skills_kw_hits < SKILLS_MIN_KW_HITS:
+    if report.jd_total > 0 and report.skills_kw_hits < SKILLS_MIN_KW_HITS:
         recs.append(
             f"[Medium] Key Skills 命中 `{report.skills_kw_hits}` 偏低，建议补齐JD核心栈（如语言/框架/平台）。"
         )
@@ -118,6 +160,53 @@ def _bigram_repetition_score(words: List[str]) -> Tuple[float, List[str]]:
     return max(0.0, score), notes[:5]
 
 
+def _tech_term_repetition_score(text: str) -> Tuple[float, List[str]]:
+    """Penalize repeated stack names beyond normal Skills/Experience reuse."""
+    lowered = text.lower()
+    counts: List[Tuple[str, int]] = []
+    for term in TECH_TERMS:
+        pattern = r"(?<![a-z0-9+#.])" + re.escape(term) + r"(?![a-z0-9+#.])"
+        count = len(re.findall(pattern, lowered))
+        if count >= TECH_TERM_REPEAT_WARN:
+            counts.append((term, count))
+
+    if not counts:
+        return 100.0, []
+
+    counts.sort(key=lambda x: (-x[1], x[0]))
+    notes = [f'Repeated tech term "{term}" ×{count}' for term, count in counts[:5]]
+    penalty = sum((count - (TECH_TERM_REPEAT_WARN - 1)) * TECH_TERM_REPEAT_PENALTY for _, count in counts[:5])
+    return max(0.0, 100.0 - min(35.0, penalty)), notes
+
+
+def _tone_score(html: str, text: str) -> Tuple[float, List[str]]:
+    """Flag first-person or template-heavy CV copy; useful when summary becomes too conversational."""
+    notes: List[str] = []
+    score = 100.0
+    sections = extract_sections(html)
+    summary = sections.get("summary") or ""
+
+    summary_first_person = len(re.findall(r"\b(?:I|I'm|I've|I'll|my|me)\b", summary, flags=re.IGNORECASE))
+    total_first_person = len(re.findall(r"\b(?:I|I'm|I've|I'll|my|me)\b", text, flags=re.IGNORECASE))
+    if summary_first_person > FIRST_PERSON_SUMMARY_WARN:
+        score -= min(18.0, (summary_first_person - FIRST_PERSON_SUMMARY_WARN) * 4.0)
+        notes.append(f"First-person wording in Summary ×{summary_first_person}; consider a more CV-like noun phrase")
+    if total_first_person > FIRST_PERSON_TOTAL_WARN:
+        score -= min(12.0, (total_first_person - FIRST_PERSON_TOTAL_WARN) * 1.5)
+        notes.append(f"First-person wording across CV ×{total_first_person}; check if tone feels like interview script")
+
+    lowered = text.lower()
+    for pattern, label in TEMPLATE_TONE_PATTERNS:
+        count = len(re.findall(pattern, lowered, flags=re.IGNORECASE))
+        if count:
+            score -= min(8.0, count * 3.0)
+            notes.append(f"{label} ×{count}")
+        if len(notes) >= 5:
+            break
+
+    return max(0.0, score), notes[:5]
+
+
 def analyze_fluency(html: str) -> Tuple[float, List[str]]:
     text = extract_text_from_html(html)
     sentences = _sentence_split(text)
@@ -141,10 +230,14 @@ def analyze_fluency(html: str) -> Tuple[float, List[str]]:
 
     words = re.findall(r"[A-Za-z0-9+.#]+", text.lower())
     rep_score, rep_notes = _bigram_repetition_score(words)
-    score = score * 0.5 + rep_score * 0.5
+    tech_score, tech_notes = _tech_term_repetition_score(text)
+    tone_score, tone_notes = _tone_score(html, text)
+    score = score * 0.35 + rep_score * 0.25 + tech_score * 0.25 + tone_score * 0.15
     notes.extend(rep_notes)
+    notes.extend(tech_notes)
+    notes.extend(tone_notes)
 
-    return max(0.0, min(100.0, score)), notes[:8]
+    return max(0.0, min(100.0, score)), notes[:10]
 
 
 def analyze_layout(html: str) -> Tuple[float, List[str]]:
@@ -211,7 +304,7 @@ def evaluate_thresholds(
     checks: List[Tuple[str, bool, str]] = []
 
     fluency_ok = report.fluency_score >= FLUENCY_MIN_SCORE
-    checks.append(("Fluency score", fluency_ok, f"{report.fluency_score:.0f} >= {FLUENCY_MIN_SCORE:.0f}"))
+    checks.append(("Fluency score", fluency_ok, f"{report.fluency_score:.1f} >= {FLUENCY_MIN_SCORE:.0f}"))
 
     layout_ok = report.layout_score >= LAYOUT_MIN_SCORE
     checks.append(("Layout score", layout_ok, f"{report.layout_score:.0f} >= {LAYOUT_MIN_SCORE:.0f}"))

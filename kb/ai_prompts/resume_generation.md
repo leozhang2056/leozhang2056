@@ -213,7 +213,7 @@ Use these defaults unless the user explicitly overrides them.
 - **Edge / 边缘用语**: in resume-facing text, avoid `edge AI`, `edge deployment`, `边缘部署`, `边缘计算`, `端侧` unless the JD explicitly requires them; describe the same work with **on-device**, **Raspberry Pi**, **offline-capable**, **local / resource-constrained deployment**, **ARM-class hardware** as appropriate to the KB.
 - **Android role outputs**: omit explicit “Seeking … roles” summary endings; prefer factual stack + outcomes + neutral location (from KB). Priority projects: keep `chatclothes`, `smart-factory`; for Android targeting, prioritize `forest-patrol-inspection` when relevant.
 - **Interview Q&A ≠ resume KB**: `kb/interview_qa/*` may lag; never import dates or edge-centric phrasing from interview YAML if it conflicts with the resume payload—**payload wins**.
-- **NZ localization**: keep Auckland location + NZ full-time work rights visible near the top when present in KB.
+- **NZ localization**: location / work rights belong in **Header contact**, not in Summary (Summary = five-sentence highlights only; see `resume-generation-standards.mdc`).
 - **Tone target (HR + interviewer)**: practical, evidence-led, team-fit language; avoid generic motivational wording.
 - **Anti-robot wording**: avoid repeated bullet starters (especially repeated `Built` chains) and vary verbs naturally.
 - **No broken text**: prohibit truncated clauses, hanging commas, orphaned fragments, and ellipsis-style clipping in candidate-facing output.

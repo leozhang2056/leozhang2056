@@ -12,10 +12,15 @@ from typing import List, Dict, Any, Optional
 
 
 def _qa_dir(base: Path) -> Path:
-    # 优先使用仓库根目录的 interview_qa（常见面试题专用文件夹）
-    root_qa = base / "interview_qa"
-    if root_qa.exists():
-        return root_qa
+    # Prefer the actively maintained interview folder, while keeping old paths
+    # readable for existing commands and historical exports.
+    for candidate in (
+        base / "interview_qa",
+        base / "Interview",
+        base / "kb" / "interview_qa",
+    ):
+        if candidate.exists():
+            return candidate
     return base / "kb" / "interview_qa"
 
 

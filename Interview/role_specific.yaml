@@ -56,7 +56,7 @@ backend_questions:
       - project: smart-factory
         metrics:
           - "Scaled from 1 to 5+ factory sites"
-          - "99.9% uptime maintained"
+          - "High uptime maintained"
 
   - id: backend_security
     question: "How do you secure your backend APIs?"
@@ -68,6 +68,18 @@ backend_questions:
     evidence:
       - project: smart-factory
         highlight: "Multi-role portals (customer/factory/worker) with access control"
+
+  - id: backend_cloud_exposure
+    question: "What cloud or AWS experience do you have?"
+    answer_points:
+      - "AWS exposure from AUT Big Data Analytics coursework, including database and server management practice"
+      - "Production-adjacent cloud fundamentals from Dockerized services, CI/CD pipelines, Nginx, Linux server administration, and cloud-hosted MySQL migration"
+      - "Honest scope: AWS was coursework/lab practice, while production delivery experience is stronger in backend services, deployment automation, and operations"
+    evidence:
+      - project: smart-factory
+        highlight: "Dockerized Spring Boot services, Jenkins/GitLab CI/CD, cloud-hosted MySQL migration"
+      - project: profile
+        highlight: "AUT Big Data Analytics coursework included AWS-based database and server management practice"
 
   - id: backend_microservices_tradeoffs
     question: "When would you NOT use microservices?"
@@ -205,7 +217,7 @@ company_research_questions:
     company: "Foodstuffs"
     answer_points:
       - "Full-stack engineer with 10+ years in Android, Java backend, and distributed systems"
-      - "Recent AUT Master's in Computer and Information Sciences (graduating Feb 2026, First Class Honours)"
+      - "Completed AUT Master's in Computer and Information Sciences in Feb 2026 with First Class Honours"
       - "Strong track record in production systems: Smart Factory platform and Enterprise Messaging at scale"
       - "Now focused on backend/software roles in Auckland where reliability and business impact matter"
     evidence:
@@ -253,6 +265,7 @@ company_research_questions:
       - "Languages/frameworks: Java, Spring Boot, Spring Cloud; also Node.js for selected service components"
       - "Data: MySQL and Redis; API styles include REST and event-driven integration patterns"
       - "Delivery stack: Docker, Jenkins, Nginx, Git-based CI/CD workflows"
+      - "Cloud exposure: AWS database and server management practice from AUT Big Data Analytics coursework"
       - "Quality and operations: automated testing, logging/metrics/alerting, production troubleshooting discipline"
     evidence:
       - project: smart-factory

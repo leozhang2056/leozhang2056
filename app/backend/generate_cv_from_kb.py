@@ -117,13 +117,45 @@ DEFAULT_MAX_BULLETS = 3
 KB_VALIDATION_CACHE_FILE = ".kb_validation_cache.json"
 
 # 文本长度限制
-SUMMARY_MAX_CHARS_EN = 700
-SUMMARY_MAX_CHARS_ZH = 460
+SUMMARY_MAX_CHARS_EN = 780
+SUMMARY_MAX_CHARS_ZH = 520
+SUMMARY_REQUIRED_SENTENCES = 5
+SUMMARY_EDU_CLOSING_EN = (
+    "Master's in Computer and Information Sciences from AUT, First Class Honours."
+)
+SUMMARY_EDU_CLOSING_ZH = (
+    "奥克兰理工大学（AUT）计算机与信息科学硕士毕业，获一等荣誉学位。"
+)
 # 项目副标题（summary 首行）：硬截断会产生 PDF 文本层的半词（如 voltag. / subs.）
 OVERVIEW_MAX_CHARS = 245
 SUMMARY_TRUNCATE_POINT = 120
-SUMMARY_SAFE_TAIL_PHRASES_EN = (
-    "based in Auckland, New Zealand.",
+# Summary 禁止自动补全的低信号尾句（地点/签证/工作权利等见 Header，不进 Summary）
+SUMMARY_HIGHLIGHT_BOLD: Dict[str, Dict[str, List[str]]] = {
+    "en": {
+        "android": [
+            "10+ years",
+            "Android",
+            "Kotlin/Java",
+            "Android SDK",
+            "NDK",
+            "AI-assisted",
+        ],
+        "backend": ["10+ years", "Java", "Spring Boot", "microservice"],
+        "ai": ["10+ years", "LLM", "computer vision", "PyTorch"],
+        "fullstack": ["10+ years", "Android", "Spring Boot"],
+    },
+    "zh": {
+        "android": ["10 年以上", "Android", "Kotlin/Java", "Android SDK", "NDK", "AI 辅助"],
+        "backend": ["10 年以上", "Java", "Spring Boot", "微服务"],
+        "ai": ["10 年以上", "LLM", "计算机视觉", "PyTorch"],
+        "fullstack": ["10 年以上", "全栈", "Spring Boot"],
+    },
+}
+SUMMARY_HIGHLIGHT_BOLD_MAX = 6
+SUMMARY_JD_SENTENCE1_BOLD_MAX = 3
+# JD 明确要求时允许进入第 1 句并加粗的过程/方法词（须在 skills/KB 可支持）
+SUMMARY_JD_SENTENCE1_PROCESS_TERMS = frozenset(
+    {"agile", "scrum", "kanban", "ci/cd", "devops", "ci", "cd", "tdd", "bdd"}
 )
 
 # 字符串处理常量
@@ -469,20 +501,258 @@ def _remove_edge_terms(text: str) -> str:
 
 
 def _ensure_summary_tail_phrase(text: str, lang: str, role_type: str) -> str:
-    """确保英文 Android Summary 不因行宽折叠而丢失关键尾句。"""
+    """仅保证 Summary 以完整句结尾；不追加地点/签证等低信号尾句。"""
+    del role_type  # 保留签名供调用方兼容
     if not isinstance(text, str) or not text.strip():
         return text
-    if lang != "en" or role_type != "android":
-        return text
-    lowered = text.lower()
-    for phrase in SUMMARY_SAFE_TAIL_PHRASES_EN:
-        if phrase.lower() in lowered:
-            return text
-    # 仅在未包含这些尾句时补最短且稳定的一句，避免出现 "New Zeal." 这类截断观感。
     base = text.rstrip()
-    if base and not base.endswith(('.', '!', '?')):
+    if lang == "zh":
+        if base and not re.search(r"[。！？]$", base):
+            base += "。"
+    elif base and not re.search(r"[.!?]$", base):
         base += "."
-    return f"{base} Based in Auckland, New Zealand."
+    return base
+
+
+def _strip_summary_low_signal(text: str, lang: str) -> str:
+    """
+    删除 Summary 中无差异化竞争力的常见表述（地点、工作权利、泛 Agile/评审套话等）。
+    硬性约束见 .cursor/rules/resume-generation-standards.mdc § Summary rules。
+    """
+    if not text:
+        return text
+    patterns_en = [
+        r",?\s*and\s+open full-time work rights[^.]*",
+        r",?\s*with\s+open full-time work rights[^.]*",
+        r"\bopen full-time work rights\b[^.]*\.?",
+        r",?\s*and\s+based in Auckland[^.]*",
+        r"\bBased in Auckland, New Zealand\.?\s*",
+        r",?\s*in Auckland, New Zealand",
+        r",?\s*with open full-time work rights in Auckland, New Zealand\.?",
+    ]
+    patterns_zh = [
+        r"，?现居奥克兰[^。]*",
+        r"，?且具备全职工作权利[^。]*",
+        r"，?具备全职工作权利[^。]*",
+        r"现居奥克兰[^。]*全职工作权利[^。]*",
+    ]
+    s = text
+    for p in patterns_en if lang == "en" else patterns_zh:
+        s = re.sub(p, "", s, flags=re.IGNORECASE)
+    s = re.sub(r"\s{2,}", " ", s)
+    s = re.sub(r"\s+,", ",", s)
+    s = re.sub(r",\s*,", ", ", s)
+    s = re.sub(r"\s+\.", ".", s)
+    s = re.sub(r"\s+。", "。", s)
+    s = re.sub(r",\s*\band\b\s*(?:\.|$)", ".", s, flags=re.IGNORECASE)
+    s = re.sub(r"，\s*以及\s*。", "。", s)
+    return s.strip(" ,;")
+
+
+def _count_summary_bold_spans(text: str) -> int:
+    return len(re.findall(r"<strong>", text or "", flags=re.IGNORECASE))
+
+
+def _collect_skill_name_set(skills_data: Optional[Dict]) -> set:
+    names: set = set()
+    if not isinstance(skills_data, dict):
+        return names
+    for raw in skills_data.values():
+        for n in _extract_skill_names(raw, 999):
+            if n:
+                names.add(n.lower())
+    return names
+
+
+def _jd_term_kb_supported(term: str, skill_names: set) -> bool:
+    """JD 词须能在 KB skills（或常见别名）中找到支撑，避免注入未掌握技术。"""
+    t = str(term or "").strip()
+    if not t:
+        return False
+    tl = t.lower()
+    if tl in skill_names:
+        return True
+    if any(tl in sn or sn in tl for sn in skill_names):
+        return True
+    if tl in SUMMARY_JD_SENTENCE1_PROCESS_TERMS:
+        return any(
+            p in skill_names
+            for p in (
+                "agile",
+                "scrum",
+                "kanban",
+                "ci/cd",
+                "devops",
+                "jenkins",
+                "gitlab",
+            )
+        )
+    alias_groups = (
+        {"kotlin", "java", "kotlin/java", "android sdk", "android"},
+        {"spring boot", "spring", "mybatis", "rest", "api"},
+        {"python", "pytorch", "llm", "rag"},
+        {"vue", "vue.js", "react", "javascript", "typescript"},
+    )
+    for group in alias_groups:
+        if tl in group and any(g in skill_names for g in group):
+            return True
+    return False
+
+
+def _pick_jd_terms_for_sentence1(
+    normed_kws: List[str],
+    skill_names: set,
+    limit: int = 3,
+) -> List[str]:
+    """
+    为 Summary 第 1 句挑选 JD 匹配词（语言/框架/岗位明确要求的方法词）。
+    与 _pick_concrete_jd_terms_for_summary 不同：允许 Agile/Scrum 等当 JD 明确要求时入选。
+    """
+    if not normed_kws:
+        return []
+    priority_prefixes = (
+        "kotlin",
+        "java",
+        "android",
+        "swift",
+        "python",
+        "react",
+        "vue",
+        "spring",
+        "docker",
+        "kubernetes",
+        "aws",
+        "git",
+    )
+    scored: List[tuple] = []
+    for kw in normed_kws:
+        t = str(kw).strip()
+        if len(t) < MIN_TERM_LENGTH or not _jd_term_kb_supported(t, skill_names):
+            continue
+        tl = t.lower()
+        score = min(len(t), MAX_TERM_LENGTH)
+        if "/" in t or "-" in t:
+            score += 4
+        if any(tl.startswith(p) for p in priority_prefixes):
+            score += 10
+        if tl in SUMMARY_JD_SENTENCE1_PROCESS_TERMS:
+            score += 6
+        scored.append((score, t))
+    scored.sort(key=lambda x: (-x[0], x[1].lower()))
+    out: List[str] = []
+    seen: set = set()
+    for _, t in scored:
+        key = t.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(t)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _inject_jd_into_sentence1(sentence: str, terms: List[str], lang: str) -> str:
+    """将尚未出现在第 1 句的 JD 匹配词轻量写入第 1 句（不增加总句数）。"""
+    if not terms:
+        return sentence
+    s = sentence.strip()
+    missing = [t for t in terms if not re.search(re.escape(t), s, flags=re.IGNORECASE)]
+    if not missing:
+        return s
+    pick = missing[:3]
+    if lang == "zh":
+        joined = "、".join(pick)
+        s = s.rstrip("。！？") + f"，具备岗位要求相关的 {joined} 经验。"
+        return s
+    if len(pick) == 1:
+        clause = f", with strong {pick[0]} fit for this role"
+    elif len(pick) == 2:
+        clause = f", with {pick[0]} and {pick[1]} aligned to this role"
+    else:
+        clause = f", with {pick[0]}, {pick[1]}, and {pick[2]} aligned to this role"
+    s = s.rstrip(".!?") + clause + "."
+    return s
+
+
+def _apply_jd_sentence1_alignment(
+    text: str,
+    normed_kws: List[str],
+    skills_data: Optional[Dict],
+    lang: str,
+) -> str:
+    """
+    JD 匹配词优先落在第 1 句并加粗（硬性约束）。
+    见 .cursor/rules/resume-generation-standards.mdc § Summary rules — JD sentence-1 bold.
+    """
+    skill_names = _collect_skill_name_set(skills_data)
+    jd_terms = _pick_jd_terms_for_sentence1(normed_kws, skill_names, limit=SUMMARY_JD_SENTENCE1_BOLD_MAX)
+    if not jd_terms:
+        return text
+
+    parts = _split_summary_sentences(text, lang)
+    if not parts:
+        return text
+
+    parts[0] = _inject_jd_into_sentence1(parts[0], jd_terms, lang)
+    merged = _enforce_summary_five_sentences(" ".join(parts), lang)
+    parts = _split_summary_sentences(merged, lang)
+    if not parts:
+        return merged
+
+    s1 = parts[0]
+    for term in jd_terms:
+        if re.search(re.escape(term), s1, flags=re.IGNORECASE):
+            s1 = _bold_first_summary_term(s1, term)
+    parts[0] = s1
+    return " ".join(parts)
+
+
+def _apply_summary_highlight_bold(
+    text: str,
+    role_type: str,
+    lang: str,
+    max_bolds: Optional[int] = None,
+) -> str:
+    """仅对差异化亮点做有限次加粗，吸引审阅者视线。"""
+    budget = SUMMARY_HIGHLIGHT_BOLD_MAX if max_bolds is None else max(0, max_bolds)
+    terms = SUMMARY_HIGHLIGHT_BOLD.get(lang, {}).get(role_type) or []
+    if not terms:
+        terms = SUMMARY_HIGHLIGHT_BOLD.get(lang, {}).get("fullstack", [])
+    count = 0
+    for term in terms:
+        if count >= budget:
+            break
+        if not term or term.lower() not in text.lower():
+            continue
+        new_text = _bold_first_summary_term(text, term)
+        if new_text != text:
+            text = new_text
+            count += 1
+    return text
+
+
+def _bold_first_summary_term(s: str, term: str) -> str:
+    if not term:
+        return s
+    already = re.search(rf"<strong>\s*{re.escape(term)}\s*</strong>", s, flags=re.IGNORECASE)
+    if already:
+        return s
+    pattern = re.compile(
+        rf"(?<![A-Za-z0-9]){re.escape(term)}(?![A-Za-z0-9])",
+        re.IGNORECASE,
+    )
+    return pattern.sub(lambda m: f"<strong>{m.group()}</strong>", s, count=1)
+
+
+def _bold_summary_edu_honours(text: str, lang: str) -> str:
+    """第 5 句学历收口：First Class Honours / 一等荣誉 必须加粗（不受 ~6 处亮点预算限制）。"""
+    if lang == "zh":
+        for term in ("一等荣誉学位", "一等荣誉", "First Class Honours"):
+            if term in text or term.lower() in text.lower():
+                return _bold_first_summary_term(text, term)
+        return text
+    return _bold_first_summary_term(text, "First Class Honours")
 
 
 def generate_skills_section(
@@ -562,8 +832,113 @@ def generate_skills_section(
 
 
 # ---------------------------------------------------------------------------
-# Summary —— 完全从 KB 读取，不硬编码
+# Summary —— 五句结构（硬性约束，见 .cursor/rules/resume-generation-standards.mdc）
+# 1 身份+年限+主栈 | 2 专长领域 | 3 峰值证据 | 4 加分项 | 5 AUT+First Class Honours
 # ---------------------------------------------------------------------------
+
+def _split_summary_sentences(text: str, lang: str) -> List[str]:
+    """按句号切分 Summary；保留 KB variant 中的完整句。"""
+    cleaned = re.sub(r"\s+", " ", (text or "").strip())
+    if not cleaned:
+        return []
+    if lang == "zh":
+        parts = re.split(r"(?<=[。！？])\s*", cleaned)
+    else:
+        parts = re.split(r"(?<=[.!?])\s+", cleaned)
+    return [p.strip() for p in parts if p and p.strip()]
+
+
+def _is_edu_summary_sentence(sentence: str, lang: str) -> bool:
+    s = sentence or ""
+    if lang == "zh":
+        return bool(
+            re.search(r"(AUT|奥克兰理工|一等荣誉|计算机与信息科学|荣誉学位)", s)
+        )
+    return bool(
+        re.search(
+            r"\b(AUT|First Class Honours|Computer and Information Sciences|Master'?s in)\b",
+            s,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def _summary_edu_closing_sentence(lang: str) -> str:
+    return SUMMARY_EDU_CLOSING_ZH if lang == "zh" else SUMMARY_EDU_CLOSING_EN
+
+
+def _ensure_sentence_terminator(sentence: str, lang: str) -> str:
+    s = (sentence or "").strip()
+    if not s:
+        return s
+    if lang == "zh":
+        if not re.search(r"[。！？]$", s):
+            s += "。"
+    elif not re.search(r"[.!?]$", s):
+        s += "."
+    return s
+
+
+def _enforce_summary_five_sentences(text: str, lang: str) -> str:
+    """
+    强制五句结构：前四句来自 variant（身份/专长/证据/加分），第五句固定为 AUT+一等荣誉。
+    学历句始终置末；若 variant 将学历写在句首则抽出并重排。
+    """
+    closing = _summary_edu_closing_sentence(lang)
+    sentences = _split_summary_sentences(text, lang)
+    if not sentences:
+        return _ensure_sentence_terminator(closing, lang)
+
+    body: List[str] = []
+    for s in sentences:
+        if _is_edu_summary_sentence(s, lang):
+            continue
+        body.append(s)
+
+    while len(body) > 4:
+        # 去掉可能残留在句首的重复学历/过长 hook，保留后四句叙事
+        body.pop(0)
+
+    if len(body) < 4:
+        # variant 句数不足时不编造，仅保证第五句学历收口
+        ordered = body + [closing]
+        return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
+
+    ordered = body[:4] + [closing]
+    return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
+
+
+def _trim_summary_five_sentences(text: str, max_chars: int, lang: str) -> str:
+    """超预算时优先压缩第 4 句，再压缩第 3 句；保留第 1、2、5 句。"""
+    sentences = _split_summary_sentences(text, lang)
+    if len(sentences) != SUMMARY_REQUIRED_SENTENCES:
+        s = re.sub(r"\s+", " ", text).strip()
+        if len(s) <= max_chars:
+            return s
+        cut = _last_sentence_period_index(s, max_chars + 1)
+        if cut > SUMMARY_TRUNCATE_POINT:
+            return s[: cut + 1]
+        return s
+
+    def _joined(parts: List[str]) -> str:
+        return " ".join(parts)
+
+    guard = 0
+    while len(_joined(sentences)) > max_chars and guard < 6:
+        guard += 1
+        if len(sentences[3]) > 40:
+            cut = _last_sentence_period_index(sentences[3], max(60, len(sentences[3]) // 2))
+            if cut > 30:
+                sentences[3] = sentences[3][: cut + 1].strip()
+                continue
+        if len(sentences[2]) > 50:
+            cut = _last_sentence_period_index(sentences[2], max(80, len(sentences[2]) // 2))
+            if cut > 40:
+                sentences[2] = sentences[2][: cut + 1].strip()
+                continue
+        break
+    return _joined(sentences)
+
 
 def _pick_concrete_jd_terms_for_summary(normed_kws: List[str], limit: int = 4) -> List[str]:
     """
@@ -652,7 +1027,7 @@ def _build_summary_hook(role_type: str, lang: str, normed_kws: Optional[List[str
     生成 Summary 首句钩子：
     - 吸引阅读注意力
     - 保持事实安全（不新增具体数字）
-    - 可按 JD 术语轻量贴合
+    - 可按 JD 术语轻量贴合（英文口吻对齐 Interview/behavioral_common_qa.md：短句、自然连接）
     """
     kws = normed_kws or []
     concrete_terms = _pick_concrete_jd_terms_for_summary(kws, limit=2)
@@ -667,25 +1042,26 @@ def _build_summary_hook(role_type: str, lang: str, normed_kws: Optional[List[str
         hook = base_map.get(role_type, base_map["fullstack"])
         if concrete_terms:
             if len(concrete_terms) > 1:
-                hook = f"{hook} 与 JD 关注的 {concrete_terms[0]}、{concrete_terms[1]} 保持高契合。"
+                hook = f"{hook}近期工作也覆盖{concrete_terms[0]}、{concrete_terms[1]}。"
             else:
-                hook = f"{hook} 与 JD 关注的 {concrete_terms[0]} 保持高契合。"
+                hook = f"{hook}近期工作也覆盖{concrete_terms[0]}。"
         return hook
 
     base_map_en = {
-        "android": "I build reliable Android features from complex requirements and ship them safely to production.",
-        "backend": "I turn complex business requirements into reliable backend systems that scale and stay maintainable.",
-        "ai": "I turn AI ideas into runnable, evaluable production workflows with clear engineering trade-offs.",
-        "fullstack": "I turn ambiguous requirements into production-ready end-to-end systems teams can rely on.",
+        # Behavioral-doc style: short clauses, plain words, first person (CV Summary).
+        "android": "I ship Android features that stay stable in real production conditions.",
+        "backend": "I build and run backend systems that stay reliable as load and requirements grow.",
+        "ai": "I move AI work from experiments into code you can run, measure, and improve.",
+        "fullstack": "I turn fuzzy product asks into working software end to end.",
     }
     hook = base_map_en.get(role_type, base_map_en["fullstack"])
     if concrete_terms:
         a = concrete_terms[0]
         if len(concrete_terms) > 1:
             b = concrete_terms[1]
-            hook = f"{hook} Recent delivery aligns with {a} and {b}."
+            hook = f"{hook} Most of my recent work has been in {a} and {b}."
         else:
-            hook = f"{hook} Recent delivery aligns with {a}."
+            hook = f"{hook} Most of my recent work has been in {a}."
     return hook
 
 
@@ -696,8 +1072,10 @@ def generate_summary(
     jd_keywords: Optional[List[str]] = None,
 ) -> str:
     """
-    从 profile.yaml 的 summary_variants 读取，不硬编码任何文本。
-    如果对应 variant 不存在，降级到 default。
+    从 profile.yaml 的 summary_variants 读取，再强制五句结构（见 resume-generation-standards.mdc）。
+
+    句序：1 身份+年限+主栈 | 2 专长 | 3 证据 | 4 加分 | 5 AUT+First Class Honours。
+    英文语气参考 `Interview/behavioral_common_qa.md` Part 1；事实与数字只来自 KB，不在此函数编造。
     """
     career = profile.get('career_identity', {})
     variants_key = 'summary_variants_zh' if lang == 'zh' else 'summary_variants'
@@ -802,20 +1180,25 @@ def generate_summary(
     # 先提取 JD 关键词，供 Hook 与加粗共用
     normed_kws = _normalize_jd_keywords(jd_keywords)
 
-    # 在开头注入一条简短 hook，提升可读性和注意力抓取
-    hook = _build_summary_hook(role_type=role_type, lang=lang, normed_kws=normed_kws)
-    if hook:
-        text = f"{hook} {text}"
+    def _normalize_aut_label(s: str) -> str:
+        """Summary 学历只保留 AUT，不写 Auckland University of Technology 全称。"""
+        s = re.sub(
+            r"Auckland University of Technology\s*\(AUT\)",
+            "AUT",
+            s,
+            flags=re.IGNORECASE,
+        )
+        s = re.sub(
+            r"Auckland University of Technology",
+            "AUT",
+            s,
+            flags=re.IGNORECASE,
+        )
+        s = re.sub(r"\bAUT\s*\(AUT\)\b", "AUT", s, flags=re.IGNORECASE)
+        s = re.sub(r"\bfrom AUT with\b", "from AUT with", s, flags=re.IGNORECASE)
+        return re.sub(r"\s{2,}", " ", s).strip()
 
-    # 加粗关键词（角色相关的核心词）
-    bold_terms: Dict[str, List[str]] = {
-        'android': ['Android', 'Kotlin', 'Jetpack Compose', 'Coroutines', 'NDK'],
-        'ai':      ['AI', 'LLM', 'RAG', 'diffusion', 'computer vision'],
-        'backend': ['Spring Boot', 'Java', 'microservice', 'REST', 'API'],
-        'fullstack': [],
-    }
-    for term in bold_terms.get(role_type, []):
-        text = _bold_first(text, term)
+    text = _normalize_aut_label(text)
 
     # 开发岗弱化团队管理措辞（Summary 中尤其明显）
     def _strip_management_phrases(s: str) -> str:
@@ -895,56 +1278,39 @@ def generate_summary(
 
     text = _strip_grad_timeline(text)
     text = _cleanup_broken_clauses(text)
+    text = _enforce_summary_five_sentences(text, lang)
+    text = _strip_summary_low_signal(text, lang)
+    text = _cleanup_broken_clauses(text)
+    text = _enforce_summary_five_sentences(text, lang)
+    text = _normalize_aut_label(text)
 
-    # 按用户偏好：Summary 明确写 AUT 毕业 + 计算机专业 + First Class Honours（不写具体毕业时间）
-    # 添加变体避免重复
-    edu_variants_zh = [
-        "AUT（Auckland University of Technology）计算机与信息科学硕士毕业，获一等荣誉学位。",
-        "毕业于AUT（奥克兰理工大学），主修计算机与信息科学，获得一等荣誉学位。",
-        "在奥克兰理工大学完成计算机与信息科学硕士学位，取得一等荣誉。",
-    ]
-    edu_variants_en = [
-        "Graduated from Auckland University of Technology (AUT) with a Master's in Computer and Information Sciences and First Class Honours.",
-        "Earned a Master's degree in Computer and Information Sciences from AUT with First Class Honours.",
-        "Completed Master's studies at Auckland University of Technology, achieving First Class Honours in Computer and Information Sciences.",
-    ]
-    
-    if lang == "zh":
-        edu_lead = random.choice(edu_variants_zh)
-        has_aut = ("AUT" in text or "奥克兰理工大学" in text)
-        has_first_class = ("一等荣誉" in text or "First Class" in text)
-        if not has_aut:
-            text = f"{edu_lead} {text}"
-        elif not has_first_class:
-            text = f"{text} 获一等荣誉学位。"
-    else:
-        edu_lead = random.choice(edu_variants_en)
-        has_aut = ("Auckland University of Technology" in text or "AUT" in text)
-        has_first_class = ("First Class Honours" in text or "First Class" in text)
-        if not has_aut:
-            text = f"{edu_lead} {text}"
-        elif not has_first_class:
-            text = f"{text} Awarded First Class Honours."
+    # JD 匹配词：优先写入第 1 句并加粗（所有角色）
+    skills_data: Optional[Dict] = None
+    if normed_kws:
+        try:
+            kb_root = Path(__file__).resolve().parents[2] / "kb"
+            skills_path = kb_root / "skills.yaml"
+            if skills_path.is_file():
+                skills_data = load_yaml(str(skills_path))
+        except Exception as exc:
+            logger.debug("Could not load skills.yaml for JD summary alignment: %s", exc)
+        text = _apply_jd_sentence1_alignment(text, normed_kws, skills_data, lang)
+        text = _cleanup_broken_clauses(text)
+        text = _enforce_summary_five_sentences(text, lang)
 
-    # Summary 保持 5–6 行：重点放在 JD 匹配关键词，但不写成“Highlights”模块
     def _trim_summary(s: str, max_chars: int) -> str:
         s = re.sub(r"\s+", " ", s).strip()
         if len(s) <= max_chars:
             return s
+        if len(_split_summary_sentences(s, lang)) == SUMMARY_REQUIRED_SENTENCES:
+            return _trim_summary_five_sentences(s, max_chars, lang)
         cut = _last_sentence_period_index(s, max_chars + 1)
         if cut > SUMMARY_TRUNCATE_POINT:
             return s[: cut + 1]
-        # 预算内找不到完整句号时，不做硬截断，避免出现半句/半词。
         return s
 
-    # JD：少量加粗即可（过多 <strong> 像模板/AI 堆砌；关键词更应落在 Experience bullet）
-    if normed_kws:
-        jd_bold_limit = 2 if role_type == "android" else 5
-        for i, kw_norm in enumerate(normed_kws):
-            if i >= jd_bold_limit:
-                break
-            if re.search(re.escape(kw_norm), text, flags=re.IGNORECASE):
-                text = _bold_first(text, kw_norm)
+    remaining_bold = max(0, SUMMARY_HIGHLIGHT_BOLD_MAX - _count_summary_bold_spans(text))
+    text = _apply_summary_highlight_bold(text, role_type, lang, max_bolds=remaining_bold)
 
     # 固定成果句（非随机），提升稳定性并降低模板腔；
     # 对 fullstack / android 省略，避免与 profile 总结重复堆叠。
@@ -956,12 +1322,13 @@ def generate_summary(
     # 控制 Summary 长度（目标：5–6 行左右）；英文角色按版式需求适度放宽
     _sum_budget = SUMMARY_MAX_CHARS_ZH if lang == "zh" else SUMMARY_MAX_CHARS_EN
     if lang == "en" and role_type == "android":
-        _sum_budget = min(900, _sum_budget + 140)
+        _sum_budget = min(880, _sum_budget + 100)
     if lang == "en" and role_type == "fullstack":
         _sum_budget = min(980, _sum_budget + 240)
     text = _trim_summary(text, _sum_budget)
     text = _ensure_summary_tail_phrase(text, lang, role_type)
     text = _final_summary_sanity_fix(text)
+    text = _bold_summary_edu_honours(text, lang)
 
     return _remove_edge_terms(text)
 
@@ -2091,7 +2458,14 @@ def generate_interests_section(profile: Dict, lang: str = 'en') -> str:
 
 # ---------------------------------------------------------------------------
 # CSS
+# Hard constraint: CV typography is Inter only (see .cursor/rules/resume-generation-standards.mdc).
 # ---------------------------------------------------------------------------
+
+_CV_FONT_HEAD = """
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+"""
 
 _CSS = """
     @page {
@@ -2104,7 +2478,7 @@ _CSS = """
     }
 
     body {
-      font-family: 'Times New Roman', Cambria, Georgia, serif;
+      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 11.6pt;
       line-height: 1.34;
       color: #111;
@@ -2129,7 +2503,7 @@ _CSS = """
     }
 
     .cv-name {
-      font-family: 'Times New Roman', Georgia, serif;
+      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 21pt;
       font-weight: 600;
       color: #111;
@@ -2198,7 +2572,7 @@ _CSS = """
 
     /* ── Section title ───────────────────────────────── */
     .section-title {
-      font-family: 'Times New Roman', Georgia, serif;
+      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 13.2pt;
       font-weight: 600;
       color: #1a4d96;
@@ -2225,6 +2599,11 @@ _CSS = """
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
+    }
+
+    .cv-summary strong {
+      font-weight: 700;
+      color: #111;
     }
 
     /* ── Skills ──────────────────────────────────────── */
@@ -2668,6 +3047,7 @@ def generate_html_from_kb(
 <head>
   <meta charset="UTF-8">
   <title>{name} — {title_text} — CV</title>
+  {_CV_FONT_HEAD}
   <style>{_CSS}</style>
 </head>
 <body>

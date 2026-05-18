@@ -9,7 +9,7 @@ questions:
     answer_points:
       - "Ability to bridge research and engineering - can read papers AND ship production code"
       - "Evidence: ChatClothes thesis - took cutting-edge diffusion research to working edge deployment"
-      - "10 years of software engineering discipline applied to AI projects"
+      - "10+ years of software engineering discipline applied to AI projects"
     evidence:
       - project: chatclothes
         highlight: "Full-stack AI solution from research to edge deployment"
@@ -17,7 +17,7 @@ questions:
       - strength: "Resilience and self-learning"
         evidence: "Self-taught AI while working full-time, completed Master's with early submission"
       - strength: "System thinking"
-        evidence: "Smart Factory - designed microservices architecture supporting 5+ sites"
+        evidence: "Smart Factory - designed microservices architecture supporting multiple manufacturing sites"
     tips:
       - "Choose strength relevant to the role"
       - "Have specific evidence ready"
@@ -81,7 +81,7 @@ questions:
       - "Result: core features well-received, additional features added incrementally"
     evidence:
       - project: smart-factory
-        highlight: "Delivered scalable architecture, 30% efficiency improvement"
+        highlight: "Delivered scalable architecture and production efficiency improvements"
     star_method:
       Situation: "Launch deadline approaching, scope expanding"
       Task: "Deliver value to users while managing technical debt"
@@ -147,7 +147,7 @@ questions:
       - "Communication: transparent with stakeholders about reprioritization"
     evidence:
       - project: smart-factory
-        highlight: "Maintained 99.9% uptime while delivering new features"
+        highlight: "Maintained high uptime while delivering new features"
     prioritization_framework:
       - "Urgent + Important: Do first (production issues)"
       - "Important + Not Urgent: Schedule (feature development)"
@@ -237,7 +237,7 @@ questions:
       - "Smart Factory: 6-person cross-functional team (Android, backend, hardware)"
       - "Challenge: different priorities and timelines"
       - "Approach: shared backlog, sprint sync, clear ownership per module"
-      - "Result: delivered across 5+ factory sites, 99.9% uptime"
+      - "Result: delivered across multiple factory sites with high uptime"
     evidence:
       - project: smart-factory
         highlight: "Led cross-functional team, agile practices, on-time delivery"
@@ -245,7 +245,7 @@ questions:
       Situation: "Multi-site manufacturing platform with mixed skills"
       Task: "Deliver integrated system (mobile + backend + IoT)"
       Action: "Aligned on architecture, defined interfaces, regular demos"
-      Result: "Deployed to 5+ sites, maintained uptime"
+      Result: "Deployed to multiple sites, maintained high uptime"
     tips:
       - "Pick example with clear outcome"
       - "Mention your specific role, not just 'we'"
@@ -275,7 +275,7 @@ questions:
     answer_points:
       - "ChatClothes: had to go from traditional ML to diffusion models and LoRA in months"
       - "Approach: papers, official repos, small experiments, then full pipeline"
-      - "Leveraged: 10 years of software engineering to focus on pipeline and deployment"
+      - "Leveraged: 10+ years of software engineering to focus on pipeline and deployment"
       - "Result: working thesis with edge deployment in limited time"
     evidence:
       - project: chatclothes
@@ -313,7 +313,7 @@ questions:
       - "Example: long-running Smart Factory platform maintained stable releases and high uptime"
     evidence:
       - project: smart-factory
-        highlight: "Sustained delivery quality with 99.9% uptime"
+        highlight: "Sustained delivery quality with high uptime"
       - project: enterprise-messaging
         highlight: "High-concurrency releases coordinated with QA and backend teams"
     tips:

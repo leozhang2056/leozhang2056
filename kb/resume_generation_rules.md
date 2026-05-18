@@ -40,7 +40,15 @@ Default length:
 
 ### Summary
 
-- 5-6 lines preferred (concise but high-impact)
+- **Five-sentence structure (hard constraint)** — see `.cursor/rules/resume-generation-standards.mdc` § Summary rules:
+  1. identity + years + core stack
+  2. specialized problem domains
+  3. one proven flagship outcome (**Android: no numbers in Summary**; metrics in Experience bullets)
+  4. **Android:** AI-assisted programming tools **+** Android hard strengths (SDK/NDK/OEM, etc.); no Cursor/Copilot/Claude list in Summary (Key Skills only)
+  5. AUT Master's + First Class Honours (always last; no grad date in Summary)
+- **Highlights + bold:** only competitive differentiators in prose; bold max ~6 highlight terms per Summary (`SUMMARY_HIGHLIGHT_BOLD`). **JD provided:** KB-supported JD matches go in **sentence 1** and are **bolded** first (`_apply_jd_sentence1_alignment`, up to 3). No Auckland/work-rights in Summary.
+- Source text: `kb/profile.yaml` → `summary_variants` / `summary_variants_zh`; enforced in `generate_summary()`.
+- 5–6 printed lines preferred (concise but high-impact)
 - One paragraph
 - Focus on role fit, core strengths, and domain relevance
 - Include at least one concrete, evidence-backed achievement when possible (prefer quantified impact)
@@ -180,7 +188,8 @@ Role auto-selection guidance:
 ## 7. Notes
 
 - **Header contact (HTML/PDF):** single centered row — email, phone, map-pin icon + location (`Auckland,NZ`-style from `profile.yaml`), then LinkedIn and GitHub as icon + label links without visible URLs; implementation and CSS live in `app/backend/generate_cv_from_kb.py`.
-- Presentation style, colors, fonts, and layout belong to rendering templates, not to generation rules.
+- **CV font (hard constraint):** English/ZH resume PDFs use **Inter** via embedded CSS in `app/backend/generate_cv_from_kb.py` (`_CV_FONT_HEAD` + `font-family` on body/headings). Do not change typeface in generators without updating `.cursor/rules/resume-generation-standards.mdc`.
+- Other presentation (colors, spacing, page breaks) lives in the same embedded CSS, not in KB YAML.
 - Human-oriented historical guidance lives in `templates/resume_generation_guide.md`.
 - Output behavior preference:
   - Resume generation should save outputs in `outputs/YYYY-MM-DD/`.

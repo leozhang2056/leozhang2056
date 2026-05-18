@@ -13,20 +13,20 @@ questions:
     difficulty: easy
     answer_points:
       - "Full-stack software engineer with 10+ years of experience across Android, Java backend, and AI/ML"
-      - "Recently completed Master's in AI at AUT, graduating Oct 2025"
+      - "Completed MCIS at AUT in February 2026 with First Class Honours"
       - "Led 6-person teams and delivered enterprise systems serving 5K+ users"
-      - "Transitioning from traditional software engineering to AI engineering"
+      - "Looking for software engineering roles that combine full-stack delivery with applied AI where relevant"
     evidence:
       - project: chatclothes
         highlight: "Master's thesis submitted 6 months early"
       - project: smart-factory
-        highlight: "Led 6-person team, 99.9% uptime over 6 years"
+        highlight: "Led 6-person team and maintained high uptime over 6 years"
       - project: enterprise-messaging
         highlight: "5,000 DAU, <200ms latency"
     narrative_thread: full_stack_evolution
     tips:
-      - "Start with current status (Master's student)"
-      - "Highlight the 10-year progression from Android to Backend to AI"
+      - "Start with current status (Auckland-based engineer with completed MCIS)"
+      - "Highlight the 10+ year progression from Android to Backend to applied AI"
       - "End with what you're looking for next"
 
   - id: why_android_to_ai
@@ -37,7 +37,7 @@ questions:
       - "Natural progression: Android development increasingly involves AI (camera, voice, on-device ML)"
       - "Saw the trend: wanted to be at the forefront rather than just integrating others' AI"
       - "ChatClothes thesis project proved I could deliver full-stack AI systems"
-      - "10 years of software engineering gives me unique advantage in AI engineering"
+      - "10+ years of software engineering gives me a practical advantage in applied AI engineering"
     evidence:
       - project: chatclothes
         highlight: "Built complete AI pipeline independently, edge deployment on Raspberry Pi"
@@ -81,7 +81,7 @@ questions:
       - "Smart Factory: electronic scale serial communication intermittent failures"
       - "Root cause: Windows service losing serial port connection under heavy load"
       - "Solution: implemented watchdog with auto-reconnect, connection pooling"
-      - "Result: eliminated data loss, maintained 99.9% uptime"
+      - "Result: reduced data loss risk and maintained high uptime"
     evidence:
       - project: smart-factory
         highlight: "Weighing Data Bridge via Windows Service with monitoring and reconnect"
@@ -89,7 +89,7 @@ questions:
       Situation: "Production system losing weight data from shop-floor scales"
       Task: "Ensure reliable data acquisition for production tracking"
       Action: "Built Windows service with persistent listener, auto-reconnect logic"
-      Result: "99.9% uptime maintained, zero data loss after fix"
+      Result: "High uptime maintained and data loss risk reduced after the fix"
     tips:
       - "Choose production issue with business impact"
       - "Show systematic debugging approach"
@@ -213,7 +213,7 @@ questions:
       - "Short-term (1-2 years): Join a company doing meaningful AI/ML work, deepen production ML experience"
       - "Mid-term (3-5 years): Lead AI engineering team, architect end-to-end ML systems"
       - "Long-term: Bridge research and engineering, bring cutting-edge AI to practical applications"
-      - "Leverage unique combination: 10 years engineering + formal AI education"
+      - "Leverage unique combination: 10+ years engineering + formal AI education"
     evidence:
       - project: chatclothes
         highlight: "Research to deployment full-stack experience"

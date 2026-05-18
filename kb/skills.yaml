@@ -426,6 +426,12 @@ devops:
     level: beginner
     evidence:
       - Basic cloud setup
+
+  - name: AWS
+    level: beginner
+    evidence:
+      - AUT Big Data Analytics coursework
+      - AWS-based database and server management practice
     
   - name: GitHub Actions
     level: intermediate

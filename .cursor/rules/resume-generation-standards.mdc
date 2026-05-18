@@ -30,6 +30,11 @@ Apply these when generating or adjusting CVs in this project.
 - **Chunxiao sub-projects:** Keep internal sort by timeline **end date descending** (newer phases first inside the employer group); do not reverse that for “narrative” unless the user asks.
 
 ## PDF / print layout
+- **Typography (hard constraint):** All CV PDFs use **Inter** only. Do **not** switch to Times New Roman, Aptos, Georgia, or other typefaces unless the user explicitly requests a one-off change **and** this rule is updated in the same session.
+  - Load via `_CV_FONT_HEAD` (Google Fonts) in `generate_html_from_kb()` `<head>`.
+  - Apply `font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif` on `body`, `.cv-name`, and `.section-title` in `app/backend/generate_cv_from_kb.py` embedded `_CSS`.
+  - PDF render must wait for webfonts: `document.fonts.ready` in `app/backend/generate_cv_html_to_pdf.py` (do not remove when tuning PDF timing).
+- **Hard limit:** CV must be **2 pages or fewer**. Do not generate or ship PDFs beyond 2 pages.
 - **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
 - **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
 - Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
@@ -66,8 +71,22 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
 - **Chunxiao employer header dates**: year-only range via `_work_entry_date_label` (e.g. `2013 – 2024`), not `Mon YYYY`.
 
 ## Summary rules
+- **Five-sentence structure (hard constraint):** Every EN/ZH Summary must be **exactly five sentences** (one paragraph). `generate_summary()` enforces order via `summary_variants` in `kb/profile.yaml` + `_enforce_summary_five_sentences()` in `generate_cv_from_kb.py`.
+  1. **Identity + tenure + core stack** aligned to role/JD (no flagship metrics). When a **JD is provided**, KB-supported JD terms (languages, frameworks, explicit methods like Agile/Scrum if in JD) must appear in **sentence 1** when missing, and be **bolded** there (`_apply_jd_sentence1_alignment()` — up to ~3 terms).
+  2. **Specialized in** 2–3 problem domains (capabilities, not tool dumps).
+  3. **Proven delivery** — one flagship **outcome narrative** (scenario + role), **no numeric metrics** in Summary for **Android** (`--role android`); quantified impact stays in Experience bullets. Other roles may use KB-backed metrics when concise.
+  4. **Additional expertise** — for **Android**, structure as **AI-assisted programming tools** **+** **Android hard strengths** (e.g. Kotlin/Java, Android SDK, NDK, OEM fragmentation) in one sentence; no Cursor/Copilot/Claude enumeration (full list in **Key Skills** only). JD terms may fold into sentence 1 when provided.
+  5. **Education close** — `Master's in Computer and Information Sciences from AUT, First Class Honours.` (ZH: AUT 硕士 + 一等荣誉). **`First Class Honours` / `一等荣誉` must be bold** (`_bold_summary_edu_honours()`). **No graduation month/year** in Summary; full school name stays in Education section.
+  - Do **not** prepend a sixth hook sentence; do **not** place AUT/honours in sentence 1.
+- **Highlights only (hard constraint):** Summary is for **competitive differentiators**, not baseline facts every candidate shares. **Do not** put in Summary:
+  - Location / city (`Auckland`, `based in …`)
+  - Work rights / visa (`open full-time work rights`, etc.) — use Header/contact if needed elsewhere, not Summary
+  - Generic filler every JD asks for (`Agile`, `code review`, `team player`, `communication skills`) unless tied to a **specific, evidenced** outcome in the same sentence
+  - `generate_summary()` runs `_strip_summary_low_signal()` to remove these if they appear in variants.
+- **JD sentence-1 bold (hard constraint):** If JD keywords are supplied and **KB-supported** (skills.yaml / aliases), matching terms (e.g. `Kotlin`, `Java`, `Android`, `Agile` when JD asks) are woven into **sentence 1** if absent, then **bolded** in that sentence first (max ~3). This is for recruiter skim/ATS alignment — not a sixth sentence.
+- **Strategic bold (hard constraint):** After JD sentence-1 bold, bold remaining differentiators via `SUMMARY_HIGHLIGHT_BOLD` + `_apply_summary_highlight_bold()` — **max ~6** bold spans total per Summary. Do **not** bold location, work rights, or unrelated filler. Location stays in Header contact row.
 - Summary should be ATS-friendly and match JD requirements.
-- Keep Summary around 4-5 lines (not too short), with complete final sentence.
+- Keep Summary around **5–6 printed lines** (five sentences), with complete final sentence.
 - Integrate highlights naturally into Summary text; do not add explicit "Highlights:" label.
 - Remove edge-related wording (e.g., edge AI, edge deployment, 边缘部署/边缘计算/端侧).
 - Emphasize fast execution/iteration and strong self-management for developer roles.

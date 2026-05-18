@@ -60,14 +60,15 @@ pytest
 
 ## Integrations and Cross-Component Behavior
 - JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.
-- PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic.
+- PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic. **CV font is Inter only** (Google Fonts in HTML head + `document.fonts.ready` before PDF); see `.cursor/rules/resume-generation-standards.mdc` § PDF / print layout.
+- **Summary is always five sentences**; highlights only; **JD keywords** (if provided) woven into **sentence 1** and bolded when KB-supported; then strategic bold on differentiators (~6 total). See rules file § Summary rules.
 - Iterative AI patch loop: `python generate.py cv-iterate ...` in `app/backend/cv_auto_review_iterate.py`:
   - extracts PDF text via `pypdf`
   - calls OpenAI-compatible `/chat/completions` (`OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, `OPENAI_MODEL`)
   - backs up touched YAML to `outputs/<date>/kb_backup_auto_*` before patching.
   - prints a KB change summary and file-level rollback copy hints after patching.
-- Interview QA loader prefers `interview_qa/` at repo root, then falls back to `kb/interview_qa/` (`app/backend/interview_qa_cli.py`).
-- Behavioral interview **full script** (STAR, Q1–Q45, appendix): `Interview/behavioral_common_qa.md` (see `interview_qa/README.md` for navigation).
+- Interview QA loader prefers `interview_qa/` at repo root, then `Interview/`, then falls back to `kb/interview_qa/` (`app/backend/interview_qa_cli.py`).
+- Behavioral interview **full script** (STAR, Q1–Q45, appendix): `Interview/behavioral_common_qa.md` (see `Interview/README.md` for navigation). Treat `Interview/qa_backup.md` as a historical snapshot, not a second truth source.
 
 ## Practical Debugging Notes
 - If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).

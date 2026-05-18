@@ -29,6 +29,7 @@ Apply these when generating or adjusting CVs in this project.
 - **Chunxiao sub-projects:** Keep internal sort by timeline **end date descending** (newer phases first inside the employer group); do not reverse that for “narrative” unless the user asks.
 
 ## PDF / print layout
+- **Typography (hard constraint):** All CV PDFs use **Inter** only (`_CV_FONT_HEAD` + `font-family` on `body` / `.cv-name` / `.section-title` in `generate_cv_from_kb.py`; `document.fonts.ready` in `generate_cv_html_to_pdf.py`). Do not revert to Times New Roman, Aptos, or other fonts without an explicit user request and rule update.
 - **Avoid huge end-of-page whitespace:** Do **not** treat merged multi-project employer blocks (e.g. Chunxiao `job-employer`) as an atomic `page-break-inside: avoid` unit. Use **`page-break-inside: auto`** and **`break-inside: auto`** on `.job-employer` and `.sub-project` so the block may continue on the next page mid-section.
 - **Standalone jobs** (single `.job` cards, e.g. one AUT project): May keep **`page-break-inside: avoid`** so one short role is less likely to split awkwardly.
 - Implementation lives in the embedded `<style>` inside `app/backend/generate_cv_from_kb.py` (not a separate CSS file).
@@ -65,6 +66,7 @@ Rendered by `generate_html_from_kb()` in `app/backend/generate_cv_from_kb.py`. *
 - **Chunxiao employer header dates**: year-only range via `_work_entry_date_label` (e.g. `2013 – 2024`), not `Mon YYYY`.
 
 ## Summary rules
+- **Five-sentence structure (hard constraint):** (1) identity+stack (2) specialize (3) proven metric (4) additional differentiators only (5) AUT First Class Honours last — no location/work rights in Summary; bold ~6 highlights max — see `.cursor/rules/resume-generation-standards.mdc`.
 - Summary should be ATS-friendly and match JD requirements.
 - Keep Summary around 4-5 lines (not too short), with complete final sentence.
 - Integrate highlights naturally into Summary text; do not add explicit "Highlights:" label.
