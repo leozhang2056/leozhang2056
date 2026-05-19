@@ -649,6 +649,28 @@ methodology_practices:
   - name: Agile / Scrum
   - name: Code Review
 
+# Categorized Key Skills for CV generation (Windcave style)
+categorized_skills:
+  android_development:
+    label: "Android Development"
+    skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK]
+  
+  software_engineering:
+    label: "Software Engineering"
+    skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging]
+  
+  backend_fullstack:
+    label: "Backend & Full-Stack"
+    skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis]
+  
+  tools_devops:
+    label: "Tools & DevOps"
+    skills: [Git, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
+  
+  ai_emerging:
+    label: "AI & Emerging Technologies"
+    skills: [AI-Assisted Development, LLM Integration, Multimodal Systems]
+
 skill_groups:
   ai_coding:
     - Cursor

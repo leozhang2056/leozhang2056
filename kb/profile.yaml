@@ -47,11 +47,7 @@ career_identity:
       Master's in Computer and Information Sciences from AUT, First Class Honours.
     
     android_focus: >
-      Senior Android Engineer with 10+ years of full-stack experience in Kotlin, Android SDK, Jetpack Compose, and C++ (NDK) low-level development.
-      Specialized in building high-performance mobile applications, real-time communication systems, and end-to-end Android platforms with strong ownership across the development lifecycle.
-      Proven success in delivering full-stack mobile and backend solutions across 10+ production environments and independently building AI-driven systems with peer-reviewed research outcomes.
-      Additional expertise includes CI/CD (GitHub Actions), Android internals and performance optimization, MVVM / Clean Architecture, reverse engineering and security analysis, and AI-assisted development tools.
-      Master of Computer and Information Sciences from Auckland University of Technology, First Class Honours.
+      Senior Android Software Engineer with 10+ years of experience in Android development, full-stack systems, and enterprise application engineering. Specialized in building scalable mobile applications using Kotlin, Java, Android SDK, and modern Android architecture components. Proven success in delivering cross-platform business systems, IoT-integrated applications, and AI-assisted software solutions across mobile and backend environments. Additional expertise includes RESTful APIs, performance optimization, system integration, debugging, CI/CD workflows, and AI deployment for real-world applications. Master's in Computer and Information Sciences from AUT, First Class Honours.
     
     ai_focus: >
       AI engineer with 10+ years across applied AI, computer vision, and full-stack delivery, grounded in shipping production software.
@@ -112,30 +108,13 @@ education:
     location: NZ
     location_cn: 新西兰
     start_date: "2024-07"
-    # 与 thesis 完成 / work.yaml AUT 段、一等荣誉叙事对齐（简历教育块仅显示年份）
     end_date: "2026-02"
     status: Completed
     status_cn: 已完成
-    research_focus:
-      - Artificial Intelligence
-      - Machine Learning
-      - Computer Vision
-      - Large Language Models
-      - Internet of Things
-      - Big Data Analytics
-    research_focus_cn:
-      - 人工智能
-      - 机器学习
-      - 计算机视觉
-      - 大语言模型
-      - 物联网
-      - 大数据分析
     highlights:
-      - First Class Honours
-      - Big Data Analytics coursework included AWS-based database and server management practice
+      - "First Class Honours | Focus: AI, ML, Computer Vision, LLMs, IoT, Big Data Analytics; AWS-based infrastructure practice"
     highlights_cn:
-      - 一等荣誉学位
-      - 大数据分析课程包含 AWS 数据库与服务器管理实践
+      - "一等荣誉学位 | 研究方向：人工智能、机器学习、计算机视觉、大语言模型、物联网、大数据分析；AWS 基础设施实践"
     
   - degree: Bachelor of Software Engineering
     degree_cn: 软件工程学士
@@ -145,16 +124,10 @@ education:
     location_cn: 中国
     start_date: "2009-07"
     end_date: "2013-06"
-    honors:
-      - National Scholarship
-    honors_cn:
-      - 国家奖学金
     highlights:
-      - Comprehensive computer science foundation including algorithms, data structures, and software engineering
-      - Core training in Java programming, database systems, and backend architecture
+      - "National Scholarship | Algorithms, data structures, software engineering; Java programming, database systems, backend architecture"
     highlights_cn:
-      - 扎实的计算机科学基础，包括算法、数据结构和软件工程
-      - 核心训练：Java 编程、数据库系统和后端架构
+      - "国家奖学金 | 扎实的计算机科学基础：算法、数据结构、软件工程；Java 编程、数据库系统、后端架构"
 
 career_objectives:
   target_roles:
