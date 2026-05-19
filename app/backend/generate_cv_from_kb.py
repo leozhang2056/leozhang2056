@@ -2766,7 +2766,7 @@ _CSS = """
     body {
       font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 10.5pt;
-      line-height: 1.35;
+      line-height: 1.45;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -2784,8 +2784,8 @@ _CSS = """
     /* ── Header ─────────────────────────────────────── */
     .cv-header {
       text-align: center;
-      margin-bottom: 10px;
-      padding-bottom: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 7px;
     }
 
     .cv-name {
@@ -2869,10 +2869,10 @@ _CSS = """
       font-weight: 500;
       color: #1a4d96;
       font-variant: small-caps;
-      margin-top: 8px;
-      margin-bottom: 4px;
-      border-bottom: 0.8px solid #8a8a8a;
-      padding-bottom: 1px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #b0b0b0;
+      padding-bottom: 3px;
       letter-spacing: 0.7px;
       line-height: 1.1;
     }
@@ -2887,7 +2887,8 @@ _CSS = """
     .cv-summary {
       text-align: justify;
       color: #222;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      line-height: 1.45;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -2900,13 +2901,13 @@ _CSS = """
 
     /* ── Skills ──────────────────────────────────────── */
     .cv-skills {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       line-height: 1.55;
     }
 
     .skill-row {
-      margin-bottom: 2px;
-      line-height: 1.45;
+      margin-bottom: 3px;
+      line-height: 1.5;
     }
 
     .skill-label {
@@ -2917,15 +2918,15 @@ _CSS = """
 
     /* ── Experience ──────────────────────────────────── */
     .job {
-      margin-bottom: 5px;
+      margin-bottom: 12px;
       page-break-inside: avoid;
     }
 
     .job-tech {
       font-size: 9.8pt;
       color: #444;
-      margin-bottom: 2px;
-      line-height: 1.35;
+      margin-bottom: 4px;
+      line-height: 1.4;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -2934,7 +2935,7 @@ _CSS = """
     .job-header-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1px;
+      margin-bottom: 3px;
     }
 
     .jh-title {
@@ -2967,7 +2968,7 @@ _CSS = """
     .job-role {
       font-size: 10.4pt;
       color: #333;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -2981,13 +2982,13 @@ _CSS = """
     }
 
     .job-list li {
-      margin-bottom: 0;
-      line-height: 1.32;
+      margin-bottom: 4px;
+      line-height: 1.4;
     }
 
     /* 允许春晓雇主块跨页，避免上一页大块留白（子项目可在页间断开） */
     .job-employer {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       page-break-inside: auto;
       break-inside: auto;
     }
@@ -3007,20 +3008,20 @@ _CSS = """
     .employer-progression {
       font-size: 9.8pt;
       color: #444;
-      margin-bottom: 3px;
-      line-height: 1.32;
+      margin-bottom: 4px;
+      line-height: 1.4;
     }
 
     .employer-desc {
       font-size: 9.5pt;
       color: #555;
       font-style: italic;
-      margin-bottom: 4px;
-      line-height: 1.35;
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .career-stage {
-      margin: 6px 0 8px 0;
+      margin: 8px 0 10px 0;
       padding-left: 12px;
       border-left: 2px solid #cfd8ea;
     }
@@ -3028,13 +3029,13 @@ _CSS = """
     .stage-header {
       font-size: 10.6pt;
       color: #111;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .stage-focus {
       font-size: 9.8pt;
       color: #555;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       font-style: italic;
     }
 
@@ -3046,19 +3047,19 @@ _CSS = """
     }
 
     .stage-list li {
-      margin-bottom: 2px;
-      line-height: 1.35;
+      margin-bottom: 4px;
+      line-height: 1.4;
     }
 
     .stage-tech {
       font-size: 9.5pt;
       color: #555;
-      margin-top: 3px;
-      line-height: 1.35;
+      margin-top: 4px;
+      line-height: 1.4;
     }
 
     .sub-project {
-      margin: 3px 0 4px 10px;
+      margin: 5px 0 6px 10px;
       padding-left: 10px;
       border-left: 2px solid #cfd8ea;
       page-break-inside: auto;
@@ -3076,7 +3077,7 @@ _CSS = """
 
     /* ── Education ───────────────────────────────────── */
     .edu-item {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       page-break-inside: avoid;
     }
 
@@ -3129,14 +3130,14 @@ _CSS = """
     }
 
     .lc-list li {
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
 
     .lc-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      line-height: 1.28;
+      line-height: 1.4;
       gap: 10px;
     }
 
