@@ -3,281 +3,74 @@
 
 experiences:
   - company: Auckland University of Technology (AUT)
-    location: New Zealand
-    role: AI Engineer (Python / Computer Vision)
+    company_url: https://www.aut.ac.nz
+    company_description: ""
+    location: Auckland, New Zealand
+    role: AI Researcher / Master's Candidate
     start_date: "2024-07"
-    end_date: "2025-04"
+    end_date: "2026-02"
     current: false
     type: Education/Research
     
-    projects:
-      - name: ChatClothes Virtual Try-On
-        duration: "Nov 2024 - Apr 2025"
-        role: AI Engineer & Python Developer (Sole Builder)
-        description: AI-driven virtual try-on platform with LLM control and on-device deployment targets
-        
-        highlights:
-          - Designed and implemented entire system architecture, combining diffusion models, YOLO classifiers, and LLM for user interaction
-          - Built generation pipeline using ComfyUI and integrated user control with Dify orchestration
-          - Supported text/image/multimodal input, enabling personalized try-on scenarios
-          - Optimized for Raspberry Pi 5 class hardware with real-time performance and offline capability
-          - Completed full-stack AI solution independently; thesis passed 6 months early with working demo and documentation
-        
-        tech_stack:
-          - Python
-          - PyTorch
-          - OpenCV
-          - YOLO
-          - Diffusion Models
-          - ComfyUI
-          - Dify
-          - Raspberry Pi
-          - LLM
-        
-        metrics:
-          - Thesis completed 6 months early
-          - On-device deployment on Raspberry Pi 5
-          - Real-time inference optimization
-    
-    research_focus:
-      - AI
-      - Lightweight model deployment
-      - Virtual try-on
-      - On-device inference
-    
     achievements:
-      - Thesis passed 6 months ahead of schedule
-      - Presented working demo; thesis published on AUT Open Repository
-      - Conducted fruit ripeness image recognition experiments during AUT research period, extending computer vision practice to agri-related scenarios
+      - "Completed Master's thesis 6 months early, delivering ChatClothes — a local AI virtual try-on system powered by ComfyUI workflow orchestration, Dify LLM routing, and Ollama on-device inference"
+      - "Built IoT water intake monitoring system for coursework using Raspberry Pi sensors, streaming hydration data to LLM for personalized advice and reminders"
+      - "Served as summer teaching assistant for Computer Vision course, contributing to hyperspectral imaging project for kiwifruit maturity classification"
+      - "Published two research papers: IVCNZ 2025 conference paper on ChatClothes diffusion-based try-on system, and IGI Global book chapter on lightweight clothes recognition models"
+    
+    tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, Stable Diffusion, ControlNet, ComfyUI, Dify, Ollama, Raspberry Pi, Linux, LLM, On-device Inference, AI Workflow Orchestration, Multimodal AI, AWS EC2, AWS S3, AWS RDS]
 
   - company: Chunxiao Technology Co., Ltd.
+    company_url: https://www.chunxiao.net/
+    company_description: >
+      Chunxiao Technology (est. 2013, ~40 employees) is an IoT solution provider based in Shijiazhuang. Evolving from early audio/video streaming and live commerce platforms, the company now specializes in Smart Factory systems, Smart Electricity monitoring, and Smart Library/Locker solutions, delivering integrated hardware-software products for industrial and educational sectors.
     location: China
-    role: Technical Lead / Senior Software Engineer
-    # 实际任职 2013-07 至 2024-02；简历雇主行仅展示年份（见 _work_entry_date_label）
     start_date: "2013-07"
     end_date: "2024-02"
     current: false
     type: Full-time
     
-    # period 仍用于内部参考；简历 Progression 行由生成器简化为「职级阶梯」不写逐段年份（与总任期重叠易显乱）
-    positions:
-      - title: Technical Lead
-        period: "2018 - 2024"
-        focus: Smart Factory Backend & Team Leadership
+    career_progression:
+      - title: Technical Lead & Full-stack Developer
+        period: "2019 – 2024"
+        focus: Team Leadership & Full-stack Delivery
+        achievements:
+          - "Architected Industrial IoT smart factory platform deployed across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via <strong>RFID</strong> tracking and automated workflows; managed <strong>100+ MQTT devices</strong>"
+          - "Engineered NDK TCP/UDP transport layer and Easemob cloud IM supporting <strong>5,000 DAU</strong>, <strong>sub-200ms message latency</strong>, and <strong>500K+ daily messages</strong>"
+          - "Implemented FastDFS distributed file storage supporting <strong>100GB+ user uploads</strong>; architected chunk distribution, redundancy, and cross-subsystem access control"
+          - "Migrated core messaging from unstable in-house C++ to Easemob cloud, eliminating <strong>90%+ defects</strong>; enabled focus on platform subsystems (files, permissions, user center)"
         
-      - title: Senior Engineer, Android & backend
-        period: "2014 - 2023"
-        focus: Enterprise Messaging Platform
-        
-      - title: Software Engineer & Sysadmin
-        period: "2013 - 2014"
-        focus: Full-stack Development & IT Support
-    
-    projects:
-      - name: Smart Factory Backend System
-        period: "2018 - 2024"
-        role: Technical Lead
-        team_size: 6
-        description: Microservice-based textile factory system deployed across 5+ sites
-        
-        highlights:
-          - Designed and implemented backend services with Spring Boot and MySQL/Redis
-          - Managed CI/CD and deployment via Docker, Jenkins, and Nginx on Linux servers
-          - Integrated RFID, barcode scanners, and conveyor systems for real-time process tracking
-          - Led 6-person cross-functional team building production system across Android, backend, and hardware integration
-          - Championed agile practices and documentation; ensured on-time delivery across all modules
-          - System adopted in 5+ manufacturing bases, supporting daily operations for hundreds of workers
-          - Delivered scalable architecture, increasing production efficiency by 30%+
-        
-        tech_stack:
-          - Java
-          - Spring Boot
-          - Spring Cloud
-          - MySQL
-          - Redis
-          - MongoDB
-          - Docker
-          - Jenkins
-          - Nginx
-          - CentOS
-          - RFID
-          - Barcode Scanners
-        
-        metrics:
-          - Deployed across 5+ factory sites
-          - Supported hundreds of workers daily
-          - 30%+ production efficiency improvement
-          - High uptime maintained
+        tech_stack: [Java, Kotlin, Android SDK, Jetpack, MVVM, Coroutines, Retrofit, Room, NDK, Vue.js, TypeScript, Element UI, ECharts, Spring Boot, Spring Cloud, MyBatis, MySQL, Redis, MQTT, WebSocket, BLE, RFID, Docker, Git]
       
-      - name: Enterprise Messaging Platform
-        period: "2014 - 2023"
-        role: Core Android & Backend Developer
-        description: Real-time IM platform with 5,000 daily active users
+      - title: Senior Android Developer
+        period: "2015 – 2018"
+        focus: Android Development & Real-time Communication
+        achievements:
+          - "Architected resilient push delivery with Easemob IM + JPush backup channel; implemented keep-alive strategies and OEM ROM adaptation for reliable wake-up"
+          - "Shipped <strong>8+ production Android applications</strong> including live-streaming modules, IoT connectivity tools, and internal efficiency apps"
+          - "Developed Android Jetpack abstraction layer reused across <strong>12+ internal projects</strong>, reducing code duplication by <strong>50%+</strong>"
+          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; implemented in-house crash reporting infrastructure with automatic upload"
         
-        highlights:
-          - Developed Android client using NDK-based TCP/UDP and backend using Spring Cloud + C++
-          - Designed real-time messaging UI for Android; integrated cross-terminal login (Web, PC)
-          - Built native communication with NDK-based TCP/UDP protocol; improved stability and performance
-          - Developed backend services using Spring Cloud and Node.js
-          - Improved connection stability and reduced message latency to under 200ms
-          - Facilitated version releases; coordinated updates with QA and client teams
-          - Processed 500K+ messages/day with latency under 200ms
-        
-        tech_stack:
-          - Java
-          - Kotlin
-          - C
-          - NDK
-          - Spring Cloud
-          - Node.js
-          - TCP/UDP
-          - MySQL
-          - Redis
-        
-        metrics:
-          - 5,000 daily active users
-          - <200ms message latency
-          - 500K+ messages processed daily
-          - Cross-platform (Android, Web, PC)
+        tech_stack: [Java, Kotlin, Android SDK, NDK/JNI, Android Jetpack, Material Design, Git, Gradle, CI/CD]
       
-      - name: Live Streaming Commerce System
-        period: "2015 - 2018"
-        role: Full-stack Developer
-        team_size: 8
-        description: Multi-language live streaming platform with 1,000+ concurrent viewers
+      - title: .NET Software Engineer
+        period: "2013 – 2014"
+        focus: .NET Live Streaming & Web Systems
+        achievements:
+          - "Engineered media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web and mobile endpoints"
+          - "Implemented WebSocket-based bidirectional control for broadcast sessions enabling synchronized playback and real-time viewer engagement"
+          - "Built ASP.NET MVC administrative portals with relational DB backing, analytics dashboards, and user management workflows"
+          - "Managed production infrastructure: SSL/TLS, multi-region failover, automated backup, and media server optimization"
         
-        highlights:
-          - Built multi-language architecture: .NET (C#) + Node.js + C++ (NDK) + Python + Lua
-          - Implemented real-time streaming with WebSocket, Socket.IO, and HLS/M3U8 adaptive bitrate
-          - Developed Android client with C++ NDK streaming core for optimal performance
-          - Created ASP.NET Web Forms admin dashboard and Node.js real-time notification service
-          - Delivered stable playback under varying network conditions (3G/4G/WiFi)
-          - Achieved 1,000+ concurrent viewers with multi-bitrate streaming (360p-1080p)
-        
-        tech_stack:
-          - C# (.NET Framework)
-          - ASP.NET
-          - Java
-          - Kotlin
-          - C++ (NDK)
-          - Python
-          - Lua
-          - Node.js
-          - RTMP
-          - WebRTC
-          - HLS/M3U8
-          - FFmpeg
-        
-        metrics:
-          - 1,000+ concurrent viewers
-          - 3 years of continuous development
-          - 99.5% streaming uptime
-      
-      - name: Patent Search System
-        period: "2014"
-        role: .NET Desktop Developer
-        description: Windows application for patent document management
-        
-        highlights:
-          - Developed Windows Forms application using .NET Framework 2.0 and C# 3.0
-          - Implemented full-text search with Lucene.NET 2.9 for patent document indexing
-          - Created Excel/PDF processing modules for document management and export
-          - Integrated with SQL Server 2008 for patent data storage
-        
-        tech_stack:
-          - .NET Framework 2.0
-          - C# 3.0
-          - WinForms
-          - Lucene.NET 2.9
-          - SQL Server 2008
-          - Excel/PDF processing
-        
-        metrics:
-          - Full-text search capability
-          - Document export functionality
-
-      - name: IoT Projects & Full-Stack Solutions
-        period: "2013 - 2023"
-        role: Full-stack Engineer
-        description: Industrial, IoT, and public service applications
-        
-        highlights:
-          - Developed forestry inspection app with GPS/photo logging and backend dashboard
-          - Built smart cabinet SDKs controlling locks, sensors, lights, and doors via Android + REST APIs
-          - Implemented ad scheduling and monitoring system for factory and retail displays
-          - Built apps and APIs for forestry patrols, smart lockers, and ad display units
-          - Took part in cross-departmental collaboration and requirement analysis
-          - Automated deployment and monitoring; ensured stable long-term operation
-        
-        tech_stack:
-          - Android SDK
-          - Java
-          - Kotlin
-          - Vue.js
-          - Spring Boot
-          - GPS
-          - RFID
-          - Sensors
-          - UART/Serial
-        
-        projects_detail:
-          - name: Forestry Patrol App
-            description: Mobile app with GPS tracking and photo logging for forestry inspections
-            features:
-              - GPS tracking and route recording
-              - Photo logging with geotags
-              - Backend dashboard for monitoring
-              - Offline capability with sync
-          
-          - name: Smart Locker SDK
-            description: SDK for controlling smart cabinet hardware
-            features:
-              - Lock control
-              - Sensor monitoring
-              - Light control
-              - Door sensors
-              - REST API integration
-          
-          - name: Ad Display System
-            description: Scheduling and monitoring system for digital signage
-            features:
-              - Content scheduling
-              - Remote monitoring
-              - Multi-location management
-    
-    system_administration:
-      period: "2013 - 2023"
-      responsibilities:
-        - Managed Windows Server 2012-2022, IIS site binding, SSL certs, port setup
-        - Administered shared folders, RDP, firewall rules, FTP, and scheduled tasks
-        - Implemented automated backups with cron, Task Scheduler, and rsync
-        - Integrated OneDrive, Dropbox, and remote storage for team collaboration
-        - Migrated 6+ legacy systems to new servers while maintaining service continuity
-      
-      tech_stack:
-        - Windows Server
-        - IIS
-        - SSL/TLS
-        - Active Directory
-        - Group Policy
-        - FTP
-        - Cron
-        - Rsync
-        - OneDrive
-        - Dropbox
-      
-      achievements:
-        - High uptime maintained
-        - 6+ legacy system migrations completed
-        - Automated backup and monitoring systems
+        tech_stack: [.NET, C#, ASP.NET, SQL Server, IIS, FFmpeg, RTMP, HLS, H.264, AAC, WebSocket, JavaScript, HTML/CSS]
 
 total_years_experience: 10
 
 key_achievements:
-  - "Delivered enterprise messaging platform serving 5,000 daily users with <200ms latency"
-  - "Led smart factory system deployment across 5+ manufacturing sites, improving efficiency by 30%+"
-  - "Completed AI thesis project 6 months early with working on-device deployment"
-  - "Maintained high system uptime across multiple production systems"
-  - "Managed 6-person cross-functional team through full development cycles"
+  - "Architected enterprise messaging platform: 5,000 DAU, <200ms latency, 500K+ daily messages; migrated from unstable C++ to Easemob cloud (90%+ defect elimination)"
+  - "Engineered Industrial IoT platform across 5+ factory sites: 30%+ efficiency gain via RFID + MQTT telemetry from 100+ devices"
+  - "Optimized Android stability: 65% OOM reduction through memory hardening; built crash reporting infrastructure"
+  - "Completed Master's thesis 6 months early with production-ready AI virtual try-on system"
+  - "Implemented FastDFS distributed storage: 100GB+ capacity with chunk distribution and redundancy"
 
-last_updated: "2026-03-30"
+last_updated: "2026-05-19"

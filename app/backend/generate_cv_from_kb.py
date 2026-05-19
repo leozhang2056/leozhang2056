@@ -57,6 +57,7 @@ except Exception:
 # 保留私有名称供内部使用（历史调用方 / 测试不需要改动）
 _load_all_bullets = load_all_bullets
 _load_project_relations = load_project_relations
+_REPO_ROOT = Path(__file__).resolve().parents[2]
 
 # 导入 PDF 生成函数（支持 `python generate.py` 将 app/backend 加入 path，或包导入 `app.backend.*`）
 try:
@@ -395,18 +396,12 @@ def _select_projects_with_relations(
 # 各角色的技能分组顺序和展示配置
 _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     'android': [
-        {'key': 'android_core', 'label_en': 'Core Android', 'label_zh': '核心 Android', 'max': 8, 'field': 'name'},
-        {'key': 'android_system_low_level', 'label_en': 'System & Low-level', 'label_zh': '系统与底层', 'max': 8, 'field': 'name'},
-        {'key': 'android_testing', 'label_en': 'Testing', 'label_zh': '测试', 'max': 5, 'field': 'name'},
-        {'key': 'mobile_platform_tools', 'label_en': 'Mobile & Release', 'label_zh': '移动端与发布', 'max': 5, 'field': 'name'},
-        {'key': 'methodology_practices', 'label_en': 'Practices',    'label_zh': '工程实践',         'max': 3, 'field': 'name'},
-        {'key': 'programming_languages', 'label_en': 'Languages',    'label_zh': '编程语言',         'max': 5, 'field': 'name'},
-        {'key': 'frontend',       'label_en': 'Cross-platform / Web', 'label_zh': '跨平台 / Web',     'max': 3, 'field': 'name'},
-        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
-        {'key': 'backend',        'label_en': 'API Integration',      'label_zh': 'API 集成',        'max': 6, 'field': 'name'},
-        {'key': 'devops',         'label_en': 'DevOps & CI/CD',       'label_zh': 'DevOps & CI/CD',  'max': 7, 'field': 'name'},
-        {'key': 'databases',      'label_en': 'Databases',            'label_zh': '数据库',           'max': 5, 'field': 'name'},
-        {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 4, 'field': 'name'},
+        {'key': 'android_core', 'label_en': 'Android', 'label_zh': 'Android', 'max': 8, 'field': 'name'},
+        {'key': 'android_system_low_level', 'label_en': 'Systems & Low-level', 'label_zh': '系统与底层', 'max': 5, 'field': 'name'},
+        {'key': 'backend', 'label_en': 'Backend & APIs', 'label_zh': '后端与 API', 'max': 6, 'field': 'name'},
+        {'key': 'ai_ml', 'label_en': 'AI / ML', 'label_zh': 'AI / ML', 'max': 4, 'field': 'name'},
+        {'key': 'ai_coding_tools', 'label_en': 'AI Tools', 'label_zh': 'AI 工具', 'max': 3, 'field': 'name'},
+        {'key': 'devops', 'label_en': 'DevOps', 'label_zh': 'DevOps', 'max': 6, 'field': 'name'},
     ],
     'ai': [
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 8, 'field': 'name'},
@@ -666,11 +661,11 @@ def _inject_jd_into_sentence1(sentence: str, terms: List[str], lang: str) -> str
         s = s.rstrip("。！？") + f"，具备岗位要求相关的 {joined} 经验。"
         return s
     if len(pick) == 1:
-        clause = f", with strong {pick[0]} fit for this role"
+        clause = f", including {pick[0]} where the role calls for it"
     elif len(pick) == 2:
-        clause = f", with {pick[0]} and {pick[1]} aligned to this role"
+        clause = f", including {pick[0]} and {pick[1]} where the role calls for them"
     else:
-        clause = f", with {pick[0]}, {pick[1]}, and {pick[2]} aligned to this role"
+        clause = f", including {pick[0]}, {pick[1]}, and {pick[2]} where the role calls for them"
     s = s.rstrip(".!?") + clause + "."
     return s
 
@@ -694,7 +689,12 @@ def _apply_jd_sentence1_alignment(
     if not parts:
         return text
 
-    parts[0] = _inject_jd_into_sentence1(parts[0], jd_terms, lang)
+    existing_text = " ".join(parts)
+    inject_terms = [
+        term for term in jd_terms
+        if not re.search(re.escape(term), existing_text, flags=re.IGNORECASE)
+    ]
+    parts[0] = _inject_jd_into_sentence1(parts[0], inject_terms, lang)
     merged = _enforce_summary_five_sentences(" ".join(parts), lang)
     parts = _split_summary_sentences(merged, lang)
     if not parts:
@@ -755,18 +755,135 @@ def _bold_summary_edu_honours(text: str, lang: str) -> str:
     return _bold_first_summary_term(text, "First Class Honours")
 
 
+_CV_BASE_TEMPLATE_CACHE: Optional[Dict[str, Any]] = None
+
+
+def _load_cv_base_template() -> Dict[str, Any]:
+    """Load the human-approved CV base template, if present."""
+    global _CV_BASE_TEMPLATE_CACHE
+    if _CV_BASE_TEMPLATE_CACHE is not None:
+        return _CV_BASE_TEMPLATE_CACHE
+    path = _REPO_ROOT / "kb" / "cv_base_template.yaml"
+    if not path.is_file():
+        _CV_BASE_TEMPLATE_CACHE = {}
+        return _CV_BASE_TEMPLATE_CACHE
+    try:
+        data = load_yaml(str(path))
+        _CV_BASE_TEMPLATE_CACHE = data if isinstance(data, dict) else {}
+    except Exception as exc:
+        logger.warning("Could not load cv_base_template.yaml: %s", exc)
+        _CV_BASE_TEMPLATE_CACHE = {}
+    return _CV_BASE_TEMPLATE_CACHE
+
+
+def _get_role_base_template(role_type: str) -> Dict[str, Any]:
+    data = _load_cv_base_template()
+    roles = data.get("roles", {}) if isinstance(data, dict) else {}
+    if not isinstance(roles, dict):
+        return {}
+    role_tpl = roles.get(role_type) or roles.get("fullstack") or {}
+    return role_tpl if isinstance(role_tpl, dict) else {}
+
+
+def _base_template_summary(role_type: str, lang: str) -> str:
+    role_tpl = _get_role_base_template(role_type)
+    summary = role_tpl.get("summary_sentences", {})
+    if not isinstance(summary, dict):
+        return ""
+    sentences = summary.get(lang)
+    if not isinstance(sentences, list):
+        return ""
+    clean = [str(s).strip() for s in sentences if str(s).strip()]
+    return " ".join(clean)
+
+
+def _normalize_skill_match_text(text: str) -> str:
+    s = re.sub(r"<[^>]+>", " ", str(text or ""))
+    s = html.unescape(s).lower()
+    s = re.sub(r"[^a-z0-9+#/.]+", " ", s)
+    return re.sub(r"\s{2,}", " ", s).strip()
+
+
+def _skill_repeated_by_summary_jd(
+    skill: str,
+    summary_text: Optional[str],
+    jd_keywords: Optional[List[str]],
+) -> bool:
+    """Avoid repeating JD-hit terms in Key Skills when Summary already carries them."""
+    if not skill or not summary_text or not jd_keywords:
+        return False
+
+    summary_norm = _normalize_skill_match_text(summary_text)
+    skill_norm = _normalize_skill_match_text(skill)
+    if not skill_norm or skill_norm not in summary_norm:
+        return False
+
+    for kw in jd_keywords:
+        kw_norm = _normalize_skill_match_text(str(kw or ""))
+        if not kw_norm:
+            continue
+        if kw_norm in skill_norm or skill_norm in kw_norm:
+            return True
+    return False
+
+
+def _base_template_skills_html(
+    role_type: str,
+    lang: str,
+    jd_keywords: Optional[List[str]] = None,
+    summary_text: Optional[str] = None,
+) -> str:
+    role_tpl = _get_role_base_template(role_type)
+    key_skills = role_tpl.get("key_skills", {})
+    if not isinstance(key_skills, dict):
+        return ""
+    lines = key_skills.get(lang) or key_skills.get("en")
+    if not isinstance(lines, list):
+        return ""
+
+    rendered: List[str] = []
+    for row in lines:
+        if not isinstance(row, dict):
+            continue
+        label = str(row.get("label") or "").strip()
+        skills = row.get("skills", [])
+        if not label or not isinstance(skills, list):
+            continue
+        names = [str(s).strip() for s in skills if str(s).strip()]
+        if not names:
+            continue
+        rendered.append(
+            f'<div class="skill-row">'
+            f'<span class="skill-label">{html.escape(label)}:</span> '
+            f'{html.escape(", ".join(names))}'
+            f'</div>'
+        )
+    return '\n        '.join(rendered)
+
+
 def generate_skills_section(
     skills_data: Dict,
     role_type: str = 'fullstack',
     lang: str = 'en',
     jd_keywords: Optional[List[str]] = None,
+    summary_text: Optional[str] = None,
 ) -> str:
     """
     从 skills.yaml 动态生成技能展示 HTML。
     按角色配置调整分组顺序；如有 JD 关键词，命中的技能会排前面。
+    使用标签式布局，提升可读性。
     """
+    base_skills = _base_template_skills_html(
+        role_type,
+        lang,
+        jd_keywords=jd_keywords,
+        summary_text=summary_text,
+    )
+    if base_skills:
+        return base_skills
+
     config = _ROLE_SKILL_CONFIG.get(role_type, _ROLE_SKILL_CONFIG['fullstack'])
-    lines: List[str] = []
+    rows: List[str] = []
     kws_lower = [k.lower() for k in (jd_keywords or [])]
 
     def _prioritize_by_jd(names: List[str]) -> List[str]:
@@ -826,9 +943,9 @@ def generate_skills_section(
         names = _prioritize_by_jd(names)
 
         names = names[:cfg['max']]
-        lines.append(f'<strong>{label}:</strong> {", ".join(names)}')
+        rows.append(f'<div class="skill-row"><span class="skill-label">{html.escape(label)}:</span> {html.escape(", ".join(names))}</div>')
 
-    return '<br>\n        '.join(lines)
+    return '\n        '.join(rows)
 
 
 # ---------------------------------------------------------------------------
@@ -1088,7 +1205,9 @@ def generate_summary(
         'fullstack': 'default',
     }
     variant_key = role_map.get(role_type, 'default')
-    text = summaries.get(variant_key) or summaries.get('default', '')
+    text = _base_template_summary(role_type, lang)
+    if not text:
+        text = summaries.get(variant_key) or summaries.get('default', '')
 
     # 将 YAML 多行字符串里的换行+空白压缩成单空格
     text = re.sub(r'\s+', ' ', text).strip()
@@ -2047,25 +2166,48 @@ def _find_chunxiao_work_entry(work_yaml: Optional[Dict]) -> Optional[Dict]:
 
 def _experience_blocks_ordered(projects: List[Dict]) -> List[tuple]:
     """
-    将项目序列拆成 (kind, [projects])：
-    - single: 非春晓连续段中的单个项目
-    - cx_group: 连续的春晓项目合并展示
+    将项目序列按时间倒序排列：
+    - AUT 项目排在最前面
+    - 春晓项目按时间倒序
+    - 其他项目按时间倒序
     """
-    blocks: List[tuple] = []
-    i = 0
-    n = len(projects)
-    while i < n:
-        if _project_employer_bucket(projects[i]) == "chunxiao":
-            j = i
-            group: List[Dict] = []
-            while j < n and _project_employer_bucket(projects[j]) == "chunxiao":
-                group.append(projects[j])
-                j += 1
-            blocks.append(("cx_group", group))
-            i = j
+    # 按雇主分类
+    aut_projects = []
+    cx_projects = []
+    other_projects = []
+    
+    for p in projects:
+        bucket = _project_employer_bucket(p)
+        if bucket == "aut":
+            aut_projects.append(p)
+        elif bucket == "chunxiao":
+            cx_projects.append(p)
         else:
-            blocks.append(("single", [projects[i]]))
-            i += 1
+            other_projects.append(p)
+    
+    # 按时间倒序排序（最近的项目在前）
+    def _sort_by_end_date(projs):
+        return sorted(
+            projs,
+            key=lambda p: _timeline_year_from_field(p, "end"),
+            reverse=True
+        )
+    
+    blocks: List[tuple] = []
+    
+    # AUT 项目（单个或分组）
+    if aut_projects:
+        for p in _sort_by_end_date(aut_projects):
+            blocks.append(("single", [p]))
+    
+    # 春晓项目（合并为一个雇主组）
+    if cx_projects:
+        blocks.append(("cx_group", _sort_by_end_date(cx_projects)))
+    
+    # 其他项目
+    for p in _sort_by_end_date(other_projects):
+        blocks.append(("single", [p]))
+    
     return blocks
 
 
@@ -2184,6 +2326,118 @@ def _render_one_project_job_html(
     </div>'''
 
 
+def _render_career_progression_html(
+    work_entry: Dict,
+    lang: str,
+    role_type: str,
+) -> str:
+    """按职级阶段渲染经历（新结构：career_progression + achievements）。"""
+    company_name = str(work_entry.get("company") or "")
+    location = str(work_entry.get("location") or "")
+    company_url = str(work_entry.get("company_url") or "")
+    company_desc = str(work_entry.get("company_description") or "")
+    date_lbl = _work_entry_date_label(work_entry, lang)
+    
+    loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
+    company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
+    company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
+    
+    progression = work_entry.get("career_progression") or []
+    if not isinstance(progression, list):
+        progression = []
+    
+    stages: List[str] = []
+    for stage in progression:
+        title = str(stage.get("title") or "")
+        period = str(stage.get("period") or "")
+        focus = str(stage.get("focus") or "")
+        achievements = stage.get("achievements") or []
+        tech_stack = stage.get("tech_stack") or []
+        
+        if not isinstance(achievements, list):
+            achievements = []
+        if not isinstance(tech_stack, list):
+            tech_stack = []
+        
+        header_parts = [title]
+        if period:
+            header_parts.append(period)
+        header_text = " | ".join(header_parts)
+        
+        focus_html = f'<div class="stage-focus">{html.escape(focus)}</div>' if focus else ""
+        
+        bullets_html = '\n            '.join(f'<li>{html.escape(str(a)).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>")}</li>' for a in achievements if a)
+        
+        tech_line = ", ".join(str(t) for t in tech_stack if t)
+        tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+        
+        stages.append(f'''
+    <div class="career-stage">
+      <div class="stage-header"><strong>{html.escape(header_text)}</strong></div>
+      {focus_html}
+      <ul class="stage-list">
+        {bullets_html}
+      </ul>
+      {tech_html}
+    </div>''')
+    
+    return f'''
+    <div class="job job-employer">
+      <table class="job-header-table">
+        <tr>
+          <td class="jh-title employer-company" colspan="2">{company_link}{loc_html}</td>
+          <td class="jh-date">{html.escape(date_lbl)}</td>
+        </tr>
+      </table>
+      {company_desc_html}
+      {''.join(stages)}
+    </div>'''
+
+
+def _render_aut_research_html(
+    work_entry: Dict,
+    lang: str,
+) -> str:
+    """渲染 AUT 研究经历。"""
+    company_name = str(work_entry.get("company") or "")
+    location = str(work_entry.get("location") or "")
+    company_url = str(work_entry.get("company_url") or "")
+    company_desc = str(work_entry.get("company_description") or "")
+    role = str(work_entry.get("role") or "")
+    date_lbl = _work_entry_date_label(work_entry, lang)
+    achievements = work_entry.get("achievements") or []
+    tech_stack = work_entry.get("tech_stack") or []
+    
+    if not isinstance(achievements, list):
+        achievements = []
+    if not isinstance(tech_stack, list):
+        tech_stack = []
+    
+    loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
+    company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
+    company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
+    
+    bullets_html = '\n            '.join(f'<li>{html.escape(str(a)).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>")}</li>' for a in achievements if a)
+    tech_line = ", ".join(str(t) for t in tech_stack if t)
+    tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+    
+    return f'''
+    <div class="job job-employer">
+      <table class="job-header-table">
+        <tr>
+          <td class="jh-title employer-company" colspan="2">{company_link}{loc_html}</td>
+          <td class="jh-date">{html.escape(date_lbl)}</td>
+        </tr>
+      </table>
+      <div class="job-role"><strong>{html.escape(role)}</strong></div>
+      {company_desc_html}
+      <ul class="stage-list">
+        {bullets_html}
+      </ul>
+      {tech_html}
+    </div>'''
+
+
 def _render_chunxiao_employer_group_html(
     cx_projects: List[Dict],
     work_entry: Optional[Dict],
@@ -2193,7 +2447,7 @@ def _render_chunxiao_employer_group_html(
     jd_keywords: Optional[List[str]],
     used_bullets_norm: set,
 ) -> str:
-    """单一雇主（春晓）+ 总任职时间 + 子项目阶段。"""
+    """单一雇主（春晓）+ 总任职时间 + 子项目阶段（旧结构，保留兼容）。"""
     company_name = "Chunxiao Technology Co., Ltd."
     location = "China"
     role_title = "Technical Lead / Senior Software Engineer"
@@ -2244,11 +2498,43 @@ def generate_experience_section(
     jd_keywords: Optional[List[str]] = None,
     work_experience_yaml: Optional[Dict] = None,
 ) -> str:
-    """将已排序的项目列表渲染为 HTML（春晓多项目合并为单一雇主时间线）。"""
+    """将已排序的项目列表渲染为 HTML（支持新结构：career_progression + achievements）。"""
     used_bullets_norm: set[str] = set()
-    cx_entry = _find_chunxiao_work_entry(work_experience_yaml)
     parts: List[str] = []
-
+    
+    # 检查是否使用新结构（career_progression）
+    if work_experience_yaml and isinstance(work_experience_yaml, dict):
+        experiences = work_experience_yaml.get("experiences") or []
+        if experiences:
+            # 使用新结构渲染
+            for exp in experiences:
+                if not isinstance(exp, dict):
+                    continue
+                
+                # 检查是否有 career_progression（新结构）
+                if exp.get("career_progression"):
+                    parts.append(_render_career_progression_html(exp, lang, role_type))
+                elif exp.get("type") == "Education/Research":
+                    # AUT 研究经历
+                    parts.append(_render_aut_research_html(exp, lang))
+                else:
+                    # 旧结构：按项目渲染
+                    cx_entry = exp
+                    cx_projects = [p for p in projects if _project_employer_bucket(p) == "chunxiao"]
+                    if cx_projects:
+                        cx_ordered = _sort_chunxiao_subprojects_by_timeline(cx_projects)
+                        parts.append(
+                            _render_chunxiao_employer_group_html(
+                                cx_ordered, cx_entry, lang, role_type, all_bullets, jd_keywords, used_bullets_norm,
+                            )
+                        )
+            
+            if parts:
+                return '\n'.join(parts)
+    
+    # 回退到旧逻辑（按项目渲染）
+    cx_entry = _find_chunxiao_work_entry(work_experience_yaml)
+    
     for kind, group in _experience_blocks_ordered(projects):
         if kind == "single":
             parts.append(
@@ -2464,7 +2750,7 @@ def generate_interests_section(profile: Dict, lang: str = 'en') -> str:
 _CV_FONT_HEAD = """
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 """
 
 _CSS = """
@@ -2478,9 +2764,9 @@ _CSS = """
     }
 
     body {
-      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 11.6pt;
-      line-height: 1.34;
+      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.35;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -2503,9 +2789,9 @@ _CSS = """
     }
 
     .cv-name {
-      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 21pt;
-      font-weight: 600;
+      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 20pt;
+      font-weight: 500;
       color: #111;
       letter-spacing: 0.2px;
       margin-bottom: 5px;
@@ -2515,7 +2801,7 @@ _CSS = """
     .cv-name a { color: #111; }
 
     .cv-contact {
-      font-size: 10pt;
+      font-size: 9.5pt;
       color: #1a4a8a;
       line-height: 1.55;
       text-align: center;
@@ -2555,7 +2841,13 @@ _CSS = """
     }
 
     a.cv-social-link .cv-header-icon {
-      vertical-align: middle;
+      vertical-align: baseline;
+      margin-right: 0;
+      transform: translateY(-2px);
+    }
+
+    a.cv-social-link .cv-header-icon {
+      vertical-align: baseline;
       margin-right: 0;
     }
 
@@ -2572,9 +2864,9 @@ _CSS = """
 
     /* ── Section title ───────────────────────────────── */
     .section-title {
-      font-family: Inter, 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 13.2pt;
-      font-weight: 600;
+      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 12.5pt;
+      font-weight: 500;
       color: #1a4d96;
       font-variant: small-caps;
       margin-top: 8px;
@@ -2612,6 +2904,17 @@ _CSS = """
       line-height: 1.55;
     }
 
+    .skill-row {
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: #111;
+      font-size: 10.5pt;
+    }
+
     /* ── Experience ──────────────────────────────────── */
     .job {
       margin-bottom: 5px;
@@ -2619,7 +2922,7 @@ _CSS = """
     }
 
     .job-tech {
-      font-size: 10.4pt;
+      font-size: 9.8pt;
       color: #444;
       margin-bottom: 2px;
       line-height: 1.35;
@@ -2636,7 +2939,7 @@ _CSS = """
 
     .jh-title {
       font-weight: 700;
-      font-size: 11.2pt;
+      font-size: 10.8pt;
       width: 38%;
       padding: 0;
       vertical-align: baseline;
@@ -2662,7 +2965,7 @@ _CSS = """
     }
 
     .job-role {
-      font-size: 10.9pt;
+      font-size: 10.4pt;
       color: #333;
       margin-bottom: 2px;
       hyphens: none;
@@ -2673,7 +2976,7 @@ _CSS = """
     .job-list {
       margin: 0;
       padding-left: 18px;
-      font-size: 10.9pt;
+      font-size: 10.4pt;
       color: #222;
     }
 
@@ -2691,21 +2994,67 @@ _CSS = """
 
     .employer-company {
       font-weight: 700;
-      font-size: 11.2pt;
+      font-size: 10.8pt;
     }
 
     .employer-loc {
       font-weight: 400;
       font-style: italic;
       color: #444;
-      font-size: 10.7pt;
+      font-size: 10.2pt;
     }
 
     .employer-progression {
-      font-size: 10.4pt;
+      font-size: 9.8pt;
       color: #444;
       margin-bottom: 3px;
       line-height: 1.32;
+    }
+
+    .employer-desc {
+      font-size: 9.5pt;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .career-stage {
+      margin: 6px 0 8px 0;
+      padding-left: 12px;
+      border-left: 2px solid #cfd8ea;
+    }
+
+    .stage-header {
+      font-size: 10.6pt;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .stage-focus {
+      font-size: 9.8pt;
+      color: #555;
+      margin-bottom: 3px;
+      font-style: italic;
+    }
+
+    .stage-list {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 10.2pt;
+      color: #222;
+    }
+
+    .stage-list li {
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+
+    .stage-tech {
+      font-size: 9.5pt;
+      color: #555;
+      margin-top: 3px;
+      line-height: 1.35;
     }
 
     .sub-project {
@@ -2752,12 +3101,12 @@ _CSS = """
       padding: 0;
       vertical-align: baseline;
       white-space: nowrap;
-      font-size: 10.5pt;
+      font-size: 10pt;
     }
 
     .eh-date {
       color: #777;
-      font-size: 10.5pt;
+      font-size: 10pt;
       width: 18%;
       text-align: right;
       padding: 0;
@@ -2766,7 +3115,7 @@ _CSS = """
     }
 
     .edu-detail {
-      font-size: 10.4pt;
+      font-size: 9.8pt;
       color: #444;
       margin-top: 2px;
     }
@@ -2776,7 +3125,7 @@ _CSS = """
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 10.4pt;
+      font-size: 9.8pt;
     }
 
     .lc-list li {
@@ -2846,6 +3195,13 @@ _CV_ICON_GITHUB_SVG = (
     '1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 '
     '0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 '
     '0-6.627-5.373-12-12-12z"/>'
+    '</svg>'
+)
+
+_CV_ICON_PORTFOLIO_SVG = (
+    '<svg class="cv-header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+    'aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z"/>'
     '</svg>'
 )
 
@@ -2935,7 +3291,13 @@ def generate_html_from_kb(
 
     # ── 生成各部分 ──
     summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords)
-    skills_html  = generate_skills_section(skills_data, role_type, lang, jd_keywords)
+    skills_html  = generate_skills_section(
+        skills_data,
+        role_type,
+        lang,
+        jd_keywords,
+        summary_text=summary,
+    )
     sorted_projs = _select_projects_with_relations(
         all_projects,
         role_type=role_type,
@@ -3002,8 +3364,13 @@ def generate_html_from_kb(
         f'<a href="mailto:{_safe_email}">&#9993;&nbsp;{_disp_email}</a>',
         f'&#9990;&nbsp;{_disp_phone}',
     ]
-    if location_line:
-        contact_primary_bits.append(f'{_CV_ICON_LOC_SVG}{html.escape(location_line)}')
+    
+    # Portfolio link replaces location
+    portfolio_url = "https://github.com/leozhang2056#-featured-projects"
+    contact_primary_bits.append(
+        f'<a href="{html.escape(portfolio_url, quote=True)}" class="cv-social-link">{_CV_ICON_PORTFOLIO_SVG}Portfolio</a>'
+    )
+    
     if linkedin:
         contact_primary_bits.append(
             f'<a href="{_li}" class="cv-social-link">{_CV_ICON_LINKEDIN_SVG}LinkedIn</a>'
@@ -3440,6 +3807,7 @@ def _build_quality_report_markdown(
         role_type=role_type,
         lang='en',
         jd_keywords=jd_keywords,
+        summary_text=summary_text,
     )
     skills_text = _strip_html_tags(skills_html)
 

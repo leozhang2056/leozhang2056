@@ -70,35 +70,16 @@ summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   团队扩大与项目穿插并行后，组织上引入飞书及协作文档、审批与预算等项目管理实践，并辅以自动化优化研发与协作流程；
   个人职责从单一开发扩展至全栈交付，并承担进度协调、人员与资源分配等管理向工作。'
 highlights:
-  - Engineered Android transport in NDK (C/C++) over TCP/UDP, optimizing connection paths to sustain sub-200ms message latency at production load
-  - Designed Android real-time delivery resilience under background kill constraints using a layered keep-alive strategy (battery whitelist guidance, home-screen widget priority boost, Easemob IM paths plus Jiguang/JPush as a supplementary notification push channel for backup wake-up and notice-style delivery)
-  - Strengthened release discipline after a mistaken production build shipped with test-environment configuration (split environment configs, multi-pass verification before release, progressive automation to reduce human error; same rigor applied to database, mobile app, and web releases)
-  - Recovered from a Windows file-server compromise on the avatar upload path (overly permissive uploads allowed executable payloads); rebuilt from backups, tightened ACLs and validation, added endpoint protection, and migrated user-upload assets to cloud object storage with stricter controls
-  - Scaled the platform to 5,000 DAU and 500K+ messages per day across Android, Web, and PC
-  - Early IM client phase: sole Android engineer shipping a time-boxed prototype to launch; post-launch stabilized through daily prioritized defect lists and frequent builds under heavy user pressure, with product/design providing transparent timelines to stakeholders
-  - >-
-    Incremental platformization from standalone enterprise IM: unified user center derived from IM identity data,
-    reused for authentication and SSO-style access across modules; centralized file service expanded into a shared
-    file center; then additional subsystems (attendance/check-in, engineering project management, finance approvals,
-    hardware asset management, permission administration) integrated the same user, file, and permission primitives—
-    stepwise delivery informed by industry patterns (unified login/SSO concepts, centralized file hosting comparable to
-    common cloud object-storage practices and Qiniu-style drag-and-drop upload flows, org/dept permission models similar to Feishu/Lark) under enterprise self-hosting constraints
-  - Spearheaded reliability practices that maintained strong availability across a 10-year product lifecycle
-  - Architected multi-subsystem platform with Spring Cloud microservices and Node.js for messaging, workflow, and audit services
-  - Evolved file architecture from single-server hosting that could not sustain growing user uploads, chat attachments, and document-heavy modules (contract management, design-asset management, etc.); selected self-hosted FastDFS-based distributed storage for scale and confidentiality rather than public cloud file SaaS, and engineered around chunk distribution, redundancy, backup, and access-control integration across User, Message, and Workflow subsystems
-  - Optimized distributed database and file storage layouts for real-time collaboration workloads
-  - Integrated ETL pipelines with Kettle and PowerBI dashboards for operational analytics
-  - Managed Android device long-tail and OEM ROM variance (e.g. Xiaomi, Huawei, OPPO): many edge issues surfaced only in real user environments, so exhaustive pre-release catch of every minor defect was infeasible; balanced release timing, test cost, and device-lab investment with mainstream-first QA (rough floor around Android 7–8 in lab; older devices generally out of matrix); user reports often required physical-device reproduction beyond emulator parity; issue-driven targeted testing and occasional hardware purchase or on-site/remote user-environment sessions instead of pretending full-matrix coverage before every ship
-  - Replaced chronically unstable in-house C++ messaging servers (persistent defect churn) by migrating personal chat, group chat, and core message infrastructure to Easemob (Hyphenate / 环信) cloud services and multi-platform SDKs—gaining stability, richer built-ins (message types, read receipts, resend/retry), and clearer separation so platform subsystems (files, permissions, user center) sit on top instead of owning the whole low-level stack
-  - Integrated Jiguang (JPush) as a backup/supplementary push channel for notification-style payloads and wake-up reliability, layered alongside Easemob-centric IM transport
-  - >-
-    Android stability (early phase): when mature third-party crash SDKs were not ubiquitous, implemented an in-house
-    crash capture path with automatic upload so incidents were diagnosable without relying on users to manually collect logs;
-    paired with image-loader and memory-boundary work to reduce large-bitmap OOM crashes in chat-heavy UI paths
-  - >-
-    User-education pattern for Android background limits: explain OEM/vendor policy differences vs mega-apps (e.g. whitelist
-    treatment), pair with practical guidance (battery whitelist, notification permissions, widget/priority boosts) and product-backed messaging on realistic expectations while improving post-kill resync paths
-  - Matched engineering and collaboration practices to team growth and multi-project parallelism—e.g. Feishu (Lark) and collaborative documentation for PM, budgeting, and approvals, plus progressive automation—while broadening personal scope from focused development through full-stack ownership into coordination of schedule, staffing, and resource allocation
+  - Engineered NDK TCP/UDP transport layer and Easemob cloud IM architecture supporting 5,000 DAU, <200ms message latency, and 500K+ daily messages
+  - Architected resilient push delivery: Easemob IM + JPush backup channel, with keep-alive strategies and OEM ROM adaptation for reliable wake-up
+  - Migrated core messaging from unstable in-house C++ to Easemob cloud infrastructure, eliminating 90%+ defects and enabling platform focus (files, permissions, user center)
+  - Implemented FastDFS distributed file storage supporting 100GB+ user uploads and document hosting; engineered chunk distribution, redundancy, and cross-subsystem access control
+  - Architected unified platform from standalone IM: centralized user center, file service, and permission layer reused across 5+ subsystems (attendance, approvals, asset management, audit)
+  - Built Spring Cloud microservices and Node.js backend for messaging, workflow, and operational analytics (Kettle ETL + PowerBI dashboards)
+  - Reduced OOM crashes by 65% through memory optimization; implemented in-house crash reporting infrastructure when third-party SDKs were unavailable
+  - Managed OEM ROM variance (Xiaomi, Huawei, OPPO) with targeted device testing; balanced QA coverage and release velocity for Android 7+ support
+  - Strengthened security posture: migrated user assets from Windows file server to secure cloud storage with validation and access control hardening
+  - Maintained <2% downtime across 10-year product lifecycle through proactive reliability engineering and rapid incident response
 
 highlights_cn:
 - 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输

@@ -1,0 +1,104 @@
+# Stable CV base template.
+# This file is the human-approved content layer. Generation may make small,
+# KB-supported JD adjustments, but should not freely rewrite these sections.
+
+version: 1
+policy:
+  summary_mode: locked_five_sentences
+  skills_mode: locked_lines
+  jd_adjustment:
+    - Keep the base wording as the source of truth.
+    - Only inject KB-supported JD terms into summary sentence 1 when useful.
+    - Do not add unsupported skills or rewrite the whole summary.
+    - Keep Key Skills line labels and order stable.
+
+roles:
+  android:
+    summary_sentences:
+      en:
+        - Senior Android Software Engineer with 10+ years of experience in Android development, full-stack systems, and enterprise application engineering.
+        - Specialized in building scalable mobile applications using Kotlin, Java, Android SDK, and modern Android architecture components.
+        - Proven success in delivering cross-platform business systems, IoT-integrated applications, and AI-assisted software solutions across mobile and backend environments.
+        - Additional expertise includes RESTful APIs, performance optimization, system integration, debugging, CI/CD workflows, and AI deployment for real-world applications.
+        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+    key_skills:
+      en:
+        - label: Android Development
+          skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK]
+        - label: Software Engineering
+          skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging]
+        - label: Backend & Full-Stack
+          skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis]
+        - label: Tools & DevOps
+          skills: [Git, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
+        - label: AI & Emerging Technologies
+          skills: [AI-Assisted Development, LLM Integration, Multimodal Systems]
+
+  backend:
+    summary_sentences:
+      en:
+        - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing, IoT, and long-running production systems.
+        - Specialized in Spring Boot services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
+        - Proven delivery includes enterprise systems with stable release rhythm, performance tuning, and production support under real business constraints.
+        - Additional expertise includes CI/CD, database optimization, API contracts, observability-minded debugging, and AI-assisted programming tools.
+        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+    key_skills:
+      en:
+        - label: Backend Engineering
+          skills: [Java, Spring Boot, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
+        - label: Databases
+          skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
+        - label: DevOps & Release
+          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux]
+        - label: API & Integration
+          skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
+        - label: Broader Stack
+          skills: [Kotlin, Python, JavaScript, Vue.js, Android SDK]
+        - label: AI-Assisted Development
+          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+
+  fullstack:
+    summary_sentences:
+      en:
+        - Full-stack software engineer with 10+ years shipping production software across Android, Java backends, Vue.js front ends, IoT systems, and applied AI.
+        - Specialized in turning messy business requirements into maintainable APIs, usable client workflows, and releases that work in real operating environments.
+        - Proven delivery spans industrial automation, enterprise messaging, mobile platforms, and applied AI from prototype through production support.
+        - Additional expertise includes Spring Boot, Docker, CI/CD discipline, database optimization, and AI-assisted programming tools in daily delivery.
+        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+    key_skills:
+      en:
+        - label: Languages
+          skills: [Java, Kotlin, Python, JavaScript, C#, C/C++]
+        - label: Backend & APIs
+          skills: [Spring Boot, Spring Cloud, MyBatis, RESTful API, WebSocket, Kafka, ActiveMQ]
+        - label: Frontend & Mobile
+          skills: [Android SDK, Jetpack Compose, Vue.js, HTML/CSS, Flutter, React Native]
+        - label: Databases
+          skills: [MySQL, Redis, MongoDB, SQL Server, SQLite]
+        - label: DevOps & Release
+          skills: [Docker, Jenkins, Nginx, Git, Linux, Tomcat, IIS]
+        - label: AI / ML
+          skills: [PyTorch, OpenCV, YOLO, Diffusion Models, LLM, Ollama, ComfyUI]
+        - label: AI-Assisted Development
+          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+
+  ai:
+    summary_sentences:
+      en:
+        - AI engineer with 10+ years of software engineering experience across applied AI, computer vision, full-stack delivery, Android, and IoT systems.
+        - Specialized in building runnable AI workflows that connect models, APIs, local deployment constraints, and user-facing control surfaces.
+        - Proven work includes ChatClothes, a multimodal virtual try-on thesis project combining diffusion generation, garment classification, and local LLM control.
+        - Additional expertise includes PyTorch, OpenCV, YOLO, LLM tooling, API integration, and AI-assisted programming workflows.
+        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+    key_skills:
+      en:
+        - label: AI / ML
+          skills: [PyTorch, OpenCV, YOLO, Diffusion Models, LoRA, LLM, Ollama, ComfyUI, Dify]
+        - label: Software Engineering
+          skills: [Python, Java, Kotlin, JavaScript, RESTful API, WebSocket, Docker]
+        - label: Data & Deployment
+          skills: [SQLite, MySQL, Linux, Raspberry Pi, Local Deployment, Performance Tuning]
+        - label: Product Integration
+          skills: [Android Chrome PWA, API Integration, User Workflow Design, Offline-capable Systems]
+        - label: AI-Assisted Development
+          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]

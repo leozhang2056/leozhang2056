@@ -47,10 +47,10 @@ career_identity:
       Master's in Computer and Information Sciences from AUT, First Class Honours.
     
     android_focus: >
-      Senior Android Engineer with 10+ years of full-stack experience in Android, Kotlin/Java, Spring Cloud, and distributed backend services.
-      Specialized in building real-time messaging systems, industrial IoT applications, and end-to-end mobile platforms with microservices backend integration.
-      Proven success in delivering an enterprise messaging platform handling 5,000 DAU and architecting full-stack IoT solutions deployed across 10+ factory sites.
-      Additional expertise includes Jetpack Compose, CI/CD, REST API design, MVVM / Clean Architecture, AI-assisted development tools, and AI solutions such as workflow orchestration and RAG-based enterprise chatbots.
+      Senior Android Engineer with 10+ years of full-stack experience in Kotlin, Android SDK, Jetpack Compose, and C++ (NDK) low-level development.
+      Specialized in building high-performance mobile applications, real-time communication systems, and end-to-end Android platforms with strong ownership across the development lifecycle.
+      Proven success in delivering full-stack mobile and backend solutions across 10+ production environments and independently building AI-driven systems with peer-reviewed research outcomes.
+      Additional expertise includes CI/CD (GitHub Actions), Android internals and performance optimization, MVVM / Clean Architecture, reverse engineering and security analysis, and AI-assisted development tools.
       Master of Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     ai_focus: >

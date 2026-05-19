@@ -393,6 +393,11 @@ def build_parser() -> argparse.ArgumentParser:
         help='If arbiter says needs_refine, run one auto-refine round (cv-iterate logic).',
     )
 
+    # ── html-to-pdf ────────────────────────────────────────────────────────
+    h2p_parser = sub.add_parser('html-to-pdf', help='Convert an existing HTML file to PDF')
+    h2p_parser.add_argument('--input', required=True, help='Input HTML file path')
+    h2p_parser.add_argument('--output', required=True, help='Output PDF file path')
+
     return parser
 
 
@@ -629,6 +634,22 @@ async def run(args) -> None:
             )
         else:
             print("  ZH: skipped (use --with-zh to generate)")
+
+    elif args.command == 'html-to-pdf':
+        from generate_cv_html_to_pdf import html_to_pdf
+        import os
+        
+        input_path = Path(args.input)
+        output_path = Path(args.output)
+        
+        if not input_path.exists():
+            print(f"Error: Input file not found: {input_path}")
+            return
+            
+        html_content = input_path.read_text(encoding='utf-8')
+        await html_to_pdf(html_content, str(output_path))
+        print(f"\nDone.")
+        print(f"  PDF: {output_path.resolve()} ({os.path.getsize(output_path)/1024:.1f} KB)")
 
     elif args.command == 'cl':
         from generate_cover_letter import generate_cover_letter
