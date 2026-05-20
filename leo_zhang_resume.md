@@ -18,7 +18,7 @@ Senior Android Software Engineer with 10+ years of experience building productio
 |----------|--------|
 | **Android Development** | Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, Automated Testing, App Store Deployment |
 | **Software Engineering** | Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration |
-| **Backend & APIs** | Spring Boot, RESTful APIs, MySQL, Redis |
+| **Backend & APIs** | Spring Cloud, RESTful APIs, MySQL, Redis |
 | **Tools & DevOps** | Git, CI/CD, Docker, Agile/Scrum |
 | **AI & Emerging Technologies** | LLM Integration, Multimodal Systems, On-device Inference |
 
@@ -49,7 +49,7 @@ Senior Android Software Engineer with 10+ years of experience building productio
 - Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams
 - Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery
 
-**Tech:** Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, Docker
+**Tech:** Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Cloud, MySQL, Redis, Docker
 
 ---
 
@@ -122,14 +122,14 @@ Conducted Master's research in Computer and Information Sciences, delivering Cha
 ### 2) Chunxiao Technology Co., Ltd. — Technical Lead & Senior Android Engineer
 **Dates:** Jul 2013 – Feb 2024
 
-Led and contributed to enterprise software delivery across Android, Java backend, and full-stack surfaces over an 11-year tenure, progressing from .NET Software Engineer to Technical Lead. As Technical Lead (2019–2024), owned the smart manufacturing platform (Spring Boot microservices, Docker/Jenkins-based CI/CD) rolled out to 5+ factory sites, with IoT integration (RFID, barcode scanners, electronic scales, conveyors) and long-running production stability, improving manufacturing efficiency by 30%+. Built and maintained the enterprise messaging platform: Android client with NDK-based TCP/UDP transport for low-latency messaging, Spring Cloud backend services, and cross-platform clients; scaled to ~5,000 DAU with sub-200ms latency and 500K+ daily messages. Migrated core messaging from unstable in-house C++ implementation to cloud IM, eliminating 90%+ defects. Led code review processes and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases. Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in Agile product teams. Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery.
+Led and contributed to enterprise software delivery across Android, Java backend, and full-stack surfaces over an 11-year tenure, progressing from .NET Software Engineer to Technical Lead. As Technical Lead (2019–2024), owned the smart manufacturing platform (Spring Cloud microservices, Docker/Jenkins-based CI/CD) rolled out to 5+ factory sites, with IoT integration (RFID, barcode scanners, electronic scales, conveyors) and long-running production stability, improving manufacturing efficiency by 30%+. Built and maintained the enterprise messaging platform: Android client with NDK-based TCP/UDP transport for low-latency messaging, Spring Cloud backend services, and cross-platform clients; scaled to ~5,000 DAU with sub-200ms latency and 500K+ daily messages. Migrated core messaging from unstable in-house C++ implementation to cloud IM, eliminating 90%+ defects. Led code review processes and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases. Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in Agile product teams. Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery.
 
 ---
 
 ### 3) Chunxiao Technology Co., Ltd. — Senior Android Developer (2015–2018)
 **Dates:** Jul 2015 – Dec 2018
 
-Shipped 8+ production Android applications including live-streaming modules, IoT connectivity tools, and internal enterprise efficiency apps. Developed modular Android architecture reused across 12+ internal projects, reducing code duplication by 50%+. Reduced OOM crashes by 65% through memory profiling, leak detection, and image loading optimization; engineered crash telemetry infrastructure with automated reporting for early-stage production monitoring. Designed resilient push notification delivery with IM primary channel + failover path; implemented connection persistence strategies and OEM ROM adaptation for Android fragmentation. Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure local data storage. Collaborated with backend engineers to define RESTful API contracts and integrate Spring Boot services with Android clients.
+Shipped 8+ production Android applications including live-streaming modules, IoT connectivity tools, and internal enterprise efficiency apps. Developed modular Android architecture reused across 12+ internal projects, reducing code duplication by 50%+. Reduced OOM crashes by 65% through memory profiling, leak detection, and image loading optimization; engineered crash telemetry infrastructure with automated reporting for early-stage production monitoring. Designed resilient push notification delivery with IM primary channel + failover path; implemented connection persistence strategies and OEM ROM adaptation for Android fragmentation. Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure local data storage. Collaborated with backend engineers to define RESTful API contracts and integrate Spring Cloud services with Android clients.
 
 ---
 

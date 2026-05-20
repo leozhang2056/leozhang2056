@@ -9,7 +9,7 @@ programming_languages:
     evidence: 
       - Enterprise Messaging System backend
       - Smart Factory Backend System
-      - Multiple Spring Boot microservices
+      - Multiple Spring Cloud microservices
     
   - name: Kotlin
     level: advanced
@@ -262,7 +262,7 @@ mobile_platform_tools:
 
 # Backend & Full-stack
 backend:
-  - name: Spring Boot
+  - name: Spring Cloud
     level: expert
     years: 8
     evidence:
@@ -662,7 +662,7 @@ methodology_practices:
 categorized_skills:
   android_development:
     label: "Android Development"
-    skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security]
+    skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, React Native]
   
   software_engineering:
     label: "Software Engineering"
@@ -700,7 +700,7 @@ skill_groups:
     
   backend_engineering:
     - Java
-    - Spring Boot
+    - Spring Cloud
     - Spring Cloud
     - MyBatis
     - RESTful API
@@ -731,7 +731,7 @@ skill_groups:
     - Vue.js
     - HTML/CSS
     - Node.js
-    - Spring Boot
+    - Spring Cloud
     
   iot_hardware:
     - Android

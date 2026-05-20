@@ -13,9 +13,12 @@ personal_info:
     github: "https://github.com/leozhang2056"
     location:
       city: Auckland
+      suburb: Hillcrest
+      area: North Shore
       country: NZ
       country_code: NZ
       city_cn: 奥克兰
+      suburb_cn: 北岸 Hillcrest（近 Takapuna）
       country_cn: 新西兰
 
   visa_status: 
@@ -43,7 +46,7 @@ career_identity:
       Full-stack software engineer with 10+ years shipping production software across Android, Java backends, and Vue.js front ends.
       Specialized in IoT-connected and enterprise delivery—clear APIs, sensible integration, and releases that land when field conditions are messy.
       Proven delivery spans industrial automation, mobile platforms, and applied AI from prototype through production support.
-      Additional expertise includes Spring Boot, Docker, CI/CD discipline, and AI-assisted programming tools in daily delivery.
+      Additional expertise includes Spring Cloud, Docker, CI/CD discipline, and AI-assisted programming tools in daily delivery.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     android_focus: >
@@ -57,7 +60,7 @@ career_identity:
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     java_focus: >
-      Backend software engineer with 10+ years on Java delivery, including Spring Boot, MyBatis, and microservice-style systems.
+      Backend software engineer with 10+ years on Java delivery, including Spring Cloud, MyBatis, and microservice-style systems.
       Specialized in enterprise backends for manufacturing, messaging, and IoT with practical focus on uptime, latency, and release rhythm.
       Proven delivery includes long-lived services with REST APIs, observability, and stable rollout under production load.
       Additional expertise includes CI/CD, database performance tuning, and cross-team API contracts.
@@ -68,7 +71,7 @@ career_identity:
       全栈软件工程师，拥有 10 年以上 Java 后端、Android 开发、AI 集成与物联网系统交付经验。
       擅长 IoT 与企业级场景下的 API 集成、可维护架构与可上线发布，能在现场条件复杂时保持系统稳定运行。
       交付覆盖工业自动化、移动平台与 AI 应用，从原型验证到生产运维均有实战经验。
-      具备 Spring Boot、Docker、CI/CD 与 AI 辅助编程工具等工程化实践。
+      具备 Spring Cloud、Docker、CI/CD 与 AI 辅助编程工具等工程化实践。
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
     android_focus: >
@@ -86,7 +89,7 @@ career_identity:
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
     java_focus: >
-      后端软件工程师，10 年以上 Java 交付经验，涵盖 Spring Boot、MyBatis 与微服务架构。
+      后端软件工程师，10 年以上 Java 交付经验，涵盖 Spring Cloud、MyBatis 与微服务架构。
       擅长制造、通讯与 IoT 等企业级后端，关注可用性、延迟与发布节奏。
       交付包括长期运行的 REST 服务、可观测性建设与生产环境稳定发布。
       具备 CI/CD、数据库与缓存（MySQL/Redis）性能优化及跨团队 API 协作经验。
@@ -135,18 +138,35 @@ career_objectives:
   
   preferred_locations:
     - Auckland, New Zealand
-    - Remote
   
   work_preferences:
     - Full-time
-    - Contract
-    - Hybrid
+    - Onsite (Auckland North Shore — Hillcrest, short commute to Takapuna)
+  
+  collaboration:
+    languages_working:
+      - English
+      - Mandarin
+    notes: >
+      Native Mandarin and professional English (written and spoken).
+      Experienced working with China-based engineering teams; comfortable as the bilingual bridge
+      between Auckland R&D and Shanghai delivery.
+  
+  career_entry:
+    open_to_delivery_engineer_track: true
+    growth_interest:
+      - platform engineering
+      - applied AI
+    notes: >
+      Open to starting as a delivery-focused full-stack engineer (including roles titled Junior)
+      when the team, mentorship, and platform/AI growth path are strong — e.g. Auckland R&D centre
+      building vertical AI and data platforms for enterprise clients.
 
 keywords:
   - Java
   - Kotlin
   - Android
-  - Spring Boot
+  - Spring Cloud
   - AI
   - Machine Learning
   - PyTorch

@@ -24,13 +24,13 @@ roles:
     key_skills:
       en:
         - label: Android Development
-          skills: [Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, Automated Testing, App Store Deployment]
+          skills: [Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, React Native, Automated Testing, App Store Deployment]
         - label: Software Engineering
           skills: [Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration]
         - label: Backend & APIs
-          skills: [Spring Boot, RESTful APIs, MySQL, Redis]
+          skills: [Spring Cloud, RESTful APIs, MySQL, Redis]
         - label: Tools & DevOps
-          skills: [Git, CI/CD, Docker, Agile/Scrum]
+          skills: [Git, CI/CD, Docker, Jenkins, Agile/Scrum]
         - label: AI & Emerging Technologies
           skills: [LLM Integration, Multimodal Systems, On-device Inference]
 
@@ -38,14 +38,14 @@ roles:
     summary_sentences:
       en:
         - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing, IoT, and long-running production systems.
-        - Specialized in Spring Boot services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
+        - Specialized in Spring Cloud services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
         - Proven delivery includes enterprise systems with stable release rhythm, performance tuning, and production support under real business constraints.
         - Additional expertise includes CI/CD, database optimization, API contracts, observability-minded debugging, and AI-assisted programming tools.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
         - label: Backend Engineering
-          skills: [Java, Spring Boot, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
+          skills: [Java, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
         - label: Databases
           skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
         - label: DevOps & Release
@@ -63,14 +63,14 @@ roles:
         - Full-stack software engineer with 10+ years shipping production software across Android, Java backends, Vue.js front ends, IoT systems, and applied AI.
         - Specialized in turning messy business requirements into maintainable APIs, usable client workflows, and releases that work in real operating environments.
         - Proven delivery spans industrial automation, enterprise messaging, mobile platforms, and applied AI from prototype through production support.
-        - Additional expertise includes Spring Boot, Docker, CI/CD discipline, database optimization, and AI-assisted programming tools in daily delivery.
+        - Additional expertise includes Spring Cloud, Docker, CI/CD discipline, database optimization, and AI-assisted programming tools in daily delivery.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
         - label: Languages
           skills: [Java, Kotlin, Python, JavaScript, C#, C/C++]
         - label: Backend & APIs
-          skills: [Spring Boot, Spring Cloud, MyBatis, RESTful API, WebSocket, Kafka, ActiveMQ]
+          skills: [Spring Cloud, MyBatis, RESTful API, WebSocket, Kafka, ActiveMQ]
         - label: Frontend & Mobile
           skills: [Android SDK, Jetpack Compose, Vue.js, HTML/CSS, Flutter, React Native]
         - label: Databases

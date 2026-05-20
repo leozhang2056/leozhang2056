@@ -138,7 +138,7 @@ Default length:
   - Avoid `automated backup` unless it is a core DB/infra responsibility; prefer `disaster recovery` or `backup strategies` in context
 
 Good:
-- `Built Spring Boot microservices supporting 5+ factory sites with 99.9% uptime.`
+- `Built Spring Cloud microservices supporting 5+ factory sites with 99.9% uptime.`
 
 Weak:
 - `Responsible for backend development and system maintenance.`
@@ -150,7 +150,7 @@ Weak:
 Adjust emphasis by target role:
 
 - Android: Android SDK, Kotlin/Java, architecture, performance, hardware integration
-- Backend: Spring Boot, microservices, APIs, databases, scalability, DevOps
+- Backend: Spring Cloud, microservices, APIs, databases, scalability, DevOps
 - AI/ML: model training, CV/NLP, deployment, evaluation, research contributions
 - Full-stack: delivery across client, backend, deployment, and integration
 
@@ -174,27 +174,27 @@ Role auto-selection guidance:
 
 ## 6. Validation Checklist
 
-- [ ] All content is traceable to KB or `facts.yaml`
-- [ ] JD requirements are mapped at sentence level where possible (not only keyword matching)
-- [ ] Selected skills match the JD
-- [ ] Selected projects support the target role
-- [ ] No unsupported metrics or titles were added
-- [ ] Summary is targeted, 5-6 lines, and ends as a complete sentence
-- [ ] Summary includes at least one concrete achievement when evidence exists
-- [ ] Bullets use strong verbs
-- [ ] Bullets are not repetitive across projects
-- [ ] Timeline is internally consistent (`profile.yaml` education, `experience/work.yaml`, `projects/*/facts.yaml`)
-- [ ] Degree status matches employment rows (e.g. no AUT/thesis row `current: true` past completed `end_date`)
-- [ ] Android-target Summary has no generic “Seeking … roles” closer unless explicitly requested
-- [ ] Facts come from the resume KB payload, not stale copy in `kb/interview_qa/*` when those conflict
-- [ ] No edge-related terms remain unless explicitly requested
-- [ ] No internal label artifacts (e.g., `JD Match`) are shown
+- [] All content is traceable to KB or `facts.yaml`
+- [] JD requirements are mapped at sentence level where possible (not only keyword matching)
+- [] Selected skills match the JD
+- [] Selected projects support the target role
+- [] No unsupported metrics or titles were added
+- [] Summary is targeted, 5-6 lines, and ends as a complete sentence
+- [] Summary includes at least one concrete achievement when evidence exists
+- [] Bullets use strong verbs
+- [] Bullets are not repetitive across projects
+- [] Timeline is internally consistent (`profile.yaml` education, `experience/work.yaml`, `projects/*/facts.yaml`)
+- [] Degree status matches employment rows (e.g. no AUT/thesis row `current: true` past completed `end_date`)
+- [] Android-target Summary has no generic “Seeking … roles” closer unless explicitly requested
+- [] Facts come from the resume KB payload, not stale copy in `kb/interview_qa/*` when those conflict
+- [] No edge-related terms remain unless explicitly requested
+- [] No internal label artifacts (e.g., `JD Match`) are shown
 
 ---
 
 ## 7. Notes
 
-- **Header contact (HTML/PDF):** single centered row — email, phone, map-pin icon + location (`Auckland,NZ`-style from `profile.yaml`), then LinkedIn and GitHub as icon + label links without visible URLs; implementation and CSS live in `app/backend/generate_cv_from_kb.py`.
+- **Header contact (HTML/PDF):** single centered row — email, phone, map-pin icon + location (`Auckland, NZ`-style from `profile.yaml`), then LinkedIn and GitHub as icon + label links without visible URLs; implementation and CSS live in `app/backend/generate_cv_from_kb.py`.
 - **CV font (hard constraint):** English/ZH resume PDFs use **Inter** via embedded CSS in `app/backend/generate_cv_from_kb.py` (`_CV_FONT_HEAD` + `font-family` on body/headings). Do not change typeface in generators without updating `.cursor/rules/resume-generation-standards.mdc`.
 - Other presentation (colors, spacing, page breaks) lives in the same embedded CSS, not in KB YAML.
 - Human-oriented historical guidance lives in `templates/resume_generation_guide.md`.

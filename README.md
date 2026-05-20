@@ -28,7 +28,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 
 **Key Strengths:**
 - **Android Expertise**: 10+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
-- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 5,000 DAU systems
+- **Backend Development**: Strong Java backend skills with Spring Cloud microservices, REST APIs, supporting 5,000 DAU systems
 - **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
 - **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
 - **AI-Assisted Development**: Daily use of **Claude Code**, Cursor, and GitHub Copilot for code generation, refactoring, and review — comfortable integrating AI tools into the full development workflow
@@ -41,12 +41,13 @@ Proven track record leading technical teams, architecting scalable systems, depl
 | Category | Technologies |
 |----------|-------------|
 | **Android** | Kotlin, Java, Jetpack Compose, MVVM, NDK/JNI, Room, Coroutines |
-| **Backend** | Spring Boot, Spring Cloud, REST APIs, MySQL, Redis, RabbitMQ |
+| **Backend** | Spring Cloud, Spring Cloud, REST APIs, MySQL, Redis, RabbitMQ |
 | **Frontend** | Vue.js, JavaScript, HTML/CSS |
 | **DevOps** | Docker, Jenkins, Git, GitHub Actions, Nginx, Linux |
 | **AI/ML** | PyTorch, YOLO, Diffusion Models, LLM Integration, OpenCV |
 | **IoT** | MQTT, RFID, Sensors, UART/RS485, Raspberry Pi |
 | **Tools** | Android Studio, IntelliJ, Jira, Claude Code, Cursor, GitHub Copilot |
+| **Languages** | English (Professional), Mandarin Chinese (Native) |
 
 ---
 
@@ -68,7 +69,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 **Key Projects:**
 
 - **[Smart Factory Backend](projects/smart-factory/)** — Led microservice platform for textile manufacturing (2018–2024)
-  - Architected Spring Boot + Spring Cloud backend supporting 5+ factory sites
+  - Architected Spring Cloud + Spring Cloud backend supporting 5+ factory sites
   - Long-running production deployment with Docker, Jenkins, Nginx on Linux
   - Integrated IoT devices (RFID, barcode scanners, conveyors, electronic scales)
   - Improved production efficiency by 30%+ across manufacturing bases
@@ -96,7 +97,7 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Portfolio
 
 ### 🤖 AI / Machine Learning
 | Project | Description | Tech Stack |

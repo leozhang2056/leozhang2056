@@ -6,7 +6,7 @@ experiences:
     company_url: https://www.aut.ac.nz
     company_description: ""
     location: Auckland, New Zealand
-    role: Master's Candidate & AI Research Assistant
+    role: AI Research Assistant
     start_date: "2024-07"
     end_date: "2026-02"
     current: false
@@ -41,7 +41,7 @@ experiences:
           - "Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams"
           - "Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery"
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, Docker]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Cloud, MySQL, Redis, Docker]
       
       - title: Senior Android Developer
         period: "2015 – 2018"
