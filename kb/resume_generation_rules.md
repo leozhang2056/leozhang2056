@@ -129,6 +129,13 @@ Default length:
 - Keep each bullet focused on one core contribution
 - Prefer concrete impact over generic responsibility
 - Keep formatting ATS-friendly: simple section labels, no decorative symbols in content blocks, no dense text walls
+- **Professional terminology (hard constraint):** replace beginner/amateur phrasing with senior-engineer vocabulary:
+  - `cleaned up` → `optimized` / `refactored`
+  - `built ... with automatic upload` → `engineered ... with automated reporting` / `telemetry infrastructure`
+  - `backup channel` → `failover channel` / `redundant path`
+  - `keep-alive` → `connection persistence` / `session maintenance`
+  - `implemented` (for distribution/deployment) → `orchestrated` / `managed`
+  - Avoid `automated backup` unless it is a core DB/infra responsibility; prefer `disaster recovery` or `backup strategies` in context
 
 Good:
 - `Built Spring Boot microservices supporting 5+ factory sites with 99.9% uptime.`

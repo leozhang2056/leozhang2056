@@ -14,7 +14,7 @@ experiences:
     
     achievements:
       - "Completed Master's thesis 6 months early, delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration and on-device inference"
-      - "Published research on diffusion-based virtual try-on (IVCNZ 2025) and lightweight clothes recognition models (IGI Global book chapter)"
+      - "Published research on diffusion-based virtual try-on (IVCNZ 2025)"
       - "Built IoT sensor monitoring system using Raspberry Pi, streaming real-time data to LLM for personalized recommendations"
     
     tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, ComfyUI, Ollama, Raspberry Pi, LLM, Multimodal AI, AWS]
@@ -37,9 +37,11 @@ experiences:
           - "Architected Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
           - "Engineered NDK TCP/UDP transport and cloud IM supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"
           - "Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong> and enabling focus on platform subsystems"
-          - "Built distributed file storage supporting <strong>100GB+ uploads</strong> with chunk distribution and cross-system access control"
+          - "Led code review process and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases"
+          - "Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams"
+          - "Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery"
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, MQTT, Docker]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, Docker]
       
       - title: Senior Android Developer
         period: "2015 – 2018"
@@ -47,10 +49,11 @@ experiences:
         achievements:
           - "Shipped <strong>8+ production Android apps</strong> including live-streaming modules, IoT connectivity tools, and internal efficiency apps"
           - "Developed modular Android architecture reused across <strong>12+ internal projects</strong>, reducing code duplication by <strong>50%+</strong>"
-          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; built crash reporting infrastructure with automatic upload"
-          - "Designed resilient push delivery with IM + backup channel; implemented keep-alive strategies and OEM ROM adaptation"
+          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; engineered crash telemetry infrastructure with automated reporting"
+          - "Designed resilient push delivery with IM + failover channel; implemented connection persistence strategies and OEM ROM adaptation"
+          - "Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure data storage"
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, Coroutines, NDK/JNI, Gradle, CI/CD]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD]
       
       - title: .NET Software Engineer
         period: "2013 – 2014"
@@ -58,7 +61,7 @@ experiences:
         achievements:
           - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web and mobile"
           - "Implemented WebSocket-based bidirectional control for synchronized broadcast playback and real-time viewer engagement"
-          - "Managed production infrastructure: SSL/TLS, multi-region failover, automated backup, and media server optimization"
+          - "Managed production infrastructure: SSL/TLS, multi-region failover, and media server optimization"
         
         tech_stack: [.NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, WebSocket]
 

@@ -398,7 +398,10 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
     'android': [
         {'key': 'android_core', 'label_en': 'Android', 'label_zh': 'Android', 'max': 8, 'field': 'name'},
         {'key': 'android_system_low_level', 'label_en': 'Systems & Low-level', 'label_zh': '系统与底层', 'max': 5, 'field': 'name'},
+        {'key': 'android_testing', 'label_en': 'Testing', 'label_zh': '测试', 'max': 4, 'field': 'name'},
+        {'key': 'mobile_platform_tools', 'label_en': 'Platform Tools', 'label_zh': '平台工具', 'max': 4, 'field': 'name'},
         {'key': 'backend', 'label_en': 'Backend & APIs', 'label_zh': '后端与 API', 'max': 6, 'field': 'name'},
+        {'key': 'methodology_practices', 'label_en': 'Practices', 'label_zh': '工程实践', 'max': 4, 'field': 'name'},
         {'key': 'ai_ml', 'label_en': 'AI / ML', 'label_zh': 'AI / ML', 'max': 4, 'field': 'name'},
         {'key': 'devops', 'label_en': 'DevOps', 'label_zh': 'DevOps', 'max': 6, 'field': 'name'},
     ],
@@ -586,6 +589,26 @@ def _jd_term_kb_supported(term: str, skill_names: set) -> bool:
         {"spring boot", "spring", "mybatis", "rest", "api"},
         {"python", "pytorch", "llm", "rag"},
         {"vue", "vue.js", "react", "javascript", "typescript"},
+        # Testing: JUnit, MockK, Espresso → automated testing, testing frameworks
+        {"junit", "mockk", "espresso", "automated testing", "testing frameworks"},
+        # App deployment: Google Play Console → app store deployment
+        {"google play console", "app store deployment"},
+        # Crash analysis: crash reporting → crash analysis, observability
+        {"crash reporting", "crash analysis", "crashlytics", "observability"},
+        # Mobile architecture: MVVM, Clean Architecture → mobile architecture, engineering patterns
+        {"mvvm", "clean architecture", "mobile architecture", "engineering patterns", "mvp"},
+        # UX: Material Design → user experience, accessibility
+        {"material design", "user experience", "ux", "accessibility"},
+        # Team/product: agile, scrum → product team, cross-functional collaboration
+        {"agile", "scrum", "kanban", "product team", "cross-functional collaboration"},
+        # DevOps: CI/CD, Git → version control, release practices, maintainability
+        {"ci/cd", "git", "version control", "release practices", "maintainability"},
+        # Security: Android Security → security, technical debt
+        {"android security", "security", "technical debt"},
+        # Cloud/Backend: AWS, Spring Boot → backend-for-frontend
+        {"aws", "spring boot", "backend-for-frontend", "bff"},
+        # Innovation/digital: digital transformation, modern engineering practices
+        {"digital transformation", "modern engineering practices", "innovation"},
     )
     for group in alias_groups:
         if tl in group and any(g in skill_names for g in group):

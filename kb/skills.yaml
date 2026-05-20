@@ -227,8 +227,9 @@ android:
   - name: Android Security
     level: intermediate
     evidence:
-      - Static and dynamic analysis
-      - Protocol analysis
+      - SSL/TLS certificate management and HTTPS request implementation
+      - Runtime permission management and secure data storage
+      - Static and dynamic analysis, protocol analysis
       - Penetration testing on Android apps
 
 # Android CV sub-rows (Key Skills — concise labels, order preserved)
@@ -237,6 +238,7 @@ android_core:
   - name: Kotlin Coroutines & Flow
   - name: Hilt
   - name: MVVM / Clean Architecture
+  - name: Android Security
 
 android_system_low_level:
   - name: NDK (C/C++)
@@ -249,11 +251,14 @@ android_testing:
   - name: JUnit
   - name: MockK
   - name: Espresso
+  - name: Automated Testing
 
 mobile_platform_tools:
   - name: Firebase (Analytics, Crashlytics)
   - name: Google Play Console
   - name: Gradle (AGP)
+  - name: App Store Deployment
+  - name: Multi-channel Distribution
 
 # Backend & Full-stack
 backend:
@@ -648,16 +653,20 @@ system_admin:
 methodology_practices:
   - name: Agile / Scrum
   - name: Code Review
+  - name: Cross-functional Collaboration
+  - name: Product Team Delivery
+  - name: Maintainability
+  - name: Technical Debt Reduction
 
 # Categorized Key Skills for CV generation (Windcave style)
 categorized_skills:
   android_development:
     label: "Android Development"
-    skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK]
+    skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security]
   
   software_engineering:
     label: "Software Engineering"
-    skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging]
+    skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging, Maintainability, Technical Debt Reduction, Code Refactoring]
   
   backend_fullstack:
     label: "Backend & Full-Stack"
@@ -665,7 +674,7 @@ categorized_skills:
   
   tools_devops:
     label: "Tools & DevOps"
-    skills: [Git, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
+    skills: [Git, GitHub, GitLab, Version Control, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
   
   ai_emerging:
     label: "AI & Emerging Technologies"

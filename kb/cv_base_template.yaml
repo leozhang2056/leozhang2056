@@ -24,13 +24,13 @@ roles:
     key_skills:
       en:
         - label: Android Development
-          skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK]
+          skills: [Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, Automated Testing, App Store Deployment]
         - label: Software Engineering
-          skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging]
+          skills: [Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration]
         - label: Backend & APIs
-          skills: [Spring Boot, RESTful APIs, MySQL, Redis, Node.js, Python]
+          skills: [Spring Boot, RESTful APIs, MySQL, Redis]
         - label: Tools & DevOps
-          skills: [Git, CI/CD, Docker, Linux, Jenkins, Agile/Scrum]
+          skills: [Git, CI/CD, Docker, Agile/Scrum]
         - label: AI & Emerging Technologies
           skills: [LLM Integration, Multimodal Systems, On-device Inference]
 

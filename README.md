@@ -38,68 +38,15 @@ Proven track record leading technical teams, architecting scalable systems, depl
 
 ## 🛠️ Technical Skills
 
-### Primary Skills (Core Expertise)
-
-**Android Development**
-- Languages: Java, Kotlin
-- Framework: Android SDK, Jetpack, MVVM/MVP, Jetpack Compose
-- Native: NDK, JNI, C/C++ for performance-critical modules
-- Storage: SQLite, Room, SharedPreferences
-- Architecture: Clean Architecture, Modular Design, Offline-First
-
-**Java Backend**
-- Frameworks: Spring Boot, Spring Cloud, Spring Security
-- Data Access: MyBatis, JPA/Hibernate, MySQL, Redis
-- Services: REST APIs, WebSocket, Microservices
-- Messaging: RabbitMQ, Kafka (basic)
-
-### Secondary Skills (Supporting Expertise)
-
-**Full-stack & Web**
-- Frontend: Vue.js, JavaScript, HTML/CSS
-- Backend: Node.js, Express, .NET Framework
-- Real-time: Socket.IO, WebSocket
-
-**DevOps & Infrastructure**
-- CI/CD: Jenkins, GitHub Actions, Docker
-- Web Server: Nginx, IIS
-- OS: Linux (CentOS, Ubuntu), Windows Server
-- VCS: Git, GitHub, GitLab
-
-**Data & BI**
-- ETL: Kettle (Pentaho)
-- Visualization: PowerBI, FineReport
-- Databases: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB
-
-### Additional Skills (Value-Add)
-
-**AI / ML** (Thesis project & self-study)
-- Frameworks: PyTorch, TensorFlow, OpenCV
-- Models: YOLO, Diffusion Models, LLM integration
-- Tools: ComfyUI, Dify
-
-**Security Research** (Reverse engineering capability)
-- Tools: JADX, Xposed Framework
-- Skills: APK analysis, runtime hooking
-
-**Streaming** (Historical project experience)
-- Protocols: RTMP, HLS (M3U8), WebRTC
-- Processing: FFmpeg
-
-**IoT & Hardware** (Industrial project experience)
-- Protocols: UART, RS232/RS485, Modbus, MQTT
-- Devices: RFID, Barcode Scanners, Sensors
-
-**AI-Assisted Development**
-- Tools: **Claude Code** (primary), Cursor, GitHub Copilot
-- Workflow: AI-assisted code generation, refactoring, test writing, and code review
-- LLM tools: Claude, DeepSeek, ChatGPT — used for architecture planning and debugging
-- Built this repository's resume generation system entirely with AI-assisted coding
-
-**Development Tools**
-- IDE: Android Studio, IntelliJ IDEA
-- Collaboration: Jira, Confluence
-- VCS: Git, GitHub, GitLab
+| Category | Technologies |
+|----------|-------------|
+| **Android** | Kotlin, Java, Jetpack Compose, MVVM, NDK/JNI, Room, Coroutines |
+| **Backend** | Spring Boot, Spring Cloud, REST APIs, MySQL, Redis, RabbitMQ |
+| **Frontend** | Vue.js, JavaScript, HTML/CSS |
+| **DevOps** | Docker, Jenkins, Git, GitHub Actions, Nginx, Linux |
+| **AI/ML** | PyTorch, YOLO, Diffusion Models, LLM Integration, OpenCV |
+| **IoT** | MQTT, RFID, Sensors, UART/RS485, Raspberry Pi |
+| **Tools** | Android Studio, IntelliJ, Jira, Claude Code, Cursor, GitHub Copilot |
 
 ---
 

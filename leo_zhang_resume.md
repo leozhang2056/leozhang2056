@@ -1,201 +1,164 @@
 # Leo Zhang
 
-**Senior Android Developer · Java Backend · Full-stack Engineer**
-📧 leozhang2056@gmail.com | 📍 Auckland, New Zealand
-
----
-
-## Role descriptions (online forms — copy & paste)
-
-Use the blocks below for **Role description** fields. Adjust dates if your application uses different months.
-
-### 1) Auckland University of Technology (AUT) — New Zealand
-
-- **Job title (example):** Master’s Researcher (AI / Computer Vision) / Sole Developer — ChatClothes thesis  
-- **Dates (KB):** Jul 2024 – Apr 2025
-
-**Role description:**
-
-Conducted Master’s research in Computer and Information Sciences, delivering ChatClothes, a multimodal virtual try-on system combining diffusion models, lightweight garment classification (YOLO), and local LLM orchestration. Designed the end-to-end pipeline, integrated ComfyUI and Dify for workflow and control, and optimized for resource-constrained and offline-capable targets including Raspberry Pi–class hardware. Shipped a working demo with documentation; completed the thesis ahead of schedule.
-
----
-
-### 2) Chunxiao Technology Co., Ltd. — China
-
-- **Job title (example):** Technical Lead / Senior Software Engineer  
-- **Dates (KB):** Jul 2013 – Feb 2024
-
-**Role description:**
-
-Led and contributed to enterprise software delivery across Android, Java backend, and full-stack surfaces. As Technical Lead, owned the smart manufacturing platform (Spring Boot / Spring Cloud microservices, Docker/Jenkins-based releases) rolled out to multiple factory sites, with IoT integration (RFID, barcode, scales, conveyors) and long-running production stability. Built and maintained the enterprise messaging platform: Android client with NDK TCP/UDP for low-latency messaging, Spring Cloud/Node.js services, and cross-platform clients; scaled to ~5,000 DAU with high daily message throughput. Collaborated with product, QA, and operations; mentored engineers, drove code quality and release discipline, and supported production incidents as needed.
+**Senior Android Engineer · Full-stack Software Engineer**
+📧 leozhang2056@gmail.com | 📍 Auckland, New Zealand | 📱 +64 27 385 0794
+🔗 [LinkedIn](https://www.linkedin.com/in/leo-zhang-305626280/) · [GitHub](https://github.com/leozhang2056)
 
 ---
 
 ## Professional Summary
 
-Senior Android Developer with 12+ years of experience and Master's in Computer and Information Sciences from AUT. Delivered enterprise solutions across Android development, Java backend systems, AI/ML integration, and DevOps/Infrastructure. Proven track record leading technical teams, architecting scalable systems, deploying IoT solutions in industrial environments, and managing production infrastructure with 99.9% uptime SLA.
-
-**Key Strengths:**
-- **Android Expertise**: 12+ years building enterprise Android apps with hardware integration (RFID, barcode, sensors), NDK performance optimization, and clean architecture
-- **Backend Development**: Strong Java backend skills with Spring Boot microservices, REST APIs, supporting 5,000 DAU systems
-- **Full-stack Capability**: End-to-end delivery from Android client to Java backend to Vue.js frontend
-- **Team Leadership**: Led cross-functional teams, managed project lifecycle from requirements to deployment
-- **Additional Skills**: Reverse engineering (JADX, Xposed), AI/ML (PyTorch, LLMs), DevOps (Docker, Jenkins), BI (PowerBI, Kettle)
+Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture. Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments. Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration. Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows. Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
 
 ---
 
-## Technical Skills
+## Core Competencies
 
-### Primary Skills (Core Expertise)
-
-**Android Development**
-- Languages: Java, Kotlin
-- Framework: Android SDK, Jetpack, MVVM/MVP, Jetpack Compose
-- Native: NDK, JNI, C/C++ for performance-critical modules
-- Storage: SQLite, Room, SharedPreferences
-- Architecture: Clean Architecture, Modular Design, Offline-First
-
-**Java Backend**
-- Frameworks: Spring Boot, Spring Cloud, Spring Security
-- Data Access: MyBatis, JPA/Hibernate, MySQL, Redis
-- Services: REST APIs, WebSocket, Microservices
-- Messaging: RabbitMQ, Kafka (basic)
-
-### Secondary Skills (Supporting Expertise)
-
-**Full-stack & Web**
-- Frontend: Vue.js, JavaScript, HTML/CSS
-- Backend: Node.js, Express, .NET Framework
-- Real-time: Socket.IO, WebSocket
-
-**DevOps & Infrastructure**
-- CI/CD: Jenkins, GitHub Actions, Docker
-- Web Server: Nginx, IIS
-- OS: Linux (CentOS, Ubuntu), Windows Server
-- VCS: Git, GitHub, GitLab
-
-**Data & BI**
-- ETL: Kettle (Pentaho)
-- Visualization: PowerBI, FineReport
-- Databases: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB
-
-### Additional Skills (Value-Add)
-
-**AI / ML**
-- Frameworks: PyTorch, TensorFlow, OpenCV
-- Models: YOLO, Diffusion Models, LLM integration
-- Tools: ComfyUI, Dify
-
-**Security Research**
-- Tools: JADX, Xposed Framework
-- Skills: APK analysis, runtime hooking
-
-**Streaming**
-- Protocols: RTMP, HLS (M3U8), WebRTC
-- Processing: FFmpeg
-
-**IoT & Hardware**
-- Protocols: UART, RS232/RS485, Modbus, MQTT
-- Devices: RFID, Barcode Scanners, Sensors
-
-**Development Tools**
-- IDE: Android Studio, IntelliJ IDEA, VS Code
-- AI Assistants: GitHub Copilot, Cursor
-- Collaboration: Jira, Confluence
+| Category | Skills |
+|----------|--------|
+| **Android Development** | Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, Automated Testing, App Store Deployment |
+| **Software Engineering** | Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration |
+| **Backend & APIs** | Spring Boot, RESTful APIs, MySQL, Redis |
+| **Tools & DevOps** | Git, CI/CD, Docker, Agile/Scrum |
+| **AI & Emerging Technologies** | LLM Integration, Multimodal Systems, On-device Inference |
 
 ---
 
 ## Professional Experience
 
-### Auckland University of Technology (AUT) — *New Zealand*
-**Master's Student & AI Researcher** | Jul 2024 – Oct 2025
+### Auckland University of Technology — *Auckland, New Zealand*
+**Master's Candidate & AI Research Assistant** | Jul 2024 – Feb 2026
 
-- **ChatClothes** — Developed diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction
-  - Optimized for edge deployment on Raspberry Pi 5 with full offline capability
-  - Integrated ComfyUI + Dify for workflow orchestration
-  - Submitted thesis 6 months early with working demo and documentation
+- Completed Master's thesis 6 months early, delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration and on-device inference
+- Published research on diffusion-based virtual try-on (IVCNZ 2025)
+- Built IoT sensor monitoring system using Raspberry Pi, streaming real-time data to LLM for personalized recommendations
 
-### Chunxiao Technology Co., Ltd. — *China*
-**Technical Lead / Senior Software Engineer** | Jan 2013 – Jun 2024
-
-Promoted from Software Engineer to Technical Lead, leading cross-functional development teams.
-
-**Key Projects:**
-
-- **Smart Factory Backend** — Led microservice platform for textile manufacturing (2018–2024)
-  - Architected Spring Boot + Spring Cloud backend supporting 5+ factory sites
-  - Maintained 99.9% uptime over 6 years with Docker, Jenkins, Nginx on Linux
-  - Integrated IoT devices (RFID, barcode scanners, conveyors, electronic scales)
-  - Improved production efficiency by 30%+ across manufacturing bases
-
-- **Enterprise Messaging Platform** — Core developer for internal IM system (2014–2023)
-  - Built Android client using NDK-based TCP/UDP achieving <200ms message latency
-  - Developed backend with Spring Cloud + C++ supporting 5,000 DAU
-  - Processed 500K+ messages daily with cross-platform support (Android, Web, PC)
-  - Implemented BI analytics with Kettle ETL, PowerBI dashboards, FineReport
-
-- **Live Streaming Commerce System** — Full-stack developer (2015–2018)
-  - Built multi-language platform: .NET (C#) + Node.js + C++ (NDK) + Python + Lua
-  - Implemented real-time streaming with WebSocket, Socket.IO, HLS/M3U8
-  - Delivered Android client and ASP.NET Web admin for 1,000+ concurrent viewers
-
-- **Patent Search System** — .NET Desktop Developer (2014)
-  - Developed Windows Forms application using .NET Framework 2.0, C# 3.0
-  - Implemented full-text search with Lucene.NET 2.9 and SQL Server 2008
-  - Created Excel/PDF processing modules for patent document management
-
-- **IoT Solutions** — Full-stack engineer for industrial and consumer IoT
-  - Developed Android apps with hardware integration for smart lockers, patrol systems, energy management
-  - Built Vue.js dashboards for real-time monitoring and data visualization
-  - Created reusable SDKs for hardware device control
+**Tech:** Python, PyTorch, OpenCV, YOLO, Diffusion Models, ComfyUI, Ollama, Raspberry Pi, LLM, Multimodal AI, AWS
 
 ---
 
-## Featured Projects
+### Chunxiao Technology Co., Ltd. — *China*
+**Technical Lead & Senior Android Engineer** | 2019 – 2024
 
-### 🤖 AI / Machine Learning
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| ChatClothes | Multimodal virtual try-on with LLM control | PyTorch, Diffusion, YOLO, DeepSeek LLM, Raspberry Pi |
-| Device Maintenance Prediction | Predictive maintenance with ML | Python, Scikit-learn, Time Series |
-| Chinese Herbal Recognition | TCM image classification platform | PyTorch, OpenCV, Flask |
+*IoT solution provider (est. 2013, ~40 employees) originally focused on audio/video streaming and enterprise software platforms, later evolving into integrated hardware-software solutions for smart factory, industrial monitoring, smart electricity, and educational sectors.*
 
-### Android & Mobile
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| Enterprise Messaging | Enterprise IM with 5K DAU | NDK, <200ms latency, Reverse Engineering |
-| Smart Factory Mobile | Industrial IoT Android apps | RFID, offline-first, hardware integration |
-| Forest Patrol | GIS app for forest inspections | Offline maps, GPS tracking, field data |
-| Picture Book Locker | Smart library locker system | Hardware control, REST API, sensors |
-| Live Streaming | Live commerce platform | Multi-language, WebSocket, HLS/M3U8 |
+- Architected Industrial IoT smart factory platform across **5+ sites**, improving production efficiency **30%+** via RFID tracking and automated workflows
+- Engineered NDK TCP/UDP transport and cloud IM supporting **5,000 DAU**, **sub-200ms latency**, and **500K+ daily messages**
+- Migrated core messaging from unstable in-house C++ to cloud IM, eliminating **90%+ defects** and enabling focus on platform subsystems
+- Led code review process and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases
+- Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams
+- Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery
 
-### ☕ Backend & Infrastructure
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| Smart Factory Backend | Microservices for manufacturing | 5+ sites, 99.9% uptime, Docker |
-| Broadcast Control | Digital signage management | MQTT, remote deployment, ad scheduling |
-| Visit System | Visitor management with face recognition | Face recognition, access control |
-| Patent Search System | .NET patent document management | .NET 2.0, Lucene.NET, SQL Server 2008 |
+**Tech:** Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, Docker
 
-### 🔧 DevOps & Data
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| Enterprise Messaging BI | BI and analytics infrastructure | Kettle ETL, PowerBI, FineReport |
-| Smart Factory DevOps | CI/CD and infrastructure | Jenkins, Docker, Kubernetes, Nginx |
+---
+
+**Senior Android Developer** | 2015 – 2018
+
+- Shipped **8+ production Android apps** including live-streaming modules, IoT connectivity tools, and internal efficiency apps
+- Developed modular Android architecture reused across **12+ internal projects**, reducing code duplication by **50%+**
+- Reduced **OOM crashes by 65%** through memory optimization; engineered crash telemetry infrastructure with automated reporting
+- Designed resilient push delivery with IM + failover channel; implemented connection persistence strategies and OEM ROM adaptation
+- Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure data storage
+
+**Tech:** Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD
+
+---
+
+**.NET Software Engineer** | 2013 – 2014
+
+- Built media transcoding pipeline (**H.264/AAC**) supporting **RTMP/HLS** multi-protocol distribution for web and mobile
+- Implemented WebSocket-based bidirectional control for synchronized broadcast playback and real-time viewer engagement
+- Managed production infrastructure: SSL/TLS, multi-region failover, and media server optimization
+
+**Tech:** .NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, WebSocket
 
 ---
 
 ## Education
 
-**Master of Computer and Information Sciences**
-Auckland University of Technology (AUT), New Zealand | 2024 – 2025
-- Research Focus: AI, Computer Vision, Edge Computing
-- Thesis: ChatClothes Virtual Try-On System (submitted 6 months early)
+**Master of Computer and Information Sciences**  
+Auckland University of Technology, New Zealand | 2024 – 2026  
+- First Class Honours | Research: AI, Computer Vision, LLMs, IoT
 
-**Bachelor of Software Engineering**
-Hebei University of Science and Technology, China | 2009 – 2013
-- National Scholarship recipient
+**Bachelor of Software Engineering**  
+Hebei University of Science and Technology, China | 2009 – 2013  
+- National Scholarship | Computer Science fundamentals, algorithms, system design, Java, backend architecture
 
 ---
 
-*Last updated: April 2026*
+## Licenses & Certifications
+
+- **First Class Honours (Master's Degree)** — Auckland University of Technology | 2025
+- **IoT Fundamentals** — Xi'an Jiaotong University | 2020
+- **Science and Technology Achievement Award (Smart Manufacturing)** — Hebei, China | 2020
+- **Software Design Engineer Certificate** — China Qualification Authority | 2019
+
+---
+
+## Publications
+
+- **ChatClothes: Conversational Virtual Try-On with Diffusion Models**  
+  Image and Vision Computing New Zealand, IVCNZ 2025 | [DOI: 10.1109/IVCNZ67716.2025.11281834](https://doi.org/10.1109/IVCNZ67716.2025.11281834)
+
+- **Clothes Recognition Based on Lightweight Deep Learning Models**  
+  IGI Global — Aesthetics in Creative Technology, 2026 *(under review)*
+
+---
+
+## Role Descriptions (for Online Applications)
+
+> Copy & paste these blocks into "Role description" or "Key responsibilities" fields on job application forms.
+
+---
+
+### 1) Auckland University of Technology — Master's Researcher (AI / Computer Vision)
+**Dates:** Jul 2024 – Feb 2026
+
+Conducted Master's research in Computer and Information Sciences, delivering ChatClothes — a multimodal virtual try-on system combining diffusion models, lightweight garment classification (YOLO), and local LLM orchestration. Designed the end-to-end pipeline from data preprocessing through model inference, integrated ComfyUI for workflow control, and optimized for resource-constrained targets including Raspberry Pi–class hardware. Built an IoT sensor monitoring system using Raspberry Pi, streaming real-time data to LLM for personalized recommendations. Completed thesis 6 months early with working demo and comprehensive documentation. Published research on diffusion-based virtual try-on at IVCNZ 2025. Awarded First Class Honours for academic performance and research output.
+
+---
+
+### 2) Chunxiao Technology Co., Ltd. — Technical Lead & Senior Android Engineer
+**Dates:** Jul 2013 – Feb 2024
+
+Led and contributed to enterprise software delivery across Android, Java backend, and full-stack surfaces over an 11-year tenure, progressing from .NET Software Engineer to Technical Lead. As Technical Lead (2019–2024), owned the smart manufacturing platform (Spring Boot microservices, Docker/Jenkins-based CI/CD) rolled out to 5+ factory sites, with IoT integration (RFID, barcode scanners, electronic scales, conveyors) and long-running production stability, improving manufacturing efficiency by 30%+. Built and maintained the enterprise messaging platform: Android client with NDK-based TCP/UDP transport for low-latency messaging, Spring Cloud backend services, and cross-platform clients; scaled to ~5,000 DAU with sub-200ms latency and 500K+ daily messages. Migrated core messaging from unstable in-house C++ implementation to cloud IM, eliminating 90%+ defects. Led code review processes and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases. Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in Agile product teams. Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery.
+
+---
+
+### 3) Chunxiao Technology Co., Ltd. — Senior Android Developer (2015–2018)
+**Dates:** Jul 2015 – Dec 2018
+
+Shipped 8+ production Android applications including live-streaming modules, IoT connectivity tools, and internal enterprise efficiency apps. Developed modular Android architecture reused across 12+ internal projects, reducing code duplication by 50%+. Reduced OOM crashes by 65% through memory profiling, leak detection, and image loading optimization; engineered crash telemetry infrastructure with automated reporting for early-stage production monitoring. Designed resilient push notification delivery with IM primary channel + failover path; implemented connection persistence strategies and OEM ROM adaptation for Android fragmentation. Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure local data storage. Collaborated with backend engineers to define RESTful API contracts and integrate Spring Boot services with Android clients.
+
+---
+
+### 4) Chunxiao Technology Co., Ltd. — .NET Software Engineer (2013–2014)
+**Dates:** Jul 2013 – Jun 2015
+
+Built media transcoding pipeline (H.264/AAC) supporting RTMP/HLS multi-protocol distribution for web and mobile streaming platforms. Implemented WebSocket-based bidirectional control for synchronized broadcast playback and real-time viewer engagement. Managed production infrastructure including SSL/TLS certificate deployment, multi-region failover configuration, and media server optimization for high-concurrency live streaming workloads. Developed Windows Forms desktop applications using .NET Framework with SQL Server backend for enterprise document management and full-text search. Supported Windows Server and IIS administration for internal application hosting and deployment.
+
+---
+
+*Professional and academic references available upon request.*  
+*Last updated: May 2026*
+
+---
+
+## Quick-Paste Experience Summaries (for Online Applications)
+
+> Copy & paste directly into "Describe your role" / "Key responsibilities" / "Experience summary" fields on job application forms.
+
+---
+
+### Summary A — Auckland University of Technology (Jul 2024 – Feb 2026)
+
+Conducted Master's research in Computer and Information Sciences, focusing on AI, computer vision, and LLM integration. Developed a multimodal virtual try-on system combining diffusion models, image classification, and local LLM orchestration, optimized for resource-constrained hardware. Built an IoT sensor monitoring system streaming real-time data to LLM for personalized recommendations. Completed thesis ahead of schedule with a working demo and published research at an international conference. Awarded First Class Honours for academic performance and research output.
+
+---
+
+### Summary B — Chunxiao Technology Co., Ltd. (Jul 2013 – Feb 2024)
+
+Progressed from Software Engineer to Technical Lead over an 11-year tenure, delivering enterprise solutions across Android, Java backend, and IoT platforms. Led the design and deployment of a smart manufacturing system rolled out to multiple factory sites, integrating hardware devices and maintaining long-running production stability. Built and maintained an enterprise messaging platform with low-latency Android clients and scalable backend services. Led code review, technical debt reduction, and version control workflows; coordinated cross-functional releases in Agile teams. Managed app deployment to Google Play and domestic app stores with multi-channel distribution strategies.
+
+---
