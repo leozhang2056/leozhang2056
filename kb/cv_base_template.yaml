@@ -16,23 +16,23 @@ roles:
   android:
     summary_sentences:
       en:
-        - Senior Android Software Engineer with 10+ years of experience in Android development, full-stack systems, and enterprise application engineering.
-        - Specialized in building scalable mobile applications using Kotlin, Java, Android SDK, and modern Android architecture components.
-        - Proven success in delivering cross-platform business systems, IoT-integrated applications, and AI-assisted software solutions across mobile and backend environments.
-        - Additional expertise includes RESTful APIs, performance optimization, system integration, debugging, CI/CD workflows, and AI deployment for real-world applications.
-        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+        - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture.
+        - Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments.
+        - Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration.
+        - Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows.
+        - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
     key_skills:
       en:
         - label: Android Development
           skills: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines & Flow, NDK]
         - label: Software Engineering
           skills: [Clean Architecture, Design Patterns, Performance Optimization, Debugging]
-        - label: Backend & Full-Stack
-          skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis]
+        - label: Backend & APIs
+          skills: [Spring Boot, RESTful APIs, MySQL, Redis, Node.js, Python]
         - label: Tools & DevOps
-          skills: [Git, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
+          skills: [Git, CI/CD, Docker, Linux, Jenkins, Agile/Scrum]
         - label: AI & Emerging Technologies
-          skills: [AI-Assisted Development, LLM Integration, Multimodal Systems]
+          skills: [LLM Integration, Multimodal Systems, On-device Inference]
 
   backend:
     summary_sentences:

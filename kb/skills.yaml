@@ -669,7 +669,7 @@ categorized_skills:
   
   ai_emerging:
     label: "AI & Emerging Technologies"
-    skills: [AI-Assisted Development, LLM Integration, Multimodal Systems]
+    skills: [LLM Integration, Multimodal Systems, On-device Inference]
 
 skill_groups:
   ai_coding:

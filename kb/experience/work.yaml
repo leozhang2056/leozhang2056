@@ -2,28 +2,27 @@
 # Work Experience
 
 experiences:
-  - company: Auckland University of Technology (AUT)
+  - company: Auckland University of Technology
     company_url: https://www.aut.ac.nz
     company_description: ""
     location: Auckland, New Zealand
-    role: AI Researcher / Master's Candidate
+    role: Master's Candidate & AI Research Assistant
     start_date: "2024-07"
     end_date: "2026-02"
     current: false
     type: Education/Research
     
     achievements:
-      - "Completed Master's thesis 6 months early, delivering ChatClothes — a local AI virtual try-on system powered by ComfyUI workflow orchestration, Dify LLM routing, and Ollama on-device inference"
-      - "Built IoT water intake monitoring system for coursework using Raspberry Pi sensors, streaming hydration data to LLM for personalized advice and reminders"
-      - "Served as summer teaching assistant for Computer Vision course, contributing to hyperspectral imaging project for kiwifruit maturity classification"
-      - "Published two research papers: IVCNZ 2025 conference paper on ChatClothes diffusion-based try-on system, and IGI Global book chapter on lightweight clothes recognition models"
+      - "Completed Master's thesis 6 months early, delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration and on-device inference"
+      - "Published research on diffusion-based virtual try-on (IVCNZ 2025) and lightweight clothes recognition models (IGI Global book chapter)"
+      - "Built IoT sensor monitoring system using Raspberry Pi, streaming real-time data to LLM for personalized recommendations"
     
-    tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, Stable Diffusion, ControlNet, ComfyUI, Dify, Ollama, Raspberry Pi, Linux, LLM, On-device Inference, AI Workflow Orchestration, Multimodal AI, AWS EC2, AWS S3, AWS RDS]
+    tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, ComfyUI, Ollama, Raspberry Pi, LLM, Multimodal AI, AWS]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
     company_description: >
-      Chunxiao Technology (est. 2013, ~40 employees) is an IoT solution provider based in Shijiazhuang. Evolving from early audio/video streaming and live commerce platforms, the company now specializes in Smart Factory systems, Smart Electricity monitoring, and Smart Library/Locker solutions, delivering integrated hardware-software products for industrial and educational sectors.
+      IoT solution provider (est. 2013, ~40 employees) originally focused on audio/video streaming and enterprise software platforms, later evolving into integrated hardware-software solutions for smart factory, industrial monitoring, smart electricity, and educational sectors.
     location: China
     start_date: "2013-07"
     end_date: "2024-02"
@@ -31,38 +30,37 @@ experiences:
     type: Full-time
     
     career_progression:
-      - title: Technical Lead & Full-stack Developer
+      - title: Technical Lead & Senior Android Engineer
         period: "2019 – 2024"
-        focus: Team Leadership & Full-stack Delivery
+        focus: Team Leadership & Mobile Platform Delivery
         achievements:
-          - "Architected Industrial IoT smart factory platform deployed across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via <strong>RFID</strong> tracking and automated workflows; managed <strong>100+ MQTT devices</strong>"
-          - "Engineered NDK TCP/UDP transport layer and Easemob cloud IM supporting <strong>5,000 DAU</strong>, <strong>sub-200ms message latency</strong>, and <strong>500K+ daily messages</strong>"
-          - "Implemented FastDFS distributed file storage supporting <strong>100GB+ user uploads</strong>; architected chunk distribution, redundancy, and cross-subsystem access control"
-          - "Migrated core messaging from unstable in-house C++ to Easemob cloud, eliminating <strong>90%+ defects</strong>; enabled focus on platform subsystems (files, permissions, user center)"
+          - "Architected Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
+          - "Engineered NDK TCP/UDP transport and cloud IM supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"
+          - "Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong> and enabling focus on platform subsystems"
+          - "Built distributed file storage supporting <strong>100GB+ uploads</strong> with chunk distribution and cross-system access control"
         
-        tech_stack: [Java, Kotlin, Android SDK, Jetpack, MVVM, Coroutines, Retrofit, Room, NDK, Vue.js, TypeScript, Element UI, ECharts, Spring Boot, Spring Cloud, MyBatis, MySQL, Redis, MQTT, WebSocket, BLE, RFID, Docker, Git]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Boot, MySQL, Redis, MQTT, Docker]
       
       - title: Senior Android Developer
         period: "2015 – 2018"
         focus: Android Development & Real-time Communication
         achievements:
-          - "Architected resilient push delivery with Easemob IM + JPush backup channel; implemented keep-alive strategies and OEM ROM adaptation for reliable wake-up"
-          - "Shipped <strong>8+ production Android applications</strong> including live-streaming modules, IoT connectivity tools, and internal efficiency apps"
-          - "Developed Android Jetpack abstraction layer reused across <strong>12+ internal projects</strong>, reducing code duplication by <strong>50%+</strong>"
-          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; implemented in-house crash reporting infrastructure with automatic upload"
+          - "Shipped <strong>8+ production Android apps</strong> including live-streaming modules, IoT connectivity tools, and internal efficiency apps"
+          - "Developed modular Android architecture reused across <strong>12+ internal projects</strong>, reducing code duplication by <strong>50%+</strong>"
+          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; built crash reporting infrastructure with automatic upload"
+          - "Designed resilient push delivery with IM + backup channel; implemented keep-alive strategies and OEM ROM adaptation"
         
-        tech_stack: [Java, Kotlin, Android SDK, NDK/JNI, Android Jetpack, Material Design, Git, Gradle, CI/CD]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, Coroutines, NDK/JNI, Gradle, CI/CD]
       
       - title: .NET Software Engineer
         period: "2013 – 2014"
         focus: .NET Live Streaming & Web Systems
         achievements:
-          - "Engineered media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web and mobile endpoints"
-          - "Implemented WebSocket-based bidirectional control for broadcast sessions enabling synchronized playback and real-time viewer engagement"
-          - "Built ASP.NET MVC administrative portals with relational DB backing, analytics dashboards, and user management workflows"
+          - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web and mobile"
+          - "Implemented WebSocket-based bidirectional control for synchronized broadcast playback and real-time viewer engagement"
           - "Managed production infrastructure: SSL/TLS, multi-region failover, automated backup, and media server optimization"
         
-        tech_stack: [.NET, C#, ASP.NET, SQL Server, IIS, FFmpeg, RTMP, HLS, H.264, AAC, WebSocket, JavaScript, HTML/CSS]
+        tech_stack: [.NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, WebSocket]
 
 total_years_experience: 10
 

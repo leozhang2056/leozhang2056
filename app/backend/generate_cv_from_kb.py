@@ -122,10 +122,10 @@ SUMMARY_MAX_CHARS_EN = 780
 SUMMARY_MAX_CHARS_ZH = 520
 SUMMARY_REQUIRED_SENTENCES = 5
 SUMMARY_EDU_CLOSING_EN = (
-    "Master's in Computer and Information Sciences from AUT, First Class Honours."
+    "Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology."
 )
 SUMMARY_EDU_CLOSING_ZH = (
-    "奥克兰理工大学（AUT）计算机与信息科学硕士毕业，获一等荣誉学位。"
+    "奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。"
 )
 # 项目副标题（summary 首行）：硬截断会产生 PDF 文本层的半词（如 voltag. / subs.）
 OVERVIEW_MAX_CHARS = 245
@@ -400,7 +400,6 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'android_system_low_level', 'label_en': 'Systems & Low-level', 'label_zh': '系统与底层', 'max': 5, 'field': 'name'},
         {'key': 'backend', 'label_en': 'Backend & APIs', 'label_zh': '后端与 API', 'max': 6, 'field': 'name'},
         {'key': 'ai_ml', 'label_en': 'AI / ML', 'label_zh': 'AI / ML', 'max': 4, 'field': 'name'},
-        {'key': 'ai_coding_tools', 'label_en': 'AI Tools', 'label_zh': 'AI 工具', 'max': 3, 'field': 'name'},
         {'key': 'devops', 'label_en': 'DevOps', 'label_zh': 'DevOps', 'max': 6, 'field': 'name'},
     ],
     'ai': [
@@ -658,14 +657,14 @@ def _inject_jd_into_sentence1(sentence: str, terms: List[str], lang: str) -> str
     pick = missing[:3]
     if lang == "zh":
         joined = "、".join(pick)
-        s = s.rstrip("。！？") + f"，具备岗位要求相关的 {joined} 经验。"
+        s = s.rstrip("。！？") + f"，具备 {joined} 经验。"
         return s
     if len(pick) == 1:
-        clause = f", including {pick[0]} where the role calls for it"
+        clause = f", including {pick[0]}"
     elif len(pick) == 2:
-        clause = f", including {pick[0]} and {pick[1]} where the role calls for them"
+        clause = f", including {pick[0]} and {pick[1]}"
     else:
-        clause = f", including {pick[0]}, {pick[1]}, and {pick[2]} where the role calls for them"
+        clause = f", including {pick[0]}, {pick[1]}, and {pick[2]}"
     s = s.rstrip(".!?") + clause + "."
     return s
 
@@ -679,33 +678,9 @@ def _apply_jd_sentence1_alignment(
     """
     JD 匹配词优先落在第 1 句并加粗（硬性约束）。
     见 .cursor/rules/resume-generation-standards.mdc § Summary rules — JD sentence-1 bold.
+    已关闭自动注入：Summary 由 cv_base_template.yaml 控制，JD 贴合由 Skills/Experience 承担。
     """
-    skill_names = _collect_skill_name_set(skills_data)
-    jd_terms = _pick_jd_terms_for_sentence1(normed_kws, skill_names, limit=SUMMARY_JD_SENTENCE1_BOLD_MAX)
-    if not jd_terms:
-        return text
-
-    parts = _split_summary_sentences(text, lang)
-    if not parts:
-        return text
-
-    existing_text = " ".join(parts)
-    inject_terms = [
-        term for term in jd_terms
-        if not re.search(re.escape(term), existing_text, flags=re.IGNORECASE)
-    ]
-    parts[0] = _inject_jd_into_sentence1(parts[0], inject_terms, lang)
-    merged = _enforce_summary_five_sentences(" ".join(parts), lang)
-    parts = _split_summary_sentences(merged, lang)
-    if not parts:
-        return merged
-
-    s1 = parts[0]
-    for term in jd_terms:
-        if re.search(re.escape(term), s1, flags=re.IGNORECASE):
-            s1 = _bold_first_summary_term(s1, term)
-    parts[0] = s1
-    return " ".join(parts)
+    return text
 
 
 def _apply_summary_highlight_bold(
@@ -2700,11 +2675,7 @@ def generate_publications_section(achievements: Dict, lang: str = 'en') -> str:
         url = pub.get('url', '')
 
         link = f"https://doi.org/{doi}" if doi else (url or "")
-        title_html = (
-            f'<a href="{html.escape(link, quote=True)}" style="color:#1a3a6a;">{html.escape(str(title))}</a>'
-            if link
-            else html.escape(str(title))
-        )
+        title_html = html.escape(str(title))
 
         year_text = html.escape(str(year))
         venue_text = html.escape(str(venue))
@@ -3154,6 +3125,15 @@ _CSS = """
       display: block;
     }
 
+    /* ── References ──────────────────────────────────── */
+    .cv-references {
+      margin-top: 6px;
+      text-align: left;
+      font-size: 9.5pt;
+      color: #555;
+      font-style: italic;
+    }
+
     /* ── Print ───────────────────────────────────────── */
     @media print {
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -3246,12 +3226,13 @@ def generate_html_from_kb(
     labels = {
         'en': {
             'summary':  'Summary',
-            'skills':   'Key Skills',
+            'skills':   'Core Competencies',
             'exp':      'Experience',
             'edu':      'Education',
             'licenses': 'Licenses & Certifications',
             'pub':      'Publications',
             'interests': 'Interests',
+            'references': 'References',
         },
         'zh': {
             'summary':  '个人简介',
@@ -3261,6 +3242,7 @@ def generate_html_from_kb(
             'licenses': '证书与认证',
             'pub':      '发表成果',
             'interests': '兴趣',
+            'references': '推荐人',
         },
     }
     lbl = labels.get(lang, labels['en'])
@@ -3457,6 +3439,10 @@ def generate_html_from_kb(
   {pub_section}
 
   {interests_section}
+
+  <!-- References -->
+  <div class="section-title">{lbl['references']}</div>
+  <p class="cv-references">Professional and academic references available upon request.</p>
 
 </body>
 </html>'''

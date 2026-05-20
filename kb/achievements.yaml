@@ -11,16 +11,7 @@ certifications:
       - System design
       - Enterprise development
     
-  - name: Network Communication Security Administrator
-    authority: China Qualification Authority
-    year: 2017
-    status: Active
-    relevance:
-      - Network security
-      - Communication protocols
-      - System administration
-    
-  - name: IoT Fundamentals (MOOC)
+  - name: IoT Fundamentals
     authority: Xi'an Jiaotong University
     year: 2020
     status: Completed
@@ -28,11 +19,11 @@ certifications:
       - Internet of Things
       - Hardware integration
       - Sensor networks
-
+    
 awards:
   - name: First Class Honours
     category: Master's Degree
-    authority: Auckland University of Technology (AUT)
+    authority: Auckland University of Technology
     year: 2025
     level: University
     description: Awarded First Class Honours with GPA 8.25/9.0 for Master's thesis and overall academic performance
