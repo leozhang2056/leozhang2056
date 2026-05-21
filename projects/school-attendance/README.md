@@ -46,7 +46,7 @@ An intelligent face recognition attendance system for primary and secondary scho
 └───────┬─────────────────────────────┘
         │
 ┌───────▼─────────────────────────────┐
-│      Backend (Spring Boot)           │
+│      Backend (Spring Cloud)           │
 │   - Attendance record service       │
 │   - Face recognition service        │
 │   - Push notification service       │
@@ -79,7 +79,7 @@ An intelligent face recognition attendance system for primary and secondary scho
 - **Camera API** – Camera control
 
 ### Backend
-- **Spring Boot** – Services
+- **Spring Cloud** – Services
 - **MySQL** – Attendance data
 - **Redis** – Cache and session
 - **MQTT/WebSocket** – Real-time push
@@ -165,7 +165,7 @@ An intelligent face recognition attendance system for primary and secondary scho
 
 - **Computer vision:** OpenCV, face recognition
 - **Android:** Camera API, local storage, network sync
-- **Backend:** Spring Boot, REST API, high concurrency
+- **Backend:** Spring Cloud, REST API, high concurrency
 - **IoT:** Hardware integration, gate control
 - **Push:** JPush, Firebase, SMS gateway
 - **System integration:** Algorithm integration, multi-terminal sync

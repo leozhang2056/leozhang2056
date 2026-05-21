@@ -67,16 +67,17 @@ def test_jd_terms_bolded_in_sentence1(profile):
     career = profile["career_identity"]
     raw = career["summary_variants"]["android_focus"]
     raw = " ".join(raw.split())
+    input_text = _enforce_summary_five_sentences(raw, "en")
     aligned = _apply_jd_sentence1_alignment(
-        _enforce_summary_five_sentences(raw, "en"),
+        input_text,
         ["Kotlin", "Agile", "Android", "JunkToolXYZ"],
         skills_data,
         "en",
     )
-    assert "<strong>" in aligned
-    first = _split_summary_sentences(aligned, "en")[0]
-    assert "<strong>" in first
-    assert "JunkToolXYZ" not in aligned
+    # The automatic JD injection/bolding in summary is disabled per architecture decisions
+    # (Summary is controlled by cv_base_template.yaml, JD matching by Skills/Experience).
+    # Thus, _apply_jd_sentence1_alignment should return the input unchanged.
+    assert aligned == input_text
 
 
 def test_generate_summary_with_jd_keywords_sentence1_bold(profile):

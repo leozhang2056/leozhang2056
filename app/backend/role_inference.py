@@ -17,7 +17,7 @@ def _compile_patterns(keywords: list[str]) -> list[re.Pattern]:
     for kw in keywords:
         # Multi-word phrases: require surrounding whitespace / start-of-string / end
         if " " in kw:
-            # e.g. "computer vision", "spring boot"
+            # e.g. "computer vision", "spring cloud"
             pat = re.compile(r"(?<!\w)" + re.escape(kw) + r"(?!\w)", re.IGNORECASE)
         else:
             pat = re.compile(r"\b" + re.escape(kw) + r"\b", re.IGNORECASE)

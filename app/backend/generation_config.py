@@ -21,7 +21,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
                 "transformer", "fine-tuning", "finetuning", "rag", "embedding", "prompt", "ml", "machine learning",
             ],
             "backend": [
-                "spring", "spring boot", "spring cloud", "java", "microservice", "rest", "api",
+                "spring", "spring cloud", "java", "microservice", "rest", "api",
                 "mybatis", "hibernate", "jpa", "redis", "kafka",
             ],
         }

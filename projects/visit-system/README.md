@@ -106,7 +106,7 @@ The platform is built around three main subsystems, with **audio-video session m
 - **Web admin** – Prison/hospital management portal
 
 ### Backend
-- **Spring Boot** – Business services
+- **Spring Cloud** – Business services
 - **MySQL** – Data storage
 - **Redis** – Cache and session
 - **WebRTC** – Real-time audio/video; A/V session management (create, join, leave, timeout, recording)
@@ -214,7 +214,7 @@ The platform is built around three main subsystems, with **audio-video session m
 - **Android:** Terminal app, hardware integration
 - **WeChat Mini Program:** Booking, UX
 - **Video:** WebRTC, real-time communication
-- **Backend:** Spring Boot, data management
+- **Backend:** Spring Cloud, data management
 - **Healthcare:** HIS integration, data security
 
 ---

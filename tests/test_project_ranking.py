@@ -17,7 +17,7 @@ def test_score_project_by_jd_prefers_keyword_and_tech_hits():
         "enterprise-messaging",
         keywords=["spring", "kafka"],
         roles=["backend"],
-        tech=["Spring Boot", "Redis"],
+        tech=["Spring Cloud", "Redis"],
         highlights=["Built Kafka messaging pipeline"],
     )
     p2 = _project("chatclothes", keywords=["pytorch"], tech=["PyTorch"], highlights=["AI model training"])
@@ -39,7 +39,7 @@ def test_sort_projects_without_jd_uses_role_priority():
 def test_sort_projects_with_jd_uses_score_first():
     projects = [
         _project("smart-factory", keywords=["iot"], tech=["RFID"]),
-        _project("enterprise-messaging", keywords=["spring", "java"], tech=["Spring Boot"]),
+        _project("enterprise-messaging", keywords=["spring", "java"], tech=["Spring Cloud"]),
     ]
 
     ranked = sort_projects(projects, role_type="fullstack", jd_keywords=["spring"], max_projects=2)
@@ -51,7 +51,7 @@ def test_score_project_by_jd_handles_common_variants():
         "enterprise-messaging",
         keywords=["rest api"],
         roles=["backend engineer"],
-        tech=["Spring Boot", "RESTful APIs"],
+        tech=["Spring Cloud", "RESTful APIs"],
         highlights=["Built an API gateway with stable releases"],
     )
 

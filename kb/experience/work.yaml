@@ -30,9 +30,9 @@ experiences:
     type: Full-time
     
     career_progression:
-      - title: Technical Lead & Senior Android Engineer
+      - title: Technical Lead & Full-stack Engineer
         period: "2019 – 2024"
-        focus: Team Leadership & Mobile Platform Delivery
+        focus: Full-stack Platform Delivery & Team Leadership
         achievements:
           - "Architected Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
           - "Engineered NDK TCP/UDP transport and cloud IM supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"

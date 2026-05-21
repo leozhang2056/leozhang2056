@@ -66,7 +66,7 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 └─────────────┬───────────────────────┘
               │
 ┌─────────────▼───────────────────────┐
-│      Microservices (Spring Boot)    │
+│      Microservices (Spring Cloud)    │
 │  ┌─────────┐ ┌─────────┐ ┌────────┐│
 │  │Production│ │ Inventory│ │ Device ││
 │  │ Service  │ │ Service  │ │ Service││
@@ -97,7 +97,7 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 ### Backend
 - **Java** - Primary development language
-- **Spring Boot** - Microservice framework
+- **Spring Cloud** - Microservice framework
 - **Spring Cloud** - Distributed system support
 - **MyBatis** - Data access layer
 - **RESTful APIs** - Service communication
@@ -312,7 +312,7 @@ Real screenshots from the **shop-floor Android** experience: production task lis
 
 ## Skills Demonstrated
 
-- **Backend Engineering:** Spring Boot, microservices, REST APIs
+- **Backend Engineering:** Spring Cloud, microservices, REST APIs
 - **Database Design:** MySQL, Redis, MongoDB optimization
 - **DevOps:** Docker, Jenkins, CI/CD, Linux administration
 - **IoT Integration:** Hardware protocols, real-time processing

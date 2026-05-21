@@ -76,7 +76,7 @@ candidate:
       - Java
       - Kotlin
       - Android SDK
-      - Spring Boot
+      - Spring Cloud
   projects:
     - project_id: enterprise-messaging
       source: projects/enterprise-messaging/facts.yaml
@@ -140,11 +140,11 @@ Avoid passing large descriptive sections unless needed:
 
 Before sending context to AI, check:
 
-- [ ] Is this fact already present elsewhere in the payload?
-- [ ] Is this file factual source or just presentation material?
-- [ ] Does this section help selection or generation?
-- [ ] Can this be replaced by a shorter structured field?
-- [ ] Is there any date, metric, or title conflict?
+- [] Is this fact already present elsewhere in the payload?
+- [] Is this file factual source or just presentation material?
+- [] Does this section help selection or generation?
+- [] Can this be replaced by a shorter structured field?
+- [] Is there any date, metric, or title conflict?
 
 ---
 

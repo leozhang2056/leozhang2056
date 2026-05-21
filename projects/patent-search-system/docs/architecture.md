@@ -31,9 +31,7 @@ The Patent Search System is a 3-tier desktop application built on .NET Framework
 
 ```sql
 -- Core patent table
-CREATE TABLE Patents (
-    PatentID INT PRIMARY KEY IDENTITY,
-    PatentNumber NVARCHAR(50) NOT NULL,
+CREATE TABLE Patents (PatentID INT PRIMARY KEY IDENTITY, PatentNumber NVARCHAR(50) NOT NULL,
     Title NVARCHAR(500) NOT NULL,
     Abstract NVARCHAR(MAX),
     Claims NVARCHAR(MAX),
@@ -55,9 +53,7 @@ KEY INDEX PK_Patents
 ON PatentCatalog;
 
 -- Document attachments
-CREATE TABLE PatentDocuments (
-    DocumentID INT PRIMARY KEY IDENTITY,
-    PatentID INT FOREIGN KEY REFERENCES Patents(PatentID),
+CREATE TABLE PatentDocuments (DocumentID INT PRIMARY KEY IDENTITY, PatentID INT FOREIGN KEY REFERENCES Patents(PatentID),
     FileName NVARCHAR(255),
     FilePath NVARCHAR(500),
     FileType NVARCHAR(50),
@@ -65,18 +61,14 @@ CREATE TABLE PatentDocuments (
 );
 
 -- User management
-CREATE TABLE Users (
-    UserID INT PRIMARY KEY IDENTITY,
-    UserName NVARCHAR(50) NOT NULL,
+CREATE TABLE Users (UserID INT PRIMARY KEY IDENTITY, UserName NVARCHAR(50) NOT NULL,
     PasswordHash NVARCHAR(255) NOT NULL,
     Role NVARCHAR(50) DEFAULT 'User',
     IsActive BIT DEFAULT 1
 );
 
 -- Search history
-CREATE TABLE SearchHistory (
-    HistoryID INT PRIMARY KEY IDENTITY,
-    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+CREATE TABLE SearchHistory (HistoryID INT PRIMARY KEY IDENTITY, UserID INT FOREIGN KEY REFERENCES Users(UserID),
     QueryText NVARCHAR(500),
     SearchDate DATETIME DEFAULT GETDATE()
 );
@@ -93,24 +85,18 @@ public void IndexPatent(Patent patent)
     // Stored fields (retrievable)
     document.Add(new Field("PatentID", patent.PatentID.ToString(), 
         Field.Store.YES, Field.Index.NO));
-    document.Add(new Field("PatentNumber", patent.PatentNumber, 
-        Field.Store.YES, Field.Index.NO));
+    document.Add(new Field("PatentNumber", patent.PatentNumber, Field.Store.YES, Field.Index.NO));
     
     // Indexed fields (searchable)
-    document.Add(new Field("Title", patent.Title, 
-        Field.Store.YES, Field.Index.ANALYZED));
-    document.Add(new Field("Abstract", patent.Abstract, 
-        Field.Store.YES, Field.Index.ANALYZED));
-    document.Add(new Field("Claims", patent.Claims, 
-        Field.Store.YES, Field.Index.ANALYZED));
-    document.Add(new Field("Inventor", patent.Inventor, 
-        Field.Store.YES, Field.Index.ANALYZED));
+    document.Add(new Field("Title", patent.Title, Field.Store.YES, Field.Index.ANALYZED));
+    document.Add(new Field("Abstract", patent.Abstract, Field.Store.YES, Field.Index.ANALYZED));
+    document.Add(new Field("Claims", patent.Claims, Field.Store.YES, Field.Index.ANALYZED));
+    document.Add(new Field("Inventor", patent.Inventor, Field.Store.YES, Field.Index.ANALYZED));
     
     // Facet fields (filterable)
     document.Add(new Field("FilingYear", patent.FilingDate.Year.ToString(), 
         Field.Store.NO, Field.Index.NOT_ANALYZED));
-    document.Add(new Field("PatentType", patent.PatentType, 
-        Field.Store.NO, Field.Index.NOT_ANALYZED));
+    document.Add(new Field("PatentType", patent.PatentType, Field.Store.NO, Field.Index.NOT_ANALYZED));
     
     writer.AddDocument(document);
 }

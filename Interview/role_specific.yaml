@@ -77,7 +77,7 @@ backend_questions:
       - "Honest scope: AWS was coursework/lab practice, while production delivery experience is stronger in backend services, deployment automation, and operations"
     evidence:
       - project: smart-factory
-        highlight: "Dockerized Spring Boot services, Jenkins/GitLab CI/CD, cloud-hosted MySQL migration"
+        highlight: "Dockerized Spring Cloud services, Jenkins/GitLab CI/CD, cloud-hosted MySQL migration"
       - project: profile
         highlight: "AUT Big Data Analytics coursework included AWS-based database and server management practice"
 
@@ -245,7 +245,7 @@ company_research_questions:
     company: "Foodstuffs"
     answer_points:
       - "Designed and evolved systems from modular monolith toward microservices as scale and domain boundaries became clear"
-      - "Used Spring Boot/Spring Cloud for service registration, routing, resilience, and service-to-service communication"
+      - "Used Spring Cloud for service registration, routing, resilience, and service-to-service communication"
       - "Handled cross-service consistency with event-driven workflows and compensating actions instead of distributed 2PC"
       - "Operational focus: API contracts, observability, fault isolation, and safe incremental rollout"
     evidence:
@@ -262,7 +262,7 @@ company_research_questions:
     question: "Which backend tools, frameworks, and technologies have you used recently?"
     company: "Foodstuffs"
     answer_points:
-      - "Languages/frameworks: Java, Spring Boot, Spring Cloud; also Node.js for selected service components"
+      - "Languages/frameworks: Java, Spring Cloud, Spring Cloud; also Node.js for selected service components"
       - "Data: MySQL and Redis; API styles include REST and event-driven integration patterns"
       - "Delivery stack: Docker, Jenkins, Nginx, Git-based CI/CD workflows"
       - "Cloud exposure: AWS database and server management practice from AUT Big Data Analytics coursework"

@@ -149,8 +149,7 @@ public class StreamController : ApiController
 ```cpp
 // JNI bridge for Android streaming
 extern "C" JNIEXPORT void JNICALL
-Java_com_streaming_core_StreamEngine_startStream(
-    JNIEnv* env, jobject thiz, jstring rtmpUrl) {
+Java_com_streaming_core_StreamEngine_startStream(JNIEnv* env, jobject thiz, jstring rtmpUrl) {
     
     const char* url = env->GetStringUTFChars(rtmpUrl, nullptr);
     

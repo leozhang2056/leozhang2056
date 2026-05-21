@@ -160,7 +160,7 @@ Natural Language Input
 **Semantic Alignment:**
 - Maps natural language concepts to visual attributes
 - Ensures generated results match user intent
-- Handles abstract descriptions (e.g., "elegant," "casual")
+- Handles abstract descriptions (e.g., "elegant, " "casual")
 - Supports style transfer and creative modifications
 
 ---

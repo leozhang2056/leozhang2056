@@ -47,7 +47,6 @@ TECH_TERMS = (
     "node.js",
     "python",
     "redis",
-    "spring boot",
     "spring cloud",
     "sql server",
     "typescript",

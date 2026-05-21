@@ -53,7 +53,7 @@ tech_stack:
   - Android APP
   - WebRTC
   backend:
-  - Spring Boot
+  - Spring Cloud
   - MySQL
   - Redis
   - WebRTC
@@ -106,7 +106,7 @@ skills_demonstrated:
   - WeChat Mini Program
   - Access Control Systems
   - WebRTC
-  - Spring Boot
+  - Spring Cloud
   - MySQL
   - Redis
   - HIS Integration

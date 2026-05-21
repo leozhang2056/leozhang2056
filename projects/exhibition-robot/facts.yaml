@@ -61,7 +61,7 @@ tech_stack:
   - Android SDK
   - Touch Screen UI
   backend:
-  - Spring Boot
+  - Spring Cloud
   - WebSocket
   - MQTT
   - MySQL
@@ -139,7 +139,7 @@ skills_demonstrated:
   - Speech AI (ASR/TTS)
   - Computer Vision (Face Recognition)
   - Sensor Fusion (LiDAR/IMU)
-  - Spring Boot / WebSocket
+  - Spring Cloud / WebSocket
   - MQTT Protocol
   soft:
   - System Integration

@@ -142,7 +142,7 @@ def keyword_variant_candidates(keyword: str) -> List[str]:
     Handles common variations like:
     - C++ -> cpp
     - C# -> csharp
-    - Spring Boot -> springboot
+    - Spring Cloud -> springcloud
     
     Args:
         keyword: Original keyword

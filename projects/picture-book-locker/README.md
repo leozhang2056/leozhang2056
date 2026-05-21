@@ -58,7 +58,7 @@ A smart picture-book locker system for school and community libraries. It provid
 └──────────────────┬──────────────────────┘
                    │
 ┌──────────────────▼──────────────────────┐
-│       Backend (Spring Boot)              │
+│       Backend (Spring Cloud)              │
 │  ┌──────────┐ ┌──────────┐ ┌─────────┐ │
 │  │ Borrow   │ │ Book     │ │ User    │ │
 │  │ Inventory│ │ Notify   │ │ Stats   │ │
@@ -85,7 +85,7 @@ A smart picture-book locker system for school and community libraries. It provid
 - **Sensors** – Door, temperature, etc.
 
 ### Backend
-- **Spring Boot** – Services
+- **Spring Cloud** – Services
 - **MySQL** – Business data
 - **Redis** – Cache and session
 - **MQTT** – Device communication
@@ -265,7 +265,7 @@ A smart picture-book locker system for school and community libraries. It provid
 - **Embedded:** Serial, GPIO, hardware integration
 - **IoT:** Device networking, MQTT, remote management
 - **Hardware:** Solenoid lock, LED, sensors
-- **Backend:** Spring Boot, book management logic
+- **Backend:** Spring Cloud, book management logic
 
 ---
 

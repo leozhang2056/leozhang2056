@@ -45,9 +45,9 @@ Provide **short replacement snippets** only where helpful, labeled:
 
 ### Final checklist
 
-- [ ] No broken or truncated sentences
-- [ ] Timeline credibility (study vs work overlap explained if needed)
-- [ ] Role-appropriate emphasis (e.g. Android vs backend)
+- [] No broken or truncated sentences
+- [] Timeline credibility (study vs work overlap explained if needed)
+- [] Role-appropriate emphasis (e.g. Android vs backend)
 
 ---
 

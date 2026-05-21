@@ -97,7 +97,7 @@ An intelligent exhibition service robot system that provides guided tours, recep
 - **Encoders** – Odometry
 
 ### Backend
-- **Spring Boot** – Business services
+- **Spring Cloud** – Business services
 - **WebSocket** – Real-time communication
 - **MQTT** – Device communication
 - **MySQL** – Data storage
@@ -202,7 +202,7 @@ These files live in `images/` and render on GitHub via relative paths. **Current
 - **Android:** Robot interaction application
 - **AI integration:** ASR/TTS, NLP, face recognition
 - **Sensor fusion:** Lidar, depth camera, IMU
-- **Backend:** Spring Boot, WebSocket, remote monitoring
+- **Backend:** Spring Cloud, WebSocket, remote monitoring
 - **System integration:** Hardware–software co-development, multi-system coordination
 
 ---

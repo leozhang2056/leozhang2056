@@ -35,7 +35,7 @@ role_inference:
       - machine learning
     backend:
       - spring
-      - spring boot
+      - spring cloud
       - spring cloud
       - java
       - microservice
@@ -84,6 +84,14 @@ project_ranking:
       - live-streaming-system
       - chatclothes
       - visual-gateway
+    nateva:
+      - forest-patrol-inspection
+      - smart-factory
+      - smart-power
+      - iot-solutions
+      - chatclothes
+      - enterprise-messaging
+      - picture-book-locker
   base_priority:
     chatclothes: 10
     enterprise-messaging: 20
@@ -125,6 +133,13 @@ project_selection:
       - iot-solutions
       - picture-book-locker
       - smart-power
+    nateva:
+      - forest-patrol-inspection
+      - smart-factory
+      - smart-power
+      - iot-solutions
+      - chatclothes
+      - enterprise-messaging
     default:
       - chatclothes
       - smart-factory

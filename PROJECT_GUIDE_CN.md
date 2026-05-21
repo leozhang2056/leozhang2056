@@ -281,9 +281,9 @@ python app/backend/interview_qa_cli.py
 * [x] 求职信生成器（`app/backend/generate_cover_letter.py`）
 * [x] 统一 CLI 入口（`generate.py`）
 * [x] 面试 Q&A 库（33 题完整英文口语回答稿，`kb/interview_qa/scripts.md`）
-* [ ] PDF / DOCX 导出管线（部分实现，HTML→PDF 可用）
-* [ ] Web UI（规划中）
-* [ ] 面试 Q&A 回答稿按《Behavioral Interviews for Software Engineers》原则优化
+* [] PDF / DOCX 导出管线（部分实现，HTML→PDF 可用）
+* [] Web UI（规划中）
+* [] 面试 Q&A 回答稿按《Behavioral Interviews for Software Engineers》原则优化
 
 ---
 

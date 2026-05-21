@@ -34,6 +34,13 @@ programming_languages:
       - Vue.js frontend development
       - Full-stack web applications
     
+  - name: TypeScript
+    level: advanced
+    years: 5
+    evidence:
+      - Full-stack web applications
+      - Strongly typed frontend development with Vue and Node.js
+
   - name: Node.js
     level: intermediate
     years: 4
@@ -326,6 +333,13 @@ frontend:
       - Industrial dashboards
       - IoT visualization
 
+  - name: React
+    level: advanced
+    years: 4
+    evidence:
+      - Component-based frontend development
+      - Integration with Redux and Webpack
+
   - name: Flutter
     level: intermediate
     evidence:
@@ -343,6 +357,15 @@ frontend:
     evidence:
       - Web application development
       - UI implementation
+
+  - name: Redux
+    level: advanced
+    evidence:
+      - State management in React applications
+  - name: Webpack
+    level: intermediate
+    evidence:
+      - Frontend build pipelines and optimization
 
 # DevOps & Cloud
 devops:

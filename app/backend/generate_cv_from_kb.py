@@ -141,15 +141,15 @@ SUMMARY_HIGHLIGHT_BOLD: Dict[str, Dict[str, List[str]]] = {
             "NDK",
             "AI-assisted",
         ],
-        "backend": ["10+ years", "Java", "Spring Boot", "microservice"],
+        "backend": ["10+ years", "Java", "Spring Cloud", "microservice"],
         "ai": ["10+ years", "LLM", "computer vision", "PyTorch"],
-        "fullstack": ["10+ years", "Android", "Spring Boot"],
+        "fullstack": ["10+ years", "Android", "Spring Cloud"],
     },
     "zh": {
         "android": ["10 年以上", "Android", "Kotlin/Java", "Android SDK", "NDK", "AI 辅助"],
-        "backend": ["10 年以上", "Java", "Spring Boot", "微服务"],
+        "backend": ["10 年以上", "Java", "Spring Cloud", "微服务"],
         "ai": ["10 年以上", "LLM", "计算机视觉", "PyTorch"],
-        "fullstack": ["10 年以上", "全栈", "Spring Boot"],
+        "fullstack": ["10 年以上", "全栈", "Spring Cloud"],
     },
 }
 SUMMARY_HIGHLIGHT_BOLD_MAX = 6
@@ -586,7 +586,7 @@ def _jd_term_kb_supported(term: str, skill_names: set) -> bool:
         )
     alias_groups = (
         {"kotlin", "java", "kotlin/java", "android sdk", "android"},
-        {"spring boot", "spring", "mybatis", "rest", "api"},
+        {"spring cloud", "spring", "mybatis", "rest", "api"},
         {"python", "pytorch", "llm", "rag"},
         {"vue", "vue.js", "react", "javascript", "typescript"},
         # Testing: JUnit, MockK, Espresso → automated testing, testing frameworks
@@ -605,8 +605,16 @@ def _jd_term_kb_supported(term: str, skill_names: set) -> bool:
         {"ci/cd", "git", "version control", "release practices", "maintainability"},
         # Security: Android Security → security, technical debt
         {"android security", "security", "technical debt"},
-        # Cloud/Backend: AWS, Spring Boot → backend-for-frontend
-        {"aws", "spring boot", "backend-for-frontend", "bff"},
+        # Cloud/Backend: AWS, Spring Cloud → backend-for-frontend
+        {"aws", "spring cloud", "backend-for-frontend", "bff"},
+        # Cloud platforms: Azure, AWS, GCP → cloud, cloud deployment, cloud environments
+        {"azure", "aws", "gcp", "cloud", "cloud deployment", "cloud environments"},
+        # GIS/Spatial: GIS, GPS, offline maps → GIS mapping, spatial systems, GPS tracking
+        {"gis", "gps", "gps tracking", "gis mapping", "spatial systems", "offline maps", "offline map", "qgis", "postgis"},
+        # Communication: cross-functional collaboration → communication, stakeholder communication
+        {"cross-functional collaboration", "communication", "stakeholder communication", "cross-functional communication"},
+        # Database: MySQL, SQL Server, PostGIS → database administration, SQL, data-layer integration
+        {"mysql", "sql server", "postgresql", "postgis", "sql", "database administration", "data-layer integration"},
         # Innovation/digital: digital transformation, modern engineering practices
         {"digital transformation", "modern engineering practices", "innovation"},
     )
@@ -2324,6 +2332,68 @@ def _render_one_project_job_html(
     </div>'''
 
 
+# Chunxiao career_progression titles/focus — adapt per target role (KB keeps canonical Android wording).
+_PROGRESSION_TITLE_ROLE_MAP: Dict[str, Dict[str, str]] = {
+    "fullstack": {
+        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Full-Stack Engineer",
+        "Senior Android Developer": "Senior Full-Stack Developer",
+    },
+    "backend": {
+        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Backend Engineer",
+        "Senior Android Developer": "Senior Backend Developer",
+    },
+    "ai": {
+        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior AI Engineer",
+        "Senior Android Developer": "Senior AI Software Engineer",
+    },
+}
+
+_PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
+    "fullstack": {
+        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Full-Stack Platform Delivery",
+        "Android Development & Real-time Communication": "Full-Stack Development & Real-time Systems",
+    },
+    "backend": {
+        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Backend Platform Delivery",
+        "Android Development & Real-time Communication": "Backend Development & Real-time Systems",
+    },
+    "ai": {
+        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Applied AI Delivery",
+        "Android Development & Real-time Communication": "Applied AI & Real-time Systems",
+    },
+}
+
+
+def _adapt_progression_title(title: str, role_type: str) -> str:
+    """Map employer progression titles to the CV target role (android keeps KB titles)."""
+    if not title or role_type == "android":
+        return title
+    exact = _PROGRESSION_TITLE_ROLE_MAP.get(role_type, {}).get(title)
+    if exact:
+        return exact
+    out = title
+    if role_type == "fullstack":
+        out = out.replace("Android Engineer", "Full-Stack Engineer")
+        out = out.replace("Android Developer", "Full-Stack Developer")
+        out = out.replace("Android", "Full-Stack")
+    elif role_type == "backend":
+        out = out.replace("Android Engineer", "Backend Engineer")
+        out = out.replace("Android Developer", "Backend Developer")
+        out = out.replace("Android", "Backend")
+    elif role_type == "ai":
+        out = out.replace("Android Engineer", "AI Engineer")
+        out = out.replace("Android Developer", "AI Software Engineer")
+        out = out.replace("Android", "AI")
+    return out
+
+
+def _adapt_progression_focus(focus: str, role_type: str) -> str:
+    if not focus or role_type == "android":
+        return focus
+    exact = _PROGRESSION_FOCUS_ROLE_MAP.get(role_type, {}).get(focus)
+    return exact if exact else focus
+
+
 def _render_career_progression_html(
     work_entry: Dict,
     lang: str,
@@ -2346,9 +2416,9 @@ def _render_career_progression_html(
     
     stages: List[str] = []
     for stage in progression:
-        title = str(stage.get("title") or "")
+        title = _adapt_progression_title(str(stage.get("title") or ""), role_type)
         period = str(stage.get("period") or "")
-        focus = str(stage.get("focus") or "")
+        focus = _adapt_progression_focus(str(stage.get("focus") or ""), role_type)
         achievements = stage.get("achievements") or []
         tech_stack = stage.get("tech_stack") or []
         

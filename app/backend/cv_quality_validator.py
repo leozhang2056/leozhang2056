@@ -155,7 +155,7 @@ def extract_sections(html: str) -> Dict[str, str]:
             sections['summary'] = extract_text_from_html(summary_match.group(1))
     
     # 提取 Skills - 匹配 cv-skills class
-    skills_match = re.search(r'<div[^>]*class="[^"]*cv-skills[^"]*"[^>]*>(.*?)</div>', html, re.DOTALL | re.IGNORECASE)
+    skills_match = re.search(r'<div[^>]*class="[^"]*cv-skills[^"]*"[^>]*>(.*?)(?:</div>\s*(?:<!--|<div[^>]*class="section-title"|</body>))', html, re.DOTALL | re.IGNORECASE)
     if skills_match:
         sections['skills'] = extract_text_from_html(skills_match.group(1))
     

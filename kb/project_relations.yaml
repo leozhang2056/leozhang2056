@@ -51,7 +51,7 @@ relations:
     description: "从纯软件开发扩展到工业 IoT 集成"
     shared_skills:
       - Java
-      - Spring Boot
+      - Spring Cloud
       - REST API
       - Team Leadership
     progression:

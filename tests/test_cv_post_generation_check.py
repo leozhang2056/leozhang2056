@@ -6,7 +6,7 @@ def _html(summary: str, body: str) -> str:
     <html>
       <body>
         <div class="cv-summary">{summary}</div>
-        <div class="cv-skills">Java, Spring Boot, AWS</div>
+        <div class="cv-skills">Java, Spring Cloud, AWS</div>
         <ul>{body}</ul>
       </body>
     </html>
@@ -17,8 +17,8 @@ def test_fluency_flags_repeated_tech_terms():
     html = _html(
         "Backend engineer with production systems experience.",
         """
-        <li>Built Spring Boot services with Spring Boot APIs.</li>
-        <li>Maintained Spring Boot modules and Spring Boot integrations.</li>
+        <li>Built Spring Cloud services with Spring Cloud APIs.</li>
+        <li>Maintained Spring Cloud modules and Spring Cloud integrations.</li>
         <li>Used AWS coursework exposure alongside AWS database labs.</li>
         <li>Mapped AWS fundamentals to AWS-style cloud operations.</li>
         """,
@@ -27,7 +27,7 @@ def test_fluency_flags_repeated_tech_terms():
     score, notes = analyze_fluency(html)
 
     assert score < 100
-    assert any('Repeated tech term "spring boot"' in note for note in notes)
+    assert any('Repeated tech term "spring cloud"' in note for note in notes)
     assert any('Repeated tech term "aws"' in note for note in notes)
 
 

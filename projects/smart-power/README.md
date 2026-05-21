@@ -104,7 +104,7 @@ The platform provides real-time power data collection, energy analysis, alarm ha
 - **HTTP/REST** – APIs
 
 ### Backend
-- **Spring Boot** – Microservices
+- **Spring Cloud** – Microservices
 - **InfluxDB** – Time-series data
 - **MySQL** – Business data and config
 - **Redis** – Cache and real-time data
@@ -227,7 +227,7 @@ The platform provides real-time power data collection, energy analysis, alarm ha
 - **IoT acquisition:** Modbus, RS485, smart meters, sensors
 - **Time-series DB:** InfluxDB, data modeling, query optimization
 - **Stream processing:** Apache Flink, aggregation
-- **Backend:** Spring Boot, microservices, high concurrency
+- **Backend:** Spring Cloud, microservices, high concurrency
 - **Visualization:** ECharts, DataV, dashboard design
 - **Mobile:** UniApp, cross-platform
 

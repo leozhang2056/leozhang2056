@@ -132,10 +132,7 @@ public List<Patent> SearchPatents(string query, SearchFilter filter)
     using (var searcher = new IndexSearcher(directory))
     {
         var analyzer = new StandardAnalyzer();
-        var queryParser = new MultiFieldQueryParser(
-            Lucene.Net.Util.Version.LUCENE_30,
-            new[] { "Title", "Abstract", "Claims" },
-            analyzer);
+        var queryParser = new MultiFieldQueryParser(Lucene.Net.Util.Version.LUCENE_30, new[] { "Title", "Abstract", "Claims" }, analyzer);
         
         var luceneQuery = queryParser.Parse(query);
         var hits = searcher.Search(luceneQuery, filter.MaxResults);

@@ -128,6 +128,15 @@ _COMPANY_FIT_HOOKS = {
             "作为刚毕业的 AUT 学生，我亲身感受过这种文化，也真心认同 AUT 通过实际成果服务学生、教职员工与多元社区。"
         ),
     },
+    'atom': {
+        'en': (
+            "What resonates with me about ATOM Intelligence is your focus on vertical AI and data platforms "
+            "that ship to real enterprise clients — not sandbox demos."
+        ),
+        'zh': (
+            "我与 ATOM Intelligence 的共鸣在于：你们做的是面向真实企业客户的垂直 AI 与数据平台，而不是沙盒演示。"
+        ),
+    },
 }
 
 _WHY_ME_HOOKS = {
@@ -199,6 +208,14 @@ _WHY_ME_HOOKS = {
             "我非常愿意并且有强烈动力投入 AUT 的 AI 与数字体验平台建设，"
             "以稳定交付、务实集成和协作方式持续贡献。这个岗位对我有很强的个人意义，"
             "我也真心期待并坚定希望在 AUT 长期发展。"
+        ),
+    },
+    'atom': {
+        'en': (
+            "I am a native Mandarin speaker with professional working English and comfortable bridging Auckland and Shanghai in both languages."
+        ),
+        'zh': (
+            "我是中文母语者，英语可胜任专业书面与口语沟通，并习惯在奥克兰与中国团队之间做双语协作。"
         ),
     },
 }
@@ -412,13 +429,22 @@ def build_cover_letter_content(
     if lang == 'en':
         opening_hook = _opening_hook_text(role_type, 'en')
         jd_fit_hook = _build_jd_fit_hook(role_type, 'en', jd_keywords)
-        opening = (
-            f'{opening_hook} '
-            f'I am excited to apply for the {target_role_title} position at {company_name}. '
-            f'This role is a strong fit for my background as a {hint_text} with {years_str} years of delivery experience. '
-            f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
-            f'{jd_fit_hook}'.strip()
-        )
+        if "years" in hint_text.lower():
+            opening = (
+                f'{opening_hook} '
+                f'I am excited to apply for the {target_role_title} position at {company_name}. '
+                f'This role is a strong fit for my background as a {hint_text}. '
+                f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
+                f'{jd_fit_hook}'.strip()
+            )
+        else:
+            opening = (
+                f'{opening_hook} '
+                f'I am excited to apply for the {target_role_title} position at {company_name}. '
+                f'This role is a strong fit for my background as a {hint_text} with {years_str} years of delivery experience. '
+                f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
+                f'{jd_fit_hook}'.strip()
+            )
 
         proj1 = top_projects[0] if top_projects else {}
         proj2 = top_projects[1] if len(top_projects) > 1 else {}
@@ -517,6 +543,12 @@ def build_cover_letter_content(
                 f'{_COMPANY_FIT_HOOKS["aut"]["en"]} '
                 f'{_WHY_ME_HOOKS["aut"]["en"]}'
             )
+        if 'atom' in company_lower:
+            body2 = (
+                f'{body2} '
+                f'{_COMPANY_FIT_HOOKS["atom"]["en"]} '
+                f'{_WHY_ME_HOOKS["atom"]["en"]}'
+            )
         if pub_note and role_type == 'ai':
             body2 = f'{body2} {pub_note}'
 
@@ -543,13 +575,22 @@ def build_cover_letter_content(
     else:  # zh
         opening_hook = _opening_hook_text(role_type, 'zh')
         jd_fit_hook = _build_jd_fit_hook(role_type, 'zh', jd_keywords)
-        opening = (
-            f'{opening_hook}'
-            f'我诚挚地申请贵公司 {company_name} 的{target_role_title}职位。'
-            f'作为一名{hint_text}，拥有 {years_str} 年专业经验，'
-            f'我相信我的背景与该职位要求高度匹配。'
-            f'{jd_fit_hook}'
-        )
+        if "年以上" in hint_text or "年专业经验" in hint_text:
+            opening = (
+                f'{opening_hook}'
+                f'我诚挚地申请贵公司 {company_name} 的{target_role_title}职位。'
+                f'作为一名{hint_text}，'
+                f'我相信我的背景与该职位要求高度匹配。'
+                f'{jd_fit_hook}'
+            )
+        else:
+            opening = (
+                f'{opening_hook}'
+                f'我诚挚地申请贵公司 {company_name} 的{target_role_title}职位。'
+                f'作为一名{hint_text}，拥有 {years_str} 年专业经验，'
+                f'我相信我的背景与该职位要求高度匹配。'
+                f'{jd_fit_hook}'
+            )
 
         proj1 = top_projects[0] if top_projects else {}
         proj2 = top_projects[1] if len(top_projects) > 1 else {}
@@ -598,12 +639,140 @@ def build_cover_letter_content(
             body2 = f'{body2}{_COMPANY_FIT_HOOKS["l3harris"]["zh"]}{_WHY_ME_HOOKS["l3harris"]["zh"]}'
         if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
             body2 = f'{body2}{_COMPANY_FIT_HOOKS["aut"]["zh"]}{_WHY_ME_HOOKS["aut"]["zh"]}'
+        if 'atom' in company_lower:
+            body2 = f'{body2}{_COMPANY_FIT_HOOKS["atom"]["zh"]}{_WHY_ME_HOOKS["atom"]["zh"]}'
         if pub_note and role_type == 'ai':
             body2 = f'{body2}{pub_note}'
 
         closing = (
             f'我期待有机会进一步探讨如何为 {company_name} 做出贡献。'
         )
+
+    if 'atom' in company_lower:
+        if lang == 'en':
+            opening = (
+                f"I am applying for the {target_role_title} role at ATOM Intelligence. "
+                "I am excited about this role because you need full-stack delivery across backend, web, data pipelines, "
+                "and cloud for real clients, with end-to-end ownership across your Auckland and Shanghai teams. "
+                "I am excited about ATOM because of your vertical AI and data platforms, Auckland R&D centre, mentorship, "
+                "and the path from delivery into platform or AI."
+            )
+            body1 = (
+                "Your requirements: native Mandarin and professional English (written and spoken); "
+                "Bachelor of Software Engineering plus Master's from AUT (First Class Honours)—academic transcripts available with my application. "
+                "Strong Python (ChatClothes, IVCNZ 2025); Vue.js in production; solid SQL (MySQL tuning on high-volume data); "
+                "Docker, CI/CD, and event-driven messaging in live systems; AWS practice—I am ready to work primarily on Azure. "
+                "Postgraduate degree: Master's with First Class Honours."
+            )
+            body2 = (
+                "I hold a New Zealand Post-Study Work Visa with open full-time work rights for any employer—no sponsorship required. "
+                "I live in Hillcrest on the North Shore—a short commute to your Takapuna office—and will work fully onsite. "
+                "My experience is longer than 2–6 years; I am applying for hands-on delivery and mentorship here, not a senior title. "
+                "I do not claim Snowflake or BigQuery experience; Kubernetes I can deepen on the job."
+            )
+            closing = "Thank you for your consideration. I would welcome a short conversation."
+        else:
+            opening = (
+                f"我申请 ATOM Intelligence 的{target_role_title}职位。"
+                "我看好该岗位，因需在 backend、Web、数据管道与云上为真实客户全栈交付，并与奥克兰、上海团队端到端协作。"
+                "我看好 ATOM，因垂直 AI/数据平台、奥克兰研发中心、导师机制及 delivery→platform/AI 路径。"
+            )
+            body1 = (
+                "对应 JD：中文母语、英语专业书面与口语；软件工程学士 + AUT 硕士（一等荣誉），成绩单随申请提供。"
+                "Python（ChatClothes、IVCNZ 2025）；生产 Vue.js；SQL（高并发 MySQL）；Docker、CI/CD、消息队列；AWS 实践，愿以 Azure 为主。"
+                "研究生学历：硕士一等荣誉。"
+            )
+            body2 = (
+                "我持有新西兰毕业后工作签证，可为任意雇主全职工作，本岗位无需雇主担保。"
+                "我住在北岸 Hillcrest，距 Takapuna 办公室很近，可全职 onsite，并与上海团队日常协作。"
+                "年限高于 2–6 年，但有意以 delivery 路径加入；不声称 Snowflake/BigQuery 经验，Kubernetes 可在岗加强。"
+            )
+            closing = "感谢考虑，期待简短交流。"
+
+    if 'halter' in company_lower:
+        if lang == 'en':
+            if role_type == 'android':
+                opening = (
+                    "I am writing to express my strong interest in the Senior Engineer - Mobile role at Halter. "
+                    f"With over ten years of experience as a senior Android engineer, I specialize in taking complex product requirements "
+                    "and turning them into stable, polished applications. What immediately caught my eye in your job description was the call "
+                    "to build mobile experiences that actually hold up at 5am out in a paddock in the rain. Engineering against constrained "
+                    "hardware and flaky rural connectivity is a challenge that aligns perfectly with my client-side delivery background."
+                )
+                body1 = (
+                    "Throughout my career, I have focused on building high-performance Android applications using Kotlin, Java, "
+                    "the Android SDK, and MVVM architecture. In my work on Forest Patrol Inspection, I engineered the offline map rendering "
+                    "engine, OpenCV image analysis, and low-level NDK communication with field hardware devices. I have a proven track record "
+                    "of optimizing client-side performance under tight memory limits, designing offline-first local synchronization, "
+                    "and ensuring a seamless user experience even over low-bandwidth mobile connections."
+                )
+                closing = (
+                    f"I would love the opportunity to chat and discuss how my Android delivery background, hardware integration experience, "
+                    "and product mindset can help you build the future of farming. Thank you for your time and consideration."
+                )
+            else:  # fullstack
+                opening = (
+                    "I am writing to express my strong interest in the Senior Engineer - Product & Engineering role at Halter. "
+                    f"With over ten years of experience as a full-stack engineer, I specialize in taking ambiguous product requirements "
+                    "and turning them into stable, production-ready systems. What immediately caught my eye in your job description was your "
+                    "focus on shipping software that actually works in a muddy paddock, rather than just a clean browser tab. Designing resilient, "
+                    "scalable platforms that can withstand constrained hardware and flaky rural connectivity is a challenge that aligns "
+                    "perfectly with my background in engineering for the physical world."
+                )
+                body1 = (
+                    "Throughout my career, I have focused on building end-to-end systems where digital logic meets real-world execution. "
+                    "In my recent work on a smart factory platform, I designed and scaled a multi-site industrial IoT system from scratch. "
+                    "I built the event-driven backbone and microservices using Java and Spring Cloud, ensuring the system could process "
+                    "real-time telemetry reliably. My experience also spans building robust mobile applications and designing custom "
+                    "low-latency messaging protocols that handle unexpected connection drops—ensuring that if hardware or network signals "
+                    "fail, the software fails gracefully and recovers automatically."
+                )
+                closing = (
+                    f"I would love the opportunity to chat and discuss how my full-stack background, integration experience, "
+                    "and product mindset can help you build the future of farming. Thank you for your time and consideration."
+                )
+            body2 = (
+                "More than anything, I want to join Halter to do work that genuinely matters. Watching 500 cattle walk calmly "
+                "toward their next break without fences, dogs, or quad bikes is exactly the kind of technology I want to dedicate my skills to. "
+                "I have always preferred building tangible, physical-world tech over standard consumer SaaS. I am deeply drawn to Halter's "
+                "culture of 'out-thinking, out-working, and out-caring'—I love hard problems, and I love that your team embraces that challenge. "
+                "Additionally, your office-first approach resonates with me; I thrive in high-energy environments where face-to-face "
+                "collaboration allows us to move fast and learn from each other."
+            )
+        else:  # zh
+            if role_type == 'android':
+                opening = (
+                    "我写这封信是想表达我对贵公司 Senior Engineer - Mobile 角色的强烈兴趣。作为一名拥有十多年交付经验的高级 Android 工程师，"
+                    "我擅长将复杂的客户端需求转化为稳定、流畅且体验优异的移动端应用。在你们的招聘要求中，最吸引我的是那句‘我们的移动体验必须在清晨五点牧场雨中稳定工作’。"
+                    "在受限的硬件和不稳定的乡村网络环境下进行移动端开发和性能优化，这与我长期的客户端开发背景高度契合。"
+                )
+                body1 = (
+                    "我熟练使用 Kotlin、Java、Android SDK 及 MVVM 架构构建高性能的移动端。在森林巡检系统中，我主导了核心离线地图渲染、OpenCV "
+                    "图像分析以及通过 NDK 与硬件设备的底层通信。我拥有在内存受限、弱网环境下进行应用性能调优、离线同步 and 底层软硬件数据对接的丰富实战经验，"
+                    "确保用户即使处于离线状态也能获得流畅的使用体验。"
+                )
+                closing = (
+                    f"非常期待能有机会与您聊聊，探讨我的 Android 客户端开发经验、软硬件集成能力和产品思维，能如何帮助 Halter 的团队。感谢您的宝贵时间与考虑。"
+                )
+            else:  # fullstack
+                opening = (
+                    "我写这封信是想表达我对贵公司 Senior Engineer - Product & Engineering 角色的强烈兴趣。作为一名拥有十多年交付经验的全栈工程师，"
+                    "我擅长将模糊的产品需求转化为稳定、高可用的生产级系统。在你们的招聘要求中，最吸引我的是那句‘我们的软件需要在牧场里运行，而不仅仅是浏览器标签页’。"
+                    "在受限的硬件和不稳定的乡村网络环境下，设计出高容错、可扩展系统，这与我长期在真实物理约束下构建软件的背景不谋而合。"
+                )
+                body1 = (
+                    "在我的职业生涯中，我一直专注于连接数字逻辑与物理世界的落地系统。在最近的智能工厂项目里，我作为系统设计与核心开发，从零构建并扩展了多厂区的工业级物联网（IoT）平台。"
+                    "我使用 Java 和 Spring Cloud 搭建了高并发的微服务与事件驱动架构，确保海量实时遥测数据的可靠传输。同时，我也负责过移动端客户端开发，"
+                    "并设计过专用的低延迟通信协议，专门解决物理设备掉线和弱网环境下的数据同步问题，确保系统在极端环境下依然稳健。"
+                )
+                closing = (
+                    f"非常期待能有机会与您聊聊，探讨我的全栈开发经验、软硬件集成纪律和产品思维，能如何帮助 Halter 的团队。感谢您的宝贵时间与考虑。"
+                )
+            body2 = (
+                "而我最向往加入 Halter 的原因，是为了做真正有意义的工作（work that genuinely matters）。看着 500 头牛在没有围栏、猎犬和沙滩车的情况下平静地走向下一片草场，"
+                "这正是我渴望用技术去实现的价值。我一直更偏爱这种有真实温度、能改变实体产业的“实业技术”，而不是普通的消费级 SaaS。我非常认同 Halter ‘out-think, out-work, out-care’ "
+                "的团队氛围，以及‘因为难，所以热爱’的拼搏文化。此外，你们推崇的 office-first 线下协作模式也非常吸引我，这种高能量、面对面沟通的团队，是快速迭代并交付价值的最佳土壤。"
+            )
 
     return {
         'name':    name,

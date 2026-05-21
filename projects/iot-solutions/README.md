@@ -118,7 +118,7 @@ My **primary responsibility was Android mobile client development** for end-user
 - Push notifications
 
 ### Platform (backend / web)
-- Spring Boot (or equivalent) backend
+- Spring Cloud (or equivalent) backend
 - RESTful APIs, WebSocket for real-time
 - MySQL / Redis for data and session
 - Vue.js or similar for admin/dashboard if applicable

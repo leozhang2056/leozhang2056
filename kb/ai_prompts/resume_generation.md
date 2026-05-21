@@ -99,11 +99,8 @@ From the provided KB payload:
 Return JSON:
 {
   "jd_keywords": [],
-  "selected_projects": [
-    {
-      "project_id": "",
-      "relevance_score": 0,
-      "matched_requirements": [],
+  "selected_projects": [{
+      "project_id": "", "relevance_score": 0, "matched_requirements": [],
       "selected_facts": []
     }
   ],
@@ -147,7 +144,7 @@ Section order should match the **canonical HTML/PDF renderer** (`generate_html_f
 Use only the hints relevant to the target role.
 
 - Android: emphasize Android SDK, Kotlin/Java, architecture, performance, device integration
-- Backend: emphasize Spring Boot, APIs, databases, microservices, scalability, DevOps
+- Backend: emphasize Spring Cloud, APIs, databases, microservices, scalability, DevOps
 - AI/ML: emphasize model work, evaluation, deployment, experimentation, research output
 - Full-stack: emphasize cross-layer delivery and system integration
 - Keep these key projects whenever possible: `chatclothes`, `smart-factory`

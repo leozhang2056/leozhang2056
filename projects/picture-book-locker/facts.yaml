@@ -69,7 +69,7 @@ tech_stack:
   - LED Strips
   - Door Sensors
   backend:
-  - Spring Boot
+  - Spring Cloud
   - MySQL
   - Redis
   - MQTT
@@ -140,7 +140,7 @@ skills_demonstrated:
   - Serial Communication (UART/RS485)
   - GPIO / Hardware Control
   - IoT Systems
-  - Spring Boot / MQTT
+  - Spring Cloud / MQTT
   - SQLite / MySQL
   soft:
   - Hardware Debugging

@@ -19,7 +19,7 @@ company:
   location: China
 summary: >
   Fleet-scale IoT for smart switches and gateways (7-year product line): Android app for discovery,
-  binding, and remote control; gateway firmware for device protocols and MQTT/cloud uplink; Spring Boot
+  binding, and remote control; gateway firmware for device protocols and MQTT/cloud uplink; Spring Cloud
   APIs and ops tooling for registration, grouping, and monitoring at volume—not kiosk or library lockers.
 
 summary_cn: '物联网设备管理平台，集成多种传感器和智能设备。
@@ -83,7 +83,7 @@ tech_stack:
   - Java / Kotlin
   - REST, WebSocket
   platforms:
-  - Spring Boot
+  - Spring Cloud
   - RESTful APIs
   - MySQL
   - Redis
@@ -99,7 +99,7 @@ skills_demonstrated:
   - Gateway / embedded development
   - Android (Java/Kotlin)
   - Protocol and hardware integration
-  - Backend / API (Spring Boot)
+  - Backend / API (Spring Cloud)
   - Device management and lifecycle
   soft:
   - Cross-functional delivery
@@ -116,7 +116,7 @@ keywords:
 - Gateway
 - Device management
 - Android
-- Spring Boot
+- Spring Cloud
 - Embedded
 - UART
 - MQTT

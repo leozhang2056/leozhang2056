@@ -75,11 +75,8 @@ From the provided KB payload:
 Return JSON:
 {
   "jd_keywords": [],
-  "top_experiences": [
-    {
-      "source": "",
-      "relevance_score": 0,
-      "key_facts": [],
+  "top_experiences": [{
+      "source": "", "relevance_score": 0, "key_facts": [],
       "narrative_angle": ""
     }
   ],
@@ -118,7 +115,7 @@ Sincerely,
 Use only the hints relevant to the target role.
 
 - Android: lead with mobile delivery scale, NDK/protocol experience, cross-platform; mention enterprise deployment
-- Backend: lead with microservice scale, uptime metrics, team leadership; mention Spring Boot depth
+- Backend: lead with microservice scale, uptime metrics, team leadership; mention Spring Cloud depth
 - AI/ML: lead with ChatClothes research, edge deployment, IVCNZ publication; mention LLM/diffusion expertise
 - Full-stack: lead with cross-layer delivery and independent system ownership
 

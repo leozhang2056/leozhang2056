@@ -43,7 +43,7 @@ tech_stack:
   - SQLite
   backend:
   - JPush
-  - Spring Boot
+  - Spring Cloud
   - SMS Gateway
   - Redis
   - MySQL
@@ -99,7 +99,7 @@ skills_demonstrated:
   - Face Recognition
   - Android Development
   - Camera API
-  - Spring Boot
+  - Spring Cloud
   - MySQL
   - Redis
   - IoT Integration
@@ -121,7 +121,7 @@ keywords:
 - OpenCV
 - Android
 - IoT
-- Spring Boot
+- Spring Cloud
 - Education
 - Attendance System
 - Liveness Detection
