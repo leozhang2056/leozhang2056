@@ -13,49 +13,98 @@ policy:
     - Keep Key Skills line labels and order stable.
 
 roles:
-  android:
-    summary_sentences:
-      en:
-        - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture.
-        - Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments.
-        - Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration.
-        - Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows.
-        - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
-    key_skills:
-      en:
-        - label: Android Development
-          skills: [Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, React Native, Automated Testing, App Store Deployment]
-        - label: Software Engineering
-          skills: [Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration]
-        - label: Backend & APIs
-          skills: [Spring Cloud, RESTful APIs, MySQL, Redis]
-        - label: Tools & DevOps
-          skills: [Git, CI/CD, Docker, Jenkins, Agile/Scrum]
-        - label: AI & Emerging Technologies
-          skills: [LLM Integration, Multimodal Systems, AI workflow]
+   android:
+     summary_sentences:
+       en:
+         - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture.
+         - Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments.
+         - Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration.
+         - Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows.
+         - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+     key_skills:
+       en:
+         - label: Android Development
+           skills: [Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, React Native, Automated Testing, App Store Deployment]
+         - label: Software Engineering
+           skills: [Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration]
+         - label: Backend & APIs
+           skills: [Spring Cloud, RESTful APIs, MySQL, Redis]
+         - label: Tools & DevOps
+           skills: [Git, CI/CD, Docker, Jenkins, Agile/Scrum]
+         - label: AI & Emerging Technologies
+           skills: [LLM Integration, Multimodal Systems, AI workflow]
+     tech_stack_display:
+       technical_lead_2019_2024:
+         priority: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, CI/CD, Gradle, NDK, MySQL, Redis, Spring Cloud]
+         additional: [Kotlin, Android SDK, Jetpack Compose, MVVM, CI/CD]
+         exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Boot, AWS, .NET Core, Python, SSL/TLS, Encryption, SSL Pinning]
+       android_2015_2018:
+         priority: [Kotlin, Java, Android SDK, Jetpack, MVVM, Gradle, WebSocket, CI/CD, NDK/JNI]
+         additional: [Kotlin, Java, Android SDK, WebSocket]
+         exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS, MySQL, Redis, SSL/TLS, Encryption, SSL Pinning]
+       dotnet_2013_2014:
+         priority: [C#, .NET, SQL Server, ASP.NET MVC]
+         additional: [C#, .NET]
+         exclude: [Android SDK, Kotlin, Jetpack, RxJava, Jenkins, Java]
+experience:
+        companies:
+          - name: Chunxiao Technology Co., Ltd.
+            roles:
+              - Team Lead & Full-stack Engineer
+              - Senior Android Developer
+          - name: Auckland University of Technology
+            type: Education/Research
+        additional_experience:
+         - company: Photon
+           role: Lead Android Developer
+           period: "2015 – 2018"
+           type: Full-time
+           focus: "Android Development & Real-time Communication"
+           achievements:
+             - "Shipped 8+ production Android apps including live-streaming modules and IoT connectivity tools"
+             - "Developed modular Android architecture reused across 12+ internal projects"
+             - "Reduced OOM crashes through memory optimization; engineered crash telemetry infrastructure"
+             - "Implemented WebSocket-based bidirectional communication for real-time messaging"
 
-  backend:
-    summary_sentences:
-      en:
-        - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing, IoT, and long-running production systems.
-        - Specialized in Spring Cloud services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
-        - Proven delivery includes enterprise systems with stable release rhythm, performance tuning, and production support under real business constraints.
-        - Additional expertise includes CI/CD, database optimization, API contracts, observability-minded debugging, and AI-assisted programming tools.
-        - Master's in Computer and Information Sciences from AUT, First Class Honours.
-    key_skills:
-      en:
-        - label: Backend Engineering
-          skills: [Java, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
-        - label: Databases
-          skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
-        - label: DevOps & Release
-          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux]
-        - label: API & Integration
-          skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
-        - label: Broader Stack
-          skills: [Kotlin, Python, JavaScript, Vue.js, Android SDK]
-        - label: AI-Assisted Development
-          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+   backend:
+     summary_sentences:
+       en:
+         - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing, IoT, and long-running production systems.
+         - Specialized in Spring Cloud services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
+         - Proven delivery includes enterprise systems with stable release rhythm, performance tuning, and production support under real business constraints.
+         - Additional expertise includes CI/CD, database optimization, API contracts, observability-minded debugging, and AI-assisted programming tools.
+         - Master's in Computer and Information Sciences from AUT, First Class Honours.
+     key_skills:
+       en:
+         - label: Backend Engineering
+           skills: [Java, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
+         - label: Databases
+           skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
+         - label: DevOps & Release
+           skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux]
+         - label: API & Integration
+           skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
+         - label: Broader Stack
+           skills: [Kotlin, Python, JavaScript, Vue.js, Android SDK]
+         - label: AI-Assisted Development
+           skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+     experience:
+       companies:
+         - Chunxiao Technology Co., Ltd.
+           roles:
+             - Team Lead & Full-stack Engineer
+         - Auckland University of Technology
+           type: Education/Research
+       additional_experience:
+         - company: Idexx
+           role: Backend Engineer
+           period: "2018 – 2023"
+           type: Full-time
+           focus: "Enterprise Messaging & IoT Systems"
+           achievements:
+             - "Engineered enterprise messaging backend processing 500K+ daily messages"
+             - "Built industrial IoT platform across 5+ sites with data pipeline integration"
+             - "Implemented Kafka-style message streaming and event-driven architectures"
 
   fullstack:
     summary_sentences:
@@ -96,6 +145,15 @@ roles:
         priority: [.NET, C#, ASP.NET MVC, SQL Server, IIS, Entity Framework, JavaScript, jQuery, FFmpeg, RTMP, HLS]
         additional: [JavaScript, jQuery]
         exclude: [React, TypeScript, Vue.js, Node.js, Docker, Kubernetes, AWS, Microservices, Spring Boot, Java, RESTful API, WebSocket]
+    experience:
+      companies:
+        - Chunxiao Technology Co., Ltd.
+          roles:
+            - Team Lead & Full-stack Engineer
+            - Senior Android Developer
+        - Auckland University of Technology
+          type: Education/Research
+      additional_experience: []
 
   fintech:
     summary_sentences:

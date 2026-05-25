@@ -39,16 +39,16 @@ This is the main speaking path. Use Part 1 first, then jump to the story bank, d
 <a id="oral-01"></a>
 ### ① Tell me about yourself
 
-**Key idea:** who -> stack , new zealeand, ability , seek 。
+**Key idea:** who -> stack -> NZ move -> ability -> seek.
 
 #### Primary Script (Recommended)
-> I'm Leo Zhang, a senior full-stack engineer with 10+ years architecting and delivering robust systems across backend (Java/Spring), mobile (Android/Kotlin), and IoT platforms.
+> I'm Leo Zhang. I'm a senior full‑stack engineer with 10+ years building backend (Java/Spring), mobile (Android/Kotlin), and IoT systems.
 >
-> Two years ago, I came to New Zealand to pursue my Master's degree at AUT, focusing on applied AI, diffusion models, and AI workflows.
+> Two years ago I moved to New Zealand for my Master's at AUT, focused on applied AI, diffusion models, and production‑ready ML workflows.
 >
-> I have proven ability to lead teams, optimize system performance, and turn complex requirements into scalable, maintainable software.
+> I lead teams, tune performance, and turn messy requirements into maintainable software.
 >
-> I'm seeking a long-term engineering role in New Zealand where I can contribute  my experience in product and technical community.
+> I'm seeking a long‑term engineering role in New Zealand where I can contribute this combined background.
 
 #### Key Points (for quick recall)
 - **Role**: Senior full-stack engineer, 10+ years experience
@@ -60,18 +60,18 @@ This is the main speaking path. Use Part 1 first, then jump to the story bank, d
 <a id="oral-02"></a>
 ### ② Complex technical problem
 
-**Key idea:**  Android 省电，不丢容易及时难，白名单多通道，
+**Key idea:** Android 省电限制，白名单 + 多通道兜底。
 
 #### Primary Script (Recommended)
-> A complex problem I handled was ensuring real-time messaging reliability on Android. Android has tightened its permissions, resulting in increasing restrictions, especially on OEM systems like Huawei and Xiaomi.
+> A complex problem I handled was real‑time messaging on Android. Android has tightened permissions over time, and OEMs like Huawei and Xiaomi are even more aggressive about killing background services.
 >
-> The first and most reliable step was instructing users to whitelist the app from battery optimization.
+> The most reliable step was guiding users to whitelist the app from battery optimization.
 >
-> We also used a layered approach: Easemob for the primary IM path, JPush as a supplementary wake-up channel, and client-side tuning for heartbeats, session recovery, and state reconciliation.
+> We also used a layered approach: Easemob for the primary IM path, JPush as a supplementary wake‑up channel, and client tuning for heartbeats, session recovery, and state reconciliation.
 >
-> This combination led to more reliable delivery and noticeably fewer complaints about missing messages.
+> That combination made delivery more reliable and cut missed‑message complaints.
 >
-> We also had to stay vigilant about security risks, like **Bitcoin ransomware** that encrypts files and demands payment, and **Bitcoin poisoning** scams that send tiny amounts to trick future transactions. That reinforced the need for strong access controls and clear incident response habits.
+> We also stayed alert to security risks like **Bitcoin ransomware** and **Bitcoin poisoning** scams, which reinforced strong access control and clear incident response habits.
 
 #### Key Points (for quick recall)
 - **Problem**: Real-time messaging on Android; OS kills background processes; OEMs (Xiaomi/Huawei) change rules.
@@ -153,6 +153,8 @@ We compare trade-offs together — time, quality, and user impact — and pick a
 
 That way, we avoid fake promises, still ship something useful on time, and keep trust between product and engineering.
 
+开发九宫格功能的时候
+
 <a id="oral-04"></a>
 ### ④ Failure
 
@@ -191,6 +193,13 @@ The experience made me much more aware that user upload functionality should alw
 
 **Key idea:** 先说压力来源，再说你怎么稳住节奏。
 
+#### Key Phrases (from Gemini convo)
+- **Critical deadline** created an **emergency**.
+- Focus on **reducing uncertainty early**, not reacting emotionally.
+- **Structured method**: prioritize by **user impact**, stabilize **highest-risk** issues first.
+- **Continuous updates** and **clear expectations** with product/support.
+- **Calm, structured approach** beats emotional reaction.
+
 **Case A — Smart Factory（发布窗）**  
 Right before a Smart Factory release, the shop floor can't wait. I split it into **triage**, **fix**, **verify**, **watch**, and pulled in the owner of the broken layer. Short updates, clear checkpoints. We shipped without breaking the line. Under pressure I try to **shrink unknowns fast**.
 
@@ -211,6 +220,14 @@ That taught me that a calm, structured rhythm beats emotional reactions when thi
 > **Tension:** **high-security** **offline** site — **costly** **access**, **no** normal **deploy–patch–retry** loop.  
 > **Action:** **offline** packages, **heavy** **prep**, **small** **checkpoints** per visit, **honest** timelines when **process** was the bottleneck.  
 > **Reflection:** pressure can be **managing friction and expectations**, not **only coding faster**.
+
+**Case D — Smart Factory update module（第三方升级失败）**  
+**Key idea:** 新设备升级失败 + 第三方模块 bug + 快速替换 + 形成回归习惯。
+
+> **Tension:** a third-party update module failed on **new devices**; users **couldn't upgrade**.
+> **Action:** debugged on user devices, rewrote the **upload/update** method, shipped **full install packages** as a workaround.
+> **Result:** upgrades recovered; users got the new version.
+> **Lesson:** every release now **tests the upgrade path first** before other fixes.
 
 <a id="oral-06"></a>
 ### ⑥ Prioritize quickly
