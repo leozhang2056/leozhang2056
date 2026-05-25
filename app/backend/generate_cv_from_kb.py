@@ -609,12 +609,24 @@ def _jd_term_kb_supported(term: str, skill_names: set) -> bool:
         {"aws", "spring cloud", "backend-for-frontend", "bff"},
         # Cloud platforms: Azure, AWS, GCP → cloud, cloud deployment, cloud environments
         {"azure", "aws", "gcp", "cloud", "cloud deployment", "cloud environments"},
+        # Messaging/Event-driven: Kafka, RabbitMQ, ActiveMQ → event-driven streaming, event sourcing
+        {"kafka", "rabbitmq", "activemq", "mqtt", "event-driven streaming", "event sourcing", "event-driven architecture", "message queues", "event-driven"},
+        # Distributed systems: Docker, Kubernetes, microservices → distributed systems, cloud-native
+        {"docker", "kubernetes", "microservices", "distributed systems", "cloud-native", "containerization"},
+        # Testing/DevSecOps: JUnit, MockK → automated testing, devsecops, unit testing
+        {"junit", "mockk", "espresso", "automated testing", "testing frameworks", "devsecops", "unit testing", "test automation"},
+        # Languages: TypeScript, JavaScript, Go → typescript, go, golang
+        {"typescript", "javascript", "go", "golang", "node.js"},
         # GIS/Spatial: GIS, GPS, offline maps → GIS mapping, spatial systems, GPS tracking
         {"gis", "gps", "gps tracking", "gis mapping", "spatial systems", "offline maps", "offline map", "qgis", "postgis"},
         # Communication: cross-functional collaboration → communication, stakeholder communication
         {"cross-functional collaboration", "communication", "stakeholder communication", "cross-functional communication"},
         # Database: MySQL, SQL Server, PostGIS → database administration, SQL, data-layer integration
         {"mysql", "sql server", "postgresql", "postgis", "sql", "database administration", "data-layer integration"},
+        # Data pipelines: ETL, data processing → data pipelines, large data volumes
+        {"etl", "kettle", "data processing", "data pipelines", "large data volumes", "data integration"},
+        # Technical leadership: code review, mentoring → technical leadership
+        {"code review", "mentoring", "technical leadership", "team leadership", "tech lead"},
         # Innovation/digital: digital transformation, modern engineering practices
         {"digital transformation", "modern engineering practices", "innovation"},
     )
@@ -903,7 +915,7 @@ def generate_skills_section(
         key = cfg['key']
         # Android targeted CVs: hide explicit testing row unless JD asks for testing.
         if (
-            role_type == 'android'
+            role_type in ['android', 'westpac']
             and key == 'android_testing'
             and kws_lower
             and not any(t in " ".join(kws_lower) for t in ['test', 'testing', 'junit', 'mockk', 'espresso'])
@@ -1138,7 +1150,7 @@ def _role_evidence_sentence(role_type: str, lang: str) -> str:
         "android": "Delivery focus includes runtime stability, maintainable architecture, and production debugging under field constraints.",
         "backend": "Delivery focus includes observability, performance tuning, and stable release practices for long-lived services.",
         "ai": "Delivery focus balances model quality with production readiness, from prototype to runnable pipelines.",
-        "fullstack": "Delivery focus spans frontend-backend integration, testability, and reliable production rollout.",
+        "fullstack": "",
     }
 
     variants = variants_zh if lang == "zh" else variants_en
@@ -1379,11 +1391,16 @@ def generate_summary(
     def _final_summary_sanity_fix(s: str) -> str:
         """
         末尾兜底修复，避免出现半句/断句异常：
+        - Markdown 加粗转换 (** -> <strong>)
         - 删除残留连接词片段
         - 保证输出为完整句（英文以句号结尾）
         """
         if not s:
             return s
+
+        # Markdown bolding: **term** -> <strong>term</strong>
+        s = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", s)
+
         s = _cleanup_broken_clauses(s)
 
         # 常见残句模式兜底
@@ -1446,7 +1463,7 @@ def generate_summary(
 
     # 控制 Summary 长度（目标：5–6 行左右）；英文角色按版式需求适度放宽
     _sum_budget = SUMMARY_MAX_CHARS_ZH if lang == "zh" else SUMMARY_MAX_CHARS_EN
-    if lang == "en" and role_type == "android":
+    if lang == "en" and role_type in ["android", "westpac"]:
         _sum_budget = min(880, _sum_budget + 100)
     if lang == "en" and role_type == "fullstack":
         _sum_budget = min(980, _sum_budget + 240)
@@ -1861,7 +1878,7 @@ def generate_project_bullet_points(
     # 英文：先尝试 bullets 库（ChatClothes + Android：最多从库取 2 条，留 1 条给 facts 里的移动端/论文要点）
     bullets_from_lib: List[str] = []
     lib_cap = max_bullets
-    if lang == "en" and role_type == "android":
+    if lang == "en" and role_type in ["android", "westpac"]:
         _pid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
         if _pid == "chatclothes":
             lib_cap = min(2, max_bullets)
@@ -1967,7 +1984,7 @@ def generate_project_bullet_points(
 
     final_items = combined[:max_bullets]
     # Android 岗：ChatClothes 把含 PWA / 手持端的要点置顶，避免埋在纯 ML 句后面
-    if lang == "en" and role_type == "android":
+    if lang == "en" and role_type in ["android", "westpac"]:
         _cpid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
         if _cpid == "chatclothes":
             mobile_first: List[str] = []
@@ -2257,6 +2274,10 @@ def _render_one_project_job_html(
     else:
         role = (project.get('role') or '').strip()
 
+    # Adapt role for Chunxiao projects
+    if "Chunxiao" in company:
+        role = _adapt_progression_title(role, role_type)
+
     date_range = _fmt_date_range(project)
 
     tech_stack = project.get('tech_stack', {})
@@ -2365,12 +2386,29 @@ _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
 
 
 def _adapt_progression_title(title: str, role_type: str) -> str:
-    """Map employer progression titles to the CV target role (android keeps KB titles)."""
-    if not title or role_type == "android":
+    """Map employer progression titles to the CV target role."""
+    if not title:
         return title
+    
+    # Target specific roles for Android focus
+    if role_type in ["android"]:
+        out = title
+        # "Technical Lead & Full-stack Engineer" -> "Technical Lead & Senior Android Engineer"
+        out = out.replace("Full-stack Engineer", "Senior Android Engineer")
+        out = out.replace("Full-stack Developer", "Senior Android Developer")
+        out = out.replace("Full-stack", "Android")
+        out = out.replace("Fullstack", "Android")
+        return out
+
+    if role_type == "westpac":
+        # Keep original or slightly tweaked for Westpac specifically if needed, 
+        # but user asked for "fullstack" specifically here.
+        return title
+
     exact = _PROGRESSION_TITLE_ROLE_MAP.get(role_type, {}).get(title)
     if exact:
         return exact
+    
     out = title
     if role_type == "fullstack":
         out = out.replace("Android Engineer", "Full-Stack Engineer")
@@ -2388,10 +2426,96 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
 
 
 def _adapt_progression_focus(focus: str, role_type: str) -> str:
-    if not focus or role_type == "android":
+    if not focus:
         return focus
+    
+    if role_type in ["android"]:
+        out = focus
+        out = out.replace("Full-stack Platform Delivery", "Mobile Platform Delivery")
+        out = out.replace("Full-stack Development", "Android Development")
+        out = out.replace("Full-stack", "Android")
+        return out
+    
+    if role_type == "westpac":
+        return focus
+
     exact = _PROGRESSION_FOCUS_ROLE_MAP.get(role_type, {}).get(focus)
     return exact if exact else focus
+
+
+def _apply_role_tech_stack_order(tech_stack: List[str], role_type: str, title: str = "", period: str = "") -> List[str]:
+    """根据角色模板中的tech_stack_display配置，对tech_stack进行排序和扩展。"""
+    if role_type not in ["fullstack", "fintech", "idexx", "nateva", "ai", "photon", "westpac"] or not tech_stack:
+        return tech_stack
+    
+    # Load cv_base_template to get tech_stack_display config
+    template_path = os.path.join(os.path.dirname(__file__), '..', '..', 'kb', 'cv_base_template.yaml')
+    if not os.path.exists(template_path):
+        return tech_stack
+    
+    try:
+        with open(template_path, 'r', encoding='utf-8') as f:
+            template = yaml.safe_load(f)
+        
+        role_config = template.get('roles', {}).get(role_type, {})
+        tech_display = role_config.get('tech_stack_display', {})
+        
+        # Determine which display config to use based on title/period
+        priority = []
+        additional = []
+        exclude = []
+        title_lower = title.lower()
+        
+        # Check period first to distinguish stages
+        if '2015' in period or '2016' in period or '2017' in period or '2018' in period:
+            cfg = tech_display.get('android_2015_2018', {})
+            priority = cfg.get('priority', [])
+            additional = cfg.get('additional', [])
+            exclude = cfg.get('exclude', [])
+        elif '2013' in period or '2014' in period:
+            cfg = tech_display.get('dotnet_2013_2014', {})
+            priority = cfg.get('priority', [])
+            additional = cfg.get('additional', [])
+            exclude = cfg.get('exclude', [])
+        elif 'technical lead' in title_lower or 'full-stack' in title_lower or 'fullstack' in title_lower:
+            cfg = tech_display.get('technical_lead_2019_2024', {})
+            priority = cfg.get('priority', [])
+            additional = cfg.get('additional', [])
+            exclude = cfg.get('exclude', [])
+        elif 'android' in title_lower:
+            cfg = tech_display.get('android_2015_2018', {})
+            priority = cfg.get('priority', [])
+            additional = cfg.get('additional', [])
+            exclude = cfg.get('exclude', [])
+        elif '.net' in title_lower or 'dotnet' in title_lower:
+            cfg = tech_display.get('dotnet_2013_2014', {})
+            priority = cfg.get('priority', [])
+            additional = cfg.get('additional', [])
+            exclude = cfg.get('exclude', [])
+        
+        # Apply exclude filter first
+        exclude_lower = set(e.lower() for e in exclude)
+        filtered_stack = [t for t in tech_stack if t.lower() not in exclude_lower]
+        
+        if not priority:
+            return filtered_stack
+        
+        # Add additional tech words that are not already in filtered_stack AND not in exclude list
+        tech_stack_lower = set(t.lower() for t in filtered_stack)
+        new_items = [a for a in additional if a.lower() not in tech_stack_lower and a.lower() not in exclude_lower]
+        extended_stack = filtered_stack + new_items
+        
+        # Sort: priority items first (in order), then remaining items
+        priority_set = set(p.lower() for p in priority)
+        prioritized = [t for t in extended_stack if t.lower() in priority_set]
+        remaining = [t for t in extended_stack if t.lower() not in priority_set]
+        
+        # Sort prioritized items by their position in priority list
+        prioritized.sort(key=lambda t: next((i for i, p in enumerate(priority) if p.lower() == t.lower()), len(priority)))
+        
+        return prioritized + remaining
+    except Exception:
+        return tech_stack
 
 
 def _render_career_progression_html(
@@ -2426,6 +2550,9 @@ def _render_career_progression_html(
             achievements = []
         if not isinstance(tech_stack, list):
             tech_stack = []
+        
+        # Apply role-specific tech_stack ordering from cv_base_template
+        tech_stack = _apply_role_tech_stack_order(tech_stack, role_type, title, period)
         
         header_parts = [title]
         if period:
@@ -2524,6 +2651,7 @@ def _render_chunxiao_employer_group_html(
         location = str(work_entry.get("location") or location)
         role_title = str(work_entry.get("role") or role_title)
 
+    role_title = _adapt_progression_title(role_title, role_type)
     date_lbl = _work_entry_date_label(work_entry, lang) if work_entry else ""
     progression = _chunxiao_progression_blurb(work_entry, lang) if work_entry else ""
     progression_html = (
@@ -4106,7 +4234,7 @@ async def generate_cv_from_kb(
         run_post_check: 为 True 时在生成英文 PDF 后运行流畅度/版式/JD 覆盖检查并写出 *_POST_CHECK.md（默认 True）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
-    _min_slots = 3 if role_type == "android" else 2
+    _min_slots = 3 if role_type in ["android", "westpac"] else 2
     mp = int(max_projects or DEFAULT_MAX_PROJECTS)
     max_projects = max(_min_slots, min(mp, CV_MAX_PROJECTS_CAP))
 

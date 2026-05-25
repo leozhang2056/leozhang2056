@@ -13,7 +13,7 @@ experiences:
     type: Education/Research
     
     achievements:
-      - "Completed Master's thesis 6 months early, delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration and on-device inference"
+      - "Completed Master's thesis 6 months early, delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration and AI workflow"
       - "Published research on diffusion-based virtual try-on (IVCNZ 2025)"
       - "Built IoT sensor monitoring system using Raspberry Pi, streaming real-time data to LLM for personalized recommendations"
     
@@ -30,7 +30,7 @@ experiences:
     type: Full-time
     
     career_progression:
-      - title: Technical Lead & Full-stack Engineer
+      - title: Team Lead & Full-stack Engineer
         period: "2019 – 2024"
         focus: Full-stack Platform Delivery & Team Leadership
         achievements:
@@ -41,37 +41,37 @@ experiences:
           - "Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams"
           - "Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery"
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Cloud, MySQL, Redis, Docker]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Cloud, MySQL, Redis, Docker, Node.js, Flutter]
       
       - title: Senior Android Developer
         period: "2015 – 2018"
         focus: Android Development & Real-time Communication
         achievements:
           - "Shipped <strong>8+ production Android apps</strong> including live-streaming modules, IoT connectivity tools, and internal efficiency apps"
-          - "Developed modular Android architecture reused across <strong>12+ internal projects</strong>, reducing code duplication by <strong>50%+</strong>"
-          - "Reduced <strong>OOM crashes by 65%</strong> through memory optimization; engineered crash telemetry infrastructure with automated reporting"
+          - "Developed modular Android architecture reused across <strong>12+ internal projects</strong>"
+          - "Reduced OOM crashes through memory optimization; engineered crash telemetry infrastructure with automated reporting"
           - "Designed resilient push delivery with IM + failover channel; implemented connection persistence strategies and OEM ROM adaptation"
+          - "Implemented WebSocket-based bidirectional communication for real-time messaging and synchronized broadcast playback"
           - "Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure data storage"
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD]
+        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD, WebSocket]
       
       - title: .NET Software Engineer
         period: "2013 – 2014"
         focus: .NET Live Streaming & Web Systems
         achievements:
-          - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web and mobile"
-          - "Implemented WebSocket-based bidirectional control for synchronized broadcast playback and real-time viewer engagement"
+          - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web"
           - "Managed production infrastructure: SSL/TLS, multi-region failover, and media server optimization"
         
-        tech_stack: [.NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, WebSocket]
+        tech_stack: [.NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, C++]
 
 total_years_experience: 10
 
 key_achievements:
-  - "Architected enterprise messaging platform: 5,000 DAU, <200ms latency, 500K+ daily messages; migrated from unstable C++ to Easemob cloud (90%+ defect elimination)"
-  - "Engineered Industrial IoT platform across 5+ factory sites: 30%+ efficiency gain via RFID + MQTT telemetry from 100+ devices"
-  - "Optimized Android stability: 65% OOM reduction through memory hardening; built crash reporting infrastructure"
-  - "Completed Master's thesis 6 months early with production-ready AI virtual try-on system"
-  - "Implemented FastDFS distributed storage: 100GB+ capacity with chunk distribution and redundancy"
+   - "Architected enterprise messaging platform: 5,000 DAU, <200ms latency, 500K+ daily messages; migrated from unstable C++ to Easemob cloud (90%+ defect elimination)"
+   - "Engineered Industrial IoT platform across 5+ factory sites: 30%+ efficiency gain via RFID + MQTT telemetry from 100+ devices"
+   - "Optimized Android stability: OOM reduction through memory hardening; built crash reporting infrastructure"
+   - "Completed Master's thesis 6 months early with production-ready AI virtual try-on system"
+   - "Implemented FastDFS distributed storage: 100GB+ capacity with chunk distribution and redundancy"
 
 last_updated: "2026-05-19"

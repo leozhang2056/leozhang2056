@@ -32,7 +32,7 @@ roles:
         - label: Tools & DevOps
           skills: [Git, CI/CD, Docker, Jenkins, Agile/Scrum]
         - label: AI & Emerging Technologies
-          skills: [LLM Integration, Multimodal Systems, On-device Inference]
+          skills: [LLM Integration, Multimodal Systems, AI workflow]
 
   backend:
     summary_sentences:
@@ -60,37 +60,154 @@ roles:
   fullstack:
     summary_sentences:
       en:
-        - Full-stack software engineer with 10+ years shipping production software across Java backend systems, modern web architectures, applied AI, and mobile platforms.
-        - Specialized in turning messy business requirements into maintainable APIs, distributed services, and releases that work in real operating environments.
-        - Proven delivery spans Java-based industrial automation, enterprise messaging backends, and full-stack AI applications from prototype through production.
-        - Additional expertise includes Spring Cloud, TypeScript/Node.js, Docker, CI/CD discipline, and AI-assisted programming tools in daily delivery.
+        - Senior Full-Stack Software Engineer with 10+ years of experience architecting and delivering robust systems across backend (Java/Spring), mobile (Android/Kotlin), and IoT platforms.
+        - Specialized in responsive web applications and scalable microservices, with deep expertise in React, TypeScript, .NET, and Java ecosystems.
+        - Recently specialized in applied AI, completing a Master's thesis on diffusion models and building production-ready ML workflows from prototype through deployment.
+        - Proven ability to lead teams, optimize system performance, and translate complex requirements into scalable, maintainable software in Agile environments.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
         - label: Languages
-          skills: [Java, TypeScript, JavaScript, Kotlin, Python, SQL, C/C++]
+          skills: [Java, C#, .NET, TypeScript, JavaScript, Python, Kotlin]
         - label: Backend & APIs
-          skills: [Spring Cloud, MyBatis, Redis, RESTful API, WebSocket, Kafka, ActiveMQ]
+          skills: [Spring Boot, Spring Cloud, ASP.NET, .NET Core, RESTful API, Kafka, Microservices]
         - label: Frontend & Engineering
-          skills: [TypeScript, React, Redux, Webpack, Vue.js, HTML/CSS, Node.js, GitHub Actions]
+          skills: [React, Vue.js, TypeScript, Redux, Node.js, HTML5/CSS3]
         - label: Mobile & Cross-platform
-          skills: [Android SDK, Jetpack Compose, Flutter, App Store Deployment]
+          skills: [Flutter, React Native, Android SDK, Jetpack Compose]
         - label: Databases
-          skills: [MySQL, Redis, MongoDB, SQL Server, SQLite]
+          skills: [MySQL, SQL Server, PostgreSQL, Redis, MongoDB]
         - label: DevOps & Release
-          skills: [Docker, Kubernetes, Jenkins, Nginx, Git, Linux, Tomcat, IIS]
-        - label: AI / ML
-          skills: [PyTorch, OpenCV, YOLO, Diffusion Models, LLM, Ollama, ComfyUI]
-        - label: AI-Assisted Development
-          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+          skills: [Docker, Kubernetes, AWS, Jenkins, CI/CD, Azure DevOps]
+        - label: Architecture & Practices
+          skills: [Distributed Systems, Automated Testing, SaaS, Agile/Scrum]
+        - label: AI & Tools
+          skills: [PyTorch, LLM, Cursor, GitHub Copilot, Claude Code]
+    tech_stack_display:
+      technical_lead_2019_2024:
+        priority: [Java, Spring Boot, Spring Cloud, Kafka, MySQL, Redis, Docker, Kubernetes, React, TypeScript, Redux, .NET Core, Microservices, Flutter, Dart, Kotlin, Android SDK]
+        additional: [React, TypeScript, Redux, Node.js, Vue.js, Flutter, Dart, Microservices, RESTful API]
+        exclude: [AWS, Coroutines, Jetpack Compose, MVVM, NDK, Gradle, CI/CD, WebSocket]
+      android_2015_2018:
+        priority: [Kotlin, Java, Android SDK, Jetpack, MVVM, Gradle, CI/CD, WebSocket, NDK/JNI]
+        additional: []
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Flutter, Dart, Microservices, RESTful API, Spring Boot, .NET Core, Docker, Kubernetes, AWS, MySQL, Redis, Kafka]
+      dotnet_2013_2014:
+        priority: [.NET, C#, ASP.NET MVC, SQL Server, IIS, Entity Framework, JavaScript, jQuery, FFmpeg, RTMP, HLS]
+        additional: [JavaScript, jQuery]
+        exclude: [React, TypeScript, Vue.js, Node.js, Docker, Kubernetes, AWS, Microservices, Spring Boot, Java, RESTful API, WebSocket]
 
-  nateva:
+  fintech:
     summary_sentences:
       en:
-        - Full-stack software engineer with 10+ years of production delivery across .NET, Java backends, Android, and IoT-connected field systems.
-        - Specialized in data-layer integration, SQL database design, and building software that works reliably in real operating environments — including offline-first mobile apps for field use.
-        - Proven delivery includes a forest patrol inspection system with offline GIS maps, GPS track recording, and deferred sync for no-signal environments, plus industrial IoT platforms rolled out across 10+ sites.
-        - Additional expertise includes Python for data pipelines and AI workflows, Azure-adjacent cloud deployment, CI/CD discipline, and mentoring colleagues in AI-assisted development tools.
+        - Senior Software Engineer with 10+ years of experience delivering **real-world outcomes** in high-performance FinTech and industrial systems across .NET, Java, and Python ecosystems.
+        - Specialized in architecting **scalable greenfield platforms**, distributed backends, and cloud-native microservices with a focus on long-term sustainability and performance.
+        - Proven track record of owning end-to-end delivery of complex business systems, leading technical decision-making, and mentoring teams in fast-paced, **people-centric** environments.
+        - Expert in Azure and AWS cloud orchestration, Kubernetes, and optimizing system reliability for sudden capacity shifts in financial markets.
+        - Master of Computer and Information Sciences from AUT, First Class Honours; committed to driving technical excellence and community impact.
+    key_skills:
+      en:
+        - label: Languages
+          skills: [C#, .NET, Java, Python, SQL, TypeScript, Kotlin]
+        - label: Cloud & Platform
+          skills: [Azure, AWS, Docker, Kubernetes, Azure DevOps, CI/CD, Terraform]
+        - label: Backend & Distributed
+          skills: [ASP.NET Core, Spring Boot, Microservices, RESTful API, Kafka, Distributed Systems]
+        - label: Databases & Storage
+          skills: [SQL Server, MySQL, PostgreSQL, Redis, Entity Framework, MongoDB]
+        - label: Engineering Practices
+          skills: [FinTech, Platform Design, Greenfield Development, Automated Testing, Agile/Scrum, TDD, DDD]
+        - label: AI & Modern Tools
+          skills: [LLM, ML Workflows, Cursor, Claude Code, GitHub Copilot]
+    tech_stack_display:
+      technical_lead_2019_2024:
+        priority: [Java, Spring Boot, .NET Core, Microservices, SQL, Docker, Kubernetes, AWS, Distributed Systems, Kafka, Redis]
+        additional: [Microservices, Distributed Systems, AWS, Kubernetes, Docker, CI/CD]
+        exclude: [Android SDK, Kotlin, Flutter, Dart, React, Redux, Jetpack Compose, Vue.js, Node.js]
+      android_2015_2018:
+        priority: [Java, Kotlin, SQL, Android SDK, Gradle, CI/CD, WebSocket]
+        additional: [SQL, CI/CD, Java]
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Flutter, Dart, Microservices, RESTful API, Spring Boot, .NET Core, Docker, Kubernetes, AWS, MySQL, Redis, Kafka]
+      dotnet_2013_2014:
+        priority: [C#, .NET, ASP.NET MVC, SQL Server, IIS, Entity Framework, FFmpeg, WebSocket]
+        additional: [C#, SQL Server, Entity Framework]
+        exclude: [React, TypeScript, Vue.js, Node.js, Docker, Kubernetes, AWS, Microservices, Spring Boot, Java, RESTful API]
+
+  photon:
+    summary_sentences:
+      en:
+        - Lead Android Developer with 10+ years of experience architecting and delivering high-performance mobile solutions for complex production environments.
+        - Specialized in building robust, maintainable Android systems using Kotlin, Java, Jetpack Compose, and RxJava with a focus on UI design patterns and best practices.
+        - Proven track record of leading technical delivery, optimizing app architecture (MVVM), and implementing scalable CI/CD pipelines with Jenkins and Atlassian tools.
+        - Expert in managing end-to-end release lifecycles, reducing crash rates through memory optimization, and mentoring engineering teams in Agile environments.
+        - Master of Computer and Information Sciences from AUT, First Class Honours; committed to driving technical excellence and high-quality user experiences.
+    key_skills:
+      en:
+        - label: Languages
+          skills: [Kotlin, Java, Android SDK, RxJava, C#, .NET]
+        - label: Android Core & UI
+          skills: [Jetpack Compose, Jetpack, MVVM, UI Design Principles, Material Design, Screens Adaptation]
+        - label: Tools & DevOps
+          skills: [Git, Bitbucket, JIRA, Jenkins, CI/CD, Gradle, Android Studio]
+        - label: Architecture & Quality
+          skills: [Application Design, Automated Testing, TDD, Clean Architecture, Memory Optimization]
+        - label: Practices & AI
+          skills: [Agile/Scrum, Code Review, Mentorship, Cursor, Claude Code, GitHub Copilot]
+    tech_stack_display:
+      technical_lead_2019_2024:
+        priority: [Kotlin, Java, Android SDK, Jetpack Compose, RxJava, MVVM, CI/CD, Jenkins, Git, Bitbucket, JIRA]
+        additional: [Jetpack Compose, RxJava, Jenkins, CI/CD, MVVM]
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Cloud, AWS, .NET Core]
+      android_2015_2018:
+        priority: [Kotlin, Java, Android SDK, MVVM, Gradle, WebSocket, CI/CD]
+        additional: [Kotlin, Java, Android SDK]
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS]
+      dotnet_2013_2014:
+        priority: [C#, .NET, ASP.NET MVC, SQL Server, IIS, Entity Framework]
+        additional: [C#, .NET]
+        exclude: [Android SDK, Kotlin, Jetpack, RxJava, Jenkins]
+
+  westpac:
+    summary_sentences:
+      en:
+        - Senior Android Engineer with 10+ years of experience architecting and delivering robust systems across mobile (Android/Kotlin), backend (Java/Spring), and IoT platforms.
+        - Expert in building high-performance **Android** applications using **Kotlin**, **Jetpack Compose**, and modern **MVVM/Clean** architecture for complex production environments.
+        - Proven success architecting scalable mobile platforms and real-time communication systems, significantly improving app stability and performance through iterative Android engineering.
+        - Recently specialized in applied AI and production-ready ML workflows while leading agile teams in delivering stable, maintainable software via **CI/CD automation**.
+        - Master of Computer and Information Sciences, **First Class Honours**, Auckland University of Technology.
+    key_skills:
+      en:
+        - label: Android Development
+          skills: [Kotlin, Java, Jetpack Compose, Android SDK, MVVM, Clean Architecture, NDK, Coroutines & Flow]
+        - label: Reliability & Performance
+          skills: [Performance Optimization, Memory Management, Debugging, App Hardening, ProGuard]
+        - label: Engineering & API
+          skills: [Reactive Programming, WebSocket, RESTful API Integration, Unit/UI Testing, Maintainability]
+        - label: Tools & DevOps
+          skills: [Git, Jenkins, Bitbucket, CI/CD, Gradle, JIRA, Agile/Scrum]
+        - label: Architecture & AI
+          skills: [Scalable Systems, Code Review, Mentorship, LLM Integration, Cursor, GitHub Copilot]
+    tech_stack_display:
+      technical_lead_2019_2024:
+        priority: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, CI/CD, Gradle, NDK, MySQL, Redis, Spring Cloud]
+        additional: [Kotlin, Android SDK, Jetpack Compose, MVVM, CI/CD]
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Boot, AWS, .NET Core, Python, SSL/TLS, Encryption, SSL Pinning]
+      android_2015_2018:
+        priority: [Kotlin, Java, Android SDK, Jetpack, MVVM, Gradle, WebSocket, CI/CD, NDK/JNI]
+        additional: [Kotlin, Java, Android SDK, WebSocket]
+        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS, MySQL, Redis, SSL/TLS, Encryption, SSL Pinning]
+      dotnet_2013_2014:
+        priority: [C#, .NET, SQL Server, ASP.NET MVC]
+        additional: [C#, .NET]
+        exclude: [Android SDK, Kotlin, Jetpack, RxJava, Jenkins, Java]
+
+  hnry:
+    summary_sentences:
+      en:
+        - Senior Android Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, and modern Android architecture.
+        - Specialized in hybrid mobile applications (Turbolinks/Web) and scalable backend systems for FinTech environments.
+        - Proven success delivering stable, maintainable software with performance optimization, CI/CD workflows, and automated testing.
+        - Additional strengths include cross-functional engineering collaboration, mentorship, and code review leadership.
         - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
     key_skills:
       en:
@@ -106,6 +223,31 @@ roles:
           skills: [Spring Cloud, RESTful API, WebSocket, MQTT, IoT Integration]
         - label: AI-Assisted Development
           skills: [Python AI Pipelines, Cursor, GitHub Copilot, Claude Code, OpenCode]
+
+  idexx:
+    summary_sentences:
+      en:
+        - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing IoT, and long-running production systems with large data volumes.
+        - Specialized in event-driven architectures, Kafka-style message streaming, RESTful APIs, and cloud-native microservices on AWS.
+        - Proven delivery includes enterprise messaging backends processing 500K+ daily messages, industrial IoT platforms across 5+ sites, and data pipeline integration with deferred sync for field operations.
+        - Additional expertise includes CI/CD automation, DevSecOps practices, distributed systems design, and technical leadership mentoring cross-functional squads in Agile environments.
+        - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+    key_skills:
+      en:
+        - label: Backend Engineering
+          skills: [Java, Spring Cloud, Go, TypeScript, RESTful API, Event-driven Architecture, Microservices]
+        - label: Messaging & Streaming
+          skills: [Kafka, RabbitMQ, ActiveMQ, MQTT, WebSocket, Event Sourcing, Real-time Pipelines]
+        - label: Databases
+          skills: [MySQL, Redis, MongoDB, SQL Server, DynamoDB, Query Optimization]
+        - label: Cloud & DevOps
+          skills: [AWS, Docker, Kubernetes, CI/CD, Git, Linux, Terraform, IaC]
+        - label: Data & Integration
+          skills: [Data Pipelines, Large Data Volumes, API Integration, Distributed Systems, Cloud-native]
+        - label: Engineering Practices
+          skills: [Automated Testing, DevSecOps, Agile/Scrum, Code Review, Technical Leadership]
+        - label: AI-Assisted Development
+          skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
 
   ai:
     summary_sentences:
@@ -127,3 +269,57 @@ roles:
           skills: [Android Chrome PWA, API Integration, User Workflow Design, Offline-capable Systems]
         - label: AI-Assisted Development
           skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+
+   hnry:
+     summary_sentences:
+       en:
+         - Senior Android Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, and modern Android architecture.
+         - Specialized in hybrid mobile applications (Turbolinks/Web) and scalable backend systems for FinTech environments.
+         - Proven success delivering stable, maintainable software with performance optimization, CI/CD workflows, and automated testing.
+         - Additional strengths include cross-functional engineering collaboration, mentorship, and code review leadership.
+         - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+     key_skills:
+       en:
+         - label: Android Development
+           skills: [Kotlin, Android SDK, Jetpack Compose, MVVM, Clean Architecture, Performance Optimization]
+         - label: Engineering Practices
+           skills: [Automated Testing, CI/CD, Code Review, Mentorship, Agile/Scrum, Distributed Development]
+         - label: Cross-Platform & Hybrid
+           skills: [Flutter, Hybrid Apps, React, JavaScript]
+         - label: Backend & Infrastructure
+           skills: [Java, Spring Cloud, Node.js, Postgres, AWS, Docker, RESTful APIs, Terraform]
+         - label: Product & Collaboration
+           skills: [Product Design, Stakeholder Communication, Customer Empathy, Self-Employed Mindset]
+     tech_stack_display:
+       technical_lead_2019_2024:
+         priority: [Kotlin, Android SDK, Jetpack Compose, CI/CD, React, JavaScript, AWS, Docker, Postgres, Agile]
+         additional: [Automated Testing, Code Review, Mentorship]
+         exclude: []
+       android_2015_2018:
+         priority: [Kotlin, Android SDK, CI/CD, Automated Testing, Agile, Hybrid Apps, JavaScript]
+         additional: []
+         exclude: []
+       dotnet_2013_2014:
+         priority: [JavaScript, React, Postgres, AWS, Docker, Backend APIs]
+         additional: []
+         exclude: []
+     experience:
+       # 可选：覆盖默认的工作经历显示
+       # 如果不提供，将使用 kb/experience/work.yaml 中的默认经历
+       companies:
+         - Chunxiao Technology Co., Ltd.
+           # 可以指定显示哪些职位，如果不指定则显示所有
+           roles:
+             - Team Lead & Full-stack Engineer
+             - Senior Android Developer
+       # 可以添加额外的经历或调整显示顺序
+       additional_experience:
+         - company: Auckland University of Technology
+           role: AI Research Assistant
+           period: "2024-07 – 2026-02"
+           type: Education/Research
+           focus: "AI Research & Thesis Development"
+           achievements:
+             - "Completed Master's thesis 6 months early: ChatClothes AI virtual try-on system"
+             - "Published research on diffusion-based virtual try-on (IVCNZ 2025)"
+             - "Built IoT sensor monitoring system with LLM integration"

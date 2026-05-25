@@ -701,7 +701,7 @@ categorized_skills:
   
   ai_emerging:
     label: "AI & Emerging Technologies"
-    skills: [LLM Integration, Multimodal Systems, On-device Inference]
+    skills: [LLM Integration, Multimodal Systems, AI workflow]
 
 skill_groups:
   ai_coding:

@@ -76,7 +76,7 @@ highlights:
   - Implemented FastDFS distributed file storage supporting 100GB+ user uploads and document hosting; engineered chunk distribution, redundancy, and cross-subsystem access control
   - Architected unified platform from standalone IM: centralized user center, file service, and permission layer reused across 5+ subsystems (attendance, approvals, asset management, audit)
   - Built Spring Cloud microservices and Node.js backend for messaging, workflow, and operational analytics (Kettle ETL + PowerBI dashboards)
-  - Reduced OOM crashes by 65% through memory optimization; implemented in-house crash reporting infrastructure when third-party SDKs were unavailable
+      - Reduced OOM crashes through memory optimization; implemented in-house crash reporting infrastructure when third-party SDKs were unavailable
   - Managed OEM ROM variance (Xiaomi, Huawei, OPPO) with targeted device testing; balanced QA coverage and release velocity for Android 7+ support
   - Strengthened security posture: migrated user assets from Windows file server to secure cloud storage with validation and access control hardening
   - Maintained <2% downtime across 10-year product lifecycle through proactive reliability engineering and rapid incident response

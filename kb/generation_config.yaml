@@ -92,6 +92,35 @@ project_ranking:
       - chatclothes
       - enterprise-messaging
       - picture-book-locker
+    idexx:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - iot-solutions
+      - chatclothes
+      - visual-gateway
+    fintech:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - iot-solutions
+      - chatclothes
+      - visual-gateway
+    photon:
+      - enterprise-messaging
+      - smart-factory
+      - boobit
+      - picture-book-locker
+      - iot-solutions
+      - visual-gateway
+      - chatclothes
+    westpac:
+      - enterprise-messaging
+      - boobit
+      - picture-book-locker
+      - smart-factory
+      - iot-solutions
+      - forest-patrol-inspection
   base_priority:
     chatclothes: 10
     enterprise-messaging: 20
@@ -140,6 +169,18 @@ project_selection:
       - iot-solutions
       - chatclothes
       - enterprise-messaging
+    idexx:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - iot-solutions
+      - chatclothes
+    fintech:
+      - enterprise-messaging
+      - smart-factory
+      - live-streaming-system
+      - iot-solutions
+      - chatclothes
     default:
       - chatclothes
       - smart-factory
