@@ -122,3 +122,13 @@ bullets:
       - "Built automated report generation and distribution workflows"
     evidence: [enterprise-messaging]
     skills: [FineReport, Enterprise Reporting, Chinese BI Tools, Report Automation]
+
+  - id: bi_finebi
+    category: technical
+    tags: [bi, finebi, analytics, visualization, dashboard]
+    original: "Built interactive dashboards with FineBI for self-service analytics"
+    variants:
+      - "Designed FineBI dashboards for operational data analysis and decision support"
+      - "Created self-service BI reports with FineBI for business teams"
+    evidence: [enterprise-messaging]
+    skills: [FineBI, Business Intelligence, Data Visualization, Dashboard Design]

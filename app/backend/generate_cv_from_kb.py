@@ -2365,7 +2365,6 @@ _PROGRESSION_TITLE_ROLE_MAP: Dict[str, Dict[str, str]] = {
     },
     "ai": {
         "Technical Lead & Senior Android Engineer": "Technical Lead & Senior AI Engineer",
-        "Senior Android Developer": "Senior AI Software Engineer",
     },
 }
 
@@ -2420,8 +2419,11 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
         out = out.replace("Android", "Backend")
     elif role_type == "ai":
         out = out.replace("Android Engineer", "AI Engineer")
-        out = out.replace("Android Developer", "AI Software Engineer")
-        out = out.replace("Android", "AI")
+        out = out.replace("Full-stack Engineer", "AI Engineer")
+        out = out.replace("Full-Stack Engineer", "AI Engineer")
+        out = out.replace("Full-stack Developer", "AI Developer")
+        out = out.replace("Full-Stack Developer", "AI Developer")
+        # Keep "Senior Android Developer" as-is since that period had no AI work
     return out
 
 
@@ -2561,7 +2563,7 @@ def _render_career_progression_html(
         
         focus_html = f'<div class="stage-focus">{html.escape(focus)}</div>' if focus else ""
         
-        bullets_html = '\n            '.join(f'<li>{html.escape(str(a)).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>")}</li>' for a in achievements if a)
+        bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
         
         tech_line = ", ".join(str(t) for t in tech_stack if t)
         tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
@@ -2612,10 +2614,54 @@ def _render_aut_research_html(
     company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
     company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
     
-    bullets_html = '\n            '.join(f'<li>{html.escape(str(a)).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>")}</li>' for a in achievements if a)
+    bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
     tech_line = ", ".join(str(t) for t in tech_stack if t)
     tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
     
+    return f'''
+    <div class="job job-employer">
+      <table class="job-header-table">
+        <tr>
+          <td class="jh-title employer-company" colspan="2">{company_link}{loc_html}</td>
+          <td class="jh-date">{html.escape(date_lbl)}</td>
+        </tr>
+      </table>
+      <div class="job-role"><strong>{html.escape(role)}</strong></div>
+      {company_desc_html}
+      <ul class="stage-list">
+        {bullets_html}
+      </ul>
+      {tech_html}
+    </div>'''
+
+
+def _render_simple_experience_html(
+    work_entry: Dict,
+    lang: str,
+) -> str:
+    """渲染非 Chunxiao 的普通经历（含 achievements）。"""
+    company_name = str(work_entry.get("company") or "")
+    location = str(work_entry.get("location") or "")
+    company_url = str(work_entry.get("company_url") or "")
+    company_desc = str(work_entry.get("company_description") or "")
+    role = str(work_entry.get("role") or "")
+    date_lbl = _work_entry_date_label(work_entry, lang)
+    achievements = work_entry.get("achievements") or []
+    tech_stack = work_entry.get("tech_stack") or []
+
+    if not isinstance(achievements, list):
+        achievements = []
+    if not isinstance(tech_stack, list):
+        tech_stack = []
+
+    loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
+    company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
+    company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
+
+    bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
+    tech_line = ", ".join(str(t) for t in tech_stack if t)
+    tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+
     return f'''
     <div class="job job-employer">
       <table class="job-header-table">
@@ -2686,6 +2732,84 @@ def _render_chunxiao_employer_group_html(
     </div>'''
 
 
+def _filter_experiences_by_template(
+    experiences: List[Dict],
+    template_exp: Optional[Dict],
+) -> List[Dict]:
+    """Filter work.yaml experiences based on template experience config.
+    
+    template_exp supports:
+      companies:
+        - name: Company Name
+          roles: [role1, role2]  # optional: only these career_progression roles
+      additional_experience:
+        - company: ...  # injected after filtered companies
+    """
+    if not template_exp or not isinstance(template_exp, dict):
+        return experiences
+
+    companies_config = template_exp.get("companies") or []
+    if not companies_config:
+        return experiences
+
+    allowed: Dict[str, dict] = {}
+    for c in companies_config:
+        if not isinstance(c, dict):
+            continue
+        name = (c.get("name") or "").strip()
+        if not name:
+            continue
+        roles = c.get("roles")
+        allowed[name] = {
+            "roles": set(str(r) for r in roles) if isinstance(roles, list) else None,
+            "type": (c.get("type") or "").strip() or None,
+        }
+
+    def _match_company(exp_name: str) -> tuple:
+        """Return (matched_key, config) or (None, None)."""
+        for key, cfg in allowed.items():
+            if key in exp_name or exp_name in key:
+                return key, cfg
+        return None, None
+
+    filtered = []
+    for exp in experiences:
+        if not isinstance(exp, dict):
+            continue
+        cname = str(exp.get("company") or "")
+        matched_key, cfg = _match_company(cname)
+        if matched_key is None:
+            continue
+
+        # Type filter
+        required_type = cfg.get("type")
+        if required_type:
+            exp_type = str(exp.get("type") or "")
+            if exp_type != required_type:
+                continue
+
+        # Role filter for career_progression
+        allowed_roles = cfg.get("roles")
+        if allowed_roles is not None and exp.get("career_progression"):
+            progression = exp.get("career_progression") or []
+            filtered_progression = [
+                s for s in progression
+                if str(s.get("title") or "") in allowed_roles
+            ]
+            exp = dict(exp)  # shallow copy
+            exp["career_progression"] = filtered_progression
+
+        filtered.append(exp)
+
+    # Append additional_experience
+    additional = template_exp.get("additional_experience") or []
+    for item in additional:
+        if isinstance(item, dict):
+            filtered.append(item)
+
+    return filtered
+
+
 def generate_experience_section(
     projects: List[Dict],
     lang: str = 'en',
@@ -2693,41 +2817,30 @@ def generate_experience_section(
     all_bullets: Optional[List[Dict]] = None,
     jd_keywords: Optional[List[str]] = None,
     work_experience_yaml: Optional[Dict] = None,
+    role_template_experience: Optional[Dict] = None,
 ) -> str:
     """将已排序的项目列表渲染为 HTML（支持新结构：career_progression + achievements）。"""
     used_bullets_norm: set[str] = set()
     parts: List[str] = []
-    
-    # 检查是否使用新结构（career_progression）
+
+    # Apply template-based filtering if configured
     if work_experience_yaml and isinstance(work_experience_yaml, dict):
         experiences = work_experience_yaml.get("experiences") or []
+        if role_template_experience:
+            experiences = _filter_experiences_by_template(experiences, role_template_experience)
         if experiences:
-            # 使用新结构渲染
             for exp in experiences:
                 if not isinstance(exp, dict):
                     continue
-                
-                # 检查是否有 career_progression（新结构）
                 if exp.get("career_progression"):
                     parts.append(_render_career_progression_html(exp, lang, role_type))
                 elif exp.get("type") == "Education/Research":
-                    # AUT 研究经历
                     parts.append(_render_aut_research_html(exp, lang))
                 else:
-                    # 旧结构：按项目渲染
-                    cx_entry = exp
-                    cx_projects = [p for p in projects if _project_employer_bucket(p) == "chunxiao"]
-                    if cx_projects:
-                        cx_ordered = _sort_chunxiao_subprojects_by_timeline(cx_projects)
-                        parts.append(
-                            _render_chunxiao_employer_group_html(
-                                cx_ordered, cx_entry, lang, role_type, all_bullets, jd_keywords, used_bullets_norm,
-                            )
-                        )
-            
+                    parts.append(_render_simple_experience_html(exp, lang))
             if parts:
                 return '\n'.join(parts)
-    
+
     # 回退到旧逻辑（按项目渲染）
     cx_entry = _find_chunxiao_work_entry(work_experience_yaml)
     
@@ -2851,11 +2964,26 @@ def _achievement_year_sort_key(item: Dict) -> int:
     return 0
 
 
+def _allow_basic_html(text: str) -> str:
+    text = text.replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>")
+    text = re.sub(r"&lt;a href=&quot;([^&]+)&quot;&gt;", '<a href="\\1">', text)
+    text = text.replace("&lt;/a&gt;", "</a>")
+    return text
+
+
 def generate_licenses_section(achievements: Dict, lang: str = 'en') -> str:
     """从 achievements.yaml 生成证书、奖项条目（按时间新近优先统一排序）。"""
     raw_certs = [c for c in (achievements.get("certifications") or []) if isinstance(c, dict)]
     raw_awards = [a for a in (achievements.get("awards") or []) if isinstance(a, dict)]
-    awards_pick = sorted(raw_awards, key=_achievement_year_sort_key, reverse=True)[:2]
+    filtered_awards: List[Dict] = []
+    for award in raw_awards:
+        category = str(award.get("category") or "").strip().lower()
+        education_related = str(award.get("education_related") or "").strip()
+        authority = str(award.get("authority") or "").strip().lower()
+        if education_related or category == "master's degree" or authority == "auckland university of technology":
+            continue
+        filtered_awards.append(award)
+    awards_pick = sorted(filtered_awards, key=_achievement_year_sort_key, reverse=True)[:2]
 
     merged: List[Dict] = [{**c, "_lc_kind": "cert"} for c in raw_certs]
     merged.extend({**a, "_lc_kind": "award"} for a in awards_pick)
@@ -2948,7 +3076,7 @@ _CV_FONT_HEAD = """
 _CSS = """
     @page {
       size: A4;
-      margin: 14mm 14mm 14mm 14mm;
+      margin: 15mm 15mm 15mm 15mm;
     }
 
     *, *::before, *::after {
@@ -2957,8 +3085,8 @@ _CSS = """
 
     body {
       font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.45;
+      font-size: 10.6pt;
+      line-height: 1.5;
       color: #111;
       max-width: 210mm;
       margin: 0 auto;
@@ -2976,13 +3104,13 @@ _CSS = """
     /* ── Header ─────────────────────────────────────── */
     .cv-header {
       text-align: center;
-      margin-bottom: 12px;
-      padding-bottom: 7px;
+      margin-bottom: 13px;
+      padding-bottom: 8px;
     }
 
     .cv-name {
       font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 20pt;
+      font-size: 21pt;
       font-weight: 500;
       color: #111;
       letter-spacing: 0.2px;
@@ -2993,7 +3121,7 @@ _CSS = """
     .cv-name a { color: #111; }
 
     .cv-contact {
-      font-size: 9.5pt;
+      font-size: 9.8pt;
       color: #1a4a8a;
       line-height: 1.55;
       text-align: center;
@@ -3048,20 +3176,20 @@ _CSS = """
     }
 
     .cv-contact-secondary {
-      font-size: 9.5pt;
+      font-size: 9.8pt;
       color: #1a4a8a;
       margin-top: 3px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     /* ── Section title ───────────────────────────────── */
     .section-title {
       font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 12.5pt;
+      font-size: 12.7pt;
       font-weight: 500;
       color: #1a4d96;
       font-variant: small-caps;
-      margin-top: 10px;
+      margin-top: 11px;
       margin-bottom: 5px;
       border-bottom: 1px solid #b0b0b0;
       padding-bottom: 3px;
@@ -3079,8 +3207,8 @@ _CSS = """
     .cv-summary {
       text-align: justify;
       color: #222;
-      margin-bottom: 6px;
-      line-height: 1.45;
+      margin-bottom: 7px;
+      line-height: 1.5;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
@@ -3105,7 +3233,7 @@ _CSS = """
     .skill-label {
       font-weight: 600;
       color: #111;
-      font-size: 10.5pt;
+      font-size: 10.6pt;
     }
 
     /* ── Experience ──────────────────────────────────── */
@@ -3115,7 +3243,7 @@ _CSS = """
     }
 
     .job-tech {
-      font-size: 9.8pt;
+      font-size: 9.9pt;
       color: #444;
       margin-bottom: 4px;
       line-height: 1.4;
@@ -3158,7 +3286,7 @@ _CSS = """
     }
 
     .job-role {
-      font-size: 10.4pt;
+      font-size: 10.5pt;
       color: #333;
       margin-bottom: 3px;
       hyphens: none;
@@ -3175,7 +3303,7 @@ _CSS = """
 
     .job-list li {
       margin-bottom: 4px;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     /* 允许春晓雇主块跨页，避免上一页大块留白（子项目可在页间断开） */
@@ -3205,7 +3333,7 @@ _CSS = """
     }
 
     .employer-desc {
-      font-size: 9.5pt;
+      font-size: 9.6pt;
       color: #555;
       font-style: italic;
       margin-bottom: 6px;
@@ -3240,11 +3368,11 @@ _CSS = """
 
     .stage-list li {
       margin-bottom: 4px;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .stage-tech {
-      font-size: 9.5pt;
+      font-size: 9.6pt;
       color: #555;
       margin-top: 4px;
       line-height: 1.4;
@@ -3453,7 +3581,7 @@ def generate_html_from_kb(
             'licenses': 'Licenses & Certifications',
             'pub':      'Publications',
             'interests': 'Interests',
-            'references': 'References',
+            'references': 'REFEREES',
         },
         'zh': {
             'summary':  '个人简介',
@@ -3516,23 +3644,16 @@ def generate_html_from_kb(
         all_bullets=bullets_data,
         jd_keywords=jd_keywords,
         work_experience_yaml=work_exp_yaml,
+        role_template_experience=_get_role_base_template(role_type).get("experience"),
     )
     edu_html     = generate_education_section(profile, lang)
     lic_html     = generate_licenses_section(achievements, lang)
-    pub_html     = generate_publications_section(achievements, lang)
-    pub_section = (
-        f'<div class="section-title">{lbl["pub"]}</div>\n'
-        f'  <ul class="lc-list">\n{pub_html}\n  </ul>'
-        if pub_html
-        else ''
-    )
+    pub_section = ''
     interests_html = generate_interests_section(profile, lang)
-    career = profile.get('career_identity', {}) if isinstance(profile, dict) else {}
-    include_interests = bool(interests_html) and bool(career.get('include_interests_in_cv', False))
     interests_section = (
         f'<div class="section-title">{lbl["interests"]}</div>\n'
         f'  <ul class="lc-list">\n{interests_html}\n  </ul>'
-        if include_interests
+        if interests_html
         else ''
     )
 
@@ -3643,13 +3764,13 @@ def generate_html_from_kb(
   <div class="section-title">{lbl['skills']}</div>
   <div class="cv-skills">{skills_html}</div>
 
+  <!-- Education -->
+  <div class="section-title">{lbl['edu']}</div>
+  {edu_html}
+
   <!-- Experience -->
   <div class="section-title">{lbl['exp']}</div>
   {exp_html}
-
-  <!-- Education（置于 Experience 与 Licenses 之间） -->
-  <div class="section-title">{lbl['edu']}</div>
-  {edu_html}
 
   <!-- Licenses & Certifications -->
   <div class="section-title">{lbl['licenses']}</div>
@@ -3657,13 +3778,11 @@ def generate_html_from_kb(
 {lic_html}
   </ul>
 
-  {pub_section}
-
   {interests_section}
 
   <!-- References -->
   <div class="section-title">{lbl['references']}</div>
-  <p class="cv-references">Professional and academic references available upon request.</p>
+  <p class="cv-references">References available upon request.</p>
 
 </body>
 </html>'''

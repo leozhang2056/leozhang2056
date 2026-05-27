@@ -74,6 +74,30 @@ pytest
 - If a generated PDF looks unchanged, check dated output folder selection in `outputs/YYYY-MM-DD/` or force `--output` (called out in `generate.py` docstring).
 - For schema-sensitive additions, mirror required fields from `kb/schema/project_facts_schema.yaml` and re-run `validate.py`.
 
+## Cover Letter Generation (NZ IT Market)
+- **Core philosophy**: answer 4 questions — who you are, why this role, why you fit, why interview you. NOT a resume rehash, NOT "I'm hardworking", NOT vague.
+- **Key insight**: "I understand what problem you're solving, and I'm exactly the person who can do it."
+- **Structure**: `app/backend/generate_cover_letter.py`
+  - Company-specific hand-crafted versions (best quality) live in `build_cover_letter_content()` as an early-return for known company+role combos.
+  - Generic generator follows the 4-paragraph GPT-derived structure: opening (apply + background + culture) → evidence (project/thesis + differentiator) → experience (role attraction + years + mindset) → closing (motivation + team + thank you).
+- **9 Rules** (from GPT version analysis):
+  1. First sentence directly states position: `"I am applying for the {title} at {company}."`
+  2. Each paragraph has a clear topic sentence
+  3. Background summarized in one sentence (use tagline from profile.yaml)
+  4. Use specific project names (ChatClothes) and concrete tech terms (diffusion models, CI/CD), not vague abstractions
+  5. Every piece of evidence links back to role requirements — not just "I did X" but "X maps to what this role needs"
+  6. Soft skills embedded in hard facts: `"10 years... helped me develop a practical engineering mindset focused on reliability, collaboration, and continuous improvement"` — never standalone "I'm hardworking"
+  7. No cross-paragraph repetition — each paragraph covers a different dimension
+  8. Closing names the specific team (`_COMPANY_TEAMS` dict), not generic "your team"
+  9. Natural length: 4 paragraphs, 2-4 sentences each, fits one A4 page
+- **Company data dictionaries**:
+  - `_COMPANY_CULTURE_HOOKS`: lowercase phrases appendable after "because" (e.g. `"it focuses on building practical AI solutions..."`)
+  - `_COMPANY_TEAMS`: specific team names for closing (e.g. `"The Warehouse Group's Data and AI team"`)
+- **Anti-patterns to avoid**:
+  - AI-blog phrasing: "runnable, measurable, iteratively improved" → instead "I build AI systems that actually ship"
+  - Keyword dumping: "I noticed this role emphasizes solutions, APIs, Graduate..." → instead connect naturally
+  - Identity crisis: telling vs showing credentials; let facts speak through linking sentences
+
 ## GitHub profile README (`README.md`)
 - In the `username/username` repo layout, root **`README.md`** is rendered on the GitHub **profile** page.
 - **Contribution grid:** GitHub does not provide an embeddable copy of the official profile calendar for arbitrary READMEs; use **ghchart.rshah.org** SVG (`/HEXCOLOR/username`, or `/username` fallback). Do **not** re-add `github-readme-stats` or `github-readme-streak-stats` image widgets — they often time out and show broken images.

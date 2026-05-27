@@ -39,65 +39,64 @@ career_identity:
   
   tagline: >
     Full-stack software engineer with 10+ years of experience in Java backend, Android development,
-    AI integration, and IoT systems;       recently completed MCIS at Auckland University of Technology with First Class Honours.
+    AI integration; recently completed MCIS at Auckland University of Technology with First Class Honours.
   
   summary_variants:
     default: >
       Full-stack software engineer with 10+ years shipping production software across Android, Java backends, and Vue.js front ends.
-      Specialized in IoT-connected and enterprise delivery—clear APIs, sensible integration, and releases that land when field conditions are messy.
+      Specialized in enterprise delivery—clear APIs, sensible integration, and releases that land when field conditions are messy.
       Proven delivery spans industrial automation, mobile platforms, and applied AI from prototype through production support.
       Additional expertise includes Spring Cloud, Docker, CI/CD discipline, and AI-assisted programming tools in daily delivery.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     android_focus: >
-      Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture. Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments. Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration. Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows. Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+      Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture. Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across enterprise environments. Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration. Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows. Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
     
     ai_focus: >
       AI engineer with 10+ years across applied AI, computer vision, and full-stack delivery, grounded in shipping production software.
-      Specialized in LLM-style applications, vision pipelines, and IoT integration from early prototypes to runnable workflows.
+      Specialized in LLM-style applications and vision pipelines from early prototypes to runnable workflows.
       Proven work includes multimodal and vision-language systems with research-backed iteration and deployable inference constraints.
       Additional expertise includes PyTorch workflows, API integration, and AI-assisted programming tools.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     java_focus: >
       Backend software engineer with 10+ years on Java delivery, including Spring Cloud, MyBatis, and microservice-style systems.
-      Specialized in enterprise backends for manufacturing, messaging, and IoT with practical focus on uptime, latency, and release rhythm.
+      Specialized in enterprise backends for manufacturing and messaging with practical focus on uptime, latency, and release rhythm.
       Proven delivery includes long-lived services with REST APIs, observability, and stable rollout under production load.
       Additional expertise includes CI/CD, database performance tuning, and cross-team API contracts.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
 
   summary_variants_zh:
     default: >
-      全栈软件工程师，拥有 10 年以上 Java 后端、Android 开发、AI 集成与物联网系统交付经验。
-      擅长 IoT 与企业级场景下的 API 集成、可维护架构与可上线发布，能在现场条件复杂时保持系统稳定运行。
+      全栈软件工程师，拥有 10 年以上 Java 后端、Android 开发与 AI 集成交付经验。
+      擅长企业级场景下的 API 集成、可维护架构与可上线发布，能在现场条件复杂时保持系统稳定运行。
       交付覆盖工业自动化、移动平台与 AI 应用，从原型验证到生产运维均有实战经验。
       具备 Spring Cloud、Docker、CI/CD 与 AI 辅助编程工具等工程化实践。
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
     android_focus: >
-      Android 工程师，10 年以上生产级移动应用交付经验，覆盖企业即时通讯、工业 IoT 与现场类部署场景，熟练使用 Kotlin/Java 与 API 集成。
+      Android 工程师，10 年以上生产级移动应用交付经验，覆盖企业即时通讯与现场类部署场景，熟练使用 Kotlin/Java 与 API 集成。
       擅长从需求到发布、测试与上线后支持的全流程交付，注重性能调优与紧急排障下的稳定发布。
-      长期交付企业级即时通讯与工业 IoT 等生产级 Android 客户端，覆盖发布、性能调优与上线后故障处理。
+      长期交付企业级即时通讯等生产级 Android 客户端，覆盖发布、性能调优与上线后故障处理。
       亮点包括 AI 辅助编程工具，以及 Kotlin/Java、Android SDK、NDK 网络与 OEM 碎片化环境下的实战深度。
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
     ai_focus: >
       AI 工程师，10 年以上应用 AI、计算机视觉与全栈交付经验，强调可上线、可迭代的工程落地。
-      擅长 LLM 类应用、视觉流水线与物联网集成，从早期原型推进到可运行工作流。
+      擅长 LLM 类应用与视觉流水线，从早期原型推进到可运行工作流。
       代表性工作包括多模态与视觉语言系统，兼顾研究迭代与可部署推理约束。
       熟悉 PyTorch 工程化流程、API 集成与 AI 辅助编程工具。
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
     java_focus: >
       后端软件工程师，10 年以上 Java 交付经验，涵盖 Spring Cloud、MyBatis 与微服务架构。
-      擅长制造、通讯与 IoT 等企业级后端，关注可用性、延迟与发布节奏。
+      擅长制造与通讯等企业级后端，关注可用性、延迟与发布节奏。
       交付包括长期运行的 REST 服务、可观测性建设与生产环境稳定发布。
       具备 CI/CD、数据库与缓存（MySQL/Redis）性能优化及跨团队 API 协作经验。
       奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。
 
   interests_en:
-    - Hiking
-    - AI
+    - Hiking, self-hosted infrastructure, AI tools, and mobile technology trends
 
   interests_zh:
     - 徒步
@@ -115,9 +114,9 @@ education:
     status: Completed
     status_cn: 已完成
     highlights:
-      - "First Class Honours | Research: AI, Computer Vision, LLMs, IoT"
+      - "First Class Honours | Research: AI, Computer Vision, LLMs"
     highlights_cn:
-      - "一等荣誉学位 | 研究方向：人工智能、机器学习、计算机视觉、大语言模型、物联网、大数据分析；AWS 基础设施实践"
+      - "一等荣誉学位 | 研究方向：人工智能、机器学习、计算机视觉、大语言模型、大数据分析；AWS 基础设施实践"
     
   - degree: Bachelor of Software Engineering
     degree_cn: 软件工程学士
@@ -171,7 +170,6 @@ keywords:
   - Machine Learning
   - PyTorch
   - Python
-  - IoT
   - Microservices
   - Docker
   - Full-stack

@@ -8,7 +8,7 @@
 
 ## Professional Summary
 
-Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture. Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across industrial IoT and enterprise environments. Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration. Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows. Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+Senior Android Engineer with 10+ years of experience delivering mobile and IoT solutions across industrial and enterprise environments. Experienced in leading cross-functional development, improving system reliability, and collaborating with product, QA, and operations teams to deliver scalable applications. Strong background in Android architecture, real-time systems, and applied AI, with a Master’s degree in Computer and Information Sciences from AUT (First Class Honours).
 
 ---
 
@@ -16,11 +16,23 @@ Senior Android Software Engineer with 10+ years of experience building productio
 
 | Category | Skills |
 |----------|--------|
-| **Android Development** | Jetpack Compose, MVVM, Coroutines & Flow, NDK, Android Security, Automated Testing, App Store Deployment |
-| **Software Engineering** | Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration |
-| **Backend & APIs** | Spring Cloud, RESTful APIs, MySQL, Redis |
-| **Tools & DevOps** | Git, CI/CD, Docker, Agile/Scrum |
-| **AI & Emerging Technologies** | LLM Integration, Multimodal Systems, AI workflow |
+| **Mobile Development** | Kotlin, Java, Jetpack Compose, MVVM, Android Architecture |
+| **Systems & IoT** | Real-time Communication, RFID, TCP/UDP, Hardware Integration |
+| **Backend & APIs** | Spring Cloud, REST APIs, Event-driven Systems, Docker |
+| **AI & Computer Vision** | PyTorch, YOLO, OpenCV, Multimodal AI |
+| **Engineering Practices** | Agile Delivery, CI/CD, Code Review, Cross-functional Collaboration |
+
+---
+
+## Education
+
+**Master of Computer and Information Sciences**  
+Auckland University of Technology, New Zealand | 2024 – 2026  
+- First Class Honours | Research: AI, Computer Vision, LLMs, IoT
+
+**Bachelor of Software Engineering**  
+Hebei University of Science and Technology, China | 2009 – 2013  
+- National Scholarship | Computer Science fundamentals, algorithms, system design, Java, backend architecture
 
 ---
 
@@ -42,12 +54,11 @@ Senior Android Software Engineer with 10+ years of experience building productio
 
 *IoT solution provider (est. 2013, ~40 employees) originally focused on audio/video streaming and enterprise software platforms, later evolving into integrated hardware-software solutions for smart factory, industrial monitoring, smart electricity, and educational sectors.*
 
-- Architected Industrial IoT smart factory platform across **5+ sites**, improving production efficiency **30%+** via RFID tracking and automated workflows
-- Engineered NDK TCP/UDP transport and cloud IM supporting **5,000 DAU**, **sub-200ms latency**, and **500K+ daily messages**
+- Lead delivery of an Industrial IoT smart factory platform across **5+ sites**, improving production efficiency **30%+** via RFID tracking and automated workflows
+- Lead development of scalable real-time communication supporting **5,000 DAU**, **sub-200ms latency**, and **500K+ daily messages**
 - Migrated core messaging from unstable in-house C++ to cloud IM, eliminating **90%+ defects** and enabling focus on platform subsystems
-- Led code review process and technical debt reduction; refactored legacy modules and optimized tech stack across Android and backend codebases
-- Managed version control workflows using Git/GitHub/GitLab; coordinated releases with product managers, designers, and QA in agile product teams
-- Deployed applications to Google Play and domestic Android app stores; orchestrated multi-channel distribution and self-hosted APK delivery
+- Partnered with product, QA, and operations to plan releases, manage risk, and improve delivery predictability
+- Mentored engineers through code reviews and technical guidance; reduced technical debt across Android and backend codebases
 
 **Tech:** Kotlin, Java, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Spring Cloud, MySQL, Redis, Docker, Node.js, Flutter
 
@@ -56,10 +67,9 @@ Senior Android Software Engineer with 10+ years of experience building productio
 **Senior Android Developer** | 2015 – 2018
 
 - Shipped **8+ production Android apps** including live-streaming modules, IoT connectivity tools, and internal efficiency apps
-- Developed modular Android architecture reused across **12+ internal projects**, reducing code duplication by **50%+**
-- Reduced OOM crashes through memory optimization; engineered crash telemetry infrastructure with automated reporting
-- Designed resilient push delivery with IM + failover channel; implemented connection persistence strategies and OEM ROM adaptation
-- Implemented SSL/TLS certificate management and HTTPS request handling; managed runtime permissions and secure data storage
+- Built modular Android architecture reused across **12+ internal projects**, reducing code duplication by **50%+**
+- Improved stability by reducing OOM crashes and adding crash telemetry for faster root-cause analysis
+- Worked closely with backend teams to align API contracts and improve delivery under Android fragmentation
 
 **Tech:** Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD
 
@@ -75,21 +85,9 @@ Senior Android Software Engineer with 10+ years of experience building productio
 
 ---
 
-## Education
-
-**Master of Computer and Information Sciences**  
-Auckland University of Technology, New Zealand | 2024 – 2026  
-- First Class Honours | Research: AI, Computer Vision, LLMs, IoT
-
-**Bachelor of Software Engineering**  
-Hebei University of Science and Technology, China | 2009 – 2013  
-- National Scholarship | Computer Science fundamentals, algorithms, system design, Java, backend architecture
-
----
-
 ## Licenses & Certifications
 
-- **First Class Honours (Master's Degree)** — Auckland University of Technology | 2025
+- **Master's Degree (First Class Honours)** — Auckland University of Technology | 2025
 - **IoT Fundamentals** — Xi'an Jiaotong University | 2020
 - **Science and Technology Achievement Award (Smart Manufacturing)** — Hebei, China | 2020
 - **Software Design Engineer Certificate** — China Qualification Authority | 2019
@@ -103,6 +101,16 @@ Hebei University of Science and Technology, China | 2009 – 2013
 
 - **Clothes Recognition Based on Lightweight Deep Learning Models**  
   IGI Global — Aesthetics in Creative Technology, 2026 *(under review)*
+
+---
+
+## Interests
+
+Hiking, self-hosted infrastructure, AI tools, and mobile technology trends.
+
+## Referees
+
+Available upon request.
 
 ---
 
@@ -140,7 +148,6 @@ Built media transcoding pipeline (H.264/AAC) supporting RTMP/HLS multi-protocol 
 
 ---
 
-*Professional and academic references available upon request.*  
 *Last updated: May 2026*
 
 ---

@@ -29,7 +29,6 @@ from generate_cv_from_kb import (
     load_yaml,
     load_projects,
     sort_projects,
-    score_project_by_jd,
 )
 
 
@@ -48,132 +47,9 @@ _ROLE_SUMMARY_KEY = {
 }
 
 # 各角色的主要叙事角度提示（用于生成开头和结尾）
-_ROLE_NARRATIVE_HINT = {
-    'android': {
-        'en': 'Senior Android engineer focused on production mobile delivery',
-        'zh': '拥有 10 年以上企业级移动开发经验的高级 Android 工程师',
-    },
-    'ai': {
-        'en': 'AI/ML engineer with published research and strong production implementation experience',
-        'zh': '具有学术发表经历和扎实生产级落地经验的 AI/ML 工程师',
-    },
-    'backend': {
-        'en': 'Backend engineer with 10+ years building high-scale Java microservices',
-        'zh': '拥有 10 年以上高并发 Java 微服务开发经验的后端工程师',
-    },
-    'fullstack': {
-        'en': 'Full-stack engineer with 10+ years of end-to-end delivery across mobile, backend, and AI',
-        'zh': '拥有 10 年以上移动端、后端和 AI 全栈交付经验的全栈工程师',
-    },
-        'fintech': {
-            'en': 'Senior Software Engineer with 10+ years of experience delivering high-performance FinTech and industrial systems',
-            'zh': '拥有 10 年以上高性能金融与工业系统开发经验的高级软件工程师',
-        },
-        'westpac': {
-            'en': 'Senior Android Developer with 10+ years of experience building secure, high-scale mobile banking solutions',
-            'zh': '拥有 10 年以上大规模安全移动银行应用开发经验的资深 Android 工程师',
-        },
-        'photon': {
-        'en': 'Lead Android Developer with 10+ years of experience building high-scale mobile applications',
-        'zh': '拥有 10 年以上大规模移动应用开发经验的资深 Android 负责人',
-    },
-}
 
-# 公司共鸣叙事钩子（不写硬事实，避免与 JD/官网信息冲突）
-_COMPANY_FIT_HOOKS = {
-    'westpac': {
-        'en': (
-            "What resonates with me about Westpac is your commitment to 'helping Kiwis succeed' and your leadership in digital banking transformation. "
-            "I value Westpac's focus on building secure, accessible, and high-quality mobile experiences that provide real financial value to customers. "
-            "My own background in architecting reliability-focused Android systems and delivering secure mobile solutions for over 10 years aligns perfectly with Westpac's standards for safety and trust in financial technology."
-        ),
-    },
-    'photon': {
-        'en': (
-            "What resonates with me about Photon is your commitment to high-standard mobile delivery and your 'customer-first' approach to engineering. "
-            "I value the way Photon combines deep technical specialization with agile execution to ship mobile experiences that actually scale. "
-            "My own background in building complex, reliability-focused Android systems for over 10 years aligns perfectly with the standards of excellence I see in Photon's projects."
-        ),
-    },
-    'younity': {
-        'en': (
-            "What resonates with me about Younity is your focus on 'Real People, Real Outcomes.' "
-            "As a Senior Software Engineer, I believe technical excellence only matters when it translates into meaningful impact for businesses and their users. "
-            "I also value your commitment to community impact and sustainability, which reflects a professional culture of responsibility that I strive to uphold in my own work."
-        ),
-    },
-    'halter': {
-        'en': (
-            "What resonates with me about Halter is your mission to improve how farmers operate day to day, with software that changes real behavior in the field rather than staying as a prototype. "
-            "That reflects the kind of engineering values I care about: meaningful impact, high standards, and execution under real constraints. "
-            "I also strongly identify with your culture of tackling hard problems with a high-performing team and shipping systems that are built to last."
-        ),
-        'zh': (
-            "我与 Halter 的共鸣点在于：你们的产品不是停留在原型，而是持续改变农场一线的真实作业方式。"
-            "这和我认同的工程价值观一致——做有意义的事、保持高标准、并在真实约束下稳定交付。"
-            "我也非常认同你们“高绩效团队 + 挑战硬问题 + 长期可持续产品”的文化方向。"
-        ),
-    },
-    'windcave': {
-        'en': (
-            'What resonates with me about Windcave is the combination of product depth and operational seriousness. '
-            'Payments software sits close to real business risk, so mobile quality, integration discipline, and reliability '
-            'matter in a very concrete way. I am motivated by engineering environments where stable releases, careful testing, '
-            'and dependable user journeys are part of the product value, not just delivery hygiene.'
-        ),
-        'zh': (
-            '鎴戜笌 Windcave 鐨勫叡楦ｇ偣鍦ㄤ簬锛屽畠鎶婁骇鍝佹繁搴﹀拰涓氬姟绋冲畾鎬х粨鍚堝湪浜嗕竴璧枫€?'
-            '鏀粯绯荤粺闈㈠悜鐪熷疄浜ゆ槗鍦烘櫙锛屽洜姝ょЩ鍔ㄧ璐ㄩ噺銆侀泦鎴愮邯寰嬪拰鍙潬鎬ч兘鏄潪甯稿叧閿殑浠峰€笺€?'
-            '鎴戝緢璁ゅ悓杩欑被宸ョ▼鐜锛氱ǔ瀹氬彂甯冦€佷弗璋ㄦ祴璇曞拰鍙俊鐢ㄦ埛浣撻獙锛屾湰韬氨鏄骇鍝佺珵浜夊姏鐨勪竴閮ㄥ垎銆?'
-        ),
-    },
-    'eroad': {
-        'en': (
-            'What resonates with me about EROAD is the practical impact of software on real-world operations. '
-            'My experience building IoT-connected systems, production APIs, and reliability-focused delivery fits this '
-            'mission style: turning complex data and workflows into stable tools teams can trust every day.'
-        ),
-        'zh': (
-            '我与 EROAD 的共鸣点在于：用软件直接改善一线真实业务。'
-            '我长期做 IoT 连接系统、生产级 API 与稳定性交付，擅长把复杂数据与流程落成团队每天可依赖的工具。'
-        ),
-    },
-    'l3harris': {
-        'en': (
-            "What resonates with me about L3Harris is your values-led engineering culture: dedication to mission, "
-            "commitment to excellence, and building trusted technology for high-stakes environments. "
-            "I am motivated by teams that pair technical depth with accountability, where secure and reliable delivery "
-            "matters as much as feature speed."
-        ),
-        'zh': (
-            "我与 L3Harris 的共鸣点在于其以价值观驱动的工程文化：强调使命感、追求卓越，"
-            "并在高要求场景中交付可信技术。"
-            "我认同“技术深度 + 交付责任”并重的团队方式，在这里系统安全与稳定和功能迭代同样重要。"
-        ),
-    },
-    'aut': {
-        'en': (
-            "What resonates with me most about AUT is its values-led culture and practical mission: "
-            "Pono, Tika, and Aroha, together with \"Knowledge that Works,\" reflect the kind of environment "
-            "where I do my best work. As a recent AUT graduate, I have experienced this culture directly and "
-            "genuinely value how AUT supports students, staff, and diverse communities through real-world impact."
-        ),
-        'zh': (
-            "我与 AUT 最深的共鸣来自其价值观导向的文化与务实使命："
-            "Pono、Tika、Aroha，以及“Knowledge that Works”。"
-            "作为刚毕业的 AUT 学生，我亲身感受过这种文化，也真心认同 AUT 通过实际成果服务学生、教职员工与多元社区。"
-        ),
-    },
-    'atom': {
-        'en': (
-            "What resonates with me about ATOM Intelligence is your focus on vertical AI and data platforms "
-            "that ship to real enterprise clients — not sandbox demos."
-        ),
-        'zh': (
-            "我与 ATOM Intelligence 的共鸣在于：你们做的是面向真实企业客户的垂直 AI 与数据平台，而不是沙盒演示。"
-        ),
-    },
-}
+
+
 
 _WHY_ME_HOOKS = {
     'westpac': {
@@ -256,36 +132,89 @@ _WHY_ME_HOOKS = {
 }
 
 
+_DIFFERENTIATOR_HOOKS = {
+    'ai': {
+        'en': (
+            "I also do the engineering side properly — clean code, testing, CI/CD, API design. "
+            "I don't just understand models; I can build the pipeline around them."
+        ),
+    },
+    'android': {
+        'en': (
+            "What sets me apart is breadth: I've shipped Android apps that talk to hardware, "
+            "microservices, and cloud backends — not just standalone UIs. I understand the full stack "
+            "my mobile code lives in, which means fewer integration surprises and faster delivery."
+        ),
+    },
+    'backend': {
+        'en': (
+            "What sets me apart is that I bring full-stack awareness to backend delivery — I've built "
+            "APIs that mobile and frontend teams actually enjoy consuming, and I design data contracts "
+            "before writing implementation code. That comes from 10+ years working across layers."
+        ),
+    },
+    'fullstack': {
+        'en': (
+            "What sets me apart is that I've delivered across Android, Java backends, Vue.js frontends, "
+            "and AI/ML integrations — which means I can own a feature from database to UI without handovers. "
+            "In fast-moving teams, that reduces dependencies and speeds up iteration."
+        ),
+    },
+    'westpac': {
+        'en': (
+            "What sets me apart is my combination of Android depth and full-stack awareness: "
+            "I've architected secure mobile platforms, optimized performance at scale, and implemented "
+            "SSL/TLS communication protocols essential for financial environments — all while delivering "
+            "clean, maintainable code that teams can build on."
+        ),
+    },
+    'photon': {
+        'en': (
+            "What sets me apart is my track record leading Android migrations and modernisation: "
+            "I've taken legacy architectures to MVVM, reduced crash rates through memory optimisation, "
+            "and automated CI/CD pipelines — delivering measurable quality improvements while maintaining "
+            "release velocity."
+        ),
+    },
+}
+
+
+def _differentiator_hook(role_type: str) -> str:
+    """返回"为什么面试你"差异段落。"""
+    return _DIFFERENTIATOR_HOOKS.get(role_type, {}).get("en", "")
+
+
 # ---------------------------------------------------------------------------
-# 核心逻辑
+# 公司信息映射（用于 generic 生成器）
 # ---------------------------------------------------------------------------
 
-def _adapt_progression_title(title: str, role_type: str) -> str:
-    """根据目标角色对职级标题进行微调。"""
-    if role_type in ['android', 'westpac'] and 'Technical Lead' in title:
-        return 'Technical Lead (Android Focus)'
-    if role_type == 'ai' and 'Full-stack' in title:
-        return 'AI/Full-stack Lead'
-    return title
+_COMPANY_CULTURE_HOOKS = {
+    'the warehouse group': "it focuses on building practical AI solutions that deliver measurable business impact.",
+    'westpac': "it builds financial tools that millions of New Zealanders rely on with confidence.",
+    'halter': "it builds AI and software that changes how farmers actually operate — real tools used in the field.",
+    'eroad': "it turns complex telematics data into reliable tools that fleets depend on daily.",
+    'windcave': "payments infrastructure sits at the intersection of reliability, security, and scale.",
+    'l3harris': "engineering is defined by mission-critical delivery, not feature velocity.",
+    'aut': "'knowledge that works' defines both research and teaching.",
+    'atom': "it ships AI to real enterprise clients — not sandbox demos.",
+    'photon': "it ships quality mobile experiences at scale for global clients.",
+    'younity': "it focuses on 'Real People, Real Outcomes' in financial technology.",
+    'theta': "it combines technical depth with pragmatic delivery in consulting.",
+}
 
-def _best_metrics(project: Dict) -> List[str]:
-    """提取项目中的量化指标。"""
-    metrics = []
-    # 尝试从 highlights 中提取带数字的行
-    for h in project.get('highlights', []) or []:
-        if isinstance(h, str) and any(char.isdigit() for char in h):
-            metrics.append(h)
-    return metrics[:2]
-
-def _build_jd_fit_hook(role_type: str, lang: str, jd_keywords: Optional[List[str]]) -> str:
-    """基于 JD 关键词构建“为什么我适合”的钩子。"""
-    if not jd_keywords:
-        return ""
-    
-    kws = ", ".join(jd_keywords[:4])
-    if lang == 'zh':
-        return f"我注意到该职位对 {kws} 等方面有明确要求，这正是我长期深耕并具备成功交付经验的领域。"
-    return f"I noticed that this role emphasizes {kws}, which are areas where I have consistently delivered high-quality production results."
+_COMPANY_TEAMS = {
+    'the warehouse group': "The Warehouse Group's Data and AI team",
+    'westpac': "Westpac's mobile engineering team",
+    'halter': "Halter's engineering team",
+    'eroad': "EROAD's platform team",
+    'windcave': "Windcave's engineering team",
+    'l3harris': "L3Harris's software team",
+    'aut': "AUT's technology team",
+    'atom': "ATOM Intelligence's AI team",
+    'photon': "Photon's Android team",
+    'younity': "Younity's engineering team",
+    'theta': "Theta's consulting team",
+}
 
 def build_cover_letter_content(
     profile: Dict,
@@ -297,211 +226,193 @@ def build_cover_letter_content(
     jd_keywords: Optional[List[str]],
     lang: str = 'en',
 ) -> Dict[str, str]:
-    """组装 Cover Letter 的文本内容块。"""
-    hint_text = _ROLE_NARRATIVE_HINT.get(role_type, _ROLE_NARRATIVE_HINT['fullstack'])[lang]
-    top_projects = sort_projects(all_projects, role_type, jd_keywords, max_projects=2)
-    
-    # 收集核心论据
-    evidence_lines = []
-    for proj in top_projects:
-        proj_name = proj.get('name', proj.get('project_id', ''))
-        metrics = _best_metrics(proj)
-        if metrics:
-            for m in metrics:
-                evidence_lines.append(f'{proj_name}: {m}')
-        else:
-            highlights = [h for h in proj.get('highlights', []) if isinstance(h, str)]
-            if highlights:
-                evidence_lines.append(f'{proj_name}: {highlights[0][:100]}')
+    """组装 Cover Letter 的文本内容块。
+
+    结构（2026-05）：
+      opening = 寒暄问候 + 认同公司文化
+      body1   = 竞争力亮点（证据 + 差异化合并）
+      body2   = 在贵公司的展望作用
+      closing = Thank you.
+    """
+    # Role-based default title fallback
+    if not target_role_title or target_role_title == 'Software Engineer':
+        role_title_defaults = {
+            'ai': 'AI Engineer',
+            'android': 'Senior Android Developer',
+            'backend': 'Senior Backend Engineer',
+            'fullstack': 'Full-stack Engineer',
+            'westpac': 'Senior Android Developer',
+            'photon': 'Lead Android Developer',
+        }
+        target_role_title = role_title_defaults.get(role_type, target_role_title or 'Software Engineer')
+
+    top_projects = sort_projects(all_projects, role_type, jd_keywords, max_projects=1)
+    proj = top_projects[0] if top_projects else {}
+    proj_name = proj.get('name', proj.get('project_id', ''))
+    proj_role = proj.get('role', 'developer')
+    proj_highlights = [h for h in (proj.get('highlights', []) or []) if isinstance(h, str)]
 
     # 总年限
-    work_exp = profile.get('career_identity', {}).get('tagline', '')
-    years_match = re.search(r'(\d+)\+?\s*years?', work_exp, re.IGNORECASE)
-    years_str = f'{years_match.group(1)}+' if years_match else '10+'
+    tagline = profile.get('career_identity', {}).get('tagline', '')
+    years_match = re.search(r'(\d+)\+?\s*years?', tagline, re.IGNORECASE)
+    years_raw = f"{years_match.group(1)}+" if years_match else "10+"
+    years_str = years_raw.rstrip("+") if years_raw.endswith("+") else years_raw
 
-    def _opening_hook_text(_role_type: str, _lang: str) -> str:
-        """开场钩子：首句先抓注意力，再进入岗位匹配。"""
-        if _lang == 'zh':
-            hook_map_zh = {
-                'android': '我擅长把复杂业务需求快速落成稳定、可维护、可持续迭代的 Android 生产系统。',
-                'backend': '我擅长把复杂业务规则落成高可用、可扩展、可长期演进的后端系统。',
-                'ai': '我擅长把 AI 方案从原型推进到可运行、可评估、可持续迭代的工程形态。',
-                'fullstack': '我擅长把模糊需求收敛为可上线、可运维的端到端系统交付。',
-            }
-            return hook_map_zh.get(_role_type, hook_map_zh['fullstack'])
-        hook_map_en = {
-            'android': 'I turn complex product requirements into stable Android systems that hold up in production.',
-            'backend': 'I turn complex business requirements into reliable backend systems that scale and remain maintainable.',
-            'ai': 'I turn AI ideas into production-ready workflows that are runnable, measurable, and iteratively improved.',
-            'fullstack': 'I turn ambiguous requirements into production-ready end-to-end systems teams can rely on.',
-        }
-        return hook_map_en.get(_role_type, hook_map_en['fullstack'])
-
-    # Thesis / publication highlight
+    # Thesis / publication
     pubs = achievements.get('publications', [])
-    pub_note = ''
-    if pubs:
-        first_pub = pubs[0]
-        pub_note_en = (f'My Master\'s thesis "{first_pub.get("title", "")}" '
-                       f'({first_pub.get("venue", "")}, {first_pub.get("year", "")}) '
-                       f'demonstrates my ability to independently design, build, and evaluate AI systems.')
-        pub_note = pub_note_en if lang == 'en' else ""
+    thesis_project = proj if any(kw in (proj.get('project_id', '') or '').lower()
+                                  for kw in ['thesis', 'publication']) else {}
 
     if lang == 'en':
-        opening_hook = _opening_hook_text(role_type, 'en')
-        jd_fit_hook = _build_jd_fit_hook(role_type, 'en', jd_keywords)
-        if "years" in hint_text.lower():
+        # Company-specific hand-crafted version (best quality)
+        company_lower = (company_name or '').strip().lower()
+        is_twg = 'the warehouse' in company_lower or 'warehouse group' in company_lower
+        is_twg = is_twg or ('twg' in company_lower)
+
+        if role_type == 'ai' and is_twg:
             opening = (
-                f'{opening_hook} '
-                f'I am excited to apply for the {target_role_title} position at {company_name}. '
-                f'This role is a strong fit for my background as a {hint_text}. '
-                f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
-                f'{jd_fit_hook}'.strip()
+                "I am applying for the AI Engineer (Graduate) position at The Warehouse Group. "
+                "With a background spanning AI research, full-stack development, Android systems, "
+                "and industrial IoT platforms, I am particularly interested in this opportunity "
+                "because it focuses on building practical AI solutions that deliver measurable business impact."
             )
-        else:
-            opening = (
-                f'{opening_hook} '
-                f'I am excited to apply for the {target_role_title} position at {company_name}. '
-                f'This role is a strong fit for my background as a {hint_text} with {years_str} years of delivery experience. '
-                f'I am especially drawn to teams where product quality, integration discipline, and long-term maintainability matter in production. '
-                f'{jd_fit_hook}'.strip()
-            )
-
-        proj1 = top_projects[0] if top_projects else {}
-        proj2 = top_projects[1] if len(top_projects) > 1 else {}
-        proj1_name = proj1.get('name', '')
-        proj2_name = proj2.get('name', '')
-        proj1_evidence = evidence_lines[0] if evidence_lines else ''
-        proj2_evidence = evidence_lines[1] if len(evidence_lines) > 1 else ''
-
-        company_lower = (company_name or '').lower()
-        if role_type == 'android':
             body1 = (
-                'I have built and maintained Android applications in complex production environments using '
-                'Kotlin/Java, Android SDK, Jetpack components, MVVM architecture, and REST API integration. '
-                + (f'In {proj1_name}, {proj1.get("highlights", ["I delivered end-to-end Android implementation and release workflows"])[0].lower()}. '
-                   if proj1_name else '')
-                + (f'In {proj2_name}, {proj2.get("highlights", ["I improved mobile reliability and maintainability through iterative engineering practices"])[0].lower()}.'
-                   if proj2_name else '')
+                "I recently completed my Master of Computer and Information Sciences at Auckland University "
+                "of Technology with First Class Honours. My thesis project, ChatClothes, involved designing "
+                "and building a multimodal AI system that combined diffusion models, garment classification, "
+                "local LLM integration, and workflow orchestration into a working end-to-end prototype. "
+                "The project was accepted by IVCNZ 2025 and gave me hands-on experience developing AI systems "
+                "that balance research innovation with usability, maintainability, and deployment considerations."
             )
-        elif company_lower == 'younity':
-            body1 = (
-                f"Throughout my career, I have prioritized the delivery of stable, high-performance systems that meet demanding business requirements. "
-                "In my recent role, I architected and deployed a microservices-based industrial platform that improved operational efficiency by over 30% across multiple sites. "
-                "I also have extensive experience in high-scale messaging systems, where I engineered backends supporting 500K+ daily messages with sub-200ms latency, "
-                "ensuring that the technology remains robust and reliable under heavy production load."
-            )
-        elif company_lower == 'westpac':
-            body1 = (
-                f"With over 10 years of experience in mobile engineering, I have developed a disciplined approach to building secure and stable Android applications. "
-                "In my recent work, I have delivered robust solutions using Kotlin, Java, and Jetpack Compose, ensuring high standards for performance and reliability. "
-                "My experience includes architecting mobile platforms that support large user bases, optimizing app performance to achieve significant crash reductions, "
-                "and implementing secure communication protocols (SSL/TLS, certificate management) essential for high-stakes financial environments."
-            )
-        elif company_lower == 'photon':
-            body1 = (
-                f"With over 10 years of experience in mobile development, I have a deep understanding of building and leading high-scale Android applications. "
-                "Throughout my recent projects, I have successfully delivered robust mobile solutions using Kotlin, Java, and Jetpack Compose, focusing on scalable architecture and UI excellence. "
-                "My experience leading the migration of legacy components to modern MVVM patterns, optimizing memory usage to reduce crash rates, "
-                "and implementing automated CI/CD pipelines with Jenkins and Bitbucket demonstrates my commitment to high-standard engineering and sustainable delivery."
-            )
-        else:
-            body1 = (
-                f'In my most recent work, {proj1_name}, I served as {proj1.get("role", "sole developer")} '
-                f'and delivered a complete solution from design through deployment. '
-                + (f'{proj1_evidence}. ' if proj1_evidence else '')
-                + (f'Additionally, through {proj2_name}, I {proj2.get("highlights", ["built and maintained a production system"])[0].lower() if proj2 else ""}.'
-                   if proj2_name else '')
-            )
-        
-        if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
-            body1 = (
-                "At AUT, I completed my Master's in Computer and Information Sciences with First Class Honours, "
-                "where I strengthened my practical knowledge across software architecture, AI applications, "
-                "integration workflows, and production-oriented delivery. "
-                "I also contributed through applied research and publication work, including my thesis and peer-reviewed output, "
-                "which reflects my commitment to turning learning into real, useful outcomes."
-            )
-
-        # 第三段专注“岗位匹配能力”，避免与项目段重复
-        role_match_map = {
-            'android': (
-                f'For this role at {company_name}, I can contribute to customer-facing mobile journeys by building '
-                'clean, maintainable Android code, improving app performance and reliability, and resolving complex production issues. '
-                'I work effectively in Agile product squads and collaborate closely with Product Managers, UI/UX Designers, and backend engineers '
-                'to deliver high-quality releases at pace.'
-            ),
-            'backend': (
-                'For this role, I bring strong backend engineering depth in Java/Spring APIs, data-layer reliability, '
-                'and pragmatic delivery with code reviews, testing, and CI/CD.'
-            ),
-            'ai': (
-                'For this role, I bring practical AI engineering experience with end-to-end implementation, '
-                'evaluation, and production-focused delivery with clear technical communication.'
-            ),
-            'fullstack': (
-                'For this role, I bring hands-on full-stack delivery across frontend, backend APIs, and cloud workflows. '
-                'I write maintainable code, value test automation and code reviews, and collaborate effectively in Agile teams. '
-                'I am fast in execution, strong in self-management, and comfortable driving work from ambiguity to reliable outcomes.'
-            ),
-        }
-        body2 = role_match_map.get(role_type, role_match_map['fullstack'])
-        
-        if 'theta' in company_lower:
             body2 = (
-                f'{body2} '
-                'What especially motivates me about Theta is your pragmatic consulting culture and focus on secure, mission-critical systems. '
-                'I enjoy working closely with stakeholders, translating technical trade-offs clearly for non-technical audiences, '
-                'and continuously improving engineering practices in fast-moving environments.'
+                "What particularly attracted me to this role is The Warehouse Group's emphasis on moving AI "
+                "solutions from prototype to production. In addition to my academic AI work, I bring more than "
+                "10 years of software engineering experience across Android, backend, and real-time IoT systems. "
+                "I have worked with APIs, cloud-connected services, CI/CD workflows, Docker-based deployments, "
+                "and scalable production systems supporting real users and operational environments. This background "
+                "has helped me develop a practical engineering mindset focused on reliability, collaboration, "
+                "and continuous improvement."
             )
-        if 'eroad' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["eroad"]["en"]} {_WHY_ME_HOOKS["eroad"]["en"]}'
-        if 'windcave' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["windcave"]["en"]} {_WHY_ME_HOOKS["windcave"]["en"]}'
-        if 'halter' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["halter"]["en"]} {_WHY_ME_HOOKS["halter"]["en"]}'
-        if 'l3harris' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["l3harris"]["en"]} {_WHY_ME_HOOKS["l3harris"]["en"]}'
-        if company_lower.strip() == 'aut' or 'auckland university of technology' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["aut"]["en"]} {_WHY_ME_HOOKS["aut"]["en"]}'
-        if 'atom' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["atom"]["en"]} {_WHY_ME_HOOKS["atom"]["en"]}'
-        if 'photon' in company_lower:
-            body2 = f'{body2} {_COMPANY_FIT_HOOKS["photon"]["en"]} {_WHY_ME_HOOKS["photon"]["en"]}'
+            closing = (
+                "I am also highly motivated by the opportunity to work within a collaborative AI capability "
+                "where learning, experimentation, and rapid delivery are encouraged. I enjoy working across "
+                "technical and business contexts, translating ideas into working solutions, and continuously "
+                "learning new tools and frameworks as AI technologies evolve. "
+                "I would welcome the opportunity to contribute my technical background, problem-solving ability, "
+                "and hands-on development experience to The Warehouse Group's Data and AI team. "
+                "Thank you for your time and consideration."
+            )
+        else:
+            company_lower = (company_name or '').strip().lower()
 
-        closing_map = {
-            'android': (
-                f'I would welcome the opportunity to discuss how my Android delivery background, integration experience, and reliability-focused habits can contribute to {company_name}. '
-                'Thank you for your time and consideration.'
-            ),
-            'backend': (
-                f'I would welcome the opportunity to discuss how my backend engineering depth, API design experience, and reliability-focused delivery habits can contribute to {company_name}. '
-                'Thank you for your time and consideration.'
-            ),
-            'ai': (
-                f'I would welcome the opportunity to discuss how my AI engineering practice, full-stack implementation experience, and production-focused delivery habits can contribute to {company_name}. '
-                'Thank you for your time and consideration.'
-            ),
-            'fullstack': (
-                f'I would welcome the opportunity to discuss how my full-stack delivery experience, integration discipline, and reliability-focused execution can contribute to {company_name}. '
-                'Thank you for your time and consideration.'
-            ),
-            'photon': (
-                f'I would welcome the opportunity to discuss how my Lead Android delivery background, Jetpack Compose experience, and commitment to high-quality mobile architecture can contribute to Photon. '
-                'Thank you for your time and consideration.'
-            ),
-            'westpac': (
-                f'I would welcome the opportunity to discuss how my Senior Android delivery background, security focus, and commitment to reliable banking architecture can contribute to Westpac. '
-                'Thank you for your time and consideration.'
-            ),
-        }
-        closing = closing_map.get(role_type, closing_map['fullstack'])
+            # ---- helpers ----
+            def _background_tagline() -> str:
+                tagline = profile.get('career_identity', {}).get('tagline', '')
+                return tagline.strip() if tagline else f"experience in {role_type} engineering and full-stack development"
+
+            def _culture_reason() -> str:
+                key = company_lower
+                if key in _COMPANY_CULTURE_HOOKS:
+                    return _COMPANY_CULTURE_HOOKS[key]
+                for k, v in _COMPANY_CULTURE_HOOKS.items():
+                    if k in key:
+                        return v
+                return "it focuses on building practical technology that delivers real value"
+
+            def _team_name() -> str:
+                key = company_lower
+                if key in _COMPANY_TEAMS:
+                    return _COMPANY_TEAMS[key]
+                for k, v in _COMPANY_TEAMS.items():
+                    if k in key:
+                        return v
+                return f"{company_name}'s engineering team"
+
+            # === Para 1: "I am applying for..." (Rule 1-3) ===
+            culture_reason = _culture_reason()
+            tagline = _background_tagline()
+            opening = (
+                f"I am applying for the {target_role_title} position at {company_name}. "
+                f"{tagline} "
+                f"I am particularly interested in this opportunity because {culture_reason}"
+            )
+
+            # === Para 2: education/project evidence with linking sentence (Rule 4-5) ===
+            body1_parts = []
+            if role_type == 'ai' and pubs:
+                first_pub = pubs[0]
+                pub_venue = first_pub.get("venue", "")
+                pub_year = first_pub.get("year", "")
+                year_str = str(pub_year) if pub_year else ""
+                venue_str = pub_venue.strip().rstrip(".")
+                if year_str and year_str not in venue_str:
+                    venue_str = f"{venue_str}, {year_str}"
+                body1_parts.append(
+                    f"I recently completed my Master of Computer and Information Sciences at "
+                    f"Auckland University of Technology with First Class Honours. "
+                    f"My thesis project involved designing and building a multimodal AI system "
+                    f"from concept to working prototype — covering the full pipeline from data "
+                    f"collection and model development to evaluation and integration. "
+                    f"The project was accepted by {venue_str} and gave me hands-on experience "
+                    f"developing AI systems that balance research innovation with usability, "
+                    f"maintainability, and deployment considerations."
+                )
+            elif proj_name and proj_highlights:
+                top_hl = proj_highlights[0][:120]
+                # Lowercase first letter to flow after "I "
+                top_hl = top_hl[0].lower() + top_hl[1:]
+                body1_parts.append(
+                    f"In my recent work on {proj_name}, "
+                    f"I {top_hl}. "
+                    f"This gave me practical experience delivering production systems "
+                    f"that balance technical quality with real-world constraints."
+                )
+            else:
+                body1_parts.append(
+                    f"I have {years_str} years of software engineering experience "
+                    f"building production systems from prototype through deployment."
+                )
+
+            # Differentiator (Rule 6)
+            diff = _differentiator_hook(role_type)
+            if diff:
+                body1_parts.append(diff)
+
+            body1 = " ".join(body1_parts)
+
+            # === Para 3: attraction + experience + mindset (Rule 7-8) ===
+            body2_parts = [
+                f"What particularly attracted me to this role is {company_name}'s "
+                f"emphasis on building technology that delivers practical impact."
+            ]
+
+            if years_str:
+                body2_parts.append(
+                    f"In addition to my academic work, I bring more than {years_str} years of "
+                    f"software engineering experience across {role_type} and full-stack development. "
+                    f"I have worked with APIs, CI/CD workflows, production systems, "
+                    f"and cross-functional teams. This background has helped me develop "
+                    f"a practical engineering mindset focused on reliability, collaboration, "
+                    f"and continuous improvement."
+                )
+
+            body2 = " ".join(body2_parts)
+
+            # === Closing: motivation + contribution + team name (Rule 9) ===
+            team = _team_name()
+            closing = (
+                f"I am also highly motivated by the opportunity to work within a collaborative "
+                f"team where learning, experimentation, and delivery are encouraged. "
+                f"I would welcome the opportunity to contribute my technical background, "
+                f"problem-solving ability, and hands-on development experience to {team}. "
+                f"Thank you for your time and consideration."
+            )
 
     else:  # zh fallback
         opening = "申请自荐信内容（中文）"
         body1 = "核心项目与经验描述"
-        body2 = "岗位匹配度描述"
-        closing = "期待面试回复"
+        body2 = "在贵公司的展望"
+        closing = "谢谢。"
 
     return {
         'opening': opening,
@@ -511,6 +422,8 @@ def build_cover_letter_content(
     }
 
 
+# ---------------------------------------------------------------------------
+# CSS
 # ---------------------------------------------------------------------------
 # CSS
 # ---------------------------------------------------------------------------
@@ -550,19 +463,8 @@ _CL_CSS = """
       color: #444;
     }
 
-    .cl-date {
-      margin-top: 24px;
-      margin-bottom: 16px;
-      font-size: 10.5pt;
-      color: #333;
-    }
-
-    .cl-recipient {
-      margin-bottom: 16px;
-      font-size: 10.5pt;
-    }
-
     .cl-salutation {
+      margin-top: 16px;
       margin-bottom: 12px;
       font-size: 10.5pt;
     }
@@ -630,9 +532,14 @@ def generate_cover_letter_html(
     )
     
     name = profile.get('name', 'Leo Zhang')
+    contact_parts = []
     email = profile.get('contact', {}).get('email', '')
     phone = profile.get('contact', {}).get('phone', '')
-    date_str = datetime.now().strftime("%d %B %Y")
+    if email:
+        contact_parts.append(html.escape(email))
+    if phone:
+        contact_parts.append(html.escape(phone))
+    contact_str = " | ".join(contact_parts)
     
     html_template = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -644,17 +551,10 @@ def generate_cover_letter_html(
 <body>
     <div class="cl-header">
         <div class="cl-name">{html.escape(name)}</div>
-        <div class="cl-contact">{html.escape(email)} | {html.escape(phone)}</div>
+        {f'<div class="cl-contact">{contact_str}</div>' if contact_str else ''}
     </div>
 
-    <div class="cl-date">{date_str}</div>
-
-    <div class="cl-recipient">
-        Hiring Manager<br>
-        {html.escape(company_name)}
-    </div>
-
-    <div class="cl-salutation">Dear Hiring Manager,</div>
+    <div class="cl-salutation">Dear {html.escape(company_name)} Hiring Manager,</div>
 
     <div class="cl-body">
         <p>{html.escape(content['opening'])}</p>
@@ -664,7 +564,7 @@ def generate_cover_letter_html(
     </div>
 
     <div class="cl-sign">
-        <div class="cl-sign-label">Sincerely,</div>
+        <div class="cl-sign-label">Kind regards,</div>
         <div class="cl-sign-name">{html.escape(name)}</div>
     </div>
 </body>
