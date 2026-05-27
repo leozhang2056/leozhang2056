@@ -1,0 +1,42 @@
+Senior Developer
+
+Auckland, Auckland, New Zealand · 1 week ago · 17 people clicked apply
+
+Full-time
+
+About the job
+
+Henry Schein One provides advanced, market-leading software solutions that help dental teams manage their practice effectively.
+
+What you'll be doing:
+
+Own your work from discovery to delivery, with a clear focus on customer value and business impact.
+Work backwards from problems, define how success will be measured early, and build feedback loops into the solution.
+Deliver products, APIs, integrations, and automations that solve the right problem and improve customer experience.
+Use AI throughout the SDLC to accelerate analysis, coding, testing, debugging, documentation, and review whilst maintaining a high quality of work delivered.
+Make pragmatic choices, avoid over-engineering, and treat technology, languages, and frameworks as tools for building useful solutions.
+Partner closely with product, design, platform, security, operations, and customers to learn fast and ship what matters.
+
+Technical skills:
+
+Strong track record of getting meaningful work done and delivering value to customers and the business.
+Excellent problem-solving skills.
+Proficiency in using AI-powered development tools (e.g., Cursor, Claude Code, Copilot) to increase productivity.
+Comfortable working across languages, frameworks, and codebases; examples may include C#, Java, Python, Go, JavaScript/TypeScript, .NET, Spring, React, Next.js, Angular, or Vue.
+Expertise in building well-architected solutions in AWS and/or Azure. Experience with compute, database, file storage, container orchestration, security, and networking.
+Solid understanding of relational databases (SQL Server, PostgreSQL), NoSQL databases (Redis, Cosmos DB, DynamoDB), ORMs (EF Core, Dapper, Npgsql).
+Experience in implementing standards-based authentication and authorization (OAuth2, OIDC, RBAC) for enterprise applications integrating with Auth0 and Microsoft Entra ID (Azure AD).
+Experience with observability platforms (Application Insights, AWS CloudWatch, Dynatrace, DataDog, Splunk, Prometheus/Grafana).
+Mastery of modern software engineering practices like CI/CD, trunk-based development, Infrastructure-as-Code, observability, monorepo, and shift-left mindset on quality.
+Extensive experience in conducting code reviews.
+
+Personal attributes:
+
+You take ownership and get things done, driving projects with a bias for action.
+You are passionate about solving meaningful problems and delivering value customers can feel.
+You learn rapidly from setbacks and adapt your approach to continuously improve.
+You transform ambiguous problems and abstract ideas into high-quality solutions.
+You possess a genuine passion for continuous learning and self-improvement.
+You champion a One Team philosophy, effective in working with multiple teams towards shared goals.
+You have strong opinions, loosely held — you thrive in technical discussions and drive well-reasoned solutions.
+You demonstrate strong interpersonal awareness, understanding team dynamics.

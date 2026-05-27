@@ -1,0 +1,63 @@
+Senior Java Software Engineer 
+
+Auckland, New Zealand · 1 week ago · 40 people clicked apply
+
+Hybrid
+Full-time
+
+About the job
+Exciting Opportunity for a Java Software Engineer at Entelect
+
+Elevate your career at Entelect, where we prioritise people and nurture a culture of growth, collaboration, and innovation.
+
+Join a dynamic, multidisciplinary environment that encourages versatility, and provides individual attention to career development, including intentional and regular one-on-ones with leadership. 
+
+Tackle complex challenges and make a meaningful impact alongside passionate professionals who inspire and support each other.
+
+What You'll Be Doing:
+
+Delivery:
+Leveraging your expertise to develop world-class web and mobile applications for leading organisations in South Africa.
+Exploring methods to enhance product quality through containerisation and continuous integration, fostering a streamlined DevOps culture.
+Engaging in various stages of the SDLC, from system design to analysis, scoping, and estimation.
+Researching innovative technologies and implementing them in projects to drive innovation.
+
+People:
+Demonstrating maturity, motivation, and leadership in the workplace.
+Championing change within the team and fostering a collaborative culture.
+Collaborating with cross-functional teams to tackle complex business challenges, driving continuous improvement.
+Mentoring and nurturing colleagues to uphold standards of excellence and accountability.
+
+Customer:
+Building strong relationships and understanding customer needs to deliver impactful solutions.
+Managing customer expectations and identifying opportunities for service improvements.
+Ensuring compliance with data security and industry regulations.
+
+What We Need from You:
+A bachelor's degree in IT, Engineering, or related fields.
+Minimum 6 years' experience as a software engineer in an enterprise environment.
+Proficiency in software engineering fundamentals and commitment to clean code and best practices.
+Mastery of various technologies with the agility to adapt to new frameworks.
+Ability to architect and structure small projects within an enterprise environment.
+Strong collaboration and communication skills with a drive for continual improvement.
+Pro hybrid working model working from the office on average 2-3 times per week.
+A strong customer-facing ability.
+Flexibility to work across a variety of different environments and tooling.
+
+What You'll Get from Us:
+Hybrid working environment
+$400 work-from-home setup allowance
+Birthday leave
+Hands-on support from leadership through regular one on ones and quarterly reviews.
+Continuous development programs offering training in leadership and technical skills.
+
+Tech Stacks We Use:
+Frameworks: Spring, Spring Boot
+Frontend techs: Angular, React, Vue
+ORM Tools: JPA, Spring Data, Hibernate
+Relational databases: Oracle, MSSql, PostgreSQL, MySQL
+Non-relational databases: MongoDB, Cosmos DB
+Build Tools: Maven and Gradle
+Cloud environments: Azure, AWS
+IAC: Terraform, Bicep, AWS CDK
+Event-based messaging queues: KAFKA, RabbitMQ, Amazon SQS

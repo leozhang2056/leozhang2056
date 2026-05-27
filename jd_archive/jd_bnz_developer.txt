@@ -1,0 +1,48 @@
+Developer
+
+Wellington, Wellington, New Zealand · 1 week ago · 68 people clicked apply
+
+Promoted by hirer · Responses managed off LinkedIn
+
+Full-time
+Apply
+
+About the job
+Here at BNZ, it's about more than just banking. We work together in an agile, energising environment to create innovative solutions through our promise "If you can imagine a better future, let's find a way."
+
+We support wellbeing, flexible working and have a generous leave offering. There is the opportunity for growth, learning and career development. No two days are the same.
+
+Customer, Onboarding and Identity Domain (COI) is responsible for digitally identifying, authorizing, capturing, storing and protecting information about our customers.
+
+Team Maverick make it easy for our consumers to manage customer information through safe and simple services.
+
+This is a Wellington based hybrid role with three days in the office and two days where you can work flexibly. Anchor days in the office are Tuesday and Wednesday, and either a Monday or Friday.
+
+What are 5 day to day tasks the person in this role will complete?
+
+Deliver Outcomes: understand the features or technical problems, driving them to completion in a timely and reliable way. Contribute to production support and on-call activities to help maintain system reliability and respond to operational issues.
+Demonstrate Technical Excellence: Apply good engineering principles to design, implement the Microservices & APIs - Build robust, scalable, maintainable microservices - RESTful APIs using Java (Spring Boot) and test, maintain code and ensuring the best practices.
+Solve Problems: Break down moderately complex problems into clear, achievable tasks. Seek input when needed and contribute ideas to help others do the same.
+Manage Risk and Quality: Write code and design systems that are resilient and observable. Surface risks early and participate in code reviews & quality processes to maintain standards.
+Collaborate and Influence: Work effectively with teammates and cross-functional partners. Communicate clearly and constructively and contribute to a positive team culture.
+Grow Self and Others: Seek feedback and reflect on it to grow your own capability. Share knowledge with colleagues through pairing, documentation, or informal mentoring.
+
+What is the team culture and environment like?
+
+Our team culture is collaborative, innovative, and results-driven. We prioritize open communication, continuous learning, and accountability, ensuring everyone feels empowered to contribute. The environment is fast-paced yet supportive, fostering teamwork and problem-solving. We value inclusivity, respect diverse perspectives, and maintain a balance between high performance and well-being to drive both individual and business success.
+
+What technical skills are required for this role?
+
+Essential:
+- Design, develop, and maintain RESTful APIs using Java (Spring Boot) and good experience in Kubernetes framework, Monitor and troubleshoot applications.
+- Understanding of containerization and deployment via Docker and Kubernetes. Familiarity with API security standards (OAuth2, JWT, TLS).
+- Build and deploy modular microservices aligned with domain-driven design principles.
+- Work with relational databases (e.g. PostgreSQL, MySQL) and manage cloud DBs like AWS RDS or Aurora. Implement unit and integration testing to ensure software reliability.
+- Use Git/GitHub or Bitbucket for version control, pull requests, and collaboration.
+- Collaborate within Agile teams and participate in code reviews and sprint ceremonies.
+
+Desirable:
+- Experience with message brokers like Apache Kafka, knowledge of CI/CD tools such as Jenkins, GitHub Actions.
+- Good to have API development and maintenance/support experience in .Net.
+- Familiarity with cloud platforms (AWS/Azure), including services like EKS, ECS.
+- Experience with monitoring and observability tools (e.g., Splunk, Grafana, CloudWatch).

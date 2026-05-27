@@ -1,0 +1,16 @@
+Westpac New Zealand
+Position: Software Engineer (Full Stack)
+Job ID: 92139178
+
+We are looking for a Software Engineer with 3–5 years of full-stack development experience, with strong Java backend capabilities.
+
+Key requirements:
+- Backend development using Java and modern software engineering practices
+- Frontend development with React, TypeScript, JavaScript, HTML, and CSS
+- Experience with DevOps and delivery pipelines, including CI/CD
+- Experience with Docker and Kubernetes in cloud-native or containerized environments
+- Strong testing, code quality, and engineering best practices
+
+Preferred:
+- Collaborative team mindset and strong communication
+- Ability to deliver production-ready features across the stack

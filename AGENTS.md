@@ -57,6 +57,7 @@ pytest
 - Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
 - Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
 - Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
+- **Chunxiao career progression title rule**: The second stage "Senior Android Developer" must **never** be remapped to fullstack/backend equivalents (e.g. "Senior Full-Stack Developer", "Senior Backend Developer"). This stage was genuinely an Android development role and stays as "Senior Android Developer" in **all** role types. Identity mapping lives in `_PROGRESSION_TITLE_ROLE_MAP` in `generate_cv_from_kb.py`. The first stage "Team Lead & Full-stack Engineer" and third stage ".NET Software Engineer" keep their original titles as well.
 
 ## Integrations and Cross-Component Behavior
 - JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.

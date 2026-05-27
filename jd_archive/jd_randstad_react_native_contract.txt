@@ -1,0 +1,47 @@
+Senior Mobile Developer - Contract
+
+Auckland, Auckland, New Zealand · 4 days ago · 6 people clicked apply
+
+Contract
+
+About the job
+
+Are you a Senior Developer who has already replaced manual boilerplate with AI-driven workflows? Stop hiding your automated tools and start using them to lead. We are looking for a React Native specialist to join us for an immediate contract where "Coding with AI" isn't just allowed, it's the core requirement.
+
+Location: Auckland CBD
+Term: Contract until end of June (High probability of extension)
+Work Arrangement: 3-4 Days in Office (Collaborative environment), flexible working hours
+Start Date: Immediate / ASAP
+
+The Opportunity: Redefining Development
+
+Most companies are still debating AI policies; we are already living them. This isn't a "start from scratch" greenfield build. Instead, you will be the lead orchestrator of our mobile environment. We want a developer who is "Senior enough to know better," using the latest AI agents and LLMs to accelerate delivery, perform deep code reviews, and optimize system performance. You will have free rein to use the most cutting-edge tech available to blow past traditional development timelines.
+
+What You Will Do:
+
+Use AI-native tools (Copilot, custom LLM agents) to refactor, debug, and enhance our existing React Native based mobile environment.
+Act as the "Human in the Loop," using AI to perform sophisticated code audits and security checks.
+Design and implement internal prompts and workflows that automate the "heavy lifting" of the development lifecycle.
+Leverage the latest frameworks to move from concept to deployment at a speed the NZ market hasn't seen yet.
+Work within a high-energy team in the CBD, sharing your AI-first techniques to upskill the wider environment.
+
+What You Will Bring:
+
+Valid NZ Work Right non negotiable.
+Motivation to be in the office 3-4 days in a week to collaborate with an innovative bunch.
+Deep, battle-tested experience with React Native (Web or Mobile) and modern JavaScript ecosystems.
+You aren't just "trying" AI; you have already integrated it into your daily role for coding, documentation, and logic-checking.
+The ability to understand complex architecture quickly so you can guide AI tools to produce high-quality, scalable results.
+A passion for the "latest and greatest" tech if a new tool dropped this morning, you've likely already tested it by lunch.
+You are ready to hit the ground running in the Auckland CBD.
+
+Next Steps: Apply Now!
+
+If you are tired of being told to "slow down" and want to see how far AI can actually take mobile development, this is your role. Click "Apply Now" to submit your CV and a brief note on your current AI-assisted setup.
+
+vinnie.angadi@randstaddigital.co.nz
+
+At Randstad, we are passionate about providing equal employment opportunities and embracing diversity to the benefit of all. We actively encourage applications from any background.
+
+react native, ios, android, mobile
+Bachelor Degree

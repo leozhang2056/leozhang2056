@@ -2357,11 +2357,11 @@ def _render_one_project_job_html(
 _PROGRESSION_TITLE_ROLE_MAP: Dict[str, Dict[str, str]] = {
     "fullstack": {
         "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Full-Stack Engineer",
-        "Senior Android Developer": "Senior Full-Stack Developer",
+        "Senior Android Developer": "Senior Android Developer",
     },
     "backend": {
         "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Backend Engineer",
-        "Senior Android Developer": "Senior Backend Developer",
+        "Senior Android Developer": "Senior Android Developer",
     },
     "ai": {
         "Technical Lead & Senior Android Engineer": "Technical Lead & Senior AI Engineer",

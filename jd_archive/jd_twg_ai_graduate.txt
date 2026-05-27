@@ -1,0 +1,32 @@
+Position Description – AI Engineer (Graduate)
+The Warehouse Group
+
+Position Summary:
+The AI Engineer (Graduate) is an early-career technical role responsible for designing, building, and deploying practical AI-enabled solutions that address real business problems. The role operates within the Graduate AI Capability, focusing on hands-on delivery rather than strategy ownership.
+
+Core Responsibilities:
+- Design, build, and deploy AI-powered applications using modern AI and software engineering practices
+- Develop AI solutions leveraging Large Language Model (LLM) APIs, retrieval-augmented generation (RAG) architectures, and agent-based patterns
+- Integrate AI capabilities into existing systems and workflows using REST APIs and cloud services
+- Build and maintain data ingestion, transformation, and inference pipelines to support AI solutions
+- Write clean, well-structured, documented, and testable code aligned to team standards
+- Participate in peer code reviews and incorporate feedback to improve solution quality
+- Contribute to prototype-to-production stage gates, ensuring solutions meet quality, security, and maintainability expectations
+- Collaborate with business stakeholders to translate requirements into working technical solutions
+- Actively learn and stay current with evolving AI tools, frameworks, and best practices
+- Contribute to knowledge sharing and continuous improvement within the Graduate AI Capability
+
+Essential Skills:
+- Tertiary qualification in Computer Science, Engineering, Data Science, or a related field
+- Foundational programming experience, preferably in Python
+- Understanding of core software engineering concepts (APIs, version control, testing)
+- Exposure to AI or machine learning concepts, particularly LLM-based applications
+- Strong problem-solving skills and ability to work with ambiguous requirements
+- Clear written and verbal communication skills
+
+Desirable Skills:
+- Experience with LLM APIs (e.g. OpenAI, Azure OpenAI, Anthropic)
+- Familiarity with RAG architecture, embeddings, or vector databases
+- Exposure to cloud platforms (Azure, AWS, or GCP)
+- Experience with Git and collaborative development workflows
+- Interest in applied AI, rapid prototyping, and production delivery

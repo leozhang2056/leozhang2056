@@ -1,0 +1,47 @@
+Company: accesso (Dexibit)
+Role: Senior Software Engineer
+Location: Auckland, New Zealand
+Type: Full-time, hybrid (3 days in-office)
+
+Description
+
+We're Dexibit. We love dinosaurs and data. Our Kiwi AI product helps visitor attractions (museums to zoos to theme parks) make sense of their data and make better decisions. We work with big international names alongside local favourites like MOTAT and Weta.
+
+Dexibit recently joined accesso, a global technology company serving over 1,000 venues across 30+ countries.
+
+What We Build
+
+Dexibit brings together our deep domain knowledge, AI-ready data platform, served through an agentic interface. We create value for our customers by addressing non-trivial tasks like strategic modelling, scheduling, operational reporting and analysing visitor feedback.
+
+Under the hood, the AI layer orchestrates real business logic and APIs: integration packs, custom datasets and benchmarks, context control features, and our query and visualisation infrastructure.
+
+The agentic interface is where we're investing new feature development. Think streaming, context window management, tool orchestration, sandboxed execution.
+
+Where You Fit
+
+We're looking for a product-minded software engineer who can shape what we build and how we build it. You'll be in the code every day. But we value engineers who lead naturally: through design decisions, technical direction, mentorship, and bringing the team along.
+
+You're full-stack, but you lean heavily to one side, whether that's backend data systems or frontend product engineering.
+
+What You Bring
+
+- 5+ years proven engineering experience across different systems and domains
+- Break complex problems into simple, elegant solutions
+- Great communicator with strong customer empathy
+- Curiosity and humility, mentor naturally
+
+Our Tech Stack
+
+Languages: TypeScript, Java, Python, SQL
+Data systems: PostgreSQL, DuckDB, Databricks, OLTP/OLAP
+Platforms: cloud native on AWS (with Ansible + CDK), Datadog, Modal, LangFuse
+AI/LLM: OpenAI/Anthropic models, Pydantic, AI SDK, LangChain4J, XGBoost, Prophet
+UI: React, Jotai/Redux Toolkit, BFF, data viz
+Systems: serverless, services, monolith
+Way of working: cycles, communication over process
+Dev tooling: Claude Code, Codex
+
+Details
+
+- Auckland-based, hybrid (3 days in-office / 2 at home)
+- Open on level (senior to 15+ years)
