@@ -39,12 +39,38 @@ python app/backend/validate.py
 - Main generation flows:
 ```bash
 python generate.py cv --role android
+python generate.py cv --role auto --jd-file jd.txt
 python generate.py cl --role backend --company "Acme"
 python generate.py email --role fullstack --company "Acme"
 python generate.py match --role auto --jd-file jd.txt
 python generate.py interview --category technical
 ```
-- After each `cv` run, the generator prints a **post-generation check** (fluency heuristics, HTML layout signals, JD keyword coverage) and writes `*_POST_CHECK.md` next to the PDF. Use `python generate.py cv ... --no-post-check` to skip.
+- **LinkedIn saved jobs → CV** (Chrome automation via Playwright):
+  ```bash
+  # Interactive: choose from saved jobs, then auto-generate CV
+  python generate.py li-jd
+
+  # Auto-select first saved job, skip CV generation (fetch only)
+  python generate.py li-jd --auto 0 --no-generate
+
+  # Custom CDP port (if Chrome already running with --remote-debugging-port=9223)
+  python generate.py li-jd --port 9223
+  ```
+  The script automatically starts a Playwright-managed Chrome with your profile,
+  so your LinkedIn session is preserved. No need to start Chrome manually first.
+-   After each `cv` run, the generator prints a **post-generation check** (fluency heuristics, HTML layout signals, JD keyword coverage) and writes `*_POST_CHECK.md` next to the PDF. Use `python generate.py cv ... --no-post-check` to skip.
+- **Batch CV generation** (from saved JD files):
+  ```bash
+  # Generate CVs for ALL JD files in Interview/NewJobs/ (auto-detects role)
+  python generate.py batch-cv
+
+  # Dry run (list files without generating)
+  python generate.py batch-cv --dry-run
+
+  # Custom input directory
+  python generate.py batch-cv --input jd_archive
+  ```
+  Place `.txt` or `.md` JD files in `Interview/NewJobs/`, then run. Each file gets processed and moved to `_processed/` when done.
 - Run tests:
 ```bash
 pytest

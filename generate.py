@@ -393,6 +393,56 @@ def build_parser() -> argparse.ArgumentParser:
         help='If arbiter says needs_refine, run one auto-refine round (cv-iterate logic).',
     )
 
+    # ── batch-cv (bulk CV generation from Interview/NewJobs/) ────────────────
+    bc_parser = sub.add_parser(
+        'batch-cv',
+        help='Generate CVs for all JD files in Interview/NewJobs/',
+    )
+    bc_parser.add_argument(
+        '--input', default=None,
+        help='Directory with JD files (default: Interview/NewJobs/)',
+    )
+    bc_parser.add_argument(
+        '--dry-run', action='store_true',
+        help='Only list files, do not generate',
+    )
+    bc_parser.add_argument(
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Role type for all CVs (default: auto; inferred from each JD)',
+    )
+    bc_parser.add_argument(
+        '--max-projects', type=int, default=6,
+        help='Max projects to include per CV (default: 6)',
+    )
+
+    # ── li-jd (LinkedIn saved jobs → JD → CV) ──────────────────────────────
+    li_parser = sub.add_parser(
+        'li-jd',
+        help='Fetch LinkedIn saved jobs via Chrome, select one, generate CV',
+    )
+    li_parser.add_argument(
+        '--port', type=int, default=9222,
+        help='Chrome DevTools Protocol port (default: 9222)',
+    )
+    li_parser.add_argument(
+        '--auto', type=int, default=None,
+        help='Auto-select job by index (0-based); skip interactive prompt',
+    )
+    li_parser.add_argument(
+        '--no-generate', action='store_true',
+        help='Only save JD to jd_archive/, do not generate CV',
+    )
+    li_parser.add_argument(
+        '--keep-chrome', action='store_true',
+        help='Do not restart Chrome; try Playwright Chromium instead',
+    )
+    li_parser.add_argument(
+        '--role', default='auto',
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        help='Role type for CV generation (default: auto; inferred from JD)',
+    )
+
     # ── html-to-pdf ────────────────────────────────────────────────────────
     h2p_parser = sub.add_parser('html-to-pdf', help='Convert an existing HTML file to PDF')
     h2p_parser.add_argument('--input', required=True, help='Input HTML file path')
@@ -634,6 +684,25 @@ async def run(args) -> None:
             )
         else:
             print("  ZH: skipped (use --with-zh to generate)")
+
+    elif args.command == 'batch-cv':
+        from batch_cv_generator import run_batch_cv
+        await run_batch_cv(
+            input_dir=getattr(args, 'input', None),
+            dry_run=bool(getattr(args, 'dry_run', False)),
+            role=getattr(args, 'role', 'auto'),
+            max_projects=int(getattr(args, 'max_projects', 6)),
+        )
+
+    elif args.command == 'li-jd':
+        from linkedin_jd_fetcher import run_linkedin_workflow
+        await run_linkedin_workflow(
+            port=getattr(args, 'port', 9222),
+            auto_idx=getattr(args, 'auto', None),
+            no_generate=bool(getattr(args, 'no_generate', False)),
+            role=getattr(args, 'role', 'auto'),
+            keep_chrome=bool(getattr(args, 'keep_chrome', False)),
+        )
 
     elif args.command == 'html-to-pdf':
         from generate_cv_html_to_pdf import html_to_pdf
