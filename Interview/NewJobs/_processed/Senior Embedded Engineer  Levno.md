@@ -1,0 +1,184 @@
+---
+title: "Senior Embedded Engineer | Levno"
+source: "https://www.linkedin.com/jobs/view/4418900170/"
+author:
+published:
+created: 2026-05-27
+description:
+---
+Senior Embedded Engineer
+
+Palmerston North City, Manawatū-Whanganui, New Zealand · 2 days ago · **8 people clicked apply**
+
+[On-site](https://www.linkedin.com/jobs/view/4418900170/)
+
+[Full-time](https://www.linkedin.com/jobs/view/4418900170/)
+
+[Apply](https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fapp%2Ebirdeey%2Ecom%2Flevno%2Fsenior-embedded-engineer&urlhash=Azs9&mt=1UXKP2lZ8VPftaxxJGpHGpI2eVrbXfAkksKf1qbhiwGBSlEatCOHBYfUqbSqnhqW4MyWoh0S5uL0iyDQkLLJoJ-XPfGM&isSdui=true)
+
+## Use AI to assess how you fit
+
+Get AI-powered advice on this job and more exclusive features with Premium. [Reactivate Premium](https://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_job_details_how_you_fit_upsell%3AJob+Seeker%3AIn-Product&utype=coach_job&referenceId=6CPA3O8lSAG5Gek3G9I3kQ%3D%3D&isSS=false&upsellSlotId=JOB_DETAILS_HOW_YOU_FIT)
+
+## About the job
+
+**Who we are!**
+
+Levno develops a world leading on-farm monitoring platform that helps farmers and agribusinesses operate more efficiently, productively, and sustainably through real-time insights.
+
+We design and build connected IoT devices that operate in challenging real world environments, delivering critical data and visibility to customers across New Zealand and beyond.
+
+We are a high-growth technology company solving meaningful problems with a team that cares deeply about impact, ownership, and building great products together. At Levno, we value people who challenge the status quo, improve what exists, and bring others along with them. Our values are Win Together, Find a Better Way, Own the Outcome, and Enjoy the Ride.
+
+Our scale is exciting with over **35,000** deployed IoT devices and steadily increasing demand for new product development has us on the hunt for an individual to join our hardware team focused on firmware engineering to build velocity.
+
+The role will have variety; you’ll work on continuously improving the firmware for the deployed fleet while getting your hands dirty (sometimes real-world dirt, out on farm, with red bands on) figuring out how to connect the hardware to the cloud to solve farmers problems.
+
+We pride ourselves on getting close to our customers, learning the problems they need solved, and solving them. As a result, we are the industry leader in monitoring the important infrastructure on dairy farms.
+
+You’ll be part of our hardware team operating out of our purpose-built facility in Palmerston North.
+
+**What we are looking for**
+
+- Significant experience in embedded systems or firmware engineering roles
+- Strong programming experience in C++
+- Experience working on real-world connected devices or IoT products deployed at scale
+- Experience solving difficult technical problems in production environments
+- A pragmatic engineering mindset with strong commercial awareness
+- Experience mentoring or uplifting other engineers around you
+- Confidence making technical decisions and taking ownership of outcomes
+- Experience in environments with strong engineering standards and product delivery discipline
+
+**Why join Levno?**
+
+- Build products used everyday in the real world
+- Work on meaningful technical challenges across hardware, firmware, connectivity, and scale
+- Be part of a high-performing, supportive engineering culture
+- Have genuine influence on technical direction and engineering standards
+- Join a growing New Zealand technology company with global ambition
+- Better Me wellbeing benefits to support your mental and physical health
+- Grow your career alongside a business scaling rapidly internationally
+
+If you think this is for you, reach out, let’s chat and maybe you’ll get to work on some exciting problems with us!
+
+## Set alert for similar jobs
+
+Embedded Engineer, Palmerston North City, Manawatū-Whanganui, New Zealand
+
+Off 
+
+Job search faster with Premium
+
+Access company insights like strategic priorities, headcount trends, and more
+
+Kieran and millions of other members use Premium
+
+[Reactivate Premium](https://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Ajdp_aiq_company_insights_static%3AJob+Seeker%3AIn-Product&utype=job&referenceId=TI17RHDxQXyq22kCw32hOw%3D%3D&isSS=false&upsellSlotId=JDP_AIQ_COMPANY_INSIGHTS_STATIC)
+
+Cancel anytime. No hidden fees.
+
+## More jobs[Garmin New Zealand](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=iuUyA3U%2FzKTqH3xjnZOwVg%3D%3D&currentJobId=4409216481&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnhEN3GS75oNG_o83pFt3zg20IShI3iN6XP7Ke-7ooLLsIIi63kvb_LS4tYDJhvtFfqIzoN9SDriD1vJFaF6aie41Nfs-9_m6cbOZ2R82HOLgOzmPYeTYGdhCnhAeZGMTB4qyzd90wI2UZe5xjFLGHMfVXfvuWciKABuiUSfVoHHWOg4Ep-IXxlqJXJzzrvcEdnhh-r7Yn_yp0gKwMJEQud8-pi3T5tRwIeZv8kwEziFbr1Vq0WoDImGG69gDxPNUL7AttE1f7k0aO6ACQ6WbiEQWlqQH8PoBNVr98OoD6qa7FHKmXDfTvqEaCzvWZ6nV1MRQnoqlhzTDMKOCVwTJPc0233rmv3jSwrwHgKGulybRIKfikbxYntTL0M1wPmhnrmG7kco9ogJ6QhCyymLNHhqgcvhl-uZSxb0RBhd-NxIuTu0RhUZ5SdFmVrD48zK46HGOsxSXWw410cnVpCFe_ky1yXPvYShUY4JX&originToLandingJobPostings=4409216481)
+
+[
+
+Auckland, New Zealand (On-site)
+
+Actively reviewing applicants
+
+Posted 2 weeks ago
+
+·
+
+Easy Apply
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=iuUyA3U%2FzKTqH3xjnZOwVg%3D%3D&currentJobId=4409216481&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnhEN3GS75oNG_o83pFt3zg20IShI3iN6XP7Ke-7ooLLsIIi63kvb_LS4tYDJhvtFfqIzoN9SDriD1vJFaF6aie41Nfs-9_m6cbOZ2R82HOLgOzmPYeTYGdhCnhAeZGMTB4qyzd90wI2UZe5xjFLGHMfVXfvuWciKABuiUSfVoHHWOg4Ep-IXxlqJXJzzrvcEdnhh-r7Yn_yp0gKwMJEQud8-pi3T5tRwIeZv8kwEziFbr1Vq0WoDImGG69gDxPNUL7AttE1f7k0aO6ACQ6WbiEQWlqQH8PoBNVr98OoD6qa7FHKmXDfTvqEaCzvWZ6nV1MRQnoqlhzTDMKOCVwTJPc0233rmv3jSwrwHgKGulybRIKfikbxYntTL0M1wPmhnrmG7kco9ogJ6QhCyymLNHhqgcvhl-uZSxb0RBhd-NxIuTu0RhUZ5SdFmVrD48zK46HGOsxSXWw410cnVpCFe_ky1yXPvYShUY4JX&originToLandingJobPostings=4409216481)[DataAnnotation](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=icjprBKDnwdV7JdlWsJZuA%3D%3D&currentJobId=4397401273&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcngGPdXyBpJ3zQGvDTt_v2qJ6X1kLeCrbRwoB9au-Rm8LqMDEzvp-u2zZhubi-tX2p1lJA2LaW-aJCg3ZrsPtaF2Y_NbZwZRCdPUkCzPXtIrmN4jXTSh_v294_kgI2gWPBhHzmqOHhxWNW9YZ-eU8lRtnnxa8K0yZr9KV040PY67Fiyi6sldSlkFZ4UF2uFxcYBA6Y7qu-oHN_xa9_R6ceHQhGKsMdtIoMflH2fb7cbuYQ424gbvkFgRtJtBIMQ8NomEPuejVuHYsEnC3tfMNayt7fzkHJSdnsmMCXuAWfT-PHy1eEdV0mgwKtxlLPTvQuWMSNPUh1viWf5ehgVRcMc16e5wwqgrQuInsPx9pBCRpBqJnFh-ml2NQl--QVSe3xJ4c9bjWwWgT8AVf0nUtwh8kxKg80vNQjHzWrtQw1S3u8E5kLDbozJP6KW9yUlWgx46HWlyF7ybxbdrUNffQhxlW-9myNGd2GOYo&originToLandingJobPostings=4397401273)
+
+[
+
+New Zealand (Remote)
+
+6 school alumni work here
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=icjprBKDnwdV7JdlWsJZuA%3D%3D&currentJobId=4397401273&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcngGPdXyBpJ3zQGvDTt_v2qJ6X1kLeCrbRwoB9au-Rm8LqMDEzvp-u2zZhubi-tX2p1lJA2LaW-aJCg3ZrsPtaF2Y_NbZwZRCdPUkCzPXtIrmN4jXTSh_v294_kgI2gWPBhHzmqOHhxWNW9YZ-eU8lRtnnxa8K0yZr9KV040PY67Fiyi6sldSlkFZ4UF2uFxcYBA6Y7qu-oHN_xa9_R6ceHQhGKsMdtIoMflH2fb7cbuYQ424gbvkFgRtJtBIMQ8NomEPuejVuHYsEnC3tfMNayt7fzkHJSdnsmMCXuAWfT-PHy1eEdV0mgwKtxlLPTvQuWMSNPUh1viWf5ehgVRcMc16e5wwqgrQuInsPx9pBCRpBqJnFh-ml2NQl--QVSe3xJ4c9bjWwWgT8AVf0nUtwh8kxKg80vNQjHzWrtQw1S3u8E5kLDbozJP6KW9yUlWgx46HWlyF7ybxbdrUNffQhxlW-9myNGd2GOYo&originToLandingJobPostings=4397401273)[Wētā FX](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=TfAsTUZJ8PjulIme4iMXnA%3D%3D&currentJobId=4417505909&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcng8ulO6odNSuM06zlUNfZNAe5bEEXK8b-ZhzO1AWKuHMcUtpqFC2IbKtuDfSe-AZRXNSBHQDKGfxTYNOUouyfK24JjMqO8hRQknZCzZKBZC8fBYrDlELB8DLDiwuUdw8FXJ-cSenjiXtj18TRI_jc6jAQrnLgFvmwMVbZhpr2NPv5uy3K6Ia_0u3uS1A7qj55A2IuDiOcel9g25PTgwh90QDC0GLXQSrYUixQN30JK-U2USsXJ1mAbxuE7Y_nazfb5956qI5ssYQP9BKTIyFq2f07fEKeuOAJ2etPAD4TYaGfASGw0CANZsk2pcqw6WxijNwl7hgtx8b5S00ev-uOV0pAY3Mu4X1Y0Q7sESZA4ZkyzkpyCwPc68dIBx-jVJFPgwHt24VPF1-8AW-3XBVT6G8LYpp5TqKCmt5BJON4ABZ13_zVIXNF6DizIM2ECAuNS1YOaT0uDD671MP_VC_3mbJsvkQGKIrci8l&originToLandingJobPostings=4417505909)
+
+[
+
+Wellington (Hybrid)
+
+1 connection works here
+
+Posted 4 days ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=TfAsTUZJ8PjulIme4iMXnA%3D%3D&currentJobId=4417505909&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcng8ulO6odNSuM06zlUNfZNAe5bEEXK8b-ZhzO1AWKuHMcUtpqFC2IbKtuDfSe-AZRXNSBHQDKGfxTYNOUouyfK24JjMqO8hRQknZCzZKBZC8fBYrDlELB8DLDiwuUdw8FXJ-cSenjiXtj18TRI_jc6jAQrnLgFvmwMVbZhpr2NPv5uy3K6Ia_0u3uS1A7qj55A2IuDiOcel9g25PTgwh90QDC0GLXQSrYUixQN30JK-U2USsXJ1mAbxuE7Y_nazfb5956qI5ssYQP9BKTIyFq2f07fEKeuOAJ2etPAD4TYaGfASGw0CANZsk2pcqw6WxijNwl7hgtx8b5S00ev-uOV0pAY3Mu4X1Y0Q7sESZA4ZkyzkpyCwPc68dIBx-jVJFPgwHt24VPF1-8AW-3XBVT6G8LYpp5TqKCmt5BJON4ABZ13_zVIXNF6DizIM2ECAuNS1YOaT0uDD671MP_VC_3mbJsvkQGKIrci8l&originToLandingJobPostings=4417505909)[DataAnnotation](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=n69U28yXJ87YaNO2vpZ4sw%3D%3D&currentJobId=4397396480&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnlAQgBD9mihG2VEva3VfK1zl8NegWQEumH9GrP4mucZymHkGlvtvoORGuoK25TnzlQs1fxdKzZOsa-wST_8Ba5LlibgdmpVhSuSFRhZjJ0whdTBUD0348P27Vo2UGusWnFZmUI_59YNg2rYZlFgLGx759qf69bVVL83TMWcqFCNbDoJ29Hc4QrfJg9AUTkIQZbpyGEf-G487YMXnvD8ZAhruVX_COgN4sbOf37-wH9jW6XXIgFwjsI9XJvGnNPiO-6x49qml49bR9VWeNJ8tF7T5IDXHQB8BNukKAoPo1lRgm-U01Un1W7sw2hKxcjl0erGApOEzVpB2Fw_-Qrj4qMZ7JpkMTA76AkhDojEOtYDjyUOeShMAiAqOxrD5VE4rRqV1zkH6J6iJ184mzALXO0xSvaZLA7u8T6cPo8ABQzlHTUubTw8i3uFRc3jhtHTXZQ&originToLandingJobPostings=4397396480)
+
+[
+
+New Zealand (Remote)
+
+6 school alumni work here
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=n69U28yXJ87YaNO2vpZ4sw%3D%3D&currentJobId=4397396480&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnlAQgBD9mihG2VEva3VfK1zl8NegWQEumH9GrP4mucZymHkGlvtvoORGuoK25TnzlQs1fxdKzZOsa-wST_8Ba5LlibgdmpVhSuSFRhZjJ0whdTBUD0348P27Vo2UGusWnFZmUI_59YNg2rYZlFgLGx759qf69bVVL83TMWcqFCNbDoJ29Hc4QrfJg9AUTkIQZbpyGEf-G487YMXnvD8ZAhruVX_COgN4sbOf37-wH9jW6XXIgFwjsI9XJvGnNPiO-6x49qml49bR9VWeNJ8tF7T5IDXHQB8BNukKAoPo1lRgm-U01Un1W7sw2hKxcjl0erGApOEzVpB2Fw_-Qrj4qMZ7JpkMTA76AkhDojEOtYDjyUOeShMAiAqOxrD5VE4rRqV1zkH6J6iJ184mzALXO0xSvaZLA7u8T6cPo8ABQzlHTUubTw8i3uFRc3jhtHTXZQ&originToLandingJobPostings=4397396480)[Fisher & Paykel Appliances](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=KvpAKpxDr6L62%2FTERFUcAw%3D%3D&currentJobId=4414911421&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnnHqaA93EsbC90d_XtEBqU4vDU8ZPw-mcLfF7Z5Qm1_8JYmxQmZBEo1CIIT78ag-CBu0pW0E6-UyYfUbG6eWMrCe_qpV-iKgniLuL_z-fLweTL-iRbRDwugjQBRZ1DUq3kzIMsrm0dkfAO7jaafKG3SNmzkkHE5uBB4H-sJxtcmkgtdc2pe-lcvEt85Z2jm_4l1rEXgXV4_-V4_jQ-2-Y9JAXnGimBdxTeSTkCODZQcD4xYYkG61aXIBhEEnHHSL39bAs7iELx-H0nhornc8SX6VI0si42aEexf-UIph2j_7QpJfnYm2FJkg7fGOKOPB8L-4T6h8QMbALy9f-5823r6qwLuZNOA9Ja6xqqNqOyHJ89rYZzh5k41u6UARw7yYB-N1f9WHhuodMocetCxxYn_KWyylLkaVejZnqCwUy7SUvsOz5vqGSMTYR1AB8JsYChY2yzYMiSqqNLCZaBqZQPS4GlA8UPog_QF9&originToLandingJobPostings=4414911421)
+
+[
+
+Auckland (Hybrid)
+
+1 connection works here
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=KvpAKpxDr6L62%2FTERFUcAw%3D%3D&currentJobId=4414911421&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnnHqaA93EsbC90d_XtEBqU4vDU8ZPw-mcLfF7Z5Qm1_8JYmxQmZBEo1CIIT78ag-CBu0pW0E6-UyYfUbG6eWMrCe_qpV-iKgniLuL_z-fLweTL-iRbRDwugjQBRZ1DUq3kzIMsrm0dkfAO7jaafKG3SNmzkkHE5uBB4H-sJxtcmkgtdc2pe-lcvEt85Z2jm_4l1rEXgXV4_-V4_jQ-2-Y9JAXnGimBdxTeSTkCODZQcD4xYYkG61aXIBhEEnHHSL39bAs7iELx-H0nhornc8SX6VI0si42aEexf-UIph2j_7QpJfnYm2FJkg7fGOKOPB8L-4T6h8QMbALy9f-5823r6qwLuZNOA9Ja6xqqNqOyHJ89rYZzh5k41u6UARw7yYB-N1f9WHhuodMocetCxxYn_KWyylLkaVejZnqCwUy7SUvsOz5vqGSMTYR1AB8JsYChY2yzYMiSqqNLCZaBqZQPS4GlA8UPog_QF9&originToLandingJobPostings=4414911421)[Bank of New Zealand](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=YEW%2FSPzSbzV9ELNJMx%2BAZQ%3D%3D&currentJobId=4413169942&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnu7_Jv8xdgd2bXKtPPkKhgpxp7QePA-GghoiEDOYNcP1kkAbljyidR0640BqCzfvnnesIB0hYP5fa6X-xf4LWfzxKrVxWlWMyn6_jUpSpOv4R1ekkYK6AWHQz2xsvrrfsIs4F8AebNTu_kk5sRfQRRpPugDCyb71mO-mBYXSR-5VzF1_9Z85LfR7VulUEPvoZQ0CshP1J58DOWnTZtpNlEC8jC0YROL9u742MmCpy6LSPd3shrsk0lkKRhT7rqVig8XJDIFazkweU4t0U1a1cNSA6QPlnZyAal1o6pmbPeB5KOAPM1N0XJDwGrjN2_bNNwkWndD4e0KJ3SjYadEy-Ll_QeDlIcYo5uJToj9ztK77bgDn381T4Alcnm3Z7zdGH0gY9BkRAYTdVAp3WzW1fiW3HCsy9hC0tMO4dTlJ5D0kozJ5Hd9FkKaRpLQgLX4IXBzrH1ckl8lno_HsyyYIjDIH94GKqK6ICEoQry8&originToLandingJobPostings=4413169942)
+
+[
+
+Wellington, New Zealand (Hybrid)
+
+5 connections work here
+
+Posted 2 weeks ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=YEW%2FSPzSbzV9ELNJMx%2BAZQ%3D%3D&currentJobId=4413169942&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnu7_Jv8xdgd2bXKtPPkKhgpxp7QePA-GghoiEDOYNcP1kkAbljyidR0640BqCzfvnnesIB0hYP5fa6X-xf4LWfzxKrVxWlWMyn6_jUpSpOv4R1ekkYK6AWHQz2xsvrrfsIs4F8AebNTu_kk5sRfQRRpPugDCyb71mO-mBYXSR-5VzF1_9Z85LfR7VulUEPvoZQ0CshP1J58DOWnTZtpNlEC8jC0YROL9u742MmCpy6LSPd3shrsk0lkKRhT7rqVig8XJDIFazkweU4t0U1a1cNSA6QPlnZyAal1o6pmbPeB5KOAPM1N0XJDwGrjN2_bNNwkWndD4e0KJ3SjYadEy-Ll_QeDlIcYo5uJToj9ztK77bgDn381T4Alcnm3Z7zdGH0gY9BkRAYTdVAp3WzW1fiW3HCsy9hC0tMO4dTlJ5D0kozJ5Hd9FkKaRpLQgLX4IXBzrH1ckl8lno_HsyyYIjDIH94GKqK6ICEoQry8&originToLandingJobPostings=4413169942)[DataAnnotation](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=nUoZPiH74eByiTlmkKkRxA%3D%3D&currentJobId=4397381982&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnvK4JGE2KmmRDPEhss1ah1ToRQ4pMBU4ZEsxyKbiKDVdwqC2PP8ha5Bn6qyXv9VAKG_xc2eEeMNP-cWJA6znjgotuIEgTGGVdfifWPoqtof3f5EICPaAvCFjmEfx_GH1Z8ICVBCwB0NgXznAQwQ5ZoK2L6dHCktCi_ypsPiCZWR8D0GCqWE4nyJV3unzaNtCeDn0hm3joFHWs54LJsppTmkJVmD45cxNFSCtGpHCwebDdkX_TTWnSxVXHwEXsSLWM9FCN0PQpJN7OsPfoXEcHzOtheuzSfbnj4Pdrq0YwgQ-xd0I6fPwaMvgj_MvBGoI_1_bFP_86_5VKWUtVYMKbJ02r4oO-wSW8mz6RHWMat0sQNZYnDGn0g67xrfzxmJWOMt-bkgxRJk9fngPwHSZW4oE7hh7IcSYBnz-WdxhjalI30kOAbhzFoNtK20aimeRevy8k2ABRxoiYb37Q14386lmr0BVXyg&originToLandingJobPostings=4397381982)
+
+[
+
+New Zealand (Remote)
+
+6 school alumni work here
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=nUoZPiH74eByiTlmkKkRxA%3D%3D&currentJobId=4397381982&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnvK4JGE2KmmRDPEhss1ah1ToRQ4pMBU4ZEsxyKbiKDVdwqC2PP8ha5Bn6qyXv9VAKG_xc2eEeMNP-cWJA6znjgotuIEgTGGVdfifWPoqtof3f5EICPaAvCFjmEfx_GH1Z8ICVBCwB0NgXznAQwQ5ZoK2L6dHCktCi_ypsPiCZWR8D0GCqWE4nyJV3unzaNtCeDn0hm3joFHWs54LJsppTmkJVmD45cxNFSCtGpHCwebDdkX_TTWnSxVXHwEXsSLWM9FCN0PQpJN7OsPfoXEcHzOtheuzSfbnj4Pdrq0YwgQ-xd0I6fPwaMvgj_MvBGoI_1_bFP_86_5VKWUtVYMKbJ02r4oO-wSW8mz6RHWMat0sQNZYnDGn0g67xrfzxmJWOMt-bkgxRJk9fngPwHSZW4oE7hh7IcSYBnz-WdxhjalI30kOAbhzFoNtK20aimeRevy8k2ABRxoiYb37Q14386lmr0BVXyg&originToLandingJobPostings=4397381982)[Termius](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=4ofyngYCK5vDQ9rC6MIGuA%3D%3D&currentJobId=4412812612&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcns2zVztmjOqmyNQojNZH8JrDn6Z97YsUk9RjycYocK46w-xC4l-d_AP7F9eCDftSlHBKAoiWDRQO6SQJq9jmrEiSiNSysbQ8Q2hFy45oRJ453E4A6zG4xjxgKh8mpNDbRRQnvZdNsWHqotss2QfxmFHZOJYw6qmXp7r7XrDjwoRrdnSZ-DtEl_TD8K1zAXLAzM20Ryq45E0--XFKTLQJT-aO07nstrDTVSsfkmEQoIoVvA2Y2ICRq2zsNlwUV5uqaHMiwKs6x6OxoIPP12fuEAowx7bFNduveVhQ93EvgRJ5jbNLsuOacGRC_WAGRse06yrEiWag9XNQaf-YOGr1pKqoHLW3CcxKuA9zx1Qn4iK8a_cYyGMuzI2L2u-bu_65MaDT7jcWedWsGlyoIFh-8f_V8ilJmaEjytBosBIhO7-E1NbYtMu6HVacVb6123a1oeLU9VKDQMh00ZsSO_JGUA9ZcIVBF3MH7vSU&originToLandingJobPostings=4412812612)
+
+[
+
+Auckland, New Zealand (On-site)
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=4ofyngYCK5vDQ9rC6MIGuA%3D%3D&currentJobId=4412812612&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcns2zVztmjOqmyNQojNZH8JrDn6Z97YsUk9RjycYocK46w-xC4l-d_AP7F9eCDftSlHBKAoiWDRQO6SQJq9jmrEiSiNSysbQ8Q2hFy45oRJ453E4A6zG4xjxgKh8mpNDbRRQnvZdNsWHqotss2QfxmFHZOJYw6qmXp7r7XrDjwoRrdnSZ-DtEl_TD8K1zAXLAzM20Ryq45E0--XFKTLQJT-aO07nstrDTVSsfkmEQoIoVvA2Y2ICRq2zsNlwUV5uqaHMiwKs6x6OxoIPP12fuEAowx7bFNduveVhQ93EvgRJ5jbNLsuOacGRC_WAGRse06yrEiWag9XNQaf-YOGr1pKqoHLW3CcxKuA9zx1Qn4iK8a_cYyGMuzI2L2u-bu_65MaDT7jcWedWsGlyoIFh-8f_V8ilJmaEjytBosBIhO7-E1NbYtMu6HVacVb6123a1oeLU9VKDQMh00ZsSO_JGUA9ZcIVBF3MH7vSU&originToLandingJobPostings=4412812612)[Bank of New Zealand](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=qaImm6MYmE4Gt0BD9ZxtJQ%3D%3D&currentJobId=4413178428&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnup6X6_9XlnjzstqZF1BATzBoATs3DtczzDsGwz5l_2lR5GXq2a0fNVVzwndkFgzjKcFz7Sr-L068zbE-f3boNn9qvAxCmIqqtNAtFnJ71v8XRCSb4G7afqP2PDkl-ZPjgDiUbrrgOLT4YrvOGHna4rYaZ5Lc60YP9ZUU-2s_IWSUrlxXcSTOFPWg8TL0YfzZGIK04mCrgFFEPMY_TwUGE6uyxCV620EYi0D8sM168QwDyGRr3Y3I9sOv3LOBP7YlvLexYx0wKXtmT1VnO0F8pFbinz3VKrpbAEZswVmzkqaDEPDp0gunLBuP0MgQopgjriviyXF-R2WHN056kH6uUEFgILW980zAtDHhS_HboumNW5_Sv3bqZ6xxNijPRNQtXgTRqCZcL0CIZQh0bFavx96S_csMI47HF-A5b4jllmk2xVX_vYdK5SohQcRXX7ZwX2ezmQx9rzR4iUsQSKtosXVLPkrrDnTzTVaMKwrCp74HIe4hC0fufcPSuWk1w&originToLandingJobPostings=4413178428)
+
+[
+
+Auckland, New Zealand (Hybrid)
+
+5 connections work here
+
+Posted 2 weeks ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=qaImm6MYmE4Gt0BD9ZxtJQ%3D%3D&currentJobId=4413178428&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnup6X6_9XlnjzstqZF1BATzBoATs3DtczzDsGwz5l_2lR5GXq2a0fNVVzwndkFgzjKcFz7Sr-L068zbE-f3boNn9qvAxCmIqqtNAtFnJ71v8XRCSb4G7afqP2PDkl-ZPjgDiUbrrgOLT4YrvOGHna4rYaZ5Lc60YP9ZUU-2s_IWSUrlxXcSTOFPWg8TL0YfzZGIK04mCrgFFEPMY_TwUGE6uyxCV620EYi0D8sM168QwDyGRr3Y3I9sOv3LOBP7YlvLexYx0wKXtmT1VnO0F8pFbinz3VKrpbAEZswVmzkqaDEPDp0gunLBuP0MgQopgjriviyXF-R2WHN056kH6uUEFgILW980zAtDHhS_HboumNW5_Sv3bqZ6xxNijPRNQtXgTRqCZcL0CIZQh0bFavx96S_csMI47HF-A5b4jllmk2xVX_vYdK5SohQcRXX7ZwX2ezmQx9rzR4iUsQSKtosXVLPkrrDnTzTVaMKwrCp74HIe4hC0fufcPSuWk1w&originToLandingJobPostings=4413178428)[DataAnnotation](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=Hv%2BZmxacIjJk6PDp11wwQA%3D%3D&currentJobId=4397402247&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnqCOI233UJ94xkDcBUTupnZc2C9rt-hpLqpEgTec6hffokjNRwQWSVHTHBMap1jZJMWG3Zd18hFvOLxuJdze0Ff9llq3vN8cg7ojzvnwbdVRCeKa-elD1tvvIJ0eJpaU3_DLIr5m3hiPDF4_cd93qViLoVweynaSIMuLaxZyleO_mAMmo5MEwI2zeB-3TJZUL5BNcx75xhCDn_XDJE2B9wjz5cHM-eHyTXu6C9LagG7SH3eLWdH9DU46_N90GNJolz_8Vnkvnm19Wg7K4Jm71UB4hF93nv7V0cM41q4xIsEir9vWDJhN8Xc93KA8cgNOmNWPRe5Jehg11JjGhE5Rs2luVMa0p9jfBu10ecIuuhsGKsxVpsHMZXizdEeOPL5rRdeDccIlt8HSYKDL1UnGfSDJa6gPQexGQ3IJT157YafNjkXLMiQO12x49HWUvmOoVgLv1LNZ-VynsKbu_RF5x7yudfqWsucqpenZ&originToLandingJobPostings=4397402247)
+
+[
+
+New Zealand (Remote)
+
+6 school alumni work here
+
+Posted 1 week ago
+
+](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&trackingId=Hv%2BZmxacIjJk6PDp11wwQA%3D%3D&currentJobId=4397402247&refId=SYuL7iCJSZHbSeV7KtZPsg%3D%3D&eBP=CwEAAAGeaQCcnqCOI233UJ94xkDcBUTupnZc2C9rt-hpLqpEgTec6hffokjNRwQWSVHTHBMap1jZJMWG3Zd18hFvOLxuJdze0Ff9llq3vN8cg7ojzvnwbdVRCeKa-elD1tvvIJ0eJpaU3_DLIr5m3hiPDF4_cd93qViLoVweynaSIMuLaxZyleO_mAMmo5MEwI2zeB-3TJZUL5BNcx75xhCDn_XDJE2B9wjz5cHM-eHyTXu6C9LagG7SH3eLWdH9DU46_N90GNJolz_8Vnkvnm19Wg7K4Jm71UB4hF93nv7V0cM41q4xIsEir9vWDJhN8Xc93KA8cgNOmNWPRe5Jehg11JjGhE5Rs2luVMa0p9jfBu10ecIuuhsGKsxVpsHMZXizdEeOPL5rRdeDccIlt8HSYKDL1UnGfSDJa6gPQexGQ3IJT157YafNjkXLMiQO12x49HWUvmOoVgLv1LNZ-VynsKbu_RF5x7yudfqWsucqpenZ&originToLandingJobPostings=4397402247)
+
+[See more jobs like this](https://www.linkedin.com/jobs/collections/similar-jobs/?referenceJobId=4418900170&currentJobId=4418900170)

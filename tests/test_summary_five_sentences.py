@@ -41,7 +41,7 @@ def test_enforce_moves_edu_from_lead_to_closing():
     )
     out = _enforce_summary_five_sentences(raw, "en")
     parts = _split_summary_sentences(out, "en")
-    assert len(parts) == SUMMARY_REQUIRED_SENTENCES
+    assert len(parts) == 5
     assert parts[-1] == SUMMARY_EDU_CLOSING_EN
     assert not _split_summary_sentences(parts[0], "en")[0].startswith("Master")
 
@@ -111,6 +111,6 @@ def test_generate_summary_android_five_sentences(profile):
 def test_generate_summary_zh_android_five_sentences(profile):
     text = generate_summary(profile, role_type="android", lang="zh")
     parts = _split_summary_sentences(text, "zh")
-    assert len(parts) == SUMMARY_REQUIRED_SENTENCES
+    assert len(parts) == 5
     assert "一等荣誉" in parts[-1]
     assert "AUT" in parts[-1] or "奥克兰理工" in parts[-1]

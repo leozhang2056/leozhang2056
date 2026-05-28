@@ -43,10 +43,10 @@ career_identity:
   
   summary_variants:
     default: >
-      Full-stack software engineer with 10+ years shipping production software across Android, Java backends, and Vue.js front ends.
-      Specialized in enterprise delivery—clear APIs, sensible integration, and releases that land when field conditions are messy.
-      Proven delivery spans industrial automation, mobile platforms, and applied AI from prototype through production support.
-      Additional expertise includes Spring Cloud, Docker, CI/CD discipline, and AI-assisted programming tools in daily delivery.
+      Full-stack software engineer with 10+ years shipping production software across Android, modern Java backends, and Vue.js front ends.
+      Specialized in enterprise delivery to diverse clients—clear APIs, sensible integration, and releases that land when field conditions are messy.
+      Proven delivery spans industrial automation, mobile platforms, applied computer vision, and AI/ML from prototype through production support.
+      Additional expertise includes Spring Cloud, Docker, CI/CD pipeline automation, software quality practices, and AI-assisted programming tools in daily delivery.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     android_focus: >

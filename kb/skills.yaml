@@ -318,6 +318,12 @@ backend:
     evidence:
       - JPA implementation
     
+  - name: FastAPI
+    level: intermediate
+    evidence:
+      - RESTful API server for AI model orchestration
+      - LLM integration endpoints
+
   - name: .NET
     level: intermediate
     years: 4

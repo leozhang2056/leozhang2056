@@ -74,16 +74,17 @@ def _parse_filename(path: Path) -> tuple[str, str]:
 
 
 def _read_jd_file(path: Path) -> Optional[str]:
-    """Read a JD text file, stripping metadata header lines (starting with #)."""
+    """Read a JD file and extract clean JD text (strips LinkedIn noise)."""
     try:
-        text = path.read_text(encoding="utf-8", errors="ignore")
-    except Exception as e:
-        print(f"  Error reading {path.name}: {e}")
+        from jd_extractor import extract_jd_from_file
+    except ImportError:
+        sys.path.insert(0, str(REPO_ROOT / "app" / "backend"))
+        from jd_extractor import extract_jd_from_file
+    clean = extract_jd_from_file(path)
+    if clean is None:
+        _sp(f"  Error reading {path.name}")
         return None
-    # Skip comment/metadata lines at the top
-    lines = text.splitlines()
-    body = [ln for ln in lines if not ln.startswith("#")]
-    return "\n".join(body).strip()
+    return clean
 
 
 async def run_batch_cv(

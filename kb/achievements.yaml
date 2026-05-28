@@ -103,6 +103,21 @@ professional_achievements:
     project: Smart Factory Platform
     description: Led 6-person cross-functional team
 
+  - metric: "Full"
+    unit: "CI/CD automation"
+    project: Smart Factory Platform
+    description: Automated build, test, and deployment pipelines via Jenkins + GitLab
+
+  - metric: "5+"
+    unit: "factory sites deployed"
+    project: Smart Factory Platform
+    description: Commissioned IoT hardware and production systems across multiple sites
+
+  - metric: "Direct"
+    unit: "client engagement"
+    project: Multiple projects
+    description: Regular on-site client collaboration to gather requirements, demo prototypes, and iterate on feedback
+
 publications:
   - title: "ChatClothes: Conversational Virtual Try-On with Diffusion Models"
     venue: "Image and Vision Computing New Zealand, IVCNZ 2025"

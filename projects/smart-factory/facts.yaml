@@ -58,6 +58,17 @@ highlights:
   - >-
     Regular internal tech talks anchored to real pilots or shipped tools: what customer pain was solved, what the tool is
     good at, and when not to use it; kept sessions short with Q&A so juniors heard the “why” before the first painful review thread
+  - >-
+    Direct client-facing engagement throughout the project lifecycle: walked factory floors to understand shop-floor pain
+    points with line supervisors and operators, presented prototypes for immediate feedback, and iterated requirements with
+    non-technical stakeholders to translate business needs into technical solutions
+  - >-
+    Deployed and maintained custom IoT hardware (RFID readers, electronic scales, proximity sensors, barcode scanners)
+    across 5+ production sites, including on-site commissioning, field debugging, and post-deployment support in
+    disconnected industrial environments
+  - >-
+    Scaled the smart factory platform from single-site pilot to 10+ factory deployments spanning multiple regions,
+    managing variant configurations, hardware differences, and site-specific workflows
 
 highlights_cn:
 - 设计并开发完整的智能工厂系统，采用多端架构

@@ -512,7 +512,12 @@ def _auto_keywords_from_jd(args) -> list[str]:
 
     if jd_file:
         print(f"Loading JD from file: {jd_file}")
-        text = load_jd_text_from_file(jd_file)
+        try:
+            from app.backend.jd_extractor import extract_jd_from_file
+            text = extract_jd_from_file(jd_file)
+        except ImportError:
+            from jd_extractor import extract_jd_from_file
+            text = extract_jd_from_file(jd_file)
         kws = extract_keywords_from_text(text) if text else []
         if kws:
             print(f"  Auto-extracted JD keywords: {kws}")

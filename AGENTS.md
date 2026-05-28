@@ -71,6 +71,7 @@ python generate.py interview --category technical
   python generate.py batch-cv --input jd_archive
   ```
   Place `.txt` or `.md` JD files in `Interview/NewJobs/`, then run. Each file gets processed and moved to `_processed/` when done.
+  - **LinkedIn markdown files**: `app/backend/jd_extractor.py` automatically strips YAML frontmatter, premium upsells, tracking URLs, and navigation noise to extract the real JD. Coverage improved from ~20% to ~46-92% after this fix.
 - Run tests:
 ```bash
 pytest
@@ -78,12 +79,16 @@ pytest
 
 ## Project-Specific Conventions
 - Non-negotiable anti-hallucination rule: only use facts from `kb/*.yaml` and `projects/*/facts.yaml` (see `kb/resume_generation_rules.md`, `kb/ai_input_spec.md`, `.cursorrules`).
-- If required facts are missing/conflicting, prefer explicit markers (`MISSING_INFO`, `FACT_CONFLICT`) over guessing.
+- If required facts are missing or conflicting, ask the user whether they have relevant experience or details to add before proceeding; do not guess.
 - Source priority for AI context assembly: `kb/profile.yaml` -> `kb/skills.yaml` -> `kb/project_relations.yaml` -> `projects/*/facts.yaml` -> `kb/bullets/*.yaml`.
 - Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
 - Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
 - Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
 - **Chunxiao career progression title rule**: The second stage "Senior Android Developer" must **never** be remapped to fullstack/backend equivalents (e.g. "Senior Full-Stack Developer", "Senior Backend Developer"). This stage was genuinely an Android development role and stays as "Senior Android Developer" in **all** role types. Identity mapping lives in `_PROGRESSION_TITLE_ROLE_MAP` in `generate_cv_from_kb.py`. The first stage "Team Lead & Full-stack Engineer" and third stage ".NET Software Engineer" keep their original titles as well.
+- AI usage habits:
+  - Read every diff the AI writes.
+  - Ask the AI to explain its choices.
+  - Treat the AI as a mentor that can be wrong.
 
 ## Integrations and Cross-Component Behavior
 - JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.

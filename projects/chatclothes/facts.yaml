@@ -91,6 +91,9 @@ tech_stack:
     - LLM (DeepSeek)
     - YOLO12n-LC
   
+  backend:
+    - FastAPI (RESTful API server for model orchestration and LLM integration)
+  
   platforms:
     - Dify (Workflow Orchestration)
     - ComfyUI (Visual Workflow)
@@ -111,6 +114,9 @@ tech_stack:
 features:
   - Natural language control via DeepSeek LLM
   - Dialogue-driven garment interaction
+  - RAG-based semantic search for domain-aware garment retrieval
+  - LLM-powered natural language to structured prompt translation
+  - Document-aware context injection for multi-turn conversation
   - YOLO12n-LC lightweight clothing classification
   - OOTDiffusion with LoRA fine-tuning
   - Enhanced pose alignment and hand generation
@@ -332,6 +338,8 @@ keywords:
   - Diffusion Models
   - OOTDiffusion
   - Computer Vision
+  - Visual Computing
+  - Visual Recognition
   - Edge AI
   - PyTorch
   - LoRA

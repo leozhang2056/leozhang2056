@@ -4,7 +4,7 @@
 
 version: 1
 policy:
-  summary_mode: locked_five_sentences
+  summary_mode: locked_six_sentences
   skills_mode: locked_lines
   jd_adjustment:
     - Keep the base wording as the source of truth.
@@ -16,9 +16,10 @@ roles:
   android:
     summary_sentences:
       en:
-        - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, Jetpack Compose, and modern Android architecture.
+        - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, and modern Android architecture.
         - Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across enterprise environments.
-        - Proven success delivering stable mobile platforms with performance optimization, CI/CD workflows, and backend system integration.
+        - Proven success delivering stable mobile platforms through performance optimization, CI/CD automation, and backend service integration.
+        - Experienced in technical design, code quality improvement, and translating complex product requirements into maintainable components.
         - Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows.
         - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
     key_skills:
@@ -66,10 +67,11 @@ roles:
   backend:
     summary_sentences:
       en:
-        - Backend software engineer with 10+ years of Java delivery experience across enterprise messaging, manufacturing, and long-running production systems.
-        - Specialized in Spring Cloud services, REST APIs, database-backed workflows, and practical integration across mobile, web, and operations tools.
-        - Proven delivery includes enterprise systems with stable release rhythm, performance tuning, and production support under real business constraints.
-        - Additional expertise includes CI/CD, database optimization, API contracts, observability-minded debugging, and AI-assisted programming tools.
+        - Backend software engineer with 10+ years of experience delivering Java systems across enterprise and production environments.
+        - Specialized in Spring Cloud services, REST APIs, and distributed applications with database-backed workflows.
+        - Proven delivery includes stable release cycles, performance tuning, and production support under real business constraints.
+        - Strong track record in service design, API integration, modern distributed architecture, engineering best practices, and operational ownership.
+        - Additional strengths include CI/CD, API contract design, agile delivery practices, observability-minded debugging, and AI-assisted development tools.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
@@ -78,7 +80,7 @@ roles:
         - label: Databases
           skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
         - label: DevOps & Release
-          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux]
+          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum]
         - label: API & Integration
           skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
         - label: Broader Stack
@@ -106,10 +108,11 @@ roles:
   fullstack:
     summary_sentences:
       en:
-        - Senior Full-Stack Software Engineer with 10+ years of experience architecting and delivering robust systems across backend (Java/Spring), mobile (Android/Kotlin), and web platforms.
-        - Specialized in responsive web applications and scalable microservices, with deep expertise in React, TypeScript, .NET, and Java ecosystems.
-        - Recently specialized in applied AI, completing a Master's thesis on diffusion models and building production-ready ML workflows from prototype through deployment.
-        - Proven ability to lead teams, optimize system performance, and translate complex requirements into scalable, maintainable software in Agile environments.
+        - Senior Full-Stack Software Engineer with 10+ years of experience delivering scalable backend, mobile, and web systems.
+        - Specialized in cloud-native microservices and responsive web applications using React, TypeScript, .NET, and Java ecosystems.
+        - Recently focused on applied AI, completing a Master's thesis on diffusion models and building production-ready ML workflows.
+        - Demonstrated impact through modern system design patterns, end-to-end feature delivery, and integration across connected multi-component platforms.
+        - Proven in system performance optimization, CI/CD automation, and high-quality software delivery across business and Agile environments.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
@@ -161,9 +164,10 @@ roles:
     summary_sentences:
       en:
         - AI engineer with 10+ years of software engineering experience across applied AI, computer vision, full-stack delivery, and Android systems.
-        - Specialized in building runnable AI workflows that connect models, APIs, local deployment constraints, and user-facing control surfaces.
-        - Proven work includes ChatClothes, a multimodal virtual try-on thesis project combining diffusion generation, garment classification, and local LLM control.
-        - Additional expertise includes API integration and AI-assisted programming workflows.
+        - Specialized in practical machine learning and AI automation workflows that connect models, APIs, and local deployment constraints.
+        - Built ChatClothes, a multimodal virtual try-on thesis project combining diffusion generation, garment classification, and local LLM control.
+        - Delivered production-ready pipelines with model integration, workflow orchestration patterns, and measurable improvements in quality and efficiency.
+        - Additional strengths include API integration, business-focused AI solutions, and AI-assisted development workflows for reliable end-to-end delivery.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:

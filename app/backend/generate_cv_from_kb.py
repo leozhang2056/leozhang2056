@@ -120,7 +120,7 @@ KB_VALIDATION_CACHE_FILE = ".kb_validation_cache.json"
 # 文本长度限制
 SUMMARY_MAX_CHARS_EN = 780
 SUMMARY_MAX_CHARS_ZH = 520
-SUMMARY_REQUIRED_SENTENCES = 5
+SUMMARY_REQUIRED_SENTENCES = 6
 SUMMARY_EDU_CLOSING_EN = (
     "Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology."
 )
@@ -845,6 +845,12 @@ def _skill_repeated_by_summary_jd(
     return False
 
 
+_JD_SENSITIVE_SKILLS = {
+    "react", "vue.js", "vue", "html5/css3", "html5", "css3",
+    "redux", "node.js", "node", "nuxtjs", "nuxt", "next.js", "next",
+    "svelte", "angular", "jquery",
+}
+
 def _base_template_skills_html(
     role_type: str,
     lang: str,
@@ -859,6 +865,8 @@ def _base_template_skills_html(
     if not isinstance(lines, list):
         return ""
 
+    kws_lower = {k.lower() for k in (jd_keywords or [])}
+
     rendered: List[str] = []
     for row in lines:
         if not isinstance(row, dict):
@@ -868,6 +876,13 @@ def _base_template_skills_html(
         if not label or not isinstance(skills, list):
             continue
         names = [str(s).strip() for s in skills if str(s).strip()]
+        if not names:
+            continue
+        if kws_lower:
+            names = [
+                s for s in names
+                if s.lower() in kws_lower or s.lower() not in _JD_SENSITIVE_SKILLS
+            ]
         if not names:
             continue
         rendered.append(
@@ -1030,16 +1045,16 @@ def _enforce_summary_five_sentences(text: str, lang: str) -> str:
             continue
         body.append(s)
 
-    while len(body) > 4:
-        # 去掉可能残留在句首的重复学历/过长 hook，保留后四句叙事
+    while len(body) > 5:
+        # 去掉可能残留在句首的重复学历/过长 hook，保留后五句叙事
         body.pop(0)
 
-    if len(body) < 4:
-        # variant 句数不足时不编造，仅保证第五句学历收口
+    if len(body) < 5:
+        # variant 句数不足时不编造，仅保证第六句学历收口
         ordered = body + [closing]
         return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
 
-    ordered = body[:4] + [closing]
+    ordered = body[:5] + [closing]
     return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
 
 
@@ -1339,10 +1354,10 @@ def generate_summary(
 
     # 开发岗弱化团队管理措辞（Summary 中尤其明显）
     def _strip_management_phrases(s: str) -> str:
-        # 英文常见管理表达
-        s = re.sub(r"\bteam leadership\b", "", s, flags=re.IGNORECASE)
-        s = re.sub(r"\bmanaging cross-functional teams?\b", "", s, flags=re.IGNORECASE)
-        s = re.sub(r"\bled cross-functional teams?\b", "", s, flags=re.IGNORECASE)
+        # 英文常见管理表达（优先匹配带逗号的完整短语，避免留下断句）
+        s = re.sub(r"\bteam leadership,?\s*", "", s, flags=re.IGNORECASE)
+        s = re.sub(r"\bmanaging cross-functional teams?,?\s*", "", s, flags=re.IGNORECASE)
+        s = re.sub(r"\bled cross-functional teams?,?\s*", "", s, flags=re.IGNORECASE)
         # 中文常见管理表达
         s = s.replace("团队管理", "")
         s = s.replace("带团队", "")
@@ -1355,6 +1370,25 @@ def generate_summary(
         return re.sub(r"[,;\s]+$", "", s)
 
     text = _strip_management_phrases(text)
+
+    # JD 未提及的前端技术从 summary 中移除（如 React, Vue.js, HTML5/CSS3）
+    def _strip_jd_unmatched_skills(s: str) -> str:
+        if not normed_kws:
+            return s
+        kw_set = {k.lower() for k in normed_kws}
+        for skill in _JD_SENSITIVE_SKILLS:
+            if skill in kw_set:
+                continue
+            # 从 "using X, Y, and Z" 类列表中移除
+            s = re.sub(rf"\b{re.escape(skill)},?\s*", "", s, flags=re.IGNORECASE)
+        # 清理 ", and" / "and ," / ", ," 等残留
+        s = re.sub(r",\s*,", ",", s)
+        s = re.sub(r",\s*and\b", " and", s)
+        s = re.sub(r"\band\s*,\s*", " and ", s)
+        s = re.sub(r"\s{2,}", " ", s)
+        return s.strip()
+
+    text = _strip_jd_unmatched_skills(text)
 
     # 去掉毕业时间/在读时间等教育时间线表达，保留岗位能力与业务亮点
     def _strip_grad_timeline(s: str) -> str:
@@ -3852,6 +3886,24 @@ def _extract_work_rights_text(profile: Dict, lang: str) -> str:
     personal_info = profile.get('personal_info', {})
     if not isinstance(personal_info, dict):
         return ""
+
+    # Try reading from visa_status (profile.yaml standard structure)
+    visa_status = personal_info.get('visa_status', {})
+    if isinstance(visa_status, dict) and visa_status:
+        v_type = visa_status.get('type')
+        v_rights = visa_status.get('work_rights')
+        if lang == 'zh':
+            zh_type = '毕业生工作签证' if v_type == 'Post-Study Work Visa' else (v_type or '')
+            zh_rights = '具备新西兰全职工作权利' if 'Open' in str(v_rights) else (v_rights or '')
+            if zh_type and zh_rights:
+                return f"{zh_rights} ({zh_type})"
+            return zh_rights or zh_type or ""
+        else:
+            if v_type and v_rights:
+                return f"Work Rights: {v_rights} ({v_type})"
+            return v_rights or v_type or ""
+
+    # Fallback to legacy resume_contact
     resume_contact = personal_info.get('resume_contact', {})
     if not isinstance(resume_contact, dict):
         return ""

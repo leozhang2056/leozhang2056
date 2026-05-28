@@ -336,6 +336,8 @@ def build_cover_letter_content(
                 f"{tagline} "
                 f"I am particularly interested in this opportunity because {culture_reason}"
             )
+            if "aut" in company_lower or "auckland university of technology" in company_lower:
+                opening += " As an AUT graduate, I am especially motivated by the opportunity to contribute to the university community through this role."
 
             # === Para 2: education/project evidence with linking sentence (Rule 4-5) ===
             body1_parts = []

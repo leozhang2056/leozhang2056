@@ -12,6 +12,8 @@
 
 | 文件 | 说明 |
 |------|------|
+| `interview_guide.md` | 面试流程指南：按开场、技术、行为、协作、学习、领导力拆分的快速准备清单 |
+| `AUT_NZ_career_resources.md` | AUT 职业资源与新西兰招聘周期指南（面试准备与时间节点） |
 | `index.yaml` | 库索引、使用指南、STAR 方法、准备清单 |
 | `behavioral_common_qa.md` | 行为面试完整口稿：Part 1 高频主答、Part 2 故事索引、Part 3 Q1-Q45、Part 4 速查与素材草稿 |
 | `technical.yaml` | 通用技术面试：自我介绍、职业转型、项目深挖、系统设计、AI/ML 等 |
