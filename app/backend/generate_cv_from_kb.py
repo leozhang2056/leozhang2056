@@ -3745,9 +3745,6 @@ def generate_html_from_kb(
     )
 
     contact_secondary = ""
-    work_rights_text = _extract_work_rights_text(profile, lang)
-    if work_rights_text:
-        contact_secondary = f'<div class="cv-contact-secondary">{html.escape(work_rights_text)}</div>'
 
     # 生成对齐文本（若提供公司信息则注入到 CV 里，以实现定制化输出）
     alignment_html_insert = ""
