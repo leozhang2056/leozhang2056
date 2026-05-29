@@ -1,0 +1,22 @@
+Associate Engineer - Mobile
+Westpac on Takutai Square
+Full time
+
+Mō te tūranga | About the Role
+To contribute collaboratively within a Digital squad to deliver high-quality, customer-focused digital experiences by performing hands-on engineering, following modern best practices, and supporting ongoing improvement, while actively engaging in continuous learning to strengthen technical capability.
+
+As an Associate Engineer in the Digital team, you will collaborate to contribute within your squad. You'll work alongside other Engineers, Designers, Architects, Craft Specialists, Principal Engineers, and key stakeholders around the bank to ensure we deliver amazing new digital experiences for our customers, build in-line with modern best practices, comply with our standards and policies, avoid technical debt, support and role model agreed work practices, and contribute to sprint goals.
+
+Team Contribution: Assist in code reviews, engage in discussions to understand requirements, design/develop/test new product features with support from senior engineers, actively participate in Agile practices, create and maintain technical documentation.
+
+Technical Expertise: Assist in conducting POCs, gain experience with Jira and Confluence, assist in troubleshooting production incidents, work collaboratively, participate in Unit Testing, engage in continuous learning, perform basic coding, use approved AI tools responsibly.
+
+Planning and Collaboration: Work collaboratively, demonstrate passion and energy, be adaptable, assist in designing/developing/testing/maintaining applications with focus on high availability and performance, debug and resolve technical problems, produce documentation throughout SDLC.
+
+Team Culture: Promote positive culture of learning, encourage open communication, build on process improvements, advocate for automation, share knowledge.
+
+Experience: Exposure to Kotlin OR Swift with willingness to learn others. Strong analytical and problem-solving skills. Ability to adapt to new technologies. Good communication skills. Ability to work independently and as part of a team. Strong desire to learn and grow.
+
+Skills and Knowledge: Familiarity with Agile, exposure to Jira and Confluence, familiarity with unit testing, basic understanding of React, TypeScript, Spring Boot, Java, Git, Docker, and Kotlin/Swift for mobile. Self-managed learning.
+
+Capabilities: Resilience, thoughtful decision-making, confidence to speak up, customer-centric mindset, operational mindset, builds relationships.

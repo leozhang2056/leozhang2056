@@ -717,6 +717,40 @@ def build_cover_letter_content(
                 "full-stack depth, and autonomous engineering mindset to Digital Generationz's "
                 "engineering team. Thank you for your time and consideration."
             )
+        elif 'westpac' in company_lower:
+            opening = (
+                "I am applying for the Associate Engineer - Mobile position at Westpac. "
+                "I am a software engineer with 10+ years of experience building production mobile "
+                "applications, most recently as a Senior Android Developer at Alibaba where I delivered "
+                "multiple high-impact Android apps using Kotlin and Java. "
+                "I am drawn to Westpac because it builds financial tools that millions of New "
+                "Zealanders rely on with confidence."
+            )
+            body1 = (
+                "I have strong hands-on experience with Kotlin and Java across multiple production "
+                "Android apps, including TaoBao (100M+ users), Youku (video streaming), and enterprise "
+                "apps at Alibaba. I am comfortable with the full mobile development lifecycle — from "
+                "architecture design and Jetpack Compose to CI/CD, unit testing, and production "
+                "incident resolution. "
+                "I also bring broader engineering skills across React, TypeScript, Git, Docker, and "
+                "Agile practices, and I actively use AI tools responsibly to accelerate development "
+                "while validating outputs and maintaining code quality."
+            )
+            body2 = (
+                "What attracts me to this role is the opportunity to contribute to meaningful "
+                "digital experiences in a collaborative, Agile environment while continuing to grow "
+                "my technical capability. I value clean code, modern best practices, and knowledge "
+                "sharing — and I am equally comfortable working independently on features or pairing "
+                "with senior engineers to debug complex problems. "
+                "I am based in Auckland, have full working rights, and am excited about building "
+                "reliable, customer-focused mobile experiences at Westpac."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my mobile engineering expertise, "
+                "collaborative mindset, and passion for continuous learning to Westpac's mobile "
+                "engineering team. Thank you for your time and consideration."
+            )
         else:
             company_lower = (company_name or '').strip().lower()
 
