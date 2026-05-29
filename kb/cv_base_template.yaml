@@ -29,7 +29,7 @@ roles:
         - label: Software Engineering
           skills: [Clean Architecture, Performance Optimization, Maintainability, Code Review, Cross-functional Collaboration]
         - label: Backend & APIs
-          skills: [Spring Cloud, RESTful APIs, MySQL, Redis]
+          skills: [Spring Cloud, RESTful APIs, MySQL, Redis, TypeScript]
         - label: Tools & DevOps
           skills: [Git, CI/CD, Docker, Jenkins, Agile/Scrum]
         - label: AI & Emerging Technologies
@@ -38,11 +38,11 @@ roles:
       technical_lead_2019_2024:
         priority: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, CI/CD, Gradle, NDK, MySQL, Redis, Spring Cloud]
         additional: [Kotlin, Android SDK, Jetpack Compose, MVVM, CI/CD]
-        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Boot, AWS, .NET Core, Python, SSL/TLS, Encryption, SSL Pinning]
+        exclude: [React, Redux, Node.js, Vue.js, Spring Boot, AWS, .NET Core, Python, SSL/TLS, Encryption, SSL Pinning]
       android_2015_2018:
         priority: [Kotlin, Java, Android SDK, Jetpack, MVVM, Gradle, WebSocket, CI/CD, NDK/JNI]
         additional: [Kotlin, Java, Android SDK, WebSocket]
-        exclude: [React, TypeScript, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS, MySQL, Redis, SSL/TLS, Encryption, SSL Pinning]
+        exclude: [React, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS, MySQL, Redis, SSL/TLS, Encryption, SSL Pinning]
       dotnet_2013_2014:
         priority: [C#, .NET, SQL Server, ASP.NET MVC]
         additional: [C#, .NET]
