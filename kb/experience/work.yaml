@@ -13,8 +13,8 @@ experiences:
     type: Education/Research
     
     achievements:
-      - "Completed MCIS at Auckland University of Technology (2025), delivering ChatClothes — an AI virtual try-on system with ComfyUI workflow orchestration"
-      - "Published diffusion-based virtual try-on research at IVCNZ 2025 (<a href=\"https://doi.org/10.1109/IVCNZ67716.2025.11281834\">DOI</a>)"
+      - "Completed MCIS thesis on diffusion-based virtual try-on (ChatClothes), published at IVCNZ 2025 (<a href=\"https://doi.org/10.1109/IVCNZ67716.2025.11281834\">DOI</a>)"
+      - "Collaborated with supervisors and peers to scope experiments, align milestones, and communicate research progress across multiple projects"
       - "Contributed as a summer research assistant on kiwifruit classification using hyperspectral imaging"
     
     tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, ComfyUI, Ollama, Raspberry Pi, LLM, Multimodal AI, AWS]
