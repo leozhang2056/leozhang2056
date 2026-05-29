@@ -211,6 +211,7 @@ _COMPANY_CULTURE_HOOKS = {
     'vista group': "it powers the moviegoer experience with innovative cinema software solutions used globally.",
     'kami': "it is an award-winning EdTech startup helping over 30 million teachers and students worldwide create more interactive learning experiences.",
     'engflow': "it helps developers save time by accelerating software builds and tests through distributed remote execution and caching.",
+    'digital generationz': "it is an agile digital venture building cutting-edge web infrastructure, automated media pipelines, and next-gen platform concepts.",
     'enable': "it simplifies pricing and rebate management with an intelligent, AI-powered platform used by companies globally.",
     'vector': "it is powering a smarter, cleaner energy future through cloud-native data platforms and AWS serverless technology.",
     'vts': "it is building the Diverge platform — a cloud-native energy data platform co-developed with AWS.",
@@ -239,6 +240,7 @@ _COMPANY_TEAMS = {
     'vista group': "Vista Group's engineering team",
     'kami': "Kami's engineering team",
     'engflow': "EngFlow's engineering team",
+    'digital generationz': "Digital Generationz's engineering team",
     'vector nz': "Vector Technology Services (VTS) engineering team",
     'vector': "Vector Technology Services (VTS) engineering team",
     'vts': "Vector Technology Services (VTS) engineering team",
@@ -678,6 +680,42 @@ def build_cover_letter_content(
                 "I would welcome the opportunity to contribute my .NET expertise, problem-solving "
                 "ability, and collaborative mindset to Enable's engineering team. "
                 "Thank you for your time and consideration."
+            )
+        elif 'digital generationz' in company_lower:
+            opening = (
+                "I am applying for the AI Automation Engineer & Full-Stack Developer position at "
+                "Digital Generationz. "
+                "I am a software engineer with 10+ years of experience building production systems "
+                "across Android, full-stack web, and .NET, and I recently completed my Master of "
+                "Computer and Information Sciences at AUT with First Class Honours. "
+                "I am drawn to Digital Generationz because it operates at the cutting edge of AI "
+                "automation, building fast and shipping high-impact infrastructure without "
+                "corporate legacy overhead."
+            )
+            body1 = (
+                "My experience maps directly to what you are building. I developed a generative AI "
+                "fashion system (ChatClothes) with diffusion models, CLIP embeddings, automated "
+                "curation pipelines, and modern React-based interfaces — work that earned a Best "
+                "Paper nomination at IVCNZ 2024. "
+                "I have also built automated content pipelines, REST APIs, and CI/CD infrastructure "
+                "across multiple projects, and I actively run local LLMs (Llama, Qwen) for daily "
+                "workflow automation. I do not just prompt — I understand model architecture, "
+                "data sovereignty, and how to write robust, maintainable code."
+            )
+            body2 = (
+                "Beyond AI, I bring full-stack engineering depth: Android development (multiple "
+                "production apps with millions of users), web ecosystems (React, TypeScript, "
+                "WordPress, Vue.js), and backend systems (C#/.NET, Python, SQL Server). "
+                "I have autonomous problem-solving instincts developed through years of building "
+                "end-to-end systems, and I enjoy taking ownership of complex problems and seeing "
+                "them through to production."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056), and "
+                "my ChatClothes paper and other projects are linked from my CV. "
+                "I would welcome the opportunity to contribute my AI automation expertise, "
+                "full-stack depth, and autonomous engineering mindset to Digital Generationz's "
+                "engineering team. Thank you for your time and consideration."
             )
         else:
             company_lower = (company_name or '').strip().lower()
