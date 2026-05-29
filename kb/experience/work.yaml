@@ -31,9 +31,9 @@ experiences:
     type: Full-time
     
     career_progression:
-      - title: Team Lead & Full-stack Engineer
+      - title: Full-stack Engineer
         period: "2019 – 2024"
-        focus: Full-stack Platform Delivery & Team Leadership
+        focus: Full-stack Platform Delivery
         achievements:
           - "Led delivery of an Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
           - "Led development of scalable real-time communication supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"

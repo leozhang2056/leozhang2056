@@ -488,7 +488,7 @@ def _remove_edge_terms(text: str) -> str:
 
     cleaned = re.sub(r"\s{2,}", " ", cleaned)
     cleaned = re.sub(r"\s+,", ",", cleaned)
-    cleaned = re.sub(r"\s+\.", ".", cleaned)
+    cleaned = re.sub(r"\s+\.(?!\w)", ".", cleaned)
     cleaned = re.sub(r"\(\s*\)", "", cleaned)
     cleaned = re.sub(r"[,;/]\s*[,;/]", ", ", cleaned)
     # 如果最终结尾没有句号，补一个句号，避免“被截断感”
@@ -539,7 +539,7 @@ def _strip_summary_low_signal(text: str, lang: str) -> str:
     s = re.sub(r"\s{2,}", " ", s)
     s = re.sub(r"\s+,", ",", s)
     s = re.sub(r",\s*,", ", ", s)
-    s = re.sub(r"\s+\.", ".", s)
+    s = re.sub(r"\s+\.(?!\w)", ".", s)
     s = re.sub(r"\s+。", "。", s)
     s = re.sub(r",\s*\band\b\s*(?:\.|$)", ".", s, flags=re.IGNORECASE)
     s = re.sub(r"，\s*以及\s*。", "。", s)
@@ -1365,7 +1365,7 @@ def generate_summary(
         # 清理多余空白/标点
         s = re.sub(r"\s+,", ",", s)
         s = re.sub(r"\s{2,}", " ", s)
-        s = re.sub(r"\s+\.", ".", s)
+        s = re.sub(r"\s+\.(?!\w)", ".", s)
         s = s.strip()
         return re.sub(r"[,;\s]+$", "", s)
 
@@ -1402,7 +1402,7 @@ def generate_summary(
         s = re.sub(r"(202[4-9]\s*年?\s*\d{0,2}\s*月?\s*毕业)", "", s)
         s = re.sub(r"\s{2,}", " ", s)
         s = re.sub(r"\s+,", ",", s)
-        s = re.sub(r"\s+\.", ".", s)
+        s = re.sub(r"\s+\.(?!\w)", ".", s)
         s = s.strip()
         return re.sub(r"[,;\s]+$", "", s)
 
@@ -1418,7 +1418,7 @@ def generate_summary(
         s = re.sub(r",\s*,", ", ", s)
         s = re.sub(r"\s{2,}", " ", s)
         s = re.sub(r"\s+,", ",", s)
-        s = re.sub(r"\s+\.", ".", s)
+        s = re.sub(r"\s+\.(?!\w)", ".", s)
         s = s.strip()
         return re.sub(r"[,;\s]+$", "", s)
 

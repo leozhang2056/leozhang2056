@@ -51,7 +51,7 @@ roles:
       companies:
         - name: Chunxiao Technology Co., Ltd.
           roles:
-            - Team Lead & Full-stack Engineer
+            - Full-stack Engineer
             - Senior Android Developer
             - .NET Software Engineer
         - name: Auckland University of Technology
@@ -67,20 +67,20 @@ roles:
   backend:
     summary_sentences:
       en:
-        - Backend software engineer with 10+ years of experience delivering Java systems across enterprise and production environments.
-        - Specialized in Spring Cloud services, REST APIs, and distributed applications with database-backed workflows.
+        - Backend software engineer with 10+ years of experience delivering enterprise systems in C#/.NET and Java across production environments.
+        - Specialized in .NET, REST APIs, and distributed applications with database-backed workflows.
         - Proven delivery includes stable release cycles, performance tuning, and production support under real business constraints.
         - Strong track record in service design, API integration, modern distributed architecture, engineering best practices, and operational ownership.
-        - Additional strengths include CI/CD, API contract design, agile delivery practices, observability-minded debugging, and AI-assisted development tools.
+        - Additional strengths include continuous integration and deployment pipelines, API contract design, agile delivery practices, and AI-assisted development tools.
         - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
         - label: Backend Engineering
-          skills: [Java, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
+          skills: [Java, C#/.NET, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
         - label: Databases
           skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
         - label: DevOps & Release
-          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum]
+          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum, CI/CD]
         - label: API & Integration
           skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
         - label: Broader Stack
@@ -91,7 +91,7 @@ roles:
       companies:
         - name: Chunxiao Technology Co., Ltd.
           roles:
-            - Team Lead & Full-stack Engineer
+            - Full-stack Engineer
             - Senior Android Developer
             - .NET Software Engineer
         - name: Auckland University of Technology
@@ -147,7 +147,7 @@ roles:
       companies:
         - name: Chunxiao Technology Co., Ltd.
           roles:
-            - Team Lead & Full-stack Engineer
+            - Full-stack Engineer
             - Senior Android Developer
             - .NET Software Engineer
         - name: Auckland University of Technology

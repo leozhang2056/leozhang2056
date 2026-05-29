@@ -364,6 +364,13 @@ frontend:
       - Web application development
       - UI implementation
 
+  - name: WordPress
+    level: intermediate
+    years: 2
+    evidence:
+      - Website development and custom theme configuration
+      - Content management system administration
+
   - name: Redux
     level: advanced
     evidence:
@@ -699,7 +706,7 @@ categorized_skills:
   
   backend_fullstack:
     label: "Backend & Full-Stack"
-    skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis]
+    skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis, WordPress]
   
   tools_devops:
     label: "Tools & DevOps"
@@ -761,6 +768,7 @@ skill_groups:
     - HTML/CSS
     - Node.js
     - Spring Cloud
+    - WordPress
     
   iot_hardware:
     - Android

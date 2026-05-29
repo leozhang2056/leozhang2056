@@ -200,6 +200,20 @@ _COMPANY_CULTURE_HOOKS = {
     'photon': "it ships quality mobile experiences at scale for global clients.",
     'younity': "it focuses on 'Real People, Real Outcomes' in financial technology.",
     'theta': "it combines technical depth with pragmatic delivery in consulting.",
+    'catch design': "it creates meaningful, inclusive, and impactful digital experiences for New Zealand's most recognised brands.",
+    'catch': "it creates meaningful, inclusive, and impactful digital experiences for New Zealand's most recognised brands.",
+    'henry schein one': "it is redefining dental care through intelligent practice management and AI-driven treatment.",
+    'henry schein': "it is redefining dental care through intelligent practice management and AI-driven treatment.",
+    'dexibit': "it helps visitor attractions make sense of their data through AI — from museums to zoos to theme parks.",
+    'accesso': "it serves over 1,000 venues across 30+ countries with technology that enhances the guest experience.",
+    'visa': "it operates the world's most sophisticated payment processing network, handling 65k+ secure transactions per second across 200+ countries.",
+    'whip around': "it is a Kiwi SaaS company helping fleets work smarter, safer, and more efficiently, now entering an exciting growth chapter with Accel-KKR investment.",
+    'vista group': "it powers the moviegoer experience with innovative cinema software solutions used globally.",
+    'kami': "it is an award-winning EdTech startup helping over 30 million teachers and students worldwide create more interactive learning experiences.",
+    'engflow': "it helps developers save time by accelerating software builds and tests through distributed remote execution and caching.",
+    'enable': "it simplifies pricing and rebate management with an intelligent, AI-powered platform used by companies globally.",
+    'vector': "it is powering a smarter, cleaner energy future through cloud-native data platforms and AWS serverless technology.",
+    'vts': "it is building the Diverge platform — a cloud-native energy data platform co-developed with AWS.",
 }
 
 _COMPANY_TEAMS = {
@@ -214,6 +228,21 @@ _COMPANY_TEAMS = {
     'photon': "Photon's Android team",
     'younity': "Younity's engineering team",
     'theta': "Theta's consulting team",
+    'catch design': "Catch Design's development team",
+    'catch': "Catch Design's development team",
+    'henry schein one': "Henry Schein One's development team",
+    'henry schein': "Henry Schein One's development team",
+    'dexibit': "Dexibit's engineering team",
+    'accesso': "accesso's engineering team",
+    'visa': "Visa Spend Clarity's engineering team",
+    'whip around': "Whip Around's engineering team",
+    'vista group': "Vista Group's engineering team",
+    'kami': "Kami's engineering team",
+    'engflow': "EngFlow's engineering team",
+    'vector nz': "Vector Technology Services (VTS) engineering team",
+    'vector': "Vector Technology Services (VTS) engineering team",
+    'vts': "Vector Technology Services (VTS) engineering team",
+    'enable': "Enable's engineering team",
 }
 
 def build_cover_letter_content(
@@ -300,6 +329,354 @@ def build_cover_letter_content(
                 "learning new tools and frameworks as AI technologies evolve. "
                 "I would welcome the opportunity to contribute my technical background, problem-solving ability, "
                 "and hands-on development experience to The Warehouse Group's Data and AI team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'catch' in company_lower or 'catch design' in company_lower:
+            opening = (
+                "I am applying for the Senior Full-Stack Developer position at Catch Design. "
+                "I am a full-stack software engineer with 10+ years of experience delivering "
+                "end-to-end solutions across backend services, mobile applications, and web frontends, "
+                "and I recently completed my Master of Computer and Information Sciences at AUT "
+                "with First Class Honours. "
+                "I am particularly interested in Catch Design because it creates meaningful, inclusive, "
+                "and impactful digital experiences for New Zealand's most recognised brands."
+            )
+            body1 = (
+                "What I enjoy most about full-stack development is owning a feature from database "
+                "to UI — designing the data model, building the API, wiring the business logic, "
+                "and shaping the user interface into something people actually use. "
+                "My recent work on an Enterprise Messaging Platform is a good example: "
+                "I engineered the NDK TCP/UDP transport layer handling sub-200ms latency for 5,000 DAU, "
+                "while also building the Android client, coordinating with backend teams on API contracts, "
+                "and delivering the full feature set across the stack. "
+                "Earlier in my career I also built and maintained WordPress-based websites (2013–2015), "
+                "which gave me early exposure to CMS workflows, theme customisation, and the iterative "
+                "nature of web delivery."
+            )
+            body2 = (
+                "What particularly attracts me to Catch Design is the emphasis on cross-functional "
+                "collaboration with designers, strategists, and project managers — that reflects how "
+                "I naturally work. I have contributed to technical scoping, estimation, and solution "
+                "architecture across multiple client-facing projects, and I enjoy translating business "
+                "requirements into maintainable, scalable applications. "
+                "With a background spanning Java, .NET, Python, Node.js, React, Vue.js, and Android, "
+                "I bring the breadth to contribute across Catch's full technology stack while also "
+                "deepening expertise in areas like cloud infrastructure, CI/CD, and automated testing."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056) and my "
+                "portfolio (github.com/leozhang2056#-featured-projects), including my Master's thesis "
+                "project ChatClothes — an AI virtual try-on system — which was accepted at IVCNZ 2025. "
+                "I would welcome the opportunity to contribute my technical background, full-stack "
+                "experience, and collaborative mindset to Catch Design's development team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'henry schein' in company_lower:
+            opening = (
+                "I am applying for the Senior Developer position at Henry Schein One. "
+                "I am a backend software engineer with 10+ years of experience designing, building, "
+                "and maintaining production systems in C#/.NET and Java, and I recently completed "
+                "my Master of Computer and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in Henry Schein One because it is redefining dental care "
+                "through intelligent practice management and AI-driven treatment."
+            )
+            body1 = (
+                "What draws me to this role is the emphasis on solving real problems rather than "
+                "simply taking tickets — that is how I have always worked. Across my career I have "
+                "delivered full-stack solutions in .NET, Spring Cloud, and Android environments, "
+                "from low-level NDK transport layers handling sub-200ms latency for 5,000 DAU to "
+                "microservice backends supporting smart factory operations across 10+ sites. "
+                "I have worked extensively with SQL Server, MySQL, and PostgreSQL, and I bring "
+                "deep experience with CI/CD pipelines, code review, and mentoring less experienced "
+                "engineers through technical guidance and architectural decisions."
+            )
+            body2 = (
+                "Henry Schein One's blend of modern tools (.NET, C#, Azure) with legacy system "
+                "modernisation particularly appeals to me — I have spent years working across both "
+                "new platforms and established codebases, and I understand the discipline required "
+                "to improve a product incrementally without breaking what customers depend on. "
+                "I also share the company's value that 'Each Person is as Important as the Next', "
+                "and I have consistently fostered open communication and collaboration in every team "
+                "I have been part of."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my technical background, .NET experience, "
+                "and collaborative mindset to Henry Schein One's development team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'dexibit' in company_lower or 'accesso' in company_lower:
+            opening = (
+                "I am applying for the Senior Software Engineer position at accesso (Dexibit). "
+                "I am a full-stack software engineer with 10+ years of experience across Java, Python, "
+                "TypeScript, and React, and I recently completed my Master of Computer and Information "
+                "Sciences at AUT with First Class Honours — where my thesis focused on AI-driven "
+                "virtual try-on using diffusion models and LLM integration. "
+                "I am particularly interested in Dexibit because it helps visitor attractions make "
+                "sense of their data through AI, and I love the combination of deep data engineering "
+                "with agentic interfaces that real users interact with."
+            )
+            body1 = (
+                "What excites me about this role is the depth of the technical problems — from "
+                "streaming and context window management to tool orchestration and sandboxed execution. "
+                "In my Master's project ChatClothes I built exactly this kind of system: an AI agent "
+                "that orchestrated ComfyUI workflows, managed local LLM context, and exposed "
+                "a FastAPI interface for real-time inference. Before that, I engineered production "
+                "systems handling 5,000 DAU with sub-200ms messaging latency, and smart factory "
+                "platforms across 10+ sites using Java microservices, PostgreSQL, and cloud-native "
+                "infrastructure on AWS and Docker."
+            )
+            body2 = (
+                "I am particularly drawn to Dexibit's product-minded culture — the emphasis on "
+                "understanding the 'why', breaking complex problems into simple solutions, and "
+                "mentoring naturally through design decisions and code review. "
+                "That reflects exactly how I work. I also value the team's use of modern AI tooling "
+                "(Claude Code, Codex) in daily development, which aligns with my own workflow."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056), "
+                "including the ChatClothes project which demonstrates full-stack AI system delivery "
+                "from model orchestration to web interface. "
+                "I would welcome the opportunity to contribute my technical depth, product-minded approach, "
+                "and collaborative mindset to Dexibit's engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'visa' in company_lower:
+            opening = (
+                "I am applying for the Full Stack Senior Developer position at Visa Spend Clarity. "
+                "I am a full-stack software engineer with 10+ years of experience building production "
+                "systems in .NET, C#, Java, and React, and I recently completed my Master of Computer "
+                "and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in Visa because it operates the world's most sophisticated "
+                "payment processing network, and I want to contribute to building scalable, reliable "
+                "financial technology that impacts billions of people."
+            )
+            body1 = (
+                "This role's focus on .NET, C#, React, and AWS cloud-native development maps directly "
+                "to my experience. I have delivered enterprise .NET systems including a SaaS platform "
+                "serving 10+ manufacturing sites with SQL Server backend and REST APIs, and I have "
+                "contributed to React and TypeScript frontends with CI/CD pipelines on AWS. "
+                "I practise TDD, code review, and SOLID principles as part of my daily workflow, "
+                "and I have mentored engineers through technical guidance and architectural decisions "
+                "across multiple teams."
+            )
+            body2 = (
+                "What particularly attracts me to this role is Visa's emphasis on technical excellence "
+                "combined with product-minded delivery. I thrive in cross-functional scrum teams where "
+                "I can own features end-to-end — from technical design and API contracts through to "
+                "testing, deployment, and production support. "
+                "I also bring experience working in regulated enterprise environments and balancing "
+                "commercial considerations with robust engineering practices."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my .NET full-stack expertise, "
+                "cloud development experience, and collaborative mindset to Visa Spend Clarity's "
+                "engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'whip' in company_lower:
+            opening = (
+                "I am applying for the Full Stack Engineer position at Whip Around. "
+                "I am a full-stack software engineer with 10+ years of experience building "
+                "production web applications using React, TypeScript, Java, Python, and .NET, "
+                "and I recently completed my Master of Computer and Information Sciences at AUT "
+                "with First Class Honours. "
+                "I am particularly interested in Whip Around because it is a Kiwi SaaS company "
+                "entering an exciting growth chapter, and I want to help shape what's next — from "
+                "new product experiences to scalable systems and AI-driven improvements."
+            )
+            body1 = (
+                "What draws me to this role is the emphasis on product impact and developer empowerment "
+                "rather than just sprint delivery. Throughout my career I have shipped full-stack features "
+                "that real users depend on daily — from an enterprise messaging platform handling 5,000 DAU "
+                "with sub-200ms latency, to IoT dashboards serving factory operators across 10+ sites. "
+                "I bring strong React and TypeScript experience on the front end, and while I have not "
+                "worked professionally with PHP/Laravel, I have deep backend experience in Java, Python, "
+                "C#/.NET, and Node.js, and I am confident picking up new languages and frameworks quickly."
+            )
+            body2 = (
+                "I am particularly excited about Whip Around's investment in AI (generative + agentic) "
+                "to improve both product and developer experience — my Master's thesis involved building "
+                "an AI agent that orchestrated diffusion models and LLMs, and I use AI coding tools "
+                "(Claude Code, Copilot) daily in my development workflow. "
+                "I also share the team's values of growth, ownership, and manaakitanga, and I thrive "
+                "in environments where engineers are encouraged to experiment, improve systems, and "
+                "solve real customer problems."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056), "
+                "including full-stack projects and my AI thesis work. "
+                "I would welcome the opportunity to contribute my full-stack experience, "
+                "product-minded approach, and builder mentality to Whip Around's engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'vista' in company_lower:
+            opening = (
+                "I am applying for the Graduate Software Engineer position at Vista Group. "
+                "I recently completed my Master of Computer and Information Sciences at Auckland "
+                "University of Technology with First Class Honours, where my thesis focused on "
+                "building an AI-driven virtual try-on system accepted at IVCNZ 2025. "
+                "I am particularly interested in Vista Group because it powers the moviegoer "
+                "experience with innovative cinema software used globally, and I want to apply "
+                "my technical skills in a collaborative, product-focused team."
+            )
+            body1 = (
+                "During my Master's I designed and built ChatClothes, a full-stack AI system "
+                "combining diffusion models, LLM integration, and a FastAPI backend with React "
+                "frontend — giving me hands-on experience with Python, TypeScript, REST APIs, "
+                "and cloud deployment on AWS. I also bring prior industry experience across "
+                "C#/.NET, SQL Server, Java, and React from 10+ years of software engineering, "
+                "which means I can contribute meaningfully from day one while continuing to "
+                "learn and grow within Vista's tech stack."
+            )
+            body2 = (
+                "What attracts me to Vista Group is the culture of 'good things with good people' "
+                "and the shared standards of One Crew, Make it Happen, and Chase Great. "
+                "I value strong mentoring and career development, and I am genuinely excited "
+                "about the opportunity to work with C#, .NET, React, and cloud technologies "
+                "in a domain as creative and impactful as cinema technology."
+            )
+            closing = (
+                "Examples of my work, including ChatClothes, are available on GitHub "
+                "(github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my technical skills, fresh "
+                "perspective, and collaborative mindset to Vista Group's engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'kami' in company_lower:
+            opening = (
+                "I am applying for the Senior Full-Stack Developer position at Kami. "
+                "I am a full-stack software engineer with 10+ years of experience building "
+                "web applications using JavaScript, TypeScript, React, Vue.js, Java, and Python, "
+                "and I recently completed my Master of Computer and Information Sciences at AUT "
+                "with First Class Honours. "
+                "I am particularly interested in Kami because it is an award-winning EdTech startup "
+                "that helps over 30 million teachers and students worldwide, and I want to contribute "
+                "to a product that makes a real difference in education."
+            )
+            body1 = (
+                "This role's emphasis on front-end engineering with product sense aligns closely "
+                "with my strengths. I have built large single-page applications using React and Vue.js, "
+                "worked extensively with JavaScript, TypeScript, HTML, and CSS, and profiled and "
+                "optimised front-end performance using Chrome Developer Tools. "
+                "On the backend side, I bring Java, Python, Node.js, PostgreSQL, and REST API design "
+                "experience — so I can contribute across the full stack while leaning into the "
+                "front-end depth this role requires."
+            )
+            body2 = (
+                "What particularly attracts me to Kami is the culture of talking directly to customers "
+                "and designing solutions based on real user needs — not just implementing spec sheets. "
+                "Throughout my career I have worked closely with product teams and end users to shape "
+                "features, and I thrive in environments where engineers are trusted to make product "
+                "decisions. "
+                "Kami's mission of helping educators create better learning outcomes resonates with me, "
+                "and I would be proud to work on technology that reaches millions of students and teachers."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my front-end depth, full-stack breadth, "
+                "and product-minded approach to Kami's engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'engflow' in company_lower:
+            opening = (
+                "I am applying for the Implementation Engineer position at EngFlow. "
+                "I am a software engineer with 10+ years of experience building and optimising "
+                "complex systems across Java, Python, and C#/.NET, with deep expertise in "
+                "Linux environments, Docker, AWS, and CI/CD pipelines. "
+                "I am particularly interested in EngFlow because it helps developers save time "
+                "by accelerating builds and tests — a problem I have personally experienced "
+                "and cared about throughout my career."
+            )
+            body1 = (
+                "In my previous roles, I have been responsible for developer workflows, build "
+                "pipeline optimisation, and cross-team technical coordination. I have implemented "
+                "CI/CD pipelines with Jenkins, Docker, and GitHub Actions, managed Linux-based "
+                "production infrastructure, and mentored engineers on build practices and tooling. "
+                "While I have not worked directly with Bazel, I have strong experience with "
+                "build systems (Maven, Gradle, MSBuild) and a deep understanding of the "
+                "challenges EngFlow solves — slow builds, dependency management, distributed "
+                "caching, and developer productivity."
+            )
+            body2 = (
+                "What attracts me to this role is the blend of technical depth and customer "
+                "engagement. I enjoy troubleshooting complex issues, writing clear documentation, "
+                "and helping teams adopt better practices — I have regularly partnered with "
+                "product, QA, and operations teams to plan releases, manage risk, and improve "
+                "delivery predictability. "
+                "EngFlow's fully remote culture and async communication style also align well "
+                "with how I work effectively across distributed teams."
+            )
+            closing = (
+                "I would welcome the opportunity to contribute my technical breadth, customer-focused "
+                "mindset, and passion for developer productivity to EngFlow's team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'vector' in company_lower or 'vts' in company_lower:
+            opening = (
+                "I am applying for the Senior Software Developer position at Vector Technology Services. "
+                "I am a backend software engineer with 10+ years of experience building production "
+                "systems in Java, Spring Cloud, and AWS, and I recently completed my Master of "
+                "Computer and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in VTS because it is building the Diverge platform — "
+                "a cloud-native energy data platform co-developed with AWS — and I want to contribute "
+                "to meaningful work that powers a smarter, cleaner energy future."
+            )
+            body1 = (
+                "This role's focus on Java, Spring, and AWS serverless technologies maps directly "
+                "to my core expertise. I have architected and delivered Spring Cloud microservices "
+                "for smart factory platforms across 10+ sites, designed REST APIs with database-backed "
+                "workflows, and deployed containerised applications on AWS. "
+                "I practise TDD, CI/CD, and clean architecture as part of my daily workflow, "
+                "and I have experience with infrastructure-as-code concepts through Docker and "
+                "automated deployment pipelines."
+            )
+            body2 = (
+                "What attracts me to VTS is the engineer-led culture that emphasises XP techniques "
+                "like TDD and pair programming, combined with the opportunity to work on a global-scale "
+                "platform in collaboration with AWS. "
+                "I thrive in stable, product-focused agile teams where I have a voice in what we build "
+                "and how we build it, and I am equally passionate about mentoring others and helping "
+                "the team improve its engineering practices."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my Java and AWS expertise, "
+                "product-focused mindset, and collaborative approach to VTS's engineering team. "
+                "Thank you for your time and consideration."
+            )
+        elif company_lower == 'enable':
+            opening = (
+                "I am applying for the Experienced Engineer position at Enable. "
+                "I am a software engineer with 10+ years of experience building production "
+                "systems in C#/.NET, ASP.NET, and SQL Server, and I recently completed my "
+                "Master of Computer and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in Enable because it simplifies pricing and rebate "
+                "management with an intelligent platform that helps companies increase profitability "
+                "and operate at speed."
+            )
+            body1 = (
+                "This role's focus on .NET, C#, ASP.NET Core, and T-SQL maps directly to my "
+                "core expertise. I have delivered enterprise .NET systems including a SaaS platform "
+                "with SQL Server backend, REST APIs, and CI/CD pipelines. I write clean, maintainable, "
+                "performant code and practise code review, TDD, and agile methodologies as part of "
+                "my daily workflow. "
+                "I also bring TypeScript, JavaScript, HTML, and CSS experience from building "
+                "full-stack web applications with React and Vue.js."
+            )
+            body2 = (
+                "What attracts me to Enable is the combination of a well-funded, fast-growing company "
+                "($291M in funding) with the opportunity to work on a product that solves real business "
+                "problems for global clients. "
+                "I am equally comfortable working independently or collaborating in a team, and I "
+                "enjoy mentoring others, participating in code reviews, and contributing to a "
+                "high-performance engineering culture."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056). "
+                "I would welcome the opportunity to contribute my .NET expertise, problem-solving "
+                "ability, and collaborative mindset to Enable's engineering team. "
                 "Thank you for your time and consideration."
             )
         else:

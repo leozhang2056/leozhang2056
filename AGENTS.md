@@ -58,7 +58,7 @@ python generate.py interview --category technical
   ```
   The script automatically starts a Playwright-managed Chrome with your profile,
   so your LinkedIn session is preserved. No need to start Chrome manually first.
--   After each `cv` run, the generator prints a **post-generation check** (fluency heuristics, HTML layout signals, JD keyword coverage) and writes `*_POST_CHECK.md` next to the PDF. Use `python generate.py cv ... --no-post-check` to skip.
+-   After each `cv` run, the generator prints a **post-generation check** (fluency heuristics, HTML layout signals, JD keyword coverage) and writes `*_POST_CHECK.md` next to the PDF. Use `python generate.py cv ... --no-post-check` to skip. Delete `*_POST_CHECK.md` and `.html` files after generation (keep only PDFs).
 - **Batch CV generation** (from saved JD files):
   ```bash
   # Generate CVs for ALL JD files in Interview/NewJobs/ (auto-detects role)
@@ -72,7 +72,10 @@ python generate.py interview --category technical
   ```
   Place `.txt` or `.md` JD files in `Interview/NewJobs/`, then run. Each file gets processed and moved to `_processed/` when done.
   - **LinkedIn markdown files**: `app/backend/jd_extractor.py` automatically strips YAML frontmatter, premium upsells, tracking URLs, and navigation noise to extract the real JD. Coverage improved from ~20% to ~46-92% after this fix.
-- Run tests:
+## Workflow Preference
+- For each JD, generate **both CV and CL** (cover letter), always with `--company` flag.
+- After generating, delete intermediate `.html` and `*_POST_CHECK.md` files — keep only PDFs.
+- - Run tests:
 ```bash
 pytest
 ```
