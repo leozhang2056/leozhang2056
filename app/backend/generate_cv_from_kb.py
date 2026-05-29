@@ -2426,10 +2426,10 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
     # Target specific roles for Android focus
     if role_type in ["android"]:
         out = title
-        # "Technical Lead & Full-stack Engineer" -> "Technical Lead & Senior Android Engineer"
-        out = out.replace("Full-stack Engineer", "Senior Android Engineer")
-        out = out.replace("Full-stack Developer", "Senior Android Developer")
-        out = out.replace("Full-stack", "Android")
+        # Keep "Full-stack Engineer" as-is per user preference (most recent Chunxiao title stays fullstack)
+        # Only remap "Senior Android Developer" and other Android-specific titles
+        out = out.replace("Full-stack Developer", "Android Developer")
+        out = out.replace("Senior Android Developer", "Senior Android Developer")
         out = out.replace("Fullstack", "Android")
         return out
 
@@ -2586,6 +2586,10 @@ def _render_career_progression_html(
             achievements = []
         if not isinstance(tech_stack, list):
             tech_stack = []
+        
+        # Cap achievements per stage to keep CV within 2 pages
+        MAX_ACHIEVEMENTS_PER_STAGE = 4
+        achievements = achievements[:MAX_ACHIEVEMENTS_PER_STAGE]
         
         # Apply role-specific tech_stack ordering from cv_base_template
         tech_stack = _apply_role_tech_stack_order(tech_stack, role_type, title, period)
