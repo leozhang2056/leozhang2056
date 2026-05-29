@@ -2648,6 +2648,9 @@ def _render_aut_research_html(
     if not isinstance(tech_stack, list):
         tech_stack = []
     
+    # Cap AUT achievements to keep CV compact
+    achievements = achievements[:3]
+    
     loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
     company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
     company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
