@@ -80,7 +80,7 @@ roles:
         - label: Databases
           skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
         - label: DevOps & Release
-          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum, CI/CD]
+          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum, CI/CD, Azure]
         - label: API & Integration
           skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
         - label: Broader Stack
