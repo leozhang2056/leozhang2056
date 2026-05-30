@@ -4094,8 +4094,17 @@ def _highlight_keywords_in_html(html_content: str, keywords: List[str]) -> str:
         return out
 
     result_parts: List[str] = []
+    skip_tags = {"style", "title", "script"}
+    in_skip_block = False
     for part in tags_and_text:
         if part.startswith("<") and part.endswith(">"):
+            tag_name = re.sub(r"<[/]?(\w+).*", r"\1", part).strip().lower()
+            if tag_name in skip_tags and not part.startswith("</"):
+                in_skip_block = True
+            elif part.startswith("</") and tag_name in skip_tags:
+                in_skip_block = False
+            result_parts.append(part)
+        elif in_skip_block:
             result_parts.append(part)
         else:
             result_parts.append(_highlight_text_segment(part))
@@ -4478,6 +4487,13 @@ async def generate_cv_from_kb(
     )
 
     html_en_path = en_path.replace('.pdf', '.html')
+    # Bold JD keywords in main CV when JD is provided
+    if safe_jd_keywords:
+        cv_text = _strip_html_tags(html_en)
+        jd_hits = sorted(set(_keyword_hits_in_text(cv_text, safe_jd_keywords)))
+        if jd_hits:
+            html_en = _highlight_keywords_in_html(html_en, jd_hits)
+            html_en = html_en.replace('</head>', '<style>mark.jd-hit{font-weight:700;background:transparent;color:inherit;padding:0}</style></head>')
     with open(html_en_path, 'w', encoding='utf-8') as f:
         f.write(html_en)
     print(f"  EN HTML → {html_en_path}")
