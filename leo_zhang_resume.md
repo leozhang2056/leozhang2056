@@ -158,14 +158,20 @@ Built media transcoding pipeline (H.264/AAC) supporting RTMP/HLS multi-protocol 
 
 ---
 
-### Summary A — Auckland University of Technology (Jul 2024 – Feb 2026)
+### Summary A — AI Researcher / Master's (AUT, Jul 2024 – Feb 2026)
 
-Conducted Master's research in Computer and Information Sciences, focusing on AI, computer vision, and LLM integration. Developed a multimodal virtual try-on system combining diffusion models, image classification, and local LLM orchestration, optimized for resource-constrained hardware. Built an IoT sensor monitoring system streaming real-time data to LLM for personalized recommendations. Completed thesis ahead of schedule with a working demo and published research at an international conference. Awarded First Class Honours for academic performance and research output.
+Completed Master's thesis on diffusion-based virtual try-on (ChatClothes), published at IVCNZ 2025. Collaborated with supervisors and peers to scope experiments, align milestones, and communicate research progress. Contributed as a summer research assistant on kiwifruit classification using hyperspectral imaging. Awarded First Class Honours.
 
 ---
 
 ### Summary B — Chunxiao Technology Co., Ltd. (Jul 2013 – Feb 2024)
 
-Progressed from Software Engineer to Team Lead over an 11-year tenure, delivering enterprise solutions across Android, Java backend, and IoT platforms. Led the design and deployment of a smart manufacturing system rolled out to multiple factory sites, integrating hardware devices and maintaining long-running production stability. Built and maintained an enterprise messaging platform with low-latency Android clients and scalable backend services. Led code review, technical debt reduction, and version control workflows; coordinated cross-functional releases in Agile teams. Managed app deployment to Google Play and domestic app stores with multi-channel distribution strategies.
+Senior Software Developer with 11 years delivering enterprise solutions across Android, Java backend, and IoT. Led a smart factory platform (Spring Cloud, Docker/Jenkins CI/CD) across 5+ factory sites with 30%+ efficiency gain. Built an enterprise messaging platform supporting 5,000 DAU with sub-200ms latency. Shipped 8+ Android apps, built modular architecture reused across 12+ projects, and reduced OOM crashes through memory optimization. Earlier work included a media transcoding pipeline (H.264/AAC, RTMP/HLS) and production infrastructure management. Partnered with product, QA, and operations in Agile teams.
+
+---
+
+### Summary C — Chunxiao (Android Focus)
+
+Senior Android Developer with 10+ years of experience building production Android applications using Kotlin and Java. Collaborated closely with product managers, QA, and backend teams to define requirements, align API contracts, and deliver reliable mobile experiences. Mentored junior engineers through code reviews and technical guidance. Adapted to Android fragmentation across OEM devices through targeted testing and issue triage. Worked in Agile teams with regular sprint planning, stand-ups, and retrospectives.
 
 ---

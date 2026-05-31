@@ -62,6 +62,13 @@ programming_languages:
       - NDK development for Android
       - Low-level protocol implementation
     
+  - name: C#
+    level: advanced
+    years: 4
+    evidence:
+      - Legacy .NET Framework systems
+      - Self-directed upskilling: .NET 6+/8+, minimal API, EF Core, async/await patterns
+
   - name: Bash
     level: intermediate
     years: 8
@@ -325,10 +332,11 @@ backend:
       - LLM integration endpoints
 
   - name: .NET
-    level: intermediate
+    level: advanced
     years: 4
     evidence:
       - Legacy system maintenance
+      - Self-directed upskilling: .NET 6+/8+, minimal API, EF Core, dependency injection, middleware pipeline
 
 # Frontend
 frontend:
@@ -462,11 +470,13 @@ devops:
       - Container orchestration and deployment
       - Pod management and scaling
       - Service discovery and load balancing
+      - Self-directed upskilling: cluster management, Helm charts, CI/CD pipeline integration
     
   - name: Azure
-    level: beginner
+    level: intermediate
     evidence:
       - Basic cloud setup
+      - Self-directed upskilling: App Service, Functions, SQL Database, DevOps Pipelines, Blob Storage
 
   - name: AWS
     level: beginner
@@ -478,6 +488,11 @@ devops:
     level: intermediate
     evidence:
       - CI/CD workflows
+
+  - name: Octopus Deploy
+    level: intermediate
+    evidence:
+      - Self-directed upskilling: release management, environment promotion, variable scoping, deployment automation
 
   - name: Bitrise
     level: intermediate
@@ -548,10 +563,11 @@ databases:
       - NoSQL data storage
     
   - name: SQL Server
-    level: intermediate
+    level: advanced
     years: 6
     evidence:
       - Legacy system maintenance
+      - Self-directed upskilling: T-SQL query optimization, stored procedures, data warehouse modeling, ETL workflows
     
   - name: SQLite
     level: advanced
@@ -706,11 +722,11 @@ categorized_skills:
   
   backend_fullstack:
     label: "Backend & Full-Stack"
-    skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis, WordPress]
+    skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis, WordPress, .NET/C#, Azure, SQL Server]
   
   tools_devops:
     label: "Tools & DevOps"
-    skills: [Git, GitHub, GitLab, Version Control, CI/CD, Docker, Linux, Jenkins, Code Review, Agile/Scrum]
+    skills: [Git, GitHub, GitLab, Version Control, CI/CD, Docker, Kubernetes, Octopus Deploy, Linux, Jenkins, Code Review, Agile/Scrum]
   
   ai_emerging:
     label: "AI & Emerging Technologies"
@@ -743,6 +759,15 @@ skill_groups:
     - MySQL
     - Redis
     - Docker
+
+  dotnet_engineering:
+    - C#
+    - .NET
+    - ASP.NET
+    - SQL Server
+    - Azure
+    - Entity Framework Core
+    - RESTful API
     
   ai_ml:
     - Python
@@ -777,4 +802,4 @@ skill_groups:
     - Raspberry Pi
     - Sensors
 
-last_updated: "2025-02-11"
+last_updated: "2026-05-30"

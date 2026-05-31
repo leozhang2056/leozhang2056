@@ -67,26 +67,37 @@ roles:
   backend:
     summary_sentences:
       en:
-        - Backend software engineer with 10+ years of experience delivering enterprise systems in C#/.NET and Java across production environments.
-        - Specialized in .NET, REST APIs, and distributed applications with database-backed workflows.
-        - Proven delivery includes stable release cycles, performance tuning, and production support under real business constraints.
-        - Strong track record in service design, API integration, modern distributed architecture, engineering best practices, and operational ownership.
-        - Additional strengths include continuous integration and deployment pipelines, API contract design, agile delivery practices, and AI-assisted development tools.
-        - Master's in Computer and Information Sciences from AUT, First Class Honours.
+        - Backend software engineer with 10+ years building enterprise applications in Java, Spring Cloud, and C#/.NET.
+        - Experienced with REST APIs, SQL Server, Docker, Kubernetes, Octopus Deploy, Azure, and data-intensive backend services — focused on performance and reliability.
+        - Strong track record in service design, API integration, CI/CD pipelines, cloud deployment, and agile delivery with cross-functional teams.
+        - Holds a Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
         - label: Backend Engineering
-          skills: [Java, C#/.NET, Spring Cloud, MyBatis, RESTful API, Event-driven Architecture, Microservices]
+          skills: [C#/.NET, Java, Spring Cloud, RESTful API, Microservices, Event-driven Architecture]
         - label: Databases
-          skills: [MySQL, Redis, MongoDB, SQL Server, SQLite, Query Optimization]
-        - label: DevOps & Release
-          skills: [Docker, Jenkins, Nginx, Git, Tomcat, IIS, Linux, Agile/Scrum, CI/CD, Azure]
+          skills: [SQL Server, MySQL, Redis, MongoDB, T-SQL, Query Optimization, Data-intensive Applications]
         - label: API & Integration
-          skills: [WebSocket, Kafka, ActiveMQ, MQTT, Android Client Integration]
+          skills: [WebSocket, Kafka, ActiveMQ, MQTT, Azure Functions, REST API Design]
+        - label: DevOps & Release
+          skills: [Docker, Kubernetes, Octopus Deploy, Jenkins, Azure, Git, GitHub Actions, CI/CD, Linux, IIS]
         - label: Broader Stack
-          skills: [Kotlin, Python, JavaScript, Vue.js, Android SDK]
+          skills: [Kotlin, Python, TypeScript, Vue.js]
         - label: AI-Assisted Development
           skills: [Cursor, GitHub Copilot, Claude Code, OpenCode]
+    tech_stack_display:
+      technical_lead_2019_2024:
+        priority: [Kotlin, Java, Android SDK, Jetpack Compose, MVVM, CI/CD, Gradle, NDK, MySQL, Redis, Spring Cloud]
+        additional: [Kotlin, Android SDK, Jetpack Compose, MVVM, CI/CD]
+        exclude: [React, Redux, Node.js, Vue.js, Spring Boot, AWS, .NET Core, Python, SSL/TLS, Encryption, SSL Pinning]
+      android_2015_2018:
+        priority: [Kotlin, Java, Android SDK, Jetpack, MVVM, Gradle, WebSocket, CI/CD, NDK/JNI]
+        additional: [Kotlin, Java, Android SDK, WebSocket]
+        exclude: [React, Redux, Node.js, Vue.js, Spring Cloud, Docker, Kubernetes, AWS, MySQL, Redis, SSL/TLS, Encryption, SSL Pinning]
+      dotnet_2013_2014:
+        priority: [C#, .NET, SQL Server, ASP.NET MVC]
+        additional: [C#, .NET]
+        exclude: [Android SDK, Kotlin, Jetpack, RxJava, Jenkins, Java]
     experience:
       companies:
         - name: Chunxiao Technology Co., Ltd.
