@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-从 Career KB YAML 文件生成 Cover Letter PDF
-Generate Cover Letter PDF from Career KB YAML files
+从 Career KB YAML 文件生成 Cover Letter（PDF + DOCX）
+Generate Cover Letter (PDF + DOCX) from Career KB YAML files
 
 根据 kb/ai_prompts/cover_letter_generation.md 定义的规则实现。
 
@@ -25,6 +25,7 @@ from typing import List, Dict, Any, Optional
 import html
 
 from generate_cv_html_to_pdf import html_to_pdf
+from html_to_docx import html_to_docx
 from generate_cv_from_kb import (
     load_yaml,
     load_projects,
@@ -1031,7 +1032,7 @@ async def generate_cover_letter(
     jd_keywords: Optional[List[str]] = None,
     output_path: Optional[str] = None,
 ) -> str:
-    """主入口：生成 PDF 文件。"""
+    """主入口：生成 PDF 文件及同名 DOCX。"""
     html_content = generate_cover_letter_html(
         role_type, lang, company_name, target_role_title, jd_keywords
     )
@@ -1049,6 +1050,13 @@ async def generate_cover_letter(
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
     print(f"  HTML → {html_path}")
+
+    docx_path = output_path.replace(".pdf", ".docx")
+    try:
+        html_to_docx(html_content, docx_path)
+        print(f"  DOCX → {docx_path}")
+    except Exception as exc:
+        print(f"  Warning: DOCX generation failed: {exc}")
     
     await html_to_pdf(html_content, output_path)
     print(f"  PDF  → {output_path}")

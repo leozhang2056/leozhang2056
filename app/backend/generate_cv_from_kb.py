@@ -66,6 +66,11 @@ except ModuleNotFoundError:
     from app.backend.generate_cv_html_to_pdf import html_to_pdf
 
 try:
+    from html_to_docx import html_to_docx
+except ModuleNotFoundError:
+    from app.backend.html_to_docx import html_to_docx
+
+try:
     from project_ranking import score_project_by_jd, sort_projects
 except ModuleNotFoundError:
     from app.backend.project_ranking import score_project_by_jd, sort_projects
@@ -4497,6 +4502,12 @@ async def generate_cv_from_kb(
     with open(html_en_path, 'w', encoding='utf-8') as f:
         f.write(html_en)
     print(f"  EN HTML → {html_en_path}")
+    en_docx_path = en_path.replace('.pdf', '.docx')
+    try:
+        html_to_docx(html_en, en_docx_path)
+        print(f"  EN DOCX → {en_docx_path}")
+    except Exception as exc:
+        print(f"  Warning: DOCX generation failed: {exc}")
     await html_to_pdf(html_en, en_path)
     print(f"  EN PDF  → {en_path}  ({os.path.getsize(en_path)/1024:.1f} KB)")
     _print_quality_metrics(html_en, safe_jd_keywords, role_type, min_target_pct=min_jd_match_pct)
@@ -4584,6 +4595,12 @@ async def generate_cv_from_kb(
         with open(html_zh_path, 'w', encoding='utf-8') as f:
             f.write(html_zh)
         print(f"  CN HTML → {html_zh_path}")
+        zh_docx_path = zh_path.replace('.pdf', '.docx')
+        try:
+            html_to_docx(html_zh, zh_docx_path)
+            print(f"  CN DOCX → {zh_docx_path}")
+        except Exception as exc:
+            print(f"  Warning: ZH DOCX generation failed: {exc}")
         await html_to_pdf(html_zh, zh_path)
         print(f"  CN PDF  → {zh_path}  ({os.path.getsize(zh_path)/1024:.1f} KB)")
         if not keep_html:

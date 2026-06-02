@@ -27,7 +27,7 @@ Usage examples:
   # Generate application email text:
   python generate.py email --role backend --company "Datacom" --title "Senior Backend Engineer"
 
-  # Generate CV with custom output path:
+    # Generate CV with custom output path (PDF + companion DOCX):
   python generate.py cv --role backend --output outputs/my_resume.pdf
 
   # Generate Cover Letter in Chinese:
@@ -51,10 +51,13 @@ Available roles: auto | android | ai | backend | fullstack
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
+    outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].docx
     (default --max-projects 6, capped for about two A4 pages)
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.pdf (optional, with --with-zh)
+    outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_CN.docx (optional, with --with-zh)
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>]_JD_Annotated.pdf (optional, --with-jd-annotated)
   outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.pdf
+    outputs/<YYYY-MM-DD>/CoverLetter_<company>_<YYYYMMDD>.docx
   outputs/<YYYY-MM-DD>/ApplicationEmail_<company>_<YYYYMMDD>.txt
   outputs/<YYYY-MM-DD>/JD_Match_Report_<YYYYMMDD>.md
   outputs/<YYYY-MM-DD>/CV_*_AI_REVIEW_BUNDLE.md (optional, with --with-review-bundle)
