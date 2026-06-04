@@ -87,7 +87,7 @@ pytest
 - Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
 - Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
 - Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
-- **Chunxiao career progression title rule**: The second stage "Senior Android Developer" must **never** be remapped to fullstack/backend equivalents (e.g. "Senior Full-Stack Developer", "Senior Backend Developer"). This stage was genuinely an Android development role and stays as "Senior Android Developer" in **all** role types. Identity mapping lives in `_PROGRESSION_TITLE_ROLE_MAP` in `generate_cv_from_kb.py`. The first stage "Team Lead & Full-stack Engineer" and third stage ".NET Software Engineer" keep their original titles as well.
+- **Chunxiao merged experience rule**: In CV output, Chunxiao should render as **one employer block** instead of three separate career-progression blocks. Keep `kb/experience/work.yaml` as the canonical fact source, but adapt the displayed employer title and emphasis by target role (e.g. Android → "Senior Android Developer", backend → "Senior Backend Engineer", fullstack → "Senior Full-Stack Engineer", AI → "AI Software Engineer"). Preserve the real progression as a compact line inside the merged block rather than inventing new factual roles.
 - AI usage habits:
   - Read every diff the AI writes.
   - Ask the AI to explain its choices.

@@ -1,0 +1,31 @@
+# Docx style configuration (override defaults in html_to_docx.py)
+font_name: Roboto
+base_font_size: 10.6
+base_line_spacing: 1.5
+base_space_after: 4.0
+summary_space_after: 8.0
+section_space_before: 8.0
+section_space_after: 4.0
+contact_space_after: 8.0
+list_space_after: 1.5
+skill_space_after: 1.5
+edu_tab_space_after: 2.0
+edu_detail_space_after: 3.0
+job_header_space_after: 2.0
+job_role_space_after: 1.5
+tech_space_after: 2.0
+tab_pos: 7.2
+
+# Sizes for specific elements (pt)
+header_name_size: 21
+contact_size: 9.8
+section_title_size: 12.7
+section_title_letter_spacing: 0.7
+
+
+# Colors in hex (web-style)
+pdf_title_blue: '#1A4D96'
+pdf_link_blue: '#1A4A8A'
+pdf_text: '#111111'
+pdf_muted: '#444444'
+pdf_date: '#777777'

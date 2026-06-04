@@ -1,0 +1,172 @@
+
+--- page 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Page 1 
+Title:  Senior Developer Android 
+Division:  Digital 
+Location:  Wellington 
+Responsible to:  Manager Development B2C/B2B 
+Date:  Updated May 2026  
+Code: 000362   
+  Purpose  
+As a Senior Android Developer, you will play a key role in the design, development and ongoing 
+improvement of MetService’s  Android applications. You will work closely with product managers, 
+designers, engineers and delivery leads to build high -quality, performant and resilient mobile 
+experiences used by New Zealanders every day. 
+This role combines hands -on development with technical leadership, helping set standards, mentor 
+others and influence how we build and operate mobile products. 
+ 
+  Accountabilities 
+Key Responsibility Areas 
+Software Design & 
+Development 
+• Translate user and business needs into functional, 
+maintainable Android solutions 
+• Build high-quality, accessible user interfaces using modern 
+Android frameworks, with a focus on Jetpack Compose and 
+familiarity with XML Views where required. 
+• Develop secure, performant and reliable Android features 
+using Kotlin, Android Jetpack libraries, Coroutines and Flow. 
+• Structure Android codebases for scalability, maintainability, 
+testability and clarity. 
+• Ensure architectural decisions align with long-term product 
+direction 
+• Integrate mobile applications with RESTful APIs and backend 
+services, working closely with backend engineers to define 
+effective mobile API contracts. 
+• Manage app lifecycle, background processing, push 
+notifications and device compatibility considerations using 
+appropriate Android platform capabilities. 
+Testing & Quality • Integrate unit, integration and UI tests into a mobile CI/CD 
+pipeline. 
+• Use modern Android testing tools (e.g. JUnit, Mockito, Espresso, 
+Jetpack Compose testing). 
+• Work closely with QA to validate features before release. 
+• Maintain high code quality through peer reviews, static analysis 
+and automated quality checks. 
+Senior Developer Android 
+Digital 
+
+--- page 2 ---
+ 
+Page 2 
+• Investigate and resolve bugs efficiently. 
+• Promote best practices to prevent technical debt 
+Mentorship & Team 
+Development 
+• Support junior and mid-level developers through mentorship 
+and coaching. 
+• Encourage a culture of collaboration, learning and shared 
+ownership. 
+• Contribute to Android development standards and best 
+practices. 
+• Promote an inclusive and respectful team environment. 
+Collaboration & 
+Communication 
+• Work closely with the Technical Team Lead to provide technical 
+recommendations, align on implementation approach, and 
+support the delivery of maintainable, high-quality solutions. 
+• Partner with designers, product managers and engineers to 
+deliver cohesive solutions. 
+• Engage stakeholders to clarify requirements and set 
+expectations. 
+• Provide input into technical design, planning and estimation 
+• Share knowledge through documentation, demos and 
+presentations. 
+• Adapt communication style for both technical and non-
+technical audiences. 
+Continuous Improvement • Drive focus on customer outcomes, performance and usability 
+improvements 
+• Stay up-to-date with Android ecosystem trends and emerging 
+technologies 
+• Continuously enhance skills through learning and 
+experimentation 
+• Recommend and trial innovations that improve product quality 
+and team efficiency 
+• Contribute technical insight to roadmap discussions 
+• Identify opportunities for system and workflow optimisation 
+Reporting & Compliance • Report progress, risks and blockers early to ensure delivery 
+remains on track 
+• Document and manage operational risks, escalating where 
+appropriate 
+Health & Safety • Follow MetService’s Safety Management Systems and Health & 
+Safety commitments 
+• Take all practicable steps to ensure personal and team safety 
+Other • Undertake additional duties as required 
+ 
+ 
+  Key Relationships 
+Relationships 
+Internal • Digital Strategy & Governance Team 
+• Platform & Development Team 
+
+--- page 3 ---
+ 
+Page 3 
+• Operations Team 
+• Technical Team Lead 
+• Backend Software Developers 
+• IOS Developers 
+• Software Testers  
+• Product Team 
+• Relevant business teams  
+External Key Vendors 
+• Amazon 
+• Microsoft 
+ 
+Staff Responsibility • Nil – or as required on a delivery basis 
+Financial Responsibility • Nil / In accordance with the Delegated Financial Authorities 
+Policy 
+ 
+  Person Specification 
+Overview 
+The successful candidate will have deep experience building native Android applications and a strong 
+understanding of modern mobile engineering practices. They will be confident working with Kotlin, 
+contemporary Android frameworks, API integrations, app ar chitecture patterns and performance 
+optimisation to deliver reliable, scalable mobile experiences. 
+Collaboration is central to this role, and the successful candidate will demonstrate the ability to work 
+effectively across product, design, QA and backend teams, contributing through technical leadership, 
+mentoring and shared problem-solving. 
+Knowledge, Skills & Qualifications: 
+Required 
+• 8+ years of professional experience developing native Android applications  
+• Strong proficiency in Kotlin and modern Android frameworks (Jetpack Compose and/or XML 
+Views) 
+• Strong experience designing and implementing maintainable Android architectures using 
+modern Android architecture patterns. 
+• Strong understanding of performance, memory management and debugging . 
+• Experience with location-based services, mapping or data-heavy applications. 
+• Experience with push notification platforms such as Firebase Cloud Messaging).  
+• Understanding of accessibility standards and Android accessibility tooling . 
+• Ability to own features end-to-end from concept to release. 
+• Strong experience building high-performance native mobile features for Android. 
+• Experience working closely with backend teams to define and consume RESTful APIs for mobile 
+applications. 
+• Experience with Android app release processes, signing, Play Console and staged rollouts . 
+• Strong experience with Git and mobile CI/CD pipelines using tools such as GitHub Actions , 
+Bitrise or Fastlane 
+• Understanding of testing practices including unit, integration and end-to-end testing 
+• Familiarity with analytics, crash reporting and app observability tooling would be advantageous  
+
+
+--- page 4 ---
+ 
+Page 4 
+• Excellent verbal and written communication skills with the ability to convey technical concepts to 
+non-technical audiences. 
+• Flexibility and a proven ability to quickly learn and adopt new tools, practices and development 
+patterns. 
+Desirable 
+• Experience with analytics, crash reporting and feature flagging tools  
+• Experience working with large, modularised Android codebases 
+ 
+Note: The requirements of this position description may change from time to time to meet operational or other 
+requirements. 
+ 
+ 
+ 

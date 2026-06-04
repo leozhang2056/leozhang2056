@@ -2392,32 +2392,61 @@ def _render_one_project_job_html(
     </div>'''
 
 
-# Chunxiao career_progression titles/focus — adapt per target role (KB keeps canonical Android wording).
+# Chunxiao career_progression titles/focus — adapt display per target role while KB keeps canonical facts.
+_CHUNXIAO_MERGED_ROLE_TITLES: Dict[str, str] = {
+    "android": "Senior Android Developer",
+    "backend": "Senior Backend Engineer",
+    "fullstack": "Senior Full-Stack Engineer",
+    "ai": "AI Software Engineer",
+}
+
+_CHUNXIAO_MERGED_FOCUS: Dict[str, str] = {
+    "android": "Android platform delivery, real-time communication, and device-integrated workflows",
+    "backend": "Backend platform delivery, API integration, reliability, and production operations",
+    "fullstack": "Full-stack platform delivery across mobile, backend, web, and IoT systems",
+    "ai": "Applied AI-adjacent delivery, automation workflows, and production software integration",
+}
+
+_CHUNXIAO_MERGED_STAGE_ORDER: Dict[str, List[str]] = {
+    "android": ["Senior Android Developer", "Full-stack Engineer", ".NET Software Engineer"],
+    "backend": ["Full-stack Engineer", ".NET Software Engineer", "Senior Android Developer"],
+    "fullstack": ["Full-stack Engineer", "Senior Android Developer", ".NET Software Engineer"],
+    "ai": ["Full-stack Engineer", "Senior Android Developer", ".NET Software Engineer"],
+}
+
+_CHUNXIAO_MERGED_BULLET_KEYWORDS: Dict[str, List[str]] = {
+    "android": ["android", "fragmentation", "websocket", "real-time", "messaging", "ci/cd", "backend teams", "technical debt"],
+    "backend": ["spring", "backend", "sql server", "authentication", "api", "infrastructure", "failover", "messaging", "platform subsystems"],
+    "fullstack": ["smart factory", "rfid", "automated workflows", "real-time communication", "backend", "android", "product", "qa", "operations"],
+    "ai": ["automated workflows", "iot", "smart factory", "rfid", "production efficiency", "platform subsystems", "product", "qa", "operations"],
+}
+
 _PROGRESSION_TITLE_ROLE_MAP: Dict[str, Dict[str, str]] = {
     "fullstack": {
-        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Full-Stack Engineer",
-        "Senior Android Developer": "Senior Android Developer",
+        "Technical Lead & Senior Android Engineer": "Senior Full-Stack Engineer",
+        "Senior Android Developer": "Senior Full-Stack Developer",
     },
     "backend": {
-        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior Backend Engineer",
-        "Senior Android Developer": "Senior Android Developer",
+        "Technical Lead & Senior Android Engineer": "Senior Backend Engineer",
+        "Senior Android Developer": "Senior Backend Developer",
     },
     "ai": {
-        "Technical Lead & Senior Android Engineer": "Technical Lead & Senior AI Engineer",
+        "Technical Lead & Senior Android Engineer": "Senior AI Engineer",
+        "Senior Android Developer": "AI Software Developer",
     },
 }
 
 _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
     "fullstack": {
-        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Full-Stack Platform Delivery",
+        "Team Leadership & Mobile Platform Delivery": "Full-Stack Platform Delivery",
         "Android Development & Real-time Communication": "Full-Stack Development & Real-time Systems",
     },
     "backend": {
-        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Backend Platform Delivery",
+        "Team Leadership & Mobile Platform Delivery": "Backend Platform Delivery",
         "Android Development & Real-time Communication": "Backend Development & Real-time Systems",
     },
     "ai": {
-        "Team Leadership & Mobile Platform Delivery": "Team Leadership & Applied AI Delivery",
+        "Team Leadership & Mobile Platform Delivery": "Applied AI Delivery",
         "Android Development & Real-time Communication": "Applied AI & Real-time Systems",
     },
 }
@@ -2462,7 +2491,7 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
         out = out.replace("Full-Stack Engineer", "AI Engineer")
         out = out.replace("Full-stack Developer", "AI Developer")
         out = out.replace("Full-Stack Developer", "AI Developer")
-        # Keep "Senior Android Developer" as-is since that period had no AI work
+        out = out.replace("Senior Android Developer", "AI Software Developer")
     return out
 
 
@@ -2559,6 +2588,103 @@ def _apply_role_tech_stack_order(tech_stack: List[str], role_type: str, title: s
         return tech_stack
 
 
+def _chunxiao_merged_role_title(role_type: str) -> str:
+    return _CHUNXIAO_MERGED_ROLE_TITLES.get(role_type, "Senior Software Engineer")
+
+
+def _chunxiao_merged_progression_line(progression: List[Dict], lang: str) -> str:
+    def _clean_period(raw: str) -> str:
+        years = re.findall(r"(?:19|20)\d{2}", raw or "")
+        if len(years) >= 2:
+            return f"{years[0]} - {years[-1]}"
+        if len(years) == 1:
+            return years[0]
+        return raw.strip()
+
+    parts: List[str] = []
+    for stage in progression:
+        if not isinstance(stage, dict):
+            continue
+        title = str(stage.get("title") or "").strip()
+        period = _clean_period(str(stage.get("period") or ""))
+        if title and period:
+            parts.append(f"{title} ({period})")
+        elif title:
+            parts.append(title)
+    if not parts:
+        return ""
+    joined = " -> ".join(parts)
+    return f"Progression: {joined}." if lang == "en" else f"Progression: {joined}."
+
+
+def _score_chunxiao_bullet(text: str, role_type: str, stage_title: str, stage_index: int) -> tuple:
+    lower = _strip_html_tags(text or "").lower()
+    keywords = _CHUNXIAO_MERGED_BULLET_KEYWORDS.get(role_type, [])
+    keyword_score = sum(1 for kw in keywords if kw in lower)
+    stage_order = _CHUNXIAO_MERGED_STAGE_ORDER.get(role_type, [])
+    try:
+        stage_score = len(stage_order) - stage_order.index(stage_title)
+    except ValueError:
+        stage_score = max(0, 3 - stage_index)
+    metric_score = 1 if re.search(r"\d", lower) else 0
+    return (keyword_score, stage_score, metric_score)
+
+
+def _collect_chunxiao_merged_content(progression: List[Dict], role_type: str) -> tuple[List[str], List[str]]:
+    if not isinstance(progression, list):
+        return [], []
+
+    bullet_candidates: List[tuple] = []
+    tech_by_stage: List[tuple] = []
+    for stage_index, stage in enumerate(progression):
+        if not isinstance(stage, dict):
+            continue
+        stage_title = str(stage.get("title") or "")
+        period = str(stage.get("period") or "")
+        achievements = stage.get("achievements") or []
+        tech_stack = stage.get("tech_stack") or []
+        if isinstance(achievements, list):
+            for item_index, achievement in enumerate(achievements):
+                text = str(achievement or "").strip()
+                if not text:
+                    continue
+                score = _score_chunxiao_bullet(text, role_type, stage_title, stage_index)
+                bullet_candidates.append((score, -stage_index, -item_index, text))
+        if isinstance(tech_stack, list):
+            ordered = _apply_role_tech_stack_order(tech_stack, role_type, stage_title, period)
+            for item_index, tech in enumerate(ordered):
+                if tech:
+                    tech_by_stage.append((stage_title, item_index, str(tech)))
+
+    bullet_candidates.sort(key=lambda item: item[:3], reverse=True)
+    bullets: List[str] = []
+    seen_bullets: set[str] = set()
+    for _, _, _, text in bullet_candidates:
+        norm = re.sub(r"\s+", " ", _strip_html_tags(text).lower()).strip()
+        if norm in seen_bullets:
+            continue
+        seen_bullets.add(norm)
+        bullets.append(text)
+        if len(bullets) >= 5:
+            break
+
+    preferred_stage_order = _CHUNXIAO_MERGED_STAGE_ORDER.get(role_type, [])
+    stage_rank = {title: idx for idx, title in enumerate(preferred_stage_order)}
+    tech_by_stage.sort(key=lambda item: (stage_rank.get(item[0], 99), item[1]))
+    techs: List[str] = []
+    seen_techs: set[str] = set()
+    for _, _, tech in tech_by_stage:
+        key = tech.lower()
+        if key in seen_techs:
+            continue
+        seen_techs.add(key)
+        techs.append(tech)
+        if len(techs) >= 12:
+            break
+
+    return bullets, techs
+
+
 def _render_career_progression_html(
     work_entry: Dict,
     lang: str,
@@ -2578,6 +2704,35 @@ def _render_career_progression_html(
     progression = work_entry.get("career_progression") or []
     if not isinstance(progression, list):
         progression = []
+
+    if "Chunxiao" in company_name:
+        role_title = _chunxiao_merged_role_title(role_type)
+        focus = _CHUNXIAO_MERGED_FOCUS.get(role_type, "Production software delivery across mobile, backend, and IoT systems")
+        progression_line = _chunxiao_merged_progression_line(progression, lang)
+        bullets, tech_stack = _collect_chunxiao_merged_content(progression, role_type)
+
+        role_html = f'<div class="job-role"><strong>{html.escape(role_title)}</strong> - {html.escape(focus)}</div>'
+        progression_html = f'<div class="employer-progression">{html.escape(progression_line)}</div>' if progression_line else ""
+        bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in bullets if a)
+        tech_line = ", ".join(str(t) for t in tech_stack if t)
+        tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+
+        return f'''
+    <div class="job job-employer">
+      <table class="job-header-table">
+        <tr>
+          <td class="jh-title employer-company" colspan="2">{company_link}{loc_html}</td>
+          <td class="jh-date">{html.escape(date_lbl)}</td>
+        </tr>
+      </table>
+      {company_desc_html}
+      {role_html}
+      {progression_html}
+      <ul class="stage-list">
+        {bullets_html}
+      </ul>
+      {tech_html}
+    </div>'''
     
     stages: List[str] = []
     for stage in progression:
@@ -2737,7 +2892,7 @@ def _render_chunxiao_employer_group_html(
     """单一雇主（春晓）+ 总任职时间 + 子项目阶段（旧结构，保留兼容）。"""
     company_name = "Chunxiao Technology Co., Ltd."
     location = "China"
-    role_title = "Technical Lead / Senior Software Engineer"
+    role_title = "Senior Software Engineer"
     if work_entry:
         company_name = str(work_entry.get("company") or company_name)
         location = str(work_entry.get("location") or location)

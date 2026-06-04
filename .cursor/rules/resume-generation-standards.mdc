@@ -29,6 +29,8 @@ Apply these when generating or adjusting CVs in this project.
 - **Android role (`--role android`):** Pin **`chatclothes` first** in the selected project list, then `forest-patrol-inspection`, `enterprise-messaging`, `iot-solutions`, `smart-factory` (see `_select_projects_with_relations` → `pinned_ids` in `app/backend/generate_cv_from_kb.py`). This yields: AUT single entry first, then the merged Chunxiao employer block.
 - **Chunxiao sub-projects:** Keep internal sort by timeline **end date descending** (newer phases first inside the employer group); do not reverse that for “narrative” unless the user asks.
 
+- **Chunxiao work-history block:** When rendering from `kb/experience/work.yaml`, show Chunxiao as **one merged employer block**. The displayed title and emphasis should adapt by target role while the factual progression remains a compact line inside the block.
+
 ## PDF / print layout
 - **Typography (hard constraint):** All CV PDFs use **Inter** only. Do **not** switch to Times New Roman, Aptos, Georgia, or other typefaces unless the user explicitly requests a one-off change **and** this rule is updated in the same session.
   - Load via `_CV_FONT_HEAD` (Google Fonts) in `generate_html_from_kb()` `<head>`.

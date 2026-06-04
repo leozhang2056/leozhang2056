@@ -300,8 +300,38 @@ def build_cover_letter_content(
         company_lower = (company_name or '').strip().lower()
         is_twg = 'the warehouse' in company_lower or 'warehouse group' in company_lower
         is_twg = is_twg or ('twg' in company_lower)
+        is_metservice = 'metservice' in company_lower or 'meteorological service' in company_lower
 
-        if role_type == 'ai' and is_twg:
+        if role_type == 'android' and is_metservice:
+            opening = (
+                "I am applying for the Senior Developer Android position at MetService. "
+                "I am a Senior Android Developer with more than 10 years of software engineering experience "
+                "across native Android, backend integration, real-time communication, and IoT-connected systems. "
+                "I am particularly interested in MetService because its mobile products are practical, high-usage "
+                "services that New Zealanders rely on every day."
+            )
+            body1 = (
+                "My Android experience maps closely to this role's technical needs. "
+                "I have built production Android applications using Kotlin, Java, Android Jetpack, MVVM, "
+                "Coroutines, WebSocket communication, CI/CD practices, and REST API integration with backend teams. "
+                "In the Enterprise Messaging Platform, I worked on real-time Android communication supporting "
+                "5,000 daily active users, sub-200ms message latency, and 500K+ daily messages, while improving "
+                "stability through memory hardening, crash telemetry, and release-quality practices."
+            )
+            body2 = (
+                "I also bring the broader engineering habits needed for maintainable mobile products. "
+                "Across Chunxiao's Android and smart-factory systems, I worked closely with product, QA, "
+                "backend engineers, and operations teams to clarify requirements, define integration contracts, "
+                "resolve production issues, and keep delivery predictable. "
+                "That experience fits MetService's focus on performant, resilient, accessible mobile experiences "
+                "and continuous improvement across product and engineering."
+            )
+            closing = (
+                "I would welcome the opportunity to bring my Android depth, full-stack awareness, and practical "
+                "delivery mindset to MetService's Digital team. "
+                "Thank you for your time and consideration."
+            )
+        elif role_type == 'ai' and is_twg:
             opening = (
                 "I am applying for the AI Engineer (Graduate) position at The Warehouse Group. "
                 "With a background spanning AI research, full-stack development, Android systems, "
@@ -778,12 +808,12 @@ def build_cover_letter_content(
                         return v
                 return f"{company_name}'s engineering team"
 
-            # === Para 1: "I am applying for..." (Rule 1-3) ===
+            # === Para 1: "Master ..." (Rule 1-3) ===
             culture_reason = _culture_reason()
-            tagline = _background_tagline()
+            tagline = _background_tagline().rstrip('.')
             opening = (
-                f"I am applying for the {target_role_title} position at {company_name}. "
-                f"{tagline} "
+                f"Master of Computer and Information Sciences graduate with {tagline}, "
+                f"applying for the {target_role_title} position at {company_name}. "
                 f"I am particularly interested in this opportunity because {culture_reason}"
             )
             if "aut" in company_lower or "auckland university of technology" in company_lower:
@@ -832,23 +862,53 @@ def build_cover_letter_content(
 
             body1 = " ".join(body1_parts)
 
-            # === Para 3: attraction + experience + mindset (Rule 7-8) ===
-            body2_parts = [
-                f"What particularly attracted me to this role is {company_name}'s "
-                f"emphasis on building technology that delivers practical impact."
-            ]
-
-            if years_str:
-                body2_parts.append(
-                    f"In addition to my academic work, I bring more than {years_str} years of "
-                    f"software engineering experience across {role_type} and full-stack development. "
-                    f"I have worked with APIs, CI/CD workflows, production systems, "
-                    f"and cross-functional teams. This background has helped me develop "
-                    f"a practical engineering mindset focused on reliability, collaboration, "
-                    f"and continuous improvement."
-                )
-
-            body2 = " ".join(body2_parts)
+            # === Para 3: Chunxiao experience (role-specific title + emphasis) ===
+            _CHUNXIAO_TITLE = {
+                'android': 'Senior Android Developer',
+                'backend': 'Senior Backend Engineer',
+                'ai': 'AI / Computer Vision Engineer',
+                'fullstack': 'Senior Full-stack Engineer',
+            }
+            _CHUNXIAO_EMPHASIS = {
+                'android': (
+                    "I architected and delivered multiple production Android applications "
+                    "across enterprise messaging, IoT device control, face recognition attendance, "
+                    "and smart factory systems — spanning phone, tablet, and embedded Android form factors. "
+                    "I also mentored junior Android developers and established mobile coding standards "
+                    "that improved release quality across the team."
+                ),
+                'backend': (
+                    "I designed and delivered Spring Cloud microservices powering a smart factory "
+                    "platform that scaled across 10+ manufacturing sites, with REST APIs, MySQL/Redis "
+                    "backends, and CI/CD pipelines. I also built real-time messaging infrastructure "
+                    "handling 500K+ messages daily and coordinated API contract design with "
+                    "frontend and mobile developers."
+                ),
+                'ai': (
+                    "I developed computer vision systems for face recognition attendance (99%+ accuracy), "
+                    "Chinese herbal medicine classification, and AI-based predictive maintenance — "
+                    "covering the full pipeline from data annotation and model training to on-device "
+                    "deployment. I also built MLOps workflows for model versioning, release criteria, "
+                    "and inference pipeline automation."
+                ),
+                'fullstack': (
+                    "I delivered end-to-end features across Android, Java backends, Vue.js dashboards, "
+                    "and IoT gateway firmware — owning features from database schema to user interface. "
+                    "I worked closely with product and QA on release planning and established "
+                    "CI/CD practices that reduced regression risk across "
+                    "concurrent project streams."
+                ),
+            }
+            chunxiao_title = _CHUNXIAO_TITLE.get(role_type, 'Full-stack Engineer')
+            chunxiao_emphasis = _CHUNXIAO_EMPHASIS.get(role_type, "")
+            body2 = (
+                f"Prior to my Master's, I spent 11 years at Chunxiao Technology, "
+                f"where my role evolved to {chunxiao_title}. "
+                f"{chunxiao_emphasis} "
+                f"This long-cycle experience taught me how to deliver production systems "
+                f"that remain reliable under real-world constraints — a mindset I carry "
+                f"into every new role."
+            )
 
             # === Closing: motivation + contribution + team name (Rule 9) ===
             team = _team_name()
