@@ -1511,6 +1511,14 @@ def generate_summary(
     text = _final_summary_sanity_fix(text)
     text = _bold_summary_edu_honours(text, lang)
 
+    # Prepend Master's degree to first sentence (strip trailing edu sentence to avoid duplication)
+    if lang == 'en' and text and not text.startswith('Master'):
+        sents = _split_summary_sentences(text, lang)
+        if sents and len(sents) >= 2 and _is_edu_summary_sentence(sents[-1], lang):
+            sents = sents[:-1]
+            text = " ".join(sents)
+        text = "Master of Computer and Information Sciences graduate, " + text[0].lower() + text[1:]
+
     return _remove_edge_terms(text)
 
 
@@ -2712,7 +2720,7 @@ def _render_career_progression_html(
         bullets, tech_stack = _collect_chunxiao_merged_content(progression, role_type)
 
         role_html = f'<div class="job-role"><strong>{html.escape(role_title)}</strong> - {html.escape(focus)}</div>'
-        progression_html = f'<div class="employer-progression">{html.escape(progression_line)}</div>' if progression_line else ""
+        progression_html = ""
         bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in bullets if a)
         tech_line = ", ".join(str(t) for t in tech_stack if t)
         tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
@@ -3352,7 +3360,10 @@ _CSS = """
     /* 社交：图标与文字在链接内垂直居中；整段链接与同行用 middle 对齐 */
     a.cv-social-link {
       color: #1a4a8a;
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #6a8fc0;
+      text-decoration-thickness: 1px;
       display: inline-flex;
       align-items: center;
       gap: 4px;
@@ -3374,6 +3385,7 @@ _CSS = """
 
     a.cv-social-link:hover {
       text-decoration: underline;
+      text-decoration-color: #1a4a8a;
     }
 
     .cv-contact-secondary {
@@ -3775,7 +3787,7 @@ def generate_html_from_kb(
     # ── 标签 ──
     labels = {
         'en': {
-            'summary':  'Summary',
+            'summary':  'Career Objective',
             'skills':   'Core Competencies',
             'exp':      'Experience',
             'edu':      'Education',

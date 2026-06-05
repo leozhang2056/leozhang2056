@@ -214,6 +214,8 @@ _COMPANY_CULTURE_HOOKS = {
     'engflow': "it helps developers save time by accelerating software builds and tests through distributed remote execution and caching.",
     'digital generationz': "it is an agile digital venture building cutting-edge web infrastructure, automated media pipelines, and next-gen platform concepts.",
     'enable': "it simplifies pricing and rebate management with an intelligent, AI-powered platform used by companies globally.",
+    'metservice': "it delivers life-saving weather information that millions of New Zealanders rely on every day.",
+    'orbitremit': "it makes cross-border money transfers faster, cheaper, and more transparent for people sending money home.",
     'vector': "it is powering a smarter, cleaner energy future through cloud-native data platforms and AWS serverless technology.",
     'vts': "it is building the Diverge platform — a cloud-native energy data platform co-developed with AWS.",
 }
@@ -246,6 +248,8 @@ _COMPANY_TEAMS = {
     'vector': "Vector Technology Services (VTS) engineering team",
     'vts': "Vector Technology Services (VTS) engineering team",
     'enable': "Enable's engineering team",
+    'metservice': "MetService's Digital team",
+    'orbitremit': "OrbitRemit's Engineering team",
 }
 
 def build_cover_letter_content(
@@ -301,35 +305,83 @@ def build_cover_letter_content(
         is_twg = 'the warehouse' in company_lower or 'warehouse group' in company_lower
         is_twg = is_twg or ('twg' in company_lower)
         is_metservice = 'metservice' in company_lower or 'meteorological service' in company_lower
+        is_orbitremit = 'orbitremit' in company_lower
 
         if role_type == 'android' and is_metservice:
             opening = (
-                "I am applying for the Senior Developer Android position at MetService. "
-                "I am a Senior Android Developer with more than 10 years of software engineering experience "
-                "across native Android, backend integration, real-time communication, and IoT-connected systems. "
-                "I am particularly interested in MetService because its mobile products are practical, high-usage "
-                "services that New Zealanders rely on every day."
+                "I am applying for the Senior Android Developer position at MetService. "
+                "I was particularly interested in MetService's focus on delivering reliable "
+                "location-aware weather information—real-time data, warnings, notifications, "
+                "and mobile experiences used daily by New Zealanders. "
+                "The combination of real-time data, location services, and mobile usability "
+                "presents exactly the type of engineering challenges I enjoy working on."
             )
             body1 = (
-                "My Android experience maps closely to this role's technical needs. "
-                "I have built production Android applications using Kotlin, Java, Android Jetpack, MVVM, "
-                "Coroutines, WebSocket communication, CI/CD practices, and REST API integration with backend teams. "
-                "In the Enterprise Messaging Platform, I worked on real-time Android communication supporting "
-                "5,000 daily active users, sub-200ms message latency, and 500K+ daily messages, while improving "
-                "stability through memory hardening, crash telemetry, and release-quality practices."
+                "After exploring the MetService mobile platform, I was pleased to see a "
+                "strong focus on modern Android development practices, including Kotlin, "
+                "contemporary Android architecture, and location-based functionality. "
+                "This aligns closely with my own experience building Android applications "
+                "involving real-time communication, backend integrations, and scalable "
+                "mobile systems. "
+                "My background spans Android development, backend integration, and "
+                "real-time data systems, which has given me a strong understanding of "
+                "how reliable information platforms are designed, delivered, and maintained."
             )
             body2 = (
-                "I also bring the broader engineering habits needed for maintainable mobile products. "
-                "Across Chunxiao's Android and smart-factory systems, I worked closely with product, QA, "
-                "backend engineers, and operations teams to clarify requirements, define integration contracts, "
-                "resolve production issues, and keep delivery predictable. "
-                "That experience fits MetService's focus on performant, resilient, accessible mobile experiences "
-                "and continuous improvement across product and engineering."
+                "Much of my previous work involved transforming large volumes of real-time "
+                "operational data into actionable information for end users, from industrial "
+                "IoT platforms to enterprise messaging systems handling 500K+ messages daily. "
+                "This experience gives me a strong appreciation for the reliability, "
+                "performance, and scalability requirements of products such as weather and "
+                "environmental information platforms."
             )
             closing = (
-                "I would welcome the opportunity to bring my Android depth, full-stack awareness, and practical "
-                "delivery mindset to MetService's Digital team. "
+                "What particularly attracts me to MetService is the opportunity to contribute "
+                "to a product that has a direct impact on everyday decisions made by people "
+                "across New Zealand. Building software that combines technical excellence "
+                "with meaningful public value is something I find highly motivating. "
+                "I would welcome the opportunity to bring my mobile engineering expertise, "
+                "data-driven mindset, and collaborative approach to MetService's Digital team. "
                 "Thank you for your time and consideration."
+            )
+        elif role_type == 'android' and is_orbitremit:
+            opening = (
+                "I am applying for the Senior Android Developer position at OrbitRemit. "
+                "As an OrbitRemit customer myself, I know first-hand how the product helps "
+                "people move money where it matters most—and as a developer who has shipped "
+                "production Android apps used by tens of thousands of users, I want to help "
+                "build it. "
+                "The engineering challenges of building a reliable, real-time cross-border "
+                "payments platform are exactly the kind I enjoy solving."
+            )
+            body1 = (
+                "What excites me about this role is the ownership it demands: being the sole "
+                "Android developer means owning the full lifecycle—architecture decisions, "
+                "release management, production debugging, and technical roadmap. I thrive in "
+                "that kind of environment. Over the past decade, I have learned to make sound "
+                "trade-offs between shipping velocity and code quality, and I know how to "
+                "balance bold technical improvements with a stability-first approach for users. "
+                "Whether migrating legacy View systems to Compose or optimising the networking "
+                "layer, I have the confidence to own the platform end to end."
+            )
+            body2 = (
+                "I also bring an AI-first mindset that maps directly to how OrbitRemit builds. "
+                "I use AI-assisted tools daily—including Claude Code—to accelerate development "
+                "and improve code quality, while applying engineering judgement to validate "
+                "and own the output. Combined with my experience in MVVM, Kotlin, Jetpack "
+                "Compose, Coroutines, and RESTful API integration, I can start contributing "
+                "from day one. And coming from a background where I worked across Android, "
+                "backend, IoT, and cloud systems, I understand how mobile code connects to "
+                "the broader product—reducing integration friction and helping the team deliver "
+                "faster."
+            )
+            closing = (
+                "I am looking for a role where I can take full ownership of the Android "
+                "experience, collaborate with a tight-knit team, and build something people "
+                "rely on—and OrbitRemit's mission and culture feel like the right fit. "
+                "I would welcome the opportunity to contribute my mobile expertise, "
+                "ownership mindset, and practical delivery approach to OrbitRemit's "
+                "Engineering team. Thank you for your time and consideration."
             )
         elif role_type == 'ai' and is_twg:
             opening = (

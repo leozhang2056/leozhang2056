@@ -16,11 +16,10 @@ roles:
   android:
     summary_sentences:
       en:
-        - Senior Android Software Engineer with 10+ years of experience building production mobile applications using Kotlin, Java, and modern Android architecture.
-        - Specialized in scalable Android systems, real-time communication, and hardware-integrated workflows across enterprise environments.
-        - Proven success delivering stable mobile platforms through performance optimization, CI/CD automation, and backend service integration.
-        - Experienced in technical design, code quality improvement, and translating complex product requirements into maintainable components.
-        - Additional strengths include cross-functional engineering collaboration and applied AI for mobile and edge-device workflows.
+        - Senior Android developer with 10+ years shipping production apps built with Kotlin, Jetpack Compose, and modern Android architecture.
+        - Proficient across the full mobile lifecycle: CI/CD, Play Store releases, REST API integration, and performance optimization.
+        - Collaborative engineer who works closely with product, design, and backend teams to align on API contracts and deliver reliable releases.
+        - Combines Android depth with full-stack experience (Spring Cloud, Docker) and applied AI for edge-device workflows.
         - Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
     key_skills:
       en:
