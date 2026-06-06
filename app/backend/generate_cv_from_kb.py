@@ -935,7 +935,7 @@ def generate_skills_section(
         key = cfg['key']
         # Android targeted CVs: hide explicit testing row unless JD asks for testing.
         if (
-            role_type in ['android', 'westpac']
+            role_type == 'android'
             and key == 'android_testing'
             and kws_lower
             and not any(t in " ".join(kws_lower) for t in ['test', 'testing', 'junit', 'mockk', 'espresso'])
@@ -1502,7 +1502,7 @@ def generate_summary(
 
     # 控制 Summary 长度（目标：5–6 行左右）；英文角色按版式需求适度放宽
     _sum_budget = SUMMARY_MAX_CHARS_ZH if lang == "zh" else SUMMARY_MAX_CHARS_EN
-    if lang == "en" and role_type in ["android", "westpac"]:
+    if lang == "en" and role_type in ["android"]:
         _sum_budget = min(880, _sum_budget + 100)
     if lang == "en" and role_type == "fullstack":
         _sum_budget = min(980, _sum_budget + 240)
@@ -1925,7 +1925,7 @@ def generate_project_bullet_points(
     # 英文：先尝试 bullets 库（ChatClothes + Android：最多从库取 2 条，留 1 条给 facts 里的移动端/论文要点）
     bullets_from_lib: List[str] = []
     lib_cap = max_bullets
-    if lang == "en" and role_type in ["android", "westpac"]:
+    if lang == "en" and role_type in ["android"]:
         _pid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
         if _pid == "chatclothes":
             lib_cap = min(2, max_bullets)
@@ -2031,7 +2031,7 @@ def generate_project_bullet_points(
 
     final_items = combined[:max_bullets]
     # Android 岗：ChatClothes 把含 PWA / 手持端的要点置顶，避免埋在纯 ML 句后面
-    if lang == "en" and role_type in ["android", "westpac"]:
+    if lang == "en" and role_type in ["android"]:
         _cpid = str(project.get("project_id") or project.get("_project_dir") or "").strip().lower()
         if _cpid == "chatclothes":
             mobile_first: List[str] = []
@@ -2475,11 +2475,6 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
         out = out.replace("Fullstack", "Android")
         return out
 
-    if role_type == "westpac":
-        # Keep original or slightly tweaked for Westpac specifically if needed, 
-        # but user asked for "fullstack" specifically here.
-        return title
-
     exact = _PROGRESSION_TITLE_ROLE_MAP.get(role_type, {}).get(title)
     if exact:
         return exact
@@ -2513,8 +2508,8 @@ def _adapt_progression_focus(focus: str, role_type: str) -> str:
         out = out.replace("Full-stack Development", "Android Development")
         out = out.replace("Full-stack", "Android")
         return out
-    
-    if role_type == "westpac":
+
+
         return focus
 
     exact = _PROGRESSION_FOCUS_ROLE_MAP.get(role_type, {}).get(focus)
@@ -2523,7 +2518,7 @@ def _adapt_progression_focus(focus: str, role_type: str) -> str:
 
 def _apply_role_tech_stack_order(tech_stack: List[str], role_type: str, title: str = "", period: str = "") -> List[str]:
     """根据角色模板中的tech_stack_display配置，对tech_stack进行排序和扩展。"""
-    if role_type not in ["fullstack", "fintech", "idexx", "nateva", "ai", "photon", "westpac"] or not tech_stack:
+    if role_type not in ["fullstack", "ai"] or not tech_stack:
         return tech_stack
     
     # Load cv_base_template to get tech_stack_display config
@@ -4590,7 +4585,7 @@ async def generate_cv_from_kb(
         run_post_check: 为 True 时在生成英文 PDF 后运行流畅度/版式/JD 覆盖检查并写出 *_POST_CHECK.md（默认 True）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
-    _min_slots = 3 if role_type in ["android", "westpac"] else 2
+    _min_slots = 3 if role_type in ["android"] else 2
     mp = int(max_projects or DEFAULT_MAX_PROJECTS)
     max_projects = max(_min_slots, min(mp, CV_MAX_PROJECTS_CAP))
 

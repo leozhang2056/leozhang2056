@@ -27,6 +27,44 @@
   - CLI validator: `app/backend/validate.py`
   - typed loader/validators: `app/backend/kb_loader.py` + `app/backend/data_models.py` (Pydantic).
 
+### Repository Directory Structure
+```
+.
+├── generate.py                  # Unified CLI Entrypoint
+├── AGENTS.md                    # Core workflow rules & architecture (this file)
+├── README.md                    # GitHub profile README
+├── requirements.txt             # Python dependencies
+├── pyproject.toml               # Build/tool configuration
+│
+├── projects/                    # 19 real projects portfolio
+│   └── <project_id>/
+│       ├── README.md            # Humans/AI readable details
+│       └── facts.yaml           # Ground-truth structured facts (anti-hallucination source)
+│
+├── kb/                          # Core Career Knowledge Base
+│   ├── profile.yaml             # Personal profile & target roles
+│   ├── skills.yaml              # Categorized skills & proof points
+│   ├── achievements.yaml        # Publications, awards, certs
+│   ├── project_relations.yaml   # Narration threads & project links
+│   ├── resume_generation_rules.md  # Detailed layout/wording constraints
+│   ├── experience/              # Work & research history
+│   ├── bullets/                 # Reusable bullet point templates by role
+│   ├── schema/                  # Validation schemas
+│   └── interview_qa/            # Scripted/YAML interview Q&As
+│
+├── app/backend/                 # Resume compiler backend logic
+├── templates/                   # Real layout templates (TeX, Markdown base)
+├── outputs/                     # Generated outputs (Gitignored)
+├── jd_archive/                  # Historically fetched JD text files
+├── memory/                      # Layered state tracking memory
+└── tests/                       # Automated test suite
+```
+
+### Component Responsibility
+- `projects/<id>/facts.yaml` is the SINGLE source of truth for project details.
+- `kb/` represents cross-project aggregated profile facts.
+- Generated PDFs and cover letters compile these facts dynamically; do not handwrite target CVs.
+
 ## Critical Workflows (Commands)
 - Install deps:
 ```bash
@@ -75,7 +113,7 @@ python generate.py interview --category technical
 ## Workflow Preference
 - For each JD, generate **both CV and CL** (cover letter), always with `--company` flag.
 - After generating, delete intermediate `.html` and `*_POST_CHECK.md` files — keep only PDFs.
-- - Run tests:
+- Run tests:
 ```bash
 pytest
 ```

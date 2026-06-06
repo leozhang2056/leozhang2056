@@ -99,7 +99,7 @@ def build_parser() -> argparse.ArgumentParser:
     cv_parser = sub.add_parser('cv', help='Generate CV (English PDF; JD annotated PDF optional)')
     cv_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'nateva', 'idexx', 'fintech', 'photon', 'westpac', 'hnry'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     cv_parser.add_argument(
@@ -186,7 +186,7 @@ def build_parser() -> argparse.ArgumentParser:
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
     cl_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'nateva', 'idexx', 'fintech', 'photon', 'westpac', 'hnry'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     cl_parser.add_argument(
@@ -231,7 +231,7 @@ def build_parser() -> argparse.ArgumentParser:
     email_parser = sub.add_parser('email', help='Generate application email TXT')
     email_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'nateva', 'idexx', 'fintech', 'photon', 'westpac', 'hnry'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     email_parser.add_argument(
@@ -298,7 +298,7 @@ def build_parser() -> argparse.ArgumentParser:
     match_parser = sub.add_parser('match', help='Compare CV match scores across multiple JDs')
     match_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'nateva', 'idexx', 'fintech', 'photon', 'westpac', 'hnry'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
         help='Role mode (auto infers role for each JD)',
     )
     match_parser.add_argument(

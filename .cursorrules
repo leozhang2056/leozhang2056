@@ -36,41 +36,7 @@
 
 ---
 
-## 数据架构
-
-### 核心数据文件（事实来源）
-- `projects/<project_id>/facts.yaml` — 项目事实数据（17 个真实项目）
-- `kb/profile.yaml` — 个人档案、Summary 变体、目标岗位
-- `kb/skills.yaml` — 技能清单（分组/熟练度/证据）
-- `kb/achievements.yaml` — 论文、奖项、证书
-- `kb/experience/` — 工作 / 研究经历（YAML）
-
-### 辅助数据文件
-- `kb/bullets/*.yaml` — 可复用要点库（按方向/岗位）
-- `kb/project_relations.yaml` — 项目关联关系（叙事线索）
-- `kb/schema/project_facts_schema.yaml` — 数据 Schema 定义（新增项目必须遵循）
-- `kb/resume_generation_rules.md` — 简历生成规则与约束
-- `kb/ai_input_spec.md` — AI 输入规范
-
-### 面试 Q&A 文件
-- `kb/interview_qa/index.yaml` — 题目索引
-- `kb/interview_qa/technical.yaml` — 技术题（要点）
-- `kb/interview_qa/behavioral.yaml` — 行为题（要点）
-- `kb/interview_qa/role_specific.yaml` — 岗位专项题（要点）
-- `kb/interview_qa/scripts.md` — 完整英文口语回答稿（33 题，可直接背诵）
-
-### 生成系统文件
-- `generate.py` — 统一 CLI 入口（所有生成操作从这里调用）
-- `app/backend/generate_cv_from_kb.py` — 核心简历生成器（从 KB 生成 Markdown）
-- `app/backend/generate_cover_letter.py` — 求职信生成器
-- `app/backend/validate.py` — KB 数据验证器
-- `app/backend/kb_query.py` — KB 查询工具
-- `app/backend/facts_normalizer.py` — 数据规范化（注意：内部会把 android→mobile，不影响 facts.yaml）
-- `app/backend/interview_qa_cli.py` — 面试 Q&A 命令行工具
-
----
-
-## 17 个真实项目列表
+## 19 个真实项目列表
 
 | project_id | 简述 |
 |---|---|
@@ -78,8 +44,8 @@
 | smart-factory | 工业 IoT + AI 预测性维护 |
 | enterprise-messaging | 企业即时通讯（Android + Java 后端） |
 | broadcast-control | 电视台播出控制系统 |
-| visual-gateway | 视觉网关系统 |
-| boobit | 见 facts.yaml |
+| visual-gateway | 视觉网关系统（安卓网关/断电监控平台） |
+| boobit | 数字货币交易 App（Android 客户端） |
 | chinese-herbal-recognition | 中草药识别 AI |
 | device-maintenance-prediction | 设备维护预测 |
 | exhibition-robot | 展览机器人 |
@@ -91,6 +57,8 @@
 | school-attendance | 学校考勤系统 |
 | smart-power | 智慧电力系统 |
 | visit-system | 访客管理系统 |
+| banknote-paper-mill | 造币印纸厂高安全/断网环境现场集成与交付 |
+| field-weighing-access-control | 入口地磅称重与道闸/报警联动系统（Delphi/.NET） |
 
 ---
 
@@ -113,27 +81,11 @@
 
 ---
 
-## 简历生成工作流
+## 核心工作流与规范
 
-1. 读取 JD → 提取关键词和岗位信号
-2. 匹配 `projects/` 中相关项目（通过 `keywords` 和 `related_to_roles`）
-3. 从 `kb/bullets/` 选择匹配的要点变体
-4. 结合 `kb/project_relations.yaml` 中的叙事线索
-5. 生成结构化简历内容
-6. 运行 `python app/backend/validate.py` 验证
-
-## 快速命令参考
-
+具体的数据加载顺序、生成命令架构及详细调试指南，请统一参阅 **[AGENTS.md](file:///e:/Coding/leozhang2056/AGENTS.md)**。
+修改数据或配置后，请运行：
 ```bash
-# 验证 KB 数据完整性
 python app/backend/validate.py
-
-# 生成 Android 岗位简历
-python generate.py cv --role android
-
-# 生成 Backend 岗位简历
-python generate.py cv --role backend
-
-# 面试 Q&A CLI
-python app/backend/interview_qa_cli.py
 ```
+进行格式及完整性验证。

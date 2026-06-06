@@ -1,6 +1,7 @@
-# Project Facts Schema Definition
-# 项目事实 Schema 定义 - 所有 projects/*/facts.yaml 必须遵循此结构
-# Version: 1.0.0
+# Project Facts Schema Definition — DEPRECATED
+# 此文件当前未被任何代码自动加载。所有事实验证使用 app/backend/validate.py。
+# 如需启用 schema 自动校验，请修改 validate.py 加载此文件并在加载 facts.yaml 时校验。
+# Version: 1.0.0 (deprecated)
 #
 # ============================================
 # AI 使用指南 (AI Usage Guide)

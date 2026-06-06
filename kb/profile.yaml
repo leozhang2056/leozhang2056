@@ -49,9 +49,11 @@ career_identity:
       Additional expertise includes Spring Cloud, Docker, CI/CD pipeline automation, software quality practices, and AI-assisted programming tools in daily delivery.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
+    # 注意：android_focus 内容必须与 cv_base_template.yaml roles.android.summary_sentences 保持同步
     android_focus: >
-      Senior Android developer with 10+ years shipping production apps built with Kotlin, Jetpack Compose, and modern Android architecture. Proficient across the full mobile lifecycle: CI/CD, Play Store releases, REST API integration, and performance optimization. Collaborative engineer who works closely with product, design, and backend teams to align on API contracts and deliver reliable releases. Combines Android depth with full-stack experience (Spring Cloud, Docker) and applied AI for edge-device workflows.
+      Senior Android developer with 10+ years shipping production apps built with Kotlin, Jetpack Compose, and modern Android architecture. Proficient across the full mobile lifecycle including CI/CD, Play Store releases, REST API integration, and performance optimization. Collaborative engineer who works closely with product, design, and backend teams to align on API contracts and deliver reliable releases. Combines Android depth with full-stack experience (Spring Cloud, Docker) and applied AI for edge-device workflows.
       Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology.
+
     
     ai_focus: >
       AI engineer with 10+ years across applied AI, computer vision, and full-stack delivery, grounded in shipping production software.

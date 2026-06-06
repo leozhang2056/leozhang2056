@@ -46,7 +46,7 @@ def validate_role(role: str) -> str:
     Raises:
         ValueError: If role is invalid
     """
-    valid_roles = {'auto', 'android', 'ai', 'backend', 'fullstack', 'nateva', 'idexx', 'fintech', 'photon', 'westpac', 'hnry'}
+    valid_roles = {'auto', 'android', 'ai', 'backend', 'fullstack'}
     if role not in valid_roles:
         raise ValueError(f"Invalid role: {role}. Must be one of {valid_roles}")
     return role

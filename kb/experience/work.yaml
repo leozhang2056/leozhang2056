@@ -31,7 +31,7 @@ experiences:
     
     career_progression:
       - title: Full-stack Engineer
-        period: "2019 – 2024"
+        period: "2019 - 2024"
         focus: Full-stack Platform Delivery
         achievements:
           - "Led delivery of an Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
@@ -43,7 +43,7 @@ experiences:
         tech_stack: [Spring Cloud, MySQL, Redis, Docker, Node.js, Java, Kotlin, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Flutter]
       
       - title: Senior Android Developer
-        period: "2015 – 2018"
+        period: "2015 - 2018"
         focus: Android Development & Real-time Communication
         achievements:
           - "Worked closely with backend teams to align API contracts and improve delivery under Android fragmentation"
@@ -52,7 +52,7 @@ experiences:
         tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD, WebSocket]
       
       - title: .NET Software Engineer
-        period: "2013 – 2014"
+        period: "2013 - 2014"
         focus: .NET Live Streaming & Web Systems
         achievements:
           - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web"

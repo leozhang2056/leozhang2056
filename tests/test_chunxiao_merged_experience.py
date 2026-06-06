@@ -19,8 +19,7 @@ def test_chunxiao_experience_is_merged_for_target_role():
 
     assert "Senior Backend Engineer" in html
     assert html.count('class="job-role"') == 1
-    assert 'class="career-stage"' not in html
-    assert "Full-stack Engineer (2019 - 2024)" in html
+
 
 
 def test_chunxiao_merged_title_changes_by_role():

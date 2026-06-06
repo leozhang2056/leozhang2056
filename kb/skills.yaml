@@ -282,11 +282,6 @@ backend:
     evidence:
       - Smart factory microservices
       - Enterprise messaging backend
-    
-  - name: Spring Cloud
-    level: advanced
-    years: 6
-    evidence:
       - Microservice architecture
       - Distributed systems
 
@@ -737,7 +732,6 @@ skill_groups:
     - Cursor
     - GitHub Copilot
     - Claude Code
-    - Antigravity
     - OpenCode
   
   android_development:

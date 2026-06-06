@@ -43,8 +43,6 @@ _ROLE_SUMMARY_KEY = {
     'ai':       'ai_focus',
     'backend':  'java_focus',
     'fullstack': 'default',
-    'fintech': 'default',
-    'photon': 'default',
 }
 
 # 各角色的主要叙事角度提示（用于生成开头和结尾）
@@ -53,20 +51,6 @@ _ROLE_SUMMARY_KEY = {
 
 
 _WHY_ME_HOOKS = {
-    'westpac': {
-        'en': (
-            "I believe I am a strong fit for this Senior Android Developer role because I combine deep technical expertise in Kotlin and Java with a disciplined approach to mobile security and reliability. "
-            "My experience includes architecting robust Android apps using Jetpack Compose and MVVM, while ensuring high standards for accessibility and performance. "
-            "I am particularly motivated by the opportunity to apply my 10+ years of delivery experience to help Westpac build trusted, innovative banking solutions in a high-performing Agile environment."
-        ),
-    },
-    'photon': {
-        'en': (
-            "I believe I am a strong fit for this Lead Android Developer role because I combine deep technical expertise in Kotlin and Java with a proven track record of delivering end-to-end mobile solutions. "
-            "My experience includes architecting robust Android apps using Jetpack Compose, RxJava, and MVVM, while ensuring high performance and screen-agnostic UI consistency. "
-            "I am particularly motivated by the opportunity to apply my 10+ years of delivery experience to lead technical excellence and mentor teams in Photon's fast-paced, customer-focused environment."
-        ),
-    },
     'younity': {
         'en': (
             "I believe I am a strong fit for this FinTech opportunity because I combine deep technical expertise in .NET and Java with a focus on delivering scalable, greenfield platforms. "
@@ -161,22 +145,6 @@ _DIFFERENTIATOR_HOOKS = {
             "In fast-moving teams, that reduces dependencies and speeds up iteration."
         ),
     },
-    'westpac': {
-        'en': (
-            "What sets me apart is my combination of Android depth and full-stack awareness: "
-            "I've architected secure mobile platforms, optimized performance at scale, and implemented "
-            "SSL/TLS communication protocols essential for financial environments — all while delivering "
-            "clean, maintainable code that teams can build on."
-        ),
-    },
-    'photon': {
-        'en': (
-            "What sets me apart is my track record leading Android migrations and modernisation: "
-            "I've taken legacy architectures to MVVM, reduced crash rates through memory optimisation, "
-            "and automated CI/CD pipelines — delivering measurable quality improvements while maintaining "
-            "release velocity."
-        ),
-    },
 }
 
 
@@ -191,14 +159,12 @@ def _differentiator_hook(role_type: str) -> str:
 
 _COMPANY_CULTURE_HOOKS = {
     'the warehouse group': "it focuses on building practical AI solutions that deliver measurable business impact.",
-    'westpac': "it builds financial tools that millions of New Zealanders rely on with confidence.",
     'halter': "it builds AI and software that changes how farmers actually operate — real tools used in the field.",
     'eroad': "it turns complex telematics data into reliable tools that fleets depend on daily.",
     'windcave': "payments infrastructure sits at the intersection of reliability, security, and scale.",
     'l3harris': "engineering is defined by mission-critical delivery, not feature velocity.",
     'aut': "'knowledge that works' defines both research and teaching.",
     'atom': "it ships AI to real enterprise clients — not sandbox demos.",
-    'photon': "it ships quality mobile experiences at scale for global clients.",
     'younity': "it focuses on 'Real People, Real Outcomes' in financial technology.",
     'theta': "it combines technical depth with pragmatic delivery in consulting.",
     'catch design': "it creates meaningful, inclusive, and impactful digital experiences for New Zealand's most recognised brands.",
@@ -222,14 +188,12 @@ _COMPANY_CULTURE_HOOKS = {
 
 _COMPANY_TEAMS = {
     'the warehouse group': "The Warehouse Group's Data and AI team",
-    'westpac': "Westpac's mobile engineering team",
     'halter': "Halter's engineering team",
     'eroad': "EROAD's platform team",
     'windcave': "Windcave's engineering team",
     'l3harris': "L3Harris's software team",
     'aut': "AUT's technology team",
     'atom': "ATOM Intelligence's AI team",
-    'photon': "Photon's Android team",
     'younity': "Younity's engineering team",
     'theta': "Theta's consulting team",
     'catch design': "Catch Design's development team",
@@ -277,8 +241,6 @@ def build_cover_letter_content(
             'android': 'Senior Android Developer',
             'backend': 'Senior Backend Engineer',
             'fullstack': 'Full-stack Engineer',
-            'westpac': 'Senior Android Developer',
-            'photon': 'Lead Android Developer',
         }
         target_role_title = role_title_defaults.get(role_type, target_role_title or 'Software Engineer')
 
@@ -800,40 +762,6 @@ def build_cover_letter_content(
                 "full-stack depth, and autonomous engineering mindset to Digital Generationz's "
                 "engineering team. Thank you for your time and consideration."
             )
-        elif 'westpac' in company_lower:
-            opening = (
-                "I am applying for the Associate Engineer - Mobile position at Westpac. "
-                "I am a software engineer with 10+ years of experience building production mobile "
-                "applications, most recently as a Senior Android Developer at Alibaba where I delivered "
-                "multiple high-impact Android apps using Kotlin and Java. "
-                "I am drawn to Westpac because it builds financial tools that millions of New "
-                "Zealanders rely on with confidence."
-            )
-            body1 = (
-                "I have strong hands-on experience with Kotlin and Java across multiple production "
-                "Android apps, including TaoBao (100M+ users), Youku (video streaming), and enterprise "
-                "apps at Alibaba. I am comfortable with the full mobile development lifecycle — from "
-                "architecture design and Jetpack Compose to CI/CD, unit testing, and production "
-                "incident resolution. "
-                "I also bring broader engineering skills across React, TypeScript, Git, Docker, and "
-                "Agile practices, and I actively use AI tools responsibly to accelerate development "
-                "while validating outputs and maintaining code quality."
-            )
-            body2 = (
-                "What attracts me to this role is the opportunity to contribute to meaningful "
-                "digital experiences in a collaborative, Agile environment while continuing to grow "
-                "my technical capability. I value clean code, modern best practices, and knowledge "
-                "sharing — and I am equally comfortable working independently on features or pairing "
-                "with senior engineers to debug complex problems. "
-                "I am based in Auckland, have full working rights, and am excited about building "
-                "reliable, customer-focused mobile experiences at Westpac."
-            )
-            closing = (
-                "Examples of my work are available on GitHub (github.com/leozhang2056). "
-                "I would welcome the opportunity to contribute my mobile engineering expertise, "
-                "collaborative mindset, and passion for continuous learning to Westpac's mobile "
-                "engineering team. Thank you for your time and consideration."
-            )
         else:
             company_lower = (company_name or '').strip().lower()
 
@@ -1177,7 +1105,7 @@ async def generate_cover_letter(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--role', default='fullstack', choices=['android', 'ai', 'backend', 'fullstack', 'fintech', 'idexx', 'nateva', 'photon', 'westpac'])
+    parser.add_argument('--role', default='fullstack', choices=['android', 'ai', 'backend', 'fullstack'])
     parser.add_argument('--lang', default='en', choices=['en', 'zh'])
     parser.add_argument('--company', default='the company')
     parser.add_argument('--title', default='Software Engineer')
