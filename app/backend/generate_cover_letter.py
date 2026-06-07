@@ -1091,13 +1091,6 @@ async def generate_cover_letter(
         f.write(html_content)
     print(f"  HTML → {html_path}")
 
-    docx_path = output_path.replace(".pdf", ".docx")
-    try:
-        html_to_docx(html_content, docx_path)
-        print(f"  DOCX → {docx_path}")
-    except Exception as exc:
-        print(f"  Warning: DOCX generation failed: {exc}")
-    
     await html_to_pdf(html_content, output_path)
     print(f"  PDF  → {output_path}")
     return output_path
