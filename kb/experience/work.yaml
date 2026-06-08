@@ -40,7 +40,7 @@ experiences:
           - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
           - "Contributed to <strong>15+ projects</strong> over 10 years spanning Android, backend, IoT, and automation — from prototype through multi-site production rollout across <strong>garment manufacturing, forestry, education, and high-security</strong> environments."
         
-        tech_stack: [AI Agent, AI Workflow]
+        tech_stack: [Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Flutter, MySQL, Redis, Docker]
       
       - title: Senior Android Developer
         period: "2015 - 2018"
@@ -50,7 +50,7 @@ experiences:
           - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
           - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
           - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging; integrated <strong>FastDFS</strong> self-hosted file storage with consistent access control across features."
-          - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across <strong>Xiaomi, Huawei, OPPO</strong>, and stock Android devices, balancing release speed with OEM-specific field failures."
+          - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
       
       - title: .NET Software Engineer
         period: "2013 - 2014"
