@@ -35,12 +35,10 @@ experiences:
         period: "2019 - 2024"
         focus: Full-stack Platform Delivery
         achievements:
-          - "Contributed to <strong>15+ projects</strong> over 10 years at Chunxiao — spanning Android apps, Spring Cloud backend services, real-time messaging, IoT integration, and industrial automation — delivering production systems from prototype through multi-site rollout across garment factories, forestry, education, and high-security manufacturing."
-          - "Designed and delivered a smart factory platform for <strong>garment manufacturing</strong> that replaced paper-based workflows with automated production tracking. Integrated <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners with Spring Cloud microservices and Docker-based CI/CD, improving production efficiency <strong>30%+</strong> across <strong>5+ factory sites</strong> with hundreds of daily shop-floor workers."
-          - "Architected the enterprise messaging backbone that became the company's unified communication platform — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted FastDFS file layer handling <strong>100GB+</strong> of shared documents. Grew to <strong>5,000 DAU</strong>, <strong>500K+ messages/day</strong> across Android, Web, and PC, with <strong><2% downtime</strong> over the decade."
-          - "Evolved the messaging system from a standalone IM tool into a shared enterprise platform — designed and built a unified SSO layer, centralized file service, and permission framework that eliminated redundant infrastructure and was reused across <strong>5+ subsystems</strong> including attendance, approvals, asset management, and finance."
-          - "Led the migration of core messaging from an unstable in-house C++ implementation to a cloud IM provider, eliminating <strong>90%+ defects</strong> and redirecting engineering effort from infrastructure operations to product development — directly enabling faster feature delivery."
-          - "Built Android and backend modules using Kotlin, Java, Jetpack Compose, MVVM, Coroutines, and NDK; also developed cross-platform tools with Flutter and Node.js. Partnered with product, QA, and operations to plan releases, manage risk, and maintain delivery predictability across multiple concurrent projects."
+          - "Designed and delivered a <strong>smart factory platform</strong> for garment manufacturing that replaced paper-based workflows — integrated <strong>RFID</strong> readers, scales, conveyors, and barcode scanners across <strong>5+ factory sites</strong>, improving production efficiency <strong>30%+</strong> with hundreds of daily shop-floor workers."
+          - "Architected the <strong>enterprise messaging backbone</strong> — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong> of shared documents. Served <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> with <strong><2% downtime</strong> over the decade."
+          - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
+          - "Contributed to <strong>15+ projects</strong> over 10 years spanning Android, backend, IoT, and automation — from prototype through multi-site production rollout across <strong>garment manufacturing, forestry, education, and high-security</strong> environments."
         
         tech_stack: [AI Agent, AI Workflow]
       
@@ -48,13 +46,11 @@ experiences:
         period: "2015 - 2018"
         focus: Android delivery, real-time communication, and device-integrated workflows
         achievements:
-          - "Shipped <strong>8+ production Android apps</strong> across live-streaming, IoT device management (smart switches and Zigbee/WiFi gateways), enterprise tools, and field inspection systems — including an offline-first forestry app that enabled rangers to record GPS-tracked patrols and incident reports in zero-connectivity areas, automatically syncing when network returned."
-          - "Designed a modular Android architecture that allowed parallel team development across different product lines, reused across <strong>12+ internal projects</strong> and cutting code duplication by <strong>50%+</strong> — reducing onboarding time for new team members and speeding up feature delivery across the portfolio."
-          - "Reduced OOM crashes on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated crash telemetry that provided root-cause analysis across the device fleet, cutting time-to-fix for production crashes."
-          - "Implemented WebSocket-based bidirectional communication for real-time messaging and synchronized broadcast playback; integrated FastDFS self-hosted file storage with consistent access control across features, eliminating the unreliability and cost constraints of a single-server file setup."
-          - "Aligned REST API contracts with backend teams and maintained test coverage across Xiaomi, Huawei, OPPO, and stock Android devices — balancing release speed with quality in a fragmented device landscape where OEM-specific behaviors caused unique field failures."
-        
-        tech_stack: [Jetpack, NDK/JNI, Gradle, CI/CD]
+          - "Shipped <strong>8+ production Android apps</strong> across <strong>live-streaming, IoT device management, and field inspection</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
+          - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
+          - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
+          - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging; integrated <strong>FastDFS</strong> self-hosted file storage with consistent access control across features."
+          - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across <strong>Xiaomi, Huawei, OPPO</strong>, and stock Android devices, balancing release speed with OEM-specific field failures."
       
       - title: .NET Software Engineer
         period: "2013 - 2014"
