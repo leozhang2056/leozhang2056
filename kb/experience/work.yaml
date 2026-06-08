@@ -22,7 +22,8 @@ experiences:
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
-    company_description: ""
+    company_description: >
+      Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
     location: China
     start_date: "2018-07"
     end_date: "2024-02"
@@ -39,8 +40,7 @@ experiences:
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
-    company_description: >
-      Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
+    company_description: ""
     location: China
     start_date: "2013-07"
     end_date: "2018-07"
@@ -57,7 +57,7 @@ experiences:
           - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
           - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
         
-        tech_stack: [Jetpack, NDK/JNI, Gradle, CI/CD]
+        tech_stack: [Coroutines, NDK/JNI, Gradle, CI/CD]
       
       - title: .NET Software Engineer
         period: "2013 - 2014"

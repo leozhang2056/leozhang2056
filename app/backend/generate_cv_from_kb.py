@@ -3781,7 +3781,7 @@ def generate_html_from_kb(
     # ── 标签 ──
     labels = {
         'en': {
-            'summary':  'Career Objective',
+            'summary':  'Professional Summary',
             'skills':   'Core Competencies',
             'exp':      'Experience',
             'edu':      'Education',
