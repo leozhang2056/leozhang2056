@@ -18,7 +18,24 @@ experiences:
       - "Worked on a summer research project using <strong>hyperspectral imaging</strong> and <strong>computer vision</strong> to classify kiwifruit ripeness."
       - "Collaborated with supervisors to design experiments, align milestones, and communicate progress across projects."
     
-    tech_stack: [AWS, Azure]
+    tech_stack: [AWS, Azure, Linux, Docker, Git]
+
+  - company: Chunxiao Technology Co., Ltd.
+    company_url: https://www.chunxiao.net/
+    company_description: ""
+    location: China
+    start_date: "2018-07"
+    end_date: "2024-02"
+    current: false
+    type: Full-time
+    role: Full-stack Engineer
+    
+    achievements:
+      - "Architected and delivered a <strong>smart factory platform</strong> for garment manufacturing — integrated <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners across <strong>10+ factory sites</strong> using <strong>Spring Cloud</strong> microservices and <strong>Docker</strong>-based CI/CD. Built Android shop-floor terminals and Vue.js web portals for hundreds of daily workers, plus a serial-to-WebSocket bridge that eliminated manual scale-weight entry — improving production efficiency <strong>30%+</strong>. Awarded the <strong>Hebei Provincial Science and Technology Achievement Award</strong> (2020)."
+      - "Architected and evolved the <strong>enterprise messaging platform</strong> serving <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> with <strong>sub-200ms latency</strong>. Built Android clients with NDK-based TCP/UDP, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong>. Introduced unified <strong>SSO</strong>, centralized file services, and reusable permission frameworks across <strong>5+ enterprise subsystems</strong>. Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
+      - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
+    
+    tech_stack: [Kotlin, Java, Spring Cloud, Docker, MySQL, Redis, Kafka, ActiveMQ]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
@@ -26,21 +43,11 @@ experiences:
       Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
     location: China
     start_date: "2013-07"
-    end_date: "2024-02"
+    end_date: "2018-07"
     current: false
     type: Full-time
     
     career_progression:
-      - title: Full-stack Engineer
-        period: "2019 - 2024"
-        focus: Full-stack Platform Delivery
-        achievements:
-          - "Architected and delivered a <strong>smart factory platform</strong> for garment manufacturing — integrated <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners across <strong>10+ factory sites</strong> using <strong>Spring Cloud</strong> microservices and <strong>Docker</strong>-based CI/CD. Built Android shop-floor terminals and Vue.js web portals for hundreds of daily workers, plus a serial-to-WebSocket bridge that eliminated manual scale-weight entry — improving production efficiency <strong>30%+</strong>. Awarded the <strong>Hebei Provincial Science and Technology Achievement Award</strong> (2020)."
-          - "Architected and evolved the <strong>enterprise messaging platform</strong> serving <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> with <strong>sub-200ms latency</strong>. Built Android clients with NDK-based TCP/UDP, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong>. Introduced unified <strong>SSO</strong>, centralized file services, and reusable permission frameworks across <strong>5+ enterprise subsystems</strong>. Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
-          - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
-        
-        tech_stack: [Kotlin, Java, Jetpack Compose, Spring Cloud, Docker, MySQL, Redis, Kafka, ActiveMQ]
-      
       - title: Senior Android Developer
         period: "2015 - 2018"
         focus: Android delivery, real-time communication, and device-integrated workflows
@@ -59,6 +66,8 @@ experiences:
           - "Built a media transcoding pipeline (H.264/AAC) supporting RTMP/HLS distribution for web and mobile platforms using FFmpeg and C#, enabling multi-device live streaming that scaled to high-concurrency broadcast events."
           - "Developed ASP.NET backend services with SQL Server for media asset management, user authentication, and content distribution — providing the API layer that connected front-end media players to managed content libraries."
           - "Managed production infrastructure including SSL/TLS certificates, multi-region failover, and media server optimization — ensuring stable high-concurrency live streaming with minimal downtime."
+        
+        tech_stack: [.NET, C++]
 
   - company: Additional Experience
     location: Auckland, New Zealand
