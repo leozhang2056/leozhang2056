@@ -114,6 +114,12 @@ python generate.py interview --category technical
 ## Workflow Preference
 - For each JD, generate **both CV and CL** (cover letter), always with `--company` flag.
 - After generating, delete intermediate `.html` and `*_POST_CHECK.md` files — keep only PDFs.
+- **Editable CV workflow** (added 2026-06):
+  ```bash
+  python generate.py cv --role android --gen-md outputs/CV.md  # generate editable MD
+  python generate.py cv --from-md outputs/CV.md --output outputs/CV.pdf  # MD → PDF
+  ```
+- DOCX generation removed (2026-06): quality too low, HTML→PDF is the canonical output.
 - Run tests:
 ```bash
 pytest
@@ -124,9 +130,24 @@ pytest
 - If required facts are missing or conflicting, ask the user whether they have relevant experience or details to add before proceeding; do not guess.
 - Source priority for AI context assembly: `kb/profile.yaml` -> `kb/skills.yaml` -> `kb/project_relations.yaml` -> `projects/*/facts.yaml` -> `kb/bullets/*.yaml`.
 - Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
+  Other roles (`nateva|idexx|fintech|photon|westpac|hnry`) have been removed (2026-06 cleanup).
 - Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
 - Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
 - **Chunxiao merged experience rule**: In CV output, Chunxiao should render as **one employer block** instead of three separate career-progression blocks. Keep `kb/experience/work.yaml` as the canonical fact source, but adapt the displayed employer title and emphasis by target role (e.g. Android → "Senior Android Developer", backend → "Senior Backend Engineer", fullstack → "Senior Full-Stack Engineer", AI → "AI Software Engineer"). Preserve the real progression as a compact line inside the merged block rather than inventing new factual roles.
+  When career_progression has only 1 stage (split-block format), the merged Chunxiao logic is bypassed and the stage's own title/period is used.
+- **Experience bullet writing rules** (2026-06):
+  - Write in natural narrative style — integrate tech keywords into sentences, not as lists.
+  - Bold key tech terms and metrics using `<strong>` tags.
+  - Remove from `tech_stack` any keywords already bolded in bullets — avoid duplication.
+  - Each bullet should follow: what was done → what value → what result (Action → Value → Result).
+  - Industry context and concrete data build credibility (e.g. "garment manufacturing", "10+ factory sites").
+  - Bullet length: 2-3 lines max. Order by impact — most important first.
+  - Soft skills conveyed through actions, not standalone buzzwords (no "Problem Solving", "Leadership").
+- **Core Competencies rules** (2026-06):
+  - Only concrete tech keywords — no buzzwords or unprovable claims.
+  - Each category 3-6 items. Categories ordered by relevance to the target role.
+  - "Software Engineering" as the last category, 2-3 items max as low-priority supplement.
+  - No "First Class Honours" or generic academic honors in Skills/Licenses (already in Summary).
 - AI usage habits:
   - Read every diff the AI writes.
   - Ask the AI to explain its choices.
@@ -135,7 +156,10 @@ pytest
 ## Integrations and Cross-Component Behavior
 - JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.
 - PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic. **CV font is Inter only** (Google Fonts in HTML head + `document.fonts.ready` before PDF); see `.cursor/rules/resume-generation-standards.mdc` § PDF / print layout.
-- **Summary is always five sentences**; highlights only; **JD keywords** (if provided) woven into **sentence 1** and bolded when KB-supported; then strategic bold on differentiators (~6 total). See rules file § Summary rules.
+- **Summary is always up to five sentences**; highlights only; **JD keywords** (if provided) woven into **sentence 1** and bolded when KB-supported; then strategic bold on differentiators (~6 total). See rules file § Summary rules.
+- Summary label: **"Professional Summary"** (not "Career Objective").
+- Android summary: education sentence (Master + First Class Honours) as sentence 1, then experience, skills, delivery, AI/data-driven products.
+- Education always placed **after Experience** in CV output.
 - Iterative AI patch loop: `python generate.py cv-iterate ...` in `app/backend/cv_auto_review_iterate.py`:
   - extracts PDF text via `pypdf`
   - calls OpenAI-compatible `/chat/completions` (`OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, `OPENAI_MODEL`)

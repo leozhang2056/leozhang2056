@@ -29,9 +29,6 @@ roles:
         - MVVM
         - Coroutines & Flow
         - Room
-        - Hilt
-        - Navigation
-        - Firebase
         - NDK
       - label: Backend & APIs
         skills:
@@ -502,21 +499,23 @@ roles:
   ai:
     summary_sentences:
       en:
-      - AI engineer with 10+ years of software engineering experience across applied
-        AI, computer vision, full-stack delivery, and Android systems.
-      - Specialized in practical machine learning and AI automation workflows that
-        connect models, APIs, and local deployment constraints.
-      - Built ChatClothes, a multimodal virtual try-on thesis project combining diffusion
-        generation, garment classification, and local LLM control.
-      - Delivered production-ready pipelines with model integration and workflow orchestration,
-        balancing AI quality with real deployment constraints.
-      - Master's in Computer and Information Sciences from AUT, First Class Honours.
+      - Master of Computer and Information Sciences (First Class Honours) from AUT.
+      - Software Engineer with 10+ years of experience building production systems,
+        specializing in Artificial Intelligence, computer vision,
+        and machine learning workflows.
+      - Built ChatClothes, a multimodal virtual try-on system combining diffusion models,
+        YOLO-based garment detection, and local LLM control with Ollama.
+      - Experienced in delivering end-to-end AI pipelines — from data preprocessing
+        and model training through deployment on constrained hardware.
+      - Combines deep software engineering foundations with AI expertise to build
+        practical and production-ready AI solutions.
     key_skills:
       en:
       - label: AI / ML
         skills:
         - PyTorch
-        - OpenCV
+        - Transformers
+        - Hugging Face
         - YOLO
         - Diffusion Models
         - LoRA
@@ -524,26 +523,18 @@ roles:
         - RAG
         - Ollama
         - ComfyUI
-        - Dify
-      - label: Software Engineering
+      - label: Infrastructure
         skills:
         - Python
-        - Java
-        - Kotlin
-        - JavaScript
-        - RESTful API
-        - WebSocket
         - Docker
+        - Git
+        - Linux
       - label: Data & Deployment
         skills:
+        - ETL
+        - Data Processing
         - SQLite
         - MySQL
-        - Linux
-        - Raspberry Pi
-        - Local Deployment
-        - Performance Tuning
-        - ETL
-        - Business Intelligence
       - label: Product Integration
         skills:
         - Android Chrome PWA

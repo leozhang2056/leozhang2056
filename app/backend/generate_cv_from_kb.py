@@ -2437,10 +2437,7 @@ _PROGRESSION_TITLE_ROLE_MAP: Dict[str, Dict[str, str]] = {
         "Technical Lead & Senior Android Engineer": "Senior Backend Engineer",
         "Senior Android Developer": "Senior Backend Developer",
     },
-    "ai": {
-        "Technical Lead & Senior Android Engineer": "Senior AI Engineer",
-        "Senior Android Developer": "AI Software Developer",
-    },
+    "ai": {},
 }
 
 _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
@@ -2453,7 +2450,6 @@ _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
         "Android Development & Real-time Communication": "Backend Development & Real-time Systems",
     },
     "ai": {
-        "Team Leadership & Mobile Platform Delivery": "Applied AI Delivery",
         "Android Development & Real-time Communication": "Applied AI & Real-time Systems",
     },
 }
@@ -2489,11 +2485,6 @@ def _adapt_progression_title(title: str, role_type: str) -> str:
         out = out.replace("Android", "Backend")
     elif role_type == "ai":
         out = out.replace("Android Engineer", "AI Engineer")
-        out = out.replace("Full-stack Engineer", "AI Engineer")
-        out = out.replace("Full-Stack Engineer", "AI Engineer")
-        out = out.replace("Full-stack Developer", "AI Developer")
-        out = out.replace("Full-Stack Developer", "AI Developer")
-        out = out.replace("Senior Android Developer", "AI Software Developer")
     return out
 
 
@@ -2707,7 +2698,7 @@ def _render_career_progression_html(
     if not isinstance(progression, list):
         progression = []
 
-    if "Chunxiao" in company_name:
+    if "Chunxiao" in company_name and len(progression) > 1:
         role_title = _chunxiao_merged_role_title(role_type)
         focus = _CHUNXIAO_MERGED_FOCUS.get(role_type, "Production software delivery across mobile, backend, and IoT systems")
         progression_line = _chunxiao_merged_progression_line(progression, lang)
