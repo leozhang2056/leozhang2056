@@ -30,6 +30,8 @@ roles:
         - Coroutines & Flow
         - Room
         - Hilt
+        - Navigation
+        - Firebase
         - NDK
       - label: Backend & APIs
         skills:
