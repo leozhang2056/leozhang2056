@@ -142,15 +142,15 @@ def generate_md(
 
 ---
 
-## Education
-
-{edu_text.strip()}
-
----
-
 ## Experience
 
 {chr(10).join(exp_lines)}
+
+---
+
+## Education
+
+{edu_text.strip()}
 
 ---
 

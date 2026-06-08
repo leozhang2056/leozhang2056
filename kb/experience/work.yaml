@@ -13,11 +13,12 @@ experiences:
     type: Education/Research
     
     achievements:
-      - "Built multimodal AI pipeline integrating computer vision (YOLO), diffusion models (Stable Diffusion), and LLM orchestration for virtual try-on; published at IVCNZ 2025 (<a href=\"https://doi.org/10.1109/IVCNZ67716.2025.11281834\">DOI</a>)"
-      - "Collaborated with supervisors and peers to scope experiments, align milestones, and communicate research progress across multiple projects"
-      - "Contributed as a summer research assistant on kiwifruit classification using hyperspectral imaging"
+      - "Completed my Master's at AUT (2025), building ChatClothes — a virtual try-on system that combined <strong>diffusion models</strong>, <strong>YOLO</strong>-based garment detection, and a local <strong>LLM</strong> for natural language control using <strong>Ollama</strong>."
+      - "Published at IVCNZ 2025 (<a href=\"https://doi.org/10.1109/IVCNZ67716.2025.11281834\">DOI</a>) with a <strong>ComfyUI</strong>-driven pipeline built in <strong>Python</strong> using <strong>PyTorch</strong> and <strong>OpenCV</strong>."
+      - "Worked on a summer research project using <strong>hyperspectral imaging</strong> and <strong>computer vision</strong> to classify kiwifruit ripeness."
+      - "Collaborated with supervisors to design experiments, align milestones, and communicate progress across projects."
     
-    tech_stack: [Python, PyTorch, OpenCV, YOLO, Diffusion Models, ComfyUI, Ollama, Raspberry Pi, LLM, Multimodal AI, AWS, Azure]
+    tech_stack: [AWS, Azure, Big Data, IoT]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
@@ -34,32 +35,35 @@ experiences:
         period: "2019 - 2024"
         focus: Full-stack Platform Delivery
         achievements:
-          - "Delivered an Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
-          - "Built scalable real-time communication supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"
-          - "Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong> and enabling focus on platform subsystems"
-          - "Partnered with product, QA, and operations to plan releases, manage risk, and improve delivery predictability"
-          - "Mentored engineers through code reviews and technical guidance; reduced technical debt across Android and backend codebases"
+          - "Delivered an Industrial IoT smart factory platform across <strong>5+ sites</strong> using <strong>Spring Cloud</strong> microservices and <strong>Docker</strong>-based CI/CD, improving production efficiency <strong>30%+</strong> through <strong>RFID</strong> tracking and automated workflows."
+          - "Built scalable real-time messaging handling <strong>5,000 DAU</strong> with <strong>sub-200ms latency</strong> and <strong>500K+ daily messages</strong>, backed by <strong>MySQL</strong> and <strong>Redis</strong>."
+          - "Migrated core messaging from unstable in-house <strong>C++</strong> to cloud <strong>IM</strong>, eliminating <strong>90%+ defects</strong> and freeing the team to focus on platform features."
+          - "Built Android and backend modules using <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong>, <strong>MVVM</strong>, <strong>Coroutines</strong>, and <strong>NDK</strong>; also developed cross-platform tools with <strong>Flutter</strong> and <strong>Node.js</strong>."
+          - "Partnered with product, QA, and operations to plan releases, manage risk, and improve delivery predictability."
         
-        tech_stack: [Spring Cloud, MySQL, Redis, Docker, Node.js, Java, Kotlin, Android SDK, Jetpack Compose, MVVM, Coroutines, NDK, Flutter]
+        tech_stack: [AI Agent, AI Workflow]
       
       - title: Senior Android Developer
         period: "2015 - 2018"
         focus: Android Development & Real-time Communication
         achievements:
-          - "Worked closely with backend teams to align API contracts and improve delivery under Android fragmentation"
-          - "Implemented WebSocket-based bidirectional communication for real-time messaging and synchronized broadcast playback"
+          - "Shipped <strong>8+ production Android apps</strong> including live-streaming, IoT connectivity, and internal enterprise tools built with <strong>Kotlin</strong>, <strong>Java</strong>, and <strong>Android SDK</strong>."
+          - "Created a modular <strong>MVVM</strong> architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong>."
+          - "Reduced <strong>OOM crashes</strong> through memory profiling and built automated crash telemetry for faster root-cause analysis."
+          - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging and synchronized broadcast playback."
+          - "Worked closely with backend teams to align <strong>REST API</strong> contracts and navigate <strong>Android fragmentation</strong> across OEM devices."
         
-        tech_stack: [Kotlin, Java, Android SDK, Jetpack, MVVM, NDK/JNI, Gradle, CI/CD, WebSocket]
-      
+        tech_stack: [Android SDK, Jetpack, NDK/JNI, Gradle, CI/CD]
+
       - title: .NET Software Engineer
         period: "2013 - 2014"
         focus: .NET Live Streaming & Web Systems
         achievements:
-          - "Built media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> multi-protocol distribution for web"
-          - "Developed ASP.NET MVC backend services with SQL Server for media asset management, user authentication, and content distribution workflows"
-          - "Managed production infrastructure: SSL/TLS, multi-region failover, and media server optimization"
+          - "Built a media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> distribution for web and mobile, using <strong>FFmpeg</strong> and <strong>C#</strong>."
+          - "Developed <strong>ASP.NET</strong> backend services with <strong>SQL Server</strong> for media asset management, user authentication, and content delivery."
+          - "Managed production infrastructure including <strong>SSL/TLS</strong> certificates, multi-region failover, and media server optimization."
         
-        tech_stack: [.NET, C#, ASP.NET, SQL Server, FFmpeg, RTMP, HLS, C++]
+        tech_stack: [.NET, C++]
 
   - company: Additional Experience
     location: Auckland, New Zealand

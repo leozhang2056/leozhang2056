@@ -3968,13 +3968,13 @@ def generate_html_from_kb(
   <div class="section-title">{lbl['skills']}</div>
   <div class="cv-skills">{skills_html}</div>
 
-  <!-- Education -->
-  <div class="section-title">{lbl['edu']}</div>
-  {edu_html}
-
   <!-- Experience -->
   <div class="section-title">{lbl['exp']}</div>
   {exp_html}
+
+  <!-- Education -->
+  <div class="section-title">{lbl['edu']}</div>
+  {edu_html}
 
   <!-- Licenses & Certifications -->
   <div class="section-title">{lbl['licenses']}</div>
