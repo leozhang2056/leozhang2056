@@ -51,7 +51,7 @@ career_identity:
     
     # 注意：android_focus 内容必须与 cv_base_template.yaml roles.android.summary_sentences 保持同步
     android_focus: >
-      Master of Computer and Information Sciences (First Class Honours) from AUT. Software Engineer with 10+ years of experience building Android applications, enterprise software, and cloud-connected systems. Strong expertise in Java, Kotlin, Android SDK, API integration, and application architecture. Proven track record of delivering production-ready solutions across mobile, backend, and IoT environments. Combines hands-on industry experience with advanced study in Artificial Intelligence to develop scalable, user-focused, and data-driven products.
+      Master of Computer and Information Sciences (First Class Honours) from AUT. Software Engineer with 10+ years of experience building Android applications, enterprise systems, IoT platforms, and cloud-connected solutions. Strong expertise in Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Android SDK, REST APIs, and scalable application architecture. Combines extensive industry experience with postgraduate research in Artificial Intelligence to deliver intelligent, maintainable, and business-focused software products.
 
     
     ai_focus: >
