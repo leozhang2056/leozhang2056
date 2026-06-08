@@ -28,27 +28,36 @@ roles:
         - MVVM
         - Coroutines & Flow
         - NDK
-      - label: Software Engineering
-        skills:
-        - Clean Architecture
-        - Performance Optimization
-        - Maintainability
+        - Room
+        - Firebase
       - label: Backend & APIs
         skills:
         - Spring Cloud
         - RESTful APIs
         - MySQL
         - Redis
+        - Node.js
       - label: Tools & DevOps
         skills:
         - Git
         - CI/CD
         - Docker
+        - Jenkins
+        - Linux
+        - Shell Scripting
       - label: AI & Emerging Technologies
         skills:
         - LLM Integration
-        - Multimodal Systems
+        - Computer Vision
+        - AI Coding Tools
+        - RAG
+        - Ollama
         - AI Workflow
+      - label: Software Engineering
+        skills:
+        - Multi-module Architecture
+        - API Integration
+        - Memory Optimization
     tech_stack_display:
       technical_lead_2019_2024:
         priority:

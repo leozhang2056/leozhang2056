@@ -116,9 +116,9 @@ education:
     status: Completed
     status_cn: 已完成
     highlights:
-      - "First Class Honours | Research: AI, Computer Vision, LLMs"
+      - "Research: AI, Computer Vision, LLMs"
     highlights_cn:
-      - "一等荣誉学位 | 研究方向：人工智能、机器学习、计算机视觉、大语言模型、大数据分析；AWS 基础设施实践"
+      - "研究方向：人工智能、机器学习、计算机视觉、大语言模型、大数据分析；AWS 基础设施实践"
     
   - degree: Bachelor of Software Engineering
     degree_cn: 软件工程学士
@@ -129,9 +129,9 @@ education:
     start_date: "2009-07"
     end_date: "2013-06"
     highlights:
-      - "National Scholarship | Computer Science fundamentals, algorithms, system design, Java, backend architecture"
+      - "Coursework: Data Structures, Algorithms, Java Programming, Database Systems, Software Engineering"
     highlights_cn:
-      - "国家奖学金 | 扎实的计算机科学基础：算法、数据结构、软件工程；Java 编程、数据库系统、后端架构"
+      - "课程：数据结构、算法、Java 编程、数据库系统、软件工程"
 
 career_objectives:
   target_roles:
