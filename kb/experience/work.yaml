@@ -22,30 +22,31 @@ experiences:
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
-    company_description: >
-      Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
+    company_description: ""
     location: China
-    start_date: "2015-07"
-    end_date: "2018-12"
+    start_date: "2018-07"
+    end_date: "2024-02"
     current: false
     type: Full-time
-    role: Senior Android Developer
+    role: Full-stack Engineer
     
     achievements:
-      - "Shipped <strong>8+ production Android apps</strong> across <strong>live-streaming, IoT device management, and field inspection</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
-      - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
-      - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
-      - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging; integrated <strong>FastDFS</strong> self-hosted file storage with consistent access control across features."
-      - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
+      - "Contributed to <strong>15+ projects</strong> over 10 years spanning enterprise messaging, smart factory, IoT, and industrial automation — from prototype through multi-site production rollout across <strong>garment manufacturing, forestry, education, and high-security</strong> environments."
+      - "Architected and delivered a <strong>smart factory platform</strong> for garment manufacturing, replacing paper-based workflows with automated production tracking. Deployed across <strong>10+ factory sites</strong>, integrating <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners with <strong>Spring Cloud</strong> microservices, <strong>Docker</strong>-based CI/CD, and <strong>MySQL</strong> task tables handling <strong>100K+ new rows/day</strong> — improving production efficiency <strong>30%+</strong>."
+      - "Built Android shop-floor terminals and Vue.js web portals for hundreds of daily workers, plus a local Windows service (serial-to-WebSocket bridge) that eliminated manual scale-weight entry. Coordinated events across devices with <strong>ActiveMQ/Kafka</strong> and scaled from a single-site pilot to multi-region production. Awarded the <strong>Hebei Provincial Science and Technology Achievement Award</strong> (2020) for contributions to smart manufacturing."
+      - "Architected the <strong>enterprise messaging backbone</strong> — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong> of shared documents. Served <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> across Android, Web, and PC."
+      - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
+      - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
     
-    tech_stack: [Jetpack, NDK/JNI, Gradle, CI/CD]
+    tech_stack: [Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Redis]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
-    company_description: ""
+    company_description: >
+      Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
     location: China
     start_date: "2013-07"
-    end_date: "2024-02"
+    end_date: "2018-06"
     current: false
     type: Full-time
     
@@ -58,18 +59,16 @@ experiences:
           - "Developed ASP.NET backend services with SQL Server for media asset management, user authentication, and content distribution — providing the API layer that connected front-end media players to managed content libraries."
           - "Managed production infrastructure including SSL/TLS certificates, multi-region failover, and media server optimization — ensuring stable high-concurrency live streaming with minimal downtime."
       
-      - title: Full-stack Engineer
-        period: "2019 - 2024"
-        focus: Full-stack Platform Delivery
+      - title: Senior Android Developer
+        period: "2015 - 2018"
+        focus: Android delivery, real-time communication, and device-integrated workflows
         achievements:
-          - "Contributed to <strong>15+ projects</strong> over 10 years spanning enterprise messaging, smart factory, IoT, and industrial automation — from prototype through multi-site production rollout across <strong>garment manufacturing, forestry, education, and high-security</strong> environments."
-          - "Architected and delivered a <strong>smart factory platform</strong> for garment manufacturing, replacing paper-based workflows with automated production tracking. Deployed across <strong>10+ factory sites</strong>, integrating <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners with <strong>Spring Cloud</strong> microservices, <strong>Docker</strong>-based CI/CD, and <strong>MySQL</strong> task tables handling <strong>100K+ new rows/day</strong> — improving production efficiency <strong>30%+</strong>."
-          - "Built Android shop-floor terminals and Vue.js web portals for hundreds of daily workers, plus a local Windows service (serial-to-WebSocket bridge) that eliminated manual scale-weight entry. Coordinated events across devices with <strong>ActiveMQ/Kafka</strong> and scaled from a single-site pilot to multi-region production. Awarded the <strong>Hebei Provincial Science and Technology Achievement Award</strong> (2020) for contributions to smart manufacturing."
-          - "Architected the <strong>enterprise messaging backbone</strong> — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong> of shared documents. Served <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> across Android, Web, and PC."
-          - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
-          - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
+          - "Shipped <strong>8+ production Android apps</strong> across <strong>live-streaming, IoT device management, and field inspection</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
+          - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
+          - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
+          - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
     
-    tech_stack: [.NET, C++, Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Redis]
+    tech_stack: [.NET, C++, Jetpack, NDK/JNI, Gradle, CI/CD]
 
   - company: Additional Experience
     location: Auckland, New Zealand
