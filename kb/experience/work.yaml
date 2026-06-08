@@ -34,8 +34,8 @@ experiences:
         period: "2019 - 2024"
         focus: Full-stack Platform Delivery
         achievements:
-          - "Led delivery of an Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
-          - "Led development of scalable real-time communication supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"
+          - "Delivered an Industrial IoT smart factory platform across <strong>5+ sites</strong>, improving production efficiency <strong>30%+</strong> via RFID tracking and automated workflows"
+          - "Built scalable real-time communication supporting <strong>5,000 DAU</strong>, <strong>sub-200ms latency</strong>, and <strong>500K+ daily messages</strong>"
           - "Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong> and enabling focus on platform subsystems"
           - "Partnered with product, QA, and operations to plan releases, manage risk, and improve delivery predictability"
           - "Mentored engineers through code reviews and technical guidance; reduced technical debt across Android and backend codebases"

@@ -11,17 +11,15 @@ roles:
   android:
     summary_sentences:
       en:
-      - Senior Android Engineer with 10+ years of experience delivering mobile and IoT
-        solutions across industrial and enterprise environments.
-      - Experienced in leading cross-functional development, improving system reliability,
-        and collaborating with product, QA, and operations teams to deliver scalable
-        applications.
-      - Strong background in Android architecture, real-time systems, and applied AI for
-        mobile and edge-device workflows.
-      - Known for clear communication, delivery under pressure, and mentoring engineers
-        through code reviews and guidance.
-      - Master of Computer and Information Sciences, First Class Honours, Auckland
-        University of Technology.
+      - Master of Computer and Information Sciences (First Class Honours) from AUT.
+      - Software Engineer with 10+ years of experience building Android applications,
+        enterprise software, and cloud-connected systems.
+      - Strong expertise in Java, Kotlin, Android SDK, API integration,
+        and application architecture.
+      - Proven track record of delivering production-ready solutions across mobile,
+        backend, and IoT environments.
+      - Combines hands-on industry experience with advanced study in Artificial
+        Intelligence to develop scalable, user-focused, and data-driven products.
     key_skills:
       en:
       - label: Android Development

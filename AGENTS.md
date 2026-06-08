@@ -47,10 +47,11 @@
 │   ├── achievements.yaml        # Publications, awards, certs
 │   ├── project_relations.yaml   # Narration threads & project links
 │   ├── resume_generation_rules.md  # Detailed layout/wording constraints
+│   ├── career/                  # Career strategy & NZ job market guides
 │   ├── experience/              # Work & research history
 │   ├── bullets/                 # Reusable bullet point templates by role
 │   ├── schema/                  # Validation schemas
-│   └── interview_qa/            # Scripted/YAML interview Q&As
+│   └── interview_qa/            # Scripted/YAML interview Q&As + methodology guides
 │
 ├── app/backend/                 # Resume compiler backend logic
 ├── templates/                   # Real layout templates (TeX, Markdown base)

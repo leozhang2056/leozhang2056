@@ -181,6 +181,14 @@ def build_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='Skip post-generation checks (fluency/layout/JD coverage) and *_POST_CHECK.md.',
     )
+    cv_parser.add_argument(
+        '--gen-md', default=None, metavar='PATH',
+        help='Generate editable Markdown CV file (no PDF). Edit it, then use --from-md to generate PDF.',
+    )
+    cv_parser.add_argument(
+        '--from-md', default=None, metavar='PATH',
+        help='Generate PDF from an edited Markdown CV file (requires --output).',
+    )
 
     # ── cl (cover letter) ────────────────────────────────────────────────────
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
@@ -652,6 +660,36 @@ def _normalize_cv_output_path(output: str | None, role: str, company: str) -> st
 
 async def run(args) -> None:
     if args.command == 'cv':
+        # --gen-md: generate editable markdown only, no PDF
+        if getattr(args, 'gen_md', None):
+            from app.backend.cv_markdown import generate_md
+            md_path = args.gen_md
+            role = _auto_role(args)
+            generate_md(role_type=role, output_path=md_path)
+            print(f"\nEdit the markdown file, then run:")
+            print(f"  python generate.py cv --from-md {md_path} --output outputs/CV.pdf\n")
+            return
+
+        # --from-md: generate PDF from edited markdown
+        if getattr(args, 'from_md', None):
+            from app.backend.cv_markdown import md_to_html
+            from app.backend.generate_cv_html_to_pdf import html_to_pdf
+            md_path = args.from_md
+            cv_output = args.output
+            if not cv_output:
+                from pathlib import Path as _Path
+                today = _Path().stem
+                cv_output = f"outputs/CV_from_md.pdf"
+            elif not cv_output.endswith('.pdf'):
+                cv_output += '.pdf'
+            html_content = md_to_html(md_path)
+            html_path = cv_output.replace('.pdf', '.html')
+            with open(html_path, 'w', encoding='utf-8') as f:
+                f.write(html_content)
+            print(f"  HTML → {html_path}")
+            await html_to_pdf(html_content, cv_output)
+            print(f"  PDF  → {cv_output}")
+            return
         from generate_cv_from_kb import generate_cv_from_kb
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)

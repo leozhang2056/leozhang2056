@@ -127,7 +127,7 @@ SUMMARY_MAX_CHARS_EN = 780
 SUMMARY_MAX_CHARS_ZH = 520
 SUMMARY_REQUIRED_SENTENCES = 6
 SUMMARY_EDU_CLOSING_EN = (
-    "Master of Computer and Information Sciences, First Class Honours, Auckland University of Technology."
+    "MCIS at AUT, First Class Honours. Research focus: AI, Computer Vision, LLMs."
 )
 SUMMARY_EDU_CLOSING_ZH = (
     "奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。"
@@ -1036,13 +1036,22 @@ def _ensure_sentence_terminator(sentence: str, lang: str) -> str:
 
 def _enforce_summary_five_sentences(text: str, lang: str) -> str:
     """
-    强制五句结构：前四句来自 variant（身份/专长/证据/加分），第五句固定为 AUT+一等荣誉。
-    学历句始终置末；若 variant 将学历写在句首则抽出并重排。
+    强制五句结构：学历句始终置末；若 variant 将学历写在句首则抽出并重排。
+    如果第一句已是学历句，则保持原位，不再添加学历收尾句。
     """
     closing = _summary_edu_closing_sentence(lang)
     sentences = _split_summary_sentences(text, lang)
     if not sentences:
         return _ensure_sentence_terminator(closing, lang)
+
+    # 如果第一句已是学历句 → 保持原位，不再追加收尾
+    if sentences and _is_edu_summary_sentence(sentences[0], lang):
+        body: List[str] = []
+        for s in sentences[1:]:
+            if not _is_edu_summary_sentence(s, lang):
+                body.append(s)
+        ordered = [sentences[0]] + body[:4]
+        return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
 
     body: List[str] = []
     for s in sentences:
@@ -1051,11 +1060,9 @@ def _enforce_summary_five_sentences(text: str, lang: str) -> str:
         body.append(s)
 
     while len(body) > 5:
-        # 去掉可能残留在句首的重复学历/过长 hook，保留后五句叙事
         body.pop(0)
 
     if len(body) < 5:
-        # variant 句数不足时不编造，仅保证第六句学历收口
         ordered = body + [closing]
         return " ".join(_ensure_sentence_terminator(s, lang) for s in ordered)
 
@@ -1510,14 +1517,6 @@ def generate_summary(
     text = _ensure_summary_tail_phrase(text, lang, role_type)
     text = _final_summary_sanity_fix(text)
     text = _bold_summary_edu_honours(text, lang)
-
-    # Prepend Master's degree to first sentence (strip trailing edu sentence to avoid duplication)
-    if lang == 'en' and text and not text.startswith('Master'):
-        sents = _split_summary_sentences(text, lang)
-        if sents and len(sents) >= 2 and _is_edu_summary_sentence(sents[-1], lang):
-            sents = sents[:-1]
-            text = " ".join(sents)
-        text = "Master of Computer and Information Sciences graduate, " + text[0].lower() + text[1:]
 
     return _remove_edge_terms(text)
 
@@ -4664,12 +4663,6 @@ async def generate_cv_from_kb(
     with open(html_en_path, 'w', encoding='utf-8') as f:
         f.write(html_en)
     print(f"  EN HTML → {html_en_path}")
-    en_docx_path = en_path.replace('.pdf', '.docx')
-    try:
-        html_to_docx(html_en, en_docx_path)
-        print(f"  EN DOCX → {en_docx_path}")
-    except Exception as exc:
-        print(f"  Warning: DOCX generation failed: {exc}")
     await html_to_pdf(html_en, en_path)
     print(f"  EN PDF  → {en_path}  ({os.path.getsize(en_path)/1024:.1f} KB)")
     _print_quality_metrics(html_en, safe_jd_keywords, role_type, min_target_pct=min_jd_match_pct)
@@ -4757,12 +4750,6 @@ async def generate_cv_from_kb(
         with open(html_zh_path, 'w', encoding='utf-8') as f:
             f.write(html_zh)
         print(f"  CN HTML → {html_zh_path}")
-        zh_docx_path = zh_path.replace('.pdf', '.docx')
-        try:
-            html_to_docx(html_zh, zh_docx_path)
-            print(f"  CN DOCX → {zh_docx_path}")
-        except Exception as exc:
-            print(f"  Warning: ZH DOCX generation failed: {exc}")
         await html_to_pdf(html_zh, zh_path)
         print(f"  CN PDF  → {zh_path}  ({os.path.getsize(zh_path)/1024:.1f} KB)")
         if not keep_html:
