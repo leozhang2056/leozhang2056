@@ -25,12 +25,39 @@ experiences:
     company_description: >
       Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
     location: China
+    start_date: "2015-07"
+    end_date: "2018-12"
+    current: false
+    type: Full-time
+    role: Senior Android Developer
+    
+    achievements:
+      - "Shipped <strong>8+ production Android apps</strong> across <strong>live-streaming, IoT device management, and field inspection</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
+      - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
+      - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
+      - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging; integrated <strong>FastDFS</strong> self-hosted file storage with consistent access control across features."
+      - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
+    
+    tech_stack: [Jetpack, NDK/JNI, Gradle, CI/CD]
+
+  - company: Chunxiao Technology Co., Ltd.
+    company_url: https://www.chunxiao.net/
+    company_description: ""
+    location: China
     start_date: "2013-07"
     end_date: "2024-02"
     current: false
     type: Full-time
     
     career_progression:
+      - title: .NET Software Engineer
+        period: "2013 - 2014"
+        focus: .NET Live Streaming & Web Systems
+        achievements:
+          - "Built a media transcoding pipeline (H.264/AAC) supporting RTMP/HLS distribution for web and mobile platforms using FFmpeg and C#, enabling multi-device live streaming that scaled to high-concurrency broadcast events."
+          - "Developed ASP.NET backend services with SQL Server for media asset management, user authentication, and content distribution — providing the API layer that connected front-end media players to managed content libraries."
+          - "Managed production infrastructure including SSL/TLS certificates, multi-region failover, and media server optimization — ensuring stable high-concurrency live streaming with minimal downtime."
+      
       - title: Full-stack Engineer
         period: "2019 - 2024"
         focus: Full-stack Platform Delivery
@@ -41,26 +68,8 @@ experiences:
           - "Architected the <strong>enterprise messaging backbone</strong> — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted <strong>FastDFS</strong> file layer handling <strong>100GB+</strong> of shared documents. Served <strong>5,000 DAU</strong> and <strong>500K+ daily messages</strong> across Android, Web, and PC."
           - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
           - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
-        
-        tech_stack: [Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Redis]
-      
-      - title: Senior Android Developer
-        period: "2015 - 2018"
-        focus: Android delivery, real-time communication, and device-integrated workflows
-        achievements:
-          - "Shipped <strong>8+ production Android apps</strong> across <strong>live-streaming, IoT device management, and field inspection</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
-          - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
-          - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
-          - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging; integrated <strong>FastDFS</strong> self-hosted file storage with consistent access control across features."
-          - "Aligned <strong>REST API</strong> contracts with backend teams and maintained test coverage across fragmented Android device ecosystems, balancing release speed with quality in production."
-      
-      - title: .NET Software Engineer
-        period: "2013 - 2014"
-        focus: .NET Live Streaming & Web Systems
-        achievements:
-          - "Built a media transcoding pipeline (H.264/AAC) supporting RTMP/HLS distribution for web and mobile platforms using FFmpeg and C#, enabling multi-device live streaming that scaled to high-concurrency broadcast events."
-          - "Developed ASP.NET backend services with SQL Server for media asset management, user authentication, and content distribution — providing the API layer that connected front-end media players to managed content libraries."
-          - "Managed production infrastructure including SSL/TLS certificates, multi-region failover, and media server optimization — ensuring stable high-concurrency live streaming with minimal downtime."
+    
+    tech_stack: [.NET, C++, Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Redis]
 
   - company: Additional Experience
     location: Auckland, New Zealand
