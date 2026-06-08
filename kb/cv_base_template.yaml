@@ -28,36 +28,27 @@ roles:
         - MVVM
         - Coroutines & Flow
         - NDK
-        - Android Security
-        - React Native
-        - Automated Testing
-        - App Store Deployment
       - label: Software Engineering
         skills:
         - Clean Architecture
         - Performance Optimization
         - Maintainability
-        - Code Review
-        - Cross-functional Collaboration
       - label: Backend & APIs
         skills:
         - Spring Cloud
         - RESTful APIs
         - MySQL
         - Redis
-        - TypeScript
       - label: Tools & DevOps
         skills:
         - Git
         - CI/CD
         - Docker
-        - Jenkins
-        - Agile/Scrum
       - label: AI & Emerging Technologies
         skills:
         - LLM Integration
         - Multimodal Systems
-        - AI workflow
+        - AI Workflow
     tech_stack_display:
       technical_lead_2019_2024:
         priority:
