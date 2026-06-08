@@ -18,12 +18,12 @@ experiences:
       - "Worked on a summer research project using <strong>hyperspectral imaging</strong> and <strong>computer vision</strong> to classify kiwifruit ripeness."
       - "Collaborated with supervisors to design experiments, align milestones, and communicate progress across projects."
     
-    tech_stack: [AWS, Azure, Big Data, IoT]
+    tech_stack: [AWS, Azure, Big Data, IoT, AI Agent, AI Workflow]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
     company_description: >
-      IoT solution provider (est. 2013, ~40 employees) originally focused on audio/video streaming and enterprise software platforms, later evolving into integrated hardware-software solutions for smart factory, industrial monitoring, smart electricity, and educational sectors.
+      Technology company (est. 2013, ~40 employees) delivering software, hardware, and system integration across streaming media, enterprise platforms, IoT, and industrial automation.
     location: China
     start_date: "2013-07"
     end_date: "2024-02"
@@ -35,35 +35,34 @@ experiences:
         period: "2019 - 2024"
         focus: Full-stack Platform Delivery
         achievements:
-          - "Delivered an Industrial IoT smart factory platform across <strong>5+ sites</strong> using <strong>Spring Cloud</strong> microservices and <strong>Docker</strong>-based CI/CD, improving production efficiency <strong>30%+</strong> through <strong>RFID</strong> tracking and automated workflows."
-          - "Built scalable real-time messaging handling <strong>5,000 DAU</strong> with <strong>sub-200ms latency</strong> and <strong>500K+ daily messages</strong>, backed by <strong>MySQL</strong> and <strong>Redis</strong>."
-          - "Migrated core messaging from unstable in-house <strong>C++</strong> to cloud <strong>IM</strong>, eliminating <strong>90%+ defects</strong> and freeing the team to focus on platform features."
-          - "Built Android and backend modules using <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong>, <strong>MVVM</strong>, <strong>Coroutines</strong>, and <strong>NDK</strong>; also developed cross-platform tools with <strong>Flutter</strong> and <strong>Node.js</strong>."
-          - "Partnered with product, QA, and operations to plan releases, manage risk, and improve delivery predictability."
+          - "Contributed to <strong>15+ projects</strong> over 10 years at Chunxiao — spanning Android apps, Spring Cloud backend services, real-time messaging, IoT integration, and industrial automation — delivering production systems from prototype through multi-site rollout across garment factories, forestry, education, and high-security manufacturing."
+          - "Designed and delivered a smart factory platform for <strong>garment manufacturing</strong> that replaced paper-based workflows with automated production tracking. Integrated <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners with Spring Cloud microservices and Docker-based CI/CD, improving production efficiency <strong>30%+</strong> across <strong>5+ factory sites</strong> with hundreds of daily shop-floor workers."
+          - "Architected the enterprise messaging backbone that became the company's unified communication platform — Android clients with NDK-based TCP/UDP for <strong>sub-200ms latency</strong>, Spring Cloud + Node.js backend, and a self-hosted FastDFS file layer handling <strong>100GB+</strong> of shared documents. Grew to <strong>5,000 DAU</strong>, <strong>500K+ messages/day</strong> across Android, Web, and PC, with <strong><2% downtime</strong> over the decade."
+          - "Evolved the messaging system from a standalone IM tool into a shared enterprise platform — designed and built a unified SSO layer, centralized file service, and permission framework that eliminated redundant infrastructure and was reused across <strong>5+ subsystems</strong> including attendance, approvals, asset management, and finance."
+          - "Led the migration of core messaging from an unstable in-house C++ implementation to a cloud IM provider, eliminating <strong>90%+ defects</strong> and redirecting engineering effort from infrastructure operations to product development — directly enabling faster feature delivery."
+          - "Built Android and backend modules using Kotlin, Java, Jetpack Compose, MVVM, Coroutines, and NDK; also developed cross-platform tools with Flutter and Node.js. Partnered with product, QA, and operations to plan releases, manage risk, and maintain delivery predictability across multiple concurrent projects."
         
         tech_stack: [AI Agent, AI Workflow]
       
       - title: Senior Android Developer
         period: "2015 - 2018"
-        focus: Android Development & Real-time Communication
+        focus: Android delivery, real-time communication, and device-integrated workflows
         achievements:
-          - "Shipped <strong>8+ production Android apps</strong> including live-streaming, IoT connectivity, and internal enterprise tools built with <strong>Kotlin</strong>, <strong>Java</strong>, and <strong>Android SDK</strong>."
-          - "Created a modular <strong>MVVM</strong> architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong>."
-          - "Reduced <strong>OOM crashes</strong> through memory profiling and built automated crash telemetry for faster root-cause analysis."
-          - "Implemented <strong>WebSocket</strong>-based bidirectional communication for real-time messaging and synchronized broadcast playback."
-          - "Worked closely with backend teams to align <strong>REST API</strong> contracts and navigate <strong>Android fragmentation</strong> across OEM devices."
+          - "Shipped <strong>8+ production Android apps</strong> across live-streaming, IoT device management (smart switches and Zigbee/WiFi gateways), enterprise tools, and field inspection systems — including an offline-first forestry app that enabled rangers to record GPS-tracked patrols and incident reports in zero-connectivity areas, automatically syncing when network returned."
+          - "Designed a modular Android architecture that allowed parallel team development across different product lines, reused across <strong>12+ internal projects</strong> and cutting code duplication by <strong>50%+</strong> — reducing onboarding time for new team members and speeding up feature delivery across the portfolio."
+          - "Reduced OOM crashes on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated crash telemetry that provided root-cause analysis across the device fleet, cutting time-to-fix for production crashes."
+          - "Implemented WebSocket-based bidirectional communication for real-time messaging and synchronized broadcast playback; integrated FastDFS self-hosted file storage with consistent access control across features, eliminating the unreliability and cost constraints of a single-server file setup."
+          - "Aligned REST API contracts with backend teams and maintained test coverage across Xiaomi, Huawei, OPPO, and stock Android devices — balancing release speed with quality in a fragmented device landscape where OEM-specific behaviors caused unique field failures."
         
-        tech_stack: [Android SDK, Jetpack, NDK/JNI, Gradle, CI/CD]
-
+        tech_stack: [Jetpack, NDK/JNI, Gradle, CI/CD]
+      
       - title: .NET Software Engineer
         period: "2013 - 2014"
         focus: .NET Live Streaming & Web Systems
         achievements:
-          - "Built a media transcoding pipeline (<strong>H.264/AAC</strong>) supporting <strong>RTMP/HLS</strong> distribution for web and mobile, using <strong>FFmpeg</strong> and <strong>C#</strong>."
-          - "Developed <strong>ASP.NET</strong> backend services with <strong>SQL Server</strong> for media asset management, user authentication, and content delivery."
-          - "Managed production infrastructure including <strong>SSL/TLS</strong> certificates, multi-region failover, and media server optimization."
-        
-        tech_stack: [.NET, C++]
+          - "Built a media transcoding pipeline (H.264/AAC) supporting RTMP/HLS distribution for web and mobile platforms using FFmpeg and C#, enabling multi-device live streaming that scaled to high-concurrency broadcast events."
+          - "Developed ASP.NET backend services with SQL Server for media asset management, user authentication, and content distribution — providing the API layer that connected front-end media players to managed content libraries."
+          - "Managed production infrastructure including SSL/TLS certificates, multi-region failover, and media server optimization — ensuring stable high-concurrency live streaming with minimal downtime."
 
   - company: Additional Experience
     location: Auckland, New Zealand
