@@ -42,7 +42,7 @@ experiences:
           - "Evolved the messaging system from a standalone IM into a shared enterprise platform — built a unified <strong>SSO</strong> layer, centralized file service, and permission framework reused across <strong>5+ subsystems</strong> (attendance, approvals, asset management, finance). Migrated core messaging from unstable in-house C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
           - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
         
-        tech_stack: [Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Flutter, Redis]
+        tech_stack: [Kotlin, Java, Jetpack Compose, MVVM, Coroutines, Redis]
       
       - title: Senior Android Developer
         period: "2015 - 2018"
