@@ -142,7 +142,7 @@ roles:
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Android Developer
+        - Senior Mobile Developer
         - .NET Software Engineer
       - name: Auckland University of Technology
         type: Education/Research
@@ -301,7 +301,7 @@ roles:
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Android Developer
+        - Senior Mobile Developer
         - .NET Software Engineer
       - name: Auckland University of Technology
         type: Education/Research
@@ -316,15 +316,15 @@ roles:
   fullstack:
     summary_sentences:
       en:
-      - Senior Full-Stack Software Engineer with 10+ years of experience delivering
-        scalable backend, mobile, and web systems.
-      - Specialized in cloud-native microservices and responsive web applications
-        using React, TypeScript, .NET, and Java ecosystems.
-      - Recently focused on applied AI, completing a Master's thesis on diffusion
-        models and building production-ready ML workflows.
-      - Proven impact through end-to-end feature delivery, cross-platform integration,
-        performance optimization, and CI/CD automation across Agile environments.
-      - Master's in Computer and Information Sciences from AUT, First Class Honours.
+      - Master of Computer and Information Sciences (First Class Honours) from AUT.
+      - Software Engineer with 10+ years of experience building backend, mobile,
+        and web applications, with strong full-stack capability across modern
+        technology stacks.
+      - Skilled in Spring Cloud, RESTful APIs, AWS, CI/CD, MySQL, Redis,
+        and scalable system architecture across cloud and IoT environments.
+      - Combines extensive industry experience with postgraduate research in
+        Artificial Intelligence to deliver intelligent, maintainable, and
+        business-focused software products.
     key_skills:
       en:
       - label: Languages
@@ -484,7 +484,7 @@ roles:
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Android Developer
+        - Senior Mobile Developer
         - .NET Software Engineer
       - name: Auckland University of Technology
         type: Education/Research
