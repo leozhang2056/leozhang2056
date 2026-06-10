@@ -1,0 +1,702 @@
+# 投递记录 / Application Tracker
+# 自动生成，每次 python generate.py cv/cl 带 --company 时追加
+# Manual edits allowed for interview notes / status updates
+
+applications:
+  # 2026-03
+  - company: Entelect
+    role: android
+    date: "2026-03-11"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Auror
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Hirebridge
+    role: ai
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Hirebridge
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: EROAD
+    role: android
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: IDEXX
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Jobgether
+    role: android
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: NZTA
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: RocketLab
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Southern Cross
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Visa
+    role: fullstack
+    date: "2026-03-12"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Theta
+    role: fullstack
+    date: "2026-03-13"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Z Energy
+    role: fullstack
+    date: "2026-03-16"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Whip Around
+    role: android
+    date: "2026-03-18"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Amazon Web Services
+    role: fullstack
+    date: "2026-03-18"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Z Energy
+    role: fullstack
+    date: "2026-03-18"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Entelect
+    role: android
+    date: "2026-03-19"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Entelect
+    role: android
+    date: "2026-03-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Alphero
+    role: android
+    date: "2026-03-23"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Tower Insurance
+    role: backend
+    date: "2026-03-23"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Westpac New Zealand
+    role: backend
+    date: "2026-03-23"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Air New Zealand
+    role: android
+    date: "2026-03-25"
+    cv: true
+    cl: false
+    status: submitted
+  - company: ANZ
+    role: backend
+    date: "2026-03-25"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Jobgether
+    role: android
+    date: "2026-03-26"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Kiwibank
+    role: android
+    date: "2026-03-31"
+    cv: true
+    cl: false
+    status: submitted
+
+  # 2026-04
+  - company: Westpac
+    role: backend
+    date: "2026-04-02"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Visa
+    role: fullstack
+    date: "2026-04-09"
+    cv: true
+    cl: false
+    status: submitted
+  - company: QualityTest
+    role: backend
+    date: "2026-04-10"
+    cv: true
+    cl: false
+    status: submitted
+  - company: NZ AA
+    role: ai
+    date: "2026-04-11"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Lightspeed
+    role: fullstack
+    date: "2026-04-11"
+    cv: true
+    cl: false
+    status: submitted
+  - company: PageProof
+    role: fullstack
+    date: "2026-04-11"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Fiserv
+    role: android
+    date: "2026-04-17"
+    cv: true
+    cl: false
+    status: submitted
+  - company: EROAD
+    role: fullstack
+    date: "2026-04-17"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Hays
+    role: android
+    date: "2026-04-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Foodies
+    role: backend
+    date: "2026-04-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: AUT
+    role: fullstack
+    date: "2026-04-21"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Caterpillar
+    role: fullstack
+    date: "2026-04-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: L3Harris
+    role: fullstack
+    date: "2026-04-21"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Windcave
+    role: android
+    date: "2026-04-25"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Hays
+    role: android
+    date: "2026-04-25"
+    cv: true
+    cl: false
+    status: submitted
+  - company: OrbitRemit
+    role: android
+    date: "2026-04-28"
+    cv: true
+    cl: false
+    status: submitted
+
+  # 2026-05
+  - company: Halter
+    role: ai
+    date: "2026-05-01"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Halter
+    role: fullstack
+    date: "2026-05-01"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Hectre
+    role: fullstack
+    date: "2026-05-01"
+    cv: true
+    cl: false
+    status: submitted
+  - company: simPRO
+    role: fullstack
+    date: "2026-05-01"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Westpac
+    role: android
+    date: "2026-05-07"
+    cv: true
+    cl: false
+    status: submitted
+  - company: ANZ
+    role: backend
+    date: "2026-05-14"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Sharesies
+    role: fullstack
+    date: "2026-05-14"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Air New Zealand
+    role: android
+    date: "2026-05-19"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Atom Intelligence
+    role: fullstack
+    date: "2026-05-20"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Halter
+    role: fullstack
+    date: "2026-05-20"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Hays
+    role: android
+    date: "2026-05-20"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Windcave
+    role: android
+    date: "2026-05-20"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Air New Zealand
+    role: android
+    date: "2026-05-20"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Evolve Recruitment Group
+    role: backend
+    date: "2026-05-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Evolve Recruitment Group
+    role: fullstack
+    date: "2026-05-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: IDEXX
+    role: backend
+    date: "2026-05-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: IDEXX
+    role: fullstack
+    date: "2026-05-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Nateva
+    role: fullstack
+    date: "2026-05-21"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Westpac
+    role: backend
+    date: "2026-05-21"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Westpac
+    role: fullstack
+    date: "2026-05-21"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Younity
+    role: fintech
+    date: "2026-05-22"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Photon
+    role: photon
+    date: "2026-05-22"
+    cv: true
+    cl: true
+    status: submitted
+  - company: IDEXX
+    role: fullstack
+    date: "2026-05-22"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Westpac
+    role: android
+    date: "2026-05-24"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Air New Zealand
+    role: android
+    date: "2026-05-24"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Hnry
+    role: android
+    date: "2026-05-25"
+    cv: true
+    cl: false
+    status: submitted
+  - company: accesso
+    role: ai
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Randstad
+    role: ai
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Randstad
+    role: android
+    date: "2026-05-27"
+    cv: true
+    cl: false
+    status: submitted
+  - company: The Warehouse Group
+    role: ai
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: BNZ
+    role: backend
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Datacom
+    role: backend
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: PaymentsCo
+    role: backend
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: accesso
+    role: fullstack
+    date: "2026-05-27"
+    cv: true
+    cl: false
+    status: submitted
+  - company: ANZ
+    role: fullstack
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: AUT
+    role: fullstack
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Henry Schein One
+    role: fullstack
+    date: "2026-05-27"
+    cv: true
+    cl: true
+    status: submitted
+  - company: PaymentsCo
+    role: fullstack
+    date: "2026-05-27"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Tribe
+    role: android
+    date: "2026-05-27"
+    cv: true
+    cl: false
+    status: submitted
+  - company: ASB Bank
+    role: ai
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Xero
+    role: ai
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Air New Zealand
+    role: android
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Concord Visa
+    role: android
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: EverCommerce
+    role: auto
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Tourwriter
+    role: auto
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Air New Zealand
+    role: backend
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: EverCommerce
+    role: backend
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Foodstuffs
+    role: backend
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Slalom
+    role: backend
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Weta FX
+    role: backend
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: AUT
+    role: fullstack
+    date: "2026-05-28"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Concord Visa
+    role: fullstack
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Envato
+    role: fullstack
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Levno
+    role: fullstack
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Seequent
+    role: fullstack
+    date: "2026-05-28"
+    cv: true
+    cl: false
+    status: submitted
+  - company: accesso Dexibit
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Catch Design
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Digital Generationz
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Enable
+    role: backend
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: EngFlow
+    role: backend
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Henry Schein One
+    role: backend
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Kami
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Pushpay
+    role: backend
+    date: "2026-05-29"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Vector NZ
+    role: backend
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Visa
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Whip Around
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Westpac
+    role: fullstack
+    date: "2026-05-29"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Westpac
+    role: android
+    date: "2026-05-30"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Vista Group
+    role: backend
+    date: "2026-05-30"
+    cv: true
+    cl: true
+    status: submitted
+
+  # 2026-06
+  - company: MetService
+    role: android
+    date: "2026-06-04"
+    cv: true
+    cl: true
+    status: submitted
+  - company: MetService
+    role: android
+    date: "2026-06-05"
+    cv: true
+    cl: true
+    status: submitted
+  - company: OrbitRemit
+    role: android
+    date: "2026-06-05"
+    cv: true
+    cl: true
+    status: submitted
+  - company: Crown
+    role: android
+    date: "2026-06-09"
+    cv: true
+    cl: false
+    status: submitted
+  - company: Gallagher
+    role: fullstack
+    date: "2026-06-09"
+    cv: true
+    cl: false
+    status: submitted

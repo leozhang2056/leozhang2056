@@ -69,6 +69,7 @@ Output naming convention (auto, when --output is not specified):
 import sys
 import argparse
 import asyncio
+import yaml
 from datetime import datetime
 import re
 from pathlib import Path
@@ -84,6 +85,50 @@ try:
     _HAS_MEMORY = True
 except ImportError:
     _HAS_MEMORY = False
+
+# ── Application Tracker ──────────────────────────────────────────────────────
+_TRACKER_PATH = Path(__file__).parent / 'kb' / 'applications_tracker.yaml'
+
+def _track_application(company: str, role: str, date_str: str = None,
+                       has_cv: bool = False, has_cl: bool = False) -> None:
+    """Append an entry to applications_tracker.yaml if not already present."""
+    if not company or company == 'auto':
+        return
+    date_str = date_str or datetime.now().strftime('%Y-%m-%d')
+
+    try:
+        with open(_TRACKER_PATH, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f) or {'applications': []}
+    except FileNotFoundError:
+        data = {'applications': []}
+
+    apps = data.setdefault('applications', [])
+
+    # Check for an existing matching entry
+    for app in apps:
+        if (app.get('company') == company
+                and app.get('role') == role
+                and app.get('date') == date_str):
+            # Update flags if this run generated additional material
+            if has_cv:
+                app['cv'] = True
+            if has_cl:
+                app['cl'] = True
+            app['status'] = 'submitted'
+            break
+    else:
+        apps.append({
+            'company': company,
+            'role': role,
+            'date': date_str,
+            'cv': has_cv,
+            'cl': has_cl,
+            'status': 'submitted',
+        })
+
+    with open(_TRACKER_PATH, 'w', encoding='utf-8') as f:
+        yaml.dump(data, f, allow_unicode=True, default_flow_style=False,
+                  sort_keys=False)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -717,7 +762,10 @@ async def run(args) -> None:
             print(f"  EN (JD Annotated): {annotated_path}")
         if zh_path:
             print(f"  ZH: {zh_path}")
-        
+
+        # Track application
+        _track_application(company, role, has_cv=True, has_cl=False)
+
         # Log to conversation history
         if _HAS_MEMORY:
             repo_root = Path(__file__).parent
@@ -786,6 +834,9 @@ async def run(args) -> None:
         )
         print(f"\nDone.")
         print(f"  PDF: {pdf_path}")
+
+        # Track application
+        _track_application(company, role, has_cv=False, has_cl=True)
 
     elif args.command == 'interview':
         from interview_qa_cli import run_list
