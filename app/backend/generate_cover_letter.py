@@ -412,7 +412,7 @@ def build_cover_letter_content(
             )
             closing = (
                 "Examples of my work are available on GitHub (github.com/leozhang2056) and my "
-                "portfolio (github.com/leozhang2056#-featured-projects), including my Master's thesis "
+                "portfolio (portfolio.leoz.fun/projects), including my Master's thesis "
                 "project ChatClothes — an AI virtual try-on system — which was accepted at IVCNZ 2025. "
                 "I would welcome the opportunity to contribute my technical background, full-stack "
                 "experience, and collaborative mindset to Catch Design's development team. "
