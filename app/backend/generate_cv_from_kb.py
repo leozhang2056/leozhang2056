@@ -3889,7 +3889,7 @@ def generate_html_from_kb(
     ]
     
     # Portfolio link replaces location
-    portfolio_url = "https://portfolio.leoz.fun/projects"
+    portfolio_url = "https://portfolio.leoz.fun"
     contact_primary_bits.append(
         f'<a href="{html.escape(portfolio_url, quote=True)}" class="cv-social-link">{_CV_ICON_PORTFOLIO_SVG}Portfolio</a>'
     )
