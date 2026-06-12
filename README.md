@@ -1,7 +1,7 @@
 # Leo Zhang
 
-**Senior Android Developer · Java Backend · Full-stack Engineer**   **portfolio https://portfolio.leoz.fun**
-📧 leozhang2056@gmail.com | 📍 Auckland, New Zealand
+**Senior Android Developer · Java Backend · Full-stack Engineer**   
+📧 leozhang2056@gmail.com | 📍 portfolio https://portfolio.leoz.fun
 🔗 LinkedIn: [linkedin.com/in/leo-zhang-305626280](https://www.linkedin.com/in/leo-zhang-305626280/)
 
 ---
