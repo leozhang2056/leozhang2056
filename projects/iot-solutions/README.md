@@ -38,6 +38,17 @@ My **primary responsibility was Android mobile client development** for end-user
 | ![IoT platform demo](./images/iot-platform-demo.png) | ![Gateway and smart switches](./images/gateway-smart-switches.jpg) |
 | IoT platform demo: exhibition area, mobile app UI, and smart access | Gateway (TXWG-LA) and smart micro-breakers |
 
+#### Gateway Hardware (PCB)
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/gateway.png" width="400" alt="Gateway PCB"/><br/>
+      <sub>Gateway PCB with ATMEGA328P microcontroller and terminal blocks</sub>
+    </td>
+  </tr>
+</table>
+
 #### Android App UI
 
 | Device Home | Fire Alert | Messages |
@@ -49,6 +60,21 @@ My **primary responsibility was Android mobile client development** for end-user
 |---|---|
 | ![Discover](./images/app-discover.jpg) | ![Profile Center](./images/app-profile-center.jpg) |
 | Discover/services entry for user workflows | Personal center and account settings |
+
+#### Gateway & Locker Hardware
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/gateway.png" width="360" alt="IoT gateway PCB with terminal blocks and microcontroller"/><br/>
+      <sub>IoT gateway PCB with terminal blocks and microcontroller</sub>
+    </td>
+    <td align="center">
+      <img src="./images/iot-locker-control.png" width="360" alt="Locker control PCB with central IC and pin headers"/><br/>
+      <sub>Locker control PCB with central IC and pin headers</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

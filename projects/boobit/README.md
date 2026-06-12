@@ -45,28 +45,48 @@ The app follows MVVM pattern with Clean Architecture principles:
 
 ### App Interface
 
-| Home | Market | Search |
-|:---:|:---:|:---:|
-| ![Home](images/screenshot_01.jpg) | ![Market](images/screenshot_02.jpg) | ![Search](images/screenshot_03.jpg) |
-
-| Coin Detail | Wallet | Exchange |
-|:---:|:---:|:---:|
-| ![Coin Detail](images/screenshot_04.jpg) | ![Wallet](images/screenshot_05.jpg) | ![Exchange](images/screenshot_06.jpg) |
-
-| Recharge | Transaction History | Settings |
-|:---:|:---:|:---:|
-| ![Recharge](images/screenshot_07.jpg) | ![History](images/screenshot_08.jpg) | ![Settings](images/screenshot_09.jpg) |
-
-### More Screenshots
-
 <p align="center">
-  <img src="images/screenshot_10.jpg" width="200" />
-  <img src="images/screenshot_11.jpg" width="200" />
-  <img src="images/screenshot_12.jpg" width="200" />
+  <img src="images/screenshot_02.jpg" width="200"/>
 </p>
 
-<p align="center">
-  <img src="images/screenshot_13.jpg" width="200" />
-  <img src="images/screenshot_14.jpg" width="200" />
-  <img src="images/screenshot_15.jpg" width="200" />
-</p>
+### Wallet & Assets
+
+<table>
+  <tr>
+    <td align="center"><img src="images/main_wallet.jpg" width="200"/><br/><sub>Wallet dashboard with total assets</sub></td>
+    <td align="center"><img src="images/main_wallet2.jpg" width="200"/><br/><sub>Wallet with earnings breakdown</sub></td>
+    <td align="center"><img src="images/main_product.jpg" width="200"/><br/><sub>Product dashboard with asset details</sub></td>
+  </tr>
+</table>
+
+### Investment System
+
+<table>
+  <tr>
+    <td align="center"><img src="images/invest.jpg" width="200"/><br/><sub>Investment details form</sub></td>
+    <td align="center"><img src="images/invest2.jpg" width="200"/><br/><sub>Investment flow with error/success states</sub></td>
+    <td align="center"><img src="images/invest_detail.jpg" width="200"/><br/><sub>Investment detail screen (BTC, 7-day cycle)</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/main_invest_list.jpg" width="200"/><br/><sub>Invested list with daily earnings</sub></td>
+    <td align="center"><img src="images/main_invested.jpg" width="200"/><br/><sub>Investment cards for BTC/ETH</sub></td>
+  </tr>
+</table>
+
+### Account & Transactions
+
+<table>
+  <tr>
+    <td align="center"><img src="images/account_info.jpg" width="200"/><br/><sub>Account info with crypto wallet addresses</sub></td>
+    <td align="center"><img src="images/withdrawa.jpg" width="200"/><br/><sub>BTC withdrawal form</sub></td>
+    <td align="center"><img src="images/trans.jpg" width="200"/><br/><sub>Transaction filter overlay</sub></td>
+  </tr>
+</table>
+
+### VIP System
+
+<table>
+  <tr>
+    <td align="center"><img src="images/vip_rule.jpg" width="200"/><br/><sub>VIP level progress and bonus tiers</sub></td>
+  </tr>
+</table>

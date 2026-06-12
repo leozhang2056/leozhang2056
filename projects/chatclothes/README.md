@@ -130,6 +130,15 @@ I independently addressed the key challenges in the domain of virtual try-on, de
 | [Technical Details](TECHNICAL_DETAILS.md) | Architecture, LoRA strategy, YOLO12n-LC design, edge optimization, API reference |
 | [Experiments & Results](EXPERIMENTS.md) | Datasets, evaluation metrics, ablation study, SOTA comparison, reproducibility |
 | [Image Gallery](IMAGES.md) | Full catalog of all 36 images and demo video with descriptions |
+| [Duplicate Assets](images/) | slide23_cloud_deployment_copy.PNG, slide31_conclusion_copy.PNG (duplicates, can be deleted) |
+
+### Acknowledgments & Closing
+
+| Acknowledgments | Q&A | Thank You |
+| :---: | :---: | :---: |
+| ![Acknowledgments](images/slide27_acknowledgments.PNG) | ![Q&A](images/slide32_qa.PNG) | ![Thank You](images/slide33_thank_you.PNG) |
+
+*Research acknowledgments, Q&A discussion slide, and closing remarks*
 
 ---
 

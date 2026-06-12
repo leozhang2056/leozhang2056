@@ -265,6 +265,32 @@ This project built upon and contributed to:
 
 ---
 
+## 📸 Evidence
+
+### Platform Interface
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/process.png" width="400" alt="Live streaming platform interface"/><br/>
+      <sub>Live streaming commerce platform - Admin dashboard and stream management</sub>
+    </td>
+  </tr>
+</table>
+
+### Protocol Flow
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/process.png" width="360" alt="Room login and user-list management protocol flowchart"/><br/>
+      <sub>Room login and user-list management protocol flowchart</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 📅 Timeline
 
 - **2015**: Project initiation, ASP.NET web admin development

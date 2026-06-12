@@ -218,6 +218,73 @@ This early-career project provided foundational experience in:
 
 ---
 
+## 📸 Evidence
+
+### Data Table & Search
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/list.png" width="320" alt="Paginated patent data table with 66,356 records"/><br/>
+      <sub>Paginated patent data table with 66,356 records</sub>
+    </td>
+  </tr>
+</table>
+
+### Analytics & Visualization
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/line1.png" width="320" alt="Textbook usage trend analysis (2014-2024)"/><br/>
+      <sub>Textbook usage trend analysis (2014-2024)</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/line2.png" width="320" alt="Technology lifecycle: maturity vs risk level"/><br/>
+      <sub>Technology lifecycle: maturity vs risk level</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/bar1.png" width="320" alt="Monthly growth rate analysis (bar + line chart)"/><br/>
+      <sub>Monthly growth rate analysis (bar + line chart)</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/bar3.png" width="320" alt="3D clustered bar chart by entry IP"/><br/>
+      <sub>3D clustered bar chart by entry IP</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/pi1.png" width="320" alt="Teacher and inventor composition pie chart"/><br/>
+      <sub>Teacher and inventor composition pie chart</sub>
+    </td>
+  </tr>
+</table>
+
+### System Analysis & Workflows
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/bar2.png" width="320" alt="Memory region allocation analysis"/><br/>
+      <sub>Memory region allocation analysis</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/other.png" width="320" alt="Workflow flowchart with process nodes"/><br/>
+      <sub>Workflow flowchart with process nodes</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🔗 Related Projects
 
 This project laid the foundation for subsequent enterprise development work:

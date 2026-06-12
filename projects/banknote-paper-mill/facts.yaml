@@ -74,4 +74,11 @@ keywords:
 - Secrecy compliance
 - Access approval workflow
 - Offline deployment
-last_updated: '2026-05-12'
+evidence:
+- type: tool_screenshot
+  path: images/kettle-version-info.png
+  title: Pentaho Data Integration (Kettle) Version 9.3
+- type: tool_screenshot
+  path: images/kettle-etl-workflow.png
+  title: ETL Job Workflow in Spoon
+last_updated: '2026-06-12'

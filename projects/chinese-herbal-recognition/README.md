@@ -223,12 +223,31 @@ This forms a continuous closed-loop:
 
 ## Evidence
 
-> No screenshots committed yet.  
-> Suggested files under `images/`:
-> - `platform-overview.png`
-> - `annotation-workbench.png`
-> - `training-dashboard.png`
-> - `recognition-result.png`
+### Herb Sample Classification
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/herb.png" width="520" alt="Herbal root specimen classification"/><br/>
+      <sub>Herbal root specimen types: main root (主根), lateral root (侧根), offshoot (丁支), etc.</sub>
+    </td>
+  </tr>
+</table>
+
+*Annotated reference samples showing morphological differences across root types — used as the classification target for the recognition platform.*
+
+### Model Training Curves
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/lose.png" width="520" alt="Training and validation accuracy and loss curves"/><br/>
+      <sub>Training accuracy vs validation accuracy (left) and training loss over epochs (right)</sub>
+    </td>
+  </tr>
+</table>
+
+*Training dynamics over ~27 epochs: training accuracy reaches ~0.89, validation accuracy ~0.79, and loss decreases from ~1.6 to ~0.45, showing steady convergence with some overfitting gap.*
 
 ---
 

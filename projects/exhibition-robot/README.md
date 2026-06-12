@@ -177,22 +177,72 @@ An intelligent exhibition service robot system that provides guided tours, recep
 
 ## Evidence
 
-These files live in `images/` and render on GitHub via relative paths. **Current files are solid-color placeholders** so links never 404; replace them with real screenshots anytime (keep the same filenames).
+### Robot Hardware & Design
 
-| File | Description |
-|------|-------------|
-| `images/robot-exterior.png` | Exhibition service robot (exterior) |
-| `images/navigation-ui.png` | Autonomous navigation and map interface |
-| `images/voice-interaction.png` | Voice dialogue interaction |
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/robot_compenent.png" width="280" alt="Hardware component diagram with annotated features"/><br/>
+      <sub>Hardware component diagram with annotated features</sub>
+    </td>
+    <td align="center">
+      <img src="./images/robot_face.png" width="280" alt="Full-body robot photo with touchscreen and mobility base"/><br/>
+      <sub>Full-body robot photo with touchscreen and mobility base</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="./images/robot_screen.png" width="400" alt="Mobile app interface with camera feed and troubleshooting"/><br/>
+      <sub>Mobile app interface with camera feed and troubleshooting</sub>
+    </td>
+  </tr>
+</table>
 
-![Robot exterior](images/robot-exterior.png)
-*Exhibition service robot (exterior) — replace with photo*
+### Navigation & Mapping
 
-![Navigation UI](images/navigation-ui.png)
-*Autonomous navigation / map UI — replace with screenshot*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/map1.png" width="280" alt="Route comparison: straight-line vs U-shaped paths"/><br/>
+      <sub>Route comparison: straight-line vs U-shaped paths</sub>
+    </td>
+    <td align="center">
+      <img src="./images/map2.png" width="280" alt="SLAM mapping with virtual warehouse editing mode"/><br/>
+      <sub>SLAM mapping with virtual warehouse editing mode</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/map3.png" width="280" alt="Special area editing with dimension annotations"/><br/>
+      <sub>Special area editing with dimension annotations</sub>
+    </td>
+    <td align="center">
+      <img src="./images/map4.png" width="280" alt="Waypoint marking and navigation route management"/><br/>
+      <sub>Waypoint marking and navigation route management</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/map5.png" width="280" alt="Navigation calibration with waypoint coordinates"/><br/>
+      <sub>Navigation calibration with waypoint coordinates</sub>
+    </td>
+    <td align="center">
+      <img src="./images/map_scan.png" width="280" alt="SLAM scanning mode with trajectory lines"/><br/>
+      <sub>SLAM scanning mode with trajectory lines</sub>
+    </td>
+  </tr>
+</table>
 
-![Voice interaction](images/voice-interaction.png)
-*Voice dialogue interaction — replace with screenshot*
+### Interaction & Management
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/knowledge.png" width="400" alt="Admin backend with knowledge base association settings"/><br/>
+      <sub>Admin backend with knowledge base association settings</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

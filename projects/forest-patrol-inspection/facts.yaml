@@ -58,14 +58,32 @@ evidence:
   path: images/app-photo-capture.jpg
   title: Photo Capture
 - type: app_ui
-  path: images/app-map-workflow.png
-  title: Patrol Map Workflow
-- type: app_ui
   path: images/app-task-report.png
   title: Task and Report
 - type: app_ui
   path: images/app-risk-entry.png
   title: Risk Entry
+- type: app_ui
+  path: images/app-new-collection-form.jpg
+  title: New Collection Form
+- type: app_ui
+  path: images/app-event-type-selector.jpg
+  title: Event Type Selector
+- type: app_ui
+  path: images/app-gps-map-offline.jpg
+  title: GPS Map and Offline Mode
+- type: web_ui
+  path: images/web-event-query.png
+  title: Event Query
+- type: web_ui
+  path: images/web-batch-export.png
+  title: Batch Export
+- type: web_ui
+  path: images/web-alarm-query.png
+  title: Alarm Query
+- type: web_ui
+  path: images/web-visualization-stats.png
+  title: Visualization Statistics
 - type: field_photo
   path: images/field-scene-01.jpg
 - type: field_photo

@@ -39,17 +39,17 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 ---
 
-## End-to-End Flow / 全链路流程
+## End-to-End Flow
 
-1. **Customer side（客户端）**：品牌或客户在平台上下单，配置款式、尺码、交期等需求。  
-2. **Platform scheduling（平台排产）**：系统根据各工厂产能与能力，将订单拆分并分配到不同工厂、产线。  
-3. **Factory execution（工厂执行）**：  
-   - 车间终端为工人下发工序任务；  
-   - 工人通过生产端扫码/刷卡完成工序上报；  
-   - RFID / 条码 / 产线设备实时回传进度与产量；  
-   - 电子秤通过串口上报称重数据，由 Windows 服务监控并推送到网页与业务系统。  
-4. **Progress tracking（进度追踪）**：客户在平台上可以看到每个订单、每一批甚至每件衣服的实时生产进度。  
-5. **Shipping & delivery（发货与交付）**：生产完成后，系统生成出货信息并同步给客户，形成从下单到收货的闭环数据链路。
+1. **Customer Side**: Brands or customers place orders on the platform, configuring styles, sizes, delivery dates, and other requirements.
+2. **Platform Scheduling**: The system splits and allocates orders to different factories and production lines based on capacity and capabilities.
+3. **Factory Execution**:
+   - Workshop terminals assign process tasks to workers;
+   - Workers complete process reporting by scanning barcodes/cards on the production side;
+   - RFID / barcode / production line equipment transmit progress and output in real-time;
+   - Electronic scales report weight data via serial communication, monitored by Windows services and pushed to web pages and business systems.
+4. **Progress Tracking**: Customers can view real-time production progress for each order, batch, or even individual garment on the platform.
+5. **Shipping & Delivery**: After production is completed, the system generates shipping information and synchronizes it with customers, forming a closed-loop data link from order placement to receipt.
 
 ---
 
@@ -218,28 +218,28 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 ## Evidence
 
-### Mobile worker app (Android) / 手机端工人应用
+### Mobile Worker App (Android)
 
 Real screenshots from the **shop-floor Android** experience: production task list, task detail with progress and requirements, and worker profile with duty status and scan-related settings.
 
 <table>
   <tr>
     <td align="center">
-      <img src="./images/ScreenShot_2026-04-01_161701_214.png" width="280" alt="Mobile task list: daily count, search, status tabs, scan"/><br/>
-      <sub>Task list: today’s output, search, 未制作/制作中/已制作 tabs, bottom nav + 扫一扫</sub>
+      <img src="./images/worker-mobile-task.png" width="280" alt="Mobile task list: daily count, search, status tabs, scan"/><br/>
+      <sub>Task list: today’s output, search, Not Started/In Progress/Completed tabs, bottom nav + Scan</sub>
     </td>
     <td align="center">
-      <img src="./images/ScreenShot_2026-04-01_161723_937.png" width="280" alt="Mobile task detail: progress, tech pack tabs"/><br/>
-      <sub>Task detail: ID, spec, progress bar, 工艺单/工艺指示/基本要求 tabs, quality notes</sub>
+      <img src="./images/worker-mobile-task-detail.png" width="280" alt="Mobile task detail: progress, tech pack tabs"/><br/>
+      <sub>Task detail: ID, spec, progress bar, Tech Pack/Process Instructions/Basic Requirements tabs, quality notes</sub>
     </td>
     <td align="center">
-      <img src="./images/ScreenShot_2026-04-01_161819_162.png" width="280" alt="Mobile profile: employee, on-duty, work log, scan config"/><br/>
-      <sub>我的: employee ID, 上班中, work log / messages / 扫码配置 / password, etc.</sub>
+      <img src="./images/worker-mobile-info.png" width="280" alt="Mobile profile: employee, on-duty, work log, scan config"/><br/>
+      <sub>My Profile: employee ID, On Duty, work log / messages / scan configuration / password, etc.</sub>
     </td>
   </tr>
 </table>
 
-### BI & Monitoring / BI 与监控大屏
+### BI & Monitoring Dashboards
 
 <table>
   <tr>
@@ -254,7 +254,7 @@ Real screenshots from the **shop-floor Android** experience: production task lis
   </tr>
 </table>
 
-### Shop Floor Terminals / 车间终端
+### Shop Floor Terminals
 
 <table>
   <tr>
@@ -273,7 +273,7 @@ Real screenshots from the **shop-floor Android** experience: production task lis
   </tr>
 </table>
 
-### MOM Scenarios / MOM 现场场景
+### MOM Scenarios
 
 <table>
   <tr>
@@ -304,6 +304,140 @@ Real screenshots from the **shop-floor Android** experience: production task lis
     <td align="center">
       <img src="./images/accessories-cabinet-design.jpg" width="320" alt="Accessories cabinet design"/><br/>
       <sub>Design drawing of multi-compartment accessories cabinet</sub>
+    </td>
+  </tr>
+</table>
+
+### Admin Web System
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/admin-system.png" width="320" alt="Production scheduling dashboard with capacity analysis"/><br/>
+      <sub>Production scheduling dashboard with capacity analysis</sub>
+    </td>
+    <td align="center">
+      <img src="./images/admin-web-system.png" width="320" alt="Order management list with status tracking"/><br/>
+      <sub>Order management list with status tracking</sub>
+    </td>
+  </tr>
+</table>
+
+### Factory Equipment & Production Line
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/factory-machine.jpg" width="320" alt="Spinning frames on the production floor"/><br/>
+      <sub>Spinning frames on the production floor</sub>
+    </td>
+    <td align="center">
+      <img src="./images/waving-machine.jpg" width="320" alt="Industrial knitting machines with worker"/><br/>
+      <sub>Industrial knitting machines with worker</sub>
+    </td>
+    <td align="center">
+      <img src="./images/waving-machine2.jpg" width="320" alt="Computerized weaving machine with control panel"/><br/>
+      <sub>Computerized weaving machine with control panel</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/waving-machine3.jpg" width="320" alt="Automated knitting machine production hall"/><br/>
+      <sub>Automated knitting machine production hall</sub>
+    </td>
+    <td align="center">
+      <img src="./images/hanging-system.jpg" width="320" alt="Overhead garment hanging conveyor system"/><br/>
+      <sub>Overhead garment hanging conveyor system</sub>
+    </td>
+    <td align="center">
+      <img src="./images/clothes-cabinet.jpg" width="320" alt="Smart garment storage cabinet (indoor)"/><br/>
+      <sub>Smart garment storage cabinet (indoor)</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/clothes-cabinet2.jpg" width="320" alt="Automated locker system with control screen"/><br/>
+      <sub>Automated locker system with control screen</sub>
+    </td>
+  </tr>
+</table>
+
+### RFID Integration & IoT Devices
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/rfid-reader-demo-ui.png" width="320" alt="UHF RFID Reader Demo desktop application"/><br/>
+      <sub>UHF RFID Reader Demo desktop application</sub>
+    </td>
+    <td align="center">
+      <img src="./images/rfid-scan0.png" width="320" alt="UHF RFID module development board (PCB)"/><br/>
+      <sub>UHF RFID module development board (PCB)</sub>
+    </td>
+    <td align="center">
+      <img src="./images/rfid-scan.png" width="320" alt="USB device controller diagnostic tool"/><br/>
+      <sub>USB device controller diagnostic tool</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/rfid-scan2.png" width="320" alt="RFID tag read/write LPC application"/><br/>
+      <sub>RFID tag read/write LPC application</sub>
+    </td>
+    <td align="center">
+      <img src="./images/rfid-scan3.png" width="320" alt="RFID tag memory operations interface"/><br/>
+      <sub>RFID tag memory operations interface</sub>
+    </td>
+  </tr>
+</table>
+
+### Factory Planning & Quality
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/factory-node-position.png" width="320" alt="Factory floor plan with IoT node placement"/><br/>
+      <sub>Factory floor plan with IoT node placement</sub>
+    </td>
+    <td align="center">
+      <img src="./images/quality-check.jpg" width="320" alt="Fiber uniformity quality testing station"/><br/>
+      <sub>Fiber uniformity quality testing station</sub>
+    </td>
+  </tr>
+</table>
+
+### Worker Tablet & Kiosk
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/worker-tablet-login.png" width="240" alt="Tablet card-based login screen"/><br/>
+      <sub>Tablet card-based login screen</sub>
+    </td>
+    <td align="center">
+      <img src="./images/worker-tablet-login2.png" width="240" alt="Identity verification method selection (face/QR/ID)"/><br/>
+      <sub>Identity verification method selection (face/QR/ID)</sub>
+    </td>
+  </tr>
+</table>
+
+### Production Floor & Analytics
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/hanger-node.png" width="360" alt="Wide view of production floor with assembly line workstations"/><br/>
+      <sub>Wide view of production floor with assembly line workstations</sub>
+    </td>
+    <td align="center">
+      <img src="./images/process.png" width="360" alt="3D isometric infographic of integrated enterprise operations system"/><br/>
+      <sub>3D isometric infographic of integrated enterprise operations system</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/showroom-data.png" width="360" alt="Visitor flow analytics dashboard with heatmap and demographics"/><br/>
+      <sub>Visitor flow analytics dashboard with heatmap and demographics</sub>
     </td>
   </tr>
 </table>

@@ -177,10 +177,83 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 ## Evidence
 
-Representative client UI from the enterprise messaging rollout (screenshot, 2018). Architecture diagrams can be added under `images/` later if needed.
+### Client UI Screenshots
 
-![Enterprise messaging — client UI](images/client-screenshot-2018.jpg)
-*Enterprise messaging client (representative interface)*
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/shop-smart-homepage-optimized.png" width="280" alt="Home page"/><br/>
+      <sub>Home page - Main message list and navigation</sub>
+    </td>
+    <td align="center">
+      <img src="./images/shop-smart-profile-logged-in.png" width="280" alt="Profile page"/><br/>
+      <sub>Profile page after login - User info and settings</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/shop-smart-message-list-detail.png" width="280" alt="Message detail"/><br/>
+      <sub>Message detail view - Conversation thread</sub>
+    </td>
+    <td align="center">
+      <img src="./images/shop-smart-profile-settings.png" width="280" alt="System settings"/><br/>
+      <sub>System settings - Configuration options</sub>
+    </td>
+  </tr>
+</table>
+
+### Additional Screens
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/ScreenShot_2026-06-12_134110_500.png" width="400" alt="Recent screenshot"/><br/>
+      <sub>Recent client interface</sub>
+    </td>
+  </tr>
+</table>
+
+### Enterprise App Launcher & Management
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/shop-smart-homepage-v2.png" width="400" alt="Enterprise app homepage with service categories and function grid"/><br/>
+      <sub>Enterprise app homepage with service categories and function grid</sub>
+    </td>
+  </tr>
+</table>
+
+### Desktop PC Client
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/desktop_pc.png" width="280" alt="Desktop notifications"/><br/>
+      <sub>Desktop client: document review notifications</sub>
+    </td>
+    <td align="center">
+      <img src="./images/desktop_pc1.png" width="280" alt="Content management"/><br/>
+      <sub>Content management dashboard with articles</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/desktop_pc_messages.png" width="320" alt="Admin account management"/><br/>
+      <sub>Admin backend: account management table</sub>
+    </td>
+    <td align="center">
+      <img src="./images/desktop_pc_messages2.png" width="280" alt="Message notifications highlighted"/><br/>
+      <sub>File library notifications with unread count</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="./images/desktop_pc_subsystems.png" width="400" alt="Application subsystems dashboard"/><br/>
+      <sub>Enterprise subsystem tiles: Admin, Engineering, Files, Labor, Supply Chain</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

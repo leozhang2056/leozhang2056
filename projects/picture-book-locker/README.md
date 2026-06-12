@@ -169,7 +169,7 @@ A smart picture-book locker system for school and community libraries. It provid
 
 ## Evidence
 
-### Hardware & Deployment / 硬件与部署现场
+### Hardware & Deployment
 
 <table>
   <tr>
@@ -192,9 +192,19 @@ A smart picture-book locker system for school and community libraries. It provid
       <sub>Outdoor deployment in front of a public site</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/picture-book-library.jpg" width="280" alt="24-hour self-service library kiosk with illuminated book slots"/><br/>
+      <sub>24-hour self-service library kiosk with illuminated book slots</sub>
+    </td>
+    <td align="center">
+      <img src="./images/picture-book-locker-uv-mode.jpg" width="280" alt="Library kiosk in UV/night mode with glowing slots"/><br/>
+      <sub>Library kiosk in UV/night mode with glowing slots</sub>
+    </td>
+  </tr>
 </table>
 
-### Locker Variants / 柜机款式
+### Locker Variants
 
 <table>
   <tr>
@@ -203,11 +213,11 @@ A smart picture-book locker system for school and community libraries. It provid
       <sub>Blue locker cabinet with integrated touch screen</sub>
     </td>
     <td align="center">
-      <img src="./images/locker-exterior-green.jpg" width="260"/><br/>
+      <img src="./images/locker-exterior-green.png" width="260"/><br/>
       <sub>Green picture-book locker with dense slots</sub>
     </td>
     <td align="center">
-      <img src="./images/locker-exterior-red.jpg" width="260"/><br/>
+      <img src="./images/locker-exterior-red.png" width="260"/><br/>
       <sub>Red/grey high-capacity variant</sub>
     </td>
   </tr>
@@ -216,23 +226,25 @@ A smart picture-book locker system for school and community libraries. It provid
       <img src="./images/locker-exterior-with-gates.png" width="260"/><br/>
       <sub>Locker with anti-theft gates</sub>
     </td>
+  </tr>
+  <tr>
     <td align="center">
-      <img src="./images/locker-exterior-with-gates-alt.png" width="260"/><br/>
-      <sub>Alternative angle of locker + gate</sub>
+      <img src="./images/locker-exterior-green.png" width="280" alt="Green-and-white modular smart locker system"/><br/>
+      <sub>Green-and-white modular smart locker system</sub>
     </td>
     <td align="center">
-      <img src="./images/locker-illustration-cartoon.png" width="260"/><br/>
-      <sub>Cartoon-style concept illustration</sub>
+      <img src="./images/locker-exterior-red.png" width="280" alt="3D-rendered locker with gray cabinets and red accent bands"/><br/>
+      <sub>3D-rendered locker with gray cabinets and red accent bands</sub>
     </td>
   </tr>
 </table>
 
-### UV & Night Mode / 消毒与夜间效果
+### UV & Night Mode
 
 <table>
   <tr>
     <td align="center">
-      <img src="./images/picture-book-locker-uv-mode.png" width="280"/><br/>
+      <img src="./images/picture-book-locker-uv-mode.jpg" width="280"/><br/>
       <sub>Locker running with illuminated UV / lighting effect</sub>
     </td>
     <td align="center">
@@ -246,13 +258,48 @@ A smart picture-book locker system for school and community libraries. It provid
   </tr>
 </table>
 
-### Related Devices / 相关设备
+### Related Devices
 
 <table>
   <tr>
     <td align="center">
       <img src="./images/smart-cabinet-recycle-style.jpg" width="320"/><br/>
       <sub>Related IoT cabinet form factor used in similar scenarios</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/show.png" width="280" alt="Trade show booth displaying IoT solutions and smart cabinets"/><br/>
+      <sub>Trade show booth displaying IoT solutions and smart cabinets</sub>
+    </td>
+    <td align="center">
+      <img src="./images/storage.jpg" width="280" alt="Modular parcel locker with four columns of compartments"/><br/>
+      <sub>Modular parcel locker with four columns of compartments</sub>
+    </td>
+    <td align="center">
+      <img src="./images/system.png" width="280" alt="Cross-platform analytics dashboard with physical cabinet"/><br/>
+      <sub>Cross-platform analytics dashboard with physical cabinet</sub>
+    </td>
+  </tr>
+</table>
+
+### Process & Mobile
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/liucheng.png" width="320" alt="Library process flowchart: borrow, retrieve, return workflows"/><br/>
+      <sub>Library process flowchart: borrow, retrieve, return workflows</sub>
+    </td>
+    <td align="center">
+      <img src="./images/scan.png" width="320" alt="Mobile app UI for book pickup and return"/><br/>
+      <sub>Mobile app UI for book pickup and return</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/scan.png" width="200" alt="Mobile app UI for book pickup and return (Snowman Rabbit)"/><br/>
+      <sub>Mobile app UI for book pickup and return (Snowman Rabbit)</sub>
     </td>
   </tr>
 </table>

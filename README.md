@@ -41,7 +41,7 @@ Proven track record leading technical teams, architecting scalable systems, depl
 | Category | Technologies |
 |----------|-------------|
 | **Android** | Kotlin, Java, Jetpack Compose, MVVM, NDK/JNI, Room, Coroutines |
-| **Backend** | Spring Cloud, Spring Cloud, REST APIs, MySQL, Redis, RabbitMQ |
+| **Backend** | Spring Cloud, REST APIs, MySQL, Redis, RabbitMQ |
 | **Frontend** | Vue.js, JavaScript, HTML/CSS |
 | **DevOps** | Docker, Jenkins, Git, GitHub Actions, Nginx, Linux |
 | **AI/ML** | PyTorch, YOLO, Diffusion Models, LLM Integration, OpenCV |
@@ -100,34 +100,133 @@ Promoted from Software Engineer to Technical Lead, leading cross-functional deve
 ## 🚀 Portfolio
 
 ### 🤖 AI / Machine Learning
+
+#### [ChatClothes](projects/chatclothes/) - Multimodal Virtual Try-On
+Master's thesis project at AUT. Developed diffusion-based multimodal virtual try-on system with YOLO classification and LLM-driven interaction.
+
+**Tech Stack:** PyTorch, Diffusion Models, YOLO12n-LC, DeepSeek LLM, ComfyUI, Dify, Raspberry Pi 5  
+**Impact:** Published at IVCNZ 2025, 19% FID improvement over baseline, deployed on edge devices
+
+---
+
+### 🏭 Smart Manufacturing & IoT
+
+#### [Smart Factory System](projects/smart-factory/) - End-to-End Manufacturing Platform
+Microservice-based platform deployed across 5+ factory sites, connecting brands, factories, and workers.
+
+**Tech Stack:** Spring Cloud, Vue.js, Docker, Jenkins, MySQL, Redis, RFID, Electronic Scales  
+**Impact:** 30%+ efficiency improvement, 99.9% uptime, hundreds of workers supported daily
+
+---
+
+#### [Banknote Paper Mill Integration](projects/banknote-paper-mill/) - High-Security Manufacturing IT
+On-site data integration for a banknote paper mill with strict air-gapped network constraints. Used Pentaho Kettle for ETL workflows under high-secrecy access controls.
+
+**Tech Stack:** Java, Pentaho Kettle, ETL, Air-gapped Deployment  
+**Impact:** Delivered integration under strict secrecy with ~1-week lead time for site access
+
+---
+
+#### [Smart Power Management](projects/smart-power/) - Energy Monitoring & Optimization
+Enterprise power monitoring platform for factories, buildings, and campuses with real-time data collection and energy analysis.
+
+**Tech Stack:** Spring Cloud, InfluxDB, Modbus, RS485, MQTT, Apache Flink, Vue.js, ECharts  
+**Impact:** ~15% energy reduction, <1s alerts, 99.9% data collection rate
+
+---
+
+#### [Picture Book Locker](projects/picture-book-locker/) - Smart Library Cabinet
+24/7 self-service borrow/return system for schools and community libraries with face recognition and UV disinfection.
+
+**Tech Stack:** Android, Face SDK, ARM controller, Solenoid locks, UART/RS485, Spring Cloud, MQTT  
+**Impact:** <3s average borrow time, deployed in multiple schools, zero book loss
+
+---
+
+#### [IoT Device Management Platform](projects/iot-solutions/) - Smart Switches & Gateways
+IoT platform for managing smart switches and gateways with device binding, remote control, and status monitoring.
+
+**Tech Stack:** Android, Embedded Linux, Gateway firmware, Spring Cloud, MQTT, REST APIs  
+**Impact:** End-to-end IoT solution from gateway to cloud to mobile app
+
+---
+
+### 📱 Mobile & Communication
+
+#### [Forest Patrol Inspection](projects/forest-patrol-inspection/) - Offline-First GIS App
+Mobile patrol system for forest rangers to work in no-signal areas, record GPS tracks, and report fire/pest risks.
+
+**Tech Stack:** Android, Offline Maps, GPS, SQLite, Deferred Sync, GIS Visualization  
+**Impact:** Enabled reliable patrol data collection in no-signal forest areas
+
+---
+
+#### [Enterprise Messaging Platform](projects/enterprise-messaging/) - Internal IM System
+Real-time internal messaging system serving 5,000 daily active users with sub-200ms message delivery.
+
+**Key Features:**
+- Cross-platform support (Android, Web, PC)
+- NDK-based TCP/UDP implementation for native performance
+- 500K+ messages processed daily
+- 99.9% uptime over 9 years
+
+**Tech Stack:** Java/Kotlin, NDK, Spring Cloud, C++, WebSocket, MySQL, Redis, FastDFS  
+**Impact:** Company-wide adoption, significantly improved internal communication efficiency
+
+---
+
+#### [Live Streaming Commerce System](projects/live-streaming-system/) - Multi-Language Platform
+Comprehensive live streaming commerce platform (2015-2018) with multi-language technology stack.
+
+**Multi-Language Stack:**
+- **.NET Framework (C#)** - Web backend and admin dashboard
+- **Android (Java/Kotlin)** - Mobile client
+- **C++ (NDK)** - High-performance streaming core
+- **Python** - Data processing and analytics
+- **Lua** - Dynamic configuration and business rules
+
+**Tech Stack:** .NET, ASP.NET, C++, Python, Lua, RTMP, WebRTC, FFmpeg, SQL Server, Redis  
+**Impact:** 1,000+ peak concurrent viewers, 99.5% streaming uptime
+
+---
+
+### 🤖 Robotics & Automation
+
+#### [Exhibition Service Robot](projects/exhibition-robot/) - Intelligent Guide Robot
+Intelligent exhibition service robot for guided tours, reception, and information queries at trade shows and museums.
+
+**Tech Stack:** ROS, SLAM, Android, ASR/TTS, Face Recognition, Path Planning, Spring Cloud  
+**Impact:** Deployed at multiple exhibitions, 24/7 automated service during events
+
+---
+
+### 📺 Digital Signage
+
+#### [Broadcast Control Platform](projects/broadcast-control/) - Digital Signage Ad Delivery
+Centralized ad delivery platform for elevator, in-store, and public screens with MQTT broadcast-based control.
+
+**Capabilities:**
+- Campaign-driven delivery with schedule windows
+- MQTT broadcast control for large-scale device groups
+- Multi-format playback (image/video advertisements)
+- Group-based management by building/store/region
+- Operational visibility with device monitoring
+
+**Tech Stack:** Android, MQTT, Spring Cloud, Digital Signage Player, Campaign Management  
+**Impact:** Unified platform for heterogeneous public screens, reduced manual content updates
+
+---
+
+### 💼 Additional Projects
+
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| [ChatClothes](projects/chatclothes/) | Multimodal virtual try-on with LLM control | PyTorch, Diffusion, YOLO, DeepSeek LLM, Raspberry Pi |
 | [Device Maintenance Prediction](projects/device-maintenance-prediction/) | Predictive maintenance with ML | Python, Scikit-learn, Time Series |
 | [Chinese Herbal Recognition](projects/chinese-herbal-recognition/) | TCM image classification platform | PyTorch, OpenCV, Flask |
-
-### Android & Mobile
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| [Enterprise Messaging](projects/enterprise-messaging/) | Enterprise IM with 5K DAU | NDK, <200ms latency, Reverse Engineering |
-| [Smart Factory Mobile](projects/smart-factory/) | Industrial IoT Android apps | RFID, offline-first, hardware integration |
-| [Forest Patrol](projects/forest-patrol-inspection/) | GIS app for forest inspections | Offline maps, GPS tracking, field data |
-| [Picture Book Locker](projects/picture-book-locker/) | Smart library locker system | Hardware control, REST API, sensors |
-| [Live Streaming](projects/live-streaming-system/) | Live commerce platform | Multi-language, WebSocket, HLS/M3U8 |
-
-### ☕ Backend & Infrastructure
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| [Smart Factory Backend](projects/smart-factory/) | Microservices for manufacturing | 5+ sites, Docker, Jenkins, Nginx |
-| [Broadcast Control](projects/broadcast-control/) | Digital signage management | MQTT, remote deployment, ad scheduling |
-| [Visit System](projects/visit-system/) | Visitor management with face recognition | Face recognition, access control |
+| [Visit System](projects/visit-system/) | Visitor management with face recognition | Face recognition, Access control |
 | [Patent Search System](projects/patent-search-system/) | .NET patent document management | .NET 2.0, Lucene.NET, SQL Server 2008 |
-
-### 🔧 DevOps & Data
-| Project | Description | Highlights |
-|---------|-------------|------------|
-| [Enterprise Messaging BI](projects/enterprise-messaging/) | BI and analytics infrastructure | Kettle ETL, PowerBI, FineReport |
-| [Smart Factory DevOps](projects/smart-factory/) | CI/CD and infrastructure | Jenkins, Docker, Kubernetes, Nginx |
+| [School Attendance](projects/school-attendance/) | Student attendance tracking system | Android, RFID, Spring Boot |
+| [Boobit](projects/boobit/) | Social media automation tool | Python, Browser Automation |
 
 ---
 

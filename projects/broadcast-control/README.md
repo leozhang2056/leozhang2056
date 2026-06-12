@@ -96,11 +96,16 @@ The core design goal is to improve delivery efficiency and operational consisten
 
 ## Evidence
 
-> No screenshots are committed yet.  
-> Suggested files under `images/`:
-> - `platform-arch.png`
-> - `campaign-console.png`
-> - `screen-playback.png`
+### Platform Interface
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/main.png" width="500" alt="Broadcast Control Interconnection promotional illustration with tablet interface"/><br/>
+      <sub>Broadcast Control Interconnection promotional illustration with tablet interface</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

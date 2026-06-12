@@ -1,4 +1,4 @@
-# Forest Patrol Inspection System
+# ForestGuard Patrol
 
 > Mobile patrol system for forest rangers to work in no-signal areas, record GPS tracks, report fire/pest risks, and upload data when network becomes available.
 
@@ -6,42 +6,93 @@
 
 ## Overview
 
-This project is designed for **forest patrol operations in weak or no-network environments**.  
-Patrol users carry mobile devices into forest areas to complete inspections, record trajectories, and report risk events such as:
+This project is designed for **forest patrol operations in weak or no-network environments**. Originally built as **ForestGuard Patrol** for a forestry management organization in China.
 
-- Fire hazards
-- Pest and disease incidents
-- Other field abnormalities
+Patrol users carry mobile devices into forest areas to complete inspections, record trajectories, and report risk events such as fire hazards, pest and disease incidents, land occupation, resource destruction, and illegal grazing.
 
 The system supports offline-first data collection and delayed synchronization, ensuring data is not lost during patrol.
 
 **Project Type:** Mobile GIS / Forest Patrol  
-**Timeline:** TBD  
+**Timeline:** 2021 - 2022  
 **Role:** Android Mobile Client Developer  
-**Company:** TBD
+**Company:** Chunxiao Technology Co., Ltd.
 
 ---
 
-## My Responsibilities
-
-- Focused on Android mobile client development for offline field patrol operations.
-- Implemented GPS-based patrol track recording and trajectory playback support.
-- Implemented risk reporting forms for fire, pest, and other patrol events.
-- Integrated offline map loading and GIS-based field annotations.
-- Built local data storage and deferred upload mechanism after reconnecting to network.
-- Coordinated with backend/GIS teams for API schema and map layer integration.
-
----
-
-## Key Capabilities
+## Core Features
 
 - **Offline patrol mode:** Continue patrol tasks in areas without mobile signal.
-- **GPS trajectory recording:** Record and persist patrol routes with timestamps.
+- **Map-based patrol:** ArcGIS Runtime SDK (v100.12.0) for real-time location tracking, route playback, and GIS layer overlays (patrol zones, attendance polygons).
+- **GPS trajectory recording:** Record and persist patrol routes with timestamps using Baidu Location Service (GCJ-02 coordinates).
 - **Offline map support:** Load map tiles/packages locally for field navigation.
 - **GIS annotation:** Mark risk points, routes, and observation notes on map layers.
-- **Event reporting:** Structured reporting for fire risk, pest hazards, and other incidents.
+- **Event reporting:** Structured reporting for fire risk, pest hazards, land occupation, resource destruction, illegal grazing, and other incidents with geo-tagged photos/videos.
+- **Alarm system:** One-tap fire/disaster alerts with location attached.
+- **Attendance & leave management:** Check-in/check-out, attendance statistics, leave requests with approval workflow.
+- **Push-to-talk:** Built-in walkie-talkie module (`tf.talkie`) for team voice communication.
+- **Dispatcher messaging:** Backend sends tasks/dispatches to field rangers; rangers confirm receipt.
 - **Deferred synchronization:** Automatically upload local records after network recovery.
-- **Field evidence collection:** Support text/photos/position metadata for incident records.
+- **Offline patching:** Tinker hot-patch framework for in-field app updates without full reinstalls.
+- **Media compression:** `MediaCompressLibrary` compresses captured images/videos before uploading to AliCloud OSS.
+
+---
+
+## Architecture
+
+### Conceptual Flow
+
+```
++----------------------------------------------------+
+|                Android Patrol Client                |
+| Offline Map | GPS Track | Event Report | Local DB   |
++-----------------------------------------------------+
+                              |
+                    Sync When Network Available
+                              |
++-----------------------------------------------------+
+|                Patrol Platform APIs                  |
+| Track Ingestion | Event Management | User/Task Mgmt  |
++-----------------------------------------------------+
+                              |
++-----------------------------------------------------+
+|                  GIS Visualization                   |
+| Patrol Routes | Risk Points | Thematic Layers        |
++------------------------------------------------------+
+```
+
+### Module Structure
+
+| Module | Purpose |
+|--------|---------|
+| `app` | Main application -- activities, services, UI |
+| `LibMarsdaemon` | Background process keep-alive (dual-process guard) |
+| `MediaCompressLibrary` | Image/video compression before upload |
+| `OneSDK` | Alibaba Baichuan SDK -- social sharing & third-party login |
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|-----------|
+| Language | Java |
+| Min SDK / Target SDK | 16 / 23 |
+| Maps | Esri ArcGIS Runtime 100.12.0 |
+| Location | Baidu LBS |
+| Push | Firebase Cloud Messaging |
+| Storage | AliCloud OSS |
+| Networking | xUtils 3.9.0 |
+| Event Bus | EventBus 3.2.0 |
+| Image Selection | MultiImageSelector |
+| Calendar | material-calendarview |
+| Permissions | RxPermissions |
+| Hot Patching | Tinker |
+
+---
+
+## Backend API
+
+RESTful services with JWT token authentication. Key endpoints include `/login` for user authentication, `/v1/users/{id}` for user profile and patrol area, `/v1/location` for GPS track upload and query, `/v1/collectRecord` for incident reports (point/line/area with attachments), `/v1/alarmRecord` for fire and disaster alerts, `/v1/patrolPoints` for assigned patrol checkpoints, `/v1/notice` for messages and dispatches, and `/v1/zoneRange` for offline map download boundaries.
 
 ---
 
@@ -53,29 +104,6 @@ The system supports offline-first data collection and delayed synchronization, e
 4. All patrol data is stored locally with status tracking.
 5. When network is available, the client uploads tracks/events and syncs to platform.
 6. Management side reviews patrol coverage and risk distribution on GIS layers.
-
----
-
-## Architecture (Conceptual)
-
-```
-┌────────────────────────────────────────────────────┐
-│                 Android Patrol Client               │
-│ Offline Map | GPS Track | Event Report | Local DB   │
-└─────────────────────────────┬───────────────────────┘
-                              │
-                    Sync When Network Available
-                              │
-┌─────────────────────────────▼───────────────────────┐
-│                 Patrol Platform APIs                 │
-│ Track Ingestion | Event Management | User/Task Mgmt  │
-└─────────────────────────────┬───────────────────────┘
-                              │
-┌─────────────────────────────▼───────────────────────┐
-│                   GIS Visualization                  │
-│ Patrol Routes | Risk Points | Thematic Layers        │
-└──────────────────────────────────────────────────────┘
-```
 
 ---
 
@@ -95,22 +123,55 @@ The system supports offline-first data collection and delayed synchronization, e
 <table>
   <tr>
     <td align="center">
-      <img src="./images/app-photo-capture.jpg" width="320" alt="Photo capture and evidence upload"/><br/>
+      <img src="./images/app-photo-capture.jpg" width="240" alt="Photo capture and evidence upload"/><br/>
       <sub>Photo capture and evidence upload</sub>
     </td>
     <td align="center">
-      <img src="./images/app-map-workflow.png" width="320" alt="Patrol map workflow"/><br/>
-      <sub>Patrol map and operation workflow</sub>
+      <img src="./images/app-new-collection-form.jpg" width="240" alt="New collection form"/><br/>
+      <sub>New collection form with GPS coordinates</sub>
+    </td>
+    <td align="center">
+      <img src="./images/app-event-type-selector.jpg" width="240" alt="Event type selector"/><br/>
+      <sub>Event type selection (fire, pest, land occupation, etc.)</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./images/app-task-report.png" width="320" alt="Task and field report"/><br/>
+      <img src="./images/app-task-report.png" width="240" alt="Task and field report"/><br/>
       <sub>Patrol task and field reporting page</sub>
     </td>
     <td align="center">
-      <img src="./images/app-risk-entry.png" width="320" alt="Risk record entry"/><br/>
+      <img src="./images/app-risk-entry.png" width="240" alt="Risk record entry"/><br/>
       <sub>Risk record and evidence entry page</sub>
+    </td>
+    <td align="center">
+      <img src="./images/app-gps-map-offline.jpg" width="240" alt="GPS map and offline mode"/><br/>
+      <sub>GPS positioning and offline map</sub>
+    </td>
+  </tr>
+</table>
+
+### Web Management Platform
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/web-event-query.png" width="320" alt="Event query"/><br/>
+      <sub>Event query with patrol tracks on map</sub>
+    </td>
+    <td align="center">
+      <img src="./images/web-alarm-query.png" width="320" alt="Alarm query"/><br/>
+      <sub>Alarm query with fire alert details</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./images/web-batch-export.png" width="320" alt="Batch export"/><br/>
+      <sub>Batch export patrol records</sub>
+    </td>
+    <td align="center">
+      <img src="./images/web-visualization-stats.png" width="320" alt="Visualization statistics"/><br/>
+      <sub>Regional patrol coverage heatmap</sub>
     </td>
   </tr>
 </table>
@@ -138,9 +199,20 @@ The system supports offline-first data collection and delayed synchronization, e
 
 - Android offline-first development
 - GPS trajectory recording
-- Offline map integration
+- Offline map integration (ArcGIS Runtime SDK)
 - GIS data annotation and visualization
 - Delayed sync and weak-network data reliability
+- Hot-patch based in-field app updates
+
+---
+
+## Build
+
+Requires Android Gradle Plugin >= 7.1.0, Gradle >= 7.2, and JDK 8+.
+
+```bash
+./gradlew assembleDebug
+```
 
 ---
 
