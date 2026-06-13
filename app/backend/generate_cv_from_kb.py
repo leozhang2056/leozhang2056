@@ -3314,21 +3314,6 @@ _CSS = """
 
     .cv-name a { color: #111; }
 
-    .cv-portfolio-link {
-      font-size: 10.5pt;
-      font-weight: 500;
-      margin-bottom: 5px;
-      text-align: center;
-    }
-
-    .cv-portfolio-link a {
-      color: #1a4a8a;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #6a8fc0;
-      text-decoration-thickness: 1px;
-    }
-
     .cv-contact {
       font-size: 9.8pt;
       color: #1a4a8a;
@@ -3393,6 +3378,11 @@ _CSS = """
       color: #1a4a8a;
       margin-top: 3px;
       line-height: 1.5;
+    }
+
+    a.cv-portfolio-highlight {
+      font-size: 11pt;
+      font-weight: 600;
     }
 
     /* ── Section title ───────────────────────────────── */
@@ -3903,8 +3893,11 @@ def generate_html_from_kb(
         f'&#9990;&nbsp;{_disp_phone}',
     ]
     
-    # Portfolio link (shown prominently between name and contact)
+    # Portfolio link (prominent in contact row)
     portfolio_url = "https://portfolio.leoz.fun"
+    contact_primary_bits.append(
+        f'<a href="{html.escape(portfolio_url, quote=True)}" class="cv-social-link cv-portfolio-highlight">{_CV_ICON_PORTFOLIO_SVG}Portfolio</a>'
+    )
     
     if linkedin:
         contact_primary_bits.append(
@@ -3955,9 +3948,6 @@ def generate_html_from_kb(
   <div class="cv-header">
     <div class="cv-name">
       {_safe_name}
-    </div>
-    <div class="cv-portfolio-link">
-      <a href="{html.escape(portfolio_url, quote=True)}">{html.escape(portfolio_url, quote=True)}</a>
     </div>
     <div class="cv-contact">
       {contact_primary_row}
