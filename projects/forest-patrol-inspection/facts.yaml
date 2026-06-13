@@ -25,6 +25,7 @@ summary: 'Mobile forest patrol system for no-signal field scenarios. Supports of
   '
 highlights:
   - Delivered offline-first Android GIS for forest patrol in no-signal areas: custom offline maps, GPS tracks, GIS annotations, and fire/pest/risk reporting over a one-year cycle
+  - Integrated GDAL, Geos, and Shapely for geospatial data processing, map rendering, and spatial analysis in field inspection workflows
   - Synced patrol and incident data after connectivity returned, keeping field workflows aligned with regional forestry operations
 tech_stack:
   languages:
@@ -37,6 +38,9 @@ tech_stack:
   - GPS
   - Offline Map
   - GIS Layer Annotation
+  - GDAL
+  - Geos
+  - Shapely
   backend: []
   databases: []
   devops: []
@@ -106,6 +110,7 @@ skills_demonstrated:
   - Offline-first Mobile Architecture
   - GPS Track Recording
   - GIS Integration
+  - GDAL/Geos/Shapely Geospatial Libraries
   - Local Data Persistence
   - Sync Strategy Design
   soft:
@@ -122,6 +127,9 @@ keywords:
 - Offline Map
 - GPS Tracking
 - GIS
+- GDAL
+- Geos
+- Shapely
 - Incident Reporting
 - Offline-first
 last_updated: '2026-03-05'
