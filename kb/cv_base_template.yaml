@@ -12,9 +12,7 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Android engineer who builds mobile systems that work at scale — 5,000
-        daily users, sub-200ms messaging, and hardware-integrated IoT workflows
-        across enterprise environments.
+      - Android engineer who builds mobile systems that work at scale.
       - I've shipped 8+ production apps and learned that the hardest part isn't
         writing features — it's making systems reliable enough that users never
         have to think about them.
@@ -160,12 +158,8 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Backend software engineer who builds systems that need to work under real
-        business constraints — not just in theory, but in production, at scale,
-        with teams depending on them.
-      - I've spent 10 years learning what actually matters: making the right trade-offs
-        between speed, reliability, and maintainability. I've shipped platforms across
-        IoT, real-time communication, and data-intensive domains.
+      - Backend software engineer who builds systems that work under real business constraints.
+      - I've spent 10 years learning what actually matters: making the right trade-offs between speed, reliability, and maintainability. I've shipped platforms across IoT, real-time communication, and data-intensive domains.
       - I focus on service design that's simple enough to debug at 3am, APIs that
         teams can integrate without friction, and deployment pipelines that don't
         require a specialist to operate.
@@ -173,99 +167,105 @@ roles:
       en:
       - label: Backend Engineering
         skills:
-        - C#/.NET
         - Java
+        - Kotlin
+        - Spring Boot
         - Spring Cloud
+        - JPA / Hibernate
         - RESTful API
         - Microservices
         - Event-driven Architecture
       - label: Databases
         skills:
-        - SQL Server
+        - PostgreSQL
         - MySQL
         - Redis
         - MongoDB
-        - T-SQL
+        - SQL Server
         - Query Optimization
         - Data-intensive Applications
-      - label: API & Integration
+      - label: Cloud & Infrastructure
+        skills:
+        - AWS (ECS, Lambda, S3)
+        - Docker
+        - Kubernetes
+        - CI/CD
+        - GitHub Actions
+        - Linux
+      - label: API & Messaging
         skills:
         - WebSocket
         - Kafka
         - ActiveMQ
         - MQTT
-        - Azure Functions
         - REST API Design
-      - label: DevOps & Release
+      - label: Languages & Broader Stack
         skills:
-        - Docker
-        - Kubernetes
-        - Octopus Deploy
-        - Jenkins
-        - Azure
-        - Git
-        - GitHub Actions
-        - CI/CD
-        - Linux
-        - IIS
-      - label: Broader Stack
-        skills:
-        - Kotlin
         - Python
         - TypeScript
+        - C#/.NET
         - Vue.js
       - label: AI-Assisted Development
         skills:
         - Cursor
         - GitHub Copilot
         - Claude Code
-        - OpenCode
+        - LLM Integration
+        - AI Workflow
     tech_stack_display:
       technical_lead_2019_2024:
         priority:
-        - Kotlin
         - Java
-        - Android SDK
-        - Jetpack Compose
-        - MVVM
-        - CI/CD
-        - Gradle
-        - NDK
+        - Spring Boot
+        - Spring Cloud
+        - Kafka
         - MySQL
         - Redis
-        - Spring Cloud
+        - Docker
+        - Kubernetes
+        - RESTful API
+        - Microservices
+        - WebSocket
+        - MQTT
+        - Kotlin
+        - Python
+        - CI/CD
+        - Git
+        - GitHub Actions
         additional:
         - Kotlin
-        - Android SDK
-        - Jetpack Compose
-        - MVVM
+        - Python
+        - WebSocket
+        - MQTT
         - CI/CD
         exclude:
         - React
         - Redux
         - Node.js
         - Vue.js
-        - Spring Boot
-        - AWS
-        - .NET Core
-        - Python
-        - SSL/TLS
-        - Encryption
-        - SSL Pinning
-      android_2015_2018:
-        priority:
-        - Kotlin
-        - Java
+        - Flutter
+        - Dart
         - Android SDK
-        - Jetpack
+        - Jetpack Compose
         - MVVM
         - Gradle
-        - WebSocket
-        - CI/CD
-        - NDK/JNI
-        additional:
-        - Kotlin
+        - NDK
+        - Room
+        - Coroutines
+      android_2015_2018:
+        priority:
         - Java
+        - Kotlin
+        - Android SDK
+        - WebSocket
+        - REST API
+        - SQLite
+        - Gradle
+        - CI/CD
+        - Git
+        additional:
+        - Java
+        - Kotlin
         - Android SDK
         - WebSocket
         exclude:
@@ -279,15 +279,25 @@ roles:
         - AWS
         - MySQL
         - Redis
-        - SSL/TLS
-        - Encryption
-        - SSL Pinning
+        - Kafka
+        - MQTT
+        - Spring Boot
+        - Jetpack Compose
+        - Flutter
+        - Dart
       dotnet_2013_2014:
         priority:
         - C#
         - .NET
         - SQL Server
         - ASP.NET MVC
+        - IIS
+        - Entity Framework
+        - JavaScript
+        - jQuery
+        - FFmpeg
+        - RTMP
+        - HLS
         additional:
         - C#
         - .NET
@@ -298,6 +308,12 @@ roles:
         - RxJava
         - Jenkins
         - Java
+        - Spring Boot
+        - Spring Cloud
+        - Kafka
+        - Docker
+        - Kubernetes
+        - AWS
     experience:
       companies:
       - name: Chunxiao Technology Co., Ltd.
@@ -319,14 +335,12 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Full-stack engineer who works across the entire delivery chain — from
-        backend services and databases to frontend interfaces and mobile clients.
+      - Full-stack engineer who works across the entire delivery chain.
       - I've spent 10 years building systems where the hard part isn't the
         frontend or the backend — it's making them work together reliably under
         real constraints. I focus on clear API contracts, data flows that make
         sense, and deployments that don't break when you're not looking.
-      - I also bring production AI experience: building and deploying computer
-        vision and LLM workflows that connect models to real user problems.
+      - I also bring production AI experience — building and deploying computer vision and LLM workflows that connect models to real user problems.
     key_skills:
       en:
       - label: Languages
@@ -502,10 +516,8 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - AI engineer who builds systems that actually ship — not just notebooks
-        and demos, but production pipelines that connect models to real user
-        problems under real constraints.
-      - I built ChatClothes from scratch: a multimodal virtual try-on system
+      - AI engineer who builds systems that actually ship.
+      - I built ChatClothes from scratch — a multimodal virtual try-on system
         combining diffusion models, computer vision, and local LLM orchestration,
         deployed on constrained hardware and published at IVCNZ 2025.
       - I've learned that the hard part in AI isn't training a model — it's
