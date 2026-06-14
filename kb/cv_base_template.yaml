@@ -12,13 +12,15 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Software Engineer with 10+ years of experience building Android applications,
-        enterprise systems, IoT platforms, and cloud-connected solutions.
-      - Strong expertise in Kotlin, Java, Jetpack Compose, MVVM, Coroutines,
-        Android SDK, REST APIs, and scalable application architecture.
-      - Combines extensive industry experience with postgraduate research in
-        Artificial Intelligence to deliver intelligent, maintainable, and
-        business-focused software products.
+      - Android engineer who builds mobile systems that work at scale — 5,000
+        daily users, sub-200ms messaging, and hardware-integrated IoT workflows
+        across enterprise environments.
+      - I've shipped 8+ production apps and learned that the hardest part isn't
+        writing features — it's making systems reliable enough that users never
+        have to think about them.
+      - I focus on architecture that survives fragmentation, performance that
+        doesn't degrade under load, and code that other engineers can maintain
+        without a manual.
     key_skills:
       en:
       - label: Android Development
@@ -157,16 +159,16 @@ roles:
   backend:
     summary_sentences:
       en:
-      - Backend software engineer with 10+ years building enterprise applications
-        in Java, Spring Cloud, and C#/.NET.
-      - Experienced with REST APIs, SQL Server, Docker, Kubernetes, Octopus Deploy,
-        Azure, and data-intensive backend services — focused on performance and reliability.
-      - Strong track record in service design, API integration, CI/CD pipelines, cloud
-        deployment, and agile delivery with cross-functional teams.
-      - Known for clear communication, mentoring junior engineers, and partnering
-        with cross-functional teams to deliver reliable systems.
-      - Holds a Master's in Computer and Information Sciences from AUT, First Class
-        Honours.
+      - Backend software engineer who builds systems that need to work under real
+        business constraints — not just in theory, but in production, at scale,
+        with teams depending on them.
+      - "I've spent 10 years learning what actually matters: making the right trade-offs
+        between speed, reliability, and maintainability. I've shipped platforms across
+        IoT, real-time communication, and data-intensive domains."
+      - I focus on service design that's simple enough to debug at 3am, APIs that
+        teams can integrate without friction, and deployment pipelines that don't
+        require a specialist to operate.
+      - Master's in Computer and Information Sciences from AUT, First Class Honours.
     key_skills:
       en:
       - label: Backend Engineering
@@ -317,14 +319,14 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Software Engineer with 10+ years of experience building backend, mobile,
-        and web applications, with strong full-stack capability across modern
-        technology stacks.
-      - Skilled in Spring Cloud, RESTful APIs, AWS, CI/CD, MySQL, Redis,
-        and scalable system architecture across cloud and IoT environments.
-      - Combines extensive industry experience with postgraduate research in
-        Artificial Intelligence to deliver intelligent, maintainable, and
-        business-focused software products.
+      - Full-stack engineer who works across the entire delivery chain — from
+        backend services and databases to frontend interfaces and mobile clients.
+      - I've spent 10 years building systems where the hard part isn't the
+        frontend or the backend — it's making them work together reliably under
+        real constraints. I focus on clear API contracts, data flows that make
+        sense, and deployments that don't break when you're not looking.
+      - I also bring production AI experience: building and deploying computer
+        vision and LLM workflows that connect models to real user problems.
     key_skills:
       en:
       - label: Languages
@@ -500,15 +502,15 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Software Engineer with 10+ years of experience building production systems,
-        specializing in Artificial Intelligence, computer vision,
-        and machine learning workflows.
-      - Built ChatClothes, a multimodal virtual try-on system combining diffusion models,
-        YOLO-based garment detection, and local LLM control with Ollama.
-      - Experienced in delivering end-to-end AI pipelines — from data preprocessing
-        and model training through deployment on constrained hardware.
-      - Combines deep software engineering foundations with AI expertise to build
-        practical and production-ready AI solutions.
+      - AI engineer who builds systems that actually ship — not just notebooks
+        and demos, but production pipelines that connect models to real user
+        problems under real constraints.
+      - I built ChatClothes from scratch: a multimodal virtual try-on system
+        combining diffusion models, computer vision, and local LLM orchestration,
+        deployed on constrained hardware and published at IVCNZ 2025.
+      - I've learned that the hard part in AI isn't training a model — it's
+        making it reliable, fast, and maintainable enough that production teams
+        can actually use it.
     key_skills:
       en:
       - label: AI / ML
