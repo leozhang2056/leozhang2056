@@ -40,12 +40,14 @@ Default length:
 
 ### Summary
 
+- **叙事优先**：Summary 应该讲故事，而不是列关键词。工具和关键词放在 Skills 部分。
+- **人设定位**：第二句应该回答"你是什么类型的工程师"，而不是"你会什么工具"。
 - **Five-sentence structure (hard constraint)** — see `.cursor/rules/resume-generation-standards.mdc` § Summary rules:
-  1. identity + years + core stack
-  2. specialized problem domains
-  3. one proven flagship outcome (**Android: no numbers in Summary**; metrics in Experience bullets)
-  4. **Android:** AI-assisted programming tools **+** Android hard strengths (SDK/NDK/OEM, etc.); no Cursor/Copilot/Claude list in Summary (Key Skills only)
-  5. AUT Master's + First Class Honours (always last; no grad date in Summary)
+  1. AUT Master's + First Class Honours（always first）
+  2. **定位** — 你是什么类型的工程师，你天然解决什么类型的问题
+  3. **叙事** — 你学到了什么，为什么这比工具更重要
+  4. **方法** — 你关注什么，你的工程哲学是什么
+  5. （可选）具体项目或成果的简短提及
 - **Highlights + bold:** only competitive differentiators in prose; bold max ~6 highlight terms per Summary (`SUMMARY_HIGHLIGHT_BOLD`). **JD provided:** KB-supported JD matches go in **sentence 1** and are **bolded** first (`_apply_jd_sentence1_alignment`, up to 3). No Auckland/work-rights in Summary.
 - Source text: `kb/profile.yaml` → `summary_variants` / `summary_variants_zh`; enforced in `generate_summary()`.
 - 5–6 printed lines preferred (concise but high-impact)
@@ -82,6 +84,9 @@ Default length:
 
 ### Experience
 
+- **决策叙事**：每个 bullet 应该体现决策过程，而不只是执行结果。格式：**约束 → 决策 → 结果**。
+- **权衡展示**：展示你在速度、可靠性、可维护性之间的权衡能力。
+- **人设一致**：Experience bullets 应该强化 Summary 中建立的"人设"，而不是罗列工具。
 - Select at least 5 projects or roles
 - Use 2-4 bullets per item
 - Start bullets with strong action verbs
@@ -142,6 +147,49 @@ Good:
 
 Weak:
 - `Responsible for backend development and system maintenance.`
+
+---
+
+## 4A. Narrative Writing Principles
+
+> 核心理念：你不是在卖技能，你是在卖未来价值。
+> 在 AI 简历泛滥的时代，区分度不再来自关键词优化，而是来自清晰的思维、结构化的个人叙事、可验证的决策能力。
+
+### Summary 叙事结构
+
+- 第1句：学位（不变）
+- 第2句：**定位** — 你是什么类型的工程师，你天然解决什么类型的问题
+- 第3句：**叙事** — 你学到了什么，为什么这比工具更重要
+- 第4句：**方法** — 你关注什么，你的工程哲学是什么
+- 避免：工具列表、关键词堆砌、AI腔套话（leverage/robust/passionate/world-class）
+- 示例：
+  - ✓ `"I've spent 10 years learning what actually matters: making the right trade-offs between speed, reliability, and maintainability."`
+  - ✗ `"Experienced with REST APIs, SQL Server, Docker, Kubernetes, Octopus Deploy, Azure."`
+
+### Experience 叙事结构
+
+- 每个 bullet 应该回答：**什么约束 → 做了什么决策 → 什么结果**
+- 避免：只写工具列表、只写职责描述
+- 示例：
+  - ✓ `"Migrated messaging from unstable in-house C++ to cloud IM, eliminating 90%+ defects"`
+  - ✗ `"Responsible for backend development and system maintenance."`
+
+### 人设塑造
+
+- 不要试图展示所有技能，展示你的**工程哲学**
+- 让 recruiter 记住你的**思维方式**，而不只是你的工具列表
+- 每个角色应该有一个清晰的"人设"：
+  - Backend: `"builds systems that work under real constraints"`
+  - Android: `"builds mobile systems that work at scale"`
+  - Fullstack: `"works across the entire delivery chain"`
+  - AI: `"builds systems that actually ship"`
+
+### 反模式（必须避免）
+
+- 关键词堆砌：`"Highly skilled in Java, Kotlin, Python, C++, Go, Rust..."`
+- 空泛套话：`"Passionate about building world-class products"`
+- 工具列表：`"Tech stack: React, Node.js, PostgreSQL, Redis, Docker..."`
+- AI腔：`"Leveraged cutting-edge technologies to drive innovation"`
 
 ---
 
