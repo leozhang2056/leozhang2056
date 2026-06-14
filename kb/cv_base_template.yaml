@@ -159,7 +159,8 @@ roles:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
       - Backend software engineer who builds systems that work under real business constraints.
-      - I've spent 10 years learning what actually matters: making the right trade-offs between speed, reliability, and maintainability. I've shipped platforms across IoT, real-time communication, and data-intensive domains.
+      - "I've spent 10 years learning what actually matters: making the right trade-offs
+        between speed, reliability, and maintainability."
       - I focus on service design that's simple enough to debug at 3am, APIs that
         teams can integrate without friction, and deployment pipelines that don't
         require a specialist to operate.
