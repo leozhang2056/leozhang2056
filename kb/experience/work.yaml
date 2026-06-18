@@ -13,12 +13,15 @@ experiences:
     type: Education/Research
     
     achievements:
-      - "Completed my Master's at AUT (2025), building ChatClothes — a multimodal virtual try-on system combining <strong>diffusion models</strong> for garment generation, <strong>YOLO-LC</strong> for lightweight garment classification, and a local <strong>LLM</strong> for conversational control via <strong>Ollama</strong>. Trained and fine-tuned <strong>LoRA</strong> adapters on the DressCode and VITON-HD datasets. Submitted thesis <strong>6 months early</strong>."
-      - "Designed the end-to-end pipeline: data preprocessing and augmentation, model training and evaluation, <strong>ComfyUI</strong> workflow orchestration, and on-device inference optimization for constrained hardware. Published at IVCNZ 2025 (<a href=\"https://doi.org/10.1109/IVCNZ67716.2025.11281834\">DOI</a>)."
-      - "Worked on a summer research project using <strong>hyperspectral imaging</strong> and <strong>computer vision</strong> to classify kiwifruit ripeness."
-      - "Collaborated with supervisors to design experiments, align milestones, and communicate progress across projects."
-    
-    tech_stack: [AWS, Azure, Linux, Docker, Git]
+      - 'Designed and delivered ChatClothes, a multimodal AI platform integrating computer vision, diffusion
+        models, and LLM-powered workflows. Owned the project end-to-end, from system design and development
+        through evaluation, deployment, and user validation.'
+      - 'Built AI workflows using Ollama, ComfyUI, PyTorch, and custom orchestration pipelines. Trained,
+        evaluated, and optimized AI models for deployment in resource-constrained environments.'
+      - 'Published research at IVCNZ 2025 and completed a First Class Honours Master''s thesis six months
+        ahead of schedule.'
+
+    tech_stack: [Python, PyTorch, Ollama, Docker, Linux, AWS, Azure, Git]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
@@ -34,33 +37,38 @@ experiences:
       - title: Full-stack Engineer
         period: "2018 - 2024"
         achievements:
-          - "Built a media transcoding pipeline (H.264/AAC) supporting RTMP/HLS distribution using FFmpeg and C#, and developed ASP.NET backend services with SQL Server for media asset management and content delivery — enabling multi-device live streaming at high concurrency."
-          - "Architected and delivered a <strong>smart factory platform</strong> for garment manufacturing — integrated <strong>RFID</strong> readers, electronic scales, conveyors, and barcode scanners across <strong>10+ factory sites</strong> using <strong>Spring Cloud</strong> microservices and <strong>Docker</strong>-based CI/CD. Built Android shop-floor terminals and Vue.js web portals for hundreds of daily workers, plus a serial-to-WebSocket bridge that eliminated manual scale-weight entry — improving production efficiency <strong>30%+</strong>. Awarded the <strong>Hebei Provincial Science and Technology Achievement Award</strong> (2020)."
-          - "Built an <strong>enterprise messaging platform</strong> serving <strong>5,000 DAU</strong> with <strong>500K+ daily messages</strong>, including <strong>SSO</strong>, file services, and permission frameworks across <strong>5+ subsystems</strong> — migrated from legacy C++ to cloud IM, eliminating <strong>90%+ defects</strong>."
-          - "Delivered <strong>IoT projects</strong> including smart switches, Zigbee/WiFi gateways, smart power systems, and device management platforms — spanning Android apps, embedded gateway firmware, and Spring Cloud backend APIs."
-          - "Led Android architecture and delivery across projects — established <strong>MVVM</strong> patterns with <strong>Jetpack Compose</strong>, <strong>Coroutines</strong>, and modularisation, and drove <strong>CI/CD</strong> automation for mobile releases."
+          - 'Worked directly with factory managers, operations teams, and business stakeholders to identify
+            workflow challenges and translate operational requirements into scalable software solutions.'
+          - 'Led the architecture, design, and delivery of a smart manufacturing platform deployed across 10+ production
+            sites. Integrated RFID readers, barcode scanners, electronic scales, conveyors, Android terminals,
+            and web portals with Spring Cloud microservices, improving production efficiency by more than 30%.'
+          - 'Owned the architecture and implementation of an enterprise communication platform serving 5,000
+            DAU and 500K+ daily messages. Delivered backend services, authentication, file management, API
+            integrations, and real-time communication capabilities while ensuring platform scalability and
+            reliability.'
+          - 'Delivered IoT and device management platforms for smart power systems, Zigbee/WiFi gateways, and
+            industrial devices, including device monitoring, remote management, and operational reporting
+            capabilities. Collaborated closely with hardware engineers and customers to define requirements,
+            validate integrations, and ensure reliable deployment in production environments.'
+          - 'Provided technical guidance, architecture reviews, and mentoring support to junior developers
+            across multiple projects.'
         
-        tech_stack: [.NET, C++, Kotlin, Java, Spring Cloud, Docker, MySQL, Redis, Kafka, ActiveMQ]
+        tech_stack: [Java, TypeScript, Spring Cloud, REST APIs, Docker, Kafka, ActiveMQ, MySQL, Redis, Vue.js, .NET]
 
-  - company: ""
-    company_url: ""
-    company_description: ""
-    location: ""
-    start_date: ""
-    end_date: ""
-    current: false
-    type: Full-time
-    
-    career_progression:
-      - title: Senior Mobile Developer
+      - title: Senior Android Engineer
         period: "2013 - 2018"
         achievements:
-          - "Shipped <strong>8+ production Android apps</strong> across <strong>field inspection, IoT device management, and mobile workforce solutions</strong> — including an offline-first forestry app enabling rangers to record GPS patrols and incidents in zero-connectivity areas."
-          - "Designed a modular Android architecture reused across <strong>12+ internal projects</strong>, cutting code duplication by <strong>50%+</strong> and enabling parallel team development across different product lines."
-          - "Reduced <strong>OOM crashes</strong> on image-heavy and real-time streaming apps through memory profiling and leak detection; built automated <strong>crash telemetry</strong> for root-cause analysis across the device fleet."
-          - "Managed Android app releases to Google Play and domestic app stores, handled <strong>push notification</strong> delivery with failover channels, and adapted to <strong>OEM-specific</strong> behavior on Xiaomi, Huawei, and OPPO devices."
-        
-        tech_stack: [Coroutines, NDK/JNI, Gradle, CI/CD]
+          - 'Delivered 8+ production applications supporting enterprise communication, workforce mobility,
+            field operations, and IoT device management.'
+          - 'Designed a reusable mobile architecture adopted across 12+ projects, reducing code duplication
+            by more than 50% and enabling faster delivery across multiple product teams.'
+          - 'Improved application reliability through performance profiling, memory optimisation, automated
+            crash monitoring, and structured release processes.'
+          - 'Managed integrations with backend APIs, real-time communication services, push notification
+            platforms, RFID devices, barcode scanners, and diverse Android device ecosystems to ensure
+            reliable production performance.'
+
+        tech_stack: [Kotlin, Java, Android SDK, WebSocket, Gradle, CI/CD, NDK/JNI]
 
   - company: Additional Experience
     location: Auckland, New Zealand

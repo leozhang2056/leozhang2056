@@ -1,0 +1,18 @@
+Company Description
+
+Frogparking, now part of Towne, is revolutionizing the parking and mobility industry with Nexity by Towne, an integrated technology platform designed to deliver extraordinary arrival-through-departure experiences. By combining cutting-edge technology and premium hospitality solutions, Towne enhances asset value through improved revenue performance, lowered operational costs, and exceptional customer service. Serving diverse industries such as hospitality, healthcare, retail, and transportation, Frogparking is committed to innovating and optimizing operational excellence for its clients.
+
+Role Description
+
+The Senior Software Engineer at Frogparking plays a critical role in the design, development, and maintenance of our next-generation parking and mobility platform. This is a full-time position, based in Palmerston North, NZ with flexibility for remote work. Responsibilities include back-end development, system architecture design, optimizing code for performance, debugging, and working collaboratively with cross-functional teams to deliver robust and scalable software solutions. The role will also involve mentoring junior developers and contributing to continuous improvement initiatives to enhance the software development lifecycle.
+
+Qualifications
+
+Strong foundation in Computer Science principles and Software Development
+Proficiency in Back-End Web Development and Programming
+Experience with Object-Oriented Programming (OOP) methodologies
+Ability to design scalable and maintainable software architectures
+Problem-solving skills and a collaborative mindset to work in a hybrid team environment
+Bachelor's or Master's degree in Computer Science, Software Engineering, or a related field
+Familiarity with cloud-based technologies and DevOps practices is a plus
+Experience in the parking or mobility industry is an advantage

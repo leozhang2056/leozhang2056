@@ -1032,7 +1032,53 @@ def generate_cover_letter_html(
     if phone:
         contact_parts.append(html.escape(phone))
     contact_str = " | ".join(contact_parts)
-    
+
+    # Company-specific custom cover letters
+    if "HI Technology" in company_name or "HI & Innovation" in company_name:
+        custom_body = """
+    <div class="cl-header">
+        <div class="cl-name">{name}</div>
+        {contact}
+    </div>
+
+    <div class="cl-salutation">Dear Hiring Team,</div>
+
+    <div class="cl-body">
+        <p>I am excited to apply for the AI Product Engineer position with HI Technology & Innovation.</p>
+
+        <p>What particularly attracted me to this role is the combination of product thinking, software engineering, and AI. Throughout my career, I have enjoyed working directly with stakeholders to understand real operational problems, challenge assumptions, and turn ideas into practical solutions that deliver measurable business value.</p>
+
+        <p>Over the past 10 years, I have delivered enterprise platforms, IoT systems, and customer-facing applications across mobile, web, and cloud environments. At Chunxiao Technology, I worked closely with factory managers, operations teams, and customers to build smart manufacturing, power management, and industrial IoT platforms. These projects integrated software with physical devices such as RFID readers, barcode scanners, electronic scales, embedded gateways, and industrial control systems. Many of the challenges involved understanding business workflows, identifying bottlenecks, and designing solutions that could be reliably deployed and maintained in production environments.</p>
+
+        <p>My technical background aligns strongly with your stack and delivery model. I have extensive experience building backend systems with Java, Spring Boot, REST APIs, distributed services, and real-time integrations, while also working across frontend and mobile applications. I am comfortable taking ownership of features from initial scoping and design through implementation, deployment, and long-term support.</p>
+
+        <p>More recently, I completed a Master of Computer and Information Sciences (First Class Honours) at AUT, where I focused on Artificial Intelligence, computer vision, and large language models. My research project, ChatClothes, involved designing and deploying a multimodal AI system combining diffusion models, computer vision, and LLM-based workflows. This experience strengthened my ability to integrate AI capabilities into real products while maintaining a strong focus on usability, reliability, and business outcomes.</p>
+
+        <p>What excites me most about HI Technology & Innovation is your emphasis on understanding the problem before building the solution. That mindset closely reflects how I have approached engineering throughout my career. I enjoy working with stakeholders, taking ownership of outcomes, and using modern AI tools to accelerate delivery while maintaining long-term code quality and system stability.</p>
+
+        <p>I would welcome the opportunity to discuss how my background in software engineering, industrial systems, IoT platforms, and AI product development could contribute to your team and your clients.</p>
+    </div>
+
+    <div class="cl-sign">
+        <div class="cl-sign-label">Kind regards,</div>
+        <div class="cl-sign-name">{name}</div>
+    </div>
+""".format(
+            name=html.escape(name),
+            contact=f'<div class="cl-contact">{contact_str}</div>' if contact_str else '',
+        )
+        return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+    <meta charset="UTF-8">
+    <title>Cover Letter - {html.escape(name)}</title>
+    <style>{_CL_CSS}</style>
+</head>
+<body>
+{custom_body}
+</body>
+</html>"""
+
     html_template = f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>

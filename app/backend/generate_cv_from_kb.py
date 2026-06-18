@@ -851,9 +851,9 @@ def _skill_repeated_by_summary_jd(
 
 
 _JD_SENSITIVE_SKILLS = {
-    "react", "vue.js", "vue", "html5/css3", "html5", "css3",
+    "react", "html5/css3", "html5", "css3",
     "redux", "node.js", "node", "nuxtjs", "nuxt", "next.js", "next",
-    "svelte", "angular", "jquery",
+    "svelte", "jquery",
 }
 
 def _base_template_skills_html(
@@ -890,12 +890,22 @@ def _base_template_skills_html(
             ]
         if not names:
             continue
-        rendered.append(
-            f'<div class="skill-row">'
-            f'<span class="skill-label">{html.escape(label)}:</span> '
-            f'{html.escape(", ".join(names))}'
-            f'</div>'
-        )
+        # Bold IoT-related label for parking-industry targeting
+        if "iot" in label.lower() or "integration" in label.lower():
+            bold_label = f'<strong>{html.escape(label)}</strong>'
+            rendered.append(
+                f'<div class="skill-row">'
+                f'<span class="skill-label">{bold_label}:</span> '
+                f'{html.escape(", ".join(names))}'
+                f'</div>'
+            )
+        else:
+            rendered.append(
+                f'<div class="skill-row">'
+                f'<span class="skill-label">{html.escape(label)}:</span> '
+                f'{html.escape(", ".join(names))}'
+                f'</div>'
+            )
     return '\n        '.join(rendered)
 
 
@@ -1232,6 +1242,7 @@ def generate_summary(
     role_type: str = 'fullstack',
     lang: str = 'en',
     jd_keywords: Optional[List[str]] = None,
+    target_role_title: str = '',
 ) -> str:
     """
     从 profile.yaml 的 summary_variants 读取，再强制五句结构（见 resume-generation-standards.mdc）。
@@ -1253,6 +1264,21 @@ def generate_summary(
     text = _base_template_summary(role_type, lang)
     if not text:
         text = summaries.get(variant_key) or summaries.get('default', '')
+
+    # JD title adaptation: replace sentence 2's role descriptor with target_role_title
+    if target_role_title:
+        parts = _split_summary_sentences(re.sub(r'\s+', ' ', text).strip(), lang)
+        if len(parts) >= 2:
+            # Extract the "who" clause from sentence 2 (everything from "who" or "that" onward)
+            m = re.match(r'^(.*?)\s+(who|that)\s', parts[1], re.IGNORECASE)
+            if m:
+                suffix = parts[1][m.start(2):]  # "who builds systems..."
+                parts[1] = f"{target_role_title} {suffix}"
+            else:
+                # Fallback: just prepend target title
+                parts[1] = f"{target_role_title} — {parts[1]}"
+            text = ' '.join(parts)
+            text = re.sub(r'\s+', ' ', text).strip()
 
     # 将 YAML 多行字符串里的换行+空白压缩成单空格
     text = re.sub(r'\s+', ' ', text).strip()
@@ -2401,8 +2427,8 @@ def _render_one_project_job_html(
 
 # Chunxiao career_progression titles/focus — adapt display per target role while KB keeps canonical facts.
 _CHUNXIAO_MERGED_ROLE_TITLES: Dict[str, str] = {
-    "android": "Senior Android Developer",
-    "backend": "Senior Backend Engineer",
+    "android": "Senior Mobile Engineer",
+    "backend": "Senior Java Backend Engineer",
     "fullstack": "Senior Full-Stack Engineer",
     "ai": "AI Software Engineer",
 }
@@ -2415,10 +2441,10 @@ _CHUNXIAO_MERGED_FOCUS: Dict[str, str] = {
 }
 
 _CHUNXIAO_MERGED_STAGE_ORDER: Dict[str, List[str]] = {
-    "android": ["Senior Android Developer", "Full-stack Engineer", ".NET Software Engineer"],
-    "backend": ["Full-stack Engineer", ".NET Software Engineer", "Senior Android Developer"],
-    "fullstack": ["Full-stack Engineer", "Senior Android Developer", ".NET Software Engineer"],
-    "ai": ["Full-stack Engineer", "Senior Android Developer", ".NET Software Engineer"],
+    "android": ["Senior Mobile Engineer", "Senior Android Engineer"],
+    "backend": ["Senior Mobile Engineer", "Senior Android Engineer"],
+    "fullstack": ["Senior Mobile Engineer", "Senior Android Engineer"],
+    "ai": ["Senior Mobile Engineer", "Senior Android Engineer"],
 }
 
 _CHUNXIAO_MERGED_BULLET_KEYWORDS: Dict[str, List[str]] = {
@@ -2682,6 +2708,7 @@ def _render_career_progression_html(
     work_entry: Dict,
     lang: str,
     role_type: str,
+    target_role_title: str = '',
 ) -> str:
     """按职级阶段渲染经历（新结构：career_progression + achievements）。"""
     company_name = str(work_entry.get("company") or "")
@@ -2699,16 +2726,34 @@ def _render_career_progression_html(
         progression = []
 
     if "Chunxiao" in company_name and len(progression) > 1:
-        role_title = _chunxiao_merged_role_title(role_type)
-        focus = _CHUNXIAO_MERGED_FOCUS.get(role_type, "Production software delivery across mobile, backend, and IoT systems")
-        progression_line = _chunxiao_merged_progression_line(progression, lang)
-        bullets, tech_stack = _collect_chunxiao_merged_content(progression, role_type)
-
-        role_html = f'<div class="job-role"><strong>{html.escape(role_title)}</strong> - {html.escape(focus)}</div>'
-        progression_html = ""
-        bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in bullets if a)
-        tech_line = ", ".join(str(t) for t in tech_stack if t)
-        tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+        # Two-stage rendering: each stage as a career-stage div (mandatory per project rules)
+        target_line = f'<div class="employer-progression"><strong>Target role:</strong> {html.escape(target_role_title)}</div>' if target_role_title else ""
+        stages: List[str] = []
+        for stage in progression:
+            title = str(stage.get("title") or "")
+            period = str(stage.get("period") or "")
+            achievements = stage.get("achievements") or []
+            tech_stack = stage.get("tech_stack") or []
+            if not isinstance(achievements, list):
+                achievements = []
+            if not isinstance(tech_stack, list):
+                tech_stack = []
+            tech_stack = _apply_role_tech_stack_order(tech_stack, role_type, title, period)
+            header_parts = [title]
+            if period:
+                header_parts.append(period)
+            header_text = " | ".join(header_parts)
+            bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements[:4] if a)
+            tech_line = ", ".join(str(t) for t in tech_stack if t)
+            tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
+            stages.append(f'''
+    <div class="career-stage">
+      <div class="stage-header"><strong>{html.escape(header_text)}</strong></div>
+      <ul class="stage-list">
+        {bullets_html}
+      </ul>
+      {tech_html}
+    </div>''')
 
         return f'''
     <div class="job job-employer">
@@ -2719,14 +2764,10 @@ def _render_career_progression_html(
         </tr>
       </table>
       {company_desc_html}
-      {role_html}
-      {progression_html}
-      <ul class="stage-list">
-        {bullets_html}
-      </ul>
-      {tech_html}
+      {target_line}
+      {''.join(stages)}
     </div>'''
-    
+
     stages: List[str] = []
     for stage in progression:
         title = _adapt_progression_title(str(stage.get("title") or ""), role_type)
@@ -3012,6 +3053,7 @@ def generate_experience_section(
     jd_keywords: Optional[List[str]] = None,
     work_experience_yaml: Optional[Dict] = None,
     role_template_experience: Optional[Dict] = None,
+    target_role_title: str = '',
 ) -> str:
     """将已排序的项目列表渲染为 HTML（支持新结构：career_progression + achievements）。"""
     used_bullets_norm: set[str] = set()
@@ -3027,7 +3069,7 @@ def generate_experience_section(
                 if not isinstance(exp, dict):
                     continue
                 if exp.get("career_progression"):
-                    parts.append(_render_career_progression_html(exp, lang, role_type))
+                    parts.append(_render_career_progression_html(exp, lang, role_type, target_role_title=target_role_title))
                 elif exp.get("type") == "Education/Research":
                     parts.append(_render_aut_research_html(exp, lang))
                 else:
@@ -3258,7 +3300,7 @@ def generate_interests_section(profile: Dict, lang: str = 'en') -> str:
 
 # ---------------------------------------------------------------------------
 # CSS
-# Hard constraint: CV typography is Inter only (see .cursor/rules/resume-generation-standards.mdc).
+# Hard constraint: CV typography is Inter only (see kb/rules/resume_output.md).
 # ---------------------------------------------------------------------------
 
 _CV_FONT_HEAD = """
@@ -3825,7 +3867,7 @@ def generate_html_from_kb(
     github      = (contact.get('github') or 'https://github.com/leozhang2056').strip()
 
     # ── 生成各部分 ──
-    summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords)
+    summary      = generate_summary(profile, role_type, lang, jd_keywords=jd_keywords, target_role_title=target_role_title or '')
     skills_html  = generate_skills_section(
         skills_data,
         role_type,
@@ -3848,6 +3890,7 @@ def generate_html_from_kb(
         jd_keywords=jd_keywords,
         work_experience_yaml=work_exp_yaml,
         role_template_experience=_get_role_base_template(role_type).get("experience"),
+        target_role_title=target_role_title or '',
     )
     edu_html     = generate_education_section(profile, lang)
     lic_html     = generate_licenses_section(achievements, lang)
@@ -3863,7 +3906,7 @@ def generate_html_from_kb(
     # ── 目标职位 / 公司（仅用于内部命名，不在简历顶部显示） ──
     default_titles = {
         'android':   'Senior Android Developer',
-        'backend':   'Senior Backend Engineer (Java/Spring)',
+        'backend':   'Senior Java Backend Engineer',
         'ai':        'AI Engineer (Computer Vision / LLM)',
         'fullstack': 'Senior Full-Stack Engineer',
     }

@@ -158,61 +158,51 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Backend software engineer who builds systems that work under real business constraints.
-      - "I've spent 10 years learning what actually matters: making the right trade-offs
-        between speed, reliability, and maintainability."
-      - I focus on service design that's simple enough to debug at 3am, APIs that
-        teams can integrate without friction, and deployment pipelines that don't
-        require a specialist to operate.
+      - Senior Software Engineer who has 10+ years of experience delivering enterprise
+        software, backend systems, Android applications, and IoT platforms.
+      - Strong expertise in Java, Spring Boot, software architecture, distributed
+        systems, and system integration. Experienced in building solutions that connect
+        software platforms, mobile applications, hardware devices, and operational workflows.
+      - Recognised for technical problem-solving, practical engineering judgement, and
+        collaboration across software, hardware, and business teams to deliver reliable
+        and maintainable solutions.
     key_skills:
       en:
       - label: Backend Engineering
         skills:
         - Java
-        - Kotlin
         - Spring Boot
         - Spring Cloud
-        - JPA / Hibernate
-        - RESTful API
+        - RESTful APIs
         - Microservices
-        - Event-driven Architecture
-      - label: Databases
+        - WebSocket
+        - Kafka
+      - label: IoT & System Integration
         skills:
-        - PostgreSQL
-        - MySQL
-        - Redis
-        - MongoDB
-        - SQL Server
-        - Query Optimization
-        - Data-intensive Applications
+        - RFID Systems
+        - Device Integration
+        - MQTT
+        - IoT Gateways
+        - Sensor Networks
       - label: Cloud & Infrastructure
         skills:
         - AWS (ECS, Lambda, S3)
         - Docker
-        - Kubernetes
         - CI/CD
-        - GitHub Actions
         - Linux
-      - label: API & Messaging
+      - label: Databases & Storage
         skills:
-        - WebSocket
-        - Kafka
-        - ActiveMQ
-        - MQTT
-        - REST API Design
-      - label: Languages & Broader Stack
+        - MySQL
+        - Redis
+        - PostgreSQL
+      - label: Languages & Tools
         skills:
         - Python
         - TypeScript
         - C#/.NET
-        - Vue.js
-      - label: AI-Assisted Development
-        skills:
         - Cursor
         - GitHub Copilot
         - Claude Code
-        - LLM Integration
-        - AI Workflow
     tech_stack_display:
       technical_lead_2019_2024:
         priority:
@@ -317,21 +307,13 @@ roles:
         - AWS
     experience:
       companies:
+      - name: Auckland University of Technology
+        type: Education/Research
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Mobile Developer
-        - .NET Software Engineer
-      - name: Auckland University of Technology
-        type: Education/Research
-      additional_experience:
-      - company: Additional Experience
-        location: Auckland, New Zealand
-        role: Customer Service & Operations (Part-time)
-        period: 2025-07 – 2026-02
-        achievements:
-        - 'Gilmours & Red Cross Shop: customer service, inventory management, and
-          team collaboration'
+        - Senior Android Engineer
+      additional_experience: []
   fullstack:
     summary_sentences:
       en:
