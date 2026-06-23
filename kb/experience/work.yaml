@@ -16,12 +16,13 @@ experiences:
       - 'Designed and delivered ChatClothes, a multimodal AI platform integrating computer vision, diffusion
         models, and LLM-powered workflows. Owned the project end-to-end, from system design and development
         through evaluation, deployment, and user validation.'
-      - 'Built AI workflows using Ollama, ComfyUI, PyTorch, and custom orchestration pipelines. Trained,
-        evaluated, and optimized AI models for deployment in resource-constrained environments.'
+      - 'Deployed and optimized AI models on edge devices including Raspberry Pi and Android phones,
+        running lightweight LLMs and vision models on resource-constrained ARM hardware with offline
+        inference and on-device prediction.'
       - 'Published research at IVCNZ 2025 and completed a First Class Honours Master''s thesis six months
         ahead of schedule.'
 
-    tech_stack: [Python, PyTorch, Ollama, Docker, Linux, AWS, Azure, Git]
+    tech_stack: [Python, PyTorch, Ollama, Docker, Linux, AWS, Azure, Git, Raspberry Pi, Android]
 
   - company: Chunxiao Technology Co., Ltd.
     company_url: https://www.chunxiao.net/
@@ -37,38 +38,21 @@ experiences:
       - title: Full-stack Engineer
         period: "2018 - 2024"
         achievements:
-          - 'Worked directly with factory managers, operations teams, and business stakeholders to identify
-            workflow challenges and translate operational requirements into scalable software solutions.'
-          - 'Led the architecture, design, and delivery of a smart manufacturing platform deployed across 10+ production
-            sites. Integrated RFID readers, barcode scanners, electronic scales, conveyors, Android terminals,
-            and web portals with Spring Cloud microservices, improving production efficiency by more than 30%.'
-          - 'Owned the architecture and implementation of an enterprise communication platform serving 5,000
-            DAU and 500K+ daily messages. Delivered backend services, authentication, file management, API
-            integrations, and real-time communication capabilities while ensuring platform scalability and
-            reliability.'
-          - 'Delivered IoT and device management platforms for smart power systems, Zigbee/WiFi gateways, and
-            industrial devices, including device monitoring, remote management, and operational reporting
-            capabilities. Collaborated closely with hardware engineers and customers to define requirements,
-            validate integrations, and ensure reliable deployment in production environments.'
-          - 'Provided technical guidance, architecture reviews, and mentoring support to junior developers
-            across multiple projects.'
+          - 'Smart Factory IoT Platform: architected manufacturing platform across 10+ factory sites with 6-person cross-functional team. Integrated RFID readers, barcode scanners, electronic scales (RS232/RS485 serial bridge to WebSocket), conveyors, and Android workshop terminals with Spring Cloud microservices. Event-driven architecture via ActiveMQ/Kafka, Docker deployment, 30%+ efficiency gain.'
+          - 'IoT Device Management Platform: built Android device discovery/binding/remote control app and gateway firmware for smart switches and Zigbee/WiFi gateways. Protocol handling, MQTT cloud uplink, Spring Cloud backend API, and Vue.js management dashboard.'
+          - 'Boobit Crypto Trading App: sole Android developer for cryptocurrency trading app. Real-time market data via WebSocket, order book rendering, candlestick charting, encrypted local wallet storage, MVVM with Clean Architecture, Retrofit/OkHttp, Room.'
+          - 'Picture Book Locker: Android cabinet control system with electromagnetic locks, UV sterilization, sensors, face recognition + QR code authentication. Borrowing client app with <3s checkout time, 24/7 self-service.'
+          - 'Built Android platform infrastructure adopted across 12+ enterprise applications: multi-module architecture, shared SDKs, reusable networking layers, and common business frameworks. Reduced duplicate code by more than 50%.'
         
-        tech_stack: [Java, TypeScript, Spring Cloud, REST APIs, Docker, Kafka, ActiveMQ, MySQL, Redis, Vue.js, .NET]
+        tech_stack: [Kotlin, Java, Android SDK, Spring Cloud, REST APIs, MySQL, Redis, Docker, CI/CD, WebSocket, NDK/JNI, MQTT, Zigbee, RFID]
 
       - title: Senior Android Engineer
         period: "2013 - 2018"
         achievements:
-          - 'Delivered 8+ production applications supporting enterprise communication, workforce mobility,
-            field operations, and IoT device management.'
-          - 'Designed a reusable mobile architecture adopted across 12+ projects, reducing code duplication
-            by more than 50% and enabling faster delivery across multiple product teams.'
-          - 'Improved application reliability through performance profiling, memory optimisation, automated
-            crash monitoring, and structured release processes.'
-          - 'Managed integrations with backend APIs, real-time communication services, push notification
-            platforms, RFID devices, barcode scanners, and diverse Android device ecosystems to ensure
-            reliable production performance.'
+          - 'Enterprise Messaging Platform: architected Android client for 5,000+ DAU and 500K+ daily messages with sub-200ms latency. Built NDK/JNI TCP/UDP transport layer, WebSocket connection persistence, offline message sync, JPush backup push channel, and OEM ROM keep-alive strategies (Xiaomi/Huawei/OPPO). Migrated core IM from unstable in-house C++ to Easemob cloud, eliminating 90%+ defects. Built FastDFS distributed file storage (100GB+). Applied hotfix framework (Tinker, AndFix) for emergency patches and performance engineering across cold start, ANR, OOM, and APK size.'
+          - 'Live Streaming Commerce System: full-stack Android + web delivery for live commerce platform. Android client in Java/Kotlin with RTMP/WebRTC/HLS streaming, multi-language architecture (C# + C++ media core + Python analytics + Lua config), 1000+ peak concurrency, 99.5% stream availability.'
 
-        tech_stack: [Kotlin, Java, Android SDK, WebSocket, Gradle, CI/CD, NDK/JNI]
+        tech_stack: [Kotlin, Java, Android SDK, NDK/JNI, C++, WebSocket, TCP/UDP, Gradle, CI/CD, Tinker, AndFix, JPush, RTMP, WebRTC, HLS, Easemob]
 
   - company: Additional Experience
     location: Auckland, New Zealand

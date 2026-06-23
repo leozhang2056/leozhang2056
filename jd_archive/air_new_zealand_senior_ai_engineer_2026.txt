@@ -1,0 +1,38 @@
+Senior AI Engineer
+Air New Zealand · Auckland, New Zealand (On-site)
+
+At Air New Zealand, we're constantly evolving, embracing innovation and pushing boundaries to create extraordinary experiences for our customers and employees. We're seeking individuals who are passionate about making a difference and playing a key role in our journey. This is why we are excited to offer the opportunity to join our Digital team and help design, ship and scale business-changing Generative AI solutions.
+
+This is a hands-on role where you'll balance coding and cutting-edge AI. You'll help drive the engineering of reliable, secure, and high-performing AI services, while mentoring others and influencing Air New Zealand's AI strategy. Your work will directly support innovations such as personalised digital experiences, smarter operations, and AI-assisted employee tools that make travel simpler, smarter and more sustainable.
+
+The Role You'll Play
+
+As a Senior AI Engineer, you will:
+- Design, build, and maintain Generative AI services and applications in Python, from proof-of-concept to production.
+- Design and implement robust AI solutions, integrating enterprise data, tools, and platforms securely to deliver reliable, scalable business outcomes.
+- Implement safeguards, guardrails, monitoring, and governance for responsible AI usage.
+- Collaborate with business teams to identify opportunities where Generative AI can deliver value.
+- Stay ahead of emerging GenAI technologies and bring innovative approaches into practice.
+
+What You'll Bring
+
+You're a Senior Engineer who solves real-world problems with AI and data, and has experience developing and deploying safe, scalable GenAI applications from proof-of-concept to production. You're equally comfortable architecting agentic systems, writing clean production code, and guiding others to deliver high-quality AI-centric solutions.
+
+- Proven expertise in Generative AI: LLMs, agents, embeddings/rerankers, vector databases, and prompt design/evaluation.
+- Strong software engineering fundamentals including developing in Python and experience with asynchronous frameworks (FastAPI), testing & mocking, and CI/CD.
+- Strong data engineering & MLOps fundamentals including designing and querying relational (SQL) and NoSQL databases, feature stores, model/registry versioning, offline/online evaluation, and golden datasets.
+- Experience with cloud platforms (AWS - preferred, Azure, or GCP) and containerisation (Docker, Kubernetes). Experience with IaC (Terraform/CloudFormation) advantageous.
+- Security, privacy, and compliance in enterprise settings; comfort working with sensitive data and regulated environments.
+- A growth mindset: curiosity, experimentation, and the drive to turn ideas into robust, maintainable systems.
+
+What we're looking for
+- Strong experience designing, building and scaling Generative AI services and applications.
+- Advanced Python engineering skills, with experience developing secure, production-ready systems.
+- Hands-on experience with LLMs, agents, embeddings, rerankers, vector databases, RAG pipelines, and prompt design or evaluation.
+- Experience taking AI solutions from proof-of-concept through to reliable, scalable, production-ready services.
+- Strong software engineering practices, including testing, mocking, CI/CD, APIs, and ideally asynchronous frameworks such as FastAPI.
+- Experience with cloud platforms, preferably AWS, and containerisation tools such as Docker or Kubernetes.
+- Understanding of responsible AI practices, including safeguards, guardrails, monitoring, governance, privacy, security, and working with sensitive enterprise data.
+- Strong communication and collaboration skills, with a curious, experimental mindset and the drive to turn emerging AI opportunities into robust, maintainable solutions.
+
+Applications close 3 July 2026.

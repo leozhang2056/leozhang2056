@@ -567,7 +567,7 @@ def run_validation_checklist(
     projects: List[Dict] = None,
 ) -> Dict[str, Tuple[bool, str]]:
     """
-    运行验证清单（来自 resume_generation_rules.md）
+    运行验证清单（来自 kb/rules/resume_output.md）
     返回每项检查的结果和说明
     """
     checklist = {}

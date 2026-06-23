@@ -1,0 +1,61 @@
+Senior Software Engineer - Android
+You applied for this job on June 13, 2026.
+View Application
+locations
+Westpac on Takutai Square
+Hapori Pōneke
+time type
+Full time
+posted on
+Posted 4 Days Ago
+time left to apply
+End Date: June 25, 2026 (8 days left to apply)
+job requisition id
+JR107376
+Mō te tūranga | About the Role
+At Westpac New Zealand, we are committed to creating simple, safe and seamless banking experiences for our customers. Within our Payments Technology team, you will play an important role in delivering end to end solutions that support how customers interact with payments.
+
+You'll be joining at a point where a lot is happening in parallel — new mobile and web experiences, shifts in how we work, and ongoing architectural change across Westpac. This requires strong adaptability, a pragmatic mindset, and the ability to deliver value in the face of ambiguity and evolving priorities.
+
+You will join a supportive, collaborative squad operating in a fast-paced delivery environment that values sharing knowledge, continuous learning, and working together. Balancing speed, quality, and risk is critical. You will play a key role in helping teams navigate this complexity while maintaining customer focus.
+
+Design, build and maintain mobile applications that deliver meaningful customer experiences in a fast-paced environment with evolving requirements and tight delivery timelines.
+Collaborate with architecture and wider Payments team to align on and implement architectural changes while continuing to deliver new customer features.
+Contribute to technical design and architecture decisions while supporting others in the team.
+Work closely with product, platform and engineering partners to deliver end to end solutions.
+Share knowledge, support others and help grow team capability.
+Contribute to engineering practices across performance, security and reliability.
+Identify opportunities to improve systems, processes and delivery approaches.
+Nā tāu rourou | What will you bring?
+
+7+ years of experience in mobile application development, with strong expertise in Android using Kotlin and modern frameworks such as Jetpack Compose.
+Strong collaboration skill, with working across teams to align on shared goals, dependences and technical direction.
+Experience working in complex environment where multiple initiatives are delivered in parallel.
+Proven experience working within collaborative teams to build scalable and complex systems, with a strong understanding of mobile architecture and design principles.
+Solid capability across testing, debugging and quality engineering practices, with exposure to mobile automation frameworks and testing tools.
+Experience with DevOps practices and tools such as Fastlane, Gradle or Jenkins, with exposure to cloud based CI CD platforms.
+Understanding of Material Design guidelines and accessibility principles, with a focus on creating inclusive and user friendly experiences.
+Able to balance ideal engineering outcomes with delivery constraints and business outcomes.
+Integrates AI effectively into engineering workflows to improve quality and efficiency, demonstrates strong judgement on appropriate use, and coaches others on responsible AI practices.
+
+Westpac Hei Wāhi Mahi | Working at Westpac
+
+In addition to immersing yourself in a supportive team environment, you'll receive some great job perks and benefits including:
+
+4 weeks standard holiday + 5 additional days of wellbeing leave to support you to be your best
+Additional purchased leave options up to 4 weeks per year
+Banking benefits, insurance discounts and superannuation scheme
+Growth and development – we provide opportunities for development and promote internal mobility
+Recognition - we recognise and reward our star performers
+School holiday subsidy - help you balance work and family during school holiday
+2 Volunteer days per year
+Ko mātou tēnei | Our Organisation
+At Westpac, we're working together to build a fairer and stronger New Zealand for our people, customers, and communities. For over 160 years we've been driven by our purpose to Create Better Futures Together.
+
+What makes us unique are the incredible people we're lucky enough to have walk through our doors every day. The giant 'W' on our building doesn't just stand for Westpac – it says, double you. We're a place that values, rewards and recognises individuality. Where you can be your whole self, your true self, and your best self. We're recognised as a place where talent is developed, where passions are fuelled and where ambitions of all shapes and sizes thrive. And it all starts with you!
+
+Tono mai ināianei! | Apply Now!
+
+Apply today with your CV and Cover Letter.
+
+The people of Aotearoa, New Zealand hail from many cultures and backgrounds. At Westpac New Zealand, we draw on this enormous talent pool to cultivate a team rich in ability and empowered to reach its full potential. Our aim is to be brave challengers, celebrating our differences and relentlessly advocating for our customers. It starts with us – we believe that when we care deeply and do our best for our people, they'll do their best for our customers. We encourage people from all walks of life to apply, including those who are neurodiverse, have chronic health conditions or disabilities – your attitude and passion are as important to us as your experience, qualifications and capabilities.

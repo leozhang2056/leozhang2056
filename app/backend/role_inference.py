@@ -25,18 +25,19 @@ def _compile_patterns(keywords: list[str]) -> list[re.Pattern]:
     return patterns
 
 
-def _get_role_patterns() -> tuple[list[re.Pattern], list[re.Pattern], list[re.Pattern]]:
+def _get_role_patterns() -> tuple[list[re.Pattern], list[re.Pattern], list[re.Pattern], list[re.Pattern]]:
     cfg = load_generation_config()
     role_keywords = cfg.get("role_inference", {}).get("keywords", {})
     return (
         _compile_patterns(role_keywords.get("android", [])),
         _compile_patterns(role_keywords.get("ai", [])),
         _compile_patterns(role_keywords.get("backend", [])),
+        _compile_patterns(role_keywords.get("embedded", [])),
     )
 
 
 def infer_role_from_text(text: str) -> str:
-    """Infer one of android|ai|backend|fullstack from free text.
+    """Infer one of android|ai|backend|embedded|fullstack from free text.
 
     Uses word-boundary regex matching so that short tokens like 'cv' in a
     URL path or filename do not accidentally trigger an 'ai' classification.
@@ -48,17 +49,20 @@ def infer_role_from_text(text: str) -> str:
     def _count(patterns: list[re.Pattern]) -> int:
         return sum(1 for p in patterns if p.search(t))
 
-    android_patterns, ai_patterns, backend_patterns = _get_role_patterns()
+    android_patterns, ai_patterns, backend_patterns, embedded_patterns = _get_role_patterns()
 
     a = _count(android_patterns)
     i = _count(ai_patterns)
     b = _count(backend_patterns)
+    e = _count(embedded_patterns)
 
-    if a >= max(i, b) and a > 0:
+    if e >= max(a, i, b) and e > 0:
+        return "embedded"
+    if a >= max(i, b, e) and a > 0:
         return "android"
-    if i >= max(a, b) and i > 0:
+    if i >= max(a, b, e) and i > 0:
         return "ai"
-    if b >= max(a, i) and b > 0:
+    if b >= max(a, i, e) and b > 0:
         return "backend"
     return "fullstack"
 

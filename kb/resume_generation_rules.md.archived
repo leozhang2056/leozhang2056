@@ -261,4 +261,32 @@ Role auto-selection guidance:
 
 ---
 
-*Version: 2026-03-30*
+## 8. Mandatory CV Structure Rules (2026-06)
+
+### 8.1 Chunxiao Two-Stage Rule
+- Chunxiao experience **must always** render as **two distinct career stages** (Senior Mobile Engineer + Senior Android Engineer) within one employer block.
+- Never merge the 10-year span into a single undifferentiated role — ATS screening and human reviewers will reject it.
+- Each stage uses its own title, period, bullet points, and tech stack from `kb/experience/work.yaml`.
+- The merged single-block rendering path is deprecated for all target roles.
+
+### 8.2 JD Title Adaptation Rule
+- When a JD file is provided, the CV **must** adapt its titles to match the JD:
+  - **Experience section**: The employer role title must reflect the JD's actual job title (e.g., "AI Product Engineer" instead of "Senior Full-Stack Engineer").
+  - **Professional Summary**: The positioning sentence must incorporate the target role and its key domain keywords.
+- Hardcoded generic titles ("Senior Backend Engineer", "Senior Full-Stack Engineer") must not appear when a JD specifies a different title.
+- This is non-negotiable — generic titles fail ATS keyword matching and recruiter first-pass screening.
+
+### 8.3 Core Competencies Conciseness Rule
+- Each category must have **3-5 items max** to avoid line wrapping in PDF output.
+- Keep total length per row short enough that it fits on one line in the PDF (target: ≤45 chars per row including label).
+- Order categories by relevance to the target role. Remove low-priority or redundant items that don't differentiate you.
+- Example of a row that is too long (overflows to next line):
+  `Backend & APIs: Spring Boot, RESTful API, Microservices, LLM Integration, Firebase, Kafka, ASP.NET / .NET Core`
+- Preferred concise form:
+  `Backend & APIs: Spring Boot, RESTful API, Microservices, Kafka`
+- "Software Engineering" as the last category, 2-3 items max as low-priority supplement.
+- No "First Class Honours" or generic academic honors in Skills/Licenses (already in Summary).
+
+---
+
+*Version: 2026-06-17*

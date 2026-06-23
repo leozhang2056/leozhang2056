@@ -1,0 +1,29 @@
+AI Engineer
+Deloitte New Zealand · Auckland, New Zealand · Full-time
+Department: Consulting | Technology | AI & Data (incl. GenAI)
+Compensation: NZD 80,000 - NZD 140,000 yearly
+
+About the role:
+Hands-on role enabling full stack, end-to-end delivery of AI projects using leading digital platforms and foundation models. Architecting and deploying generative and multiagent workflows with tool use and function calling, tightly integrated with enterprise data platforms and systems.
+
+A week in the life:
+- Engineering end-to-end generative and agentic AI solutions, from concept through to production.
+- Collaborating with cross-functional teams to capture technical requirements and architect, build, and deploy GenAI solutions.
+- Standing up robust LLMOps capabilities: automated evaluations, observability, tracing, prompt versioning, safety redteaming, cost/latency optimisation.
+- Producing models and pipelines using containerisation, CI/CD, infrastructure as code, and cloud native services.
+- Implementing retrieval and grounding strategies (chunking, hybrid search, metadata filtering) and feedback loops.
+- Partnering with engagement leads to scope, estimate, and deliver work packages.
+- Maintaining continuous learning across latest GenAI tools and frameworks.
+- Providing technical guidance and mentorship to junior team members.
+
+Qualifications:
+- Experience as a Generative AI Engineer, Agentic AI Engineer, or Consultant in customer facing role.
+- Strong cloud native engineering capabilities with CI/CD, DevOps/LLMOps, and infrastructure as code.
+- Strong business analysis and functional design skills.
+- Track record architecting and delivering end-to-end generative and agentic AI systems on AWS, Azure, GCP, or OCI.
+- Hands-on experience with vector databases, embedding models, retrieval frameworks, and evaluation techniques.
+- Knowledge of LLM safety, governance, and risk management practices.
+- Experience with observability and evaluation tools for GenAI workloads.
+- Strong task prioritisation and DevOps best practices using Git.
+- Exceptional communication, collaboration, and stakeholder management skills.
+- Genuine passion for generative AI and continuous learning.

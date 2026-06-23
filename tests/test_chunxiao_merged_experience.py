@@ -14,17 +14,34 @@ def _load_chunxiao_entry():
     return next(exp for exp in work["experiences"] if "Chunxiao" in exp["company"])
 
 
-def test_chunxiao_experience_is_merged_for_target_role():
+def test_chunxiao_two_stages_for_backend():
     html = _render_career_progression_html(_load_chunxiao_entry(), "en", "backend")
 
-    assert "Senior Backend Engineer" in html
-    assert html.count('class="job-role"') == 1
+    assert "Full-stack Engineer" in html
+    assert "Senior Android Engineer" in html
+    assert html.count('class="career-stage"') == 2
 
 
-
-def test_chunxiao_merged_title_changes_by_role():
+def test_chunxiao_two_stages_for_android():
     entry = _load_chunxiao_entry()
+    html = _render_career_progression_html(entry, "en", "android")
 
-    assert "Senior Android Developer" in _render_career_progression_html(entry, "en", "android")
-    assert "Senior Full-Stack Engineer" in _render_career_progression_html(entry, "en", "fullstack")
-    assert "AI Software Engineer" in _render_career_progression_html(entry, "en", "ai")
+    assert "Senior Mobile Engineer" in html
+    assert "Senior Android Engineer" in html
+    assert html.count('class="career-stage"') == 2
+
+
+def test_chunxiao_two_stages_for_fullstack():
+    html = _render_career_progression_html(_load_chunxiao_entry(), "en", "fullstack")
+
+    assert "Full-stack Engineer" in html
+    assert "Senior Android Engineer" in html
+    assert html.count('class="career-stage"') == 2
+
+
+def test_chunxiao_two_stages_for_ai():
+    html = _render_career_progression_html(_load_chunxiao_entry(), "en", "ai")
+
+    assert "Full-stack Engineer" in html
+    assert "Senior Android Engineer" in html
+    assert html.count('class="career-stage"') == 2

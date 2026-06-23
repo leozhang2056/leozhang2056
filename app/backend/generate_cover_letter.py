@@ -378,6 +378,75 @@ def build_cover_letter_content(
                 "and hands-on development experience to The Warehouse Group's Data and AI team. "
                 "Thank you for your time and consideration."
             )
+        elif 'showcase' in company_lower:
+            opening = (
+                "I am applying for the Full stack developer position at Showcase Workshop. "
+                "I am a full-stack developer with 10+ years of experience across web frontends, "
+                "mobile clients, and backend services, and I recently completed my Master of "
+                "Computer and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in Showcase Workshop because I share your focus on "
+                "turning messy data into clean, intuitive, and accessible experiences for users across "
+                "diverse platforms."
+            )
+            body1 = (
+                "This role's focus on bridging frontend, backend, and multi-platform deployment maps "
+                "directly to my experience. In my previous work, I built and maintained a Spring Cloud + "
+                "Vue.js smart manufacturing platform deployed across 5+ sites, and developed native "
+                "Android apps with low-latency TCP/UDP and WebSocket integrations. "
+                "What sets me apart is that I have designed, delivered, and supported systems end-to-end—managing "
+                "database schemas, building Python/Java APIs, structuring JavaScript (Vue/React) interfaces, "
+                "and orchestrating deployments—which allows me to own features independently from concept to production."
+            )
+            body2 = (
+                "I also bring a strong background in Python, SQL databases, and Linux server environments, "
+                "which align with your backend technology stack. In my Master's thesis project, ChatClothes, "
+                "I built a Python-based virtual try-on workflow using FastAPI, PyTorch, and local LLM "
+                "orchestration, deploying it on constrained hardware and publishing the results at IVCNZ 2025. "
+                "I am comfortable with cloud-connected services, and I look forward to managing and monitoring "
+                "AWS infrastructure to ensure Showcase's platform remains high-performing and reliable."
+            )
+            closing = (
+                "Examples of my work are available on GitHub (github.com/leozhang2056) and my portfolio "
+                "(portfolio.leoz.fun). I would welcome the opportunity to bring my full-stack capabilities, "
+                "technical adaptability, and collaborative approach to Showcase Workshop's development team. "
+                "Thank you for your time and consideration."
+            )
+        elif 'halter' in company_lower:
+            opening = (
+                "I am applying for the Senior IoT Engineer position at Halter. "
+                "I am excited about this role because it sits at the exact intersection "
+                "of everything I care about as an engineer: hardware-software integration, "
+                "real-time systems, and technology that changes how people work in the physical world."
+            )
+            body1 = (
+                "What draws me to Halter is the problem itself. Turning thousands of collars "
+                "and billions of sensor events into a single, calm decision in a farmer's hand "
+                "is exactly the kind of engineering challenge I find most rewarding. "
+                "Over the past decade, I have built IoT platforms where RFID readers, barcode "
+                "scanners, electronic scales, and sensor gateways feed data through microservice "
+                "backends into mobile and web interfaces — the full loop from physical signal "
+                "to actionable insight. I have shipped production systems deployed across 10+ "
+                "factory sites, handling constrained hardware, unreliable connectivity, and "
+                "real-time data under operational pressure. I understand what it takes to build "
+                "software that works in a paddock, not just a browser tab."
+            )
+            body2 = (
+                "I am also genuinely excited by Halter's mission. The idea of replacing "
+                "quad bikes and fences with software that lets cattle walk calmly at their "
+                "own pace — that is technology making a tangible difference in people's lives. "
+                "I bring production AI experience from my Master's thesis at AUT, where I built "
+                "and deployed a multimodal system combining computer vision, diffusion models, "
+                "and LLM workflows. I use AI tools daily to accelerate delivery, and I am "
+                "comfortable working end-to-end across backend, mobile, and infrastructure. "
+                "I am based in Auckland, I value in-person collaboration, and I want to be "
+                "part of a team that moves fast, ships real things, and cares deeply about "
+                "the problem."
+            )
+            closing = (
+                "I would welcome the opportunity to bring my IoT engineering experience, "
+                "full-stack delivery skills, and genuine enthusiasm for Halter's mission "
+                "to your team. Thank you for your time and consideration."
+            )
         elif 'catch' in company_lower or 'catch design' in company_lower:
             opening = (
                 "I am applying for the Senior Full-Stack Developer position at Catch Design. "
@@ -1144,7 +1213,7 @@ async def generate_cover_letter(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--role', default='fullstack', choices=['android', 'ai', 'backend', 'fullstack'])
+    parser.add_argument('--role', default='fullstack', choices=['android', 'ai', 'backend', 'fullstack', 'embedded'])
     parser.add_argument('--lang', default='en', choices=['en', 'zh'])
     parser.add_argument('--company', default='the company')
     parser.add_argument('--title', default='Software Engineer')

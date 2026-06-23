@@ -1,0 +1,21 @@
+Full-Stack Software Engineer
+Loop Brackets Technologies · Christchurch, Canterbury · Full-time · $102,000/year
+
+About Us:
+Innovative software development company specializing in building scalable, user-centric applications.
+
+Key Responsibilities:
+- Front-end development: build responsive interfaces using modern frameworks.
+- Back-end development: design and implement APIs, services, and databases.
+- System integration: ensure smooth communication between front-end and back-end.
+- Testing & debugging: maintain code quality through automated testing.
+- Collaboration: work with designers, product managers, and engineers.
+- Continuous improvement: stay updated on emerging technologies.
+
+Qualifications:
+- Proven experience as a Full-Stack Engineer.
+- Strong proficiency in JavaScript frameworks (React, Angular, or Vue) and back-end technologies (Node.js, Python, Java, or .NET).
+- Experience with relational and non-relational databases (MySQL, PostgreSQL, MongoDB).
+- Familiarity with cloud platforms (AWS, Azure, GCP) and DevOps practices.
+- Knowledge of CI/CD pipelines and version control (Git).
+- Bachelor's degree in Computer Science, Software Engineering, or related field.

@@ -1,0 +1,31 @@
+Senior Android Architect (Performance Optimization/AI)
+Binance · Auckland City, Auckland · Remote · Full-time
+
+Binance is a leading global blockchain ecosystem behind the world's largest cryptocurrency exchange by trading volume and registered users. Trusted by 300+ million people in 100+ countries.
+
+Join our Experience & Connectivity Team to create innovative platforms and services that connect and engage users and developers.
+
+This role is 100% Remote.
+
+Responsibilities:
+- Create super-fast, easy-to-use applications. Develop, test, deploy, maintain and optimize Binance app.
+- Build libraries and frameworks that support complex client side applications; speed up development efficiency and improve code quality.
+- Lead Android infra team to build the next generation architecture, making it prepared for the future.
+- Collaborate with the Web team to develop hybrid frameworks, developer tools, and a JavaScript-based mobile runtime.
+- Contribute to Android development by writing high-performance code in Kotlin/Java and building shared libraries and toolchains.
+- Troubleshoot and optimize app performance using profiling tools and AI-assisted debugging techniques.
+- Continuously explore, evaluate, and implement new technologies to improve development efficiency and product quality.
+
+Requirements:
+- 5-8 years of experience building Android applications from scratch, high proficiency with Kotlin/Java.
+- Bachelor's or Master's degree in Computer Science, Engineering, or related field.
+- Proven experience in Android engineering including architecture design, Jetpack, OkHttp, and related frameworks.
+- Familiarity with cross-platform technologies such as JavaScript/TypeScript, React, and Kotlin/Java for Android.
+- Knowledge of C++ and JNI is a plus.
+- Strong track record in optimizing Android app performance, including networking, rendering, and memory usage.
+- Solid understanding of mobile architectures, industry trends, and emerging technologies.
+- In-depth knowledge of the full mobile development life cycle.
+
+Bonus:
+- Performance Optimization: App Cold Start, Memory, App Size, LCP, ANR, OOM.
+- Experienced in Hotfix framework development.

@@ -47,7 +47,7 @@ Usage examples:
 
   # Multi-agent orchestration: pre-discussion + post-review + arbiter:
   python generate.py cv-best --role android --jd-file jd.txt --company "Acme" --auto-refine
-Available roles: auto | android | ai | backend | fullstack
+Available roles: auto | android | ai | backend | fullstack | embedded
 
 Output naming convention (auto, when --output is not specified):
   outputs/<YYYY-MM-DD>/CV_Leo_Zhang_<YYYYMMDD>_<role>[_<company>].pdf
@@ -144,7 +144,7 @@ def build_parser() -> argparse.ArgumentParser:
     cv_parser = sub.add_parser('cv', help='Generate CV (English PDF; JD annotated PDF optional)')
     cv_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     cv_parser.add_argument(
@@ -227,6 +227,11 @@ def build_parser() -> argparse.ArgumentParser:
         help='Skip post-generation checks (fluency/layout/JD coverage) and *_POST_CHECK.md.',
     )
     cv_parser.add_argument(
+        '--with-planning',
+        action='store_true',
+        help='Write persistent .planning files for this CV generation run.',
+    )
+    cv_parser.add_argument(
         '--gen-md', default=None, metavar='PATH',
         help='Generate editable Markdown CV file (no PDF). Edit it, then use --from-md to generate PDF.',
     )
@@ -239,7 +244,7 @@ def build_parser() -> argparse.ArgumentParser:
     cl_parser = sub.add_parser('cl', help='Generate Cover Letter PDF')
     cl_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     cl_parser.add_argument(
@@ -284,7 +289,7 @@ def build_parser() -> argparse.ArgumentParser:
     email_parser = sub.add_parser('email', help='Generate application email TXT')
     email_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     email_parser.add_argument(
@@ -351,7 +356,7 @@ def build_parser() -> argparse.ArgumentParser:
     match_parser = sub.add_parser('match', help='Compare CV match scores across multiple JDs')
     match_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Role mode (auto infers role for each JD)',
     )
     match_parser.add_argument(
@@ -430,7 +435,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     best_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Target role type (default: auto; inferred from JD/title)',
     )
     best_parser.add_argument('--title', default=None, help='Target job title')
@@ -464,7 +469,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     bc_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Role type for all CVs (default: auto; inferred from each JD)',
     )
     bc_parser.add_argument(
@@ -495,7 +500,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     li_parser.add_argument(
         '--role', default='auto',
-        choices=['auto', 'android', 'ai', 'backend', 'fullstack'],
+        choices=['auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'],
         help='Role type for CV generation (default: auto; inferred from JD)',
     )
 
@@ -580,6 +585,33 @@ def _auto_keywords_from_jd(args) -> list[str]:
         return kws
 
     return []
+
+
+def _auto_title_from_jd(args) -> str:
+    """Auto-extract job title from JD file/URL when --title not provided."""
+    if getattr(args, "title", None):
+        return args.title
+    jd_file = getattr(args, "jd_file", None)
+    jd_url = getattr(args, "jd_url", None)
+    if not jd_file and not jd_url:
+        return ""
+    text = ""
+    if jd_file:
+        try:
+            from app.backend.jd_extractor import extract_jd_from_file as _extract
+        except ImportError:
+            from jd_extractor import extract_jd_from_file as _extract
+        text = _extract(jd_file)
+    elif jd_url:
+        try:
+            from app.backend.jd_fetch import derive_keywords_from_url as _fetch
+        except ImportError:
+            from jd_fetch import derive_keywords_from_url as _fetch
+        text = _fetch(jd_url)[0]
+    if not text:
+        return ""
+    lines = [l.strip() for l in text.strip().split("\n") if l.strip() and not l.strip().startswith(("http", "#"))]
+    return lines[0] if lines else ""
 
 
 def _auto_role(args) -> str:
@@ -739,6 +771,8 @@ async def run(args) -> None:
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)
+        # Auto-extract title from JD when --title not provided
+        title = getattr(args, 'title', None) or _auto_title_from_jd(args)
         cv_output = _normalize_cv_output_path(args.output, role=role, company=company)
         en_path, zh_path, annotated_path = await generate_cv_from_kb(
             output_path=cv_output,
@@ -746,7 +780,7 @@ async def run(args) -> None:
             jd_keywords=jd_keywords or [],
             max_projects=args.max_projects,
             company_name=company,
-            target_role_title=getattr(args, 'title', None),
+            target_role_title=title,
             generate_zh=bool(getattr(args, 'with_zh', False)),
             generate_quality_report=bool(getattr(args, 'with_quality_report', False)),
             generate_jd_annotated_pdf=bool(getattr(args, 'with_jd_annotated', False)),
@@ -755,6 +789,7 @@ async def run(args) -> None:
             keep_html=bool(getattr(args, 'keep_html', False)),
             strict_kb=not bool(getattr(args, 'no_strict_kb', False)),
             run_post_check=not bool(getattr(args, 'no_post_check', False)),
+            write_planning_files=bool(getattr(args, 'with_planning', False)),
         )
         print(f"\nDone.")
         print(f"  EN: {Path(en_path).resolve()}")

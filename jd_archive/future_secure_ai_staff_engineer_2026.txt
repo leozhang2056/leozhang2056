@@ -1,0 +1,28 @@
+Staff Software Engineer - AI
+Future Secure AI · Auckland City, Auckland
+
+Future Secure AI builds AI Co-Workers that execute real operational work, not demos. We design and deploy applied AI systems that automate decisions, augment teams, and scale reliably in production.
+
+We're looking for a Staff Software Engineer who is deeply technical, AI-literate, and motivated to own the end-to-end creation of AI Co-Workers.
+
+The role:
+- Lead the technical design and implementation of AI Co-Workers from concept through production deployment.
+- Translate real business constraints into scalable AI and engineering solutions.
+- Own system architecture across models, orchestration logic, APIs, data pipelines, and integrations.
+- Lead technical decision-making for LLM usage, model selection, prompt design, evaluation, and monitoring.
+- Guide AI Engineers through build, test, and release cycles.
+- Partner closely with Engagement Leads to align technical execution with value delivery.
+- Ensure engineering quality across performance, reliability, security, and maintainability.
+- Identify technical risks early and drive pragmatic solutions in ambiguous environments.
+- Contribute hands-on to critical parts of the build while enabling the team to move faster.
+
+What we're looking for:
+- Proven leadership of small to medium sized teams to deploy products.
+- Strong background in software engineering with applied AI or ML experience.
+- Hands-on experience with modern AI systems such as LLMs, learning models, or intelligent automation.
+- Solid understanding of backend systems, APIs, data flows, and production architecture.
+- Ability to reason about trade-offs across accuracy, latency, cost, scalability, and delivery speed.
+- Experience guiding or mentoring other engineers through complex builds.
+- Comfort explaining technical concepts to non-technical stakeholders.
+- Bias toward ownership, learning, and shipping real systems.
+- Curiosity about how AI systems behave in production, not just in theory.

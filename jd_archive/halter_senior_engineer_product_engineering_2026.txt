@@ -1,0 +1,35 @@
+Senior Engineers - Product & Engineering
+Halter — Auckland, New Zealand
+
+About Halter
+At Halter, we're on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. Imagine watching 500 cattle stand up and walk calmly towards their next break? No quad bikes, no dogs, no fences. Just a group of cattle walking at their own pace. People say it looks like magic.
+
+Position
+We're looking for standout Senior Engineers with a deep product instinct: people who care as much about the problem as the solution. You'll take on challenges that genuinely haven't been solved before. We don't mind whether your strengths sit on the frontend, backend, full stack, or on the platform side that gives every other engineer leverage. What matters is that you ship robust, thoughtful work, lift the bar on how we build, and use AI tools well.
+
+The kind of problems our teams solve
+- Turning thousands of collars and billions of sensor events into a single, calm decision in a farmer's hand.
+- Modelling the physical world (animals, pasture, terrain) accurately enough to act on in real time.
+- Building mobile and web experiences that hold up at 5am whilst out in a paddock in the rain.
+- Designing platforms and pipelines that scale with our incredible pace of growth without the seams showing.
+- Engineering against constrained hardware, flaky rural connectivity, and the messiness of the physical world, and shipping with pace despite it.
+
+What you'll do
+- Design, build, and deliver features and systems end to end, from the surfaces farmers touch to the services and infrastructure behind them.
+- Make smart architectural calls, then back them up by writing the code.
+- Work closely with engineering, design, and product to ship high-impact features quickly.
+- Support and mentor other engineers through design conversations, code reviews, and generous context sharing.
+- Contribute to the reliability and performance of our systems, especially when things get tricky. Every team owns its services end-to-end, with an on-call rotation.
+- Get out on farm. Deep domain knowledge matters, and you'll be expected to develop it.
+
+Your qualification
+- Have designed and delivered complex systems in production and have the experience (and scars) to show for it.
+- Think like a product engineer: you care about the customer experience, not just clean code.
+- Know how to use AI tools well to lift team output and focus on the harder stuff.
+- Have experience supporting and mentoring other engineers.
+- Are comfortable in fast-moving, ambiguous environments where adaptability beats perfection.
+- Have worked in cloud environments. AWS is a bonus.
+
+Backend: building and scaling REST APIs, distributed systems, and event-driven services. Comfort with both relational and non-relational databases. Node.js, Kotlin, Go, or systems that integrate with hardware/IoT a bonus.
+
+Full stack: all of the above, end to end, across web, mobile, and the services that power them.

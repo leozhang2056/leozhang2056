@@ -1,0 +1,40 @@
+Company: Showcase Workshop
+Role: Full stack developer
+Location: Wellington, New Zealand | Full-time
+
+About the job
+We are seeking an all-round Developer to join our team, improving and supporting our content management platform & apps, also called Showcase Workshop.
+You’ll be joining a small team who are excited to add another enthusiastic and ambitious person to help us take Showcase Workshop to the next level.
+Showcase’s customers really enjoy the product and the team take great pride and satisfaction in this.
+
+The Role Involves:
+- Frontend development in JavaScript (Backbone, Vue, Electron), HTML, CSS
+- Deployment to modern browsers, Mac OS, Windows, iOS, Android
+- Backend development in Python, SQL, Linux
+- Collaboration with support, testers and developers on specific issues
+- Backend monitoring and management of various AWS services
+
+Your Skills And Background Would Include:
+- Strong attention to detail
+- Experience in mobile and web-based technologies
+- Ideally 4 years plus experience as a multi-talented Software Developer
+- An ability to bring new ideas to the table and a willingness to go the extra mile
+- Willingness to learn new technology and self-learn
+- Strong verbal and written communication skills
+- You’ll be enthusiastic and positive and people describe you as someone with initiative
+
+Our Stated Mission:
+Showcase Workshop's mission is to be the very best way for sales-lead organisations to get their sh*t together.
+
+What We Do And Who We Help:
+Before Showcase, our customers have sh*t saved everywhere: in Dropbox. On the Intranet. Ring binders. Somewhere in their inbox. On their desktops. Just everywhere.
+When they use Showcase, their teams have access to the sh*t that they need every day through the Showcase apps on their mobile phones, tablets and laptops:
+- Sales & Marketing Materials
+- Operations Documents
+- Training Resources
+- Disaster Recovery Procedures
+Everything is easy to find, easy to access, always up to date.
+
+Our customers are Marketing Managers, Sales Managers and Operations Managers at leading large and enterprise companies around the world. They love Showcase because our software is intuitive and easy to use and because we offer the absolute best in customer service/customer support.
+
+Job is located in our Wellington office, applicants must have a valid New Zealand work permit.

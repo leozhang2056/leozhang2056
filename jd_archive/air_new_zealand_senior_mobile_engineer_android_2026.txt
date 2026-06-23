@@ -1,0 +1,37 @@
+Senior Mobile Engineer (Android)
+185 Fanshawe Street, Auckland, New Zealand
+Full-time
+
+Job Description
+Kia ora!
+
+As a Senior Mobile Engineer, you will play a pivotal role in bringing Air New Zealand's digital ambition to life. Your work will directly power the mobile experiences that help customers search, book, manage, and enjoy their journeys, delivering seamless, reliable interactions at scale.
+
+Air New Zealand is on an accelerated journey to become the world's leading digital airline. Within the Digital team, you will join a group of bold thinkers and builders who are redefining how technology supports travel. You will work in a dedicated product squad, collaborating closely with Product, Design, and Engineering peers to create intuitive, high performing Android applications that serve customers across Aotearoa and around the globe.
+
+How you'll make an impact
+- Design and develop advanced Android applications that support millions of customer interactions each year.
+- Contribute to scalable, secure, and high-performance architecture that enables rapid product evolution.
+- Collaborate with Product Managers, UI and UX Designers, and backend engineers to translate ideas into elegant mobile solutions.
+- Improve app performance, reliability, and maintainability through continuous optimisation and technical excellence.
+- Identify, troubleshoot, and resolve complex bugs and performance issues to ensure a seamless customer experience.
+- Champion modern Android practices and help uplift engineering standards across the squad.
+- Demonstrated experience mentoring engineers and providing technical leadership.
+
+What you'll bring
+- At least 5 years of Android development experience, ideally within large scale or complex environments.
+- Deep expertise in Kotlin and Jetpack Compose, with working knowledge of Java.
+- Strong understanding of Android SDK, RESTful APIs, and modern mobile architecture patterns.
+- Experience with Swift, backend for frontend patterns, deployments, or AWS, advantageous but not essential.
+- Experience using AI tooling to enhance development workflows.
+- Demonstrated experience mentoring engineers and providing technical leadership.
+- A passion for clean, maintainable code and delivering quality at pace.
+- The ability to thrive in a fast paced, collaborative product environment.
+
+Why join Air New Zealand?
+This is an opportunity to help shape the digital future of an iconic New Zealand brand, working at scale and solving meaningful challenges. Build world class Android experiences that connect people and places.
+
+Applications close 28/06/2026.
+
+Additional Information
+Air New Zealand is committed to diversity, equity and inclusion and creating a truly inclusive workplace where everyone can be themselves and thrive. Air New Zealand encourages candidates from diverse backgrounds, including those with a disability, additional health and mental health needs, and/or neurodiverse candidates to apply.

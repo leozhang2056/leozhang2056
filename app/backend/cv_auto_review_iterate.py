@@ -509,7 +509,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--role",
         default="fullstack",
-        choices=["android", "ai", "backend", "fullstack"],
+        choices=["android", "ai", "backend", "fullstack", "embedded"],
         help="Resume role / summary variant",
     )
     p.add_argument("--company", default=None, help="Company tag for output naming")

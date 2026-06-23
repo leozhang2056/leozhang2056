@@ -80,6 +80,9 @@ highlights:
   - Managed OEM ROM variance (Xiaomi, Huawei, OPPO) with targeted device testing; balanced QA coverage and release velocity for Android 7+ support
   - Strengthened security posture: migrated user assets from Windows file server to secure cloud storage with validation and access control hardening
   - Maintained <2% downtime across 10-year product lifecycle through proactive reliability engineering and rapid incident response
+  - Designed and built Android IM client with full chat feature set: real-time one-to-one messaging, group chat with topic channels, file transfer with inline preview, message history with local persistence and offline synchronization
+  - Implemented connection persistence and session management for Android background survival across OEM fragmentation (Xiaomi, Huawei, OPPO background policy variances), maintaining reliable message delivery under aggressive battery optimization
+  - Built presence management and typing indicators over WebSocket, delivering sub-second status propagation for 5,000 concurrent users with minimal battery impact
 
 highlights_cn:
 - 使用基于 NDK 的 TCP/UDP 技术设计和开发安卓客户端，实现实时消息传输

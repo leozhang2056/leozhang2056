@@ -1,0 +1,29 @@
+Senior Software Developer
+VTS (Vector Technology Services) · Auckland City, Auckland · Remote · Full-time
+
+VTS is a subsidiary of Vector, New Zealand's largest distributor of electricity and gas. In 2020, an alliance was formed between Vector and AWS to co-develop a cloud native data platform: Diverge.
+
+The role:
+- Build software primarily in Java, with React frontend and Terraform infrastructure automation.
+- Work in stable, product-focused agile team using TDD, BDD, and automated deployment.
+- Gain experience with AWS services: Lambda, DynamoDB, S3, IAM.
+- Learn from and collaborate with leading global partners such as AWS.
+
+Who we're looking for:
+- Advanced knowledge in backend programming with Java, Spring.
+- Experience with tooling and process to ensure quality in SDLC.
+- Proficient with AWS services (Lambda, DynamoDB, S3, IAM) and serverless architecture.
+- Knowledge of DevOps and CI/CD practices.
+- Excitement about solving problems and hunger to learn.
+- Passion for helping and caring for others in your team.
+
+The Diverge Platform:
+- Customisable managed SaaS platform for energy data ingestion, processing, insights, and data delivery.
+- Cloud native, composed entirely of AWS serverless services.
+- Deployed through infrastructure-as-code and automated software release.
+- Performs streaming data processing in state, temporal sequence and data dependency aware pipelines.
+
+What else:
+- Engineer-led culture emphasising XP techniques (TDD, pair programming).
+- Stable, product-focussed teams.
+- Flexible working.

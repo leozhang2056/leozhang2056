@@ -36,12 +36,14 @@ highlights:
   - Managed repeated enter-site / off-site development loops with customer stakeholders under aggressive timelines, including days blocked by access or environment where progress was non-obvious to non-technical observers
   - Aligned expectations via small provable checkpoints per visit and transparent communication about air-gap scheduling risk
   - Planned air-gapped deployments with offline artifacts and controlled transfer: extra packaging, verification, and rollback discipline because on-site systems could not rely on open internet access during install or upgrade
+  - Supported BI reporting and dashboard work using FineBI and Power BI to help stakeholders inspect operational data in the secure manufacturing environment
 highlights_cn:
 - 造币印纸厂等高保密场景：现场断网，离线设备进场完成数据格式分析与内网侧验证
 - 进出场地均需申请，通常需提前约一周办进场；现场调试时间极宝贵，场外充分准备脚本、数据包与回滚预案
 - 外发开发与再次进场联调交替，周期紧、协调压力大；通过每次进场的可验证小目标管理「无进展日」预期
 - 与客户及开发方同步真实节拍，避免审批与断网导致的阻塞被误解为拖延
-- 断网环境部署/升级：依赖离线介质与受控传递，安装与验证步骤更重，需预先打包、校验与回滚预案
+  - 断网环境部署/升级：依赖离线介质与受控传递，安装与验证步骤更重，需预先打包、校验与回滚预案
+  - 使用 FineBI 与 Power BI 支持 BI 报表和仪表板，让客户在高保密制造环境中查看运营数据
 tech_stack:
   languages:
   - Java
@@ -50,12 +52,18 @@ tech_stack:
   - Data format analysis
   - Secure manufacturing integration
   - Offline deployment packaging
+  bi:
+  - FineBI
+  - Power BI
+  - Business Intelligence
+  - Dashboard reporting
 skills_demonstrated:
   technical:
   - Secure customer-site integration
   - Offline analysis and validation workflows
   - Cross-environment testing
   - Air-gapped deployment and controlled release artifacts
+  - BI dashboard reporting with FineBI and Power BI
   soft:
   - Stakeholder communication under secrecy and schedule pressure
   - Expectation management for air-gapped delivery
@@ -74,6 +82,11 @@ keywords:
 - Secrecy compliance
 - Access approval workflow
 - Offline deployment
+- BI reporting
+- FineBI
+- Power BI
+- Business Intelligence
+- Dashboard reporting
 evidence:
 - type: tool_screenshot
   path: images/kettle-version-info.png
@@ -81,4 +94,4 @@ evidence:
 - type: tool_screenshot
   path: images/kettle-etl-workflow.png
   title: ETL Job Workflow in Spoon
-last_updated: '2026-06-12'
+last_updated: '2026-06-20'

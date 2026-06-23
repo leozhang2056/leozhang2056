@@ -1,0 +1,38 @@
+Developer - AI Acceleration Centre
+Auckland University of Technology (AUT)
+City Campus, Auckland, New Zealand
+Fixed-term, full-time (37.5 hours per week)
+$76,000 - $102,000 per annum
+Reference: 95389
+Posted: 18 Jun 2026
+Closing: 2 July 2026, at 5pm
+
+About the Role
+This role sits within AUT's AI Acceleration Centre team, focused on building and prototyping solutions across AI and digital experience. The position emphasizes rapid prototyping, modern tooling, and a practical approach to delivery.
+
+Responsibilities:
+- Design, build, and deploy solutions within established architecture and standards
+- Develop and maintain APIs, integrations, and cloud-based applications
+- Rapidly prototype and iterate on new ideas, moving from concept to working solutions
+- Work on well-defined problem areas within a broader delivery context
+- Collaborate with users and product teams to test and improve solutions
+- Apply modern development tools and AI-assisted workflows to deliver value efficiently
+- Participate in agile delivery, peer reviews, and continuous improvement
+- Produce well-documented, tested, and reliable code
+- Stay current with emerging technologies and contribute improvement ideas
+
+Requirements:
+- Bachelor's degree in Software Engineering, Computer Science, IT, or related discipline
+- ~3 years' experience in software development
+- Programming experience with C#, JavaScript, TypeScript, or similar
+- Understanding of version control, agile delivery, testing, and CI
+- Cloud platform experience (Azure or AWS)
+- Familiarity with APIs, web frameworks, microservices, and frontend technologies
+- Interest in AI, automation, and emerging developer tooling
+- Ability to learn new tools quickly
+- Strong communication and collaboration skills
+- Commitment to equity, diversity, and inclusion
+
+Desirable:
+- Cultural humility, awareness, and respect when engaging with indigenous peoples
+- Experience supporting indigenous, equity, or inclusion focused initiatives

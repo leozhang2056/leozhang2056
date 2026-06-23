@@ -1,0 +1,36 @@
+Senior Software Fullstack Engineer - Mobile
+Hectre · Auckland, New Zealand (Hybrid)
+
+About the company:
+Hectre is the global leader in Fruit Quality AI, on a mission to support the long-term viability of food production for people and the planet. We bring AI to fruit quality and farm management across the supply chain. Since 2016, serving largest fruit growers and packers across 22+ countries, scanning over 3.8 billion pieces of fruit. Products span orchard management, harvest tracking, timesheets, payroll, analytics, and fruit sizing and color grade AI solutions. Multi-award-winning company backed by deep-tech VC.
+
+About the role:
+Full-stack role with strong emphasis on mobile experiences, backed by robust backend services and web applications.
+
+Responsibilities:
+- Build and ship mobile features using Flutter, with occasional Swift or Kotlin for native integrations.
+- Build and maintain backend services using Node.js/TypeScript on AWS.
+- Develop features across web applications (Vue/React).
+- Work on embedded software solutions using Golang.
+- Design and implement APIs, event-driven architectures, and serverless solutions.
+- Collaborate with ML engineers to integrate AI capabilities.
+- Leverage AI-powered development tools as core part of everyday workflow.
+
+Qualifications:
+- Mobile development experience — Flutter preferred; Swift or Kotlin a strong plus.
+- Strong experience with Node.js and TypeScript.
+- Solid AWS experience (Lambda, DynamoDB, EventBridge, SQS, CDK, or similar).
+- Demonstrated ability to work across the full stack.
+- Comfort working in a fast-paced startup environment.
+- Genuine working relationship with AI development tools.
+
+Bonus:
+- Frontend frameworks such as Vue.js or React.
+- Systems programming with Golang.
+- Event-driven architectures and microservices.
+- Background in agtech, food production, or supply chain software.
+
+How we work with AI:
+AI isn't a checkbox — it's genuinely changed how we build software. Engineers use AI tools every day: writing and reviewing code, navigating unfamiliar codebases, debugging, writing tests, and exploring ideas faster.
+
+Values: Team, Action, Feel, Best.

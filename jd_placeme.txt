@@ -1,0 +1,30 @@
+Senior Mobile Developer @ placeMe IT Recruitment
+Location: Wellington Central, Wellington
+Salary: $125,000 – $145,000 per year + Benefits
+Type: Full time
+Posted 7d ago
+
+About the Role
+Working as part of a four-person focused team on the mobile platform. Two are focused on iOS with the Lead and yourself primarily focused on Android. Three apps that the coding will revolve around. Coding functionality improvements, backend architecture, stability improvement and more across the three apps, working within the team to mentor and provide guidance to the others.
+
+Tech Requirements
+- Strong Kotlin commercial development experience (at least four years)
+- Experience managing CI/CD pipelines
+- Experience using Jetpack Compose
+- Comfortable and experienced in Agile development environments
+- Experienced with distributed dev tools like GitHub and Slack
+- Someone who can take a complex problem, break it down, and build a robust, scalable solution
+- Strong automated testing experience
+
+Non-tech Experience
+- Working as part of a product team with product owners and designers
+- Strong communication skills, working together to succeed as a team
+- Comfortable with peer review of code and experience reviewing others
+- Able to lead and mentor others not as experienced in mobile development
+
+Benefits
+- No mad hours, always finish on time
+- Wellness allowance
+- Internal benefits
+- Professional development training budget
+- Sports event tickets

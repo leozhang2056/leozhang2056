@@ -16,6 +16,12 @@ role_inference:
       - coroutines
       - retrofit
       - okhttp
+      - websocket
+      - chat
+      - messaging
+      - im
+      - realtime
+      - performance
     ai:
       - pytorch
       - tensorflow
@@ -46,6 +52,21 @@ role_inference:
       - jpa
       - redis
       - kafka
+    embedded:
+      - embedded
+      - rust
+      - c++
+      - c
+      - linux
+      - firmware
+      - sensor
+      - uart
+      - serial
+      - gpio
+      - mqtt
+      - can bus
+      - websocket
+      - protocol
 
 project_ranking:
   default_priority: 9999
@@ -53,10 +74,12 @@ project_ranking:
   role_project_order:
     android:
       - enterprise-messaging
+      - android-performance-optimization
+      - android-hotfix-framework
       - smart-factory
+      - iot-solutions
       - boobit
       - picture-book-locker
-      - iot-solutions
       - forest-patrol-inspection
       - chatclothes
       - visual-gateway
@@ -84,9 +107,18 @@ project_ranking:
       - live-streaming-system
       - chatclothes
       - visual-gateway
+    embedded:
+      - iot-solutions
+      - smart-factory
+      - field-weighing-access-control
+      - banknote-paper-mill
+      - live-streaming-system
+      - visual-gateway
   base_priority:
+    enterprise-messaging: 5
     chatclothes: 10
-    enterprise-messaging: 20
+    android-performance-optimization: 25
+    android-hotfix-framework: 27
     boobit: 22
     smart-factory: 30
     live-streaming-system: 40
@@ -114,10 +146,12 @@ project_selection:
   pinned_ids:
     android:
       - enterprise-messaging
+      - android-performance-optimization
+      - android-hotfix-framework
       - smart-factory
+      - iot-solutions
       - boobit
       - picture-book-locker
-      - iot-solutions
       - forest-patrol-inspection
       - chatclothes
     fullstack:
@@ -125,6 +159,10 @@ project_selection:
       - iot-solutions
       - picture-book-locker
       - smart-power
+    embedded:
+      - iot-solutions
+      - smart-factory
+      - field-weighing-access-control
     default:
       - chatclothes
       - smart-factory

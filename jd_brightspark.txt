@@ -1,0 +1,19 @@
+Full Stack Developers @ BrightSpark Recruitment
+Location: Auckland CBD, Auckland (Hybrid, 3 days in office)
+Type: Contract/Temp, 4 months initial, Market rate
+
+About the Company
+Global consultancy delivering exceptional work for some of New Zealand's largest organisations. Highly skilled team of designers, developers, and project managers passionate about their work. Collaborative, supportive team culture with strong work-life balance.
+
+About the Role
+Looking for x3 Full Stack Developers (more backend focused). Working on sophisticated digital products, complex web platforms, and modern mobile solutions, using new technologies. Strong leadership and great work culture.
+
+Technical bits:
+Full-Stack (Backend focused): Node.js/TypeScript, AWS Lambda, API Gateway, DynamoDB, S3, SNS, SQS, CloudFront, Serverless Framework, mTLS, ECDH/ECDSA cryptography
+
+Who you are:
+- 5+ years experience in a Full Stack role
+- Motivated Developer looking to learn and grow
+- Curiosity and passion for new tech
+- Excellent communication skills
+- Team mindset

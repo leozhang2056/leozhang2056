@@ -71,6 +71,7 @@ def test_run_cv_passes_inferred_arguments(monkeypatch):
         keep_html=False,
         no_strict_kb=False,
         no_post_check=False,
+        with_planning=False,
         title="Senior Android Developer",
     )
 
@@ -91,6 +92,7 @@ def test_run_cv_passes_inferred_arguments(monkeypatch):
         keep_html=False,
         strict_kb=True,
         run_post_check=True,
+        write_planning_files=False,
     )
 
 

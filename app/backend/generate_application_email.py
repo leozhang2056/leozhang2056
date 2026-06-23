@@ -126,7 +126,7 @@ def main() -> None:
     parser.add_argument(
         "--role",
         default="fullstack",
-        choices=["android", "ai", "backend", "fullstack"],
+        choices=["android", "ai", "backend", "fullstack", "embedded"],
         help="Target role type",
     )
     parser.add_argument("--lang", default="en", choices=["en", "zh"], help="Output language")

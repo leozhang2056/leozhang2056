@@ -4,6 +4,17 @@
 - This repo is a KB-driven "resume compiler": structured YAML facts in `kb/` + `projects/*/facts.yaml` are transformed into CV/cover-letter/email outputs (not handwritten each time).
 - Treat generated artifacts in `outputs/` and templates in `templates/` as outputs/reference, not truth sources.
 
+## Constraint File Map
+| File | Role | When to Read |
+|------|------|-------------|
+| `.cursorrules` | Immutable facts + absolute prohibitions | Every session, before any generation |
+| `memory/L0_BOOTSTRAP.md` | Startup protocol + minimal facts | Session start |
+| `memory/L1_SESSION_STATE.md` | Current goal / next-action / improvements | After L0 |
+| `kb/rules/resume_output.md` | **ALL** resume + cover letter output rules | Before any CV/CL generation |
+| `kb/rules/jd_analysis_standard.md` | **JD analysis + recruiter-perspective targeting** | Every new JD, before writing CV |
+| `AGENTS.md` (this file) | Architecture, workflows, integrations | When navigating repo structure |
+| `memory/L2_DEEP_INDEX.md` | Deep-doc navigation index | When needing specific deep docs |
+
 ## Layered Memory Startup (Important)
 - To reduce cold-start scanning, read in this fixed order:
   1. `memory/L0_BOOTSTRAP.md`
@@ -46,7 +57,7 @@
 │   ├── skills.yaml              # Categorized skills & proof points
 │   ├── achievements.yaml        # Publications, awards, certs
 │   ├── project_relations.yaml   # Narration threads & project links
-│   ├── resume_generation_rules.md  # Detailed layout/wording constraints
+│   ├── resume_generation_rules.md  # Detailed layout/wording constraints (archived → see kb/rules/resume_output.md)
 │   ├── career/                  # Career strategy & NZ job market guides
 │   ├── experience/              # Work & research history
 │   ├── bullets/                 # Reusable bullet point templates by role
@@ -126,28 +137,13 @@ pytest
 ```
 
 ## Project-Specific Conventions
-- Non-negotiable anti-hallucination rule: only use facts from `kb/*.yaml` and `projects/*/facts.yaml` (see `kb/resume_generation_rules.md`, `kb/ai_input_spec.md`, `.cursorrules`).
+- Non-negotiable anti-hallucination rule: only use facts from `kb/*.yaml` and `projects/*/facts.yaml` (see `.cursorrules`).
 - If required facts are missing or conflicting, ask the user whether they have relevant experience or details to add before proceeding; do not guess.
-- Source priority for AI context assembly: `kb/profile.yaml` -> `kb/skills.yaml` -> `kb/project_relations.yaml` -> `projects/*/facts.yaml` -> `kb/bullets/*.yaml`.
 - Role vocabulary is fixed: `auto|android|ai|backend|fullstack` (CLI and ranking heuristics depend on this).
   Other roles (`nateva|idexx|fintech|photon|westpac|hnry`) have been removed (2026-06 cleanup).
 - Keep generated CV scope tight (default 6 projects; cap in code) for ~2 A4 pages.
 - Tune role inference and ranking via `kb/generation_config.yaml` (instead of hardcoding keywords/priority maps).
-- **Chunxiao merged experience rule**: In CV output, Chunxiao should render as **one employer block** instead of three separate career-progression blocks. Keep `kb/experience/work.yaml` as the canonical fact source, but adapt the displayed employer title and emphasis by target role (e.g. Android → "Senior Android Developer", backend → "Senior Backend Engineer", fullstack → "Senior Full-Stack Engineer", AI → "AI Software Engineer"). Preserve the real progression as a compact line inside the merged block rather than inventing new factual roles.
-  When career_progression has only 1 stage (split-block format), the merged Chunxiao logic is bypassed and the stage's own title/period is used.
-- **Experience bullet writing rules** (2026-06):
-  - Write in natural narrative style — integrate tech keywords into sentences, not as lists.
-  - Bold key tech terms and metrics using `<strong>` tags.
-  - Remove from `tech_stack` any keywords already bolded in bullets — avoid duplication.
-  - Each bullet should follow: what was done → what value → what result (Action → Value → Result).
-  - Industry context and concrete data build credibility (e.g. "garment manufacturing", "10+ factory sites").
-  - Bullet length: 2-3 lines max. Order by impact — most important first.
-  - Soft skills conveyed through actions, not standalone buzzwords (no "Problem Solving", "Leadership").
-- **Core Competencies rules** (2026-06):
-  - Only concrete tech keywords — no buzzwords or unprovable claims.
-  - Each category 3-6 items. Categories ordered by relevance to the target role.
-  - "Software Engineering" as the last category, 2-3 items max as low-priority supplement.
-  - No "First Class Honours" or generic academic honors in Skills/Licenses (already in Summary).
+- **Output format rules → `kb/rules/resume_output.md`** — Summary, Skills, Experience, Education, Publications, Cover Letter rules, validation checklist, anti-patterns, CLI commands. All in one file. Read before any CV/CL generation.
 - AI usage habits:
   - Read every diff the AI writes.
   - Ask the AI to explain its choices.
@@ -155,8 +151,8 @@ pytest
 
 ## Integrations and Cross-Component Behavior
 - JD ingestion: `app/backend/jd_fetch.py` uses `requests` + `beautifulsoup4`; URL fetch failures should degrade to manual `--jd-keywords`.
-- PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic. **CV font is Inter only** (Google Fonts in HTML head + `document.fonts.ready` before PDF); see `.cursor/rules/resume-generation-standards.mdc` § PDF / print layout.
-- **Summary is always up to five sentences**; highlights only; **JD keywords** (if provided) woven into **sentence 1** and bolded when KB-supported; then strategic bold on differentiators (~6 total). See rules file § Summary rules.
+- PDF rendering: Playwright Chromium is required by `html_to_pdf`; failures here are environment/dependency issues, not KB logic. **CV font is Inter only** (Google Fonts in HTML head + `document.fonts.ready` before PDF); see `kb/rules/resume_output.md` § Header & PDF Layout.
+- **Summary is always up to five sentences**; highlights only; **JD keywords** (if provided) woven into **sentence 1** and bolded when KB-supported; then strategic bold on differentiators (~6 total). See `kb/rules/resume_output.md` § Summary Rules.
 - Summary label: **"Professional Summary"** (not "Career Objective").
 - Android summary: education sentence (Master + First Class Honours) as sentence 1, then experience, skills, delivery, AI/data-driven products.
 - Education always placed **after Experience** in CV output.
@@ -173,28 +169,9 @@ pytest
 - For schema-sensitive additions, mirror required fields from `kb/schema/project_facts_schema.yaml` and re-run `validate.py`.
 
 ## Cover Letter Generation (NZ IT Market)
-- **Core philosophy**: answer 4 questions — who you are, why this role, why you fit, why interview you. NOT a resume rehash, NOT "I'm hardworking", NOT vague.
-- **Key insight**: "I understand what problem you're solving, and I'm exactly the person who can do it."
-- **Structure**: `app/backend/generate_cover_letter.py`
-  - Company-specific hand-crafted versions (best quality) live in `build_cover_letter_content()` as an early-return for known company+role combos.
-  - Generic generator follows the 4-paragraph GPT-derived structure: opening (apply + background + culture) → evidence (project/thesis + differentiator) → experience (role attraction + years + mindset) → closing (motivation + team + thank you).
-- **9 Rules** (from GPT version analysis):
-  1. First sentence directly states position: `"I am applying for the {title} at {company}."`
-  2. Each paragraph has a clear topic sentence
-  3. Background summarized in one sentence (use tagline from profile.yaml)
-  4. Use specific project names (ChatClothes) and concrete tech terms (diffusion models, CI/CD), not vague abstractions
-  5. Every piece of evidence links back to role requirements — not just "I did X" but "X maps to what this role needs"
-  6. Soft skills embedded in hard facts: `"10 years... helped me develop a practical engineering mindset focused on reliability, collaboration, and continuous improvement"` — never standalone "I'm hardworking"
-  7. No cross-paragraph repetition — each paragraph covers a different dimension
-  8. Closing names the specific team (`_COMPANY_TEAMS` dict), not generic "your team"
-  9. Natural length: 4 paragraphs, 2-4 sentences each, fits one A4 page
-- **Company data dictionaries**:
-  - `_COMPANY_CULTURE_HOOKS`: lowercase phrases appendable after "because" (e.g. `"it focuses on building practical AI solutions..."`)
-  - `_COMPANY_TEAMS`: specific team names for closing (e.g. `"The Warehouse Group's Data and AI team"`)
-- **Anti-patterns to avoid**:
-  - AI-blog phrasing: "runnable, measurable, iteratively improved" → instead "I build AI systems that actually ship"
-  - Keyword dumping: "I noticed this role emphasizes solutions, APIs, Graduate..." → instead connect naturally
-  - Identity crisis: telling vs showing credentials; let facts speak through linking sentences
+- **See `kb/rules/resume_output.md` § Cover Letter Rules** for all formatting, 9 rules, company data, and anti-patterns.
+- Core philosophy: answer 4 questions — who you are, why this role, why you fit, why interview you. NOT a resume rehash.
+- Implementation: `app/backend/generate_cover_letter.py` with company-specific early-return + generic 4-paragraph generator.
 
 ## GitHub profile README (`README.md`)
 - In the `username/username` repo layout, root **`README.md`** is rendered on the GitHub **profile** page.

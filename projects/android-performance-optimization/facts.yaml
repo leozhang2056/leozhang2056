@@ -1,0 +1,67 @@
+project_id: android-performance-optimization
+name: Android Performance & Optimization Framework
+name_cn: Android 性能优化框架
+type: Mobile Infrastructure
+category:
+- Android Performance
+- Mobile Architecture
+- Infrastructure
+timeline:
+  start: '2016'
+  end: '2024'
+role: Android Performance Engineer
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+summary: >
+  Led Android performance optimization across multiple enterprise applications, focusing on
+  cold start reduction, memory optimization, ANR elimination, and OOM prevention. Built
+  profiling and monitoring tooling to systematically identify and resolve performance
+  bottlenecks across diverse Android device ecosystems.
+highlights:
+  - Reduced app cold start time through systematic analysis of startup path, lazy initialization, and background task deferral strategies
+  - Resolved OOM crashes by implementing memory profiling, bitmap optimization, memory leak detection, and reference management patterns across 8+ production apps
+  - Eliminated ANR scenarios through main thread offloading, IO optimization, and binder transaction analysis
+  - Built in-app performance monitoring infrastructure tracking startup metrics, frame rate, memory usage, and crash rate across device models and OS versions
+  - Optimized APK size through resource shrinking, ProGuard/R8 rules, dynamic delivery, and modularization
+  - Applied rendering optimization including GPU overdraw reduction, layout hierarchy flattening, and RecyclerView recycling improvements
+  - Developed automated performance regression detection integrated into CI/CD pipeline
+tech_stack:
+  languages:
+  - Kotlin
+  - Java
+  - C++
+  domain:
+  - Android Performance
+  - Memory Optimization
+  - Startup Optimization
+  - Rendering Optimization
+  - APK Size Optimization
+skills_demonstrated:
+  technical:
+  - Performance profiling and analysis
+  - Memory leak detection and resolution
+  - ANR troubleshooting
+  - OOM analysis
+  - CI/CD performance regression testing
+  - APK size optimization
+  soft:
+  - Cross-team performance standard setting
+  - Developer tooling and automation
+related_to_roles:
+  - Senior Android Engineer
+  - Android Architect
+  - Mobile Platform Engineer
+keywords:
+  - Android performance
+  - Cold Start
+  - Memory optimization
+  - OOM
+  - ANR
+  - APK size
+  - Rendering optimization
+  - Startup optimization
+  - Profiling
+  - Performance monitoring
+evidence: []
+last_updated: '2026-06-23'

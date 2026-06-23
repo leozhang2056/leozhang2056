@@ -1,0 +1,21 @@
+Senior Android Developer
+MetService · Auckland, New Zealand
+
+This is a unique opportunity to help shape the future of Android development at MetService. As we bring more mobile capability in-house, we are looking for a Senior Android Developer who can play a key role in the design, development and ongoing improvement of our Android apps. These apps are used by New Zealanders every day to access trusted weather information.
+
+You will work closely with backend engineers, designers, product managers and testers to deliver high-quality, reliable and performant mobile experiences. Beyond hands-on development, this role offers the opportunity to bring your technical vision, influence engineering standards, and help define the best way for MetService to build and operate Android products going forward.
+
+In This Role You Will:
+- Design, build and enhance secure, high-quality Android features using Kotlin and modern Android frameworks.
+- Help shape our Android technical direction, tooling and development standards.
+- Work closely with backend, design, product and QA teams to deliver resilient and user-focused mobile experiences.
+- Provide senior technical input, guidance and support as our mobile capability grows.
+
+About You:
+- At least 5 years Android development experience, particularly with Kotlin and modern Android architecture patterns.
+- Key to this role is solving technical problems, improving existing products and making pragmatic engineering decisions.
+- Strong collaboration and communication skills.
+- Confident sharing ideas, influencing technical direction and helping shape good engineering practices.
+- Care about quality, accessibility and performance.
+
+Applications close Sunday 5 July at 11:00pm.

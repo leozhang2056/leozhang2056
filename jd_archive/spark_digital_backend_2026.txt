@@ -1,0 +1,39 @@
+Senior Software Engineer (Backend)
+Spark Digital · Auckland Harbour, Auckland · Permanent, Full-time
+Salary: $10,384.44 - $11,582.60 per month
+
+Overview:
+A Senior Backend Software Engineer designs, develops, and maintains scalable, reliable backend systems and services. They drive architecture and implementation for APIs, data storage, business logic, and platform integrations while mentoring engineers and influencing technical direction.
+
+Key Responsibilities:
+- Architecture & design: lead system design for services, microservices, APIs, data models, scalability, and fault tolerance.
+- Backend development: implement performant, well-tested server-side code, libraries, and frameworks.
+- API design: design and maintain REST/GraphQL/gRPC APIs, versioning, and backward compatibility strategies.
+- Data storage & modeling: select and optimize databases (relational, NoSQL, caches), design schemas, and ensure data integrity.
+- Performance & scaling: profile and optimize performance, implement caching, sharding, batching, async processing, and concurrency control.
+- Reliability & observability: build health checks, monitoring, logging, distributed tracing, and alerting; participate in SRE/incident response.
+- Security & compliance: apply secure coding practices, input validation, authentication/authorization, rate limiting, and data protection.
+- Testing & quality: own unit, integration, and end-to-end tests; maintain CI/CD pipelines and code review standards.
+- Deployment & operations: collaborate on deployment strategies, feature flags, migrations, rollbacks, and blue/green or canary releases.
+- Mentorship & leadership: mentor mid/junior engineers, lead design reviews, and promote engineering best practices.
+- Cross-team collaboration: partner with product, frontend, QA, and infrastructure teams to deliver features and resolve production issues.
+- Documentation: write and maintain design docs, runbooks, and API docs.
+
+Required Qualifications:
+- Education: Bachelor's degree in Computer Science, Engineering, or equivalent experience.
+- Experience: 5+ years of backend software engineering; demonstrable experience owning services in production.
+- Strong proficiency in one or more backend languages (e.g., Java, Kotlin, Go, Python, Ruby, Node.js, C#).
+- Deep understanding of REST, gRPC, GraphQL, WebSockets, and API design principles.
+- Expertise with relational databases (PostgreSQL, MySQL) and at least one NoSQL/datastore (Redis, MongoDB, Cassandra).
+- Experience designing scalable, fault-tolerant microservices and message-driven architectures (Kafka, RabbitMQ, SQS).
+- Proficiency with cloud platforms (AWS, GCP, Azure) and cloud-native services.
+- Strong knowledge of containerization and orchestration (Docker, Kubernetes).
+- CI/CD and automation (Jenkins, GitHub Actions, GitLab CI, Terraform, Helm).
+- Observability tooling (Prometheus, Grafana, Datadog, OpenTelemetry, ELK).
+- Testing frameworks and mocking for unit/integration tests.
+- Strong problem-solving, ownership, effective communication, technical leadership.
+
+Nice-to-Have:
+- Domain-driven design, event sourcing, and CQRS.
+- Large-scale data processing, stream processing.
+- Performance engineering and capacity planning.

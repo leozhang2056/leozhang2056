@@ -1,0 +1,63 @@
+project_id: android-hotfix-framework
+name: Android Hotfix Framework
+name_cn: Android 热修复框架
+type: Mobile Infrastructure
+category:
+- Android Development
+- Mobile Framework
+- Infrastructure
+timeline:
+  start: '2017'
+  end: '2023'
+role: Android Framework Developer
+company:
+  name: Chunxiao Technology Co., Ltd.
+  location: China
+summary: >
+  Designed and developed an in-house Android hotfix framework enabling rapid bug fixes
+  and feature patches without full app store releases. Built on class loading and native
+  layer patching mechanisms, supporting dex replacement, native library hot-swap, and
+  resource hotfix across Android 5+ with minimal performance overhead.
+highlights:
+  - Designed and implemented a class-loader based hotfix framework supporting dex patch deployment without app restart on Android 5+
+  - Integrated NDK/JNI native patch mechanism for fixing critical C++ and native library bugs without full APK update
+  - Built patch generation toolchain automating dex diff, signature verification, and灰度 (canary) rollout with rollback capability
+  - Achieved sub-minute patch deployment for emergency production fixes, reducing critical bug resolution time from weeks (app store) to hours
+  - Implemented resource hotfix using resource loader hooking for UI and assets patches without APK replacement
+  - Designed patch management SDK with automatic download, verification, and apply-on-next-launch workflow
+tech_stack:
+  languages:
+  - Kotlin
+  - Java
+  - C++
+  domain:
+  - Android Hotfix
+  - Class Loading
+  - NDK/JNI
+  - Dex Manipulation
+  - Patch Management
+skills_demonstrated:
+  technical:
+  - Android ClassLoader mechanism
+  - Dex and APK manipulation
+  - NDK/JNI native patching
+  - Patch distribution infrastructure
+  - Canary deployment and rollback
+  soft:
+  - Emergency incident response
+  - Developer SDK design
+related_to_roles:
+  - Senior Android Engineer
+  - Android Architect
+  - Mobile Platform Engineer
+keywords:
+  - Android hotfix
+  - Hotpatch
+  - Dex replacement
+  - Native patch
+  - ClassLoader
+  - Patch management
+  - NDK hotfix
+  - Canary rollout
+evidence: []
+last_updated: '2026-06-23'

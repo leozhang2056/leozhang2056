@@ -1,0 +1,126 @@
+TE TURANGA MAHI | POSITION DESCRIPTION
+TITLE OF POSITION
+Developer
+SERVICE AREA
+Office of the Vice-Chancellor
+REPORTS TO
+Director Data, AI, Digital Experience Solutions
+LAST REVIEWED
+Jan 2026
+SALARY BAND
+Band C
+
+KAUPAPA | PURPOSE
+To design, maintain and develop quality software solutions in conjunction with creating and maintaining good systems standards and practises. Provides peer review and constructive feedback for other developers with a goal of seeking continuous improvement within the development team. Additionally, to provide technical advice and assistance, either in support of their customer development activities or in fulfilment of their obligations.
+
+AUT recognises and respects the importance of Te Tiriti o Waitangi and its centrality to the mission and work of the University. Through Te Aronui, AUT's Te Tiriti Framework, AUT gives life to this commitment, guiding how staff work in partnership with tangata whenua, uphold equity and inclusion, and create mana-enhancing outcomes for all.
+
+WHAKAWHANAUNGATANGA | KEY RELATIONSHIPS
+External: Software Vendors
+Internal: Other AUT staff at all levels; AUT Students
+
+NGA TAKOHANGA | KEY ACCOUNTABILITIES
+
+Programming / Software Development
+The design, creation, testing and documenting of new and amended software components from supplied specifications in accordance with agreed development and security standards and processes.
+Expected outcomes:
+- Designs, codes, tests, corrects, and documents moderately complex programs and scripts from agreed specifications and subsequent iterations, using agreed standards and tools.
+- Collaborates in reviews of specifications, with others as appropriate.
+
+User Experience Analysis
+The identification, analysis, clarification and communication of the context of use in which applications will operate, and of the goals of products, systems or services. Analysis and prioritisation of stakeholders' user experience needs and definition of required system behaviour and performance. Resolution of potential conflicts between user requirements and determination of usability objectives.
+Expected outcomes:
+- Identifies and engages with users and stakeholders, defines relevant characteristics such as personas.
+- Describes users goals and tasks such as user stories.
+- Describes the environment within which the system will be used.
+
+Systems Design
+The specification and design of information systems to meet defined business needs in any public or private context, including commercial, industrial, scientific, gaming and entertainment. The identification of concepts and their translation into implementable design. The design or selection of components. The retention of compatibility with enterprise and solution architectures, and the adherence to corporate standards within constraints of cost, security and sustainability.
+Expected outcomes:
+- Specifies user/system interfaces, and translates logical designs into physical designs taking account of target environment, performance security requirements and existing systems.
+- Produces detailed designs and documents all work using required standards, methods and tools, including prototyping tools where appropriate.
+
+Support
+The provision of technical advice, either in support of stakeholder development or in fulfilment of stakeholder obligations.
+Expected outcomes:
+- Provides customer service, including technical advice and guidance on all matters bearing on the successful use of complex products and services.
+- Helps internal stakeholders to clarify their requirements.
+- Documents the conclusions reached, and contributes to preparing and supporting bids and change proposals.
+
+User Experience Design
+The iterative development of user tasks, interaction and interfaces to meet user requirements, considering the whole user experience. Refinement of design solutions in response to user-centred evaluation and feedback and communication of the design to those responsible for implementation.
+Expected outcomes:
+- Based on understanding of how web page look and feel is controlled through CSS and page templates, uses agreed procedures for uploading and use of images, icons and video.
+- Applies the principles of page layout and use of headlines and sub-heads to meet audience needs.
+
+Using Digital Tools
+Use digital tools responsibly to support work, improve outcomes, and contribute to innovation across AUT according to AUT policies, procedures and guidelines.
+Expected outcomes:
+- AUT policies and guidelines are followed when using digital tools including AI with attention to data privacy, transparency, and fairness.
+- Digital tools including AI are applied where appropriate and in line with AUT guidelines, to enhance the quality, efficiency, or creativity of work.
+- Knowledge and understanding of digital developments relevant to the role is kept up-to-date and opportunities to improve technology skills are actively pursued.
+- Training and team learning activities are participated in to build confidence in the effective and ethical use of new technologies.
+
+Te Aronui - AUT's Te Tiriti Framework
+Embed Te Aronui, AUT's Te Tiriti Framework across work by giving practical effect to Te Tiriti o Waitangi through actions that are authentic, relational, and accountable.
+Expected outcomes:
+- AUT commitment to partnership, protection, and participation is upheld ensuring Te Tiriti responsibilities are actively understood and enacted.
+- AUT's four Tiriti Enactments are contributed to: Whakaawe, Whakaea, Whakamana, and Whakanui.
+- A culture is fostered where tangata whenua and tangata Tiriti work alongside each other for collective wellbeing and to enable equitable outcomes for all.
+- Ongoing learning builds confidence and capability to enact Te Aronui in practice and measure its impact.
+
+AUT Values
+Live AUT's values of Pono, Tika and Aroha through actions that are ethical, authentic, and mana-enhancing. These values guide how staff relate to others, make decisions, and uphold AUT's commitment to Te Tiriti o Waitangi.
+Expected outcomes:
+- Active contribution to a positive and high-performing team culture that supports organisational goals and collective wellbeing.
+- Professional competence is maintained and knowledge and skills relevant to the role are continually developed.
+- AUT's values are reflected in delivery of policies, procedures, and initiatives, upholding equity, inclusion, and continuous improvement.
+- Compliance with AUT policy and procedures is maintained along with active contribution to continuous improvement.
+
+Health, Safety and Wellbeing
+Active contribution to maintaining a psychologically and physically safe and healthy work environment.
+
+TE HOROPAKI WHAKAHAERE | ORGANISATIONAL CONTEXT
+This role, reporting to the Director Data, AI, Digital Experience Solutions, is part of the AIAC Team within the Office of the Vice-Chancellor.
+
+UAUATANGA | COMPLEXITY
+This role works under supervision, addressing moderately complex business problems.
+
+NGA WHAKARITENGA TANGATA | PERSON SPECIFICATION
+
+Mandatory formal qualifications:
+- Undergraduate degree in Computer Science or related discipline.
+
+Mandatory knowledge and experience:
+- 18 months experience as a member of a software development team.
+- Knowledge and practice in the principles of equity and diversity.
+- Experience in SQL.
+- Experience in JavaScript and jQuery.
+- Experience in CSS.
+- Experience in HTML.
+- Experience in ASP .NET.
+- Experience in MVC.
+
+Desirable knowledge and experience:
+- Familiarity with information system support processes and standards.
+- Familiarity with Agile SCRUM.
+- Familiarity with Team Foundation Server.
+
+Skills:
+- Computer literacy including advanced level of skill in MS Word, Excel and PowerPoint.
+- A high level of skill or familiarity with Microsoft development tools.
+- Self-management skills including organisation and time management.
+- Ability to work well within a team.
+- Ability to multi-task and prioritise in a high energy environment.
+
+Attributes:
+- Proactive approach to problem solving and solution management.
+- Achievement and results oriented.
+- Common sense, practical results-focused.
+- Persistent and pragmatic.
+- Good attention to detail.
+- A self-starter who can apply innovative ideas and solutions to problems.
+- Uses initiative to achieve positive work outcomes within challenging timeframes.
+- Respects and helps others and works well within a team environment.
+- Sensitivity, empathy and cultural awareness.
+- Ability and willingness to learn and develop new skills.

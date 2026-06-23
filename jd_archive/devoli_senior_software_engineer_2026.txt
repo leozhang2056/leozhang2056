@@ -1,0 +1,33 @@
+Senior Software Engineer | Devoli | Auckland (Hybrid)
+Recruited by nDeva Recruitment
+
+Devoli is not your typical tech business. It started as a telco, grew into one of New Zealand's most consistently high-growth companies, and is now transforming into a software platform business, using the revenue and stability it has already built to fund an ambitious technical future.
+
+The software team is not maintaining a product on the side. They are building the platform that will eventually become the entire business.
+
+What you will bring
+- Experience with at least part of the stack: Python, TypeScript, Go, Next.js, AWS, Postgres, MongoDB.
+- Solid grasp of software architecture and design, including object orientation, event-driven architecture, and distributed service design.
+- Experience working within and helping define distributed architectures where boundaries are still being established.
+- AWS production experience, including owning and running what you build.
+- Background in a B2B software product organisation, not just internal development.
+- Genuine engagement with agentic AI tooling beyond basic code generation, someone who thinks about agents, context, workflows, and parallelism and has found ways to put that into practice.
+
+What you will be working on
+The platform spans several large and genuinely complex domains: CPQ and pricing systems, end-user billing and subscription management, a new authentication and authorisation framework, a redesigned customer portal, and a distributed service architecture being actively built out from a legacy PHP monolith.
+
+The go-forward stack is Go and Python on the backend, Next.js and TypeScript on the frontend, with AWS, Postgres, and MongoDB rounding things out. The architecture direction is distributed and service-oriented, with bounded contexts being defined as the platform grows. You will not be handed a map. You will help draw it.
+
+On top of the core platform work, the team is actively investing in how agentic AI changes the way software is built, at both an individual and team level. Some engineers are already orchestrating small teams of agents to multiply their output. Others are finding their rhythm. The goal is to keep pushing that capability further across the entire development process, and new engineers are expected to bring their own perspective to it.
+
+What They're Looking For
+- Someone with genuine agentic AI depth who can help the team level up how they work, beyond individual productivity into team-wide workflows.
+- Someone focused on building agentic capabilities into the product itself, including platforms that allow external agents to consume Devoli's services.
+- Someone with strong domain experience in telco, ERP, billing, subscription management, logistics, or complex B2B integration environments.
+
+You'll have the ability to own a long-running mission area, operate without a perfectly defined brief, and contribute meaningfully to the platform strategy.
+
+The kind of person who thrives here
+Curious by default. Comfortable with ambiguity. Someone who wants to understand the problem, not just execute the task. Someone who brings strong opinions but holds them loosely, listens well, and cares about the best idea winning rather than being right. Scale-up and B2B product backgrounds work well. If you are used to owning things end to end, navigating a complex and evolving codebase, and working in an environment where not everything is written down, you will feel at home.
+
+Note: These roles are being managed exclusively by nDeva Recruitment.

@@ -110,6 +110,11 @@ except ImportError:
     except ImportError:
         POST_CHECK_AVAILABLE = False
 
+try:
+    from generation_planning import finish_generation_plan, start_generation_plan
+except ModuleNotFoundError:
+    from app.backend.generation_planning import finish_generation_plan, start_generation_plan
+
 
 # ============================================================================
 # 常量定义
@@ -127,7 +132,7 @@ SUMMARY_MAX_CHARS_EN = 780
 SUMMARY_MAX_CHARS_ZH = 520
 SUMMARY_REQUIRED_SENTENCES = 6
 SUMMARY_EDU_CLOSING_EN = (
-    "MCIS at AUT, First Class Honours. Research focus: AI, Computer Vision, LLMs."
+    "Master's in Computer and Information Sciences from AUT, First Class Honours."
 )
 SUMMARY_EDU_CLOSING_ZH = (
     "奥克兰理工大学计算机与信息科学硕士毕业，获一等荣誉学位。"
@@ -426,6 +431,14 @@ _ROLE_SKILL_CONFIG: Dict[str, List[Dict]] = {
         {'key': 'android',        'label_en': 'Mobile / Android',     'label_zh': '移动端 / Android', 'max': 4, 'field': 'name'},
         {'key': 'ai_ml',          'label_en': 'AI / ML',              'label_zh': 'AI / ML',         'max': 4, 'field': 'name'},
         {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 5, 'field': 'name'},
+    ],
+    'embedded': [
+        {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 5, 'field': 'name'},
+        {'key': 'iot_hardware',   'label_en': 'IoT & Embedded',       'label_zh': 'IoT & 嵌入式',    'max': 8, 'field': 'name'},
+        {'key': 'backend',        'label_en': 'Backend & APIs',       'label_zh': '后端 & API',      'max': 5, 'field': 'name'},
+        {'key': 'devops',         'label_en': 'DevOps & Cloud',       'label_zh': 'DevOps & 云',     'max': 5, 'field': 'name'},
+        {'key': 'android',        'label_en': 'Mobile / Android',     'label_zh': '移动端 / Android', 'max': 3, 'field': 'name'},
+        {'key': 'ai_coding_tools','label_en': 'AI-Assisted Development', 'label_zh': 'AI 辅助开发',   'max': 3, 'field': 'name'},
     ],
     'fullstack': [
         {'key': 'programming_languages', 'label_en': 'Languages',     'label_zh': '编程语言',         'max': 5, 'field': 'name'},
@@ -2481,37 +2494,24 @@ _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
 }
 
 
-def _adapt_progression_title(title: str, role_type: str) -> str:
-    """Map employer progression titles to the CV target role."""
+def _adapt_progression_title(
+    title: str,
+    role_type: str = 'fullstack',
+    jd_keywords: Optional[List[str]] = None,
+) -> str:
+    """Map employer progression titles to mobile-focused titles for Android role only.
+    Other roles return the original KB title as-is."""
     if not title:
         return title
-    
-    # Target specific roles for Android focus
-    if role_type in ["android"]:
+
+    if role_type == "android":
         out = title
-        # Keep "Full-stack Engineer" as-is per user preference (most recent Chunxiao title stays fullstack)
-        # Only remap "Senior Android Developer" and other Android-specific titles
-        out = out.replace("Full-stack Developer", "Android Developer")
-        out = out.replace("Senior Android Developer", "Senior Android Developer")
-        out = out.replace("Fullstack", "Android")
+        out = out.replace("AI Research Engineer", "AI Research & Mobile Engineer")
+        out = out.replace("Full-stack Engineer", "Senior Mobile Engineer")
+        out = out.replace("Senior Android Engineer", "Senior Android Engineer")
         return out
 
-    exact = _PROGRESSION_TITLE_ROLE_MAP.get(role_type, {}).get(title)
-    if exact:
-        return exact
-    
-    out = title
-    if role_type == "fullstack":
-        out = out.replace("Android Engineer", "Full-Stack Engineer")
-        out = out.replace("Android Developer", "Full-Stack Developer")
-        out = out.replace("Android", "Full-Stack")
-    elif role_type == "backend":
-        out = out.replace("Android Engineer", "Backend Engineer")
-        out = out.replace("Android Developer", "Backend Developer")
-        out = out.replace("Android", "Backend")
-    elif role_type == "ai":
-        out = out.replace("Android Engineer", "AI Engineer")
-    return out
+    return title
 
 
 def _adapt_progression_focus(focus: str, role_type: str) -> str:
@@ -2709,6 +2709,7 @@ def _render_career_progression_html(
     lang: str,
     role_type: str,
     target_role_title: str = '',
+    jd_keywords: Optional[List[str]] = None,
 ) -> str:
     """按职级阶段渲染经历（新结构：career_progression + achievements）。"""
     company_name = str(work_entry.get("company") or "")
@@ -2730,7 +2731,7 @@ def _render_career_progression_html(
         target_line = f'<div class="employer-progression"><strong>Target role:</strong> {html.escape(target_role_title)}</div>' if target_role_title else ""
         stages: List[str] = []
         for stage in progression:
-            title = str(stage.get("title") or "")
+            title = _adapt_progression_title(str(stage.get("title") or ""), role_type, jd_keywords)
             period = str(stage.get("period") or "")
             achievements = stage.get("achievements") or []
             tech_stack = stage.get("tech_stack") or []
@@ -2743,7 +2744,7 @@ def _render_career_progression_html(
             if period:
                 header_parts.append(period)
             header_text = " | ".join(header_parts)
-            bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements[:4] if a)
+            bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements[:5] if a)
             tech_line = ", ".join(str(t) for t in tech_stack if t)
             tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
             stages.append(f'''
@@ -2782,7 +2783,7 @@ def _render_career_progression_html(
             tech_stack = []
         
         # Cap achievements per stage to keep CV within 2 pages
-        MAX_ACHIEVEMENTS_PER_STAGE = 4
+        MAX_ACHIEVEMENTS_PER_STAGE = 5
         achievements = achievements[:MAX_ACHIEVEMENTS_PER_STAGE]
         
         # Apply role-specific tech_stack ordering from cv_base_template
@@ -2826,13 +2827,15 @@ def _render_career_progression_html(
 def _render_aut_research_html(
     work_entry: Dict,
     lang: str,
+    role_type: str = 'fullstack',
+    jd_keywords: Optional[List[str]] = None,
 ) -> str:
     """渲染 AUT 研究经历。"""
     company_name = str(work_entry.get("company") or "")
     location = str(work_entry.get("location") or "")
     company_url = str(work_entry.get("company_url") or "")
     company_desc = str(work_entry.get("company_description") or "")
-    role = str(work_entry.get("role") or "")
+    role = _adapt_progression_title(str(work_entry.get("role") or ""), role_type, jd_keywords)
     date_lbl = _work_entry_date_label(work_entry, lang)
     achievements = work_entry.get("achievements") or []
     tech_stack = work_entry.get("tech_stack") or []
@@ -3069,9 +3072,9 @@ def generate_experience_section(
                 if not isinstance(exp, dict):
                     continue
                 if exp.get("career_progression"):
-                    parts.append(_render_career_progression_html(exp, lang, role_type, target_role_title=target_role_title))
+                    parts.append(_render_career_progression_html(exp, lang, role_type, target_role_title=target_role_title, jd_keywords=jd_keywords))
                 elif exp.get("type") == "Education/Research":
-                    parts.append(_render_aut_research_html(exp, lang))
+                    parts.append(_render_aut_research_html(exp, lang, role_type, jd_keywords=jd_keywords))
                 else:
                     parts.append(_render_simple_experience_html(exp, lang))
             if parts:
@@ -4602,6 +4605,7 @@ async def generate_cv_from_kb(
     keep_html: bool = False,
     strict_kb: bool = True,
     run_post_check: bool = True,
+    write_planning_files: bool = False,
 ):
     """
     从 KB 生成简历 PDF（默认仅英文，可选中文）。
@@ -4621,6 +4625,7 @@ async def generate_cv_from_kb(
         keep_html: 为 True 时保留与 PDF 同名的中间 .html，便于核对版式（默认删中间件）
         strict_kb: 为 True 时在生成前进行 KB 严格校验，失败则直接中止生成（默认 True）
         run_post_check: 为 True 时在生成英文 PDF 后运行流畅度/版式/JD 覆盖检查并写出 *_POST_CHECK.md（默认 True）
+        write_planning_files: 为 True 时写出 .planning/task_plan.md、findings.md、progress.md（默认 False）
     """
     # 篇幅：默认约两页 A4；至少保留 pinned 核心项目数（Android 含 forest-patrol）
     _min_slots = 3 if role_type in ["android"] else 2
@@ -4678,6 +4683,20 @@ async def generate_cv_from_kb(
     if filtered_jd_keywords:
         print(f"  JD keywords(filtered anti-hallucination): {filtered_jd_keywords}")
 
+    planning_context = None
+    if write_planning_files:
+        planning_context = start_generation_plan(
+            repo_root=repo_root,
+            command="cv",
+            role_type=role_type,
+            company_name=company_name,
+            target_role_title=target_role_title,
+            jd_keywords=safe_jd_keywords,
+            max_projects=max_projects,
+            min_jd_match_pct=min_jd_match_pct,
+        )
+        print(f"  PLANNING → {planning_context.plan_dir}")
+
     # 英文版
     html_en      = generate_html_from_kb(
         role_type, 'en', safe_jd_keywords, max_projects,
@@ -4707,6 +4726,8 @@ async def generate_cv_from_kb(
     _print_quality_metrics(html_en, safe_jd_keywords, role_type, min_target_pct=min_jd_match_pct)
 
     rb_hits, rb_misses, rb_cov = _jd_match_hits_misses_coverage(html_en, safe_jd_keywords)
+    post_report = None
+    post_md_path = None
     if run_post_check and POST_CHECK_AVAILABLE:
         try:
             post_report = run_post_generation_check(
@@ -4800,6 +4821,18 @@ async def generate_cv_from_kb(
             print(f"  CN HTML (kept) → {html_zh_path}")
     else:
         print("  CN PDF  → skipped")
+
+    if planning_context:
+        finish_generation_plan(
+            context=planning_context,
+            pdf_path=en_path,
+            post_check_path=post_md_path,
+            post_check_report=post_report,
+            supported_keywords=safe_jd_keywords,
+            filtered_keywords=filtered_jd_keywords,
+            min_jd_match_pct=min_jd_match_pct,
+        )
+        print(f"  PLANNING UPDATED → {planning_context.plan_dir}")
 
     # 质量报告（按需生成，默认关闭以减少生成耗时）
     if generate_quality_report:

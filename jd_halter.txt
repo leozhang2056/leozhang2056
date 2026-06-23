@@ -1,0 +1,35 @@
+Company: Halter
+Role: Software Engineering / Platform Engineering / Machine Learning / Comms Intern
+Location: Auckland City, New Zealand | Full-time (Mid Nov 2026 - Feb 2027)
+
+About the job:
+At Halter, we’re on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices (GPS collars for cattle fenceless herding).
+Halter is one system: hardware, software, and AI, running live on real farms.
+We're looking for interns across our Software, Platform, Machine Learning and Comms/Fleet Engineering teams!
+
+We have 4 key teams we're hiring for:
+1. Software Engineering:
+- Building the farmer-facing apps (mobile/web) and the backend services processing billions of real-time collar events.
+- Frontend: React, React Native, mobile and web experiences.
+- Backend: Node.js, Kotlin, Go.
+- Distributed, event-driven systems processing data from collars; latency, reliability, and offline behaviour are important.
+
+2. Platform Engineering:
+- Internal infrastructure, data ingestion, AWS, Terraform, CI/CD, observability, and AI tooling.
+- Tooling that helps engineers move faster.
+
+3. Machine Learning (Predictive Systems):
+- Pasture growth models, animal health & behaviour, heat event detection, grazing recommendations.
+- Dataset construction, model training, deployment, and monitoring. Python, PyTorch.
+
+4. Communications & Fleet Engineering:
+- Collars communication with backend, messaging layer, on-farm comms, fleet tracking.
+- UART, serial, telemetry, NDK/C.
+
+Who we are looking for:
+- Actively engaged in relevant studies (Computer Science, Software Engineering, Data Science).
+- Deeply curious, driven to learn, comfortable in fast-moving, ambiguous environments.
+- Software/Platform: think like a product engineer, care about customer experience.
+- Machine Learning: strong background in applying ML, Python fluency.
+- Comfortable leveraging AI tools and agents (Claude Code, Cursor, Copilot) to accelerate output.
+- Applicants must have a valid New Zealand work permit.

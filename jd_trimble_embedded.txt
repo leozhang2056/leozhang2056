@@ -1,0 +1,24 @@
+Build the Future of Heavy Construction: Software Engineer (Embedded Systems)
+
+Trimble is a global technology company that connects the physical and digital worlds, transforming the ways work gets done. With relentless innovation in precise positioning, modeling and data analytics, Trimble enables essential industries including construction, geospatial and transportation.
+
+The Trimble Field Systems segment provides solutions to increase precision and productivity in construction tasks by empowering stakeholders to collect accurate information and manage conditions with cutting-edge technology.
+
+Key Responsibilities:
+- Spearhead the development of high-quality, maintainable backend code for embedded Linux platforms using Rust.
+- Design and evaluate sophisticated software architectures to ensure high reusability and system integrity.
+- Master low-level communication protocols to process real-time sensor data from bulldozers, excavators, and pavers.
+- Collaborate with global engineering teams to translate complex business needs into scalable technical specifications.
+
+Essential Skills & Experience:
+- Strong proficiency in systems programming (C, C++, or Rust) on Linux or similar embedded platforms.
+- Solid understanding of software development principles, design patterns (SOLID), and best practices.
+- Proven experience with version control systems like Git and troubleshooting across complex application stacks.
+- Exceptional communication skills with the ability to convey technical concepts to diverse global audiences.
+
+Bonus Points:
+- Direct experience with Embedded Linux development or modern systems languages like Zig.
+- Familiarity with network protocols such as CAN, TCP, HTTP, and Websockets.
+- A Bachelor's degree in Computer Science, Computer Engineering, or a related technical field.
+
+Location: Christchurch, New Zealand, In Office

@@ -1,0 +1,56 @@
+Software Consultant - Development - Entitlements
+Company: ASB
+Location: Auckland, New Zealand
+Level: 4 (Senior Individual Contributor)
+
+Mō te tūranga | About the role
+
+Join our Core Tribe as a Software Consultant and help shape the Entitlements layer by building the Entitlements engine needed to migrate legacy functions and enable modernisation that powers ASB's digital experiences. This is a senior individual contributor role (Level 4) that blends deep technical expertise with solution architecture, platform ownership, and cross-squad collaboration.
+
+You'll play a key role in enabling seamless, scalable, and secure integration by building reusable components and supporting modern engineering practices across squads.
+
+Ngā kawenga | What you'll do
+
+We advocate for T-Shaped teams, where you will engage in all facets of engineering throughout your day. We are seeking developers with a diverse mix of technical skills to support the following activities:
+
+- Guide implementation using shared SDKs, infrastructure standards, and CI/CD practices, ensuring alignment with security and compliance requirements.
+- Work closely with API, integration, and streaming platform teams to design resilient service interactions and meet agreed service levels.
+- Evaluate and de-risk emerging technologies, run pilots with clear success criteria and guide adoption across squads.
+- Lead delivery of reusable integration components and reference architectures, provide hands-on guidance for complex implementations.
+- Engage stakeholders (product, security, ops) to balance velocity with safety, communicate trade-offs and decisions clearly.
+
+Ō pūkenga | About you
+
+You're a proactive problem solver with strong technical leadership and communication skills. You're confident gathering requirements, designing pragmatic solutions, and presenting technical concepts to diverse audiences.
+
+What you bring
+
+Experience:
+- 10+ years in software engineering, architecture and leadership.
+- Proven leadership and decision-making skills, with a track record of successful project delivery.
+- Strong strategic thinking and ability to align technology with business goals.
+- Excellent communication, stakeholder management, and collaboration skills.
+- Experience mentoring and uplifting engineering teams.
+
+Languages and Frameworks:
+- .NET / C# including ASP.NET APIs
+- PowerShell and Azure CLI
+- NoSQL/Graph DB (Neo4j)
+- Database engineering
+
+Cloud and DevOps:
+- Azure and cloud-native development
+- Azure DevOps and GitHub for CI/CD
+- Containers and Integration
+
+- Docker, Kubernetes, AKS or similar
+- API Gateways such as Kong
+- Event streaming tools such as Apache Kafka
+
+Practices and Tools:
+- REST APIs using OpenAPI or Swagger
+- SDK and library development
+- Agile delivery and user story refinement
+- Strong technical documentation skills
+
+Applications close 10 July 2026.

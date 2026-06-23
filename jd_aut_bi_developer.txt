@@ -1,0 +1,39 @@
+BI Developer (Level 1)
+Auckland University of Technology (AUT)
+Data, Analytics & Digital Enablement (DADE) team
+City Campus, Auckland, New Zealand
+Fixed-term/maximum term, 12 months, full-time (37.5 hours per week)
+$82,821 - $97,468 per annum
+Closing: 29 June 2026
+
+About the Role
+The Data, Analytics & Digital Enablement (DADE) team at AUT is responsible for building and maintaining BI solutions, data pipelines, and analytics platforms. The team supports self-serve analytics and data governance across the university.
+
+Responsibilities:
+- Design, develop, and maintain Power BI reports and paginated reports
+- Build and maintain data pipelines using Azure Data Factory, Databricks, and Microsoft Fabric
+- Develop and optimise SQL queries and stored procedures
+- Design and implement data models (star schema, dimensional modelling)
+- Collaborate with stakeholders to gather requirements and deliver BI solutions
+- Create and maintain technical documentation and solution designs
+- Participate in agile delivery, peer reviews, and continuous improvement
+- Support data quality initiatives and data governance frameworks
+- Contribute to ETL/ELT pipeline design and implementation
+- Stay current with Microsoft Fabric and Azure analytics ecosystem
+
+Requirements:
+- 3+ years of experience in BI development or data engineering
+- Strong SQL skills and experience with relational databases (SQL Server preferred)
+- Experience with Power BI including DAX, data modelling, and paginated reports
+- Experience with Azure Data Factory, Databricks, or similar ETL tools
+- Familiarity with data warehousing concepts (star schema, dimensional modelling)
+- Python or PySpark experience
+- Understanding of data quality, data governance, and master data management
+- Strong stakeholder engagement and communication skills
+- Experience with solution design and technical documentation
+- Commitment to equity, diversity, and inclusion
+
+Desirable:
+- Microsoft Fabric experience
+- Experience in a higher education or public sector environment
+- Knowledge of Māori data sovereignty principles (Te Tiriti o Waitangi)

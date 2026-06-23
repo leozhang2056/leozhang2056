@@ -1,0 +1,48 @@
+Software Engineer
+Req ID: 114327
+Department: Funds Management Operations
+Division: New Zealand
+Location: Auckland
+
+Ko Mātou – About Us
+At ANZ, we're shaping a world where people and communities thrive, driven by a common goal: to improve the financial wellbeing and sustainability of our millions of customers.
+
+Mō te tūranga - About the role
+This is a rare opportunity to step into Funds Technology, working on platforms that underpin ANZ's investment and asset management services.
+
+As a Senior Software Engineer, you'll take a leading role in shaping and delivering technology that supports our Discretionary Investment Management Services (DIMS) and advisory channels. You won't just be maintaining systems, you'll be influencing how they evolve, partnering closely with engineers, architects, and vendors to design and deliver solutions that are robust, scalable and fit for the future.
+
+If you're looking to apply your engineering skills in a complex, high-value domain and grow your technical leadership, this role offers a unique pathway to do so.
+
+Role Type: Permanent
+Role Location: Auckland or Wellington
+Work Hours: 37.5 hours per week
+
+Ka aha tō rā e kite ai? - What will your day look like?
+You'll work across design, delivery and support to ensure Funds platforms are reliable, scalable and continually improving. This includes:
+- Enhancing solutions to align with evolving business and technical requirements, collaborating closely with engineers, architects, and vendor partners.
+- Leading technical decisions and improving platform performance, resilience and scalability.
+- Supporting production systems and resolving complex issues, including contributing to out of hours support when required.
+- Embedding strong engineering practices, with a focus on risk management, controls and quality standards in a regulated environment.
+- Contributing to technical governance, documentation and continuous improvement, while mentoring others and lifting team capability.
+
+Ōu Pūkenga? - What will you bring?
+To thrive in this role, you'll bring:
+- A strong engineering foundation along with the confidence to work across design, delivery and support.
+- Confidence working with a range of stakeholders, including vendor partners.
+- Solid understanding of system design, troubleshooting and production support.
+- Strong experience in software engineering, ideally with Java (Spring Boot) or .NET.
+- Experience building and supporting web or microservices-based applications.
+- Familiarity with modern engineering practices such as CI/CD and source control (for example Git).
+- Exposure to cloud platforms, containers or Kubernetes, scripting or automation (PowerShell, Python or similar).
+- Experience with SQL or relational databases.
+- An understanding of infrastructure, networking or security concepts.
+- Any frontend experience (for example React).
+
+He aha te take e uru ai koe ki a mātou? - So, why join us?
+From the moment you join ANZ, you'll be part of a work whānau striving towards a common purpose: shaping a world where communities thrive. At ANZ, you'll have the resources, opportunities, and community you need to take the next big step in your career. ANZ offers flexible working arrangements and a range of benefits including access to wellbeing services and discounts.
+
+At ANZ you'll be part of an organisation where the different backgrounds, perspectives and life experiences of our people are celebrated. ANZ is committed to building a workplace that reflects the diversity of Aotearoa New Zealand's communities.
+
+Te Rā Ōtinga - Job Posting End Date
+Wednesday 01 July at 11.59pm (NZ)

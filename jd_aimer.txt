@@ -1,0 +1,38 @@
+Senior Mobile App Developer @ AIMER Farming
+Location: Hamilton East, Waikato (Hybrid)
+Salary: $130,000 – $140,000 per year
+
+About AIMER Farming
+AI-enabled digital assistant and operating system for pastoral farming. Making pastoral farming smarter, more profitable, and more sustainable. Software that farmers rely on every day to make complex decisions — when to graze, how much to feed, when to conserve.
+
+Key Responsibilities
+- Own architecture, performance, and reliability of mobile applications
+- Drive decisions around React Native vs native implementations
+- Design robust offline-first functionality: caching, sync, conflict resolution
+- Optimise for low connectivity, device limitations, real-world conditions
+- End-to-end mobile lifecycle: dev, testing, release, monitoring, iteration
+- Manage App Store and Google Play releases
+- Integrate machine vision and AI workflows into mobile-first user journeys
+- Advocate for mobile users (farmers) in product and engineering decisions
+
+Skills & Experience Required
+- 8+ years software development, 5+ years mobile in production
+- Deep expertise React Native, including performance optimisation and native module integration
+- Strong native mobile: iOS (Swift, Objective-C) and Android (Java, Kotlin)
+- Offline-first systems: unreliable networks, background processing, sync strategies
+- Mobile architecture patterns, state management, scalability
+- CI/CD pipelines (GitHub Actions, Fastlane)
+- Automated testing (unit, integration, UI testing)
+- REST APIs, cloud services (AWS preferred), third-party SDKs
+- Push notifications, remote config, feature flagging
+
+Highly Desirable
+- Field-based or low-connectivity environments (agriculture, logistics, construction)
+- Mobile architecture and technical strategy
+- Farming or agri-tech experience
+
+Personal Attributes
+- Strong product mindset, simple solutions to complex problems
+- Operate in ambiguity, sound technical decisions
+- Empathy for end users in high-friction environments
+- Confident communicator, challenge and influence decisions

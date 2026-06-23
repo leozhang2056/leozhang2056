@@ -1,0 +1,41 @@
+Senior Full Stack & Backend Engineers (AI-Forward) @ Emerge
+Ramp Up Limited ， Auckland CBD, Auckland (Hybrid)
+
+The Mission
+At Emerge, we aren't just building a company; we're building a movement. Our vision is to be New Zealand's most ambitious challenger bank, flipping the current model to give every Kiwi access to a better financial future. We move fast, prioritise "Beautiful Simplicity," and treat our customers as real people with real stories, not just data points.
+
+We are looking for versatile Senior Full Stack & Backend Engineers who are not only a master of robust systems but is also genuinely "AI-Curious". At Emerge, AI isn't a feature！it's our operating system. We need people who will proactively integrate AI into our backend flows to boost system intelligence and developer velocity.
+
+What You'll Tackle
+Architect & Build: Design, develop, and maintain robust, scalable backend systems using Kotlin, Spring Boot, and PostgreSQL.
+AI Integration: You won't just use LLMs to write code; you will proactively propose and implement meaningful AI integrations to boost system intelligence and internal workflows.
+Infrastructure: Leverage AWS services (ECS, Lambda, S3) and move toward automating infrastructure as code using tools like Terraform.
+Performance: Design efficient schemas and lead DB performance tuning for latency-sensitive flows.
+Mentorship: Review PRs and share knowledge across the team to foster a culture of trust and high performance.
+
+Who You Are
+Experienced: You have a minimum of 7 years of backend development experience with Java/Kotlin and the Spring ecosystem.
+AI-Native: You see AI as a "force multiplier" and are ready to move from "Capable" (using AI for unit tests) to "Transformative" (shipping AI-powered features and building AI-first pipelines).
+First-Class Thinker: You live in "1st and 2nd place"！you don't just raise problems; you bring fixes or reasoned solutions.
+Grit & Ownership: You have the toughness to push through when things get hard and the "grit" to finish what you start.
+Clear Communicator: You communicate clearly in stand-ups and can explain complex technical decisions to both teammates and non-engineers.
+
+The Emerge Way
+Default to Trust: Authority comes from trust earned through action, not titles or hierarchy.
+Energy Modes: We protect deep-work "Builder" time (Mon/Wed) and maximise "Facilitator" time for in-office collaboration (Tue/Thu/Fri).
+We All Sweep the Deck: No task is beneath us！if it helps the mission, we pitch in.
+Reward Leverage: We reward impact and outcomes over tenure. If you create massive leverage, you'll be rewarded fast.
+
+Qualifications & Stack
+Experience: Minimum 7 years of backend development experience specifically with Java/Kotlin.
+Technical Mastery: Deep understanding of Spring Boot, JPA, and PostgreSQL.
+Cloud Infrastructure: Hands-on experience with AWS services including ECS, Lambda, and S3.
+Architecture: Proven knowledge of designing efficient, scalable, and robust backend solutions.
+Database Design: Deep understanding of database design, optimisation, and management (preferably PostgreSQL).
+API Design: Proficiency with RESTful API design and development.
+
+Industry: Banking, FinTech, Challenger Bank, Financial Services, New Zealand market.
+Culture: Move fast, Beautiful Simplicity, AI-native, Trust-based, Impact over tenure, Builder mindset.
+
+Technology:
+Kotlin, Java, Spring Boot, JPA, PostgreSQL, AWS, ECS, Lambda, S3, Terraform, AI, LLM, RESTful API.

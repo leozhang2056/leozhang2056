@@ -18,7 +18,7 @@ def _load(path: str) -> dict:
 
 
 # Must match input_validation.py:validate_role()
-VALID_ROLES = {'auto', 'android', 'ai', 'backend', 'fullstack'}
+VALID_ROLES = {'auto', 'android', 'ai', 'backend', 'fullstack', 'embedded'}
 
 
 class TestKBConsistency:

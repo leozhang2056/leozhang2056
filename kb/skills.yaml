@@ -696,6 +696,34 @@ system_admin:
     evidence:
       - Service management
 
+# BI & Data Analytics
+bi_analytics:
+  - name: Power BI
+    level: intermediate
+    evidence:
+      - Smart Factory production dashboards
+      - Enterprise messaging operational reports
+  - name: FineBI
+    level: intermediate
+    evidence:
+      - Smart Factory data analysis
+      - Production efficiency reporting
+  - name: Data Dashboard Design
+    level: advanced
+    evidence:
+      - Real-time production monitoring dashboards (Smart Factory)
+      - Platform usage and performance dashboards (Enterprise Messaging)
+  - name: ETL
+    level: intermediate
+    evidence:
+      - IoT sensor data pipelines (InfluxDB + Flink)
+      - Production data aggregation for reporting
+  - name: SQL Server Reporting
+    level: intermediate
+    evidence:
+      - Operational reports for factory management
+      - Platform analytics for enterprise messaging
+
 # ATS / methodology rows (CV Key Skills — not tied to evidence bullets)
 methodology_practices:
   - name: Agile / Scrum
@@ -718,6 +746,10 @@ categorized_skills:
   backend_fullstack:
     label: "Backend & Full-Stack"
     skills: [Spring Cloud, RESTful APIs, MySQL, Firebase, Node.js, Python, Redis, WordPress, .NET/C#, Azure, SQL Server]
+
+  bi_analytics:
+    label: "BI & Data Analytics"
+    skills: [Power BI, FineBI, ETL, Data Modelling, SQL Server, Data Dashboards]
   
   tools_devops:
     label: "Tools & DevOps"

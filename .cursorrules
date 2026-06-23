@@ -32,7 +32,7 @@
 - **口语化**：短句、好换气、像聊天；可少量自然填充（如 *I mean* / *honestly* / *yeah*）。
 - **简单词**：优先常见高频英语；少堆术语——能用 *fast*、*chat app*、*small computer*、*stay up* 就别用 *low latency*、*real-time messaging*、*edge*、*ship* 等（**项目名、技术栈专名可保留**）。
 - **适用范围**：`interview_qa/` 下口语稿、**Tell me about yourself**、行为题英文口播等。
-- **硬约束不变**：量化与经历仍**只能**来自 `kb/`、`projects/*/facts.yaml`；**禁止**为“好念”而编造指标或项目。
+- **硬约束不变**：量化与经历仍**只能**来自 `kb/`、`projects/*/facts.yaml`；**禁止**为"好念"而编造指标或项目。
 
 ---
 
@@ -49,8 +49,8 @@
 - `kb/bullets/*.yaml` — 可复用要点库（按方向/岗位）
 - `kb/project_relations.yaml` — 项目关联关系（叙事线索）
 - `kb/schema/project_facts_schema.yaml` — 数据 Schema 定义（新增项目必须遵循）
-- `kb/resume_generation_rules.md` — 简历生成规则与约束
-- `kb/ai_input_spec.md` — AI 输入规范
+- **`kb/rules/resume_output.md`** — **ALL 简历/求职信输出规则**（Summary/Skills/Experience/Education/Publications/Cover Letter/PDF Layout/Validation Checklist/CLI）
+- `kb/generation_config.yaml` — 角色推断与项目权重配置
 
 ### 面试 Q&A 文件
 - `kb/interview_qa/index.yaml` — 题目索引
@@ -110,6 +110,17 @@
 4. 新增 bullets 必须包含 `id, category, tags, variants, evidence`
 5. 如果 KB 中缺少信息，输出 `MISSING_INFO`，提示用户补充后再生成
 6. 对话中出现的真实项目情形（问题、取舍、复盘）要**持久化到工程**：先记入 `Interview/behavioral_common_qa.md` 附录/对应题，再在可核对时同步到对应 `projects/*/facts.yaml`
+7. **生成 CV/CL 前**必须读取 `kb/rules/resume_output.md`（全部输出规则在此文件）
+
+### 约束文件地图
+| 文件 | 角色 | 何时读 |
+|------|------|--------|
+| `.cursorrules` | 不可变事实 + 绝对禁止 | **每次会话第一条** |
+| `kb/rules/resume_output.md` | **全部**简历/求职信生成规则 | 生成前必读 |
+| `AGENTS.md` | 架构、工作流、命令 | 导航时 |
+| `memory/L0_BOOTSTRAP.md` | 启动协议 | 会话开始 |
+| `memory/L1_SESSION_STATE.md` | 当前目标/下一步 | 会话接力 |
+| `memory/L2_DEEP_INDEX.md` | 深度导航索引 | 按需 |
 
 ---
 
@@ -119,8 +130,9 @@
 2. 匹配 `projects/` 中相关项目（通过 `keywords` 和 `related_to_roles`）
 3. 从 `kb/bullets/` 选择匹配的要点变体
 4. 结合 `kb/project_relations.yaml` 中的叙事线索
-5. 生成结构化简历内容
-6. 运行 `python app/backend/validate.py` 验证
+5. **读取并遵循 `kb/rules/resume_output.md` 中的全部输出规则**
+6. 生成结构化简历内容
+7. 运行 `python app/backend/validate.py` 验证
 
 ## 快速命令参考
 

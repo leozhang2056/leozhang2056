@@ -1,0 +1,38 @@
+Full stack Software Developer - Intermediate
+Sandfield · Auckland, Auckland, New Zealand (Hybrid)
+NZ$100K/yr - NZ$150K/yr · Full-time
+
+About Sandfield
+We're a Kiwi-owned company that's been around since 1989. Our work facilitates high-performance supply chains for Mainfreight, Qube, HW Richardson, and Booths, and keeps millions of orders and data points flowing for Foodstuffs. It also manages business finances for Team Global Express and Green Acres, helps fill seats on the Interislander for KiwiRail, looks after security services for First Security and books parking spaces through ParkMate, plus so much more.
+
+We pride ourselves on being different from your typical tech company. At Sandfield, you will:
+- Solve Real Business Problems: We don't just write code; we seek to understand the "why." A key part of your role will be a deep understanding of business requirements to ensure our solutions deliver maximum impact.
+- Leverage AI for Innovation: We are evolving how we work by integrating AI tools to accelerate development and create more intelligent business solutions for our clients.
+- Interact Directly with Clients: Our developers deal directly with our clients. We spend just as much time nurturing soft skills, like communication and business acumen, as we do helping you become a coding "ninja."
+- Join a Supportive Team: Our collaborative culture is at the centre of everything we do at Sandfield, making it a pretty special place to work. We know this because people also don't tend to leave; the average length of stay is more than five years.
+
+Our tech stack
+We primarily use the Microsoft stack to build web-based applications, with some opportunities for mobile development. Full-stack experience is ideal, but not required. We'll support you in developing your skills.
+
+Requirements:
+Required:
+- Full-Stack Mindset: Solid experience building web applications using the Microsoft stack (C#, .NET Core/WebAPI).
+- Database Fundamentals: Comfortable designing and querying SQL Server databases.
+- Core Web Skills: A good grasp of HTML, CSS, and JavaScript.
+- Communication: You are comfortable working directly with customers. You enjoy translating business requirements into technical solutions and supporting those solutions in production.
+
+We'll Also Love To See:
+- Modern Frontend: Experience with React and TypeScript.
+- Legacy Flexibility: If you haven't worked with modern frameworks, experience with MVC or WebForms is a great foundation.
+- Tooling: Familiarity with Git for version control.
+- AI-Driven Development: Experience using (or a strong curiosity about) AI coding assistants like GitHub Copilot, Claude Code, or similar to accelerate your workflow.
+- Performance Tuning: Experience optimising application performance and database queries.
+- DevOps & CI/CD: Experience creating and managing DevOps pipelines (e.g., Azure DevOps)
+
+What's in it for you?
+- Fast-track your career: We reward initiative and performance with rapid advancement opportunities.
+- Never a dull moment: Enjoy diverse projects and challenges.
+- Positive vibes only: Our flat team structure fosters a collaborative and energetic atmosphere.
+- Work your way: Benefit from flexible working arrangements.
+- Grow beyond coding: Develop valuable soft skills through dedicated training.
+- Have some fun: Enjoy regular social events, "Fun Food Evenings," and a well-stocked fridge.

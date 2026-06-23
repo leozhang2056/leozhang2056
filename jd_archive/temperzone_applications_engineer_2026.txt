@@ -1,0 +1,27 @@
+Applications Software Engineer
+Temperzone Limited · Auckland, New Zealand
+Australasia's longest-serving air conditioning manufacturer, 2022 ARBS Product Excellence Award winner.
+
+About the Role:
+Support and engineer internal business applications, workflows, integrations, and Azure-based systems. Design and maintain bespoke applications, automate business workflows, support system integrations, and ensure ongoing health, security, and performance of application environment.
+
+Key Responsibilities:
+- Application Development & Support: design, build, enhance, and support internal web and mobile applications.
+- Workflow Design & Automation: build automated workflows using appropriate technologies.
+- Integrations & APIs: build and maintain integrations, manage REST and GraphQL APIs.
+- Azure Platform Support & Security: maintain Azure-based application environments.
+- System Health & Reliability: monitor application performance, troubleshoot incidents.
+- Documentation & Knowledge Sharing: create technical documentation and support materials.
+
+Skills & Experience:
+- Proven experience in application support and software engineering in production environments.
+- Strong experience with SERN stack (SQL, Express, React, Node) and TypeScript.
+- Experience designing APIs (REST, GraphQL) and event-driven technologies (SSE, WebSockets).
+- Practical experience with Azure-hosted application environments.
+- Experience maintaining existing application platforms.
+- Experience or interest in AI-assisted capabilities in applications.
+- Version control with GitHub and CI/CD.
+- Scripting with PowerShell, Python, C#, and SQL.
+- Experience with SharePoint, Microsoft 365, Power Platform beneficial.
+- Strong understanding of production system support, monitoring, troubleshooting.
+- Relevant tertiary qualifications in IT or equivalent experience.

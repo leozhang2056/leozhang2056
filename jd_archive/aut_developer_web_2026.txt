@@ -1,0 +1,61 @@
+Developer
+High-impact, future-focused work
+Hands-on role with rapid prototyping and modern tooling
+Supportive environment with strong growth opportunities
+Fixed-term, full-time role based at AUT's City Campus
+
+Auckland University of Technology (AUT) is bold and unapologetically different, centred on students and grounded in Knowledge that Works driven by talented, progressive people. AUT is New Zealand's newest university, ranked 5-stars by QS Universities 2025 and a place of opportunity where more than 26,000 students with talent and potential succeed, supported by a community of more than 4,000 staff based primarily across three Auckland campuses. Built on collaboration, shared purpose and the values of Pono, Tika, and Aroha. AUT offers an innovative, forward-thinking environment where committed people work together to improve outcomes for students, communities, and the world.
+
+AUT recognises the importance of Te Tiriti, Maori and Pacific knowledge, leadership, and contribution across the university and is committed to creating environments where these communities can thrive. AUT embraces diversity in all its forms and welcomes people of all ethnicities, genders, sexual orientations, religious and political beliefs, socio-economic situations and accessibility needs.
+
+The Opportunity | Te Whiwhinga mahi
+
+Are you a developer who enjoys building, experimenting, and turning ideas into working solutions quickly? AUT is offering an exciting opportunity to join AUT's AI Acceleration Centre team and help shape the future of how students and staff engage with technology.
+
+As a Developer, you will work on real, high-impact initiatives across AI and digital experience. This role is ideal for someone who enjoys rapid prototyping, modern tooling, and a practical approach to delivery. AUT values people who can move from concept to working product quickly, test with users, and continuously improve.
+
+You will work alongside experienced developers to build scalable, user-focused platforms, contributing to solution design and implementation within established architecture and standards. You will take ownership of components and deliver high-quality outcomes, while continuing to grow your capability in modern development and AI-assisted delivery practices.
+
+You will join a supportive and innovative team that is exploring new approaches to software delivery, including AI-assisted development, rapid prototyping, and cloud-native technologies. This is a great opportunity to contribute to meaningful initiatives that have visible impact across the University.
+
+You will:
+- Contribute to the design, build, and deployment of solutions within established architecture and development standards.
+- Develop and maintain APIs, integrations, and cloud-based applications.
+- Rapidly prototype and iterate on new ideas, moving from concept to working solutions.
+- Work on well-defined problem areas, contributing to solutions within a broader delivery context.
+- Collaborate closely with users and product teams to test and improve solutions.
+- Apply modern development tools and AI-assisted workflows to deliver value efficiently.
+- Participate in agile delivery, peer reviews, and continuous improvement practices.
+- Produce well-documented, tested, and reliable code in line with team standards.
+- Stay current with emerging technologies and contribute ideas for improving delivery and capability.
+
+About you | Ko wai koe
+
+To be successful in this role, you will have:
+- A Bachelor's degree in Software Engineering, Computer Science, Information Technology, or a related discipline.
+- Around 3 years' experience in a software development role.
+- Experience with programming languages such as C#, JavaScript, TypeScript, or similar languages.
+- Understanding of modern software development practices including version control, agile delivery, testing, and continuous integration.
+- Experience or exposure to cloud platforms such as Microsoft Azure or AWS.
+- Familiarity with APIs, web frameworks, microservices, and frontend technologies.
+- Interest in AI, automation, and emerging developer tooling including AI-assisted development and rapid prototyping.
+- Ability to work across a range of technologies and pick up new tools quickly.
+- Strong communication and collaboration skills, with a proactive and practical mindset.
+- A commitment to equity, diversity and inclusion. Supportive of AUT's Te Aronui journey.
+
+As a professional member of staff at AUT, you will help keep AUT moving forward. From improving services and streamlining systems to supporting the experiences of students and staff across campuses. By working collaboratively, solving problems and driving practical improvements, you will play a vital role in helping AUT operate smoothly, raise its profile, and evolve what it does every day.
+
+You will bring an open, engaging, and collaborative approach, with the flexibility to respond to changing requirements, and actively contribute to a positive and collegial environment. You will demonstrate cultural humility, awareness, and respect when engaging with indigenous peoples and culturally diverse communities. Experience supporting indigenous, equity, or inclusion focused initiatives is highly desirable.
+
+What AUT offers:
+- Professional development opportunities.
+- Flexible working and a strong, caring culture that supports belonging.
+- Recognition frameworks that reflect contribution and values.
+- The tools and trust to make a meaningful difference every day.
+- Maori and Pacific development programmes.
+- Cultural capability uplift development programmes for all staff.
+
+How to apply
+Along with your CV, submit a cover letter which explains why this role and AUT is of interest, and addresses how you meet some or all of the key criteria listed above.
+
+Salary range: $76,000 - $102,000 per annum dependent on experience and qualifications.

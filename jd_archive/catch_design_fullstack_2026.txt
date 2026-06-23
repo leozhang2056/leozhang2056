@@ -1,0 +1,35 @@
+Senior Full-Stack Developer
+Catch Design · Wellington City, Wellington · Hybrid · Full-time
+$120,000 - $135,000 per year
+
+At Catch Design, we help some of New Zealand's most recognised brands create meaningful, inclusive, and impactful digital experiences.
+
+What you'll do:
+- Design and implement end-to-end digital solutions across front-end, back-end, APIs, and data layers.
+- Translate design intent and business requirements into scalable, maintainable applications.
+- Ensure seamless integration between systems for cohesive, reliable user experiences.
+- Maintain cross-browser/cross-device compatibility, optimising for performance and usability.
+- Champion accessibility (WCAG), security best practices, and modern development standards.
+- Collaborate with designers, developers, project managers, and strategists.
+- Contribute to technical scoping, estimation, and solution architecture.
+- Participate in client discussions providing clear technical input.
+- Support proposals and pitches by shaping technical approaches.
+
+Technical leadership:
+- Lead by example through high-quality code and sound architectural decisions.
+- Mentor and support junior and intermediate developers.
+- Conduct code reviews and provide constructive feedback.
+- Contribute to improving development practices, tooling, and delivery approaches.
+- Champion modern practices such as CI/CD, automated testing, and component-based architecture.
+- Stay current with emerging technologies.
+
+Requirements:
+- 5+ years commercial experience in full-stack, web, or application development.
+- Strong proficiency in front-end technologies (HTML, CSS/SASS, JS/TS, React/Next).
+- Strong proficiency in back-end technologies (Node.js, Python, PHP, or similar).
+- Experience with APIs (REST, GraphQL) and third-party services.
+- Solid understanding of databases (PostgreSQL, MySQL, NoSQL) and data modelling.
+- Experience with CMS (Storyblok, Sanity, Silverstripe, WordPress, Drupal).
+- Familiarity with Git, CI/CD pipelines, and modern development workflows.
+- Familiarity with cloud infrastructure (AWS, GCP, Vercel, Netlify).
+- Strong understanding of performance optimisation, security, and scalable architecture.

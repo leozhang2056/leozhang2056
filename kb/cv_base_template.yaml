@@ -11,54 +11,64 @@ roles:
   android:
     summary_sentences:
       en:
-      - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Android engineer who builds mobile systems that work at scale.
-      - I've shipped 8+ production apps and learned that the hardest part isn't
-        writing features — it's making systems reliable enough that users never
-        have to think about them.
-      - I focus on architecture that survives fragmentation, performance that
-        doesn't degrade under load, and code that other engineers can maintain
-        without a manual.
+      - "Senior Android Architect with 10+ years building large-scale Android platforms, real-time messaging systems, and mobile infrastructure."
+      - "Expert in Kotlin, Java, NDK/JNI, Android architecture, performance optimization, and communication protocols."
+      - "Designed and delivered Android systems supporting 5,000+ DAU and 500K+ daily messages, including messaging platforms, mobile SDKs, hotfix frameworks, and performance engineering tooling."
+      - "Strong background in WebSocket, TCP/UDP, cold start optimization, ANR/OOM resolution, and AI-powered applications published at IVCNZ 2025."
+      - "Master's in Computer and Information Sciences from AUT, First Class Honours."
     key_skills:
       en:
-      - label: Android Development
+      - label: Android & Native
         skills:
         - Kotlin
         - Java
+        - Android SDK
         - Jetpack Compose
-        - MVVM
-        - Coroutines & Flow
-        - Room
-        - NDK
-      - label: Backend & APIs
+        - NDK/JNI
+        - C++
+        - SQLite
+      - label: Real-time Messaging
+        skills:
+        - WebSocket
+        - TCP/UDP
+        - IM Architecture
+        - Offline Sync
+        - JPush
+        - Process Keep-Alive
+      - label: Performance
+        skills:
+        - Cold Start
+        - Memory & OOM
+        - ANR Resolution
+        - APK Size
+        - Profiling
+      - label: Mobile Infrastructure
+        skills:
+        - Multi-Module Architecture
+        - Hotfix (Tinker/AndFix)
+        - SDK Development
+        - CI/CD
+        - Gradle
+      - label: Cross-Platform
+        skills:
+        - Flutter
+        - Dart
+        - JavaScript
+        - React
+      - label: Backend & Data
         skills:
         - Spring Cloud
         - RESTful APIs
         - MySQL
         - Redis
-        - Node.js
-        - MQTT
-      - label: Tools & DevOps
+      - label: AI & Tools
         skills:
-        - Git
-        - CI/CD
-        - Docker
-        - Jenkins
-        - Linux
-        - Shell Scripting
-      - label: AI & Emerging Technologies
-        skills:
-        - LLM Integration
+        - PyTorch
         - Computer Vision
-        - AI Coding Tools
+        - LLM
         - RAG
-        - Ollama
-        - AI Workflow
-      - label: Software Engineering
-        skills:
-        - Multi-module Architecture
-        - API Integration
-        - Memory Optimization
+        - Cursor
+        - Claude Code
     tech_stack_display:
       technical_lead_2019_2024:
         priority:
@@ -142,7 +152,7 @@ roles:
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Mobile Developer
+        - Senior Android Engineer
         - .NET Software Engineer
       - name: Auckland University of Technology
         type: Education/Research
@@ -158,14 +168,10 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Senior Software Engineer who has 10+ years of experience delivering enterprise
-        software, backend systems, Android applications, and IoT platforms.
-      - Strong expertise in Java, Spring Boot, software architecture, distributed
-        systems, and system integration. Experienced in building solutions that connect
-        software platforms, mobile applications, hardware devices, and operational workflows.
-      - Recognised for technical problem-solving, practical engineering judgement, and
-        collaboration across software, hardware, and business teams to deliver reliable
-        and maintainable solutions.
+      - Senior Software Engineer with 10+ years of experience architecting and delivering scalable backend systems, microservices, APIs, and distributed platforms.
+      - Strong expertise in Java, Spring Cloud, RESTful API design, event-driven architectures, and high-performance databases.
+      - Proven track record building fault-tolerant services, CI/CD pipelines, cloud-native deployments, and mentoring engineering teams.
+      - Recognised for technical leadership, practical engineering judgement, and cross-team collaboration to deliver reliable production systems.
     key_skills:
       en:
       - label: Backend Engineering
@@ -177,24 +183,26 @@ roles:
         - Microservices
         - WebSocket
         - Kafka
-      - label: IoT & System Integration
+      - label: API & System Design
         skills:
-        - RFID Systems
-        - Device Integration
-        - MQTT
-        - IoT Gateways
-        - Sensor Networks
+        - API Design (REST/GraphQL)
+        - System Architecture
+        - Event-Driven Architecture
+        - Distributed Systems
+        - Domain-Driven Design
       - label: Cloud & Infrastructure
         skills:
         - AWS (ECS, Lambda, S3)
         - Docker
+        - Kubernetes
         - CI/CD
         - Linux
       - label: Databases & Storage
         skills:
         - MySQL
-        - Redis
         - PostgreSQL
+        - MongoDB
+        - Redis
       - label: Languages & Tools
         skills:
         - Python
@@ -314,16 +322,150 @@ roles:
         - Full-stack Engineer
         - Senior Android Engineer
       additional_experience: []
+  embedded:
+    summary_sentences:
+      en:
+      - Master's in Computer and Information Sciences from AUT, First Class Honours.
+      - Software engineer with 7+ years building IoT platforms, gateway firmware, and
+        backend systems for industrial environments.
+      - Experienced in C/C++ on Linux, low-level protocol implementation, and real-time
+        sensor data processing across serial, GPIO, and network interfaces.
+      - Delivered gateway software and device connectivity for fleet-scale IoT deployments
+        spanning 10+ factory sites, handling protocol translation and cloud uplink.
+      - Practical problem-solver who bridges hardware constraints with software design,
+        focused on reliability and maintainability in complex systems.
+    key_skills:
+      en:
+      - label: Systems Programming
+        skills:
+        - C
+        - Linux
+        - Embedded Linux
+        - Git
+        - Python
+        - Bash
+      - label: IoT & Embedded
+        skills:
+        - MQTT
+        - UART/Serial
+        - GPIO
+        - Protocol Implementation
+        - Zigbee
+        - RFID
+      - label: Communication Protocols
+        skills:
+        - TCP/IP
+        - HTTP
+        - WebSocket
+        - RS232/RS485
+        - MQTT/HTTPS
+      - label: Software Engineering
+        skills:
+        - SOLID Principles
+        - Design Patterns
+        - CI/CD
+        - Docker
+        - RESTful APIs
+      - label: Backend & Integration
+        skills:
+        - Java
+        - Spring Cloud
+        - MySQL
+        - Redis
+        - Device Integration
+    tech_stack_display:
+      iot_platform_2016_2023:
+        priority:
+        - C
+        - Linux
+        - Embedded Linux
+        - MQTT
+        - UART/Serial
+        - GPIO
+        - Zigbee
+        - WiFi
+        - Protocol Implementation
+        - Android SDK
+        - Java
+        - Spring Cloud
+        - MySQL
+        - Redis
+        - Git
+        - Docker
+        additional:
+        - Python
+        - Bash
+        - WebSocket
+        - RESTful API
+        - CI/CD
+        exclude:
+        - React
+        - Redux
+        - Vue.js
+        - Node.js
+        - Flutter
+        - Dart
+        - Jetpack Compose
+        - MVVM
+        - Gradle
+        - NDK
+        - Kotlin
+      smart_factory_2019_2024:
+        priority:
+        - Java
+        - Spring Cloud
+        - RFID
+        - RS232/RS485
+        - Serial Protocol
+        - IoT Device Integration
+        - Docker
+        - Jenkins
+        - GitLab
+        - MySQL
+        - Redis
+        - Linux (CentOS)
+        - WebSocket
+        additional:
+        - Kafka
+        - ActiveMQ
+        - CI/CD
+        - Git
+        exclude:
+        - React
+        - Redux
+        - Vue.js
+        - Node.js
+        - Flutter
+        - Dart
+        - Jetpack Compose
+        - MVVM
+        - Gradle
+        - NDK
+        - Kotlin
+    experience:
+      companies:
+      - name: Chunxiao Technology Co., Ltd.
+        roles:
+        - IoT Platform Engineer
+        - Smart Factory Systems Engineer
+      - name: Auckland University of Technology
+        type: Education/Research
+      additional_experience:
+      - company: Additional Experience
+        location: Auckland, New Zealand
+        role: Customer Service & Operations (Part-time)
+        period: 2025-07 – 2026-02
+        achievements:
+        - 'Gilmours & Red Cross Shop: customer service, inventory management, and
+          team collaboration'
   fullstack:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Full-stack engineer who works across the entire delivery chain.
-      - I've spent 10 years building systems where the hard part isn't the
-        frontend or the backend — it's making them work together reliably under
-        real constraints. I focus on clear API contracts, data flows that make
-        sense, and deployments that don't break when you're not looking.
-      - I also bring production AI experience — building and deploying computer vision and LLM workflows that connect models to real user problems.
+      - Full-stack developer with 10+ years of experience building web applications, APIs, and digital platforms from front-end interfaces to back-end services.
+      - Proficient in React, Vue.js, TypeScript, Node.js, Python, and Spring Boot, with strong focus on clean architecture, responsive design, and maintainable code.
+      - Experienced in CMS integration, RESTful/GraphQL API design, cloud deployment (AWS), CI/CD pipelines, and collaborating with design teams to deliver polished user experiences.
+      - Production AI experience building computer vision and LLM workflows published at IVCNZ 2025.
     key_skills:
       en:
       - label: Languages
@@ -349,8 +491,10 @@ roles:
         - React
         - Vue.js
         - TypeScript
-        - Redux
+        - JavaScript
+        - HTML/CSS
         - Node.js
+        - Redux
         - HTML5/CSS3
       - label: Databases
         skills:
@@ -359,6 +503,11 @@ roles:
         - PostgreSQL
         - Redis
         - MongoDB
+      - label: CMS & Content
+        skills:
+        - WordPress
+        - Headless CMS
+        - Content Architecture
       - label: DevOps & Release
         skills:
         - Docker
@@ -430,6 +579,8 @@ roles:
         - CI/CD
         - WebSocket
         - NDK/JNI
+        - Flutter
+        - Dart
         additional: []
         exclude:
         - React
@@ -437,8 +588,6 @@ roles:
         - Redux
         - Node.js
         - Vue.js
-        - Flutter
-        - Dart
         - Microservices
         - RESTful API
         - Spring Boot
@@ -483,7 +632,7 @@ roles:
       - name: Chunxiao Technology Co., Ltd.
         roles:
         - Full-stack Engineer
-        - Senior Mobile Developer
+        - Senior Android Engineer
         - .NET Software Engineer
       - name: Auckland University of Technology
         type: Education/Research
@@ -500,17 +649,18 @@ roles:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
       - AI engineer who builds systems that actually ship.
-      - I built ChatClothes from scratch — a multimodal virtual try-on system
-        combining diffusion models, computer vision, and local LLM orchestration,
-        deployed on constrained hardware and published at IVCNZ 2025.
-      - I've learned that the hard part in AI isn't training a model — it's
-        making it reliable, fast, and maintainable enough that production teams
-        can actually use it.
+      - I built ChatClothes from scratch — a multimodal virtual try-on system combining
+        diffusion models, computer vision, and local LLM orchestration.
+      - This system was optimized for edge deployment on Raspberry Pi 5 and published
+        at IVCNZ 2025.
+      - I've learned that the hard part in AI isn't training a model — it's making
+        it reliable, fast, and maintainable enough that production teams can actually use it.
     key_skills:
       en:
       - label: AI / ML
         skills:
         - PyTorch
+        - OpenCV
         - Transformers
         - Hugging Face
         - YOLO
@@ -523,7 +673,10 @@ roles:
       - label: Infrastructure
         skills:
         - Python
+        - FastAPI
         - Docker
+        - Kubernetes
+        - AWS
         - Git
         - Linux
       - label: Data & Deployment
@@ -532,6 +685,7 @@ roles:
         - Data Processing
         - SQLite
         - MySQL
+        - MongoDB
       - label: Product Integration
         skills:
         - Android Chrome PWA

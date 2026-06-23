@@ -1,0 +1,24 @@
+Mobile Developer - iOS or Android @ Talent Army
+Location: Wellington (Hybrid)
+
+About the Company
+Digital agency creating intelligent, human-centred digital experiences. They bring together strategy, design and engineering to deliver bold, meaningful products for a wide range of clients. With a strong focus on innovation and collaboration, they are evolving toward AI-driven, composable digital solutions.
+
+About the Role
+As a Senior Mobile Engineer, you'll own major mobile workstreams and help deliver high-quality, scalable mobile applications. You'll collaborate closely with designers and cross-functional teams to create pixel-perfect, performant solutions. This role is Wellington-based and offers the opportunity to shape architecture, mentor others, and influence technical direction.
+
+Skills & Experience
+Strong commercial experience with iOS or Android
+Proven experience integrating 3rd party services & SDKs (Analytics, Auth, REST/GraphQL)
+Keen eye for detail and delivering pixel-perfect UI
+Experience delivering scalable, maintainable mobile solutions
+4-8+ years' commercial software development experience
+
+Why Work Here?
+Work on meaningful, high-impact digital products
+Collaborative, cross-functional environment
+Strong engineering culture and best practices
+Opportunities to contribute to R&D and emerging tech
+Supportive team with mentoring opportunities
+Competitive salary package
+Flexible working options including Work from Home (generally 4 days in office)

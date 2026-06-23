@@ -189,7 +189,7 @@ def main() -> None:
     parser.add_argument(
         "--role",
         default="auto",
-        choices=["auto", "android", "ai", "backend", "fullstack"],
+        choices=["auto", "android", "ai", "backend", "fullstack", "embedded"],
         help="Role mode (auto infers per JD)",
     )
     parser.add_argument("--jd-url", action="append", dest="jd_urls", help="JD URL (can repeat)")

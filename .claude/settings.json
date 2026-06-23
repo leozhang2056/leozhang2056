@@ -1,0 +1,37 @@
+{
+  "verbose": false,
+  "fastMode": true,
+  "autoMemoryEnabled": true,
+  "todoFeatureEnabled": true,
+  "fileCheckpointingEnabled": true,
+  "workflowKeywordTriggerEnabled": true,
+  "autoCompactEnabled": true,
+  "plansDirectory": ".claude/plans",
+
+  "hooks": {
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"Command failed. Check the error above before retrying.\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"Project: Leo CV Generator. Commands: /cv-backend, /cv-android, /cv-fullstack, /cv-ai, /cv-best, /cover-letter, /kb-validate, /run-tests\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

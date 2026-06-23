@@ -1,7 +1,7 @@
 # CV 与 Cover Letter 指南
 
 > 来源：AUT Employability & Careers, 2024
-> 搭配：`kb/resume_generation_rules.md`（生成规则）、`kb/ai_input_spec.md`（AI 输入规范）
+> 搭配：`kb/rules/resume_output.md`（完整生成规则）
 
 ---
 
