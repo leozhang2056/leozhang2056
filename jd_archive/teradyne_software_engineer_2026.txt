@@ -1,0 +1,35 @@
+Software Engineer
+Teradyne / Quantifi Photonics · Rosedale, Auckland, NZ
+
+Quantifi Photonics designs and manufactures advanced optical and electronic test instruments. Part of the Teradyne family. Customers include global tech companies, leading universities, and research institutions in over 25 countries.
+
+Opportunity Overview:
+Contribute to the development of the Cohesion Framework — a key platform enabling extensibility, scalability, and integration across software products. Build reliable, maintainable systems across layers of software architecture.
+
+Responsibilities:
+- Contribute to design, implementation, and maintenance of the Cohesion Framework.
+- Develop reusable, scalable, high-performance software components.
+- Collaborate with cross-functional teams to support integration across products.
+- Write clean, maintainable, well-documented code.
+- Participate in architecture discussions and technical decisions.
+- Support debugging, performance optimization, and issue resolution.
+- Contribute to continuous improvement of engineering practices.
+
+All About You:
+- Bachelor's degree in Software Engineering, Computer Science, Electronics, or related field.
+- Minimum 1+ year relevant professional software engineering experience.
+- Strong programming skills in at least one language (Python, C#, C++, C).
+- Good understanding of OOP, software architecture, data structures, algorithms.
+- Experience with debugging and troubleshooting complex systems.
+- Version control experience (Git).
+
+Nice to Have:
+- Frameworks, SDKs, or platform-level development.
+- Plugin architectures or modular systems.
+- Cross-product or shared codebases.
+- Performance optimization and memory management (C++).
+- Web technologies (frontend/backend, REST APIs).
+- Web frameworks and web server environments (Apache).
+- SCPI or instrument control/automation protocols.
+- Distributed systems, gRPC/REST, IPC.
+- Test automation and CI/CD pipelines.

@@ -1,0 +1,21 @@
+Hybrid Developer
+NeoClean Limited · Mount Wellington, Auckland · Full-time · $43-$50/hr
+
+Unique role combining software development with product & project management. Act as the link between company leadership and third-party technical vendors.
+
+Key Responsibilities:
+- Contribute to design and development, oversee system module integration.
+- Implement and manage overall software development.
+- Translate business requirements into technical specifications.
+- Manage end-to-end development lifecycle across Portal, E-commerce, Internal Management, and Data Collection systems.
+- Supervise and coordinate external third-party developers (Vue H5, Java).
+- Document and provide regular progress reports to management.
+
+Education and Experience:
+- Bachelor's degree in CS/IT + 2 years dev experience, OR 5 years dev experience with project/product management.
+- Full-Stack Proficiency (Java Route): Java backend + modern frontend frameworks.
+- Systems Thinking: oversee complex multi-phase roadmaps.
+- Strategic Planning: define MVP features and scale to full platforms.
+- Leadership and negotiation skills.
+
+Tech Stack: Java, Vue.js, HTML5, RFID, IoT, PDA, E-commerce platforms

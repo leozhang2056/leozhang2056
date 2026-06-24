@@ -44,10 +44,10 @@ career_identity:
   
   summary_variants:
     default: >
-      Full-stack software engineer with 10+ years shipping production software across Android, modern Java backends, and Vue.js front ends.
-      Specialized in enterprise delivery to diverse clients—clear APIs, sensible integration, and releases that land when field conditions are messy.
-      Proven delivery spans industrial automation, mobile platforms, applied computer vision, and AI/ML from prototype through production support.
-      Additional expertise includes Spring Cloud, Docker, CI/CD pipeline automation, software quality practices, and AI-assisted programming tools in daily delivery.
+      Full-stack software engineer with 10+ years shipping production software across Java backends, React/Node.js front ends, and AI integrations.
+      Specialized in enterprise delivery to diverse clients — clear APIs, sensible integration, and releases that land when field conditions are messy.
+      Proven delivery spans web applications, cloud deployment on AWS, and AI/ML workflows from prototype through production support.
+      Experienced in participating in technical discussions, improving architecture and scalability, and owning feature work end to end.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     # 注意：android_focus 内容必须与 cv_base_template.yaml roles.android.summary_sentences 保持同步
@@ -63,10 +63,10 @@ career_identity:
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
     
     java_focus: >
-      Backend software engineer with 10+ years on Java delivery, including Spring Cloud, MyBatis, and microservice-style systems.
-      Specialized in enterprise backends for manufacturing and messaging with practical focus on uptime, latency, and release rhythm.
-      Proven delivery includes long-lived services with REST APIs, observability, and stable rollout under production load.
-      Additional expertise includes CI/CD, database performance tuning, and cross-team API contracts.
+      Intermediate software engineer with 10+ years delivering scalable backend systems, microservices, and APIs using Java, Spring Cloud, and Agile practices.
+      Experienced in enterprise backends for manufacturing and messaging with practical focus on uptime, latency, and release rhythm.
+      Proven delivery includes long-lived services with REST APIs, observability, cloud deployment on AWS, and direct customer engagement for requirements analysis and technical guidance.
+      Additional expertise includes CI/CD, database performance tuning (MySQL, Redis, SQL Server), and cross-team API contracts.
       Master's in Computer and Information Sciences from Auckland University of Technology, First Class Honours.
 
   summary_variants_zh:

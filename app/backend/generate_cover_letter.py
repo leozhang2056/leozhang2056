@@ -180,6 +180,7 @@ _COMPANY_CULTURE_HOOKS = {
     'engflow': "it helps developers save time by accelerating software builds and tests through distributed remote execution and caching.",
     'digital generationz': "it is an agile digital venture building cutting-edge web infrastructure, automated media pipelines, and next-gen platform concepts.",
     'enable': "it simplifies pricing and rebate management with an intelligent, AI-powered platform used by companies globally.",
+    'everbridge': "it builds critical event management SaaS that helps organisations keep people safe and operations running during crises — and now it is applying AI to make those systems smarter.",
     'metservice': "it delivers life-saving weather information that millions of New Zealanders rely on every day.",
     'orbitremit': "it makes cross-border money transfers faster, cheaper, and more transparent for people sending money home.",
     'vector': "it is powering a smarter, cleaner energy future through cloud-native data platforms and AWS serverless technology.",
@@ -212,6 +213,7 @@ _COMPANY_TEAMS = {
     'vector': "Vector Technology Services (VTS) engineering team",
     'vts': "Vector Technology Services (VTS) engineering team",
     'enable': "Enable's engineering team",
+    'everbridge': "Everbridge's Auckland R&D team",
     'metservice': "MetService's Digital team",
     'orbitremit': "OrbitRemit's Engineering team",
 }

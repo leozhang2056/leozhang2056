@@ -1,0 +1,29 @@
+Software Engineer
+Landlord Studio · Auckland, New Zealand · Permanent, Full-time
+
+Fast-growing SaaS startup helping landlords and property owners manage rental properties. Users in over 60 countries, focus on USA and UK markets.
+
+About the role:
+Full-stack engineer to join Auckland-based team.
+
+Key Requirements:
+- 3+ years full stack development experience.
+- Cloud development experience.
+- Experience with RESTful APIs.
+- Front end development skills (JavaScript, TypeScript, HTML, CSS).
+- Responsive design and modern web frameworks.
+- Experience designing and writing tests.
+- Experience with a relational database.
+- Experience working across front-end and back-end.
+
+Nice to have:
+- Microsoft Azure.
+- Open source contributions.
+- Computer Science degree.
+- CI/CD pipelines.
+
+Technologies used:
+- React, Next.js
+- ASP.NET
+- Azure Web Applications, Azure Functions
+- SQL Server, Cosmos DB

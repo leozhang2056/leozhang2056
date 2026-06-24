@@ -1,0 +1,32 @@
+Back End Software Engineer (Senior)
+Xe · Christchurch, Canterbury · $102K-$130K
+
+Xe is a cross-border payments platform. Over 300 million people use Xe for currency information and 350,000 use us to send money overseas. Backed by Euronet Worldwide (Nasdaq: EEFT).
+
+About This Role:
+Senior back-end engineer who owns real problems end-to-end, from API design and data modeling through to service implementation, production reliability, and launch.
+
+What You'll Do:
+- Design and own backend services that move money and manage multi-currency balances (onboarding, KYC/KYB, payment initiation, FX, settlement).
+- Lead cross-functional delivery with product, compliance, and operations.
+- Lead partner integrations and settlement infrastructure.
+- Own production health: reliability, observability, on-call, incident response.
+- Lead design reviews, set technical direction, mentor mid-level engineers.
+- Use agentic coding tools (Copilot, Cursor, Claude Code) daily across SDLC.
+
+Must-Have:
+- 6 to 10+ years building production backend services, end-to-end.
+- Strong backend proficiency in C# / .NET preferred; Java, Kotlin, Go welcome.
+- SQL and relational database fundamentals.
+- Writing and maintaining tests.
+- Daily use of agentic coding tools.
+- Production AWS experience (SQS, DynamoDB, S3, ECS, Lambda, CI/CD).
+- Strong system design and architecture (microservices, event-driven).
+- Payments, FX, or regulated-industry experience.
+- Technical leadership: mentoring, design reviews, architecture decisions.
+
+Nice-to-Have:
+- Ledgers, double-entry accounting, financial-data systems.
+- Caching (Memcached, Redis).
+- Jira, Confluence, Postman, Bruno.
+- Automated testing with AI tools.

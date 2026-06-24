@@ -1,0 +1,42 @@
+Senior Full Stack Software Engineer
+L3Harris / Trenchant · Kelburn, Wellington · Full-time
+
+L3Harris is the Trusted Disruptor in defense tech. Trenchant delivers cutting edge cyber security research solutions.
+
+This role requires a blend of technical acumen, leadership, and discipline to deliver high-quality software under tight deadlines.
+
+Essential Functions:
+- Participate in all phases of SDLC: requirements to deployment.
+- Collaborate in globally distributed, cross-functional Agile teams.
+- Diagnose, troubleshoot, and resolve software defects across the stack.
+- Ensure code is well-tested (unit, integration, system-level).
+- Contribute to improving development processes through code reviews.
+- Document technical solutions.
+
+Technical Responsibilities:
+- Design, develop, and maintain secure, scalable codebases using C# .NET, Python, and Angular.
+- Architect and optimize backend services, APIs, SDKs, and client-facing features.
+- Develop web UIs using Angular (usability, performance, security).
+- Administer and optimize PostgreSQL databases.
+- Self-directed research to innovate product features.
+- Participate in design discussions, code reviews, CI/CD.
+
+Qualifications:
+- Bachelor's degree in CS/SE or equivalent.
+- Proven full-stack experience with comprehensive portfolio.
+- OOP, design patterns, distributed systems architecture.
+- Proficient in C#/.NET (5+), cross-platform (Linux/Windows/MacOS), PostgreSQL.
+- Hands-on with unit/integration testing, API design.
+- Familiarity with Python, TypeScript/JavaScript (Angular), performance tools.
+- Source Control and CI/CD.
+- Agile environments (Scrum/Kanban), inter-process communication (TCP, SSL, RabbitMQ).
+- Ability to obtain National Security clearance.
+
+Preferred:
+- UI/UX design.
+- DevOps practices.
+- Cybersecurity principles.
+- Event-driven frameworks (gRPC, SignalR), containerization (Docker, Kubernetes).
+- Mobile development (Android/iOS).
+- C or C++.
+- Distributed, secure, high-availability systems.

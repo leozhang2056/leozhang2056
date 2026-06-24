@@ -168,10 +168,10 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Senior Software Engineer with 10+ years of experience architecting and delivering scalable backend systems, microservices, APIs, and distributed platforms.
-      - Strong expertise in Java, Spring Cloud, RESTful API design, event-driven architectures, and high-performance databases.
-      - Proven track record building fault-tolerant services, CI/CD pipelines, cloud-native deployments, and mentoring engineering teams.
-      - Recognised for technical leadership, practical engineering judgement, and cross-team collaboration to deliver reliable production systems.
+      - Intermediate Software Engineer with 10+ years of commercial development experience, delivering scalable backend systems, microservices, and APIs using Java, Spring Cloud, and Agile practices.
+      - Strong expertise in RESTful API design, event-driven architectures, cloud-native deployment on AWS, and enterprise databases including MySQL, Redis, and SQL Server.
+      - Proven track record building fault-tolerant services, CI/CD pipelines, and mentoring engineering teams through code reviews and knowledge sharing.
+      - Experienced in direct customer engagement — analysing requirements, providing technical guidance, and collaborating with customers to deliver reliable production systems.
     key_skills:
       en:
       - label: Backend Engineering
@@ -462,10 +462,10 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Full-stack developer with 10+ years of experience building web applications, APIs, and digital platforms from front-end interfaces to back-end services.
-      - Proficient in React, Vue.js, TypeScript, Node.js, Python, and Spring Boot, with strong focus on clean architecture, responsive design, and maintainable code.
-      - Experienced in CMS integration, RESTful/GraphQL API design, cloud deployment (AWS), CI/CD pipelines, and collaborating with design teams to deliver polished user experiences.
-      - Production AI experience building computer vision and LLM workflows published at IVCNZ 2025.
+      - Staff Software Engineer with 10+ years of experience building web applications, APIs, and digital platforms from React and Node.js front-ends to Java and Python back-end services.
+      - Proficient in React, Vue.js, TypeScript, Node.js, Java, Python, and Spring Boot, with strong focus on clean architecture, scalable design, and maintainable code.
+      - Experienced in AWS deployment, CI/CD pipelines, API design, and participating in technical discussions to improve architecture, performance, and feature delivery.
+      - Production AI experience building computer vision and LLM workflows published at IVCNZ 2025, with hands-on agentic AI practices using modern coding tools.
     key_skills:
       en:
       - label: Languages

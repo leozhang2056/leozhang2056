@@ -1,0 +1,24 @@
+Intermediate or Senior JavaScript Engineer
+Accordo · Auckland, New Zealand · $81K-$105K
+
+Accordo is a global leader in technology lifecycle management and cloud optimization. Founded in NZ in 1999, operates in over 40 countries.
+
+The Role:
+Join the Product Group building the 'Accordo Cloud Optimizer' product. Backend-focused JavaScript engineer working with Node.js, Elasticsearch, and AWS serverless.
+
+Key Responsibilities:
+- Break down stories into tasks, provide story point estimates.
+- Develop tasks to high quality, mentor junior members.
+- Design and develop backend integration points using Node.js, Elasticsearch.
+- Unit testing, debugging, performance tuning and optimization.
+- Work with Data, Testing, and Development teams.
+- Own daily workload and prioritise tasks.
+
+Key Requirements:
+- 3+ years commercial software development.
+- Large scale, complex application development.
+- JavaScript, Node.js, Mocha-Chai testing, Postman, Elasticsearch.
+- Serverless architecture – AWS Lambda.
+- Agile/Scrum development.
+- Team-oriented, collaborative.
+- Strong English communication.

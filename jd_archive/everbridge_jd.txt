@@ -1,0 +1,24 @@
+Everbridge - Staff Software Engineer
+
+About the role
+
+Everbridge is seeking a Staff Software Engineer to join our Auckland engineering team. You will be part of a team dedicated to developing our agentic AI platform used by our SaaS solution.
+
+Our technology stack is diverse, and we value engineers who are adaptable and eager to embrace new challenges with a technology-agnostic approach. While the project you will be working on utilizes React, Node.js, Java and Python, we encourage applications from candidates experienced in other technologies.
+
+What you'll do:
+Collaborating with cross-functional teams to design, develop, and deploy high-quality applications and APIs.
+Participating in technical discussions and providing insights to improve architecture, scalability, and performance.
+Participating in code reviews and providing constructive feedback
+Investigating and resolving technical issues, ensuring smooth operation of web applications and APIs.
+
+What you'll bring:
+Degree in Computer Science or related field, or equivalent work experience.
+5+ years of experience as a professional software engineer.
+Experience developing AI solutions or an eagerness to learn.
+Experience developing with Agentic AI practices and coding tools
+A range of software development and delivery experience.
+Interest in solving complex problems that help keep people safe.
+Eager to own feature work and be involved in the details of a feature's lifecycle.
+Experience in large code-base products or enterprise grade software.
+Experience with cloud platforms, with AWS experience being preferred.

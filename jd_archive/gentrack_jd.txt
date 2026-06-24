@@ -1,0 +1,47 @@
+Gentrack - Intermediate Software Engineer
+
+Role overview
+
+An Intermediate Software Engineer at Gentrack works on developing, maintaining, and supporting software platforms used by energy and water utility companies. The role combines software development, customer-focused problem solving, agile teamwork, and cloud technologies.
+
+Typical responsibilities
+
+Develop, test, deploy, and maintain software applications.
+
+Analyse customer requirements and design technical solutions.
+
+Participate in Agile ceremonies (stand-ups, sprint planning, retrospectives).
+
+Work with technologies such as Java, .NET, AWS, Git, enterprise databases, APIs, CRM, and billing systems.
+
+Perform code reviews and contribute to software quality improvements.
+
+Support customers and provide technical guidance.
+
+Create technical documentation and knowledge-sharing materials.
+
+Collaborate with product managers, architects, testers, and other engineers.
+
+Requirements
+
+Around 3+ years of commercial software development experience.
+
+Experience with Agile development practices.
+
+Knowledge of cloud platforms (especially AWS), object-oriented programming, databases, Git, and web services.
+
+Bachelor's degree in Computer Science, Software Engineering, or equivalent experience.
+
+Strong communication and problem-solving skills.
+
+Pay: From $7,167.00 per month
+
+Benefits:
+
+Health insurance
+Life insurance
+Professional development assistance
+Referral program
+Visa sponsorship
+Vision insurance
+Work Location: In person
