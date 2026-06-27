@@ -1,0 +1,30 @@
+Developer - Wellington, Permanent
+
+Ministry of Social Development
+
+Work on modern and legacy systems with variety and challenge. Agile, collaborative environment. Opportunities to grow your career. Work across legacy and modern systems, collaborate with business and technical teams, and deliver solutions that make a real impact. Whether your strength is Front End, Back End, Full Stack, Infrastructure, or Build and Deployment Pipelines, we want to hear from you!
+
+As a Developer, you'll design, build, and deploy software across the full development lifecycle. You'll work within established enterprise practices and protocols, contributing to both contemporary and legacy systems. Collaboration is key, you'll partner with business and technical teams to deliver well-engineered solutions that meet stakeholder needs.
+
+Key responsibilities include:
+Design, code, verify, test, document, and refactor moderately complex programs and scripts
+Apply agreed standards, tools, and protocols to achieve robust, maintainable solutions
+Monitor progress and report on development activities
+Identify issues and propose practical solutions
+Participate in peer reviews and contribute to continuous improvement
+Assist in software design, including user/system interfaces and multiple design views
+Support evaluation of options and trade-offs for design decisions
+Contribute to user experience validation and data modelling activities
+
+What you bring:
+Tertiary qualification in Computer Science or IT or equivalent experience
+Understanding of enterprise-level development practices (source control, peer review, release processes)
+Knowledge of contemporary development methods and operating systems (Windows, MacOS, Linux)
+Familiarity with Agile / Scaled Agile environments and DevOps practices
+Appreciation of automated testing and CI/CD pipelines
+Ability to work across complex business environments and model technology solutions
+
+Software development experience in one or more programming or scripting languages (e.g. Java, C#, Python, JavaScript), with solid engineering practices including source control and automated testing.
+Experience managing and maintaining CI/CD pipelines and release processes (e.g. Jenkins, Azure DevOps), repository administration (Git, SVN) and artefact or container repository management (e.g. Nexus, Azure)
+Backend development experience combined with Linux/RHEL server administration, cloud platform familiarity, and exposure to cloud migration or infrastructure management
+Exposure to static code analysis, security scanning, or monitoring and observability tooling

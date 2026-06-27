@@ -1,0 +1,23 @@
+Mobile Application Test Engineer
+
+Capgemini Testing Service Line provides Testing and related Environment/DevOps services to various financial clients. This service produces clearly identifiable results, notably the reduction in the cost of software development and maintenance by up to 30%, enhanced quality levels, improved time to market, and importantly mitigation of technical and business risks.
+
+In this role as a Mobile Application Test Engineer, you will collaborate closely with a diverse range of stakeholders and play a key role in building and maintaining automated test suites for mobile applications. You will also contribute to the development of reusable test frameworks and utilities. You'll be part of a close-knit team where your expertise is highly valued, working together to deliver solution-driven outcomes in a supportive and collaborative environment.
+
+You will assist with CI/CD pipelines along with driving improvements in test automation tools and processes.
+
+Minimum 5 years software testing experience with at least 3 years in Test Automation
+Proven working experience with a variety of tools that support test automation using Java, JavaScript, Kotlin, etc. 
+Solid experience performing API and Microservices testing including UI Testing (iOS and Android)
+Knowledge or Experience in performance testing with tools like JMeter, etc. 
+Proficiency in coding with at least one programming language (e.g. Java, JS, Groovy etc.)
+Experience testing mobile applications across various devices and operating systems
+Solid understanding of SQL and functional and non-functional test principles
+Explore and identify tools which would raise levels of Test Automation
+Experience using source control tools like Github and Bitbucket
+Experience using tools like JIRA & Confluence
+Experience in managing end to end test life cycle including Planning, design, execution, defect management and test reporting
+Ideally any banking or financial services experience
+Proven problem-solving ability
+Excellent communication and interpersonal skills. 
+Self-managing and a self-starter

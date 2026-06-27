@@ -1,0 +1,33 @@
+Software Engineer
+
+Tower Limited
+Auckland CBD, Auckland
+Engineering - Software (Information & Communication Technology)
+Full time
+Competitive Salary, Annual Review and Benefits
+
+Posted 1d ago
+
+As a proud Kiwi born and bred insurer, we pride ourselves in challenging status quo - and move fast to make things happen. We're here to create beautifully simple, rewarding experiences for our customers and communities, and we're working hard to protect the future of Aotearoa.
+
+At its heart, insurance is about helping people through the unexpected. Doing what's right for our customers - especially in tough times - gives real purpose to our work.
+
+Your day-to-day would look like:
+- Delivering accessible user experiences for customers, building and or connect them to their data via APIs.
+- Enjoying a self-driven culture with empowerment over control
+- Breaking down complex problems into simple solutions while growing both yourself and peers in the process.
+
+In your first 6-12 months, success will look like:
+- Creating backend solutions using .NET or Java/Kotlin and Docker
+- Integrating with internal & external systems including databases
+- Promoting good engineering practices such as TDD & Clean Code
+- Communicating with peers and stakeholders to produce better outcomes
+- Maintaining back-end infrastructure through timely upgrades of outdated code and packages
+- Providing mentorship and technical guidance to junior engineers
+
+To thrive in this role, you'll need:
+- Relevant degree/certification with experience in .NET or Java/Kotlin (Spring/Micronaut)
+- Strong API development, SQL skills, and knowledge of XML/CSS/JSON
+- Solid experience in agile delivery, testing (unit & integration), and secure coding
+- Ability to adapt to new technologies and open-source tools
+- Skilled in facilitating technical discussions and presenting solutions, with strong interpersonal skills

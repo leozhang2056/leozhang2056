@@ -1,0 +1,19 @@
+Full Stack Developer
+BrightSpark Recruitment
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+About the company:
+This is an opportunity to join a global consultancy delivering exceptional work for some of New Zealand's largest organisations. In this role, you will collaborate with senior stakeholders to design innovative and effective solutions.
+
+About the role:
+We are looking for a passionate Developer to join the team! You will be working on sophisticated digital products, complex web platforms, and modern mobile solutions, while using new technologies.
+
+Technical bits:
+React, Node.js/TypeScript, AWS serverless (Lambda, API Gateway, DynamoDB, S3), Serverless Framework, REST APIs
+
+Who are you:
+5+ years of experience working in a Full Stack role with the above tech stack
+Curiosity and passion for new tech
+Excellent communication skills
+Team mindset

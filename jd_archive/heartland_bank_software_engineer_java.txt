@@ -1,0 +1,26 @@
+Software Engineer - Java
+
+Heartland Bank
+Auckland CBD, Auckland
+Full time
+
+About Heartland Bank
+NZX/ASX-listed financial services group. Strategy is to digitalise everything, providing scalable customer solutions. Recently hired Andre Sampaio (former COO of PwC's Global AI Factory) to lead AI-first platform engineering. Engineering model: small teams, high trust, real architectural ownership. Senior-only engineering teams.
+
+About the Role
+Software Engineer delivering high-impact change initiatives to improve efficiency, reduce cost, and create stable, scalable platforms. Cross-functional work with business units, shaping solutions from design through production. Hands-on role where technical judgement matters.
+
+What you'll bring:
+- Strong Java commercial experience
+- Solid SQL experience (ideally Oracle exposure)
+- Java and Spring Boot
+- Building and consuming REST APIs
+- Writing and optimising SQL queries
+- Oracle backend procedures and functions
+- Azure DevOps (source control, pipelines, work tracking)
+- Enterprise backend architecture
+- System integration in complex ecosystems
+
+Nice to have:
+- Banking or financial services experience
+- Exposure to Oracle FLEXCUBE

@@ -1,0 +1,28 @@
+Software Engineer
+
+Absolute IT Limited
+Auckland CBD, Auckland (Hybrid)
+Full time
+up to $105,000 per annum
+
+About the Organisation
+Our client is a purpose-led organisation focused on delivering secure, high-performing digital infrastructure at scale. They enable end users to operate safely and efficiently through robust network services, with a strong emphasis on innovation, reliability, and continuous improvement.
+
+About the Role
+This Software Engineer role sits within a technology and security function and focuses on designing, building, and supporting solutions used for network and device data collection, automation, and monitoring. You'll play a key part in developing systems that transform complex data into meaningful insights that support both operational and product outcomes.
+
+Day-to-Day Responsibilities
+- Design, develop and support network management solutions
+- Collect, transform and structure data from multiple sources
+- Build integrations, tools, and automation frameworks
+- Develop visualisations to support operational insights
+- Evolve systems to improve performance, scalability and reliability
+- Produce clear and concise technical documentation
+
+Skills & Experience
+- Proven experience delivering software solutions in an agile environment
+- Strong capability with modern programming languages such as Node.js or Python
+- Experience working with databases including MongoDB, MySQL, MS SQL or ElasticSearch
+- Knowledge of REST APIs, CI/CD pipelines and version control (Git)
+- Exposure to containerisation tools such as Docker or Kubernetes is beneficial
+- Strong communication skills with the ability to engage across technical and non-technical teams

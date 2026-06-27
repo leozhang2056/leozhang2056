@@ -1,0 +1,26 @@
+Software Developer
+KPMG
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+KPMG is one of the most trusted and respected global professional services firms.
+
+The opportunity:
+Ready to build technology that truly makes a difference? As a Software Developer, you'll create scalable digital solutions that deliver seamless, high-quality user experiences. You'll be at the heart of feature development - bringing ideas to life through clean, reliable code while continuously enhancing performance and functionality.
+
+Day to day you will:
+Design, develop and deploy robust front-end and back-end features aligned with product and architectural goals.
+Write clean, modular, and well-documented code with appropriate test coverage, applying secure development practices and contributing to code reviews to uphold quality and security standards.
+Identify and resolve performance bottlenecks across the stack to ensure responsive and reliable applications.
+Provide technical input and guidance to other developers through pairing, feedback, and documentation.
+Work closely with cross-functional teams including product, design, platform, and QA to deliver high-quality digital experiences.
+Communicate technical concepts clearly to stakeholders and contribute to planning discussions.
+
+What you will bring to our team:
+3+ years' software development experience, with strong full-stack capability and solid Azure development experience.
+Comfortable working across front-end, back-end, APIs, integrations, databases, authentication, and cloud-based services.
+Experience with modern web application development and secure coding practices.
+Enjoys being involved early in discovery and solution shaping, not just coding from fully defined requirements.
+Able to work pragmatically in a delivery environment where priorities, detail, and designs may evolve.
+Clear communicator who can collaborate well with product, business, testing, and technical teams.
+Experience in professional services, financial services, or similarly complex business environments would be beneficial.

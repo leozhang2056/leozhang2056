@@ -1,0 +1,35 @@
+Senior Software Developer – Microsoft Stack | ASP.NET + SQL Server
+
+First Software
+Auckland CBD, Auckland
+Developers/Programmers (Information & Communication Technology)
+Full time
+$120,000 – $150,000 per year
+Posted 18d ago
+High application volume
+
+At First Software, we build and support n2-erp, our in-house, cloud-based ERP platform used by B2B and B2C customers across New Zealand and Australia. Our software helps businesses run the practical, important parts of their operations — from online retail through to complex supply chains.
+
+This is not a role for someone looking to disappear into a huge development department. In a team our size: your work matters! Your ideas will be heard, your code will be used, and your decisions can have a real influence on the product and the customers who rely on it.
+
+We're looking for a developer who wants to work with customers to solve their real-world business problems through technology.
+
+What You'll Do
+- Investigate and resolve customer issues and proactively improve our system[s]
+- Turn customer requirements into clean, functional, and reliable software
+- Develop and maintain low-level business logic with structured programming techniques
+- Work with ASP.NET and SQL Server to keep our platform fast, stable, and secure
+- Collaborate with our eCommerce team on projects that connect ERP to the digital marketplace
+
+What We're Looking For
+- Excellent interpersonal and communication skill in order to deal directly with our customers
+- Proven experience in C#, ASP.NET and Microsoft SQL Server
+- Strong problem-solving skills and attention to detail
+- Able to prioritise, deliver, and adapt quickly in an agile environment
+- ERP experience or a finance and accounting background would be highly desirable
+
+Why Join First Software?
+- Small team, big influence
+- Real customer impact
+- Long-service, supportive team
+- Varied, meaningful work

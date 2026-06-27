@@ -168,10 +168,14 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Intermediate Software Engineer with 10+ years of commercial development experience, delivering scalable backend systems, microservices, and APIs using Java, Spring Cloud, and Agile practices.
-      - Strong expertise in RESTful API design, event-driven architectures, cloud-native deployment on AWS, and enterprise databases including MySQL, Redis, and SQL Server.
-      - Proven track record building fault-tolerant services, CI/CD pipelines, and mentoring engineering teams through code reviews and knowledge sharing.
-      - Experienced in direct customer engagement — analysing requirements, providing technical guidance, and collaborating with customers to deliver reliable production systems.
+      - Software Engineer with 10+ years of experience designing and building complex
+        enterprise solutions across backend systems, mobile applications, and IoT platforms.
+        Strong communication and technical facilitation skills, experienced presenting
+        solutions, facilitating technical discussions, and mentoring engineers.
+      - Strong expertise in Java, Spring Boot, RESTful APIs, microservices, and cloud
+        infrastructure including AWS, Docker, and CI/CD pipelines with automated testing.
+        Experienced working in Agile teams, with legacy systems, Linux server administration,
+        and modernising enterprise platforms through refactoring and incremental delivery.
     key_skills:
       en:
       - label: Backend Engineering

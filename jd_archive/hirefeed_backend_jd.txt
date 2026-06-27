@@ -1,0 +1,30 @@
+Backend Developer (Remote)
+Location: Remote (Work from Anywhere)
+Payout: $20–$70 per hour
+
+Role Overview:
+
+We are hiring for one of our clients, seeking a Backend Engineer to work on a contract, part-time basis. This role involves designing, developing, and maintaining scalable backend services and APIs that power the training and evaluation of next-generation AI systems. Your work will directly contribute to improving how AI models learn, reason, and perform across critical domains such as finance, healthcare, and engineering. The opportunity is ideal for engineers who thrive in a dynamic, globally distributed team focused on high-impact technical challenges.
+
+Key Responsibilities:
+
+• Design, develop, and maintain scalable backend services and APIs to meet demanding performance requirements for AI model training infrastructure.
+• Collaborate with cross-functional teams to translate business and technical needs into robust backend solutions that support AI development workflows.
+• Optimize backend systems for reliability, security, and efficiency, ensuring seamless and high-performance user experiences in production environments.
+• Write clean, well-documented, and thoroughly tested code, adhering to engineering best practices and security standards.
+• Participate actively in code reviews, mentoring junior engineers, and facilitating knowledge-sharing sessions to strengthen team technical capabilities.
+• Monitor, troubleshoot, and resolve backend issues in production environments, maintaining system stability and uptime targets.
+
+Required Skills & Qualifications:
+
+• Bachelor's degree or higher in Computer Science, Engineering, or a related technical field, or equivalent practical experience in backend development.
+• Proficiency in at least one backend programming language such as Python, Java, Go, or Node.js, with demonstrated experience building and maintaining scalable services.
+• Experience designing and developing RESTful APIs, microservices architectures, and data pipelines in production environments.
+• Solid understanding of system design principles, including scalability, fault tolerance, and performance optimization for high-load applications.
+• Familiarity with cloud platforms (e.g., AWS, GCP, or Azure), containerization (e.g., Docker, Kubernetes), and CI/CD pipelines for automated testing and deployment.
+• Strong problem-solving skills, attention to detail, and ability to write clean, modular, and maintainable code.
+• Experience with monitoring and logging tools (e.g., Prometheus, Grafana, ELK stack) and incident response processes.
+
+More About the Opportunity:
+
+This role offers a unique opportunity to work with a global leader in the Artificial Intelligence industry, contributing to the development of AI systems that shape the future of human-computer interaction.

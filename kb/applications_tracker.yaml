@@ -965,3 +965,75 @@ applications:
   cv: true
   cl: false
   status: submitted
+- company: Capgemini
+  role: android
+  date: '2026-06-26'
+  cv: true
+  cl: false
+  status: submitted
+- company: Future Secure AI
+  role: ai
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: Hire Feed
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: false
+  status: submitted
+- company: Ministry of Social Development
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: false
+  status: submitted
+- company: OptiTrac 2022 Ltd
+  role: fullstack
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: Absolute IT Limited
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: KPMG
+  role: fullstack
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: Ando
+  role: fullstack
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: BrightSpark
+  role: fullstack
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: Tower Limited
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: Heartland Bank
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted
+- company: First Software
+  role: backend
+  date: '2026-06-26'
+  cv: true
+  cl: true
+  status: submitted

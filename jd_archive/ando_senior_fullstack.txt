@@ -1,0 +1,27 @@
+Senior Full Stack Software Engineer
+
+Ando
+Auckland CBD, Auckland (Hybrid)
+Full time
+Attractive salary + bonus + insurance perks
+
+About Ando
+Founded in 2015, Ando is an insurance company combining smart technology, better thinking, and genuinely human relationships. Technology plays a huge role in how they simplify complexity, improve decision-making, and deliver great outcomes.
+
+About the Role
+Senior Software Engineer (Full Stack) to help shape the platforms and solutions powering Ando's business. Key role in designing, building, and delivering high-quality full stack solutions for Project Luma, developing intuitive portals for broker partners. True full stack role spanning front-end and back-end development, with deeper front-end experience and expertise preferred.
+
+What you'll be doing:
+- Working across modern front-end and back-end technologies including Java, React and Spring Boot
+- Contributing to architecture and technical design decisions
+- Reviewing code and supporting engineering best practices
+- Mentoring and coaching other engineers
+- Driving the responsible adoption of AI-assisted development tools to improve productivity and delivery outcomes
+
+Skills & Experience:
+- Significant experience as a Software Engineer or Full Stack Developer
+- Strong Java development expertise
+- Proven ability to deliver complex software solutions
+- Experience with React and Spring Boot (bonus, transferable skills accepted)
+- Modern engineering environments: collaboration, agile delivery, continuous improvement
+- Insurance or financial services experience advantageous but not essential

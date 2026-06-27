@@ -1,0 +1,27 @@
+Senior Software Engineer (AI)
+Future Secure AI · Auckland, Auckland, New Zealand (Hybrid)
+
+About the Company
+At Future Secure AI, we're building something genuinely new — and we're looking for people bold enough to build it with us. We work at the frontier of AI, tackling big, real-world problems for global enterprises across multiple industries, armed with state-of-the-art technology and a culture that prizes courage, rigor, and relentless curiosity. Our BRAVER values aren't just words on a wall — they describe the kind of people we are and the standard we hold ourselves to every day. Our leadership team is entrepreneurial, experienced, and accessible, with an open-door policy that means you'll never be just a number here. We invest seriously in your growth because we know our success depends on yours. If you're ready to work alongside some of the brightest minds in the industry, push into uncharted territory, and do work that genuinely matters, Future Secure AI is the place for you.
+Future Secure AI (FSAI) is a leading enterprise AI company that was created in deep partnership with one of the world's largest financial institutions.
+Operating as an enterprise company with deep relationships at C-suite with large global enterprises, FSAI believes humans and AI Workers will collaborate seamlessly to raise organisational performance. FSAI has dozens of partnerships with leading companies in most industries and regions globally.
+FSAI has a strategic focus on expanding globally as we continue our extraordinary journey to transform the world with the most cutting-edge artificial intelligence.
+
+The Opportunity
+We're hiring Senior Software Engineers (AI) to help us build our products and platform. You'll work closely with engineering and customer delivery teams, moving between hands-on engineering and broader product and business conversations. If you do your best work when the problem is ambiguous, you'll fit here.
+
+What you'll be doing:
+- Building AI Co-Worker systems that enable enterprise customers to deploy persona-based AI Co-Workers that perform complex, end-to-end operational workflows through their own secure platform.
+- Ensuring our platform remains model-agnostic, integrating LLMs and AI frameworks from both established and emerging vendors.
+- Building and integrating secure, scalable APIs across large-scale enterprise environments.
+- Working closely with customers to deeply understand their needs and make sure solutions exceed their expectations.
+
+Your application should demonstrate:
+- 7+ years of software development experience with recent hands-on AI work.
+- Strong coding fundamentals; we primarily use Node.js and TypeScript.
+- Experience with AI frameworks and orchestration tools such as LangChain or LangGraph.
+- Experience building systems where security and data governance are first-class design constraints, not afterthoughts.
+- Sharp problem-solving instincts and the follow-through to match.
+
+Why join us?
+You'll work on hard problems that matter, at a company building something genuinely new, with a direct line into senior engineering and product leadership.

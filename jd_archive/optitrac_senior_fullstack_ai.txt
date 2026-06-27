@@ -1,0 +1,26 @@
+Senior Software Engineer – AI, Cloud Real-Time Systems & SaaS Platforms
+OptiTrac 2022 Ltd
+Christchurch Central, Canterbury
+Full time
+
+About Optitrac
+Optitrac builds practical, real-world software and IoT solutions used across New Zealand and Australia.
+Our platforms support asset tracking, telematics, environmental monitoring, field operations, reporting, automation, and business intelligence. We work on systems that connect hardware, cloud platforms, mobile users, dashboards, APIs, AI tools and customer workflows.
+
+The Role
+As a Senior Full Stack Developer, you will play a key role in designing, developing, testing and maintaining modern software platforms across our business. You will work across front-end, back-end, APIs, cloud services, databases, integrations, reporting tools, and AI-assisted workflows.
+
+What You'll Be Working On
+Cloud-based web platforms, Customer portals and operational dashboards, Mobile-friendly field applications, IoT and telematics data platforms, API integrations with third-party systems, Reporting and business intelligence tools, AI-assisted workflows and automation, Internal systems that improve productivity and customer delivery
+
+Responsibilities
+Designing and developing scalable full-stack applications, Building clean, reliable front-end interfaces, Developing back-end services, APIs and integrations, Working with cloud infrastructure and deployment pipelines, Improving performance, reliability and maintainability, Writing clean, testable and well-structured code, Troubleshooting technical issues across the stack, Working closely with other developers, project managers and business stakeholders, Contributing to architecture and technical decisions, Helping improve how we use AI tools in our development process, Supporting and mentoring other developers where required
+
+Skills and Experience
+TypeScript / JavaScript, React and modern front-end frameworks, Node.js and/or modern back-end frameworks, API design and development, NoSQL Databases like MongoDB and DynamoDB, and database design, Cloud platforms, preferably AWS and/or Azure, Serverless architecture, cloud services and deployment pipelines, Docker and container-based development, CI/CD processes, Git and modern development workflows, Testing, debugging and performance optimisation
+
+Advantageous experience
+Next.js, Python / FastAPI, AWS Lambda, API Gateway, S3, CloudFront, Cognito or similar, Azure services, PostgreSQL, Terraform, Kubernetes or container orchestration, IoT platforms or telemetry systems, Power BI or dashboard/reporting platforms, AI development tools such as GitHub Copilot, Cursor, ChatGPT, Claude, Kiro, Figma AI or similar
+
+AI Experience
+Experience using AI tools in development to speed up development, improve UI/UX workflows, generate and review code, support testing and documentation, assist with system design, automate repetitive development tasks
