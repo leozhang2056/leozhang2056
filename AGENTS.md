@@ -177,3 +177,25 @@ pytest
 - In the `username/username` repo layout, root **`README.md`** is rendered on the GitHub **profile** page.
 - **Contribution grid:** GitHub does not provide an embeddable copy of the official profile calendar for arbitrary READMEs; use **ghchart.rshah.org** SVG (`/HEXCOLOR/username`, or `/username` fallback). Do **not** re-add `github-readme-stats` or `github-readme-streak-stats` image widgets — they often time out and show broken images.
 - **Publications:** Keep the README list aligned with **`kb/achievements.yaml`** → `publications` and **`projects/chatclothes/facts.yaml`** → `evidence` where `type: publication`. Typical order: IVCNZ (published) → IGI chapter (**under review** if applicable) → thesis.
+
+## Agent Skills (addyosmani/agent-skills)
+- Skills are located in `.opencode/skills/<skill-name>/SKILL.md`.
+- If a task matches a skill, invoke it via the `skill` tool — **never implement directly** if a skill applies.
+- Follow the skill instructions exactly; do not partially apply them.
+
+### Intent → Skill Mapping
+- Feature / new functionality → `spec-driven-development`, then `incremental-implementation`, `test-driven-development`
+- Planning / breakdown → `planning-and-task-breakdown`
+- Bug / failure / unexpected behavior → `debugging-and-error-recovery`
+- Code review → `code-review-and-quality`
+- Refactoring / simplification → `code-simplification`
+- API or interface design → `api-and-interface-design`
+- UI work → `frontend-ui-engineering`
+
+### Anti-Rationalization (Forbidden Thoughts)
+The following rationalizations are incorrect:
+- "This is too small for a skill"
+- "I can just quickly implement this"
+- "I'll gather context first"
+
+**Correct behavior:** Always check for and use skills first.

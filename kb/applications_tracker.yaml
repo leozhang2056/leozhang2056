@@ -1037,3 +1037,45 @@ applications:
   cv: true
   cl: true
   status: submitted
+- company: Mindrift
+  role: android
+  date: '2026-06-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: The Warehouse Group
+  role: ai
+  date: '2026-06-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Halter
+  role: fullstack
+  date: '2026-06-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Datacom
+  role: backend
+  date: '2026-06-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: OrbitRemit
+  role: android
+  date: '2026-06-27'
+  cv: true
+  cl: false
+  status: submitted
+- company: Fiserv
+  role: android
+  date: '2026-06-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: placeMe-IT
+  role: backend
+  date: '2026-06-28'
+  cv: true
+  cl: true
+  status: submitted

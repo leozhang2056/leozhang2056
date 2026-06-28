@@ -1,0 +1,85 @@
+---
+title: "Junior Android Engineer (BigPay, Binance Chat) - Auckland City, Auckland"
+source: "https://nz.indeed.com/viewjob?from=app-tracker-saved-appcard&hl=en&jk=fc9d947e0813263e&tk=1jrpt8g92g0j4800"
+author:
+published:
+created: 2026-06-23
+description: "Apply for the Junior Android Engineer (BigPay, Binance Chat) job in Auckland City, Auckland! Learn more about the job description, salary and job details to see if you qualify on Indeed today."
+---
+## Junior Android Engineer (BigPay, Binance Chat)
+
+[Binance](https://nz.indeed.com/cmp/Binance?campaignid=mobvjcmp&from=mobviewjob&tk=1jrq11c8dgo5r800&fromjk=fc9d947e0813263e)
+
+3.5 out of 5 stars
+
+Auckland City, Auckland
+
+Remote
+
+Full-time
+
+## Job details
+
+Here’s how the job details align with your [profile](https://profile.indeed.com/).
+
+### Job type
+
+- Full-time
+
+&nbsp;
+
+## Location
+
+Auckland City, Auckland
+
+&nbsp;
+
+## Full job description
+
+Binance is a leading global blockchain ecosystem behind the world’s largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for our industry-leading security, user fund transparency, trading engine speed, deep liquidity, and an unmatched portfolio of digital-asset products. Binance offerings range from trading and finance to education, research, payments, institutional services, Web3 features, and more. We leverage the power of digital assets and blockchain to build an inclusive financial ecosystem to advance the freedom of money and improve financial access for people around the world.
+
+We are seeking an experienced and skilled Android Architect to join our Global BigPay, Chat team. The ideal candidate will have approximately 1-6 years of professional experience in Android Chat/Android mobile development, with a strong focus on Kotlin/Java technologies. You will play a key role in designing and building scalable, secure, and high-performance payment solutions. If you have a solid background in payment systems or fintech, and a keen interest in Web3 and AI technologies, this is an excellent opportunity to contribute to innovative global payment products.
+
+**This role is 100% Remote - Work from Home based.**
+
+**Fresh graduates are welcomed!**
+
+### Responsibilities:
+
+- Create super-fast, easy-to-use, applications. Develop, test, deploy, maintain and optimize Binance app;
+- Build libraries and frameworks that support complex client side applications; speed- up development efficiency and improve code quality;
+- Lead Android infra team to build the next generation architecture, making it prepared for the future.
+- Collaborate with the Web team to develop hybrid frameworks, developer tools, and a JavaScript-based mobile runtime.
+- Contribute to Android development by writing high-performance code in Kotlin/Java and building shared libraries and toolchains.
+- Troubleshoot and optimize app performance using profiling tools and AI-assisted debugging techniques.
+- Continuously explore, evaluate, and implement new technologies to improve development efficiency and product quality.
+
+### Requirements:
+
+- 2-6 years of experience building Android applications from scratch, high proficiency with Kotlin/Java.
+- Bachelor’s or Master’s degree in Computer Science, Engineering, or a related field.
+- Proven experience in software development and Android engineering, including architecture design, Jetpack, OkHttp, and related frameworks.
+- Familiarity with cross-platform technologies such as JavaScript/TypeScript, React, and Kotlin/Java for Android development; knowledge of C++ and JNI is a plus.
+- Strong track record in optimizing Android app performance, including networking, rendering, and memory usage.
+- Solid understanding of mobile architectures, industry trends, and emerging technologies.
+- In-depth knowledge of the full mobile development life cycle, from design to deployment.
+- Excellent problem-solving and communication skills, with hands-on experience in performance monitoring and a strong team player in an international environment.
+
+**Why Binance**
+
+- Shape the future with the world’s leading blockchain ecosystem
+- Collaborate with world-class talent in a user-centric global organization with a flat structure
+- Tackle unique, fast-paced projects with autonomy in an innovative environment
+- Thrive in a results-driven workplace with opportunities for career growth and continuous learning
+- Competitive salary and company benefits
+- Work-from-home arrangement (the arrangement may vary depending on the work nature of the business team)
+
+Binance is committed to being an equal opportunity employer. We believe that having a diverse workforce is fundamental to our success.
+
+*By submitting a job application, you confirm that you have read and agree to our* ***Candidate Privacy Notice****.*
+
+We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.
+
+&nbsp;
+
+&nbsp;

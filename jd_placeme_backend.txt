@@ -1,0 +1,57 @@
+Java Developer - Backend
+
+placeMe IT Recruitment
+Wellington Central, Wellington (Hybrid)
+Developers/Programmers (Information & Communication Technology)
+Full time
+$90,000 – $125,000 pa plus travel and WFH benefits
+
+Wellington Central / Hybrid (2 Days WFH)
+
+We have partnered with an incredibly purposeful, Wellington-born technology success story that is changing how the world moves. Serving a global market, this innovative company builds high-performing platforms and SaaS intelligence suites designed for the greater good in cities globally.
+
+We're looking for Backend Developer who is not only a sharp problem solver but also a natural collaborator and peer mentor ready to help scale their engineering excellence.
+
+The Role at a Glance
+
+As a core member of the Development team, you will bridge the gap between technical complexity and real-world impact. You'll spend your time developing robust web applications, diving into cloud architecture, and pair-programming to help level up the wider team.
+
+This role reports directly to the Engineering Lead, offers zero direct administrative reports, and gives you a genuine voice in shaping technical roadmaps.
+
+What sets this role apart? You get 10% self-directed learning time every single week to work on your personal development goals and explore new tech.
+
+What You'll Bring to the Table
+
+To thrive in this environment, you should bring a strong blend of backend expertise and an Agile mindset. Ideally, your toolkit includes:
+
+Core Languages: Strong commercial experience with Java and/or Python.
+
+Cloud Architecture: Solid hands-on experience with AWS (specifically Elastic Beanstalk and ECS)
+
+Testing & CI/CD: Experience with modern testing frameworks (Cypress, Jasmine, Karma) and CI/CD pipelines (Jenkins or GitHub Actions).
+
+Leadership Style: A passion for peer mentoring, constructive PR reviews, and a practical, pragmatic approach to problem-solving.
+
+Best Practices: A solid understanding of data modelling, state management, and WCAG accessibility guidelines.
+
+The Tech Stack
+
+You will be working within a modern, evolving ecosystem:
+
+Backend: Java, Python, Linux, Windows
+
+Cloud: Active AWS environment moving toward containerized architectures (ECS)
+
+CI/CD: Moving from Jenkins to GitHub Actions
+
+Why You'll Love Working Here
+
+This team genuinely puts people first, offering a flexible, high-trust environment where you are expected to bring your authentic self to work.
+
+Financial & Tech Perks: A modern laptop, company-paid phone/data plan, and a $750 annual allowance for your WFH setup and tech tools.
+
+Commuting Made Easy: A fully subsidised public transport card for your daily commute.
+
+The Office Experience: Stunning downtown Wellington office with harbour views, free fresh fruit, an active social club, and a fully stocked cafe-style espresso machine (complete with all the milk alternatives).
+
+True Flexibility: Work from home 2 days a week.

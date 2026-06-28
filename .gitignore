@@ -3,8 +3,6 @@ templates/
 outputs/
 
 # Privacy / personal narrative (local only; do not commit)
-# Interview/ with all subfolders (JD files, Q&A prep, research)
-Interview/
 Interview question/
 Interview Question/
 Interview questions/

@@ -1,0 +1,42 @@
+Senior Android Developer
+
+Fiserv New Zealand Limited
+Auckland CBD, Auckland
+Developers/Programmers (Information & Communication Technology)
+Full time
+Posted 8d ago
+
+What does a successful Senior Software Developer - Android do at Fiserv?
+
+You will be responsible for the delivery of mobile banking solutions to our clients. Delivery includes pre-sales support, gap analysis, project management, branding, development of enhancements and extension, localisation, integration, quality assurance, and deployment.
+
+As a Software Developer, you will be expected to contribute to all aspects of project delivery with specific focus on the development of enhancements and extension to our products.
+
+You will be required to respond to occasional requests for additional off-hour work in the event of an emergency client incident or critical business need.
+
+What You'll Do:
+
+- Support the development of high-quality mobile software within a scrum team
+- Contribute to improving code quality through maintaining and enhancing high quality software development standards
+- Support technical design decisions through validation of technical approaches and prototyping of new concepts
+- Support team members to ensure successful sprint outcomes
+- Encourage and mentor junior team members to support them in their development
+- Raising technical, security, delivery and performance risks
+- Be part of and help promote our DevOps culture
+- Identify and implement continuous improvements to the development practice.
+
+What You'll Need To Have:
+
+- A passion for delivering market leading software products; keeping up to date on the latest technologies and industry trends
+- Minimum 5-year hands-on software development experience writing Android downloadable mobile applications.
+- Deep knowledge of Android development and design best practices including Android Design Standards.
+- A willingness to expand your technical horizons
+- Keenness to work in an agile scrum environment
+- Excellent collaboration and communication skills
+- Experience working on a large-scale product as part of a large and complex enterprise, with both new technologies and building on top of legacy systems.
+
+Nice to have:
+
+- Working knowledge of React-Native technologies.
+- Financial/banking sector experience is an advantage.
+- Experience using AI tools and AI-driven practices to enhance engineering productivity.

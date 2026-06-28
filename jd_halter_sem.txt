@@ -1,0 +1,49 @@
+Software Engineering Manager
+
+Auckland, New Zealand · On-site
+
+About Halter
+
+At Halter, we're on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. Imagine watching 500 cattle stand up and walk calmly towards their next break? No quad bikes, no dogs, no fences. Just a group of cattle walking at their own pace. People say it looks like magic. Our customers are revolutionizing grazing with Halter. It's changing lives and transforming an industry. People join Halter to do meaningful work. By joining us you'll be solving challenging problems within a talented team and a culture built for high performance. Our team out-think, out-work and out-care. We're committed to delivering real change in the world - this isn't easy, and in truth, we love that it's hard.
+
+We're backed to deliver on a mission that matters by Tier 1 investors including Founders Fund, Bessemer Venture Partners, BOND, DCVC, Blackbird, Promus Ventures, Rocket Lab's Peter Beck and Icehouse ventures.
+
+About The Role
+
+We're looking for a Software Engineering Manager who builds and elevates their team, drives strong technical solutions, and goes deep on hard, real-world problems. This isn't a pure delivery or pure people role. You'll be in the work, shaping technical direction, collaborating closely with design and product, and helping your team do the best work of their careers. Don't worry, you'll also be hands-on.
+
+You'll need to hold the technical bar high while creating the space for others to grow. We're solving problems that haven't been solved before, and you'll be crucial to figuring them out. It's a role that demands absolute ownership, someone who can take a blurry problem, create clarity, and lead a team to nail it.
+
+The kind of problems our teams solve
+
+Halter is one system: hardware, software, and AI, running live on real farms. Our engineering teams own different slices of that system, but the problems all rhyme:
+- Turning thousands of collars and billions of sensor events into a single, calm decision in a farmer's hand.
+- Modelling the physical world (animals, pasture, terrain) accurately enough to act on in real time.
+- Building mobile and web experiences that hold up at 5am whilst out in a paddock in the rain.
+- Designing platforms and pipelines that scale with our incredible pace of growth without the seams showing.
+- Engineering against constrained hardware, flaky rural connectivity, and the messiness of the physical world, and shipping with pace despite it.
+
+Every team here ships software that has to work in a paddock, not just a browser tab. As an engineering manager at Halter, you're in the work, not above it: coaching engineers, shaping the technical bets, and writing code.
+
+What You'll Do
+
+- Lead a team of engineers - frontend and backend - supporting their growth, giving great feedback, and helping them focus on what matters.
+- Own the technical direction and delivery of your team's work - making sure it's reliable, maintainable, and impactful.
+- Help define the structure, shape, and scope of our work - and ensure it lands well with farmers and ranchers.
+- Stay close to the technical details - across services, data, and system design - and bring a strong point of view.
+- You'll be backing engineering-led initiatives and getting ahead of scale.
+- Work closely with product and design to shape what we build, not just how. You'll be in the room when requirements are fuzzy and you'll help make them clear.
+- Back engineering-led initiatives and look for opportunities to use AI tools to accelerate development or unlock entirely new ways of working.
+- Get out on farm. Deep domain knowledge matters and you'll be expected to develop it.
+- Contribute to the broader engineering culture and practices that make Halter a great place to build.
+
+You'll be great if you
+
+- Have led engineers directly - performance conversations, mentoring, hiring, the lot.
+- Think like a product engineer. You care about what gets built and the impact it has on the person holding the phone in the paddock.
+- Have a strong intuition for UX, performance, and product polish. You know what good feels like and you push for it.
+- Know how to shape and structure work without being overly prescriptive, and balance speed with quality.
+- Stay calm under pressure, have a low ego, and can rally a team through tough or complex work.
+- You've worked in fast-moving startups, seen growth, and tackled ambiguous problem spaces.
+
+Bonus points for experience with hardware or real-world systems, mobile/React Native, and building experiences for demanding environments where the UX constraints are physical, not just digital.

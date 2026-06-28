@@ -1,0 +1,36 @@
+Freelance Mobile App Developer (iOS / Android)
+
+Mindrift
+New Zealand
+Remote, Part-time
+
+About the job
+Mindrift is looking for skilled Mobile App Developers (React Native, Flutter, Swift, or Kotlin) to join the Tendem project (https://tendem.ai/) and build native and cross-platform mobile applications within our hybrid AI + human environment. In this role, as an AI Pilot, you'll collaborate with Tendem Agents that handle repetitive tasks, while you provide mobile engineering expertise, platform-specific judgment, and quality control to ensure apps are stable, performant, and ready for real users on real devices. This part-time remote opportunity is ideal for professionals with hands-on experience shipping iOS and/or Android apps, working with platform APIs, and handling the full mobile development lifecycle.
+
+About The Role
+This is a freelance role for a Tendem project. As a Mobile App Developer, you'll design, build, and refine mobile applications across categories such as utilities, fitness/wellness, games, productivity, delivery, and content apps — for iOS, Android, or both, using native or cross-platform frameworks.
+
+Key Responsibilities
+- Build mobile applications using React Native, Flutter, Swift (iOS), or Kotlin (Android)
+- Implement responsive mobile UIs that follow platform conventions (iOS HIG, Material Design)
+- Integrate native device features (camera, push notifications, location, storage, biometrics)
+- Connect apps to backend APIs, handle offline state, caching, and synchronization
+- Implement monetization features where required (in-app purchases, ads, subscriptions)
+- Evaluate AI-generated mobile code and refactor it for correctness, performance, battery use, and maintainability
+- Debug platform-specific issues and prepare builds for distribution (TestFlight, Play Console)
+
+Requirements
+- At least 3 years of relevant experience in mobile app development (required)
+- Bachelor's or Master's Degree in Computer Science, Engineering, or related technical fields is a plus
+- Hands-on experience with at least one of: React Native, Flutter, Swift/SwiftUI (iOS), or Kotlin/Jetpack Compose (Android)
+- Solid understanding of mobile UI patterns, navigation, state management, and platform guidelines
+- Experience integrating REST APIs, handling async data, and managing local storage
+- Familiarity with native device APIs (notifications, camera, location, storage, biometrics)
+- Experience with mobile build tools, code signing, and submission to App Store / Google Play
+- Experience implementing in-app purchases, ads, or subscriptions is a plus
+- Familiarity with backend services such as Firebase, Supabase, or similar is a plus
+- Portfolio of shipped mobile apps (required, with App Store / Google Play links preferred)
+- English proficiency: Upper-intermediate (B2) or above (required)
+
+Compensation
+Up to $60 per hour equivalent, depending on level and pace of contribution.

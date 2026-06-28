@@ -349,35 +349,38 @@ def build_cover_letter_content(
             )
         elif role_type == 'ai' and is_twg:
             opening = (
-                "I am applying for the AI Engineer (Graduate) position at The Warehouse Group. "
-                "With a background spanning AI research, full-stack development, Android systems, "
-                "and industrial IoT platforms, I am particularly interested in this opportunity "
-                "because it focuses on building practical AI solutions that deliver measurable business impact."
+                "I am applying for the Senior AI Engineer - Lead position at The Warehouse Group. "
+                "I bring more than 10 years of software engineering spanning AI, backend systems, "
+                "and production delivery — and I am drawn to this role because it calls for someone "
+                "who can both build and lead, setting engineering standards while mentoring emerging "
+                "AI talent."
             )
             body1 = (
-                "I recently completed my Master of Computer and Information Sciences at Auckland University "
-                "of Technology with First Class Honours. My thesis project, ChatClothes, involved designing "
-                "and building a multimodal AI system that combined diffusion models, garment classification, "
-                "local LLM integration, and workflow orchestration into a working end-to-end prototype. "
-                "The project was accepted by IVCNZ 2025 and gave me hands-on experience developing AI systems "
-                "that balance research innovation with usability, maintainability, and deployment considerations."
+                "My Master's research at Auckland University of Technology (First Class Honours) centred on "
+                "ChatClothes — a multimodal AI system I built from scratch combining diffusion models, "
+                "computer vision, LLM orchestration, and RAG-based knowledge retrieval, optimised for "
+                "on-device deployment and published at IVCNZ 2025. This gave me direct, end-to-end "
+                "experience with the LLM platforms, RAG architectures, and agent workflows this role "
+                "requires. I also bring hands-on Python proficiency, FastAPI-based API design, and "
+                "CI/CD pipelines with Docker — the practical engineering toolchain behind AI that ships."
             )
             body2 = (
-                "What particularly attracted me to this role is The Warehouse Group's emphasis on moving AI "
-                "solutions from prototype to production. In addition to my academic AI work, I bring more than "
-                "10 years of software engineering experience across Android, backend, and real-time IoT systems. "
-                "I have worked with APIs, cloud-connected services, CI/CD workflows, Docker-based deployments, "
-                "and scalable production systems supporting real users and operational environments. This background "
-                "has helped me develop a practical engineering mindset focused on reliability, collaboration, "
-                "and continuous improvement."
+                "What particularly attracted me to this role is the opportunity to combine technical "
+                "leadership with hands-on AI engineering. In my previous work I led a 6-person "
+                "cross-functional team delivering smart factory systems deployed across 5+ manufacturing "
+                "sites, with direct client engagement, code review, and architectural guidance. I have "
+                "worked with cloud platforms including Azure, designed data pipelines, and maintained "
+                "strong engineering discipline across testing, documentation, and production deployment. "
+                "I am comfortable acting as a technical escalation point and translating complex AI "
+                "concepts for both technical and non-technical stakeholders."
             )
             closing = (
-                "I am also highly motivated by the opportunity to work within a collaborative AI capability "
-                "where learning, experimentation, and rapid delivery are encouraged. I enjoy working across "
-                "technical and business contexts, translating ideas into working solutions, and continuously "
-                "learning new tools and frameworks as AI technologies evolve. "
-                "I would welcome the opportunity to contribute my technical background, problem-solving ability, "
-                "and hands-on development experience to The Warehouse Group's Data and AI team. "
+                "As New Zealand's largest general merchandise retailer, The Warehouse Group presents a "
+                "unique environment where AI can drive real operational impact at scale. I am excited by "
+                "the prospect of shaping how AI solutions are designed and delivered across the organisation, "
+                "and of coaching graduate engineers to build capability and discipline. "
+                "I would welcome the opportunity to discuss how my experience in AI engineering, production "
+                "delivery, and technical mentoring can contribute to TWG's Data & AI team. "
                 "Thank you for your time and consideration."
             )
         elif 'showcase' in company_lower:
@@ -415,22 +418,25 @@ def build_cover_letter_content(
             )
         elif 'halter' in company_lower:
             opening = (
-                "I am applying for the Senior IoT Engineer position at Halter. "
-                "I am excited about this role because it sits at the exact intersection "
-                "of everything I care about as an engineer: hardware-software integration, "
-                "real-time systems, and technology that changes how people work in the physical world."
+                "I am applying for the Software Engineering Manager position at Halter. "
+                "I am excited about this role because it demands exactly the combination "
+                "I bring: deep technical credibility across full-stack and IoT systems, "
+                "proven leadership of engineering teams, and a genuine passion for building "
+                "hardware-integrated software that works in the physical world."
             )
             body1 = (
                 "What draws me to Halter is the problem itself. Turning thousands of collars "
                 "and billions of sensor events into a single, calm decision in a farmer's hand "
                 "is exactly the kind of engineering challenge I find most rewarding. "
-                "Over the past decade, I have built IoT platforms where RFID readers, barcode "
-                "scanners, electronic scales, and sensor gateways feed data through microservice "
-                "backends into mobile and web interfaces — the full loop from physical signal "
-                "to actionable insight. I have shipped production systems deployed across 10+ "
-                "factory sites, handling constrained hardware, unreliable connectivity, and "
-                "real-time data under operational pressure. I understand what it takes to build "
-                "software that works in a paddock, not just a browser tab."
+                "Over the past decade, I have led engineering teams building IoT platforms "
+                "deployed across 10+ factory sites — the full loop from physical signal "
+                "to actionable insight — while shaping technical direction and mentoring "
+                "engineers across Android, backend, and hardware integration. "
+                "I shipped production systems handling constrained hardware, unreliable "
+                "connectivity, and real-time data under operational pressure, and I've "
+                "learned how to balance delivery pace with team growth and engineering "
+                "excellence. I understand what it takes to build software that works in a "
+                "paddock, not just a browser tab — and to lead the people who build it."
             )
             body2 = (
                 "I am also genuinely excited by Halter's mission. The idea of replacing "
@@ -438,16 +444,96 @@ def build_cover_letter_content(
                 "own pace — that is technology making a tangible difference in people's lives. "
                 "I bring production AI experience from my Master's thesis at AUT, where I built "
                 "and deployed a multimodal system combining computer vision, diffusion models, "
-                "and LLM workflows. I use AI tools daily to accelerate delivery, and I am "
-                "comfortable working end-to-end across backend, mobile, and infrastructure. "
-                "I am based in Auckland, I value in-person collaboration, and I want to be "
-                "part of a team that moves fast, ships real things, and cares deeply about "
-                "the problem."
+                "and LLM workflows. I use AI tools daily to accelerate development across my "
+                "team, and I am comfortable coaching engineers through fuzzy requirements, "
+                "owning technical delivery end-to-end, and collaborating closely with product "
+                "and design. I am based in Auckland, I thrive in office-first, high-trust "
+                "cultures, and I want to be part of a team that ships real things and cares "
+                "deeply about the problem."
             )
             closing = (
-                "I would welcome the opportunity to bring my IoT engineering experience, "
-                "full-stack delivery skills, and genuine enthusiasm for Halter's mission "
+                "I would welcome the opportunity to bring my engineering leadership, "
+                "full-stack delivery experience, and genuine enthusiasm for Halter's mission "
                 "to your team. Thank you for your time and consideration."
+            )
+        elif 'fiserv' in company_lower:
+            opening = (
+                "I am applying for the Senior Android Developer position at Fiserv. "
+                "I am a full-stack software engineer with 10+ years of experience across "
+                "Android, backend, and IoT systems, and I recently completed my Master of "
+                "Computer and Information Sciences at AUT with First Class Honours. "
+                "I am particularly interested in Fiserv because it delivers market-leading "
+                "mobile banking solutions at scale — and I want to build Android software "
+                "that millions of people rely on for their everyday finances."
+            )
+            body1 = (
+                "What draws me to this role is the opportunity to contribute to a large-scale "
+                "mobile banking product within a complex enterprise environment. Over the past "
+                "decade I have architected and shipped Android applications across messaging, "
+                "IoT, industrial automation, and fintech domains — from NDK-level transport "
+                "layers handling 500K+ daily messages to full-featured apps with offline sync, "
+                "real-time data, and device integration. I have deep hands-on experience with "
+                "Kotlin, Java, Android SDK, Jetpack, MVVM, WebSocket, and performance "
+                "engineering across cold start, memory, and ANR optimisation. I also bring "
+                "production experience working with legacy codebases, incrementally migrating "
+                "them toward modern architecture while keeping the product stable."
+            )
+            body2 = (
+                "Beyond individual contribution, I have mentored junior Android developers, "
+                "established mobile coding standards, and driven code quality improvements "
+                "through design reviews and CI/CD practices. I thrive in agile scrum teams, "
+                "communicate clearly across technical and business contexts, and use AI tools "
+                "daily (Claude Code, Copilot) to accelerate delivery without compromising "
+                "quality. I am based in Auckland and genuinely excited about the opportunity "
+                "to bring my Android expertise, fintech-adjacent experience from my work on "
+                "crypto and secure transaction apps, and collaborative mindset to Fiserv."
+            )
+            closing = (
+                "I would welcome the opportunity to contribute my Android development "
+                "experience, enterprise delivery discipline, and enthusiasm for mobile "
+                "banking to Fiserv's engineering team. Thank you for your time and consideration."
+            )
+        elif 'placeme' in company_lower or 'place-me' in company_lower:
+            opening = (
+                "I am applying for the Java Developer - Backend position "
+                "in Wellington. I am a backend software engineer with 10+ years "
+                "of experience building production systems in Java, Python, and "
+                "Spring Boot on AWS infrastructure, and I recently completed my "
+                "Master of Computer and Information Sciences at AUT with First "
+                "Class Honours. I am particularly drawn to this role because it "
+                "offers the chance to contribute to platforms that make a genuine "
+                "difference in how cities and transportation systems operate globally."
+            )
+            body1 = (
+                "The tech stack and culture described resonate strongly with my "
+                "experience. I have spent the majority of my career building Java "
+                "and Spring Cloud microservices deployed on AWS, with hands-on "
+                "experience in containerized architectures, CI/CD pipelines "
+                "(Jenkins and GitHub Actions), and automated testing. I am equally "
+                "comfortable in Python for data-processing and AI-adjacent services. "
+                "Beyond technical delivery, I have consistently mentored junior "
+                "engineers through pair programming, constructive PR reviews, and "
+                "technical design discussions — and I genuinely enjoy helping teams "
+                "level up their engineering practices. The 10% self-directed learning "
+                "time also aligns with how I naturally work; I continuously invest "
+                "in exploring new tools and approaches."
+            )
+            body2 = (
+                "What excites me most about this opportunity is the combination of "
+                "meaningful work, a collaborative engineering culture, and real "
+                "technical ownership. I am comfortable shaping technical roadmaps, "
+                "contributing to architectural decisions, and working in Agile teams "
+                "where communication and pragmatism matter as much as code quality. "
+                "I am also well aware that the role is based in Wellington, and I "
+                "am open to relocating and embracing the hybrid (2-day WFH) "
+                "arrangement. I would welcome the opportunity to bring my backend "
+                "expertise, mentoring mindset, and genuine enthusiasm for "
+                "purpose-driven technology to your team."
+            )
+            closing = (
+                "I would welcome the opportunity to discuss how my backend "
+                "engineering experience and collaborative approach could contribute "
+                "to your team's success. Thank you for your time and consideration."
             )
         elif 'catch' in company_lower or 'catch design' in company_lower:
             opening = (

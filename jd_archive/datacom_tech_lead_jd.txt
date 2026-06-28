@@ -1,0 +1,26 @@
+Contract - Tech Lead (Java + Spring Boot)
+
+Datacom
+Auckland, Auckland, New Zealand
+Full-time
+
+About the role
+We're on the hunt for a Contract Tech Lead specialising in Java & Spring Boot to become a pivotal part of our dynamic team. If you're passionate about weaving together innovative solutions and crafting seamless experiences, this is the role for you! With your expertise in API development, application design, and cloud solutions, you'll be at the forefront of delivering transformative tech to our clients alongside a team that's as driven and enthusiastic as you are.
+
+What You'll Do:
+- Deliver impeccable, tested, and robust code that exceeds our customers' expectations.
+- Design and automate groundbreaking solutions as a key player in a cohesive team.
+- Stay at the cutting edge by diving into the latest in DevOps, Containers, Cloud, and AI.
+- Partner with clients to tailor solutions that meet their unique needs.
+- Ensure seamless, on-time task delivery.
+- Tackle challenges with resilience and support your team in achieving shared goals.
+
+What You'll Bring:
+- Strong proficiency in Java and related technologies including the Spring framework (Spring Boot, Spring MVC, Spring Data), JVA/Hibernate and related technologies.
+- Ability to develop robust and scalable back-end services and APIs using Java, Spring Boot, and related technologies. Experience with microservices architecture is a plus.
+- Experience with AWS cloud services including EC2, Lambda, RDS, API Gateway, EKS, Glue, Bedrock and Q Developer and other relevant services. Ability to implement cloud native services. AWS certifications is a bonus!
+- Experience in Node.js and Python for automation, data processing, and integration tasks. Experience with relevant Python libraries (e.g., Boto3) for interacting with AWS services.
+- A solid understanding of DevOps methodologies and CI/CD pipeline deployment.
+- Familiarity with container platforms, automated testing, and Agile environments.
+- Stellar communication skills and the ability to thrive both independently and as part of a team.
+- A passion for technology, a desire to learn, and a drive to see projects through.

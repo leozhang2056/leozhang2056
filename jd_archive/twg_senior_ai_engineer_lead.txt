@@ -1,0 +1,47 @@
+Senior AI Engineer - Lead
+The Warehouse Group (TWG)
+Auckland, New Zealand
+
+About the job
+
+The Warehouse Group (TWG) has become a Kiwi household name, and we proudly recognise the role that we play in communities throughout New Zealand. We are the largest general merchandise retailer in NZ across The Warehouse, Warehouse Stationery & Noel Leeming. We are at an exciting point in our journey where our focus is on becoming brand-centric, aiming to deliver an unparalleled experience for our customers. Agility and collaboration are cornerstones of our work culture, empowering us to adapt swiftly and work seamlessly together. By being brand-led and retail-focused, we are intentional about placing the right people in the right roles, allowing us to perform work that truly makes a difference.
+
+Our Technology footprint is extensive and underpins the successful running of our group operation. From our digital presence to our warehouse and order management systems and everything in between, we're a place technologists want to be, and we'd love you to be part of it.
+
+This isn't your average AI Engineering role. We're looking for a Senior AI Engineer - Lead to help shape how AI solutions are designed, built, and delivered across The Warehouse Group.
+
+As we continue to grow our Data & AI capability, you'll play a key role leading the technical delivery of AI initiatives -- providing hands-on architectural guidance, mentoring emerging engineers, and ensuring solutions move successfully from prototype through to production. If you're excited by solving complex technical challenges, building scalable AI solutions, and helping grow capability in others, this could be your next opportunity.
+
+Sitting within our Data & AI function and reporting into the Group Chief Data & AI Officer, you'll work closely with AI Engineers, Data Engineers, Architecture, Security, and wider business stakeholders to deliver pragmatic, secure, and scalable AI solutions across the organisation.
+
+This is a highly technical leadership role where your expertise will be essential from day one. You'll contribute directly to solution design and engineering while also setting standards, guiding best practice, and acting as a trusted technical lead for the graduate AI capability.
+
+Day To Day, You Could Be Involved In:
+- Providing technical leadership and architectural guidance across AI initiatives delivered by the graduate capability team
+- Leading the design of AI solutions including LLM-based applications, RAG architectures, and agent workflows
+- Reviewing and approving code, pipelines, and solution designs to ensure quality, security, scalability, and maintainability
+- Supporting the transition of AI solutions from prototype to production-ready environments
+- Mentoring and coaching Graduate AI Engineers and Data Engineers to build capability and engineering discipline
+- Collaborating with Enterprise IT, Architecture, and Security teams to support production deployments
+- Contributing hands-on to complex or foundational builds where required
+- Defining and uplifting AI engineering standards, patterns, and best practices across the function
+- Acting as a technical escalation point for complex engineering challenges
+- Staying current with emerging AI technologies and recommending practical adoption opportunities
+
+Qualifications:
+- Significant experience in software engineering and applied AI development
+- Strong proficiency in Python and modern AI application frameworks
+- Proven experience deploying AI or data-driven solutions into production environments
+- Strong understanding of cloud platforms such as Azure, AWS, or GCP
+- Experience designing APIs, data pipelines, and integration patterns
+- Strong engineering discipline across code review, testing, documentation, and maintainability
+- Experience mentoring or guiding early-career engineers
+- Excellent communication and stakeholder engagement skills
+- A collaborative mindset with the ability to work across technical and non-technical teams
+- Curiosity, pragmatism, and a continuous improvement mindset
+
+It would also be advantageous if you have experience with:
+- LLM platforms and architectures including RAG, agent workflows, and evaluation frameworks
+- MLOps or AI operational practices
+- Enterprise security, identity, and data governance requirements
+- Fast-moving, iterative delivery environments
