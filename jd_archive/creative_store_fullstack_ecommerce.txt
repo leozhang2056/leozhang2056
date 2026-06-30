@@ -1,0 +1,25 @@
+Front End Developer / Full Stack Developer
+
+The Creative Store (Client: Digital Agency)
+Takapuna, Auckland (North Shore)
+Full time
+
+About the client
+
+Digital agency specialising in e-commerce projects for clients in NZ and Australia. Small but high performing team transforming businesses with digital commerce solutions.
+
+About the role
+
+Senior-level Full Stack Developer contributing to the growth of the technical team, providing technical direction and driving standards for code quality — including how they use AI to deliver faster, smarter, and at a higher standard.
+
+Key Responsibilities:
+- Be the go-to technical expert for Shopify and BigCommerce technical capabilities
+- Keep up to date with industry trends with focus on emerging AI tools in eCommerce
+- Produce high-quality, maintainable, tested code using AI-assisted development tools
+- Provide technical direction and drive code quality standards
+
+Requirements:
+- Tertiary qualifications in CS, engineering, or related field
+- 5+ years' industry experience with lead responsibility on projects
+- Detailed knowledge of Shopify and BigCommerce SaaS platforms
+- Building and launching stores, configuring third-party apps, migrating data

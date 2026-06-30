@@ -1,49 +1,45 @@
-Software Engineering Manager
+Senior Software Engineer - Go-to-Market
 
-Auckland, New Zealand · On-site
+Halter
+Auckland CBD, Auckland
+Full time
 
 About Halter
+Halter is on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. People join Halter to do meaningful work. By joining us you'll be solving challenging problems within a talented team and a culture built for high performance. Our team out-think, out-work and out-care.
 
-At Halter, we're on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. Imagine watching 500 cattle stand up and walk calmly towards their next break? No quad bikes, no dogs, no fences. Just a group of cattle walking at their own pace. People say it looks like magic. Our customers are revolutionizing grazing with Halter. It's changing lives and transforming an industry. People join Halter to do meaningful work. By joining us you'll be solving challenging problems within a talented team and a culture built for high performance. Our team out-think, out-work and out-care. We're committed to delivering real change in the world - this isn't easy, and in truth, we love that it's hard.
+About the role
+Imagine taking one of the world's most advanced ag-tech platforms and levelling it up with AI-powered products built to last — not demos, not prototypes, but real software that ships, scales, and makes a genuine difference.
 
-We're backed to deliver on a mission that matters by Tier 1 investors including Founders Fund, Bessemer Venture Partners, BOND, DCVC, Blackbird, Promus Ventures, Rocket Lab's Peter Beck and Icehouse ventures.
+This role is for a Senior Software Engineer who happens to love AI, someone who cares deeply about system design, clean architecture, and building full-stack products end-to-end. You'll be working across the stack to design, build, and scale the AI-powered tools and surfaces that our customers, support teams, and commercial teams rely on every day.
 
-About The Role
+You'll sit at the heart of a rapidly growing AI ecosystem at Halter, collaborating closely with our Customer AI, Support, Commercial, and launch teams. From polished frontend experiences to robust backend services and APIs, you'll own meaningful slices of our product and infrastructure.
 
-We're looking for a Software Engineering Manager who builds and elevates their team, drives strong technical solutions, and goes deep on hard, real-world problems. This isn't a pure delivery or pure people role. You'll be in the work, shaping technical direction, collaborating closely with design and product, and helping your team do the best work of their careers. Don't worry, you'll also be hands-on.
+In this role your focus will be internal tooling — think analytics tools, commission tooling etc.
 
-You'll need to hold the technical bar high while creating the space for others to grow. We're solving problems that haven't been solved before, and you'll be crucial to figuring them out. It's a role that demands absolute ownership, someone who can take a blurry problem, create clarity, and lead a team to nail it.
+What we're looking for:
+- Key tech/experience: React, React Native, AI, Mobile Development, Full stack with Front End focus
+- Strong full-stack engineering skills across frontend and backend — ideally TypeScript/React on the front, Python and/or Node on the back
+- Solid experience designing and building production-grade APIs, services, and data pipelines
+- A good intuition for how to integrate AI capabilities (LLMs, RAG, agents) into real products without the tech becoming the product
+- Experience building for scale: writing maintainable code, thinking about observability, reliability, and performance from day one
+- Comfort working across the stack — you're not precious about where a problem lives, you just want to solve it well
+- A collaborative approach — you enjoy working tightly with cross-functional teams and bringing others along with you
 
-The kind of problems our teams solve
+Bonus points:
+- Experience with AI frameworks like LangChain, LlamaIndex, or similar
+- Familiarity with vector databases, embeddings, or retrieval systems
+- Exposure to workflow orchestration tooling (n8n, Temporal, Airflow, etc.)
+- Experience with data engineering, ETL pipelines, or event-driven architectures
+- Comfort working in fast-paced, ambiguous environments — you actually enjoy the uncertainty
 
-Halter is one system: hardware, software, and AI, running live on real farms. Our engineering teams own different slices of that system, but the problems all rhyme:
-- Turning thousands of collars and billions of sensor events into a single, calm decision in a farmer's hand.
-- Modelling the physical world (animals, pasture, terrain) accurately enough to act on in real time.
-- Building mobile and web experiences that hold up at 5am whilst out in a paddock in the rain.
-- Designing platforms and pipelines that scale with our incredible pace of growth without the seams showing.
-- Engineering against constrained hardware, flaky rural connectivity, and the messiness of the physical world, and shipping with pace despite it.
+What you'll be doing:
+- Build and ship full-stack AI-powered features across Halter's commercial, support, and internal platforms
+- Design and implement backend services and APIs that power AI workflows at scale
+- Build clean, intuitive frontend experiences
+- Own end-to-end delivery of features: scoping, architecting, building, testing, deploying, and iterating
+- Work with AI models and pipelines as a tool in your engineering toolkit — integrating them thoughtfully into well-designed systems
+- Contribute to Halter's engineering standards around reliability, observability, testing, and maintainability
+- Collaborate with the Customer AI team to help define how AI capabilities get built and delivered across the product
 
-Every team here ships software that has to work in a paddock, not just a browser tab. As an engineering manager at Halter, you're in the work, not above it: coaching engineers, shaping the technical bets, and writing code.
-
-What You'll Do
-
-- Lead a team of engineers - frontend and backend - supporting their growth, giving great feedback, and helping them focus on what matters.
-- Own the technical direction and delivery of your team's work - making sure it's reliable, maintainable, and impactful.
-- Help define the structure, shape, and scope of our work - and ensure it lands well with farmers and ranchers.
-- Stay close to the technical details - across services, data, and system design - and bring a strong point of view.
-- You'll be backing engineering-led initiatives and getting ahead of scale.
-- Work closely with product and design to shape what we build, not just how. You'll be in the room when requirements are fuzzy and you'll help make them clear.
-- Back engineering-led initiatives and look for opportunities to use AI tools to accelerate development or unlock entirely new ways of working.
-- Get out on farm. Deep domain knowledge matters and you'll be expected to develop it.
-- Contribute to the broader engineering culture and practices that make Halter a great place to build.
-
-You'll be great if you
-
-- Have led engineers directly - performance conversations, mentoring, hiring, the lot.
-- Think like a product engineer. You care about what gets built and the impact it has on the person holding the phone in the paddock.
-- Have a strong intuition for UX, performance, and product polish. You know what good feels like and you push for it.
-- Know how to shape and structure work without being overly prescriptive, and balance speed with quality.
-- Stay calm under pressure, have a low ego, and can rally a team through tough or complex work.
-- You've worked in fast-moving startups, seen growth, and tackled ambiguous problem spaces.
-
-Bonus points for experience with hardware or real-world systems, mobile/React Native, and building experiences for demanding environments where the UX constraints are physical, not just digital.
+Office First Approach
+We believe a world-class, in-person office culture is the best way for high-performing teams. Being office first is a core pillar of our culture. We're office first, not office only. We have a high-trust culture, so everyone is trusted to do what's best for Halter.

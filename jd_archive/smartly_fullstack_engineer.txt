@@ -1,0 +1,45 @@
+Full Stack Software Engineer - Smartly
+
+Datacom
+Auckland CBD, Auckland (Remote)
+Engineering - Software
+Full time
+
+About Smartly, a Datacom company
+
+We exist to make it simpler for Kiwi businesses to look after their people. We're known as the simple way to sort your payroll for over 20,000 businesses. Our slick software, combined with our awesome support team, helps businesses pay their people on time, accurately and in line with legislation. As a fast-growing FinTech expanding into adjacent markets, Smartly offers a fast-paced, fun work environment with great opportunities for personal and professional development.
+
+About the Role
+
+As a Full Stack Engineer, you will work on our Smartly Payroll System. Smartly is a SaaS Online Payroll Product helping more than 20,000 clients with their payroll needs. Our ideal candidate will have at least 2 years of experience working on the front end and back end; also have a strong ability to solve problems, design & write clean code; and mentor junior engineers.
+
+What you'll do
+
+- Owning the day-to-day delivery of assigned work, including clarifying feature-level ambiguity, managing tasks effectively, supporting release, and verifying outcomes in production.
+- Contributing to team-owned delivery by giving realistic input into effort, raising risks or blockers early, communicating progress clearly, and helping the team deliver work predictably.
+- Contributing to team-owned quality through appropriate testing, code review participation, safe change practices, and disciplined attention to correctness, maintainability, security, and performance.
+- Using modern tooling, automation, and AI-assisted development in a practical and controlled way to improve delivery efficiency, feedback loops, and code quality while remaining accountable for the output.
+- Supporting less experienced engineers through constructive collaboration, review feedback, and strong day-to-day engineering practice.
+
+What you'll bring
+
+- 2+ years' experience working on IT projects across multiple phases of the SDLC.
+- Recent C# .NET experience with at least 2 years of .NET development.
+- Experience with web front-end technologies, including HTML, JavaScript, CSS, React, or ASP.NET Razor.
+- Good understanding of software architecture, design patterns, SOLID principles, and object-oriented programming.
+- Knowledge of software configuration management using tools such as Git.
+- Familiarity with service-oriented frameworks.
+- Ability to implement features, unit tests, and fix complex bugs.
+- Excellent communication skills, with a strong focus on helping create cohesive, collaborative, and productive teams.
+- Strong problem-solving and conceptual thinking skills.
+- Public cloud exposure (Azure) is a bonus.
+
+What You'll Get
+
+- Flexible working with a hybrid model, and fully remote options elsewhere in New Zealand.
+- Wellness allowance and birthday leave
+- Access to Datacom employee benefits and development opportunities
+- A collaborative and supportive Product team
+- The opportunity to work on products that make a real difference to thousands of businesses and employees
+- An awesome company culture where we love a massive morning tea, an epic work party, and the occasional rolling lunch
+- A team that genuinely cares about its people and wants to see them thrive

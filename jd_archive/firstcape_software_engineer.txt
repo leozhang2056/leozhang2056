@@ -1,0 +1,41 @@
+Software Engineer
+
+FirstCape Limited
+Auckland CBD, Auckland
+Full time
+
+About FirstCape
+One of New Zealand's largest wealth advisory and asset management businesses. Technology is central to how they deliver great client outcomes.
+
+About the Role
+Software Engineer in Technology team, building new digital products and client experiences on a modern, scalable platform. Hands-on engineering with product thinking. Cross-platform web and mobile development.
+
+Key Responsibilities:
+- Writing clean, maintainable, well-tested code
+- Building client experiences using React and modern JavaScript frameworks
+- Contributing to design discussions and code reviews
+- API integration and distributed systems
+- Supporting release process and continuous improvement
+- Security and long-term maintainability
+- Cross-team collaboration with Product, UX
+
+Tech Stack:
+- Frontend: React, React Query, Ant Design, React Native
+- Testing: Vite, Vitest, Playwright, Mock Service Worker
+- Platform: .NET APIs, ASP.NET identity services
+- Cloud: Microsoft Azure, GitHub Actions (CI/CD)
+
+What we're looking for:
+- 5+ years software engineering with front-end focus (HTML, CSS, JavaScript)
+- React and modern JavaScript/TypeScript frameworks
+- Product delivery within existing platforms
+- APIs and distributed systems
+- Quality and delivery focus
+- Clear communication skills
+- Pragmatic, solutions-focused mindset
+
+Bonus:
+- React Native or mobile app development
+- .NET or full-stack environments
+- Azure, CI/CD pipelines, automated testing
+- Financial services or high-trust environments

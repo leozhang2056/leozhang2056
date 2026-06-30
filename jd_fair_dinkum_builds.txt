@@ -1,0 +1,37 @@
+Senior Software Engineer & Technical Lead
+
+Pacific Coilcoaters (Fair Dinkum Builds, part of Stramit, a Fletcher Building Company)
+Penrose, Auckland
+$130,000 – $150,000 + company benefits
+
+Senior Software Engineer / Technical Leader
+
+Join Fair Dinkum Builds, part of Stramit (a Fletcher Building Company), and help shape the future of a business-critical software platform that underpins a successful franchise operation across Australia and New Zealand. The platform supports design, engineering, pricing and ordering processes and is central to the success of the business.
+
+About the Role
+We're looking for a hands-on Senior Software Engineer / Technical Leader to help modernise and evolve a complex software ecosystem. You'll strengthen technical capability, guide members of a small multi-skilled delivery team through complex system change and help shape the future technical direction of the platform.
+
+Day to day you will:
+- Under the Team Lead, act as a key technical leader for core platforms, providing direction on design, implementation and quality.
+- Maintain a strong hands-on contribution, including coding (NET/C#, Python, APIs and web applications), technical design, debugging and code reviews.
+- Modernise legacy .NET applications and help shape future architecture.
+- Partner with product and business stakeholders to deliver practical, scalable solutions.
+- Identify opportunities to support wider business initiatives and contribute to long-term direction.
+
+About You
+You are a collaborative and adaptable software engineer who enjoys solving complex problems, mentoring others and working across both legacy and modern technologies. You thrive in a hands-on environment, communicate effectively with both technical and non-technical stakeholders and enjoy making a meaningful impact within a small, agile team. Essential to your success is:
+- Proven experience in a Senior Software Engineer or equivalent role in complex production environments.
+- Strong hands-on development experience with .NET /C# and ideally some exposure to Python.
+- Experience working with and modernising legacy systems.
+- Solid understanding of software architecture, integration patterns and service-based design.
+
+Desirable to have include:
+- Experience in engineering, construction, manufacturing or pricing systems with some exposure to CAD, drawing automation or LISP based tooling.
+- Experience transitioning desktop or batch applications into web applications and APIs.
+- Familiarity with CI/CD pipelines, automated testing and modern DevOps practices.
+- Exposure to start-up, scale-up or highly collaborative development environments.
+
+Why join us?
+Join a small, agile team where your ideas and expertise will directly influence the future of a business-critical platform. You'll enjoy the autonomy and innovation of working in a small, agile team while benefiting from the scale, stability and career opportunities that come with being part of one of Australasia's largest building products companies. As a member of the Heavy Building Materials Division within Fletcher Building, you will have further opportunities to be part of wider initiatives over time.
+
+In return, we offer ongoing development opportunities, an Employee Education Fund for you and dependents, generous parental leave, an Employee Welfare Fund, wellbeing initiatives, KiwiSaver contributions matched to 4% of your base salary, company discounts and much more.

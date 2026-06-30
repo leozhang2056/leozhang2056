@@ -1,0 +1,29 @@
+Junior Full-Stack Developer
+
+Atom Intelligence
+Auckland CBD, Auckland (fully onsite at North Shore, Takapuna)
+Full time, $25 – $35 per hour
+
+About the company
+ATOM Intelligence is a New Zealand company building vertical AI and data platforms for enterprise clients around the world. They deliver production data and AI systems across retail, FMCG, hospitality, luxury, and healthcare. Auckland is their R&D centre.
+
+About the role
+You will work across the platform stack — backend services, web applications, data pipelines, and cloud infrastructure — shipping features that power real client delivery. You will collaborate closely with Auckland and Shanghai teams, own features end to end, and grow into more senior technical responsibility over time.
+
+Fully onsite role — no hybrid or remote arrangements.
+
+Hard requirements
+- 1–3 years of professional software development experience
+- Fluent in both English and Mandarin, written and spoken
+- Bachelor's degree in Computer Science, Information Systems, or Information Technology
+- Strong Python development experience
+- Hands-on experience with at least one modern front-end framework: React, Angular, or Vue
+- Solid SQL skills, including writing and optimising non-trivial queries
+- Cloud development experience — Azure preferred
+- Able to work fully onsite at North Shore, Auckland office
+
+Nice to have
+- Familiarity with containers (Docker, Kubernetes)
+- Understanding of eventing and messaging patterns (queues, pub/sub, event-driven architectures)
+- Exposure to data warehousing concepts (Snowflake, BigQuery, Redshift, ClickHouse, etc.)
+- Postgraduate degree (Honours, Master's, or PhD) in a relevant field

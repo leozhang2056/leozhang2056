@@ -1,0 +1,32 @@
+Senior Developer
+
+The Instillery
+Auckland CBD, Auckland (also Hamilton, Wellington)
+Full time
+
+About The Instillery
+IT consultancy with high performing team. Bespoke .NET applications and cloud integration.
+
+About the Role
+Senior .NET Developer responsible for implementation, testing, support and maintenance of systems. Building bespoke .NET applications and integrations using IPaaS tools.
+
+Key Responsibilities:
+- Build, develop, maintain .NET applications and integrations using IPaaS
+- Collaborate on software design and architecture
+- Write clean, scalable code using .NET
+- Revise, update, refactor, debug code
+- Participate in requirement analysis
+- Develop documentation throughout SDLC
+- Develop alerting frameworks
+- Develop application support documentation
+
+Requirements:
+- Experience in .NET stack using C#
+- Upgrading, configuring, debugging existing systems
+- RESTful API development, SQL Server, design/architecture patterns
+- Agile rituals
+- Linux and Windows OS administration
+- Windows environment application development
+- Cloud/VM infrastructure management
+- SaaS platform implementation and configuration
+- Integration configuration using enterprise integration technologies or IPaaS

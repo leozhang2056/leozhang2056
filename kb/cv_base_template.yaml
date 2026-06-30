@@ -168,14 +168,10 @@ roles:
     summary_sentences:
       en:
       - Master's in Computer and Information Sciences from AUT, First Class Honours.
-      - Software Engineer with 10+ years of experience designing and building complex
-        enterprise solutions across backend systems, mobile applications, and IoT platforms.
-      - Strong communication and technical facilitation skills, experienced presenting
-        solutions, facilitating technical discussions, and mentoring engineers.
-      - Strong expertise in Java, Spring Boot, RESTful APIs, microservices, and cloud
-        infrastructure including AWS, Docker, and CI/CD pipelines with automated testing.
-      - Experienced working in Agile teams, with legacy systems, Linux server administration,
-        and modernising enterprise platforms through refactoring and incremental delivery.
+      - Backend engineer with 10+ years building enterprise systems across Java, Spring Boot, and cloud infrastructure.
+      - Focused on software architecture, API design, and building services that balance quality with delivery constraints.
+      - Delivered end-to-end features across web, mobile, and IoT with hands-on CI/CD and automated testing.
+      - Published AI research at IVCNZ 2025, with practical experience integrating LLM workflows into delivery pipelines.
     key_skills:
       en:
       - label: Backend Engineering
@@ -466,73 +462,51 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Staff Software Engineer with 10+ years of experience building web applications, APIs, and digital platforms from React and Node.js front-ends to Java and Python back-end services.
-      - Proficient in React, Vue.js, TypeScript, Node.js, Java, Python, and Spring Boot, with strong focus on clean architecture, scalable design, and maintainable code.
-      - Experienced in AWS deployment, CI/CD pipelines, API design, and participating in technical discussions to improve architecture, performance, and feature delivery.
-      - Production AI experience building computer vision and LLM workflows published at IVCNZ 2025, with hands-on agentic AI practices using modern coding tools.
+      - Full-stack engineer with 10+ years shipping production systems — from React and Vue.js front-ends to Java, C#/.NET, and Node.js back-end services.
+      - Strong focus on software architecture, SOLID principles, and design patterns — building systems that balance quality with delivery constraints.
+      - Delivered end-to-end features across web, mobile, and IoT, with hands-on CI/CD and automated testing at scale.
+      - Published AI research at IVCNZ 2025, with practical experience integrating LLM workflows into delivery pipelines.
     key_skills:
       en:
       - label: Languages
         skills:
+        - C#/.NET
         - Java
-        - C#
-        - .NET
         - TypeScript
         - JavaScript
         - Python
-        - Kotlin
+      - label: Frontend
+        skills:
+        - React
+        - Vue.js
+        - HTML/CSS
+        - Redux
       - label: Backend & APIs
         skills:
         - Spring Boot
         - Spring Cloud
-        - ASP.NET
-        - .NET Core
-        - RESTful API
-        - Kafka
-        - Microservices
-      - label: Frontend & Engineering
-        skills:
-        - React
-        - Vue.js
-        - TypeScript
-        - JavaScript
-        - HTML/CSS
         - Node.js
-        - Redux
-        - HTML5/CSS3
-      - label: Databases
+        - RESTful API
+        - Microservices
+      - label: Architecture & Practices
+        skills:
+        - SOLID Principles
+        - Design Patterns
+        - Unit Testing
+        - CI/CD
+        - Git
+      - label: Databases & Storage
         skills:
         - MySQL
         - SQL Server
-        - PostgreSQL
         - Redis
         - MongoDB
-      - label: CMS & Content
-        skills:
-        - WordPress
-        - Headless CMS
-        - Content Architecture
-      - label: DevOps & Release
+      - label: Cloud & DevOps
         skills:
         - Docker
         - Kubernetes
+        - Azure
         - AWS
-        - Jenkins
-        - CI/CD
-        - Azure DevOps
-      - label: Architecture & Practices
-        skills:
-        - Distributed Systems
-        - Automated Testing
-        - SaaS
-        - Agile/Scrum
-      - label: AI & Tools
-        skills:
-        - PyTorch
-        - LLM
-        - Cursor
-        - GitHub Copilot
-        - Claude Code
     tech_stack_display:
       technical_lead_2019_2024:
         priority:

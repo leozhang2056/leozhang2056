@@ -1,0 +1,31 @@
+Intermediate Engineer - AI Automation & Integration
+
+Inde Technology
+Auckland (Hybrid)
+
+About Inde
+Inde is New Zealand's leading employee-owned IT consultancy. Big enough to work with the country's largest customers, yet agile enough to make things happen without bureaucracy. Technically led and outcome focused, their technical experts lead the way for customers.
+
+Join Inde's AI, Automation, & Integration team and collaborate with a talented group of specialists to design and deliver innovative integration and automation solutions for enterprise customers. Reporting to the AI & Data Technical Director, you'll work in a cloud-first environment, solving real-world business problems with both code and low-code tools.
+
+What You'll Do
+- Build cutting-edge integration & automation solutions using your expertise
+- Implement AI-enabled solutions such as intelligent document processing, AI-assisted search, chatbots, and workflow augmentation using Azure AI services
+- Consult and collaborate with a diverse range of enterprise customers
+- Take on challenging projects that push you to learn and grow
+- Work in a supportive, cross-functional team environment
+
+What You'll Bring
+- Integrations bringing together separate systems to solve customer problems
+- Knowledge of automation tools to streamline processes
+- Low-code / No-code integration frameworks
+- Programming & scripting skills: PowerShell scripting and TypeScript React
+- Azure cloud automation: Logic Apps, Function Apps, Service Bus, Power Apps, Power Platform
+- Experience with Azure AI services: Azure OpenAI, Azure AI Search, Azure Document Intelligence, AI Foundry
+- AI-driven automation solutions and chatbot development
+- DevOps operations and CI/CD frameworks
+- Connector and API Management
+- Consulting with customers on options and features required to meet business needs
+- Designing and presenting solutions and scopes of work to customers
+- Strong analytical and problem-solving skills
+- Previous experience in a professional services environment is highly desirable

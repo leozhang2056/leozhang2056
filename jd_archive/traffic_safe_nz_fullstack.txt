@@ -1,0 +1,33 @@
+Full-Stack Software Development Engineer
+
+Traffic Safe New Zealand Ltd
+Takanini, Auckland
+Engineering - Software
+Full time
+$105,000 – $120,000 per year
+
+About Traffic Safe NZ
+
+Provides temporary traffic management services throughout the North Island. Internal software systems keep operations efficient, reliable, and safe.
+
+About the role
+
+Hands-on individual contributor role owning software delivery from start to finish. Design, develop, deploy, and support enterprise-grade internal applications across the business.
+
+Key Responsibilities:
+- Lead development of internal enterprise applications across full SDLC
+- Build backend services, APIs, integrations, and frontend web apps using C#, .NET, JavaScript/TypeScript, Angular, SQL, NoSQL
+- Implement and maintain CI/CD pipelines (Azure DevOps, GitHub Actions, Jenkins)
+- Support cloud-based deployments across Azure and/or AWS
+- Troubleshoot production issues, root-cause analysis, performance optimisation
+- Write automated unit, integration, and functional tests
+- Use AI-assisted development tools (Claude Code, Copilot, Cursor)
+
+Requirements:
+- 3-5 years' hands-on enterprise software development and production support
+- Strong C# / .NET (.NET Framework and/or .NET Core / .NET 8+)
+- JavaScript/TypeScript and Angular
+- REST APIs, OOP, SOLID principles, design patterns
+- SQL Server and NoSQL (MongoDB)
+- Azure and/or AWS
+- Git, CI/CD pipelines, automated deployment

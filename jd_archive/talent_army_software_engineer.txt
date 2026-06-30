@@ -1,0 +1,20 @@
+Software Engineer
+
+Talent Army
+Christchurch Central, Canterbury
+Full time
+
+About the Company
+Innovative NZ software company with strong international growth. Modern cloud-based technology helping businesses operate more efficiently. Collaborative, high-trust engineering culture.
+
+About the Role
+Software Engineer designing, building, and scaling cloud-native software products. Full development lifecycle. Architecture, high-quality code, complex technical challenges, cross-functional collaboration.
+
+Skills & Experience:
+- 2-3+ years software engineering experience
+- Degree in CS, Software Engineering, or related
+- Python, Node.js, React, Golang, or similar
+- Building scalable SaaS products or distributed systems
+- Cloud platforms: AWS, Azure, GCP
+- DevOps, CI/CD pipelines, automated testing
+- Strong communication, collaboration, problem-solving

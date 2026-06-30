@@ -1,0 +1,19 @@
+feat: Chunxiao title gradient, review/evolve system, 6 bug fixes
+
+- Fixed CV font from Roboto to Inter (rule requirement)
+- Fixed CL --title default blocking JD auto-extract (now None)
+- Fixed Summary skill-strip regex leaving "from and" / ".js" fragments
+- Fixed html param shadowing in _ensure_min_jd_keyword_coverage_html
+- Fixed & split in _extract_core_jd_title — now only splits for known roles
+- Added Chunxiao title gradient: later stage=JD core, earlier=KB original (never identical)
+- Added level-blocking: junior/graduate/intern/associate/intermediate/trainee
+- Added /cv-backend|fullstack|ai|android|cover-letter slash commands with MANDATORY review step
+- Added cl_quality_validator.py for CL tone/structure/JD coverage checks
+- Added test_cover_letter.py (8 tests)
+- Added review-agent-prompt.md for sub-agent CV/CL review protocol
+- Added evolve.md self-improvement skill (6-phase loop)
+- Rewrote kb/rules/resume_output.md and kb/rules/jd_analysis_standard.md
+- Updated kb/applications_tracker.yaml with recent applications
+- JD files: smartAR, AIA, Plexure, Halter SEM, AWS DC trainee, Inde AI, Temperzone
+
+Co-authored-by: CommandCodeBot <noreply@commandcode.ai>

@@ -1,0 +1,34 @@
+Junior Configuration Developer
+
+Foster Moore International Ltd
+Auckland CBD, Auckland (Hybrid)
+Developers/Programmers
+Full time
+
+About the role
+
+Join a high-performing Application Support Team as a Junior Software Configuration Developer. Work on world-class registry solutions for governments and organisations globally. Collaborative, fast-paced environment where contributions directly support national and international registries.
+
+Key Responsibilities:
+- Customize software components based on client requirements
+- Follow design and specification documents to ensure consistency and quality
+- Conduct unit and integration testing of configured components
+- Support QA teams during system and user acceptance testing phases
+- Provide ongoing production support for live systems
+- Identify opportunities for improvement and contribute to enhancing application performance and reliability
+
+What We're Looking For:
+- Tertiary qualification in Computer Science, Engineering or related field
+- Minimum 2 years experience in an IT environment
+- At least 1 year hands-on experience in programming languages (Java preferred, also C#, Groovy, PHP)
+- Good understanding of system design, programming concepts, and database fundamentals
+- Interest in web technologies (XML, HTML, JavaScript, JSON, CSS)
+- Understanding of REST or SOAP web services
+- Familiar with SDLC; Agile (Scrum or Kanban) experience a plus
+- Practical experience with SDLC tools (Jira, Jenkins)
+- Working knowledge of SQL and relational databases
+- Familiar with Git, SVN
+- Knowledge of ITIL and DevOps practices advantageous
+- Exposure to AI tools advantageous
+- Good communication and interpersonal skills
+- Strong analytical and problem-solving abilities

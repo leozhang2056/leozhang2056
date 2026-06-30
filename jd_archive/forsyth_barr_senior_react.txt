@@ -1,0 +1,33 @@
+Senior React Engineer
+
+Forsyth Barr Limited
+Auckland CBD, Auckland
+Engineering - Software
+Full time
+
+About Forsyth Barr
+
+Majority staff and New Zealand owned NZX firm with 90 years of trust. Providing share broking, portfolio management, research, and investment banking services across 26 offices.
+
+About the role
+
+Senior React Engineer to help take greater ownership of client-facing digital platforms and shape the next generation of experiences for New Zealand investors. Modern React and TypeScript environment, building new capabilities across web and mobile channels.
+
+Key Responsibilities:
+- Design and deliver secure client-facing web applications
+- Build internal tools that improve productivity and operational efficiency
+- Develop reusable UI components and shared frontend libraries
+- Work closely with Product, Design and Engineering teams
+- Contribute to frontend architecture, engineering standards and best practices
+- Mentor team members and support continuous improvement
+- Help establish long-term internal web engineering capability
+
+Requirements:
+- 5+ years' professional software engineering experience
+- Strong commercial experience with React and TypeScript
+- Experience designing and building modern frontend applications
+- Component architecture, state management and API integration
+- Testing frameworks (Jest, React Testing Library)
+- Accessibility, responsive design and modern web standards
+- Code reviews and collaborative development practices
+- Excellent communication and pragmatic problem solving

@@ -1,0 +1,44 @@
+Software Engineers (Intermediate or Senior)
+
+Plexure Limited
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+Who are we?
+Plexure redefines the customer experience and drives results through personalized mobile marketing and next-generation loyalty programs for household names such as McDonald's. Our industry-leading customer engagement data platform has over 300 million users in 60+ countries around the globe.
+
+What will you do?
+Reporting to an Engineering Team Lead, you'll contribute to the design, development, and testing of innovative backend solutions:
+- Contribute to design discussions that shape reliable, scalable systems.
+- Troubleshoot, debug, and optimize backend systems for performance and reliability.
+- Contribute to CI/CD pipelines and automated testing to streamline deployments.
+- Participate in code reviews and provide constructive feedback to peers.
+- Help with monitoring, respond to alerts, and support stabilisation as new features go live.
+- Work in an AI-enabled engineering environment, using AI tools to help define specifications, accelerate development, validate code, improve workflows, and support high-quality engineering outcomes.
+
+Our tech stack: C#, .NET, React, Git, SQL, OAuth/OpenID Connect, Azure DevOps, YAML, Bicep and Azure services.
+
+Your team
+You'll join one of our backend engineering squads:
+
+Rewards Squad - creating rewarding experiences that deepen loyalty between brands and their customers. Initial focus: Non-Repeatable Rewards project, introducing sophisticated loyalty redemption rules such as redemption limits and time-based restrictions.
+
+Identity Squad - building and strengthening Plexure's identity and authentication platform, including authentication, authorisation, fraud detection, and broader platform security. Initial focus: building a new highly available Identity Provider (IDP) platform from the ground up.
+
+What are we looking for?
+- A passion for back-end development.
+- Experience with C#, .NET.
+- Exposure to cloud-based environments (infrastructure or CI/CD experience would be a plus).
+- Practical experience using AI development tools.
+- Someone curious who enjoys working collaboratively and tackling challenges as part of a team.
+- Motivation to continue learning and developing your skillset.
+
+Benefits
+- Cloud-first organization with cutting edge technologies.
+- Paid wellness days (4/year) + birthday day off.
+- $2,000 yearly training budget.
+- $1,000 WFH setup allowance.
+- Fully paid health insurance (Southern Cross Wellbeing 2).
+- Life insurance and income protection.
+- Summer hours (Fri 1pm finish Dec-Feb).
+- Free Udemy subscription.

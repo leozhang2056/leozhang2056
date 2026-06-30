@@ -1,0 +1,27 @@
+AI Developer & Enablement Specialist
+
+Wholesale Solutions
+Wellington Central, Wellington
+Developers/Programmers
+Full time
+$80,000 – $120,000 per year
+
+About us
+
+A group of New Zealand e-commerce businesses running a custom-built platform with around 20,000 products. The digital team has gone all-in on AI-led development: traditional .NET developers who now build almost everything with tools like Claude Code — self-taught, learning as they go.
+
+What you'll be doing
+- Build internal tools, automations, platform features and new products using AI-led development
+- Own your work end to end — idea, build, ship, improve
+- Embed with teams new to AI (finance, property, customer service, marketing) and find where it genuinely helps
+- Set up the tools and workflows they need, then coach them so it sticks
+- Bring what you learn back to the digital team
+
+What you'll bring
+- You already build with AI tools — Claude Code, Cursor, ChatGPT or similar
+- You're comfortable in and around code
+- You learn fast and take initiative without waiting to be told
+- You're great with people and enjoy helping others level up
+- Nice to have: e-commerce experience, or any exposure to .NET / SQL Server
+
+We're far more interested in what you've made and how fast you learn than in years served or formal qualifications. Early-career is genuinely welcome.

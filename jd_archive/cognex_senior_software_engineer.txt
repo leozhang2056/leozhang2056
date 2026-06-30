@@ -1,0 +1,36 @@
+Intermediate to Senior Software Engineer
+
+Cognex
+Penrose, Auckland (Hybrid)
+Full time
+$90,000 - $135,000 per year
+
+About Cognex
+Global machine vision and industrial automation company. Production platform used in large-scale logistics operations worldwide.
+
+About the Role
+Software Engineer contributing to production platform for logistics. Ship meaningful features, learn complex domain, collaborate with senior engineers. Senior level: operate with independence, influence technical direction.
+
+Responsibilities:
+- Design, implement, and ship features for global customers
+- Contribute to technical discussions and design reviews
+- Build dependable software for real-world systems
+- Collaborate with US-based stakeholders
+- Incrementally improve code quality, documentation
+- Occasional support rotations (diagnostics, root-cause analysis)
+- (Senior) Technical guidance through code review and problem solving
+
+Required Skills:
+- Strong experience with .NET in production systems
+- Strong working knowledge of Python
+- Frontend: Angular or similar frameworks
+- Linux / Ubuntu environments
+- Strong debugging, troubleshooting, problem-solving
+
+Nice to Have:
+- Logistics, supply chain, operationally complex domains
+- Service-oriented architectures
+- Supporting live, business-critical systems
+- Rust (or interest in learning)
+
+Hours: 3 days office, 2 days WFH. Occasional US team overlap.

@@ -1,0 +1,35 @@
+Software Developer
+
+PageProof
+Birkenhead, Auckland
+Full time
+
+About PageProof
+Award-winning global tech company transforming how creative teams work. Platform trusted by world's leading brands, consistently showcased by partners as best practice.
+
+About the Role
+Software Developer to develop and maintain features across the PageProof platform, monitor performance, troubleshoot issues, and keep codebase production-ready and scalable. Ship features from concept to production, collaborating with Product Managers, Engineers, QAs, and Customer Success.
+
+What you'll do:
+- Develop and maintain features across the PageProof platform
+- Monitor performance, troubleshoot issues
+- Keep codebase production-ready and scalable
+- Participate in Agile ceremonies
+- Maintain technical documentation
+- Ensure work meets security and data privacy standards
+
+What you'll bring:
+- 4+ years building SaaS products, fast-paced startup or scale-up environment
+- Cross-functional Agile teams, clear communication
+- Node.js, TypeScript, C#, AngularJS
+- Next.js, React, KoaJS
+- GraphQL and/or REST API experience
+- Microservices, Kubernetes, cloud platforms (Azure, AWS, GCP)
+- Error monitoring tools (Sentry, Bugsnag)
+- AI coding assistants (Cursor, Claude)
+
+Bonus:
+- Playwright or Selenium
+- Message queuing (Azure Service Bus, RabbitMQ)
+- Azure services (App Services, Azure SQL, CosmosDB)
+- Caching strategies and Redis

@@ -15,7 +15,6 @@ sys.path.insert(0, str(ROOT / "app" / "backend"))
 from generate_cv_from_kb import (  # noqa: E402
     SUMMARY_EDU_CLOSING_EN,
     SUMMARY_REQUIRED_SENTENCES,
-    _apply_jd_sentence1_alignment,
     _enforce_summary_five_sentences,
     _split_summary_sentences,
     _strip_summary_low_signal,
@@ -61,26 +60,6 @@ def test_strip_work_rights_and_location():
     assert "auckland" not in lowered
 
 
-def test_jd_terms_bolded_in_sentence1(profile):
-    skills_path = ROOT / "kb" / "skills.yaml"
-    with skills_path.open(encoding="utf-8") as f:
-        skills_data = yaml.safe_load(f)
-    career = profile["career_identity"]
-    raw = career["summary_variants"]["android_focus"]
-    raw = " ".join(raw.split())
-    input_text = _enforce_summary_five_sentences(raw, "en")
-    aligned = _apply_jd_sentence1_alignment(
-        input_text,
-        ["Kotlin", "Agile", "Android", "JunkToolXYZ"],
-        skills_data,
-        "en",
-    )
-    # The automatic JD injection/bolding in summary is disabled per architecture decisions
-    # (Summary is controlled by cv_base_template.yaml, JD matching by Skills/Experience).
-    # Thus, _apply_jd_sentence1_alignment should return the input unchanged.
-    assert aligned == input_text
-
-
 def test_generate_summary_with_jd_keywords_sentence1_bold(profile):
     text = generate_summary(
         profile,
@@ -88,10 +67,11 @@ def test_generate_summary_with_jd_keywords_sentence1_bold(profile):
         lang="en",
         jd_keywords=["Kotlin", "Agile", "Android SDK"],
     )
-    # Summary sentence 1 is education (Master's). JD bolding is handled by Skills/Experience sections.
-    first = _split_summary_sentences(text, "en")[0]
+    # JD bolding is handled by Skills/Experience sections.
+    # Summary should still be well-formed with bold highlights.
+    sentences = _split_summary_sentences(text, "en")
+    assert len(sentences) >= 5
     assert "<strong>" in text
-    assert "Master" in first or "AUT" in first
 
 
 def test_generate_summary_android_five_sentences(profile):

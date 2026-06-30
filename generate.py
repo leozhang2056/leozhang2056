@@ -257,8 +257,8 @@ def build_parser() -> argparse.ArgumentParser:
         help='Company name',
     )
     cl_parser.add_argument(
-        '--title', default='Software Engineer',
-        help='Target job title (e.g. "Senior Android Engineer")',
+        '--title', default=None,
+        help='Target job title (e.g. "Senior Android Engineer"). When not provided, auto-extracted from JD.',
     )
     cl_parser.add_argument(
         '--jd-keywords', nargs='*', dest='jd_keywords',
@@ -859,12 +859,13 @@ async def run(args) -> None:
         jd_keywords = _auto_keywords_from_jd(args)
         role = _auto_role(args)
         company = _auto_company(args)
+        title = getattr(args, 'title', None) or _auto_title_from_jd(args)
         pdf_path = await generate_cover_letter(
             output_path=args.output,
             role_type=role,
             lang=args.lang,
             company_name=company,
-            target_role_title=args.title,
+            target_role_title=title,
             jd_keywords=jd_keywords or [],
         )
         print(f"\nDone.")

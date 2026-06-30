@@ -730,20 +730,6 @@ def _inject_jd_into_sentence1(sentence: str, terms: List[str], lang: str) -> str
     return s
 
 
-def _apply_jd_sentence1_alignment(
-    text: str,
-    normed_kws: List[str],
-    skills_data: Optional[Dict],
-    lang: str,
-) -> str:
-    """
-    JD 匹配词优先落在第 1 句并加粗（硬性约束）。
-    见 .cursor/rules/resume-generation-standards.mdc § Summary rules — JD sentence-1 bold.
-    已关闭自动注入：Summary 由 cv_base_template.yaml 控制，JD 贴合由 Skills/Experience 承担。
-    """
-    return text
-
-
 def _apply_summary_highlight_bold(
     text: str,
     role_type: str,
@@ -1198,8 +1184,8 @@ def _role_evidence_sentence(role_type: str, lang: str) -> str:
 
     variants_en = {
         "android": "Delivery focus includes runtime stability, maintainable architecture, and production debugging under field constraints.",
-        "backend": "Delivery focus includes observability, performance tuning, and stable release practices for long-lived services.",
-        "ai": "Delivery focus balances model quality with production readiness, from prototype to runnable pipelines.",
+        "backend": "Delivery focus includes observability and stable release practices.",
+        "ai": "Delivery focus balances model quality with production readiness.",
         "fullstack": "",
     }
 
@@ -1427,15 +1413,17 @@ def generate_summary(
         if not normed_kws:
             return s
         kw_set = {k.lower() for k in normed_kws}
-        for skill in _JD_SENSITIVE_SKILLS:
+        for skill in sorted(_JD_SENSITIVE_SKILLS, key=lambda x: -len(x)):
             if skill in kw_set:
                 continue
             # 从 "using X, Y, and Z" 类列表中移除
             s = re.sub(rf"\b{re.escape(skill)},?\s*", "", s, flags=re.IGNORECASE)
-        # 清理 ", and" / "and ," / ", ," 等残留
+        # 清理 ", and" / "and ," / ", ," / "from and" 等残留
         s = re.sub(r",\s*,", ",", s)
+        s = re.sub(r"\bfrom\s+and\b", "from", s)
         s = re.sub(r",\s*and\b", " and", s)
         s = re.sub(r"\band\s*,\s*", " and ", s)
+        s = re.sub(r"\s+\.js\b", "", s)
         s = re.sub(r"\s{2,}", " ", s)
         return s.strip()
 
@@ -1508,22 +1496,7 @@ def generate_summary(
     text = _enforce_summary_five_sentences(text, lang)
     text = _strip_summary_low_signal(text, lang)
     text = _cleanup_broken_clauses(text)
-    text = _enforce_summary_five_sentences(text, lang)
     text = _normalize_aut_label(text)
-
-    # JD 匹配词：优先写入第 1 句并加粗（所有角色）
-    skills_data: Optional[Dict] = None
-    if normed_kws:
-        try:
-            kb_root = Path(__file__).resolve().parents[2] / "kb"
-            skills_path = kb_root / "skills.yaml"
-            if skills_path.is_file():
-                skills_data = load_yaml(str(skills_path))
-        except Exception as exc:
-            logger.debug("Could not load skills.yaml for JD summary alignment: %s", exc)
-        text = _apply_jd_sentence1_alignment(text, normed_kws, skills_data, lang)
-        text = _cleanup_broken_clauses(text)
-        text = _enforce_summary_five_sentences(text, lang)
 
     def _trim_summary(s: str, max_chars: int) -> str:
         s = re.sub(r"\s+", " ", s).strip()
@@ -2494,13 +2467,55 @@ _PROGRESSION_FOCUS_ROLE_MAP: Dict[str, Dict[str, str]] = {
 }
 
 
+def _extract_core_jd_title(target_role_title: str) -> str:
+    """Extract a clean core title from JD target role string.
+
+    Examples:
+    - 'Senior Software Engineer & Technical Lead' -> 'Senior Software Engineer'
+    - 'Senior Backend Developer' -> 'Senior Backend Developer'
+    - 'Lead Android Engineer' -> 'Lead Android Engineer'
+    """
+    if not target_role_title:
+        return ""
+    t = target_role_title.strip()
+    # Remove trailing fragments after separators, but only when the fragment
+    # is a standalone role designation (not a domain descriptor).
+    # "Senior Software Engineer & Technical Lead" → split at & (Technical Lead is a role)
+    # "Infrastructure & Operations Engineer" → keep whole (Operations is a domain)
+    _ROLE_FRAGMENTS = {"technical lead", "team lead", "tech lead", "manager", "architect",
+                       "engineering manager", "director", "principal"}
+    for sep in (" & ", " / ", " or "):
+        idx = t.find(sep)
+        if idx > 0:
+            fragment = t[idx + len(sep):].strip().lower()
+            if fragment in _ROLE_FRAGMENTS:
+                t = t[:idx].strip()
+                break
+    # Remove "Technical Lead" / "Team Lead" role fragments at end (comma-separated variants)
+    for fragment in (", Technical Lead", " / Technical Lead", " - Technical Lead", ", Team Lead"):
+        if t.endswith(fragment):
+            t = t[:-len(fragment)].strip()
+    return t
+
+
 def _adapt_progression_title(
     title: str,
     role_type: str = 'fullstack',
     jd_keywords: Optional[List[str]] = None,
+    target_role_title: str = '',
+    period: str = '',
 ) -> str:
-    """Map employer progression titles to mobile-focused titles for Android role only.
-    Other roles return the original KB title as-is."""
+    """Map employer progression titles for role adaptation.
+
+    Key principle: preserve career growth trajectory from KB. Two stages
+    within one employer MUST show progression — never the same title twice.
+
+    - Android role: maps to mobile-focused titles
+    - Other roles with JD: uses extracted JD core title ONLY for the later stage
+    - Chunxiao early stage (2013-2018): keeps original KB title to show growth
+    - If JD title contains junior/intern/graduate: keep original KB titles
+    - Fallback: returns original KB title as-is
+    """
     if not title:
         return title
 
@@ -2510,6 +2525,41 @@ def _adapt_progression_title(
         out = out.replace("Full-stack Engineer", "Senior Mobile Engineer")
         out = out.replace("Senior Android Engineer", "Senior Android Engineer")
         return out
+
+    if target_role_title:
+        core = _extract_core_jd_title(target_role_title)
+
+        # If JD title is junior/intern/graduate, keep original KB titles
+        # — they show real career progression, not a mismatched JD label
+        if core and any(w in core.lower() for w in ("junior", "graduate", "intern", "associate", "intermediate", "trainee")):
+            return title
+
+        if core:
+            is_early_stage = '2013' in str(period)
+            if is_early_stage:
+                # Early stage: KEEP the original KB title to show career growth
+                # Only adapt if the KB title is completely unrelated to the JD role
+                # (e.g., KB says "Accountant" but JD is "Software Engineer")
+                kb_is_engineering = any(w in title.lower() for w in (
+                    'engineer', 'developer', 'software', 'mobile', 'android',
+                    'full-stack', 'fullstack', 'backend', 'frontend', 'devops',
+                ))
+                if kb_is_engineering:
+                    return title  # Keep original — shows growth from X to Y
+                # Fallback: derive junior variant from JD core
+                early = re.sub(r'^(Senior|Lead|Intermediate|Staff|Principal)\s+', '', core, flags=re.IGNORECASE)
+                if not early or early.lower() in ('software engineer', 'engineer', 'developer'):
+                    domain_map = {
+                        'android': 'Android Developer',
+                        'backend': 'Backend Developer',
+                        'ai': 'ML Engineer',
+                        'fullstack': 'Software Developer',
+                        'embedded': 'Embedded Engineer',
+                    }
+                    early = domain_map.get(role_type, 'Software Developer')
+                return early
+            # Later stage: use JD core title (represents current/target role)
+            return core
 
     return title
 
@@ -2731,8 +2781,8 @@ def _render_career_progression_html(
         target_line = f'<div class="employer-progression"><strong>Target role:</strong> {html.escape(target_role_title)}</div>' if target_role_title else ""
         stages: List[str] = []
         for stage in progression:
-            title = _adapt_progression_title(str(stage.get("title") or ""), role_type, jd_keywords)
             period = str(stage.get("period") or "")
+            title = _adapt_progression_title(str(stage.get("title") or ""), role_type, jd_keywords, target_role_title, period=period)
             achievements = stage.get("achievements") or []
             tech_stack = stage.get("tech_stack") or []
             if not isinstance(achievements, list):
@@ -2771,8 +2821,8 @@ def _render_career_progression_html(
 
     stages: List[str] = []
     for stage in progression:
-        title = _adapt_progression_title(str(stage.get("title") or ""), role_type)
         period = str(stage.get("period") or "")
+        title = _adapt_progression_title(str(stage.get("title") or ""), role_type, jd_keywords, target_role_title, period=period)
         focus = _adapt_progression_focus(str(stage.get("focus") or ""), role_type)
         achievements = stage.get("achievements") or []
         tech_stack = stage.get("tech_stack") or []
@@ -3309,7 +3359,7 @@ def generate_interests_section(profile: Dict, lang: str = 'en') -> str:
 _CV_FONT_HEAD = """
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
 """
 
 _CSS = """
@@ -3323,7 +3373,7 @@ _CSS = """
     }
 
     body {
-      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 10.6pt;
       line-height: 1.5;
       color: #111;
@@ -3348,7 +3398,7 @@ _CSS = """
     }
 
     .cv-name {
-      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 21pt;
       font-weight: 500;
       color: #111;
@@ -3432,7 +3482,7 @@ _CSS = """
 
     /* ── Section title ───────────────────────────────── */
     .section-title {
-      font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 12.7pt;
       font-weight: 500;
       color: #1a4d96;
@@ -3938,7 +3988,7 @@ def generate_html_from_kb(
         f'<a href="mailto:{_safe_email}">{_disp_email}</a>',
         f'{_disp_phone}',
     ]
-    
+
     # Portfolio link (prominent in contact row)
     portfolio_url = "https://portfolio.leoz.fun"
     contact_primary_bits.append(
@@ -4236,15 +4286,17 @@ def build_cv_review_bundle_markdown(
 
 
 def _ensure_min_jd_keyword_coverage_html(
-    html: str,
+    html_text: str,
     supported_kws: List[str],
     min_pct: float,
 ) -> str:
     """
-    历史行为：向 Summary 尾部注入缺失 JD 词以抬覆盖率（易产生「关键词对齐」腔调）。
-    已关闭；JD 贴合由 Experience 与 Key Skills 承担。保留签名供调用方不变。
+    DISABLED (2026-06-30): Injecting raw JD keywords as "Additional:" skill rows
+    produces garbage output (e.g., "Additional: enhance, millions").
+    JD coverage should be achieved through proper Skills section ordering,
+    not keyword injection. This function now returns the input unchanged.
     """
-    return html
+    return html_text
 
 
 def _print_quality_metrics(html: str, jd_keywords: Optional[List[str]], role_type: str, min_target_pct: float) -> None:

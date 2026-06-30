@@ -185,6 +185,8 @@ _COMPANY_CULTURE_HOOKS = {
     'orbitremit': "it makes cross-border money transfers faster, cheaper, and more transparent for people sending money home.",
     'vector': "it is powering a smarter, cleaner energy future through cloud-native data platforms and AWS serverless technology.",
     'vts': "it is building the Diverge platform — a cloud-native energy data platform co-developed with AWS.",
+    'smartly': "payroll isn't glamorous, but getting it right means 20,000+ Kiwi businesses pay their people on time — practical impact that matters.",
+    'datacom': "it is one of New Zealand's largest tech companies, delivering real solutions across diverse industries.",
 }
 
 _COMPANY_TEAMS = {
@@ -216,6 +218,8 @@ _COMPANY_TEAMS = {
     'everbridge': "Everbridge's Auckland R&D team",
     'metservice': "MetService's Digital team",
     'orbitremit': "OrbitRemit's Engineering team",
+    'smartly': "Smartly's product engineering team",
+    'datacom': "Datacom's engineering team",
 }
 
 def build_cover_letter_content(
@@ -418,7 +422,7 @@ def build_cover_letter_content(
             )
         elif 'halter' in company_lower:
             opening = (
-                "I am applying for the Software Engineering Manager position at Halter. "
+                f"I am applying for the {target_role_title or 'Software Engineering Manager'} position at Halter. "
                 "I am excited about this role because it demands exactly the combination "
                 "I bring: deep technical credibility across full-stack and IoT systems, "
                 "proven leadership of engineering teams, and a genuine passion for building "
@@ -945,116 +949,83 @@ def build_cover_letter_content(
                         return v
                 return f"{company_name}'s engineering team"
 
-            # === Para 1: "Master ..." (Rule 1-3) ===
+            # === Para 1: Fit hook — why this company/role (not education-first) ===
             culture_reason = _culture_reason()
             tagline = _background_tagline().rstrip('.')
             opening = (
-                f"Master of Computer and Information Sciences graduate with {tagline}, "
-                f"applying for the {target_role_title} position at {company_name}. "
-                f"I am particularly interested in this opportunity because {culture_reason}"
+                f"{tagline}, I am drawn to {company_name} because {culture_reason} "
+                f"The {target_role_title} role aligns well with my background — "
+                f"I have spent the past decade building production systems across "
+                f"backend, mobile, and IoT layers, and I am looking for a team where "
+                f"that breadth creates value rather than just filling tickets."
             )
             if "aut" in company_lower or "auckland university of technology" in company_lower:
                 opening += " As an AUT graduate, I am especially motivated by the opportunity to contribute to the university community through this role."
 
-            # === Para 2: education/project evidence with linking sentence (Rule 4-5) ===
-            body1_parts = []
-            if role_type == 'ai' and pubs:
-                first_pub = pubs[0]
-                pub_venue = first_pub.get("venue", "")
-                pub_year = first_pub.get("year", "")
-                year_str = str(pub_year) if pub_year else ""
-                venue_str = pub_venue.strip().rstrip(".")
-                if year_str and year_str not in venue_str:
-                    venue_str = f"{venue_str}, {year_str}"
-                body1_parts.append(
-                    f"I recently completed my Master of Computer and Information Sciences at "
-                    f"Auckland University of Technology with First Class Honours. "
-                    f"My thesis project involved designing and building a multimodal AI system "
-                    f"from concept to working prototype — covering the full pipeline from data "
-                    f"collection and model development to evaluation and integration. "
-                    f"The project was accepted by {venue_str} and gave me hands-on experience "
-                    f"developing AI systems that balance research innovation with usability, "
-                    f"maintainability, and deployment considerations."
-                )
-            elif proj_name and proj_highlights:
-                top_hl = proj_highlights[0][:120]
-                # Lowercase first letter to flow after "I "
-                top_hl = top_hl[0].lower() + top_hl[1:]
-                body1_parts.append(
-                    f"In my recent work on {proj_name}, "
-                    f"I {top_hl}. "
-                    f"This gave me practical experience delivering production systems "
-                    f"that balance technical quality with real-world constraints."
-                )
+            # === Para 2: Fit hook — company-specific or role differentiator ===
+            # 优先使用 _WHY_ME_HOOKS（公司专属），否则用 _differentiator_hook（角色差异化）
+            why_me = _WHY_ME_HOOKS.get(company_lower, {}).get('en', '')
+            if why_me:
+                body1 = why_me
             else:
-                body1_parts.append(
-                    f"I have {years_str} years of software engineering experience "
-                    f"building production systems from prototype through deployment."
+                body1 = _differentiator_hook(role_type)
+
+            # === Para 3: JD-specific fit — what you bring that they need ===
+            # Extract 2-3 key JD themes for tailored response
+            jd_themes = []
+            if jd_keywords:
+                # Pick most relevant keywords from the raw JD
+                role_signals = {
+                    'android': ['android', 'kotlin', 'java', 'mobile', 'sdk', 'ndk'],
+                    'backend': ['java', 'spring', 'api', 'microservice', 'database', 'sql', 'cloud'],
+                    'ai': ['ai', 'ml', 'model', 'data', 'python', 'pytorch', 'vision'],
+                    'fullstack': ['react', 'node', 'java', 'typescript', 'api', 'full', 'frontend', 'backend'],
+                }
+                signal_words = role_signals.get(role_type, role_signals['fullstack'])
+                jd_themes = [kw for kw in jd_keywords if any(s in kw.lower() for s in signal_words)][:3]
+
+            fit_parts = []
+            if jd_themes:
+                theme_str = ', '.join(jd_themes[:3])
+                fit_parts.append(
+                    f"Your JD highlights {theme_str} — areas where I have hands-on production experience. "
                 )
-
-            # Differentiator (Rule 6)
-            diff = _differentiator_hook(role_type)
-            if diff:
-                body1_parts.append(diff)
-
-            body1 = " ".join(body1_parts)
-
-            # === Para 3: Chunxiao experience (role-specific title + emphasis) ===
-            _CHUNXIAO_TITLE = {
-                'android': 'Senior Android Developer',
-                'backend': 'Senior Backend Engineer',
-                'ai': 'AI / Computer Vision Engineer',
-                'fullstack': 'Senior Full-stack Engineer',
-            }
-            _CHUNXIAO_EMPHASIS = {
+            # Add a concise experience anchor (not a full bullet list)
+            _EXPERIENCE_ANCHOR = {
                 'android': (
-                    "I architected and delivered multiple production Android applications "
-                    "across enterprise messaging, IoT device control, face recognition attendance, "
-                    "and smart factory systems — spanning phone, tablet, and embedded Android form factors. "
-                    "I also mentored junior Android developers and established mobile coding standards "
-                    "that improved release quality across the team."
+                    "I have shipped Android applications across enterprise messaging, IoT device "
+                    "control, and smart factory platforms — spanning phone, tablet, and embedded "
+                    "form factors. I understand the full lifecycle from SDK integration through "
+                    "Play Store release and production monitoring."
                 ),
                 'backend': (
-                    "I designed and delivered Spring Cloud microservices powering a smart factory "
-                    "platform that scaled across 10+ manufacturing sites, with REST APIs, MySQL/Redis "
-                    "backends, and CI/CD pipelines. I also built real-time messaging infrastructure "
-                    "handling 500K+ messages daily and coordinated API contract design with "
-                    "frontend and mobile developers."
+                    "I have designed and maintained Spring Cloud microservices serving 10+ "
+                    "manufacturing sites, built real-time messaging infrastructure handling "
+                    "500K+ daily messages, and established CI/CD practices that reduced "
+                    "regression risk across concurrent project streams."
                 ),
                 'ai': (
-                    "I developed computer vision systems for face recognition attendance (99%+ accuracy), "
-                    "Chinese herbal medicine classification, and AI-based predictive maintenance — "
-                    "covering the full pipeline from data annotation and model training to on-device "
-                    "deployment. I also built MLOps workflows for model versioning, release criteria, "
-                    "and inference pipeline automation."
+                    "I have built computer vision systems for face recognition and defect "
+                    "detection, deployed AI models on edge devices with sub-second latency, "
+                    "and published research at IVCNZ 2025 — experience that bridges the gap "
+                    "between prototype and production."
                 ),
                 'fullstack': (
-                    "I delivered end-to-end features across Android, Java backends, Vue.js dashboards, "
-                    "and IoT gateway firmware — owning features from database schema to user interface. "
-                    "I worked closely with product and QA on release planning and established "
-                    "CI/CD practices that reduced regression risk across "
-                    "concurrent project streams."
+                    "I have delivered end-to-end features across Android, Java backends, "
+                    "Vue.js dashboards, and IoT gateway firmware — owning the full path from "
+                    "database schema to user interface. This breadth means I can contribute "
+                    "wherever the team needs, without waiting for handoffs."
                 ),
             }
-            chunxiao_title = _CHUNXIAO_TITLE.get(role_type, 'Full-stack Engineer')
-            chunxiao_emphasis = _CHUNXIAO_EMPHASIS.get(role_type, "")
-            body2 = (
-                f"Prior to my Master's, I spent 11 years at Chunxiao Technology, "
-                f"where my role evolved to {chunxiao_title}. "
-                f"{chunxiao_emphasis} "
-                f"This long-cycle experience taught me how to deliver production systems "
-                f"that remain reliable under real-world constraints — a mindset I carry "
-                f"into every new role."
-            )
+            anchor = _EXPERIENCE_ANCHOR.get(role_type, _EXPERIENCE_ANCHOR['fullstack'])
+            fit_parts.append(anchor)
+            body2 = " ".join(fit_parts)
 
-            # === Closing: motivation + contribution + team name (Rule 9) ===
+            # === Closing: concise, forward-looking ===
             team = _team_name()
             closing = (
-                f"I am also highly motivated by the opportunity to work within a collaborative "
-                f"team where learning, experimentation, and delivery are encouraged. "
-                f"I would welcome the opportunity to contribute my technical background, "
-                f"problem-solving ability, and hands-on development experience to {team}. "
-                f"Thank you for your time and consideration."
+                f"I would welcome the chance to discuss how my experience can contribute "
+                f"to {team}. Thank you for your time and consideration."
             )
 
     else:  # zh fallback
@@ -1296,6 +1267,20 @@ async def generate_cover_letter(
 
     await html_to_pdf(html_content, output_path)
     print(f"  PDF  → {output_path}")
+
+    # CL quality check (advisory, does not block generation)
+    try:
+        from cl_quality_validator import run_cl_quality_check, build_cl_check_markdown
+    except ImportError:
+        from app.backend.cl_quality_validator import run_cl_quality_check, build_cl_check_markdown
+    cl_report = run_cl_quality_check(html_content, jd_keywords)
+    status = "PASS" if cl_report.overall_ok else "NEEDS ATTENTION"
+    print(f"  CL Quality → {status} (words: {cl_report.word_count}, paras: {cl_report.paragraph_count})")
+    if cl_report.tone_flags:
+        print(f"    Tone flags: {len(cl_report.tone_flags)}")
+    if cl_report.jd_keyword_misses:
+        print(f"    JD misses: {', '.join(cl_report.jd_keyword_misses[:5])}")
+
     return output_path
 
 

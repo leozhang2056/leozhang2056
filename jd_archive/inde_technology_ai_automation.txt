@@ -1,0 +1,32 @@
+Intermediate Engineer - AI Automation & Integration
+
+Inde Technology
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+About Inde
+New Zealand's leading employee-owned IT consultancy. Employee-owned, values driven. Quarterly profit share. Enterprise customers.
+
+About the Role
+Join AI, Automation, & Integration team. Design and deliver innovative integration and automation solutions. Cloud-first environment. Solving real-world business problems with code and low-code tools. Customer-focused solutions.
+
+What You'll Do:
+- Build integration & automation solutions connecting systems
+- Implement AI-enabled solutions (intelligent document processing, AI search, chatbots, workflow augmentation) using Azure AI services
+- Consult with enterprise customers from requirements to implementation
+- Work in cross-functional team with knowledge-sharing
+- Hybrid working with occasional customer site visits
+
+What You'll Bring:
+- Integrations bringing together separate systems
+- Automation tools knowledge
+- Low-code / No-code integration frameworks
+- PowerShell scripting and TypeScript React
+- Azure: Logic Apps, Function Apps, Service Bus, Power Apps, Power Platform
+- Azure AI services (Azure OpenAI, Azure AI Search, Azure Document Intelligence, AI Foundry)
+- DevOps and CI/CD frameworks
+- Connector and API Management
+- Consulting with customers
+- Designing and presenting solutions
+- Strong analytical and problem-solving skills
+- Professional services environment experience (highly desirable)

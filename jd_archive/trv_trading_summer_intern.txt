@@ -1,0 +1,26 @@
+SOFTWARE ENGINEER SUMMER INTERNSHIP/GRADUATE
+
+TRV Trading
+New Lynn, Auckland (Hybrid)
+Engineering - Software
+Full time
+$62,500 + performance and profit share bonuses
+
+About TRV
+
+Software Engineers don't just write code - they build the speed and intelligence that wins trades. In a world where microseconds determine profit or loss, our engineers are the competitive differentiator. Every day, the systems you'll help build execute millions of trading decisions across global markets.
+
+What you'll do:
+- Build real-time data processing pipelines handling millions of market events per second
+- Optimize trading algorithms for nanosecond-level performance in live markets
+- Enhance your knowledge of our business model and learn about high-frequency trading
+- Collaborate closely with our traders and research to build and refine state-of-the-art trading infrastructure
+
+What we look for:
+- In (pen)ultimate year of a computing related field of study
+- Exceptional drive and resilience when battling complex problems
+- Ability to abstract away complexity and deal with the parts of the problem that matter
+- Outstanding analytical skills
+- Proficient experience in a programming language (e.g. C/C++, Java, Python)
+- Genuine interest in financial markets
+- Available full time during summer break

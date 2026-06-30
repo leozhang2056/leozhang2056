@@ -44,10 +44,10 @@ Company: {{COMPANY_NAME}}
 Output language: {{LANGUAGE}}
 
 Structure:
-1. Opening paragraph: start with a concise attention hook, then connect to role and company (1-2 sentences on why this role/company)
-2. Body paragraph 1: strongest technical evidence (1-2 projects, specific metrics)
-3. Body paragraph 2: broader experience / soft skills / unique value
-4. Closing: value proposition + next steps (avoid duplicate contact line when header already includes contact)
+1. Opening paragraph: concise hook connecting your background to the company's mission and this specific role (1-2 sentences — why this company, not why you're qualified)
+2. Body paragraph 1: soft skills and collaboration evidence — communication, mentoring, cross-functional work, learning ability. Reference 1-2 specific situations, not generic claims.
+3. Body paragraph 2: JD-specific fit — directly address 2-3 key requirements from the JD with concise evidence. Reference 1-2 relevant projects briefly (one sentence each, not bullet lists).
+4. Closing: one sentence on what you'd bring to the team + thank you. No duplicate contact details.
 
 Requirements:
 - Optimize for JD match
@@ -58,6 +58,8 @@ Requirements:
 - Keep it under 400 words
 - For developer roles, reflect fast execution and strong self-management where relevant
 - Do not explain your reasoning unless requested
+- Do not start with "Master of..." or "I am writing to apply..." — start with why the company/role matters to you
+- Soft skills paragraph should feel specific, not like a LinkedIn buzzword list
 ```
 
 ---

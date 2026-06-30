@@ -1,0 +1,39 @@
+Software Engineer
+
+Quantifi Photonics
+Rosedale, Auckland
+Engineering - Software
+Full time
+
+About Quantifi Photonics
+
+Part of the Teradyne family, Quantifi Photonics designs and manufactures advanced optical and electronic test instruments that enable engineers to develop and scale up next-generation photonics technologies. Customers include global tech companies, leading universities, and world-class research institutions in over 25 countries.
+
+About the role
+
+Contribute to the development and evolution of the Cohesion Framework — a key platform enabling extensibility, scalability, and integration across software products. Build reliable and maintainable systems, work across layers of software architecture, and contribute to shared frameworks used by multiple applications.
+
+Key Responsibilities:
+- Contribute to the design, implementation, and maintenance of the Cohesion Framework
+- Develop reusable, scalable, and high-performance software components
+- Collaborate with cross-functional teams to support integration across products
+- Write clean, maintainable, and well-documented code
+- Participate in architecture discussions and contribute to technical decisions
+- Support debugging, performance optimization, and issue resolution
+- Contribute to continuous improvement of engineering practices and processes
+
+Requirements:
+- Bachelor's degree in Software Engineering, Computer Science, Electronics, or related field
+- Minimum 1+ year of relevant professional software engineering experience
+- Strong programming skills in Python, C#, C++, or C
+- Good understanding of OOP, software architecture, data structures and algorithms
+- Experience with debugging and troubleshooting complex systems
+- Version control experience (Git)
+
+Nice to Have:
+- Experience with frameworks, SDKs, or platform-level development
+- Plugin architectures or modular systems
+- Performance optimization and memory management (C++)
+- Web technologies (REST APIs, frontend/backend interaction)
+- CI/CD pipelines and test automation
+- gRPC/REST, distributed systems

@@ -1079,3 +1079,291 @@ applications:
   cv: true
   cl: true
   status: submitted
+- company: PageProof
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Smartly (Datacom)
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Brand Developers Ltd
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Pacific Coilcoaters
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Smartly Datacom
+  role: fullstack
+  date: '2026-06-30'
+  cv: false
+  cl: true
+  status: submitted
+- company: OrbitRemit
+  role: android
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: Heartland Bank
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Sunstone Talent
+  role: ai
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: Halter
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Livestock Improvement Corporation
+  role: android
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Robert Walters
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: FirstCape
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: smartAR
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Foster Moore International
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: AIA
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Wholesale Solutions
+  role: ai
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: Inde Technology
+  role: ai
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Plexure
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Cognex
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: TRV Trading
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: Atom Intelligence
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Talent Army
+  role: fullstack
+  date: '2026-06-30'
+  cv: true
+  cl: true
+  status: submitted
+- company: Quantifi Photonics
+  role: backend
+  date: '2026-06-30'
+  cv: true
+  cl: false
+  status: submitted
+- company: OrbitRemit
+  role: android
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: Atom Intelligence
+  role: fullstack
+  date: '2026-07-01'
+  cv: false
+  cl: true
+  status: submitted
+- company: AWS
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Vista Group
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Quantifi Photonics
+  role: backend
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: Pacific Coilcoaters
+  role: backend
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: Halter
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: Inde Technology
+  role: ai
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Livestock Improvement Corporation
+  role: android
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: TRV Trading
+  role: backend
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Talent Army
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Quantifi Photonics
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Vista Group
+  role: backend
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: AWS
+  role: embedded
+  date: '2026-07-01'
+  cv: true
+  cl: false
+  status: submitted
+- company: My Practice
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: TaxLab
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: HR Connect
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Stuff Digital
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Temperzone
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Booth's Logistics
+  role: ai
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Forsyth Barr
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: Traffic Safe NZ
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: The Instillery
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: placeMe IT
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted
+- company: The Creative Store
+  role: fullstack
+  date: '2026-07-01'
+  cv: true
+  cl: true
+  status: submitted

@@ -1,0 +1,23 @@
+Datacenter IT Technician Trainee
+
+Amazon Web Services
+Auckland CBD, Auckland
+Full time, 6-month trainee contract
+
+About the role
+Work with the world's largest computing infrastructure. Learn daily operations of a large data center — hands-on with servers and network equipment. Interact with logistics, networking, and security teams.
+
+Key job responsibilities
+- Performing diagnostics and troubleshoot all hardware and related problems
+- Performing basic level OS troubleshooting
+- Performing basic level configuration troubleshooting
+- Perform hardware replacement to support repair actions
+- Perform storage media (HDD, SSD etc.) sanitization and destruction tasks
+- Maintain a high level of system reliability by prioritizing resolution of trouble tickets efficiently
+- Follow DC operations, Logistics, Security and Safety related processes and guidelines
+- Practice and enforce Amazon's Security and Safety best practices
+
+Basic Qualifications
+- Min. one year of computer hardware or computer network troubleshooting and repair experience
+- Physical component: ability to lift and rack equipment using lifting equipment
+- Valid driver's license and own vehicle to travel between sites

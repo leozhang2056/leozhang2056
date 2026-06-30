@@ -1,0 +1,25 @@
+Senior Software Engineer (Mobile/Web)
+
+Livestock Improvement Corporation (LIC)
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+About LIC
+Farmer-owned co-operative supporting herd improvement in NZ's dairy sector for 115+ years. Providing superior genetics, testing, diagnostics, and on-farm software.
+
+About the Role
+Senior Software Engineer specializing in Mobile within Farm Software stream. Leading design and development of MINDA mobile application, contributing to web-based experiences. Cross-platform mobile and web development. Clean architecture, reusable design, continuous improvement.
+
+What we're looking for:
+- 5+ years commercial software development with strong mobile focus using Flutter
+- Production-grade iOS and Android mobile app development
+- Front-end skills: JavaScript/TypeScript, React or similar
+- Mobile architecture: Clean Architecture, MVVM
+- Responsive, performant cross-platform UI/UX
+- RESTful APIs, backend services, modern data flows
+- CI/CD pipelines, mobile build/release processes
+- Cloud-integrated environments
+- Testing practices, quality-first mindset
+- Mentoring and supporting other engineers
+- Agile, product-oriented teams
+- Excellent communication skills

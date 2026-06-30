@@ -1,0 +1,20 @@
+Software Developer (Junior - Intermediate)
+
+HR Connect Limited (Halo Systems)
+Pukekohe, Auckland (Hybrid)
+Full time
+
+About Halo Systems
+NZ technology company specialising in remote monitoring, automation, and industrial IoT solutions. 20+ years. 10,000+ users, 50,000+ connected devices globally. Agriculture, horticulture, commercial, local government.
+
+About the Role
+Software Developer contributing to core software products. Full stack. Design, build, test, maintain scalable applications. Agile environment.
+
+Tech Stack: C#, .NET 8, TypeScript, SQL Server, AWS/Azure, Git, CI/CD pipelines.
+
+Requirements:
+- 1-4 years software development experience
+- Solid foundation in C# and .NET ecosystem
+- TypeScript and modern frontend frameworks
+- Passion for technology, problem-solving, continuous learning
+- Collaborative, quality code, eager to grow

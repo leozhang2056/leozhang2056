@@ -1,0 +1,30 @@
+Software Engineer
+
+My Practice Limited
+Parnell, Auckland
+Contract/Temp
+$80,000 per year
+
+About My Practice
+Medical software company with a platform product (My Practice). Windows Forms desktop application (.NET Framework 4.8, VB.NET and C#) plus modern web stack.
+
+About the Role
+Design, build, and ship features across the stack. Maintain and evolve Windows Forms desktop app. Own Azure DevOps CI/CD pipelines. Manage NuGet package workflows. Partner with product and clinical stakeholders.
+
+Key Responsibilities:
+- Design, build, ship features across the stack
+- Maintain Windows Forms desktop app (.NET Framework 4.8, VB.NET, C#)
+- Azure DevOps CI/CD pipelines (build, test, packaging, release)
+- NuGet package workflows and shared libraries
+- Architectural decisions around services, data storage, integrations
+- Code review and branch policies
+
+Requirements:
+- 5+ years professional software engineering
+- Strong C# / .NET backend (Web APIs, services, async patterns)
+- Windows Forms and .NET Framework 4.8, VB.NET and C# codebase
+- React and TypeScript
+- CI/CD pipelines, Azure DevOps
+- NuGet package management
+- Relational databases, performant queries
+- Strong communication skills

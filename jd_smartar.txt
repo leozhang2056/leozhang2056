@@ -1,0 +1,65 @@
+Level 2 Full Stack Developer
+
+smartAR Services Limited
+Newmarket, Auckland (Hybrid)
+
+Come Build Something That Makes a Real Difference
+At smartAR, we help businesses solve a problem almost every organisation faces: getting paid.
+
+For more than 15 years, we have worked alongside businesses to improve their cash flow, simplify accounts receivable, and take the stress out of chasing payment. We are now combining that experience with smart technology, automation, and AI to build the next generation of accounts receivable software.
+
+We are a small, ambitious team where people know each other, ideas are heard, and good work has a visible impact.
+
+The Opportunity
+We're looking for a Junior to Level 2 Full Stack Developer to join our engineering team.
+
+You'll work across the full stack building features, fixing issues, and contributing to a rapidly evolving platform. You'll also have the opportunity to take ownership of core components and leverage AI agents to accelerate development output.
+
+This role suits someone with 1–2 years' experience who is curious, proactive, and motivated to grow fast.
+
+You'll be supported by a senior developer, but you must be comfortable working autonomously and taking initiative.
+
+What You'll Do
+- Build and maintain features across the full stack (UI, API, database)
+- Work on modern front-end interfaces using frameworks such as React and Bootstrap-based UI components
+- Contribute to backend systems built with .NET (C#) and API-driven architectures
+- Write and optimise queries against SQL databases (e.g. Postgres, SQL Server, MySQL)
+- Use AI coding tools (Copilot, Claude, Cursor, etc.) as a core part of your workflow
+- Participate in code reviews — giving and receiving practical feedback
+- Debug and resolve issues across staging and production environments
+- Contribute ideas to improve system performance, scalability, and developer efficiency
+- Document key features and technical decisions
+
+What We're Looking For
+Experience: 1–2 years of hands-on full stack development (commercial, freelance, or strong project work)
+Comfortable working across both front end and back end
+
+Technical Skills
+Front End: React or similar (Vue, Svelte), responsive UIs using Bootstrap or similar frameworks
+Back End: Exposure to .NET / C# or similar backend frameworks, building and consuming REST APIs
+Databases: Working knowledge of SQL (queries, joins, basic schema design)
+General: Git (branching, pull requests, code reviews), cloud platforms (Azure preferred)
+
+AI Tooling (Important): Actively use AI coding assistants (Copilot, Claude Code, Cursor, etc.)
+
+The Kind of Person Who Will Thrive Here
+- Naturally curious and enjoy solving problems
+- Ask questions early rather than staying stuck
+- Comfortable working through some ambiguity
+- Take ownership and follow things through
+- Communicate clearly, particularly in writing
+- Are open to feedback and willing to share your own ideas
+- Care about the customer experience, not just the code
+- Enjoy being part of a small team where your contribution matters
+
+Nice to Have
+- TypeScript experience
+- Exposure to testing (unit/integration)
+- CI/CD familiarity
+- Experience with fintech, SaaS, or B2B platforms
+
+What We Offer
+- Real responsibility from day one
+- Direct access to senior guidance and internal/external mentoring
+- Competitive salary aligned to your level
+- Flexible working (hybrid)

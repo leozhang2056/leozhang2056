@@ -1,0 +1,33 @@
+Senior Full Stack Developer (React / Node.js & Kotlin or Java)
+
+Robert Walters
+Auckland CBD, Auckland (Hybrid)
+Engineering - Software
+Contract/Temp
+12-month contract
+
+About the role
+
+Join a high-performing engineering team delivering critical payment solutions. Partnering with a leading New Zealand organisation to find an experienced Senior Full Stack Developer with strengths in the front end preferred for an exciting 12-month contract. Collaborative team responsible for delivering and evolving large-scale payment applications that support thousands of customers every day.
+
+Key responsibilities:
+- Design, develop and deliver end-to-end full stack features
+- Build modern APIs and integration services using Kotlin/Java and Spring Boot
+- Develop responsive frontend applications using React and Node.js
+- Contribute to technical design decisions and engineering best practices
+- Support production systems, troubleshoot issues and improve platform reliability
+- Mentor team members and contribute to a collaborative engineering culture
+- Work across cloud and event-driven architectures as the platform evolves
+
+Requirements:
+- 7+ years' software engineering experience
+- Strong React and Node.js development experience (preferred)
+- Commercial experience with Java and/or Kotlin (Kotlin preferred)
+- Spring Boot experience building scalable APIs and microservices
+- Previous banking or payments industry experience
+- Integration experience across APIs, MQ or Kafka/event-driven systems
+- Experience with AWS, OpenShift or other cloud platforms
+- Knowledge of PostgreSQL and/or DB2
+- CI/CD experience using Jenkins, Spinnaker or similar tools
+- Strong understanding of testing, code quality and engineering best practices
+- Excellent communication skills and the ability to work across cross-functional teams

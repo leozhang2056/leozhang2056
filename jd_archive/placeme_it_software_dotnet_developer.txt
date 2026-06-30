@@ -1,0 +1,19 @@
+Software .NET Developer
+
+placeMe IT Recruitment
+Wellington Central, Wellington
+Full time
+$100,000 - $120,000 per year + Benefits
+
+About the Company
+SaaS company enhancing process efficiency. Established products and new ventures. Modern work environment.
+
+About the Role
+Developing and maintaining top-tier software applications. Work with senior engineers on medium-sized engineering challenges. Contribute to design process. Support and maintenance. 3-2 office/WFH split.
+
+Requirements (4+ years):
+- C#, MVC, Web API, .NET, PowerShell, SQL
+- Front-end: HTML, CSS, JavaScript, React, TypeScript, MVC Razor
+- Tooling: AWS, Docker, Octopus Deploy, TeamCity, Git
+- Full stack software development
+- Strong communication skills

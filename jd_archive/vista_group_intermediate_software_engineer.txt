@@ -1,0 +1,33 @@
+Intermediate Software Engineer
+
+Vista Group
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+About Vista Group
+World-leading cinema software company. HQ in Auckland, offices globally. Cloud-hosted data platform (Horizon) used by cinemas worldwide.
+
+About the Role
+Backend heavy Intermediate Software Engineer in Enterprise Stream. Contributing to Horizon platform — backend services, data pipelines, SQL-backed systems. Understanding data, performance, and system behaviour.
+
+You will:
+- Build and maintain backend services and APIs using C# and .NET
+- Write, optimise, and troubleshoot SQL queries for data pipelines and APIs
+- Contribute to workflows processing large datasets
+- Investigate and improve system performance (slow queries, data bottlenecks)
+- Work with team, product managers, architects
+
+Requirements:
+- 4+ years C# and ASP.NET Core (.NET 6+)
+- Strong SQL skills (query writing, optimisation, relational data in production)
+- Data-heavy applications or data warehouse-style systems
+- Microsoft Azure (hosting, data services, monitoring)
+- CI/CD pipelines, Docker, Kubernetes, Octopus
+- Strong problem-solving and debugging (production environments)
+- Collaborative mindset, clear communication
+
+Benefits:
+- 4.5 day working week
+- Hybrid (1-2 days office per week)
+- Medical and Life insurance
+- Strong mentoring & career development

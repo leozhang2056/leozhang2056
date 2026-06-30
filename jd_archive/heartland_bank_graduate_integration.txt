@@ -1,0 +1,35 @@
+Graduate Software Engineer - Integration
+
+Heartland Bank
+Auckland CBD, Auckland
+Full time
+$65,000 - $90,000 per year
+
+About the Role
+Graduate Software Integration Engineer in Digital Automation & Transformation team. Building and supporting integrations that power digital banking experiences. Modern integration technologies, cloud platforms, APIs, automation tools, and AI-enabled solutions.
+
+What you'll be doing:
+- Develop and enhance APIs and integration services
+- Work with modern cloud and container technologies
+- Contribute to CI/CD pipelines and automation initiatives
+- Collaborate with software engineers, architects, product teams and business stakeholders
+- Learn best practices in security, scalability and system design
+- Participate in Agile delivery teams
+- Help shape the future of AI-enabled banking solutions
+
+What we're looking for:
+- Bachelor's degree in Software Engineering, CS, IT, or related field
+- Understanding of programming principles and software development practices
+- Exposure to API development, cloud technologies, or systems integration
+- Strong problem-solving and analytical skills
+- Excellent communication and teamwork skills
+- A growth mindset and willingness to learn
+
+Bonus:
+- Java or Spring Boot
+- REST APIs
+- Azure or cloud technologies
+- Docker and containerisation
+- CI/CD tools and automation
+- Microservices architecture
+- Agile ways of working

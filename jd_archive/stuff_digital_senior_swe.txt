@@ -1,0 +1,31 @@
+Senior Software Engineer
+
+Stuff Digital Limited
+Auckland CBD, Auckland
+Engineering - Software
+Full time
+
+About Stuff Digital
+
+Products reach more than two million New Zealanders every month across web, app and video. Modern engineering organisation investing in audience-facing experience, AI-powered tooling with a stack spanning React, Java and more.
+
+About the role
+
+Senior Software Engineer operating as a genuine technical 2IC, working alongside Tech Leads to shape architecture, raise the quality bar and help engineers improve their craft.
+
+Key Responsibilities:
+- Design and build scalable, secure and high-performing applications
+- Influence architecture and technical direction
+- Mentor engineers and champion engineering best practice
+- Drive innovation through AI, automation and emerging technologies
+- Collaborate with Product, Design and Data teams
+- Improve performance, accessibility and platform reliability
+- Contribute to Agile delivery and continuous improvement
+
+Requirements:
+- Strong software engineering experience and technical leadership capability
+- Experience building modern web applications, APIs and cloud-based solutions
+- Knowledge of Java, JavaScript, TypeScript, React, Spring, PHP or similar
+- Experience with AWS, Kubernetes, CI/CD and modern DevOps practices
+- Passion for mentoring, collaboration and continuous learning
+- Interest in AI and how it can enhance software development

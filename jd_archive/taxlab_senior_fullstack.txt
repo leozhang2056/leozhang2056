@@ -1,0 +1,32 @@
+Senior Full-Stack Engineer
+
+Taxlab Limited
+Hobsonville, Auckland (Hybrid)
+Engineering - Software
+Full time
+$150,000 – $170,000 per year
+
+About TaxLab
+
+Leading provider of innovative tax software solutions for accountants. Mission: to make tax something our customers used to think about. Pushing boundaries in tax software.
+
+About the role
+
+Senior Software Engineer playing a key role in designing, building, and delivering innovative software solutions. Integrate intelligent automation and AI-driven insights into the platform. Take ownership of complex technical problems and help shape code quality and practices.
+
+Key Responsibilities:
+- Contribute to the design, development, and delivery of high-quality software
+- Champion best practices in coding, security, and architecture
+- Collaborate with product managers, designers, and testers
+- Participate in code reviews, architecture discussions, and sprint planning
+- Help foster a strong engineering culture focused on learning and growth
+
+Requirements:
+- 8+ years of .NET software engineering experience including senior/technical leadership
+- Experience with or deep curiosity for AI
+- Hands-on experience with infrastructure as code, monitoring and security
+- Strong proficiency in front-end development with at least one modern framework
+- Strong communication and collaboration skills
+- Cloud technologies (preferably Azure) and SQL Server
+- Commitment to writing secure, maintainable, well-tested code
+- Agile methodologies and DevOps practices

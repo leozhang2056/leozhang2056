@@ -1,0 +1,36 @@
+Data & AI Engineer
+
+Booth's Logistics
+Auckland CBD, Auckland (Hybrid)
+Full time
+
+About Booth's
+Nationwide logistics company. Investing in data and AI to help team spend less time wrestling with information and more time doing work that matters.
+
+About the Role
+Brand-new role, build from ground up. Own data foundation, lead practical use of AI. Review and rebuild data pipelines on modern stack. Find workflows where AI can make genuine difference, build and deliver them. Report to Senior Business Analyst.
+
+What you will be doing:
+- Review data pipelines end to end, rebuild on modern stack
+- Fix root causes of broken refreshes, slow performance, shaky data quality
+- Set standards, documentation, monitoring
+- Find where AI can add real value across business
+- Scope, prototype, deliver practical AI solutions
+- Keep eye on cost and token efficiency
+- Help people adopt new tools
+
+Requirements:
+- Strong data engineering fundamentals (pipeline design, ETL/ELT, data modelling, data quality)
+- Hands-on production pipelines
+- Practical AI and LLM experience
+- Work autonomously, set the standard
+- Turn vague business need into clear scoped work
+- Clear communication (technical and non-technical)
+- NZ work rights
+
+Nice to Have:
+- Microsoft Fabric, Power BI, Azure Data Factory
+- Copilot Studio and Microsoft AI tooling
+- Working with Claude or frontier AI models
+- Token and cost optimisation (caching, batching)
+- Transport, logistics experience
