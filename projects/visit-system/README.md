@@ -1,1 +1,84 @@
-# Visit Booking & Access Management System > Smart visit booking and access management platform for high-security sites (especially prisons), with admin portal, client terminals, and visitor-side apps. --- ## Overview A visit booking and access management **platform** designed for high-security scenarios such as **prison visitation** (and can be adapted to hospitals, ICUs, NICUs, infectious wards, etc.). The system provides a **management side, client/terminal side, and visitor side**: families use mobile/mini‑program to make appointments, on-site terminals handle face-based identity verification and gate control, and the admin backend manages visit rules, approvals, schedules, and statistics. **Project Type:** Security Visit Platform / Face Recognition / Audio-Video **Timeline:** 2020 – 2022 **Role:** Full-stack Developer **Company:** Chunxiao Technology Co., Ltd., China --- ## Key Features - **Multi-role platform:** Separate experiences for prison/hospital admin, on-site terminals, and visitors/family. - **Online visit booking:** Families book visit time slots in advance, reducing on-site queuing and conflict. - **Approval & quota rules:** Configurable visit policies (frequency, duration, number of visitors, relationship, blacklist, etc.). - **Face recognition access:** Face-based entry/exit at gates or doors; blocks unauthorized or expired visits. - **Time management:** Automatic visit timing, warnings before end of slot, and automatic end of visit. - **Remote video visits:** Video visitation for special periods (e.g., epidemic) or remote relatives. - **Family & inmate management:** Family registration, relationship binding, and face database management. - **Statistics & audit:** Visit records, frequency analysis, abnormal behavior tracing, and audit logs. --- ## Core Subsystems / The platform is built around three main subsystems, with **audio-video session management** at the center of remote visits: | Subsystem | Role | |-----------|------| | **（Booking）** | Time-slot reservation, approval workflow, visit rules, and family/inmate binding. | | **（A/V）** | Real-time audio/video calls between visitors and inmates; session creation, join/leave, duration control, and quality management. | | **（Chat）** | Text messaging between parties (e.g., pre/post visit), message history, and moderation where required. | - **（A/V session management）：** Create and manage A/V sessions (e.g., one-to-one video visit), control who can join, set max duration, handle reconnection and end-of-session cleanup, and optionally record or archive for compliance. --- ## Architecture ``` ┌─────────────────────────────────────────┐ │ Access Terminal Devices │ │ ┌────────┐ ┌────────┐ ┌──────────┐ │ │ │Face Rec│ │Access │ │ Display │ │ │ │ Camera │ │Lock │ │ & Prompt │ │ │ └───┬────┘ └────┬───┘ └────┬─────┘ │ │ ┌────────┐ ┌────────┐ ┌──────────┐ │ │ │IC Card │ │QR Code │ │ Voice │ │ │ │ Reader │ │Scanner │ │ Announce │ │ │ └───┬────┘ └────┬───┘ └────┬─────┘ │ └──────┼───────────┼──────────┼──────────┘ │ │ │ └───────────┴──────────┘ │ ┌──────────────────▼──────────────────────┐ │ Android Terminal Control │ │ ┌─────────────────────────────────┐ │ │ │ - Face recognition & match │ │ │ │ - Access lock control │ │ │ │ - Local face database │ │ │ │ - Network sync & offline mode │ │ │ └─────────────────────────────────┘ │ └──────────────────┬──────────────────────┘ │ ┌──────────────────▼──────────────────────┐ │ Visit Management Platform │ │ ┌──────────┐ ┌──────────┐ ┌─────────┐ │ │ │ Booking │ │ Family │ │ Visit │ │ │ │ & Slots │ │ Face DB │ │ Records │ │ │ └──────────┘ └──────────┘ └─────────┘ │ │ ┌──────────┐ ┌──────────┐ ┌─────────┐ │ │ │ Video │ │ Reports │ │ System │ │ │ │ Visit │ │ & Stats │ │ Config │ │ │ │ HIS │ │ │ │ │ │ │ └──────────┘ └──────────┘ └─────────┘ │ └─────────────────────────────────────────┘ ``` --- ## Technologies ### Face Recognition - **Face detection** – Fast detection - **Face SDK** – High-accuracy matching - **Liveness** – Anti photo/video spoofing - **Face database** – Family feature management ### Access Control - **Electromagnetic lock** – Door control - **Door sensor** – Door state - **IR sensor** – Presence detection - **Voice** – Prompts and guidance ### Mobile - **WeChat Mini Program** – Family booking - **Android app** – On-site terminal / staff side - **Web admin** – Prison/hospital management portal ### Backend - **Spring Cloud** – Business services - **MySQL** – Data storage - **Redis** – Cache and session - **WebRTC** – Real-time audio/video; A/V session management (create, join, leave, timeout, recording) - **IM / Chat** – Chat system for text messages and history ### Integration - **Prison/Hospital data interface** – Optional external system integration - **WeChat template messages** – Booking and visit notifications - **SMS gateway** – SMS notifications --- ## Key Achievements - ✅ **<1s recognition** – Face recognition speed - ✅ **99.5% accuracy** – Face recognition accuracy - ✅ **~30% efficiency gain** – Visit management - ✅ **Multi-site deployment** – Adapted to different high-security visit scenarios - ✅ **Session compliance** – Audio-video session lifecycle under policy control --- ## Responsibilities ### Face Recognition - Access terminal face recognition - Feature extraction and matching - Liveness anti-spoofing - Local face DB and sync ### Access Control - Lock control logic - Door state and alarms - Voice announcements - Exception handling ### Booking - WeChat Mini Program booking - Time slot management - Reminders and notifications - Booking statistics ### Chat System - Text messaging between visitors and inmates - Message history and moderation - Integration with visit and A/V flows ### Audio-Video & Session Management - WebRTC-based real-time audio/video - A/V session lifecycle (create, join, leave, timeout) - Duration control and end-of-session cleanup - Room/session management and optional recording ### Admin - Family and face DB management - Visit record query - Reports - HIS integration --- ## Challenges & Solutions ### Challenge 1: Masked Faces **Problem:** Masks during pandemic reduced recognition. **Solution:** Mask-aware algorithm, stronger eye-region features. ### Challenge 2: Unstable Network **Problem:** Complex on-site networks in security facilities. **Solution:** Local face cache, offline recognition, sync when online. ### Challenge 3: Visit Duration **Problem:** Strict time limits, no overstay. **Solution:** Auto timer, advance reminder, auto lock at end of slot. ### Challenge 4: Privacy **Problem:** Family data and visit records must be protected. **Solution:** Encrypted storage, access control, audit logs. --- ## Results & Impact - **Efficiency** – ~30% improvement in visit management - **Order** – Less congestion at peak times - **Security** – Unauthorized access prevented - **Compliance** – Session timing and operation logs for traceability - **Data** – Visit data for management and audit - **Satisfaction** – Booking reduced wait time --- ## Evidence > 。 `images/` ： > - `access-terminal.png` - Face recognition access terminal > - `booking-miniapp.png` - WeChat Mini Program booking interface > - `visit-admin.png` - Visit management admin portal > - `video-visit-session.png` - Remote video visitation session --- ## Skills Demonstrated - **Face recognition:** Detection, features, liveness - **Android:** Terminal app, hardware integration - **WeChat Mini Program:** Booking, UX - **Video:** WebRTC, real-time communication - **Backend:** Spring Cloud, data management - **Healthcare:** HIS integration, data security --- **Tags:** #FaceRecognition #AccessControl #BookingSystem #ChatSystem #WebRTC #PrisonVisitation #SecurityPlatform 
+# Visit Booking & Access Management System
+
+> Android terminal app + admin backend for prison inmate-family video visitation — WebRTC sessions with strict time limits and compliance recording
+
+## Visit Lifecycle
+
+```mermaid
+sequenceDiagram
+    participant F as Family
+    participant A as Admin
+    participant T as Facility Terminal
+    participant FR as Face Recognition
+    participant W as WebRTC Session
+
+    F->>A: Book visit (date, time slot)
+    A->>A: Approve & allocate slot
+    F->>T: Arrive at facility
+    T->>FR: Verify identity (<1s)
+    FR->>T: Access granted
+    T->>W: Start video visit
+    W->>W: Session recording + timer
+    W->>T: Auto-end at time limit
+    T->>A: Archive session record
+```
+
+## Overview
+
+Prison visitation system. Prisons prohibit personal mobile phones, so the system provides an **Android terminal app running on facility-managed devices** for inmates to participate in video visits with family. Families book visit time slots in advance; prison staff approve via admin backend. WebRTC handles the real-time audio-video with session lifecycle management (create, join, leave, timeout) and compliance recording. Face recognition verifies visitor identity at facility entry.
+
+## Context
+
+- **Timeline**: 2020 – 2022
+- **Role**: Full-stack Engineer
+- **Client**: Prison facilities
+- **Key Constraint**: No personal devices — all inmate-side interaction through facility-managed Android terminals
+
+## Core System
+
+| Component | Technology |
+|-----------|-----------|
+| Android Terminal App | Java/Kotlin, Face Recognition SDK, WebRTC client |
+| Admin Backend | Spring Cloud, MySQL, Redis |
+| Video Sessions | WebRTC (create/join/leave/timeout/recording) |
+| Access Control | Face recognition + electromagnetic locks |
+
+## Workflow
+
+```
+Family Books Visit → Admin Approves → Time Slot Allocated
+    → Inmate Uses Facility Android Terminal → WebRTC Video Session Starts
+    → Auto-end at Time Limit → Session Record Archived for Audit
+```
+
+## Key Features
+
+- Android terminal app on facility-managed devices (no personal phones)
+- Admin booking approval with time slot and quota management
+- WebRTC real-time audio-video sessions with strict duration control
+- Face recognition access control for visitor verification
+- Audit trails and visit statistics for prison administration
+
+## Key Numbers
+
+| Metric | Detail |
+|--------|--------|
+| Face Recognition Speed | Sub-second (<1s) |
+| Recognition Accuracy | 99.5% |
+| Efficiency Improvement | 30% faster visit management |
+| Deployment | Multiple prison departments |
+
+## Challenges
+
+- **No personal devices**: All inmate-side interaction required facility-managed Android terminals. Each session needed a clean start — logout previous user, clear local state, initialize a fresh WebRTC session.
+- **Strict time enforcement**: Visits had fixed duration with server-side timer enforcement — 1-minute warning, 10-second countdown, then forcibly terminate the peer connection from the server side.
+- **False rejection at the gate**: False rejections block real visitors and create confrontation. Mitigated by tuning recognition thresholds conservatively, providing QR code fallback with manual guard verification, and logging confidence scores for borderline case review.
+
+## Achievements
+
+- Sub-second face recognition (99.5% accuracy)
+- 30% improvement in prison visit management efficiency
+- Supported remote video visitation during pandemic period
+- Complete visit lifecycle: booking → approval → video session → audit
+
+**Tags:** #PrisonVisitation #WebRTC #FaceRecognition #Android #SpringCloud #AccessControl

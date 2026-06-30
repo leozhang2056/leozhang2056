@@ -165,3 +165,10 @@ keywords:
 - Exhibition
 - Computer Vision
 last_updated: '2025-02-11'
+
+
+interview_qa_notes: |
+  Q: "Buy-vs-build: why was purchasing a complete robot the right call here?"
+  A: "Core value was upper-layer features — product introductions, face recognition check-in, voice-guided tours — not robot navigation. Building ROS/SLAM/navigation from scratch would consume 6-12 months on a commodity capability vendors already solved well. The SDK meant we called robot.navigateTo(waypoint) instead of tuning SLAM parameters. Navigation was infrastructure, not product — buying let the 4-person team focus entirely on what created client value."
+  Q: "What were the limitations of relying on vendor SDKs? Where did they bite you?"
+  A: "You are at the vendor mercy for bugs and feature requests. If ArcSoft face recognition had accuracy issues in certain lighting, we could not fix the algorithm — only adjust lighting and camera angle. Mitigation: (1) test SDKs in actual exhibition environment during evaluation, not just demo bench, (2) build fallbacks (QR code if face fails), (3) maintain good vendor relationships for priority fixes. Acceptable trade-off for a one-off deployment."

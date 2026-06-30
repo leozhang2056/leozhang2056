@@ -20,15 +20,38 @@ ChatClothes is a modular and multimodal AI virtual try-on (VTON) system that bri
 ### Project Details
 **Project Type:** AI Research / Master's Thesis  
 **Timeline:** November 2024 - April 2025  
-**Role:** Sole Developer & System Designer  
+**Role:** AI Engineer & Python Developer (Independent Contributor)  
 **Institution:** Auckland University of Technology (AUT), New Zealand  
 **Status:** ✅ Thesis passed & completed 6 months early (April 2025)
+
+> ### Key Numbers
+> | Metric | Value |
+> | :--- | :--- |
+> | FID Score | **28.5** (19% better than baseline) |
+> | Hand Artifacts | **75% reduction** (3 vs 12 per 100) |
+> | YOLO Accuracy | **94.2%** (8x smaller model) |
+> | Edge Inference | **<10s** on Raspberry Pi 5 |
+> | User Success Rate | **87%** (50-user study) |
+> | Time Saved | **6 months** early completion |
 
 ---
 
 ## 2. System Architecture & Components
 
 The foundational architecture orchestrates LLMs, Computer Vision algorithms, and Generative Diffusion models.
+
+### AI Pipeline Flow
+
+```mermaid
+flowchart LR
+    A[Image + Text] --> B[DeepSeek LLM]
+    B --> C[Structured Prompts]
+    C --> D[YOLO Detection]
+    D --> E[Pose Estimation]
+    E --> F[OOTDiffusion + LoRA]
+    F --> G[Post-Processing]
+    G --> H[Final Result]
+```
 
 | Architecture | Components | Data Flow | Pipeline Overview |
 | :---: | :---: | :---: | :---: |
@@ -143,8 +166,37 @@ I independently addressed the key challenges in the domain of virtual try-on, de
 ---
 
 ## Technical Stack
-- **AI/ML Core:** DeepSeek LLM, PyTorch, OOTDiffusion, LoRA, YOLO12n-LC
+
+### Tech Ecosystem
+
+```mermaid
+mindmap
+  root((ChatClothes))
+    AI/ML Core
+      DeepSeek LLM
+      OOTDiffusion
+      LoRA
+      PyTorch
+      OpenCV
+    Computer Vision
+      YOLO12n-LC
+      Pose Estimation
+      Segmentation
+    Platforms
+      ComfyUI
+      Dify
+      Ollama
+    Backend
+      FastAPI
+    Deployment
+      Raspberry Pi 5
+      Cloud
+      Mobile
+```
+
+- **AI/ML Core:** DeepSeek LLM, PyTorch, OOTDiffusion, LoRA, YOLO12n-LC, OpenCV
 - **Platforms:** Dify, ComfyUI, Ollama, Raspberry Pi 5
+- **Backend:** FastAPI (RESTful API server for model orchestration and LLM integration)
 - **Languages:** Python, JavaScript
 
 ## Citation
@@ -167,7 +219,7 @@ If you find this project useful for your research, please consider citing our wo
 ```bibtex
 @inproceedings{Zhang2025ChatClothes,
   author    = {Yuchao Zhang and Kien Tran and Minh Nguyen and Wei Qi Yan},
-  title     = {ChatClothes: A Lightweight Diffusion-Based Virtual Try-On System with Multimodal Control},
+  title     = {ChatClothes: Conversational Virtual Try-On with Diffusion Models},
   booktitle = {Proceedings of the 40th International Conference on Image and Vision Computing New Zealand (IVCNZ 2025)},
   year      = {2025},
   month     = {Nov},

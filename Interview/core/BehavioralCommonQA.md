@@ -29,6 +29,64 @@ This document is for **behavioral interview** preparation: **Part 1** contains 1
 - **STAR**: Mentally go through **S→T→A→R**; body text uses **one-line Chinese prompts (keywords)** to help align, keep English oral scripts concise.
 - **Modifying structure**: Try not to delete `oral-*` / `q-*` / `section-*` anchors.
 
+---
+
+## Navigation Map
+
+```mermaid
+graph TD
+    START["<b>START HERE</b><br/>Interview day? Go to Part 4 Quick Review first."] --> P1
+
+    P1["<b>Part 1 · Core Answers</b><br/>A ①–⑩ · 10 high-frequency scripts<br/>⏱ Practice these first"] --> P2
+    P1 -. "Need a backup story?" .-> P2
+    P1 -. "Need deep-dive follow-ups?" .-> P3
+
+    P2["<b>Part 2 · Story Bank</b><br/>B1 question categories + B2 STAR notes<br/>Pick the right story per question"] --> P3
+    P2 -. "Want full Q1–Q45 scripts?" .-> P3
+
+    P3["<b>Part 3 · Full Scripts</b><br/>Q1–Q45 detailed scripts + follow-ups<br/>Only when you need more depth"] --> P4
+
+    P4["<b>Part 4 · Quick Review</b><br/>3-min warm-up table + guardrails<br/>Use right before the interview"]
+
+    style START fill:#ff9800,color:#000,stroke:#e65100,stroke-width:2px
+    style P1 fill:#1976d2,color:#fff
+    style P2 fill:#388e3c,color:#fff
+    style P3 fill:#7b1fa2,color:#fff
+    style P4 fill:#d32f2f,color:#fff
+```
+
+## Question Family Map — Which Stories Cover Which Questions
+
+> **Same story, many questions.** Most behavioral questions cluster around 3 core project stories. Master the families, not 45 individual answers.
+
+| Family | Core Story | Covers These Themes | Key Questions |
+|--------|-----------|---------------------|---------------|
+| **Enterprise Messaging** | Android IM at scale, background tasks, OEM fragmentation, NDK, FastDFS, Easemob | Complex technical, pressure, failure, hotfix, code quality, trade-offs | ②, ④, ⑨, Q4, Q9, Q31, Q43 |
+| **Smart Factory** | IoT factory floor, scaling, team leadership, multi-site, phased delivery | Leadership, disagreement, initiative, workflow, requirements, mentoring | ⑦, Q5, Q12, Q17, Q20, Q30, Q33, Q44, Q45 |
+| **ChatClothes** | AI on-device, thesis, constraints, latency profiling | Challenging project, fast learning, above & beyond, motivation | ⑦, Q3, Q7, Q14, Q25, Q28, Q31, Q41 |
+| **Cross-cutting** | Adapted from any of the above | Failure, disagreement, pressure, feedback, prioritization | ③, ④, ⑤, ⑥, ⑧, Q4, Q22, Q38 |
+
+## Quick Story-to-Question Matrix
+
+| | Enterprise Messaging | Smart Factory | ChatClothes | Cross-project |
+|---|:---:|:---:|:---:|:---:|
+| **Complex technical** | ② Q31 | Q34 | Q3, Q31 | |
+| **Failure / Missed deadline** | Q4 | | | ④ Q22 |
+| **Pressure / Workload** | ⑤ Q9 | Q40 | | Q38 |
+| **Conflict / Difficult person** | | | | ③ Q42 |
+| **Disagreement** | | Q5, Q33 | | Q27 |
+| **Initiative / Above & beyond** | | Q7 Option B, Q17 | Q7 Option A | |
+| **Leadership / Junior** | | Q20, Q45 | | |
+| **Fast learning / New tech** | | | ⑨ Q14, Q25, Q41 | Q39 |
+| **Prioritization** | | Q8, Q36, Q40 | | ⑥ |
+| **Feedback (give/receive)** | Q13, Q21 | Q43 | | ⑧ |
+| **Process / Workflow** | Q44 Option B | Q44 Option A | | ⑦ |
+| **Challenging project** | | Q3 Backup | Q3 Main | |
+| **Adapting to change** | ⑨ Case B | | ⑨ Case A | Q23 |
+| **Customer / Requirements** | | Q30 | | ⑧ Case B |
+
+> **How to use this matrix**: Find the question type you are asked, pick a column with a check, and go to the corresponding section (①-⑩ for Part 1, Q## for Part 3).
+
 
 ---
 <a id="section-oral-only"></a>
@@ -382,6 +440,18 @@ After that, operators could just keep weighing and moving materials without manu
 The improvement itself was **technically small**, but it removed a lot of **repetitive friction** from the workflow and **reduced input errors** on the production line.
 
 I like that kind of engineering work — connecting **real-world operations** with software in a way that makes **daily work smoother** for users.
+
+---
+
+> **Part 1 vs Part 2 — how they connect:**
+>
+> | | Part 1 (A ①–⑩) | Part 2 (B1 + B2) |
+> |---|---|---|
+> | **What it gives you** | Full sentences you can speak aloud | Reusable building blocks per project |
+> | **When to use** | Main answers for the 10 most common questions | Adapting a story to a question you didn't prepare for |
+> | **Think of it as** | The script | The LEGO bricks |
+>
+> **Rule of thumb**: Practice Part 1 until smooth. When an unexpected question lands, pull the right story from Part 2 and rebuild on the spot.
 
 ---
 

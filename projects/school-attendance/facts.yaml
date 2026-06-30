@@ -126,3 +126,8 @@ keywords:
 - Attendance System
 - Liveness Detection
 last_updated: '2025-02-11'
+
+
+interview_qa_notes: |
+  Q: "Liveness detection for face recognition attendance — did you catch any real spoofing attempts?"
+  A: "Face SDK required blinking or slight head turn — defeats photo and static video attacks. 200-300ms overhead but non-negotiable for a school environment. During testing, students tried checking in friends running late by showing photos on their phones — liveness detection caught all attempts. JPush real-time parent notification was the second half of anti-fraud: even if someone beat liveness, parents would immediately see an unexpected attendance notification and flag it."

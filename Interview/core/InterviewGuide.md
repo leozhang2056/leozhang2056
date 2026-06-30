@@ -9,6 +9,18 @@ Your one-stop interview workflow. From preparation to interview day to follow-up
 
 # Phase 1 — Before the Interview
 
+```mermaid
+graph LR
+    A["Phase 1<br/>Before<br/>━━━━━━━━━━<br/>Research · STAR Stories<br/>Weakness Map"] --> B["Phase 2<br/>During<br/>━━━━━━━━━━<br/>Intro · Deep Dive<br/>Behavioral · Reverse Q"]
+    B --> C["Phase 3<br/>Day Of<br/>━━━━━━━━━━<br/>Attire · Body Language<br/>Mindset"]
+    C --> D["Phase 4<br/>Checklist<br/>━━━━━━━━━━<br/>Final Check<br/>Resources · Follow-up"]
+
+    style A fill:#2196F3,color:#fff
+    style B fill:#FF9800,color:#fff
+    style C fill:#4CAF50,color:#fff
+    style D fill:#9C27B0,color:#fff
+```
+
 ---
 
 ## 1.1 Job Application Process
@@ -124,6 +136,30 @@ This keeps answers structured, concise, and impactful — no filler.
 | **L5 (Senior)** | Project-level (1–3 months), cross-functional, technical leadership |
 | **L6+ (Staff/Principal)** | Strategic/organisational change (6–12+ months), breaking team boundaries, systemic solutions |
 
+### STAR vs CARL — Side by Side
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    STAR (Classic)                        │
+├──────────┬──────────────────────────────┬───────────────┤
+│   S/T    │           A                  │       R       │
+│ Context  │       Action                 │    Result     │
+│  10%     │       60%                    │     30%       │
+└──────────┴──────────────────────────────┴───────────────┘
+         ↓ Add "L" layer ↓
+┌──────────┬──────────────────────────────┬───────┬───────┐
+│    C     │           A                  │   R   │   L   │
+│ Context  │       Action                 │Result │Learn- │
+│  10%     │       60%                    │ 20%   │ ings  │
+└──────────┴──────────────────────────────┴───────┴───────┘
+                                    10%
+
+  STAR  = Action-heavy + Result.      Great for mid-level.
+  CARL  = Adds Learnings layer.       Shows SYSTEM thinking → Senior signal.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  KEY: 60% must always be ACTION — what YOU did, not the team.
+```
+
 ---
 
 ## 1.4 🖊️ My Key Stories — Master Table
@@ -177,6 +213,20 @@ Most companies run **3–4 rounds**. Each tests different signals:
 - Engineer: technical depth, trade-offs, architecture
 - Manager: business impact, leadership, risk
 
+### Interview Round Progression — Who Assesses What
+
+```mermaid
+graph TB
+    R1["Round 1: Screening<br/>━━━━━━━━━━━━━━━━━━━━<br/>HR / Recruiter<br/>• Culture fit & intent<br/>• Communication<br/>• Motivation"] --> R2["Round 2: Technical<br/>━━━━━━━━━━━━━━━━━━━━<br/>Hiring Manager / Engineer<br/>• Project deep-dive<br/>• Problem-solving<br/>• Counter-questions"]
+    R2 --> R3["Round 3: Team / Eng<br/>━━━━━━━━━━━━━━━━━━━━<br/>Team Members / Lead<br/>• Code review habits<br/>• CI/CD & testing<br/>• Collaboration style"]
+    R3 --> R4["Round 4: Leadership<br/>━━━━━━━━━━━━━━━━━━━━<br/>Senior Mgr / Director<br/>• Business vision<br/>• Risk trade-offs<br/>• Conflict & pressure"]
+
+    style R1 fill:#66BB6A,color:#fff
+    style R2 fill:#42A5F5,color:#fff
+    style R3 fill:#FFA726,color:#fff
+    style R4 fill:#AB47BC,color:#fff
+```
+
 ---
 
 ### 🖊️ Self-Introduction — Layered Delivery
@@ -187,6 +237,35 @@ Most companies run **3–4 rounds**. Each tests different signals:
 | **Main line + branches** | One core narrative → branch into strengths, achievements, interests, why NZ |
 | **Show confidence** | Own your experience, don't apologise |
 | **Tailor to audience** | Different person → different granularity, different emphasis |
+
+### Self-Introduction Layering — Build Depth on Demand
+
+```
+  ┌─────────────────────────────────────────────────────────┐
+  │  30s — RECRUITER                                       │
+  │  ┌───────────────────────────────────────────────────┐  │
+  │  │ "I'm a senior software engineer with 7+ years in │  │
+  │  │  Android & backend. I build systems that ship."   │  │
+  │  │         Role + Scope + Energy signal              │  │
+  │  └───────────────────────────────────────────────────┘  │
+  │           ↓ if they lean in ↓                           │
+  │  1min — HIRING MANAGER                                  │
+  │  ┌───────────────────────────────────────────────────┐  │
+  │  │ + 2-3 high-impact results with numbers            │  │
+  │  │ + Cross-team ownership examples                   │  │
+  │  │ + Why this role / team fits next step             │  │
+  │  └───────────────────────────────────────────────────┘  │
+  │           ↓ if they want more ↓                         │
+  │  3min — TECHNICAL INTERVIEW                             │
+  │  ┌───────────────────────────────────────────────────┐  │
+  │  │ + Full career arc with technical decisions        │  │
+  │  │ + Architecture choices & trade-offs               │  │
+  │  │ + NZ context, long-term intent                    │  │
+  │  └───────────────────────────────────────────────────┘  │
+  └─────────────────────────────────────────────────────────┘
+
+  RULE: Never jump to 3min unprompted. Read the room.
+```
 
 ### 🖊️ General Interview Notes
 - **Team collaboration > pure technology** — always frame answers around solving **business problems**
@@ -325,6 +404,25 @@ This frames you as organised and senior-level while steering the interview.
 2. **Reject fluffy language:** Show specific behaviour, not buzzwords
 3. **Stay technical:** System design and coding are hard gates even for managers
 
+### Behavioral Question Decision Tree — Pick Your Formula
+
+```mermaid
+graph TB
+    Q{"What type of<br/>behavioral question?"}
+    Q -->|"Conflict"| CF["CONFLICT RESOLUTION<br/>━━━━━━━━━━━━━━━━━━━━━<br/>1. Listen to their side first<br/>2. Show empathy<br/>3. Introduce data/PoC<br/>4. Reach win-win"]
+    Q -->|"Ambitious Project"| AP["MOST AMBITIOUS<br/>━━━━━━━━━━━━━━━━━━━━━<br/>Impact x Scope x Contribution<br/><br/>Use 'Table of Contents':<br/>  1) Research & Design<br/>  2) Align Stakeholders<br/>  3) Core Technical<br/>  4) Gradual Rollout<br/>→ Ask which to dive into"]
+    Q -->|"Failure"| FL["FAILURE STORY<br/>━━━━━━━━━━━━━━━━━━━━━<br/>Goldilocks Zone:<br/>• Real but recoverable<br/>• Had a logical hypothesis<br/>• Stopped the bleeding<br/>• Applied lesson next time"]
+    Q -->|"Pressure"| PR["UNDER PRESSURE<br/>━━━━━━━━━━━━━━━━━━━━━<br/>• Show time management<br/>• Prioritize by impact<br/>• Communicate trade-offs<br/>• Deliver under constraints"]
+    Q -->|"Prioritization"| PT["PRIORITIZATION<br/>━━━━━━━━━━━━━━━━━━━━━<br/>• Sort by impact + risk<br/>• Say no with reasoning<br/>• Show parallel delivery<br/>• Track and communicate"]
+
+    style Q fill:#37474F,color:#fff
+    style CF fill:#EF5350,color:#fff
+    style AP fill:#42A5F5,color:#fff
+    style FL fill:#FFA726,color:#fff
+    style PR fill:#66BB6A,color:#fff
+    style PT fill:#AB47BC,color:#fff
+```
+
 ---
 
 ## 2.5 🖊️ My Behavioral Scripts
@@ -404,6 +502,45 @@ This frames you as organised and senior-level while steering the interview.
 ---
 
 ## 2.9 48 High-Frequency Interview Questions — Quick Reference
+
+### 48 Questions — Category Mind Map
+
+```mermaid
+mindmap
+  root((48 Questions))
+    About You
+      Q1-9 Self-Awareness
+      Strengths & Weaknesses
+      Under Pressure
+      Multi-tasking
+    Education
+      Q10-17
+      Key learnings
+      Programme relevance
+      Future education
+    Work Experience
+      Q18-23
+      Initiated anything?
+      Why left?
+      Ideal environment
+    The Role
+      Q24-30 Homework
+      Why this org?
+      Why hire you?
+      How contribute?
+    Motivation & Skills
+      Q32-40
+      What motivates?
+      Skills match
+      Communication
+    Closing
+      Reverse Questions
+      About Role
+      About Team
+      About Growth
+```
+
+---
 
 ### About You (Q1–9) — Self-Awareness
 

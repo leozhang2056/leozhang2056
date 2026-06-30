@@ -20,6 +20,29 @@
 | Visa Status | Post-Study Work Visa, eligible for full-time work |
 | Working Languages | Chinese (native), English (professional working proficiency) |
 
+### IDENTITY CARD
+
+```
+┌─────────────────────────────────────────────────────┐
+│  ╔═══════════════════════════════════════════════╗   │
+│  ║           LEO ZHANG · 张玉超                   ║   │
+│  ║   Senior Software Engineer → AI Engineer      ║   │
+│  ╚═══════════════════════════════════════════════╝   │
+│                                                     │
+│  📍  Auckland, NZ (Hillcrest)                       │
+│  🎂  10+ yrs experience                             │
+│  🎓  AUT Master (First Class Honours)               │
+│  💼  Java → IoT/Tech Lead → AI/ML                   │
+│                                                     │
+│  CORE: Java · Android · Python · PyTorch · IoT      │
+│  EDGE: Diffusion Models · Computer Vision · NDK     │
+│                                                     │
+│  ✉  leozhang2056@gmail.com                          │
+│  📱 +64 27 385 0794                                 │
+│  🔗  linkedin.com/in/leo-zhang-305626280            │
+└─────────────────────────────────────────────────────┘
+```
+
 ---
 
 ## 2. Education
@@ -34,6 +57,23 @@
 ### Hebei University of Science and Technology — Bachelor of Software Engineering
 - Period: 2009.07 – 2013.06
 - Coursework: Data Structures, Algorithms, Java Programming, Database Systems, Software Engineering
+
+### EDUCATION TIMELINE
+
+```
+2009                    2013                    2024        2026
+  │                       │                       │           │
+  ▼                       ▼                       ▼           ▼
+  ┌───────────────────────┐                       ┌───────────┐
+  │   B.Eng Software Eng  │    11 years industry   │  M.CIS    │
+  │   Hebei Univ Sci&Tech │ ◄───────────────────► │  AUT      │
+  │   (Java, Algorithms)  │    experience gap      │  (AI/CV)  │
+  └───────────────────────┘                       └───────────┘
+       FOUNDATION                              TRANSFORMATION
+       "How to build"                          "How to build with AI"
+```
+
+> **Interview talking point:** The 11-year industry gap between degrees is a feature, not a gap. The Bachelor's gave me deep Java/backend fundamentals; the Master's was a deliberate pivot into AI, powered by a decade of real-world engineering judgment.
 
 ---
 
@@ -54,6 +94,34 @@ Started in enterprise Java backend and Android development → expanded to IoT i
 **Preferred location:** Auckland, New Zealand
 **Work preference:** Full-time, Onsite (North Shore area)
 **Open to:** Willing to start as a delivery-focused full-stack engineer (including Junior title), as long as the team, mentorship, and AI/platform growth path are strong. Also open to **intern / graduate roles** as a pathway into the NZ market.
+
+### CAREER ARC DIAGRAM
+
+```mermaid
+graph LR
+    subgraph "2013-2018"
+        A["Java Backend<br/>Enterprise IM<br/>Spring Cloud"]
+    end
+    subgraph "2018-2022"
+        B["IoT + Team Lead<br/>Smart Factory (10+ sites)<br/>6-person team"]
+        C["Android Expert<br/>Face Recognition<br/>RFID/Serial"]
+    end
+    subgraph "2024-2025"
+        D["AI Engineer<br/>ChatClothes<br/>Diffusion Models"]
+    end
+    A -->|"Expanded scope"| B
+    A -->|"10yr mobile exp"| C
+    B -->|"Master's @ AUT<br/>First Class Honours"| D
+    C -->|"CV + Deep Learning"| D
+
+    style A fill:#4A90D9,color:#fff
+    style B fill:#F5A623,color:#fff
+    style C fill:#7ED321,color:#fff
+    style D fill:#BD10E0,color:#fff
+```
+
+**Career arc narrated in one sentence:**
+> "I spent 5 years building enterprise Java backends, then 4 years leading IoT/factory projects with a 6-person team across 10+ sites, and finally completed a full transition to AI engineering through an AUT Master's (First Class Honours) where I independently built a virtual try-on system published at IVCNZ 2025."
 
 ---
 
@@ -104,6 +172,55 @@ Started in enterprise Java backend and Android development → expanded to IoT i
 - **Cursor** — Expert-level, daily use
 - **GitHub Copilot / Claude Code** — Advanced
 - **OpenCode** — Intermediate
+
+### SKILL DOMAIN MAP
+
+```mermaid
+mindmap
+  root((Leo Zhang<br/>Full-Stack → AI))
+    Backend & Full-stack
+      Java / Spring Cloud - 8yr
+      RESTful API - 10yr
+      MySQL / Redis / MongoDB
+      Docker / Jenkins / CI/CD
+      EXPERT
+    Android
+      Android SDK - 10yr
+      Kotlin / Jetpack Compose
+      NDK C/C++ low-latency
+      Security & Testing
+      EXPERT
+    AI / ML
+      PyTorch & Diffusion Models
+      Computer Vision - 3yr
+      YOLO Object Detection
+      LLM Fine-tuning / RAG
+      ADVANCED
+    Frontend
+      Vue.js - 5yr
+      React - 4yr
+      HTML/CSS - 10yr
+      INTERMEDIATE+
+    IoT & Hardware
+      RFID / UART / RS485
+      Raspberry Pi - 5yr
+      Modbus / MQTT
+      Sensors & Relays
+      ADVANCED
+    DevOps
+      Linux Admin - 8yr
+      Kubernetes
+      CI/CD Pipeline Design
+      INTERMEDIATE+
+```
+
+**Depth at a glance:**
+```
+Expert ████████████████████  Backend (Java/Spring), Android (SDK/NDK)
+Advan. ███████████████       AI/ML (PyTorch/CV), IoT (RFID/UART)
+Inter. ██████████            Frontend (Vue/React), DevOps (K8s/Linux)
+Tools  ████████████          AI Coding (Cursor/Copilot/Claude Code)
+```
 
 ---
 
@@ -171,6 +288,80 @@ Started in enterprise Java backend and Android development → expanded to IoT i
 ### 🏭 Currency Printing Plant On-Site Integration — 2018-2020
 - **Key capabilities:** High-security environment delivery, offline deployment, offline development & verification
 
+### PROJECT TIMELINE MAP
+
+```
+Year:  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023  2024  2025
+       |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+
+ENTP   ████████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       Enterprise IM (Java/Android/NDK)
+
+FACT   ░░░░░░░░░░░░░░░░░░░░████████████████████████████████████████████░░░░
+       Smart Factory (Spring Cloud/IoT)
+
+PRTY   ░░░░░░░░░░░░░░░░░░░░████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       Currency Print Plant (on-site)
+
+POWER  ░░░░░░░░░░░░░░░░░░░░░░░░░░████████████████████░░░░░░░░░░░░░░░░░░░░░
+       Smart Power (Java/Modbus)
+
+BCAST  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       Broadcast Control (Kotlin)
+
+VISIT  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████████░░░░░░░░░░░░░░░░
+       Visit System (face recog/WebRTC)
+
+PBOOK  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████████░░░░░░░░░░░░░░░░░░░░░
+       Picture Book Locker (RFID/face)
+
+SCHOOL ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░░░░░░░
+       School Attendance (OpenCV)
+
+FOREST ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░░░░░░░░░░░
+       Forest Patrol (GIS/GPS)
+
+ROBOT  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░░░░░░░
+       Exhibition Robot (SLAM)
+
+BOOBIT ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░
+       Boobit Crypto (Compose)
+
+GW     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████████████████░░░░░░
+       Visual Gateway (Kotlin/Modbus)
+
+CLOTH  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████████
+       ChatClothes (Python/PyTorch) ← AI TRANSITION
+```
+
+```mermaid
+gantt
+    title Project Timeline (color-coded by domain)
+    dateFormat YYYY
+    axisFormat %Y
+
+    section Backend/Java
+    Enterprise IM          :done, 2014, 2020
+    Smart Factory          :done, 2018, 2024
+    Currency Print Plant   :done, 2018, 2020
+    Smart Power            :done, 2019, 2022
+
+    section Android
+    Picture Book Locker    :done, 2019, 2022
+    Forest Patrol          :done, 2019, 2021
+    School Attendance      :done, 2020, 2021
+    Exhibition Robot       :done, 2020, 2022
+    Broadcast Control      :done, 2020, 2020
+    Boobit Crypto          :done, 2022, 2022
+
+    section IoT/Hardware
+    Visual Gateway         :done, 2022, 2024
+    Visit System           :done, 2020, 2022
+
+    section AI/ML
+    ChatClothes            :done, 2024, 2025
+```
+
 ---
 
 ## 6. Quantified Results Summary
@@ -192,6 +383,20 @@ Started in enterprise Java backend and Android development → expanded to IoT i
 | FID improvement | 19% | ChatClothes |
 | Hand artifact reduction | 75% | ChatClothes |
 | Classification accuracy | 94.2% | ChatClothes |
+
+### TOP 5 NUMBERS TO REMEMBER
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  #1  10+ years       — Full-stack engineering experience       ║
+║  #2  10+ factories   — Smart Factory deployments at scale      ║
+║  #3  500K msgs/day   — Enterprise IM throughput (<200ms)       ║
+║  #4  99.5%           — Face recognition accuracy               ║
+║  #5  FID 28.5        — ChatClothes (19% better than SOTA)      ║
+╠══════════════════════════════════════════════════════════════════╣
+║  BONUS: 75% hand artifact reduction | 87% user study success   ║
+╚══════════════════════════════════════════════════════════════════╝
+```
 
 ---
 

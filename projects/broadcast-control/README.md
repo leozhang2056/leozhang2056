@@ -18,11 +18,38 @@ The core design goal is to improve delivery efficiency and operational consisten
 **Project Type:** Digital Signage / AdTech Platform  
 **Timeline:** 2020  
 **Role:** Project Manager + Android Screen Client Lead Developer  
-**Company:** TBD
+**Company:** Chunxiao Technology Co., Ltd.
+
+> ### Key Numbers
+> | Metric | Value |
+> | :--- | :--- |
+> | Team Size | **9** cross-functional |
+> | Delivery Time | **2 months** |
+> | Control Protocol | **MQTT broadcast** |
+> | Screen Scenarios | **3** (Elevator, Store, Public) |
 
 ---
 
 ## My Responsibilities
+
+### Responsibility Breakdown
+
+```mermaid
+mindmap
+  root((Leo's Role))
+    PM
+      Cross-Team Coordination
+      Requirement Alignment
+      Milestone Planning
+    Designer
+      Playback Logic
+      Task Synchronization
+      Scheduling Design
+    Android Dev
+      Player Client
+      MQTT Subscription
+      Heartbeat Reporting
+```
 
 ### Project Management
 - Coordinated product, backend, operations, and screen deployment teams.
@@ -57,6 +84,25 @@ The core design goal is to improve delivery efficiency and operational consisten
 4. Android screen clients receive tasks and execute scheduled playback.
 5. Devices report runtime heartbeat, task status, and playback feedback.
 6. Operators optimize campaign policies based on delivery and runtime status.
+
+### Control Sequence
+
+```mermaid
+sequenceDiagram
+    participant Admin
+    participant Platform
+    participant MQTT
+    participant Devices
+    participant Playback
+    Admin->>Platform: Configure Campaign
+    Platform->>MQTT: Broadcast Task
+    MQTT->>Devices: Deliver to All Clients
+    Devices->>Playback: Execute Schedule
+    Playback->>Devices: Report Status
+    Devices->>MQTT: Heartbeat + Feedback
+    MQTT->>Platform: Aggregate Status
+    Platform->>Admin: Dashboard View
+```
 
 ---
 

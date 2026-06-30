@@ -1,27 +1,25 @@
 project_id: live-streaming-system
-name: Live Streaming Commerce System
-name_cn: 直播电商系统
-type: Live Streaming / Live Commerce
+name: Live Streaming Chat Room System
+name_cn: 聊天室直播系统
+type: Live Streaming / Chat Room
 category:
   - Full-stack Development
   - Live Streaming
   - Android Development
   - Web Development
-  - Audio/Video Transmission
-  - E-commerce
 timeline:
-  start: "2015"
-  end: "2018"
-  duration_years: 3
+  start: "2013"
+  end: "2015"
+  duration_years: 2
 role: Full-stack Developer (Android + Web)
 team_size: 8
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
 summary: >
-  A comprehensive live streaming commerce platform developed from 2015 to 2018,
+  A comprehensive live streaming commerce platform developed from 2013 to 2015,
   spanning Android mobile client and ASP.NET web admin systems.
-  Worked within an 8-person cross-functional team over a 3-year delivery period.
+  Worked within an 8-person cross-functional team over a 2-year delivery period.
   Built with multi-language technology stack including .NET Framework (C#, ASP.NET),
   Android (Java/Kotlin), C++ (streaming core), Python (data processing), and Lua (scripting).
   The system enabled real-time live streaming with integrated e-commerce capabilities,
@@ -29,7 +27,7 @@ summary: >
 
 highlights:
   - Delivered Android live-streaming client in Java/Kotlin with a custom C++ core as part of an 8-person delivery team
-  - Implemented ASP.NET Web Forms admin dashboard and Node.js real-time notification service over a 3-year product cycle
+  - Implemented ASP.NET Web Forms admin dashboard and Node.js real-time notification service over a 2-year product cycle
   - Implemented WebSocket and Socket.IO for real-time chat and live room interactions
   - Delivered HLS (M3U8) adaptive streaming with multi-bitrate support (360p to 1080p)
   - Created hybrid backend architecture: .NET (business logic) + Node.js (real-time) + C++ (media)
@@ -108,10 +106,10 @@ features:
   - Cross-platform streaming (Android/Web with unified backend)
 
 metrics:
-  - value: "3"
+  - value: "2"
     unit: "years"
     label: "development period"
-    description: "Continuous development and iteration from 2015 to 2018"
+    description: "Continuous development and iteration from 2013 to 2015"
   
   - value: "8"
     unit: "team members"
@@ -128,7 +126,7 @@ achievements:
   - Implemented multi-language architecture (.NET C#, C++, Python, Lua) for optimal performance
   - Achieved stable playback across diverse network conditions
   - Enabled live-commerce conversion path increasing product sales during streams
-  - Maintained 99.5% streaming uptime over 3 years of operation
+  - Maintained 99.5% streaming uptime over 2 years of operation
 
 evidence:
   - type: ui
@@ -200,3 +198,10 @@ keywords:
   - Streaming Optimization
 
 last_updated: "2026-03-05"
+
+
+interview_qa_notes: |
+  Q: "The C++ server core was rewritten multiple times. What did each rewrite solve?"
+  A: "V1: monolithic C++ handling everything in one process — worked for small rooms but bottlenecked at few hundred viewers on message dispatch. V2: split message routing and media streaming into separate processes via shared memory — scaled to 1000+ but introduced synchronization bugs between processes. V3: multi-threaded with per-room workers and shared message bus — solved sync issues but C++ codebase became too complex for the 2-person server team. This iterative churn is typical of start-ups figuring out architecture through production pain."
+  Q: "What did building a monolithic admin backend in DNN/ASP.NET teach you that modern SPA separation would not have?"
+  A: "DNN rendered HTML server-side — every user action required a full page reload. This taught pre-SPA constraints: design workflows minimizing round-trips. State was simpler (server-side session) but UX was clunkier. When later using Vue.js on Smart Factory, I appreciated what SPA enabled but also understood why monoliths made sense in their era — single deployable artifact, simpler debugging. Architecture is a product of its time: DNN was state-of-the-art in 2013, legacy by 2015."

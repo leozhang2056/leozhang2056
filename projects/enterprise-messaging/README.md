@@ -10,10 +10,44 @@ Developed and maintained a comprehensive enterprise instant messaging platform f
 The platform is organized as multiple core subsystems, including **User Center**, **Message Center**, and **File System**, and supports real-time messaging across Android, Web, and PC clients with high reliability and low latency.
 
 **Project Type:** Enterprise Communication Platform  
-**Timeline:** 2014 - 2023  
-**Role:** Core Android & Backend Developer  
+**Timeline:** 2014 - 2024  
+**Role:** Developer & System Designer  
 **Company:** Chunxiao Technology Co., Ltd., China  
 **Scale:** 5,000 daily active users
+
+> ### Key Numbers
+> | Metric | Value |
+> | :--- | :--- |
+> | Daily Active Users | **5,000** |
+> | Message Delivery Latency | **<200ms** |
+> | Daily Throughput | **500K+ messages** |
+> | Platform Lifespan | **10 years** (2014-2024) |
+> | Client Platforms | **3** (Android, Web, PC) |
+
+### 10-Year Platform Evolution
+
+```mermaid
+timeline
+    title Enterprise Messaging Platform Evolution
+    2014 : IM Core
+         : TCP/UDP Protocol
+         : Android Client
+    2016 : User Center
+         : Cross-Platform Login
+         : Web Client
+    2018 : File Service
+         : FastDFS Integration
+         : Media Support
+    2020 : Platform Maturity
+         : PC Client (C++)
+         : 5K DAU Milestone
+    2022 : Easemob Cloud Migration
+         : JPush Backup Push
+         : Platform Focus
+    2024 : Full Enterprise Suite
+         : Admin & Subsystems
+         : 500K+ msg/day
+```
 
 ---
 
@@ -42,6 +76,14 @@ The platform is organized as multiple core subsystems, including **User Center**
 └───────┼────────────┼────────────┼──────┘
         │            │            │
         └────────────┼────────────┘
+                     │
+┌────────────────────▼────────────────────┐
+│      Push / Notification Layer          │
+│  ┌──────────────┐  ┌─────────────────┐  │
+│  │   Easemob    │  │   JPush (Backup)│  │
+│  │  Cloud IM    │  │   Push Channel  │  │
+│  └──────────────┘  └─────────────────┘  │
+└────────────────────┬────────────────────┘
                      │
 ┌────────────────────▼────────────────────┐
 │         Load Balancer (Nginx)           │
@@ -85,8 +127,10 @@ The platform is organized as multiple core subsystems, including **User Center**
 - **Java** - Service development
 - **Spring Cloud** - Microservices framework
 - **Node.js** - Auxiliary services
-- **C++** - Core protocol implementation
+- **C++** - Core protocol implementation (legacy, superseded by Easemob)
 - **WebSocket** - Web client communication
+- **Easemob (Hyphenate)** - Cloud IM infrastructure and multi-platform SDKs (replaced in-house C++ messaging)
+- **JPush (Jiguang)** - Supplementary backup push channel for notifications and reliable wake-up
 
 ### Data & Caching
 - **MySQL** - Message and user data storage
@@ -100,6 +144,32 @@ The platform is organized as multiple core subsystems, including **User Center**
 - **Linux** - Server deployment
 - **Git** - Version control
 
+### Tech Stack Overview
+
+```mermaid
+mindmap
+  root((Enterprise Messaging))
+    Mobile
+      Java/Kotlin
+      NDK
+      TCP/UDP
+    Backend
+      Spring Cloud
+      Node.js
+      WebSocket
+      Easemob Cloud IM
+      JPush Backup Push
+    Data
+      MySQL
+      Redis
+      FastDFS
+      Message Queue
+    Infrastructure
+      Nginx
+      Linux
+      Git
+```
+
 ---
 
 ## Key Achievements
@@ -108,7 +178,7 @@ The platform is organized as multiple core subsystems, including **User Center**
 - ✅ **<200ms latency** - Sub-200ms message delivery
 - ✅ **500K+ messages/day** - High throughput handling
 - ✅ **Cross-platform support** - Android, Web, PC clients
-- ✅ **99.9% uptime** - Reliable enterprise service
+- ✅ **<2% downtime over 10 years** - Reliable enterprise service
 - ✅ **Protocol optimization** - Custom NDK implementation
 
 ---
@@ -169,7 +239,7 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 - **User Adoption:** 5,000 daily active users across the company
 - **Performance:** Consistent sub-200ms message delivery
-- **Reliability:** Maintained high availability over 9 years
+- **Reliability:** Maintained <2% downtime over 10-year lifecycle
 - **Efficiency:** Significantly improved internal communication
 - **Scale:** Successfully handled peak loads and growth
 
@@ -259,13 +329,15 @@ The platform is organized as multiple core subsystems, including **User Center**
 
 ## Skills Demonstrated
 
-- **Android Development:** NDK, custom protocols, UI design
+- **Android Development:** NDK, custom protocols, UI design, OEM ROM compatibility
 - **Backend Engineering:** Spring Cloud, microservices, REST APIs
 - **Network Programming:** TCP/UDP, socket programming, protocol design
 - **Performance Optimization:** Low-latency systems, caching strategies
 - **Cross-Platform Development:** Multi-client synchronization
+- **Third-Party IM Integration:** Easemob (Hyphenate) cloud IM SDKs
+- **Push Notification Integration:** JPush backup push channel for reliable wake-up
 - **DevOps:** Deployment, monitoring, release management
 
 ---
 
-**Tags:** #Android #Java #NDK #SpringCloud #Messaging #TCP #UDP #LowLatency #HighThroughput #CrossPlatform
+**Tags:** #Android #Java #NDK #SpringCloud #Messaging #TCP #UDP #LowLatency #HighThroughput #CrossPlatform #Easemob #JPush

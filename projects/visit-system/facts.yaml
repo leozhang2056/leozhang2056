@@ -4,7 +4,6 @@ name_cn: 探视系统
 type: Security Visit Platform / Face Recognition / Audio-Video
 category:
 - Face Recognition
-- Healthcare IT
 - Access Control
 - Mobile Development
 timeline:
@@ -45,11 +44,11 @@ tech_stack:
   - SMS Gateway
   - Infrared Sensors
   - Electromagnetic Locks
-  - WeChat Template Messages
-  - HIS Interface
+  - SMS Gateway
+  - Electromagnetic Locks
   - Door Sensors
   mobile:
-  - WeChat Mini Program
+  - WebRTC
   - Android APP
   - WebRTC
   backend:
@@ -81,7 +80,7 @@ metrics:
   unit: efficiency gain
 - value: Multiple
   label: departments
-  description: ICU, NICU, infectious disease deployment
+  description: Prison facilities
   unit: departments
 achievements:
 - Achieved sub-second face recognition
@@ -89,7 +88,7 @@ achievements:
 - 30% improvement in visit management efficiency
 - Successfully deployed in multiple departments
 - Supported contactless visit during pandemic
-- Integrated with hospital HIS system
+- Built complete prison visit lifecycle management: booking → approval → video session → audit
 evidence:
 - type: terminal
   path: images/access-terminal.png
@@ -109,10 +108,10 @@ skills_demonstrated:
   - Spring Cloud
   - MySQL
   - Redis
-  - HIS Integration
+  - WebRTC
   - Hardware Integration
   soft:
-  - Healthcare Domain Knowledge
+  - High-security Domain Knowledge
   - Privacy Protection
   - User Experience Design
   - Deployment Support
@@ -120,14 +119,14 @@ related_to_roles:
 - Full-stack Developer
 - Face Recognition Engineer
 - Android Developer
-- Healthcare IT Engineer
+- High-security IT Engineer
 - System Integration Engineer
 keywords:
 - Face Recognition
 - Prison Visitation
 - Access Control
 - Booking System
-- Chat System
+- Video Visitation
 - Audio-Video Session Management
 - Video Visitation
 - WebRTC
@@ -135,3 +134,10 @@ keywords:
 - Android
 - Security Platform
 last_updated: '2025-02-11'
+
+
+interview_qa_notes: |
+  Q: "Prison visitation imposes unique constraints. What was the hardest one to work around technically?"
+  A: "No personal devices — all inmate-side interaction happened through facility-managed Android terminals. Each session required clean start: logout previous user, clear local state, initialize fresh WebRTC session. Strict time limit: visits had fixed duration and system had to auto-end at exactly that time — not a second over, for compliance. WebRTC has no built-in session duration enforcement. Built server-side timer: 1-minute warning, 10-second countdown, then forcibly terminate peer connection from server side. Recording captured full session including auto-end for audit purposes."
+  Q: "Face recognition at visitor entry — what happened when the system rejected a legitimate visitor?"
+  A: "False rejections at a prison gate are high-stakes — they block a real visitor and create confrontation. Mitigation: (1) face recognition threshold tuned conservatively toward lower false rejection, accepting slightly higher false acceptance rate since guard at checkpoint was secondary verifier checking ID. (2) QR code from booking confirmation as fallback path with manual guard verification. (3) Recognition logs captured confidence scores so staff could review borderline cases. System designed as efficiency tool for guards, not autonomous gatekeeper — human override always available."

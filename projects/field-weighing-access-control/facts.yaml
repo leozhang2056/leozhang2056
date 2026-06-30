@@ -81,3 +81,8 @@ keywords:
 - Maintainability
 - Bus factor
 last_updated: '2026-05-13'
+
+
+interview_qa_notes: |
+  Q: "You wrote this in Delphi while team stack was .NET. What happened and what did you learn?"
+  A: "Lead developer picked Delphi for productivity under tight deadlines. I advocated for .NET for maintainability — bus factor concern (only one person on team knew Delphi). I lost that argument. Lesson: when the organization makes a stack decision you disagree with, execute professionally and document risks clearly for the next maintainer. Technical disagreements should focus on long-term maintainability and bus factor, not personal preference. Once decided, execution quality matters more than being right."

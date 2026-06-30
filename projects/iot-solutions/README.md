@@ -11,9 +11,17 @@ The company sells **smart switches** and **gateways**; the platform provides dev
 My **primary responsibility was Android mobile client development** for end-user device control and management, while also participating in gateway and platform integration work.
 
 **Project Type:** IoT Platform / Device Management / Product Development  
-**Timeline:** 2013 – 2023 (tenure at company)  
+**Timeline:** 2016 – 2023 (tenure at company)  
 **Role:** Android Mobile Client Developer (primary), Gateway & Platform Integration (participated)  
 **Company:** Chunxiao Technology Co., Ltd., China
+
+> **Key Numbers**
+> | Metric | Detail |
+> |--------|--------|
+> | Product line lifespan | 7 years (2016-2023) |
+> | Protocols | Zigbee, WiFi, MQTT |
+> | Platforms | Android App + Web Portal |
+> | Hardware | Smart Switches, Gateways |
 
 ---
 
@@ -127,13 +135,25 @@ My **primary responsibility was Android mobile client development** for end-user
             └─────────────────────────┘
 ```
 
+### IoT Stack Layers
+
+```mermaid
+graph TD
+    A["Mobile App<br/>(Android)"] --> B["IoT Platform<br/>(Spring Cloud)"]
+    C["Web Portal"] --> B
+    B --> D["Gateway<br/>(Embedded Linux)"]
+    D --> E["Smart Switches"]
+    D --> F["Sensors"]
+    D --> G["Locker Hardware"]
+```
+
 ---
 
 ## Technologies
 
 ### Gateway
 - Embedded / Linux-based gateway stack
-- Protocol implementation (e.g. Zigbee, Z-Wave, WiFi, or proprietary)
+- Protocol implementation (e.g. Zigbee, WiFi, or proprietary)
 - UART/Serial, GPIO, or network interfaces to devices
 - Secure connection to cloud platform (e.g. MQTT, HTTPS)
 

@@ -358,3 +358,12 @@ keywords:
   - Research
 
 last_updated: "2026-03-10"
+
+
+interview_qa_notes: |
+  Q: "Why two separate GPU servers instead of a single larger one?"
+  A: "Necessity — two free-tier Tencent Cloud GPUs, 16GB each. ComfyUI/OOTDiffusion ~10GB VRAM, Ollama/DeepSeek ~10GB — too much for single 16GB card. Dify orchestrated across both via FastAPI REST. Production would use single larger GPU or optimize model to fit."
+  Q: "YOLO12n-LC — what does LC stand for and what changed from base YOLO12n?"
+  A: "Lightweight Classification. Separate research project for garment classification, reused in ChatClothes. Reduced channels, ARM quantization for RPi5, trained on 4 garment categories. Result: 5MB (8x smaller), 94.2% accuracy, 35ms inference on RPi5."
+  Q: "~7s pipeline latency on RPi5 — how make it feel acceptable to users?"
+  A: "Focused on perceived latency: 35ms classification feedback, 150ms LLM prompt display, WebSocket progressive updates during diffusion, clear progress indicator. 7s felt shorter because system visibly worked at every stage rather than showing a spinner."

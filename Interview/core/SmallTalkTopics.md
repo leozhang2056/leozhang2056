@@ -8,6 +8,18 @@ English small talk quick reference for overseas job search, workplace, and socia
 - **Ask more open-ended questions** — "How did you get into that?" instead of "Do you like it?"
 - **Essence** — Make others feel comfortable talking to you, not information exchange
 
+```
+┌──────────────────────────────────────────────────┐
+│            CORE PRINCIPLES AT A GLANCE           │
+├──────────────┬───────────────┬───────────────────┤
+│   SHORT      │   ASK MORE    │   COMFORT         │
+│   Quick &    │   Open-ended  │   Others feel     │
+│   light      │   questions   │   good talking    │
+│   phrasing   │   not yes/no  │   to you          │
+└──────────────┴───────────────┴───────────────────┘
+  Say it fast     "How did you..?"   Warmth > Info
+```
+
 ---
 
 ## Quick Reference by Scenario
@@ -64,8 +76,60 @@ English small talk quick reference for overseas job search, workplace, and socia
 | Ending conversation | I'll let you mingle. / Great chatting with you. / Catch you later. |
 | Didn't catch that | Sorry, could you say that again? / I didn't quite catch that. |
 
+### Conversation Flow Map
+
+```mermaid
+graph LR
+    A["1. Greet"] --> B["2. Find Topic"]
+    B --> C["3. Open Question"]
+    C --> D["4. Listen"]
+    D --> E["5. Respond"]
+    E --> F{"6. Exit Now?"}
+    F -- "Yes" --> G["Exit Gracefully"]
+    F -- "No" --> B
+    style A fill:#e8f5e9
+    style G fill:#e8f5e9
+    style F fill:#fff3e0
+```
+
+### Topic Decision Tree
+
+```
+         Who are you talking to?
+                │
+     ┌──────────┼──────────┐
+     ▼          ▼          ▼
+ Workplace   Stranger   Neighbor
+     │          │          │
+     ▼          ▼          ▼
+ Morning /   Weather /   How's your
+ Elevator /  Weekend /   week been? /
+ Lunch       Pets        Weather
+     │          │          │
+     └──────────┼──────────┘
+                ▼
+      Ask → Listen → Respond
+```
+
 ---
 
 ## Practice Suggestions
 
 15-20 minutes daily: Learn 3-5 scenarios → Read aloud → Substitute with your own experiences → Review the next day.
+
+### Daily Practice Routine
+
+```
+TIME          ACTION                    GOAL
+─────────────────────────────────────────────────
+ 0-5 min      Pick 3 scenarios         Know what to practice
+              from this sheet
+ 5-12 min     Read aloud x3            Sound natural
+              (with your own twists)
+12-17 min     Role-play in mirror      Body language +
+              or record yourself       confidence
+17-20 min     Quick review:            Lock in memory
+              what felt best?
+─────────────────────────────────────────────────
+        ▲ 5 days/week → real convos on weekends
+```

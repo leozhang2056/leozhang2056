@@ -288,3 +288,10 @@ keywords:
 - Lark
 - Organizational change
 last_updated: '2026-05-13'
+
+
+interview_qa_notes: |
+  Q: "Why did the C++ core need migration to Easemob? What was the breaking point?"
+  A: "Legacy C++ core had chronic stability issues — start-up phase prototype never refactored for reliability at scale. Years of patching introduced new edge cases because core was tightly coupled and poorly tested. Breaking point: series of production incidents where message delivery failures affected business operations. Easemob replaced entire unstable transport layer (90%+ defect elimination) while keeping our NDK TCP/UDP for <200ms delivery."
+  Q: "Under 2% downtime over 10 years — what architectural decisions enabled this?"
+  A: "Three principles: (1) No SPOF — message gateway, file storage, push channels, databases all had redundancy. JPush as backup push alongside Easemob. (2) Graceful degradation — partial failures did not cascade. If FastDFS was slow, text messages still delivered. (3) Conservative migration — C++ to Easemob was incremental, not big-bang. Ran both systems in parallel, verified on subset of users, then expanded."

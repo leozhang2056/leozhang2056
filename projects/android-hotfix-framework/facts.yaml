@@ -15,12 +15,12 @@ company:
   location: China
 summary: >
   Designed and developed an in-house Android hotfix framework enabling rapid bug fixes
-  and feature patches without full app store releases. Built on class loading and native
-  layer patching mechanisms, supporting dex replacement, native library hot-swap, and
-  resource hotfix across Android 5+ with minimal performance overhead.
+  and feature patches without full app store releases. Built on class loading
+  patching mechanisms, supporting dex replacement and
+  resource hotfix across Android 5+ with minimal performance overhead. The framework handles
+  dex patching and resource hotfix but does NOT support native .so library patching.
 highlights:
   - Designed and implemented a class-loader based hotfix framework supporting dex patch deployment without app restart on Android 5+
-  - Integrated NDK/JNI native patch mechanism for fixing critical C++ and native library bugs without full APK update
   - Built patch generation toolchain automating dex diff, signature verification, and灰度 (canary) rollout with rollback capability
   - Achieved sub-minute patch deployment for emergency production fixes, reducing critical bug resolution time from weeks (app store) to hours
   - Implemented resource hotfix using resource loader hooking for UI and assets patches without APK replacement
@@ -33,14 +33,12 @@ tech_stack:
   domain:
   - Android Hotfix
   - Class Loading
-  - NDK/JNI
   - Dex Manipulation
   - Patch Management
 skills_demonstrated:
   technical:
   - Android ClassLoader mechanism
   - Dex and APK manipulation
-  - NDK/JNI native patching
   - Patch distribution infrastructure
   - Canary deployment and rollback
   soft:
@@ -54,10 +52,23 @@ keywords:
   - Android hotfix
   - Hotpatch
   - Dex replacement
-  - Native patch
   - ClassLoader
   - Patch management
-  - NDK hotfix
   - Canary rollout
 evidence: []
 last_updated: '2026-06-23'
+
+
+interview_qa_notes: |
+  Q: "Walk me through your role on this hotfix framework. Were you the primary developer or did you inherit it?"
+  A: "I was involved from the start in 2017. Role shifted: early = building patching mechanisms (method hooks, dex diff gen, signature verification). Middle = compatibility validation across Android versions and vendor ROMs (MIUI, EMUI, ColorOS). Late = led retirement evaluation. Primary Android-side owner throughout — classloader hooking, NDK patching, canary rollout SDK. Server team contributed patch distribution backend."
+  Q: "When did you start thinking hotfix needed to die?"
+  A: "The decision accumulated over years, no single incident. Three factors: (1) Each Android version broke hooks on vendor ROMs. (2) 4-5 active Base APK versions each needing own patch = exponential QA matrix. (3) CI/CD matured to sub-2hr full releases. Tipping point: during yet another ROM fix, realized maintenance effort exceeded value."
+  Q: "Who pushed back against retiring hotfix and how did you convince them?"
+  A: "Product and QA teams — operational fear: Friday night critical bug with no hotfix? Quantified cost (15-20% engineer time + 2-3 extra QA days per release). Demonstrated sub-2hr CI/CD. Proposed 3-month parallel trial. During trial, a real bug was resolved via staged rollout alone in 3 hours — zero hotfix patches needed. Data convinced skeptics."
+  Q: "Give me a concrete example where hotfix could not resolve a production bug."
+  A: "IM product versioned serialization protocol. Server API change introduced new required field — old clients crashed on deserialization. Hotfix could null-check symptom, but: (a) new field carried routing metadata old client could not use, (b) protocol version in AndroidManifest cannot be hotfixed. Full APK upgrade was inevitable — hotfix bought 4 hours."
+  Q: "After retiring hotfix, how many releases until confident?"
+  A: "Phased: Month 1-2 built feature flags + remote config. Month 3 parallel run (deliberately no hotfix use). Month 4 deprecated hotfix SDK. Month 5-6 removed entirely. Confident after ~5 releases — three real bugs resolved via staged rollout alone, zero fallback."
+  Q: "Looking back, was building a hotfix framework a mistake?"
+  A: "Right tool for 2017 — slow Play reviews, primitive staged rollout, immature CI/CD. By 2023, world changed. Lesson: continuously re-evaluate tools against changing landscape. Would have started retirement evaluation a year earlier."

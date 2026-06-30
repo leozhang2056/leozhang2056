@@ -21,6 +21,20 @@ Each site entry required customer approval with **~1 week lead time**, making on
 **Role:** Developer & Integrator  
 **Company:** Chunxiao Technology Co., Ltd.
 
+> **Constraint Card**
+> ```
+> +-----------------------------------------------+
+> |  AIR-GAPPED ENVIRONMENT                       |
+> |                                               |
+> |  [X] Internet access  -- BLOCKED             |
+> |  [X] USB / removable media -- CONTROLLED      |
+> |  [ ] On-site debugging  -- 1-week lead time   |
+> |  [ ] Software install   -- offline artifacts  |
+> |                                               |
+> |  Every cycle = off-site prep -> on-site test  |
+> +-----------------------------------------------+
+> ```
+
 ---
 
 ## Key Challenges
@@ -48,6 +62,17 @@ Used **Hitachi Pentaho Data Integration (Kettle) v9.3** for data format analysis
 Off-site Preparation → Offline Media Transfer → On-site Installation → Internal Network Testing → Validation
         ↑                                                                          │
         └──────────────────── Iteration Loop ──────────────────────────────────────┘
+```
+
+### Deployment Loop (Mermaid)
+
+```mermaid
+graph LR
+    A["Off-site<br/>Preparation"] --> B["Offline Media<br/>Transfer"]
+    B --> C["On-site<br/>Install"]
+    C --> D["Internal<br/>Testing"]
+    D --> E["Customer<br/>Validation"]
+    E -->|Next Iteration| A
 ```
 
 ---

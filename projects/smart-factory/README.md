@@ -1,6 +1,6 @@
 # Smart Factory System
 
-> Microservice-based manufacturing platform deployed across 5+ factory sites
+> Microservice-based manufacturing platform deployed across 10+ factory sites
 
 ---
 
@@ -15,9 +15,36 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 **Project Type:** Enterprise System / Industrial IoT  
 **Timeline:** 2018 - 2024  
-**Role:** Frontend Developer (Vue.js)  
+**Role:** Full-stack Tech Lead (Android + Backend + Hardware)  
 **Company:** Chunxiao Technology Co., Ltd., China  
 **Team Size:** 6 people (cross-functional)
+**My Scope:** All Android clients (phone/tablet/shop-floor) + ~1/4 of backend (3 Spring Cloud modules) + hardware communication programs (scales, conveyors, washers) + occasional Vue.js frontend help
+
+> ### Key Numbers
+> | Metric | Value |
+> | :--- | :--- |
+> | Factory Sites | **10+** across China |
+> | Efficiency Improvement | **30%+** in production |
+> | Team Size | **6** cross-functional |
+> | Project Duration | **6 years** (2018-2024) |
+
+### Scale-Up Journey
+
+```mermaid
+gantt
+    title Factory Deployment Timeline
+    dateFormat YYYY
+    axisFormat %Y
+    section Deployment
+    1 Factory Pilot       :done, 2018, 2019
+    Scale to 5 Sites      :done, 2019, 2021
+    10+ Factory Rollout   :done, 2021, 2024
+    section Capabilities
+    Core Microservices    :done, 2018, 2020
+    IoT & RFID Integration :done, 2019, 2021
+    Weighing Module       :done, 2020, 2022
+    Shop-Floor Android    :done, 2021, 2023
+```
 
 ---
 
@@ -32,8 +59,8 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 - **IoT integration:** Real-time tracking via RFID, barcode scanners, conveyors
 - **Weighing integration:** Electronic scale data acquisition and synchronization to web/system
 - **Production management:** Workflow orchestration and process tracking
-- **Multi-site deployment:** Supports 5+ manufacturing locations
-- **High availability:** 99.9% uptime maintained
+- **Multi-site deployment:** Supports 10+ manufacturing locations
+- **High availability:** High uptime maintained
 - **CI/CD pipeline:** Automated deployment and testing
 - **Real-time monitoring:** Live production status and alerts
 
@@ -71,6 +98,10 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 │  │Production│ │ Inventory│ │ Device ││
 │  │ Service  │ │ Service  │ │ Service││
 │  └─────────┘ └─────────┘ └────────┘│
+│     ┌──────────┐  ┌──────────┐     │
+│     │ ActiveMQ │  │  Kafka   │     │
+│     │ (Queues) │  │ (Events) │     │
+│     └──────────┘  └──────────┘     │
 └─────────────┬───────────────────────┘
               │
 ┌─────────────▼───────────────────────┐
@@ -98,8 +129,9 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 ### Backend
 - **Java** - Primary development language
 - **Spring Cloud** - Microservice framework
-- **Spring Cloud** - Distributed system support
 - **MyBatis** - Data access layer
+- **ActiveMQ** - Message queuing for decoupled service communication
+- **Kafka** - Event-driven streaming for production workflow coordination
 - **RESTful APIs** - Service communication
 
 ### Data & Storage
@@ -126,16 +158,39 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 ## Key Achievements
 
-- ✅ **5+ factory sites** deployed and operational
+- ✅ **10+ factory sites** deployed and operational
 - ✅ **30%+ efficiency improvement** in production
-- ✅ **99.9% uptime** maintained over years
+- ✅ **High uptime** maintained over years
 - ✅ **Hundreds of workers** supported daily
 - ✅ **Cross-functional team leadership** (6 members)
 - ✅ **Agile practices** implementation
 
 ---
 
-## Responsibilities
+### Responsibilities
+
+### Role Breakdown
+
+```mermaid
+mindmap
+  root((Leo's Role))
+    Android
+      Phone Client
+      Tablet Kiosk
+      Shop-Floor App
+    Backend
+      Spring Cloud x3
+      DB Design
+      REST APIs
+    Hardware
+      Scale Integration
+      RFID Readers
+      Conveyor Control
+    Leadership
+      Architecture
+      Team Lead
+      Sprint Planning
+```
 
 ### Frontend Development (Vue.js)
 - Developed web portals and operational dashboards with Vue.js
@@ -181,7 +236,7 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 ## Challenges & Solutions
 
 ### Challenge 1: Multi-site Synchronization
-**Problem:** Keeping data consistent across 5+ factory locations  
+**Problem:** Keeping data consistent across 10+ factory locations  
 **Solution:** Distributed architecture with centralized configuration management
 
 ### Challenge 2: Hardware Integration Complexity
@@ -210,8 +265,8 @@ In addition, I implemented a **weighing integration module**: electronic scale d
 
 - **Operational Excellence:** System supports daily operations for hundreds of workers
 - **Efficiency Gains:** Production efficiency improved by 30%+
-- **Scalability:** Successfully scaled from 1 to 5+ sites
-- **Reliability:** Achieved and maintained 99.9% uptime
+- **Scalability:** Successfully scaled from 1 to 10+ sites
+- **Reliability:** Maintained high uptime over multiple years
 - **Team Development:** Successfully mentored and led 6-person team
 
 ---
@@ -446,7 +501,7 @@ Real screenshots from the **shop-floor Android** experience: production task lis
 
 ## Skills Demonstrated
 
-- **Backend Engineering:** Spring Cloud, microservices, REST APIs
+- **Backend Engineering:** Spring Cloud, microservices, REST APIs, ActiveMQ, Kafka
 - **Database Design:** MySQL, Redis, MongoDB optimization
 - **DevOps:** Docker, Jenkins, CI/CD, Linux administration
 - **IoT Integration:** Hardware protocols, real-time processing
@@ -457,4 +512,4 @@ Real screenshots from the **shop-floor Android** experience: production task lis
 
 ---
 
-**Tags:** #Java #SpringBoot #Microservices #IoT #DevOps #Docker #Jenkins #MySQL #Redis #TeamLeadership
+**Tags:** #Java #SpringBoot #Microservices #IoT #DevOps #Docker #Jenkins #MySQL #Redis #TeamLeadership #ActiveMQ #Kafka

@@ -38,9 +38,10 @@ tech_stack:
   - GPS
   - Offline Map
   - GIS Layer Annotation
-  - GDAL
-  - Geos
+  - ArcGIS Runtime SDK
+  - Baidu Location Service
   - Shapely
+  - Coordinate System Conversion (WGS-84 / BD-09 / GCJ-02)
   backend: []
   databases: []
   devops: []
@@ -133,3 +134,10 @@ keywords:
 - Incident Reporting
 - Offline-first
 last_updated: '2026-03-05'
+
+
+interview_qa_notes: |
+  Q: "Coordinate system conversion — WGS-84, BD-09, GCJ-02. How does that work and what was trickiest?"
+  A: "China mandates domestic map providers use GCJ-02 (encrypted offset of WGS-84). Baidu further encrypts to BD-09. The same GPS coordinate can appear 100-500m offset on different map layers. A conversion layer auto-detects which map source is active and applies the appropriate transformation. Trickiest part: user switching map sources mid-session — all existing GIS annotations must re-project instantly, and GPS trajectory must store points in a canonical system (WGS-84) to avoid corruption when switching back and forth."
+  Q: "GPS signals took up to 30 seconds in dense forest. How did you keep the app from looking broken?"
+  A: "Never showed no signal unless >60 seconds without a fix. During gaps: (1) held last known position with updated X seconds ago indicator, (2) dead reckoning (continue along last direction/speed) displayed in lighter color as estimated, (3) buffered trajectory points and retroactively corrected when new satellite fix arrived. UX principle: expanding uncertainty circle communicates trying to get better fix rather than broken."

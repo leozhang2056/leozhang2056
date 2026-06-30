@@ -126,3 +126,8 @@ highlights:
 - Delivered gateway software and firmware for protocol handling and MQTT/cloud forwarding at fleet scale
 - Shaped the IoT stack spanning mobile, gateway, and backend APIs for registration, grouping, and monitoring
 - Extended backend and web surfaces for device APIs, management workflows, and operational monitoring
+
+
+interview_qa_notes: |
+  Q: "This product line spanned 7 years. What evolved the most — hardware, software, or your architecture thinking?"
+  A: "My architecture thinking evolved the most. Early on (2016-2017), I thought of the Android app, gateway firmware, and backend as three separate projects. By 2019-2020, I was designing them as a single distributed system: gateway = edge compute (local MQTT, protocol translation, offline behavior), Android = local control surface, backend = fleet management and analytics. This shift changed how I thought about failure modes, data ownership, and deployment coordination. Hardware evolved too, but architecture maturity had more impact on reliability."

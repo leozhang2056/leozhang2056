@@ -14,7 +14,7 @@ timeline:
   end: '2020'
   duration_years: 0.5
 role: Project Manager, System Designer & Android Developer
-team_size: null
+team_size: 9
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
@@ -91,3 +91,10 @@ keywords:
 - Campaign Scheduling
 - MQTT Broadcast
 last_updated: '2026-03-05'
+
+
+interview_qa_notes: |
+  Q: "Why MQTT over HTTP/WebSocket for broadcast?"
+  A: "One-to-many pub/sub maps to device groups = MQTT topics. Single publish reaches all subscribed screens. HTTP push is O(n) iteration. Persistent WebSocket to thousands of screens is resource-heavy on server."
+  Q: "You wore three hats — PM, system designer, Android dev. How did you balance?"
+  A: "They shifted over time, not simultaneous. Early = system design (device model, MQTT hierarchy, campaign schema). Middle = Android dev (screen client). PM was lightweight throughout (stand-ups, task board, demos)."

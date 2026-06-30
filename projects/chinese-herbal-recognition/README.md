@@ -20,7 +20,19 @@ Users can:
 **Project Type:** AI Platform / Computer Vision Classification  
 **Scenario Sample:** Traditional Chinese Medicine Recognition  
 **Role:** Platform Designer & AI Workflow Developer  
-**Timeline:** TBD
+### ML Pipeline Flow
+
+```mermaid
+graph LR
+    A["Data<br/>Collection"] --> B["Annotation<br/>& QA"]
+    B --> C["Model<br/>Training"]
+    C --> D["Evaluation<br/>& Gates"]
+    D --> E["Deployment<br/>& Inference"]
+    E --> F["Feedback<br/>Loop"]
+    F --> A
+```
+
+**Timeline:** 2019
 
 ---
 
@@ -151,6 +163,16 @@ Suggested release gates (configurable by project owner):
 - P95 single-image latency <= `300ms` (service-side target)
 
 Only models that pass release gates can be promoted to production versions.
+
+> **Key Numbers**
+> | Metric | Value |
+> |--------|-------|
+> | Top-1 Accuracy target | >= 0.85 |
+> | Macro F1 target | >= 0.80 |
+> | Worst-class Recall gate | >= 0.70 |
+> | P95 latency target | <= 300ms |
+> | Training epochs | 50-150 |
+> | Baseline model | ResNet50 / MobileNetV3 |
 
 ---
 

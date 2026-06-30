@@ -136,3 +136,8 @@ keywords:
 - Industrial IoT
 - Data Analytics
 last_updated: '2025-02-11'
+
+
+interview_qa_notes: |
+  Q: "You worked with Modbus RTU, DL/T645, RS485. What is the practical difference integrating them into Spring Cloud?"
+  A: "Modbus RTU over RS485 is most common for power meters — request-response protocol where master polls each slave by address. DL/T645 is Chinese national standard for electric energy meters with different frame format and addressing scheme. The backend integration challenge was building a protocol abstraction layer in the gateway: each protocol frame parsing and addressing logic encapsulated behind common read_register and write_register interface. Spring Cloud services did not need to know which protocol a specific meter used. Without this abstraction, every backend service would need to understand Modbus frame structure and DL/T645 addressing."

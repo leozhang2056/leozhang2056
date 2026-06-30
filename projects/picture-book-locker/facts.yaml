@@ -163,3 +163,10 @@ keywords:
 - Hardware Integration
 - UV Disinfection
 last_updated: '2026-05-09'
+
+
+interview_qa_notes: |
+  Q: "10+ hardware peripherals via UART/RS485 and GPIO — which one caused the most trouble?"
+  A: "Electromagnetic locks due to timing requirements. Sub-1s open after face/QR authentication, coordinated simultaneously with LED strip lighting target compartment, door sensor confirming opening, watchdog timer auto-closing if door stayed open too long — all on ARM board running Android with non-real-time Linux scheduling. Achieved by prioritizing GPIO write for the lock above all other operations on auth success path, and using hardware timer for the auto-close watchdog (not software timer that could be delayed by GC)."
+  Q: "When your Android colleague resigned and you had to split scope — walk me through that conversation with leadership."
+  A: "I came with a problem statement, not a complaint: here is the inherited backlog, here is my existing workload on other projects, here is the combined timeline showing milestone X would slip by Y weeks. Then I proposed the split: I keep cabinet-side Android host (hardware control, UART/RS485, GPIO — my deepest expertise), To-C borrower mobile app goes to another engineer I had already confirmed had capacity and interest. The framing was not I cannot handle this — it was here is the math, the risk, and my proposed solution. Leadership appreciated the early escalation (before the milestone was at risk) and the solution-oriented framing."

@@ -139,3 +139,10 @@ keywords:
 - MLOps
 - Inference
 last_updated: '2026-05-09'
+
+
+interview_qa_notes: |
+  Q: "What made the platform reusable across different classification domains?"
+  A: "Five domain-agnostic stages: category creation → annotation → training → evaluation with release gates → inference. Each stage configurable, not hardcoded. Low-confidence feedback loop also domain-agnostic — unsure samples routed to re-annotation for any domain."
+  Q: "What was the model release gate criteria?"
+  A: "Three gates: (1) Overall accuracy above domain minimum. (2) Per-class balance — no single category below 85% F1. (3) False positive rate below safety threshold for critical categories (e.g., misidentifying toxic herb as edible). Passing = promoted to serving. Failing = diagnostics showing which categories need more data."

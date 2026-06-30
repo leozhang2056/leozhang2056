@@ -1,4 +1,4 @@
-# ForestGuard Patrol
+# Forest Patrol Inspection System
 
 > Mobile patrol system for forest rangers to work in no-signal areas, record GPS tracks, report fire/pest risks, and upload data when network becomes available.
 

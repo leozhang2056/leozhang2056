@@ -12,9 +12,13 @@ timeline:
   start: '2018'
   end: '2024'
   duration_years: 6
-role: System Designer, Developer & Maintainer
-role_cn: 系统设计师、开发者与维护工程师
+role: Full-stack Tech Lead (Android + Backend + Hardware)
+role_cn: 全栈技术负责人（安卓 + 后端 + 硬件）
 team_size: 6
+team_composition:
+  - "myself: all Android clients (phone/tablet/shop-floor) + ~1/4 of backend code (3 Spring Cloud modules) + hardware communication programs (scales, conveyors, washers) + occasional frontend help"
+  - "other backend developers"
+  - "frontend developers"
 company:
   name: Chunxiao Technology Co., Ltd.
   location: China
@@ -286,3 +290,12 @@ keywords:
 - Mentoring
 - Code review culture
 last_updated: '2026-05-13'
+
+
+interview_qa_notes: |
+  Q: "Walk me through the serial-to-WebSocket weighing bridge. Why not read from the browser directly?"
+  A: "Browsers cannot access serial ports — fundamental web platform restriction. The factory weighing workflow was browser-based (Vue.js web app on shop-floor PCs), but electronic scales connected via RS232/RS485 serial ports. A local Windows service opened the serial port, listened for stabilized weight readings, and forwarded them to the browser via a local WebSocket server. When operator focused on a weight input field, WebSocket message auto-filled — eliminating the read scale, type number loop. Before: 3-step (read → remember → type). After: 1-step (place item on scale → weight auto-fills). Reduced transcription errors."
+  Q: "You wrote ~1/4 of backend, owned all Android clients, built hardware comms, and helped with Vue.js. How did you context-switch?"
+  A: "I blocked time per domain by day rather than context-switching within a day. Monday/Tuesday focused on Android features and releases. Wednesday on backend code review and my 3 modules. Thursday on hardware integration testing. Friday on team planning, code review, and whatever domain had most urgent need. Each domain had different done signals: app release, API deploy, successful scale readings. I did not try to make progress in all four daily — that leads to nothing finishing."
+  Q: "MySQL grew to millions of rows and queries slowed. Why cloud MySQL as temporary fix rather than optimizing immediately?"
+  A: "Trade-off between stopping feature delivery and letting performance degrade. Pausing feature work for deep query/schema/index optimization would take 2-4 weeks, during which product roadmap would stall while shop floor already experienced slow queries. Moving to cloud-hosted MySQL with higher provisioned capacity and read-replica routing bought time — performance masked while shipping committed milestones. Then with feature pressure relieved, scheduled root-cause work: identified high-cardinality joins on daily task table, added composite indexes, partitioned by date, optimized ORM queries. Once optimizations landed, repatriated back to on-premises to eliminate recurring cloud cost. Sequence was deliberate: buy time with money → ship features → optimize → reduce cost."

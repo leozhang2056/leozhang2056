@@ -9,9 +9,9 @@ category:
 - Industrial Automation
 - Serial Communication
 timeline:
-  start: '2022'
-  end: '2024'
-  duration_years: 2
+  start: '2018'
+  end: '2023'
+  duration_years: 5
 role: Android Developer / Gateway Control Engineer
 team_size: null
 company:
@@ -161,3 +161,8 @@ keywords:
 - Edge Computing
 - Industrial IoT
 last_updated: '2026-03-05'
+
+
+interview_qa_notes: |
+  Q: "Why an Android gateway for breaker control rather than traditional PLC or RTU?"
+  A: "Existing circuit breakers were non-networked — RS232 serial only, no Ethernet/WiFi. Replacing them with networked breakers would cost $500-1000+ per breaker across multiple sites. Android board with serial port capability: commodity hardware much cheaper than industrial PLCs, handles serial polling protocol + cloud MQTT in one device, team already had Android expertise. Trade-off: Android is not a real-time OS — sub-second local alerting carefully implemented to avoid GC or UI thread delays. Sub-second is fast enough for breaker control; microsecond precision would need real-time controller."

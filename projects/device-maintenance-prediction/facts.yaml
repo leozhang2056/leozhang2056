@@ -18,7 +18,7 @@ company:
   location: China
 summary: '2023 predictive maintenance AI project. Based on historical maintenance
   and operational data, the system analyzes equipment aging trends and predicts the
-  next recommended maintenance window using SparkNet + Random Forest as core models,
+  next recommended maintenance window using Spark MLlib (Random Forest) + Random Forest as core models,
   with comparative forecasting algorithms for validation and optimization.
 
   '
@@ -93,3 +93,10 @@ keywords:
 - Maintenance Forecasting
 - Industrial AI
 last_updated: '2026-03-05'
+
+
+interview_qa_notes: |
+  Q: "This was experimental with limited data. What would it take for production?"
+  A: "(1) More data — at least 6-12 months continuous records with labeled outcomes (did equipment actually fail?). (2) Domain features — vibration, temperature trends, cycle counts (need sensor instrumentation). (3) Feedback loop — did predicted maintenance actually happen? Production scaling is primarily a data infrastructure problem, not an algorithm problem."
+  Q: "Why Spark MLlib over scikit-learn?"
+  A: "Future-proof — same pipeline code runs locally for dev and on Spark cluster if data grows. Random Forest over deep learning for interpretability — can explain to factory manager why specific equipment scored high risk by showing feature contributions. Black-box predictions do not build trust in industrial settings."

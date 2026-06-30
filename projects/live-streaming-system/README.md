@@ -1,303 +1,79 @@
-# Live Streaming Commerce System
+# Live Streaming Chat Room
 
-**Multi-Language Live Streaming Platform (.NET + Android + C++)**
+> The company's earliest product (2013-2015) — a live streaming chat room platform built during the start-up phase, before pivoting to IoT
 
-A comprehensive live streaming commerce platform developed from 2015 to 2018, featuring a **multi-language technology stack** including .NET Framework (ASP.NET), Android (Java/Kotlin), C++ (streaming core), Python (data processing), and Lua (scripting). The system delivered real-time live streaming with integrated e-commerce capabilities across mobile and web platforms.
+## Streaming Pipeline
 
-> **Tech Stack:** .NET Framework | ASP.NET | C# | C++ | Python | Lua | Java | Kotlin | Android NDK
-
----
-
-## 🎯 Project Overview
-
-This project represents a **3-year full-stack development** effort (2015-2018) building a live streaming commerce platform. It showcases expertise in **multi-language system architecture**, combining Microsoft's .NET ecosystem with native mobile development and scripting languages.
-
-**Key Capabilities:**
-- Real-time live streaming with low-latency playback
-- Android mobile client with custom C++ streaming core
-- ASP.NET web admin dashboard for stream management
-- Multi-language backend architecture (.NET + C++ + Python + Lua)
-- Integrated e-commerce flow for in-stream purchases
-
----
-
-## 🛠️ Multi-Language Technology Stack
-
-| Layer | Technologies | Purpose |
-|-------|-------------|---------|
-| **Web Backend** | .NET Framework 4.5, ASP.NET Web Forms/MVC, WCF | Admin dashboard, API services |
-| **Web Frontend** | ASP.NET Web Forms, JavaScript, jQuery | Stream management UI |
-| **Mobile Client** | Android SDK, Java, Kotlin | Live streaming mobile app |
-| **Native Core** | C++, Android NDK, JNI | High-performance streaming engine |
-| **Data Processing** | Python 2.7/3.x, Pandas | Analytics, reporting, automation |
-| **Configuration** | Lua 5.x | Dynamic business rules, hot-swappable configs |
-| **Database** | SQL Server 2012, Redis, MongoDB | Data persistence and caching |
-| **Streaming** | RTMP, WebRTC, HLS, FFmpeg | Audio/video transmission |
-| **DevOps** | Windows Server, IIS | Deployment and hosting |
-
----
-
-## ✨ Key Features
-
-### 1. Multi-Language Architecture
-```
-┌─────────────────────────────────────────────────────────┐
-│                    System Architecture                   │
-├─────────────────────────────────────────────────────────┤
-│  Web Layer (ASP.NET C#)                                 │
-│  ├─ Stream Management Dashboard                         │
-│  ├─ User & Content Admin                                │
-│  └─ Real-time Analytics (Viewer count, gifts, sales)    │
-├─────────────────────────────────────────────────────────┤
-│  API Layer (.NET WCF)                                   │
-│  ├─ RESTful APIs for mobile clients                     │
-│  ├─ WebSocket for real-time notifications               │
-│  └─ Authentication & Session Management                 │
-├─────────────────────────────────────────────────────────┤
-│  Streaming Core (C++)                                   │
-│  ├─ RTMP ingestion and distribution                     │
-│  ├─ Transcoding and adaptive bitrate                    │
-│  └─ Low-latency delivery optimization                   │
-├─────────────────────────────────────────────────────────┤
-│  Data Layer                                             │
-│  ├─ SQL Server (C# Entity Framework)                    │
-│  ├─ Redis Cache (C# StackExchange.Redis)                │
-│  ├─ Python Analytics Engine                             │
-│  └─ Lua Configuration Engine                            │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    CAM[Camera / Mic] --> ENC[C++ Encoder\nRTMP Ingest]
+    ENC --> CDN[CDN / Media Server]
+    CDN --> HLS[HLS / M3U8\nAdaptive Bitrate]
+    CDN --> WRTC[WebRTC\nLow-Latency]
+    HLS --> WEB[Web Player\nHTML5 Video]
+    WRTC --> AND[Android Client]
+    WEB --> V[Viewer]
+    AND --> V
+    CHAT[Socket.IO\nReal-time Chat] --> V
 ```
 
-### 2. Android Live Streaming Client
-- **Java/Kotlin** for UI and business logic
-- **C++ NDK** for custom streaming protocol implementation
-- **JNI** bridge for Java-C++ communication
-- Optimized for varying network conditions (3G/4G/WiFi)
+## Overview
 
-### 3. ASP.NET Web Admin
-- **ASP.NET Web Forms** for rapid admin interface development
-- **ASP.NET MVC** for API endpoints
-- Real-time dashboard with SignalR (WebSocket)
-- Stream moderation and user management
+The company's first product after founding. An 8-person team built a live streaming chat room platform with real-time messaging, room management, and audio/video streaming. I built across the full stack: ASP.NET/DNN admin backend, Node.js + Socket.IO web chat room, and Android client. The C++ server core was rewritten multiple times as the team iterated on the architecture. Company exited this business line in 2015 to focus on IoT.
 
-### 4. Python Data Processing
-- Automated stream analytics and reporting
-- Viewer behavior analysis
-- Gift and revenue statistics
-- Integration with SQL Server via pyodbc
+## Context
 
-### 5. Lua Configuration
-- Hot-swappable business rules without redeployment
-- Dynamic streaming quality settings
-- A/B testing configuration
-- Feature flags management
+- **Timeline**: 2013 – 2015 (~2 years)
+- **Role**: Full-stack Developer (Web + Android + Server)
+- **Team**: 8 (2 server engineers + myself across web/android/server + others)
+- **Architecture**: Monolithic ASP.NET/DNN admin, C++ server core, Node.js web client, Android client
+- **Outcome**: Business line discontinued in 2015; company pivoted to IoT
 
----
+## My Responsibilities
 
-## 📊 System Metrics
+### ASP.NET/DNN Admin Backend
+- Built monolithic management backend on ASP.NET/DNN (DotNetNuke)
+- Server-side rendered — no front/back separation at the time
 
-| Metric | Value |
-|--------|-------|
-| Development Period | 2015 - 2018 (3 years) |
-| Team Size | 8 developers |
-| Peak Concurrent Viewers | 1,000+ |
-| Streaming Uptime | 99.5% |
-| Supported Platforms | Android, Web Admin |
-| Languages Used | 6 (C#, C++, Java, Kotlin, Python, Lua) |
+### Node.js Web Chat Room
+- Developed web-based chat room with Socket.IO for real-time messaging
+- HTML5 video player for HLS (M3U8) live stream playback
 
----
+### Android Client
+- Built native Android client for live streaming and chat
 
-## 💻 Code Examples
+### C++ Server (Partial)
+- Contributed to the C++ server core alongside 2-person server team
+- Server was rewritten multiple times during rapid iteration phase
 
-### C# ASP.NET Web API Controller
-```csharp
-public class StreamController : ApiController
-{
-    private readonly IStreamService _streamService;
-    private readonly RedisCache _cache;
-    
-    [HttpGet]
-    public IHttpActionResult GetLiveStreams()
-    {
-        // Check cache first
-        var cached = _cache.Get("live_streams");
-        if (cached != null) return Ok(cached);
-        
-        // Query database
-        var streams = _streamService.GetActiveStreams();
-        
-        // Cache for 30 seconds
-        _cache.Set("live_streams", streams, TimeSpan.FromSeconds(30));
-        
-        return Ok(streams);
-    }
-    
-    [HttpPost]
-    public IHttpActionResult StartStream([FromBody] StreamRequest request)
-    {
-        // Lua script for dynamic quality settings
-        var qualityConfig = LuaEngine.Execute(@"
-            return get_stream_quality(user_count, network_type)
-        ");
-        
-        var stream = _streamService.CreateStream(request, qualityConfig);
-        return Ok(stream);
-    }
-}
-```
+## Tech Stack
 
-### C++ Streaming Core (Android NDK)
-```cpp
-// JNI bridge for Android streaming
-extern "C" JNIEXPORT void JNICALL
-Java_com_streaming_core_StreamEngine_startStream(JNIEnv* env, jobject thiz, jstring rtmpUrl) {
-    
-    const char* url = env->GetStringUTFChars(rtmpUrl, nullptr);
-    
-    // Initialize FFmpeg for RTMP streaming
-    AVFormatContext* fmt_ctx = nullptr;
-    avformat_alloc_output_context2(&fmt_ctx, nullptr, "flv", url);
-    
-    // Configure codec
-    AVCodec* codec = avcodec_find_encoder(AV_CODEC_ID_H264);
-    AVCodecContext* codec_ctx = avcodec_alloc_context3(codec);
-    
-    // Set adaptive bitrate based on network
-    codec_ctx->bit_rate = getAdaptiveBitrate();
-    
-    // Start streaming loop
-    startStreamingLoop(fmt_ctx, codec_ctx);
-    
-    env->ReleaseStringUTFChars(rtmpUrl, url);
-}
-```
+| Layer | Technology |
+|-------|-----------|
+| Admin Backend | ASP.NET Web Forms, DNN (DotNetNuke), WCF, IIS |
+| Web Client | Node.js, Socket.IO, HTML5 Video |
+| Mobile | Android SDK (Java/Kotlin) |
+| Server Core | C++ (message center, audio/video center) |
+| Streaming | RTMP (ingest), HLS/M3U8 (delivery), FFmpeg, WebRTC |
+| Scripting | Python (analytics), Lua (config/dynamic rules) |
+| Database | SQL Server, Redis, MongoDB |
+| Real-time | Socket.IO, WebSocket, SignalR |
 
-### Python Analytics Script
-```python
-import pyodbc
-import pandas as pd
-from datetime import datetime
+## Key Numbers
 
-def generate_stream_report():
-    # Connect to SQL Server
-    conn = pyodbc.connect(
-        'DRIVER={SQL Server};SERVER=localhost;DATABASE=StreamingDB;UID=user;PWD=pass'
-    )
-    
-    # Query stream data
-    query = """
-    SELECT stream_id, viewer_count, gift_amount, duration
-    FROM streams 
-    WHERE start_time >= DATEADD(day, -1, GETDATE())
-    """
-    
-    df = pd.read_sql(query, conn)
-    
-    # Analytics
-    report = {
-        'total_streams': len(df),
-        'avg_viewers': df['viewer_count'].mean(),
-        'total_revenue': df['gift_amount'].sum(),
-        'avg_duration': df['duration'].mean()
-    }
-    
-    return report
-```
+| Metric | Detail |
+|--------|--------|
+| Peak Concurrent | 1000+ viewers per live room |
+| Uptime | 99.5% streaming availability |
+| Active Period | 2 years of operation (2013-2015) |
+| Team Size | 8 cross-functional engineers |
+| Languages | 5+ (C#, C++, Java, Python, Lua) |
+| Bitrate Support | 360p to 1080p adaptive |
 
-### Lua Configuration Script
-```lua
--- Dynamic stream quality configuration
-function get_stream_quality(user_count, network_type)
-    local quality = {}
-    
-    -- Base quality settings
-    if network_type == "4G" then
-        quality.bitrate = 1500000  -- 1.5 Mbps
-        quality.resolution = "720p"
-    elseif network_type == "WiFi" then
-        quality.bitrate = 2500000  -- 2.5 Mbps
-        quality.resolution = "1080p"
-    else
-        quality.bitrate = 800000   -- 800 Kbps
-        quality.resolution = "480p"
-    end
-    
-    -- Adjust based on viewer count
-    if user_count > 500 then
-        quality.bitrate = quality.bitrate * 0.8  -- Reduce 20%
-    end
-    
-    return quality
-end
-```
+## Key Takeaways
 
----
+- Full-stack ownership across .NET, Node.js, Android, and C++ — broad technology exposure early in career
+- Start-up velocity: server rewritten multiple times as the team iterated toward the right architecture
+- Monolithic server-side rendering (DNN) was the standard before modern SPA + API separation
 
-## 🎓 Technical Highlights
-
-### Multi-Language Integration Challenges
-1. **JNI Complexity**: Managing Java-C++ object lifecycle and memory
-2. **Python-C# Interop**: Using IronPython and process-based communication
-3. **Lua Sandboxing**: Securing dynamic script execution
-4. **Debugging Across Languages**: Multi-language profiling and logging
-
-### .NET Specific Experience
-- **ASP.NET Web Forms**: Rapid admin interface development
-- **ASP.NET MVC**: RESTful API design and implementation
-- **WCF Services**: Service-oriented architecture
-- **Entity Framework**: ORM for SQL Server data access
-- **SignalR**: Real-time web functionality
-- **IIS Deployment**: Windows Server hosting and configuration
-
-### Performance Optimizations
-- C++ streaming core for minimal latency
-- Redis caching for hot data
-- SQL Server indexing for analytics queries
-- Lua JIT for configuration processing
-
----
-
-## 🔗 Related Projects
-
-This project built upon and contributed to:
-
-- **[Patent Search System](../patent-search-system/)** — Early .NET 2.0 foundation
-- **[Enterprise Messaging](../enterprise-messaging/)** — Multi-language architecture experience applied to messaging
-
----
-
-## 📸 Evidence
-
-### Platform Interface
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="./images/process.png" width="400" alt="Live streaming platform interface"/><br/>
-      <sub>Live streaming commerce platform - Admin dashboard and stream management</sub>
-    </td>
-  </tr>
-</table>
-
-### Protocol Flow
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="./images/process.png" width="360" alt="Room login and user-list management protocol flowchart"/><br/>
-      <sub>Room login and user-list management protocol flowchart</sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## 📅 Timeline
-
-- **2015**: Project initiation, ASP.NET web admin development
-- **2016**: Android client development, C++ streaming core integration
-- **2017**: Python analytics, Lua configuration system
-- **2018**: Production deployment, performance optimization
-
----
-
-*Part of the Career Knowledge Base project — showcasing multi-language full-stack development expertise.*
+**Tags:** #LiveStreaming #ASP.NET #DNN #NodeJS #SocketIO #Android #C++ #HLS #RTMP #Startup

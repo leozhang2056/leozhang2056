@@ -4,13 +4,13 @@ name_cn: Boobit 数字货币交易应用
 type: Mobile App
 timeline:
   start: "2022-01"
-  end: "2022-12"
-role: Android Developer
-role_cn: Android 开发工程师
+  end: "2022-02"
+  duration_months: 1
+role: Independent Android Developer (Freelance)
+role_cn: 独立 Android 开发（兼职）
 
 company:
-  name: Chunxiao Technology Co., Ltd.
-  industry: Software / Fintech
+  name: Client Project (Freelance)
 
 summary: |
   Built an Android cryptocurrency trading app supporting real-time market data,
@@ -117,3 +117,12 @@ last_updated: "2026-03-12"
 
 links:
   images: projects/boobit/images/
+
+
+interview_qa_notes: |
+  Q: "~1-month freelance — how did you ramp up on an unfamiliar crypto codebase?"
+  A: "Existing MVVM architecture — just learn patterns. First 2-3 days traced existing flows to understand data layer, ViewModels, API patterns. Only learned paths I needed (wallet, market, exchange, recharge)."
+  Q: "High-precision decimal problem — worst case and solution?"
+  A: "BTC returned 18 decimal places, others 8. Backend format inconsistent (string vs number). Built normalization: BigDecimal → round to per-token precision → format. Without this: unreadable or incorrect prices."
+  Q: "HTTPS + request signing + parameter encryption — what did it look like?"
+  A: "HTTPS for transport. Request signing: timestamp + nonce + HMAC-SHA256 over body+timestamp+nonce with pre-shared key. Parameter encryption: AES-encrypted payload with session key. Defense in depth — TLS compromise alone insufficient to read/modify payloads."

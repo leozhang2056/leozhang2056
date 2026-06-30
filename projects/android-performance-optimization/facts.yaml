@@ -65,3 +65,12 @@ keywords:
   - Performance monitoring
 evidence: []
 last_updated: '2026-06-23'
+
+
+interview_qa_notes: |
+  Q: "What was the single most effective optimization you applied?"
+  A: "Removing unused x86/x86_64 SO libs from map/audio/video SDKs — saved most space in single action, zero runtime risk (never loaded on ARM devices). Combined with image compression: 200MB+ to 80-90MB (55%+). Cold-start: lazy init + async SDK loading reduced 1.5s to 800ms (47%). Measured via Android Profiler + CI benchmarks."
+  Q: "How did you find and fix the toughest memory leak?"
+  A: "Two root causes across 8+ apps: (1) thread holding — background threads retaining Activity via ThreadLocal. Fix: cancel Runnables in onDestroy, WeakReference. (2) Handler retaining Context — static Handler + WeakReference, remove pending messages in onDestroy. Heap Dump reference chains confirmed fixes."
+  Q: "How did product team react to cutting image quality for APK size?"
+  A: "Negotiation, not demand. Blind comparison: multi-MB to tens-of-KB screenshots. If no one could tell difference, compressed shipped. If visible, kept higher quality. Made trade-off visual and collaborative."

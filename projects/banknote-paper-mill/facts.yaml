@@ -95,3 +95,10 @@ evidence:
   path: images/kettle-etl-workflow.png
   title: ETL Job Workflow in Spoon
 last_updated: '2026-06-20'
+
+
+interview_qa_notes: |
+  Q: "What was unique about air-gapped development?"
+  A: "No internet on-site. ~1 week advance approval per visit. All development offline on external laptops — analyze data, build, package, deploy during visit. Each visit required provable checkpoint. Forced extreme preparation discipline and pre-tested rollback paths."
+  Q: "How did you handle invisible progress between site visits?"
+  A: "Structured visits around demonstrable checkpoints: Visit 1 = data validated + first read. Visit 2 = pipeline end-to-end. Visit 3 = production deploy. Transparent scheduling: next week no output, but on [date] we demo X."

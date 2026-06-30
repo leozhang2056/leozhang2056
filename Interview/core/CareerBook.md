@@ -43,6 +43,26 @@ From job search strategy to LinkedIn, networking, personal brand, and NZ workpla
 ### Quick Job Board Reference
 Seek / Trade Me Jobs / LinkedIn Jobs / Indeed / Company Careers pages
 
+### Job Search Funnel
+
+```
+            ┌─────────────────────────────────────────────────┐
+            │          APPLICATIONS (50-200+ per role)        │
+            │   ┌───────────────────────────────────────────┐ │
+            │   │     SCREENING (CV + Cover Letter)         │ │
+            │   │   ┌───────────────────────────────────┐   │ │
+            │   │   │    INTERVIEW (Behavioral + Tech)  │   │ │
+            │   │   │   ┌───────────────────────────┐   │   │ │
+            │   │   │   │       OFFER 🎉            │   │   │ │
+            │   │   │   └───────────────────────────┘   │   │ │
+            │   │   └───────────────────────────────────┘   │ │
+            │   └───────────────────────────────────────────┘ │
+            └─────────────────────────────────────────────────┘
+
+  ⚡ 70% of offers come from the HIDDEN MARKET (networking)
+     Only 30% from public job boards — referrals win
+```
+
 ---
 
 ## 2. LinkedIn Strategy
@@ -76,6 +96,17 @@ linkedin.com/learning → Sign in with AUT student email
 | Comment section discussions | Tag relevant people/groups/companies |
 | Express opinions | LinkedIn ≠ Facebook |
 
+### LinkedIn Pipeline
+
+```
+ ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+ │   FOLLOW    │───►│   JOIN      │───►│  CONNECT    │───►│   ENGAGE    │───►│   APPLY     │
+ │  Companies  │    │   Groups    │    │  + Note     │    │ + Post      │    │ + Portfolio  │
+ └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+  Learn updates      Expand visibility   Build network      Show expertise    Targeted roles
+  Spot hiring        Find pain points    Alumni + peers     Comment + share   Job Alerts ON
+```
+
 ---
 
 ## 3. Networking & Connections
@@ -104,6 +135,42 @@ Target employers / AUT Career Events / External events Hackathons / LinkedIn / V
 **Informal:** "What advice would you give a graduate trying to enter this industry?"
 
 **Key:** Ask open-ended questions + listen + handshake/smile/posture/enthusiasm
+
+### Elevator Pitch Flow (30 seconds)
+
+```
+ ┌──────────┐    ┌──────────────┐    ┌──────────────┐    ┌───────────────────┐    ┌──────────────┐
+ │ ① Name   │───►│ ② Study &   │───►│ ③ Interest   │───►│ ④ Differentiator  │───►│ ⑤ Ask them   │
+ │          │    │    Why       │    │    Area       │    │   (your edge)     │    │  a question  │
+ └──────────┘    └──────────────┘    └──────────────┘    └───────────────────┘    └──────────────┘
+   "Hi, I'm       "I'm studying      "I'm really        "What sets you       "What advice would
+    Leo"           CS at AUT          passionate about    apart from other      you give someone
+                   because..."       mobile apps"        candidates is..."     entering this field?"
+```
+
+### Conversation Starter Decision Tree
+
+```
+                    Meeting someone new
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        FORMAL setting            INFORMAL setting
+        (career fair, talk)       (meetup, social)
+              │                         │
+              ▼                         ▼
+   "What skills are you         "What advice would you
+    looking for in your          give a graduate trying
+    graduate programme?"         to enter this industry?"
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                  LISTEN actively
+                           │
+                           ▼
+              Follow up with specific
+              questions about their answers
+```
 
 ---
 
@@ -156,6 +223,23 @@ Communication / Teamwork / Curiosity / Collaboration / Critical Thinking / Probl
 NZ employers value local experience because: NZ referee + understanding workplace culture + professional skills
 **Volunteer experience = local experience**
 
+### NZ Culture vs What You Might Expect
+
+```
+┌─────────────────────┬──────────────────┬──────────────────────────┐
+│ Dimension           │ NZ Reality       │ Common Expectation       │
+├─────────────────────┼──────────────────┼──────────────────────────┤
+│ Hierarchy           │ Flat (avg 13 ppl)│ Tall org charts          │
+│ Address             │ First-name basis │ Titles + surnames        │
+│ Manager role        │ Team member      │ Distant authority figure │
+│ Feedback flow       │ Everyone contributes│ Top-down only          │
+│ Communication       │ "Not sure? ASK!" │ Figure it out yourself   │
+│ Work social         │ Part of the job  │ Waste of time            │
+│ Attitude            │ "Can-do" valued  │ Follow instructions      │
+│ Referral power      │ 70% hidden market│ Apply and wait           │
+└─────────────────────┴──────────────────┴──────────────────────────┘
+```
+
 ---
 
 ## 6. Volunteer Opportunities (Auckland)
@@ -197,6 +281,24 @@ NZ employers value local experience because: NZ referee + understanding workplac
 ### 🖊️ Personal Observation
 - **July-August** has the most openings — this is the window to go all-in
 - **September-October** openings drop significantly — don't wait; start early and batch applications in Jul-Aug
+
+### Annual Hiring Calendar (NZ)
+
+```
+Month:   J    F    M    A    M    J    J    A    S    O    N    D
+         ──── ──── ──── ──── ──── ──── ──── ──── ──── ──── ──── ────
+Activity ▂▂▂▂ ▇▇▇▇ ▇▇▇▇ ▆▆▆▆ ▂▂▂▂ ▂▂▂▂ ▇▇▇▇ ▇▇▇▇ ▅▅▅▅ ▃▃▃▃ ▂▂▂▂ ▂▂▂▂
+         low  PEAK peak med  low  low  PRIME PRIME med  drop low  low
+
+Grad/          ▓▓▓▓ ▓▓▓▓                              ▓▓▓▓
+Intern:        Mar-Apr openings (published 1yr ahead)  Sep-Oct 2nd wave
+
+Summer         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ▓▓▓▓▓▓▓▓▓▓▓▓
+Internship:    Jun-Jul hiring for Dec-Feb start
+
+ACTION:  prep ──► all-in batch ──────────────► follow-up ──► prep
+                  ◄── Jul-Aug PRIME WINDOW ──►
+```
 
 ---
 
@@ -251,6 +353,27 @@ Achieved / Built / Delivered / Designed / Engineered / Implemented / Integrated 
 2. **Elevator pitch** — Prepare 30s / 1min / 3min three versions
 3. **Reverse question bank** — For Android team workflow, CI/CD, code review, onboarding
 4. **Hiring cycle awareness** — Keep applying + prepare behavioral + networking + backup routes
+
+### Priority Matrix
+
+```
+                        HIGH IMPACT
+                           │
+         ┌─────────────────┼─────────────────┐
+         │                 │                 │
+         │  ③ Reverse Qs   │  ① Behavioural  │
+         │  (depth signal) │  Interview Prep │
+  EASY ──┤                 │   (top priority)├── HARD
+         │                 │                 │
+         │  ④ Hiring Cycle │  ② Elevator     │
+         │  Calendar Mgmt  │  Pitch (3 ver.) │
+         │                 │                 │
+         └─────────────────┼─────────────────┘
+                           │
+                        LOW IMPACT
+
+  Start top-right, work clockwise: ① → ② → ③ → ④
+```
 
 ---
 
@@ -309,3 +432,17 @@ Bonus items, not must-haves. Core: Master professional terminology and business 
 | **Full-stack website + API design / MCP** | Build real web projects and design APIs / MCP servers |
 | **Agent & skill authoring** | Understand how to write good agents and skills — key differentiator |
 | **Harness CD platform** | Get comfortable with Harness for CI/CD — used by several NZ employers |
+
+### Quick-Reference: 5 Key Challenges
+
+```
++----------------------+----------------------------------------------+
+| Challenge            | One-Line Strategy                            |
++----------------------+----------------------------------------------+
+| Overqualified        | Target mid-level roles, don't lowball pay   |
+| No Local Experience  | Volunteer work = local experience           |
+| Communication/Accent | Ask to rephrase, use whiteboard demos      |
+| Certifications       | Nice-to-have; show learning mindset instead |
+| Material Alignment   | CV <-> LinkedIn <-> GitHub same story       |
++----------------------+----------------------------------------------+
+```

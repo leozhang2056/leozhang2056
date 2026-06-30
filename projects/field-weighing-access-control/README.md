@@ -13,6 +13,15 @@ Customer-site delivery for vehicle weigh-in at an entrance scale: read stable we
 **Role:** Developer (Field Software Integration)  
 **Company:** Chunxiao Technology Co., Ltd., China
 
+> **Key Numbers**
+> | Metric | Detail |
+> |--------|--------|
+> | Scale interface | RS232/RS485 serial |
+> | Barrier control | GPIO interlock |
+> | Primary stack | Delphi (team decision) |
+> | Timeline | 2015-2017 |
+> | Delivery | Customer-site deployed |
+
 ---
 
 ## Key Features
@@ -57,6 +66,18 @@ This project involved a notable technical disagreement regarding technology stac
 │  │  - Local logging                │   │
 │  └─────────────────────────────────┘   │
 └─────────────────────────────────────────┘
+```
+
+### Weigh-In Flow
+
+```mermaid
+graph LR
+    A["Vehicle<br/>Entry"] --> B["Weigh<br/>Scale"]
+    B --> C{"Weight<br/>Check"}
+    C -->|Normal| D["Barrier<br/>Open"]
+    C -->|Overload| E["Warning<br/>Alarm"]
+    D --> F["Record<br/>Entry"]
+    E --> F
 ```
 
 ---
