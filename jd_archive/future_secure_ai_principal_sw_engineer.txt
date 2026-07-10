@@ -1,0 +1,30 @@
+Principal Software Engineer (AI)
+Future Secure AI · Auckland, Auckland, New Zealand (Hybrid)
+Full-time, Hybrid
+
+About the Company
+
+At Future Secure AI, we're building something genuinely new — and we're looking for people bold enough to build it with us. We work at the frontier of AI, tackling big, real-world problems for global enterprises across multiple industries, armed with state-of-the-art technology and a culture that prizes courage, rigor, and relentless curiosity. Our BRAVER values aren't just words on a wall — they describe the kind of people we are and the standard we hold ourselves to every day. Our leadership team is entrepreneurial, experienced, and accessible, with an open-door policy that means you'll never be just a number here. We invest seriously in your growth because we know our success depends on yours. If you're ready to work alongside some of the brightest minds in the industry, push into uncharted territory, and do work that genuinely matters, Future Secure AI is the place for you.
+
+Future Secure AI (FSAI) is a leading enterprise AI company that was created in deep partnership with one of the world's largest financial institutions. Operating as an enterprise company with deep relationships at C-suite with large global enterprises, FSAI believes humans and AI Workers will collaborate seamlessly to raise organisational performance. FSAI has dozens of partnerships with leading companies in most industries and regions globally.
+
+FSAI has a strategic focus on expanding globally as we continue our extraordinary journey to transform the world with the most cutting-edge artificial intelligence
+
+We're hiring a Principal Software Engineer (AI) to help set the technical direction of our products and platform. You'll provide technical leadership across squads, projects, and product, shaping architectural decisions and working closely with engineering and customer delivery teams. If you do your best work when the problem is ambiguous and the stakes are high, you'll fit here.
+
+What you'll be doing
+- Shaping architectural decisions for our AI Co-Worker systems, enabling enterprise customers to deploy persona-based AI Co-Workers that perform complex, end-to-end operational workflows through their own secure platform.
+- Designing human-in-the-loop systems that keep humans in control of AI Co-Workers operating in mission-critical environments.
+- Setting the technical standards and patterns other engineers will build on.
+- Bringing novel approaches to how deterministic and non-deterministic systems are combined in production AI products.
+- Ensuring our platform remains model-agnostic, integrating LLMs and AI frameworks from both established and emerging vendors.
+- Working closely with customers to deeply understand their needs and make sure solutions exceed their expectations.
+
+Your application should demonstrate
+- 10+ years of software development experience, with deep hands-on AI work.
+- Strong Coding fundamentals, we primarily use Node.js and typescript
+- Experience with AI frameworks and orchestration tools such as LangChain or LangGraph.
+- Experience building systems where security and data governance are first-class design constraints, not afterthoughts.
+- A track record of shaping and defending architectural decisions in complex, production environments.
+- The communication skills to align technical and non-technical stakeholders around hard trade-offs.
+- Sharp problem-solving instincts and the follow-through to match.

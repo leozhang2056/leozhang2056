@@ -1,0 +1,23 @@
+Company: Socialite Recruitment Ltd. (recruiter for a fast growing Kiwi SaaS Company in wealth management)
+Role: Senior Software Engineer
+Location: Auckland, New Zealand (Hybrid)
+Type: Contract (3-6 months, hourly rate)
+Posted: ~6 days ago (as of 2026-07-09)
+Source: LinkedIn
+Contact: linz@socialitenz.com
+
+About the job
+Build scalable backend systems for a digital wealth-management platform empowering thousands of Kiwis to grow their wealth. Hourly rate contract to bridge gaps within their tech-stack while the company continues to grow.
+
+Responsibilities:
+- Build scalable backend systems powering a digital wealth-management platform
+- Design and maintain APIs serving both web and mobile experiences seamlessly
+- Architect secure infrastructure supporting complex investment and savings products
+- Collaborate closely with engineering to solve challenging technical problems and guide long-term system architecture
+- Growth mindset and a passion for engineering impact over just ticking off checklist requirements
+
+Requirements:
+- Strong C#/.NET proficiency for building stable, production-grade backend services
+- Cloud experience with AWS and modern serverless application patterns
+- Infrastructure management skills, preferably using tools like Terraform or CloudFormation
+- Functional programming familiarity using F#, Scala or other languages

@@ -1367,3 +1367,63 @@ applications:
   cv: true
   cl: true
   status: submitted
+- company: Nateva
+  role: fullstack
+  date: '2026-07-02'
+  cv: true
+  cl: true
+  status: submitted
+- company: Twine
+  role: android
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted
+- company: Mindrift
+  role: android
+  date: '2026-07-09'
+  cv: true
+  cl: false
+  status: submitted
+- company: Beca
+  role: fullstack
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted
+- company: Visa
+  role: backend
+  date: '2026-07-09'
+  cv: true
+  cl: false
+  status: submitted
+- company: Pushpay
+  role: backend
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted
+- company: Halter
+  role: ai
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted
+- company: Convai
+  role: ai
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted
+- company: Future Secure AI
+  role: ai
+  date: '2026-07-09'
+  cv: true
+  cl: false
+  status: submitted
+- company: Socialite Recruitment
+  role: backend
+  date: '2026-07-09'
+  cv: true
+  cl: true
+  status: submitted

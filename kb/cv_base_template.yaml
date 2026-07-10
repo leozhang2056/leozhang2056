@@ -479,6 +479,7 @@ roles:
         skills:
         - React
         - Vue.js
+        - Angular
         - HTML/CSS
         - Redux
       - label: Backend & APIs

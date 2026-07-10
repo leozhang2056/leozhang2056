@@ -1,0 +1,44 @@
+Machine Learning Engineer - All Levels
+Halter · Auckland, New Zealand (On-site)
+Full-time, On-site
+
+About Halter
+
+At Halter, we're on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. Imagine watching 500 cattle stand up and walk calmly towards their next break? No quad bikes, no dogs, no fences. Just a group of cattle walking at their own pace. People say it looks like magic. Our customers are revolutionizing grazing with Halter. It's changing lives and transforming an industry. People join Halter to do meaningful work. By joining us you'll be solving challenging problems within a talented team and a culture built for high performance. Our team out-think, out-work and out-care. We're committed to delivering real change in the world - this isn't easy, and in truth, we love that it's hard.
+
+We're backed to deliver on a mission that matters by Tier 1 investors including Founders Fund, Bessemer Venture Partners, BOND, DCVC, Blackbird, Promus Ventures, Rocket Lab's Peter Beck and Icehouse ventures.
+
+About The Role
+
+Halter's Predictive Systems group is dedicated to the development of advanced models to provide farmers with the most accurate insight to optimise their operations. To provide farmers with the highest quality insights, we're building upon the bleeding edge of scientific advancements with unmatched access to rich, novel data to develop a cutting edge agricultural modelling system.
+
+You'll play a pivotal role in one of the machine learning teams within the group, where you could be building advanced models of pasture growth and land properties that power intelligent, modelling animal state, health and activity, and much more. Applications could range from remote sensing of pasture biomass, identification of animal heat events, to grazing interval simulation for advanced recommendations.
+
+You will be owning end to end development of machine learning pipelines, advanced contemporary modelling, to deployment and monitoring. You will work with great team-mates in engineering, product and design to achieve outsized results. The impact of our work is profound, and we take that responsibility seriously. As a member of the group, you'll share our passion for technology and our commitment to optimizing the management of pastural grazing systems.
+
+You will be responsible for:
+- Modeling, from biological processes to farm operations: You will drive development of predictive systems to solve real-world challenges faced by farmers.
+- Research, from technical to agriculture: you will be required to conduct extensive literature reviews, and stay ahead of the curve with respect to both machine-learning systems, and pasture science.
+- Model development: design, dataset construction, training and optimization: Rarely do we utilize a model off the shelf. You will own the architectural design, and all phases of model development.
+- Supporting your work in production: Halter engineers demonstrate a high level of ownership. We support what we build, and we learn from our systems behavior in the field.
+- Proactive innovation: As a member of the data discipline it is expected that you will exercise a high degree of creativity to proactively deliver innovative ideas.
+
+Who Are We Looking For
+
+You are a high-output generalist: You will be required to work with autonomy across infrastructure, databases, simulation, and ML development. You will be restless with respect to advancing your own impact across the stack, leveraging AI companion tools and agents.
+You are a machine learning expert: You will be joining a highly capable team of technologists with deep experience in machine learning and complex systems. You will be required to provide extra strength in machine-learning theory, and its application to maximizing pasture efficiency.
+You have experience delivering highly complex predictive systems at the bleeding edge of research: Experience translating academic research into practical applications that add value to the world. You may be required to work on a range of problem-sets, from multi modal time-series modelling, to simulation systems.
+You are deeply curious and willing to become an expert in pasture-based farming.
+You are a product-minded, strategic thinker: Halter is in the enviable position of possessing an immense depth of farm-data. You will be adept at mapping opportunities across our data-lake to systems that add positive value to farmers and ranchers.
+You embrace uncertainty and ambiguity: Uncertainty is intrinsic in the ambition of our team and company. We take big, calculated strides, and we embrace the challenge to do so.
+You are a highly effective collaborator and incredible teammate.
+
+More concretely:
+- Deep academic and/or professional background applying machine learning to solve real-world problems (e.g. a research oriented postgraduate degree in mathematics or computer science, with relevance to modelling with deep neural networks)
+- Demonstrated experience designing, deploying, and monitoring machine learning systems to production
+- Strong causal reasoning and an ability to design models that reflect real-world dynamics
+- Strong data intuition and ability to work with noisy, high volume, high-dimensional datasets
+- Fluency in Python and experience contributing to or working on complex, collaborative codebases
+- Proficiency in contemporary AI companions and tooling for software and engineering productivity (e.g., Copilot, ChatGPT, Cursor, Claude-code)
+- Excellent communication skills and a collaborative working style across disciplines
+- Some experience in advanced ML architectures (Transformers or SSM), agent-based systems or recommendation systems is a plus, but not required.

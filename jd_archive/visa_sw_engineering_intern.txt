@@ -1,0 +1,56 @@
+SW Engineering Intern
+Visa · Auckland, Auckland, New Zealand (Hybrid)
+Full-time, Hybrid
+
+About the job
+
+About Us
+
+Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.
+
+At Visa, you'll have the opportunity to create impact at scale — tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world.
+
+Join Visa and do work that matters – to you, to your community, and to the world. Progress starts with you.
+
+Job Description
+
+An intern Software Engineer is an important software development role without our early careers program. Generally, you will be working alongside Software Engineers with other levels of experience, as well as other scrum team members and consultants.
+
+It is expected that you will be involved in a project that can be completed within the timeframe that you're with us.
+
+There will be a final presentation on this project and the general intern experience.
+
+This role requires a dedication to technical excellence, not only in writing code, but also in team-collaboration, testing, documentation. Good communication skills are essential, as well as a "can-do" attitude and willingness to work across various disciplines, if required.
+
+Software Development
+- Developing .NET, SQL, and related front-end code.
+- Peer reviews.
+- Following coding style standards and guidelines.
+- Using source control.
+- Using Test Driven Development techniques.
+- Writing unit and integration tests.
+
+Domain Knowledge
+- Learning Visa Spend Clarity domain concepts.
+- Writing documentation.
+- Knowledge sharing with other team members.
+
+Agile Mind-set
+- Practice agile scrum methodology.
+- Contribute to improving team Agile processes.
+- Active learning and an open mind.
+
+Visa requires at least 3 days in office, expectations of these days will be confirmed by your Hiring Manager.
+
+Qualifications
+
+- University students completing their Bachelor's or Master's degree in Computer Science, Software Engineering or related fields, who will have 1 year to complete their degree at the time of the internship program. Graduating in 2027
+- The internship program will run from November 2026 to February 2027 for 11 weeks approx.
+- Proficiency in at least one programming language or technology including, but not limited to:
+  Java, C/C++, C#, .NET, Python, JavaScript, TypeScript, HTML, CSS, Objective-C
+- Good team collaboration skills.
+- Strong communication skills.
+- Good relationship building skills.
+- Self-motivation.
+- Attention to detail.
+- Open mind to learning new skills and development processes.

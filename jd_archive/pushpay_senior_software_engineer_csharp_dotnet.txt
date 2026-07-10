@@ -1,0 +1,24 @@
+Company: Pushpay
+Role: Senior Software Engineer (C#.NET)
+Location: Auckland, New Zealand (Hybrid - 2 days WFH)
+Type: Full-time
+Posted: ~recent (as of 2026-07-09)
+Source: LinkedIn
+
+About the role
+You'll be doing more than just coding—you'll collaborate closely with Product Designers, Analysts, and Engineering peers to create an engaging product experience that connects millions globally. This role has high growth opportunities, including expanding responsibility in leading engineering teams.
+
+Requirements:
+- 5+ years of software engineering experience, with proficiency in .NET/C#
+- Experience in architecture, design, creation and delivery of solutions
+- Familiarity with both API web service design and API client consumption
+- Continuous Integration / Continuous Deployment practices and tooling
+- A pragmatic approach to delivering modular, scalable code
+- Have a personal commitment to continuously learn and improve
+
+About Pushpay
+Pushpay is a high-growth New Zealand SaaS business spread between Auckland, NZ and the United States. They help organisations and communities come together and stay connected through their suite of mobile apps, management software and giving technology. Leading provider of mobile apps and giving technology to churches, schools, and nonprofits.
+
+Culture: mutual respect, brainstorming, blameless postmortems, brainfood learning sessions, recognition. Teams of Software Engineers, SREs, QA, UX and Product Managers.
+
+Benefits: $3,000 annual training/conference allowance, hybrid work model, Kiwisaver, parental leave, 10 days sick leave, advanced gear, social events.

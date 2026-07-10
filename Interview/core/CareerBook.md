@@ -10,21 +10,23 @@ From job search strategy to LinkedIn, networking, personal brand, and NZ workpla
 
 ### Key Data
 
-| Fact | Implication |
-|---|---|
-| Only **30%** of NZ jobs are publicly advertised | 70% are in the hidden market, accessed through networking |
-| **50–200+** applicants per role | Blanket-sending the same CV is ineffective |
-| Employers prefer **referral hiring** | Saves time, reduces cost, increases trust |
+refer inside Lawyers.
+
+| Fact                                 | Implication                                   |
+| ------------------------------------ | --------------------------------------------- |
+| Only **30%** publicly advertised     | 70% hidden market, through **networking**     |
+| **50–200+** applicants per role      | **Blanket-sending  ineffective**              |
+| Employers prefer **referral hiring** | Saves time, reduces cost, increases **trust** |
 
 ### Two Parallel Strategies
 
-| Passive Job Search | Active Job Search |
-|---|---|
-| Seek / TradeMe / LinkedIn Jobs | Referrals through networking |
-| Company Careers pages | Direct email/phone/Walk-in |
-| Social media following companies | LinkedIn connections with industry insiders |
-| Job Alerts subscriptions | Recruitment agencies |
-| | Volunteering/internships as entry points |
+| Passive Job Search             | Active Job Search                           |
+| ------------------------------ | ------------------------------------------- |
+| Seek / TradeMe / LinkedIn Jobs | Referrals through **networking**            |
+| Company Careers pages          | Direct email/phone/Walk-in                  |
+| following companies            | LinkedIn connections with industry insiders |
+| Job Alerts subscriptions       | Recruitment agencies                        |
+| Volunteering                   | Volunteering/internships as entry points    |
 
 ### Job Search Management
 - Excel tracker for every application (company, role, date, status)
@@ -35,10 +37,10 @@ From job search strategy to LinkedIn, networking, personal brand, and NZ workpla
 ### Direct Employer Contact Templates
 
 **Email:**
-> Kia ora, I'm [name], a [year] [degree] student at AUT. I'm keen to get involved with [org]. I would love the opportunity to chat about potential opportunities. I'm available for [part-time/roles]. CV attached. Ngā Mihi
+> Kia ora, I'm Leo, a [year] [degree] student at AUT. I'm keen to get involved with [org]. I would love the opportunity to chat about potential opportunities. I'm available for [part-time/roles]. CV attached.
 
 **Walk-in (part-time work):**
-> Hi, I'm [name]. I'm a full-time student looking for part-time work. I'm studying [subject] and interested in [field]. Would you like a copy of my CV or prefer email?
+> Hi, I'm Leo. I'm a full-time student looking for part-time work. I'm studying computer science and interested in ... Would you like a copy of my CV or prefer email?
 
 ### Quick Job Board Reference
 Seek / Trade Me Jobs / LinkedIn Jobs / Indeed / Company Careers pages
@@ -68,9 +70,9 @@ Seek / Trade Me Jobs / LinkedIn Jobs / Indeed / Company Careers pages
 ## 2. LinkedIn Strategy
 
 ### Getting Information
-- Follow target companies → understand their updates and hiring
-- Join industry groups → expand visibility
-- Use Discover More
+- **Follow** target companies → understand their **updates** and **hiring**
+- Join **industry** groups → expand visibility
+- Use **Discover** More
 
 ### Building Connections
 **Who to connect with:** AUT lecturers, Career Fair Recruiters, classmates, Alumni — all valid

@@ -1,0 +1,33 @@
+Company: Airwallex
+Role: Senior Mobile Engineer, iOS or Android (Relocation to Melbourne)
+Location: Auckland, NZ → Melbourne, Australia (relocation support provided)
+Type: Full-time
+Posted: ~recent (as of 2026-07-09)
+Source: LinkedIn
+
+About Airwallex
+Unified payments and financial platform for global businesses. 200,000+ businesses worldwide including Brex, Rippling, Navan, Qantas, SHEIN. US$8 billion valuation. Backed by T. Rowe Price, Visa, Mastercard, Sequoia, Salesforce Ventures, DST Global. Founded in Melbourne, 2,200+ team members across 26 offices.
+
+About the team
+Mobile Team responsible for end-to-end development of iOS and Android apps. Android stack: AndroidX, Coroutines, Hilt, Jetpack libraries. iOS stack: SwiftUI, Combine, Async/Await. Apps built less than three years ago.
+
+Apps empower customers to manage global B2B payments, submit and approve expenses, control virtual and physical cards, Apple Pay and Google Pay integration.
+
+Responsibilities:
+- Take ownership of design, implementation, and delivery of key features across iOS and Android apps
+- Collaborate closely with engineers to define architecture, share best practices, drive quality standards
+- Influence how we scale and evolve mobile apps by shaping core architecture
+- Go beyond feature development: contribute to team processes, product decisions, engineering strategy
+- Hands-on technical leader with clean, testable code
+
+Minimum Qualifications:
+- 6+ years developing native mobile applications on iOS or Android
+- Bachelor's degree or higher in CS, Engineering, or related field
+- Proven experience shipping production apps (App Store or Google Play)
+- Strong focus on code quality — testable code with high test coverage
+- Experience maintaining CI/CD pipelines (GitHub Actions, Bitrise)
+
+Preferred Qualifications:
+- Modern Android or iOS tools: AndroidX, Jetpack, SwiftUI, Combine, Hilt, Coroutines
+
+Attributes: builder mindset, founder-like energy, fast with good judgment, humble and collaborative, AI-savvy

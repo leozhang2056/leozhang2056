@@ -1,0 +1,36 @@
+Company: Convai (part of Probe Group)
+Role: Software Engineer - Conversational AI
+Location: Auckland, New Zealand (Remote with office meeting days)
+Type: Full-time
+Posted: ~2 days ago (as of 2026-07-09)
+Source: LinkedIn
+
+About the job
+Convai has developed and delivered natural language speech recognition and voice biometric solutions to household names across NZ and Australia for over 20 years. Expanding team to meet growth in local and overseas markets.
+
+Culture: highly supportive, collaborative, "no-blame" engineering culture. Learn from mistakes and tackle complex problems together.
+
+Responsibilities:
+- Provide technical Leadership of assigned features
+- Product Requirements Identification, Analysis, Design and Documentation
+- Software Implementation - Build, Test, Integration, Deployment and Documentation
+
+Key Skills and Experience:
+- Bachelor's Degree in Computer Science, Engineering, or similar discipline
+- 5+ years experience in a software testing role
+- In depth knowledge of the Application lifecycle
+- Strong communication skills and a collaborative working style
+- Ability to communicate technical complexities to internal and external customers
+
+Desirable:
+- Ability to adapt to changing priorities, work under pressure, thrive in fast-paced environment
+- Practical mindset, ability to ask good questions and seek guidance
+
+Technologies:
+- AI, ASR, NLU, TTS, IVR, Chatbots
+- JavaScript/TypeScript, Node.JS, React
+- AWS technologies: Lambda, DynamoDB, S3
+- Jira, Git
+
+About Probe Group
+Clients spanning Pacific, Asia, and North America. Exponential growth. Think differently, challenge the norm, find your purpose.

@@ -360,6 +360,10 @@ Real screenshots from the **shop-floor Android** experience: production task lis
       <img src="./images/accessories-cabinet-design.jpg" width="320" alt="Accessories cabinet design"/><br/>
       <sub>Design drawing of multi-compartment accessories cabinet</sub>
     </td>
+    <td align="center">
+      <img src="./images/clothes_design.png" width="320" alt="Clothes design and specification preview"/><br/>
+      <sub>Clothes design specification and production preview</sub>
+    </td>
   </tr>
 </table>
 
@@ -374,6 +378,17 @@ Real screenshots from the **shop-floor Android** experience: production task lis
     <td align="center">
       <img src="./images/admin-web-system.png" width="320" alt="Order management list with status tracking"/><br/>
       <sub>Order management list with status tracking</sub>
+    </td>
+  </tr>
+</table>
+
+### Warehouse & Inventory
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/warehouse.png" width="360" alt="Warehouse and inventory management"/><br/>
+      <sub>Warehouse inventory tracking and material management</sub>
     </td>
   </tr>
 </table>
@@ -457,6 +472,10 @@ Real screenshots from the **shop-floor Android** experience: production task lis
     <td align="center">
       <img src="./images/quality-check.jpg" width="320" alt="Fiber uniformity quality testing station"/><br/>
       <sub>Fiber uniformity quality testing station</sub>
+    </td>
+    <td align="center">
+      <img src="./images/hanger-node.png" width="320" alt="Hanger node with IoT device"/><br/>
+      <sub>Hanger node with IoT device on production line</sub>
     </td>
   </tr>
 </table>

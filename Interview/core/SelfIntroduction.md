@@ -5,16 +5,18 @@
 
 ---
 
-## 叙事结构 (三段式)
+## 叙事结构 (三段式-Structure-passion) 感染力，情绪
 
 每个版本都遵循统一的三段式结构：
 
-| 段落 | 内容 | 作用 |
-|------|------|------|
-| **Part 1 — Name** | 名字 + 身份定位 | 让面试官记住你是谁 |
-| **Part 2 — Experience & Brand** | 经历 + 人设标签 | 建立专业信任，展示你是哪种工程师 |
-| **Part 3 — Value + Company** | 你能带来什么 + 公司的技术方向 | 把你的能力和他们的需求连起来 |
+| 段落                              | 内容                                                         | 作用               |
+| ------------------------------- | ---------------------------------------------------------- | ---------------- |
+| **Part 1 — Name**               | 名字 + 身份定位  name school  year major 人设标签                    | 让面试官记住你是谁        |
+| **Part 2 — Experience & Brand** | 经历(what you do ->learn-> output value)                     | 建立专业信任，展示你是哪种工程师 |
+| **Part 3 — Value + Company**    | so what you bring + 公司的技术方向 contribute to team and company | 把你的能力和他们的需求连起来   |
 
+1 2 3
+ 
 ---
 
 ## 目录
@@ -33,31 +35,40 @@
 **场景**：技术面试、hiring manager 面试、panel interview、"tell me about yourself" 充裕时间版
 
 ### Part 1 — Name
-Hello, I'm Leo Zhang.
+**Afternoon, everyone. Thank you for having me here.** *(For giving me this opportunity to know more about your company, the role, and let you know more about me.)*
 
-I have over ten years of experience in software development, with most of my career focused on Android applications. Earlier this year, I completed my Master's degree in Computer and Information Science at Auckland University of Technology, where I also expanded my experience into AI and computer vision.
+I'm going to walk you through my introduction in three simple parts.
 
-If I had to describe myself in one sentence, I would say that I enjoy turning complex ideas into reliable products.
+1.Who I am,  label  school major 
+2.my relevant experience about this role.
+3.And what I can bring to this position.
+
+so firstly, a little bit about  myself
+My name is Leo Zhang.I hold a Master's degree
+
+So basically, I have over ten years of experience in software development — most of it focused on Android. And then earlier this year, I completed my Master's degree in Computer and Information Science at AUT, where I kind of expanded into AI and computer vision as well.
+
+If I had to describe myself in one sentence, I'd say I enjoy turning complex ideas into reliable products.
 
 ### Part 2 — Experience & Brand
-Throughout my career, I've worked across several industries. I built instant messaging applications, IoT platforms,  enterprise manufacturing software, and most recently, an AI-powered virtual try-on system.
+So throughout my career, I've worked across quite a few different industries — instant messaging, IoT platforms, enterprise manufacturing, and most recently, an AI-powered virtual try-on system.
 
-One thing these projects have in common is that they all required solving different kinds of engineering problems.
+And I guess the common thread across all of these is that they all required solving different kinds of engineering problems in very different environments.
 
-For example, in an instant messaging project, I focused on application stability and performance. I optimized memory usage, reduced UI lag, improved startup performance, and implemented Hot Fix solutions so critical production issues could be resolved quickly.
+For example, in the instant messaging project, I focused mainly on stability and performance — you know, optimizing memory usage, reducing UI lag, improving startup time, and implementing Hot Fix solutions so we could resolve critical production issues quickly.
 
-Later, I led a team of nine engineers to build a digital signage platform. We delivered the project in just two months. My responsibilities included project planning, Android development, technical decisions, and coordinating with backend engineers, testers, and customers to make sure everything was delivered on schedule.
+Later on, I led a team of nine engineers to build a digital signage platform. We delivered the whole thing in just two months. My role covered project planning, Android development, technical decisions, and coordinating with backend engineers, testers, and customers to make sure everything shipped on schedule.
 
-I also spent six years building a smart manufacturing platform that eventually scaled to over ten factory sites. That's where I developed most of my skills in team leadership, system integration, and long-term production maintenance.
+I also spent about six years building a smart manufacturing platform that eventually scaled to over ten factory sites. And honestly, that's where I developed most of my skills in team leadership, system integration, and long-term production maintenance.
 
-I also worked on a manufacturing integration project in a highly secure environment where all development and deployment had to be completed offline. That experience taught me how to work closely with customers, deploy enterprise software, and solve problems under strict operational constraints.
+On top of that, I worked on a manufacturing integration project in a highly secure environment — where all development and deployment had to be done offline. That experience really taught me how to work closely with customers and solve problems under strict operational constraints.
 
-During my master's research, I wanted to challenge myself with something completely different. I designed and built an AI virtual try-on system by integrating large language models, computer vision, and diffusion models. That project broadened my understanding of AI systems and reinforced the importance of software architecture and system integration.
+And then during my master's research, I wanted to challenge myself with something completely different. So I designed and built an AI virtual try-on system — integrating large language models, computer vision, and diffusion models. That project kind of broadened my understanding of AI systems and reinforced the importance of software architecture and system integration.
 
-Looking back, I've realised that the technologies have changed over the years — from Java to Kotlin, from Android development to AI — but the core of my work has remained the same: understanding problems, designing practical solutions, and delivering reliable software.
+Looking back, I mean, the technologies have changed over the years — from Java to Kotlin, from Android to AI — but the core of my work has stayed the same: understanding problems, designing practical solutions, and delivering reliable software.
 
 ### Part 3 — Value + Company
-That's exactly what I'm looking for in my next role. I hope to bring my experience in Android, enterprise systems, and AI to a collaborative team, while continuing to learn and grow as a software engineer here in New Zealand.
+So that's exactly what I'm looking for in my next role. I'd love to bring my experience in Android, enterprise systems, and AI to a collaborative team here in New Zealand, while continuing to learn and grow as an engineer.
 
 Thank you.
 
@@ -68,17 +79,17 @@ Thank you.
 **场景**：phone screen、行为面试开场、时间紧凑的 interview
 
 ### Part 1 — Name
-Hello, I'm Leo Zhang. I'm a software engineer with over ten years of experience, mostly in Android development. I also recently completed my Master's at AUT here in Auckland, where I expanded into AI and computer vision.
+Hello, I'm Leo Zhang. So I'm a software engineer with over ten years of experience — mostly in Android development. And I also recently completed my Master's at AUT here in Auckland, where I expanded into AI and computer vision.
 
 ### Part 2 — Experience & Brand
-I enjoy turning complex ideas into reliable products. Throughout my career I've worked across instant messaging, IoT, manufacturing systems, and digital signage — each requiring different engineering solutions.
+I'd say I enjoy turning complex ideas into reliable products. Throughout my career I've worked across instant messaging, IoT, manufacturing systems, and digital signage — and each one required different engineering solutions.
 
-For example, I optimized an enterprise messaging app for stability and performance, implementing Hot Fix solutions for rapid production fixes. I led a team to deliver a digital signage platform in two months. I also spent six years on a smart manufacturing platform that scaled to over ten factory sites, where I built my skills in team leadership and system integration.
+For example, I optimized an enterprise messaging app for stability and performance, implementing Hot Fix solutions for rapid production fixes. Later, I led a team to deliver a digital signage platform in just two months. And I spent about six years on a smart manufacturing platform that scaled to over ten factory sites, where I built most of my team leadership and system integration skills.
 
-Most recently, my Master's research involved building an AI virtual try-on system combining LLMs, computer vision, and diffusion models.
+Most recently, my Master's research involved building an AI virtual try-on system — combining LLMs, computer vision, and diffusion models.
 
 ### Part 3 — Value + Company
-The technologies have changed over the years, but my core work stays the same — understanding problems, designing solutions, and delivering reliable software. That's what I'm looking to bring to my next role in New Zealand.
+So the technologies have changed over the years, but my core work stays the same — understanding problems, designing solutions, and delivering reliable software. And that's what I'm looking to bring to my next role in New Zealand.
 
 ---
 
@@ -87,10 +98,10 @@ The technologies have changed over the years, but my core work stays the same �
 **场景**：HR 电话筛选、career fair、LinkedIn 冷启动、快速 networking
 
 ### Part 1 — Name
-Hi, I'm Leo Zhang — software engineer with over ten years of experience, mostly in Android development.
+Hi, I'm Leo Zhang — so I'm a software engineer with over ten years of experience, mostly in Android development.
 
 ### Part 2 — Experience & Brand
-I've worked across instant messaging, IoT, manufacturing, and digital signage. I recently completed a Master's at AUT in Auckland, expanding into AI and computer vision.
+I've worked across instant messaging, IoT, manufacturing, and digital signage. And I recently completed a Master's at AUT in Auckland, expanding into AI and computer vision.
 
 ### Part 3 — Value + Company
 I'm looking for a [backend / Android / software engineering] role in Auckland where I can put that combined experience to work.
@@ -98,14 +109,14 @@ I'm looking for a [backend / Android / software engineering] role in Auckland wh
 ### 变体：强调后端
 > **P1** Hi, I'm Leo Zhang — backend and full-stack engineer, ten years in production systems.
 >
-> **P2** Enterprise messaging, smart factory platforms, IoT backends — I've built systems that run reliably at scale. I also completed a Master's at AUT, which broadened my AI and system design skills.
+> **P2** Enterprise messaging, smart factory platforms, IoT backends — I've built systems that run reliably at scale. And I also completed a Master's at AUT, which broadened my AI and system design skills.
 >
 > **P3** I'm looking for a backend role where reliability and scale matter.
 
 ### 变体：强调 AI
 > **P1** Hi, I'm Leo Zhang — AI and full-stack engineer.
 >
-> **P2** Ten years of Android and backend experience, plus a Master's at AUT specializing in computer vision and diffusion models. My thesis deployed a multimodal AI system on edge hardware.
+> **P2** So I've got ten years of Android and backend experience, plus a Master's at AUT specializing in computer vision and diffusion models. My thesis deployed a multimodal AI system on edge hardware.
 >
 > **P3** I'm looking for an applied ML role where production engineering discipline meets real AI challenges.
 
@@ -209,6 +220,34 @@ What I can contribute immediately is [concrete skill matching their JD]. And lon
 2. **对话感** — 像在跟同事聊天，不是在做 presentation
 3. **眼神接触** — 尤其是开头和收尾时
 4. **语速** — 30s 版可以稍快，2min 版要留呼吸空间
+
+### 节奏控制工具箱 (Rhythm Control)
+
+> 🖊️ 口语不是朗读脚本。用连接词、水词、过渡句让介绍像"在聊"，不像"在背"。
+
+#### 开场争取时间 (Opening Fillers)
+- "Yeah sure, so basically..."
+- "Alright, happy to share a bit about myself."
+- "Thanks for the opportunity. Let me give you a quick overview."
+
+#### 段落过渡连接词 (Transition Words)
+
+| 功能 | 常用表达 |
+|------|---------|
+| 转折 | "That said...", "Having said that...", "But what really shaped me was..." |
+| 递进 | "And on top of that...", "Beyond that...", "What built on that was..." |
+| 举例 | "For example...", "A good example of that would be...", "To give you a concrete sense..." |
+| 总结 | "So essentially...", "In a nutshell...", "I guess the core of it is..." |
+| 引出价值 | "And the reason I'm sharing this is...", "What I'm getting at is..." |
+
+#### 填充词 (Filler Words — 适度使用，争取思考时间)
+- "you know", "I mean", "like", "kind of", "in a way", "if that makes sense"
+
+#### 节奏控制原则
+- **结论先行**：先说结果（"the result was..."），再回头讲背景
+- **停顿不丢分**：想一下再说 > 赶着说完。停顿 = 在思考，不是在卡壳
+- **语速变化**：关键数字/成果放慢说，过渡段可以稍快
+- **呼吸空间**：2min 版每段之间留半秒，让面试官消化
 
 ### 结构节奏
 | 时长 | Part 1 — Name | Part 2 — Experience & Brand | Part 3 — Value + Company |

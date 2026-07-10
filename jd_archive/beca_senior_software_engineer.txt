@@ -1,0 +1,35 @@
+Company: Beca
+Role: Senior Software Engineer
+Location: Auckland, New Zealand (On-site)
+Type: Full-time
+Posted: ~1 day ago (as of 2026-07-09)
+Source: LinkedIn
+URL: https://www.beca.com/what-we-do/projects/buildings/the-beacon-system
+
+About the job
+We are looking for a senior level Software Engineer to play a pivotal part in the future of our growing software development practice and support our Beacon product (earthquake monitoring system). Our Software Engineering team has 20 diverse, unique, and passionate individuals.
+
+Key digital products:
+- Beacon: earthquake risk analysis and early alert system
+- BEYON: digital twin platform for asset intensive organisations
+- CAPEXinsights: capital portfolio management software product used globally
+
+Requirements:
+- Experience as a full stack developer with cloud-based software products, web development, systems integration using APIs, distributed systems, software security and storage systems
+- Enterprise experience for C#, .NET, MVC, React Native or other mobile development, Azure, JavaScript, SQL Server
+- Experience using cloud computing services, specifically Microsoft Azure, to provide software solutions with high availability requirements
+- Experience collaborating with Business Analysts, Quality Assurance and stakeholders
+- Support the technical implementation throughout the software development lifecycle including planning, estimation, feature development, ongoing support
+- Great communication skills with the ability to build meaningful and collaborative relationships
+
+Nice to have:
+- Experience in a product development environment with a focus on building scalable and sustainable software solutions
+- Agile development background using Scrum or other Agile methodologies
+- Networking, TCP protocol, remote sensors, Logic Apps, Data Factory
+- Experience with other programming languages such as Python
+
+About Beca Digital
+- 50+ Digital Consultants, GIS Specialists, Data Analysts and Software Engineers
+- Career development: Technical Lead, Solution Architecture, Product Ownership, Digital Consulting
+- Products: BEYON (digital twin), Beacon (earthquake monitoring), CAPEXinsights (capital portfolio management)
+- Focus: cloud-based infrastructure, platform-based approach, Agile practices

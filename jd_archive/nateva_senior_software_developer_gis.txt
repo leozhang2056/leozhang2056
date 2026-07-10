@@ -1,0 +1,25 @@
+Senior Software Developer - GIS & Forest Systems
+
+Nateva (via humanlogix)
+Parnell, Auckland
+Full time
+
+About Nateva
+NZ's largest private manager of permanent forest estates. 80,000 hectares. Carbon credits for NZ Emissions Trading Scheme. 75-person organisation combining ecology, science and technology to address climate change.
+
+About the Role
+Ongoing development of Forest and Estate Management System — .NET/MAUI application on Azure, integrating with GIS mapping platform. Own architecture and data-layer integration between Azure SQL and PostGIS. Manage external development partners. Translate business needs into technology roadmaps. Mentor colleagues in AI-assisted Python and R automation.
+
+Requirements:
+- 5+ years software development
+- 5+ years database administration (SQL, preferably PostGIS exposure)
+- .NET, Python or R
+- Azure or similar cloud environment
+- Some GIS exposure (QGIS a plus)
+- Strong communication skills (translating between technical and operational)
+- Full driver's licence, willingness to travel to forests (overnight stays)
+
+Nice to Have:
+- PostGIS experience
+- GIS/QGIS knowledge
+- AI-assisted development tools

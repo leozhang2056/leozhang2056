@@ -1,0 +1,31 @@
+Company: Twine
+Role: Application Developer – Fintech
+Location: New Zealand (Remote)
+Type: Contract
+Posted: ~6 days ago (as of 2026-07-09)
+Source: LinkedIn
+
+About the job
+Join a dynamic project focused on building a robust money transfer application within the fintech sector. This role is ideal for an experienced app developer who can deliver secure, scalable, and user-friendly solutions for digital financial transactions. The position is fully remote, offering flexibility while working on a high-impact product that supports efficient cross-border money transfers.
+
+Responsibilities
+- Design, develop, and maintain a mobile application for money transfer services
+- Integrate secure payment gateways and ensure compliance with financial regulations
+- Collaborate with stakeholders to define technical requirements and deliverables
+- Optimize app performance, security, and user experience
+- Troubleshoot, debug, and resolve technical issues as they arise
+- Stay updated on fintech trends and best practices to inform development decisions
+
+Skills And Requirements
+- Proven experience developing mobile applications, preferably in the fintech industry
+- Strong knowledge of secure payment systems, APIs, and data encryption
+- Proficiency in relevant programming languages (e.g., Swift, Kotlin, Java, or React Native)
+- Familiarity with compliance standards such as PCI DSS and KYC/AML protocols
+- Ability to work independently in a remote environment and manage project timelines
+- Excellent problem-solving skills and attention to detail
+- Strong communication skills for effective collaboration with remote teams
+
+About Twine
+Twine is a leading freelance marketplace connecting top freelancers, consultants, and contractors with companies needing creative and tech expertise. Trusted by Fortune 500 companies and innovative startups alike, Twine enables companies to scale their teams globally.
+
+Mission: Empower creators and businesses to thrive in an AI-driven, freelance-first world.

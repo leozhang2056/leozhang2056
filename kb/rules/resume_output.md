@@ -8,6 +8,8 @@
 
 ## 1. Core Principles
 
+<!-- EVOLVE: 2026-07-02 | source: session | issue: User can't find original JD after generation — need persistent archive -->
+- **JD archival (MANDATORY):** Every CV/CL generation MUST save the JD text to `jd_archive/{company_slug}_{role_slug}.txt` BEFORE running generation. This file is the source of truth for what was applied to. Naming: lowercase, hyphens, includes company name + role title + location + salary if available.
 - Use only facts from KB YAML files (`kb/*.yaml`) and project `facts.yaml` (`projects/*/facts.yaml`).
 - Do not invent projects, titles, metrics, dates, team size, or scope.
 - **Missing facts:** Caught by `validate.py` pre-generation; generation aborts unless `--no-strict-kb`.
@@ -159,12 +161,7 @@ Chunxiao's two career stages MUST show plausible career progression — never th
 `_extract_core_jd_title()` splits at `&` only for known standalone role fragments (Technical Lead, Manager, Architect, Director, Principal). Domain descriptors (Operations, Integration, Automation) are preserved — "Infrastructure & Operations Engineer" stays as-is.
 
 ### JD-driven bullet selection (from jd_analysis_standard)
-- **First bullet must hit JD's core requirement** (recruiter only reads the first one)
-- Prioritize bullets with metrics (numbers sell)
-- Prioritize end-to-end scenarios (需求 → 交付)
-- Include AI-related content when relevant (ChatClothes, LLM, diffusion models)
-
-### JD-driven bullet selection (from jd_analysis_standard)
+<!-- EVOLVE: 2026-07-01 | source: session | issue: Duplicate section removed, merged with soft-skill line -->
 - **First bullet must hit JD's core requirement** (recruiter only reads the first one)
 - Prioritize bullets with metrics (numbers sell)
 - Prioritize end-to-end scenarios (需求 → 交付)
