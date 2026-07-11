@@ -1,0 +1,41 @@
+Intermediate Software Engineer
+Aderant · Auckland, New Zealand (Hybrid) · Full time
+Posted 10 Days Ago · End Date: August 31, 2026
+
+Aderant is a global industry leading software company providing comprehensive business management solutions for law firms and other professional services organizations. With over 2,500 clients around the world, including 95 of the top AmLaw 100 firms.
+
+Role Description
+As an Intermediate Software Engineer, you will design, build, and maintain scalable, secure, and high-quality cloud-based applications. You will contribute across the full software development lifecycle, including API design, frontend development, testing, deployment, and production support.
+
+Responsibilities
+- Design, develop, and maintain backend services and APIs
+- Build and enhance responsive user-facing applications using modern frameworks (e.g., React)
+- Own and deliver features independently from design through to production
+- Contribute to scalable and maintainable system design and architectural decisions
+- Collaborate with Product, QA, and engineering teams to deliver high-quality solutions
+- Write clean, testable, and efficient code following best practices
+- Participate in code reviews and continuously improve code quality
+- Troubleshoot, debug, and resolve issues across development and production environments
+- Contribute to CI/CD pipelines and containerized deployments
+- Ensure application security, data integrity, and reliability
+- Leverage AI tools to improve development workflows, including code generation, test creation, and debugging
+- Continuously improve development practices, automation, and system performance
+
+Qualifications
+- 3–5 years of experience in software development
+- Strong experience building modern web applications using TypeScript
+- Experience developing backend services using Node.js (Express.js or Nest.js is a plus)
+- Experience building user interfaces with frameworks such as React
+- Experience designing and consuming APIs (RESTful services; GraphQL is a plus)
+- Familiarity with relational databases (PostgreSQL, MS SQL) and NoSQL (MongoDB)
+- Understanding of distributed systems or service-based architectures
+- Experience with cloud-based application development (AWS or similar)
+- Experience with container orchestration (Kubernetes)
+- Experience with infrastructure as code and GitOps (Terraform, Flux)
+- Experience with containerization and CI/CD (Docker, GitHub Actions)
+- Experience writing and maintaining unit and end-to-end tests
+- Experience with UI test automation (Playwright) is a plus
+- Proactive mindset in leveraging AI tools to improve productivity
+- Understanding of application security, authentication, and authorization concepts
+- Strong understanding of Agile methodologies (Scrum)
+- Computer Science, Software Engineering, or related degree is a plus

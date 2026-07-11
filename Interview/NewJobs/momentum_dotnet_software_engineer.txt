@@ -1,0 +1,35 @@
+Software Engineer
+Momentum Consulting Group · Posted 4d ago
+
+Our client is at an exciting point in their growth, and they're looking for skilled .NET Software Engineers to help deliver innovative software solutions. In this role, you'll be involved in the full software development lifecycle from analysing requirements and designing solutions through to building, testing, and deploying high-quality software.
+
+This is a genuine opportunity to join at a pivotal stage of their journey and have a real impact on how they build for the future.
+
+What You'll Be Doing
+- Designing and developing robust, desktop .NET applications
+- Analysing business requirements and translating them into technical solutions
+- Writing clean, well-documented, maintainable code including user interfaces
+- Debugging and troubleshooting software issues efficiently
+- Contributing to system architecture discussions and technical design
+- Collaborating with testers and support teams to ensure quality outcomes
+- Staying current with emerging .NET technologies, tools, and best practices
+- Participate in peer reviews and contribute to continuous improvement
+
+What You'll Bring
+- Solid commercial experience with .NET development (C#)
+- Strong understanding of OO software design principles and patterns
+- Experience with writing tests and with Test Driven Development (TDD)
+- Proven ability to debug and optimise code
+- Experience with software documentation and development processes
+- Strong problem-solving skills with a practical, solutions-focused mindset
+- Excellent interpersonal and communication skills
+- A relevant tertiary qualification in Computer Science, Software Engineering, or equivalent experience
+
+Nice to Have
+- Experience with .Net desktop development using MVVM, like WPF, Uno platform or Avalonia
+- GIS Mapping platforms
+- Familiarity with CI/CD pipelines and DevOps practices
+- SQL Server or other database experience
+- Experience working in Agile environments
+
+Note: NZ Citizen or five-eyes member required (security clearance)

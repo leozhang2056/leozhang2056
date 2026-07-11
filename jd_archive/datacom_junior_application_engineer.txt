@@ -1,0 +1,38 @@
+Company: Datacom
+Role: Junior Application Engineer
+Location: Auckland or Tauranga, New Zealand (Hybrid)
+Type: Full-time
+Posted: ~2026-07-08 (recent as of 2026-07-11)
+Source: LinkedIn
+
+About the company:
+Datacom is one of Australia and New Zealand's largest IT professional services suppliers. Dynamic, agile, small business feel. Local Government Product Engineering team builds ERP product Datascape.
+
+About the role:
+Junior Application Engineer contributing to building ERP product Datascape. Designed for someone early in their career. Configuring customer solutions using proprietary low-code platform. Progressive greater ownership over delivery.
+
+Responsibilities:
+- Design, build and test product changes while learning engineering patterns
+- Work with experienced engineers to understand business requirements
+- Investigate issues, troubleshoot problems, maintain existing functionality
+- Produce and maintain technical documentation, knowledge articles
+- Participate in planning, reviews and continuous improvement
+- Learn modern software engineering including AI-assisted development
+
+Requirements:
+Required:
+- 1-2 years experience in technical, analytical, software-related or IT role
+- Bachelor's degree in CS, Software Engineering, Information Systems, Engineering, Science
+- Strong analytical and problem-solving skills
+- Genuine interest in software engineering
+- Confident experience with AI tools
+- Good verbal and written communication
+- Team collaboration, attention to detail
+
+Nice to have:
+- Databases and data structures
+- Git version control
+- APIs and data formats (JSON, XML)
+- Software delivery lifecycle
+- Enterprise software and business systems
+- Agile delivery approaches

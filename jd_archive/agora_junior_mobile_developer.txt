@@ -1,0 +1,36 @@
+Company: Agora NZ (Terravest)
+Role: Junior Mobile Developer
+Location: Hamilton Central, Waikato, New Zealand (Hybrid)
+Type: Full-time
+Posted: ~2026-07-08 (3 days ago as of 2026-07-11)
+Source: Seek
+
+About the company:
+Agora NZ, born from Deosan's two decades of dairy innovation. Smart farming platform using secure wireless telemetry from milk vats and across farms. Part of Terravest. Startup environment, ag-tech.
+
+About the role:
+Junior Mobile Developer working closely with Senior Mobile Developer on Agora mobile app. Ship features used in the field.
+
+Responsibilities:
+- Build and maintain features for Agora mobile app
+- Work with Flutter and React
+- Integrate with Firebase (Auth, Firestore, Cloud Messaging, Realtime DB)
+- Implement real-time IoT sensor monitoring and push notifications
+- Collaborate on architecture and best practice
+- Translate product requirements into clean, reliable code
+- Test, iterate, improve performance and usability
+
+Requirements:
+- Completed degree in Computer Science
+- 0-2 years developer experience
+- Flutter and/or React helpful (not essential)
+- Firebase understanding (Auth, Firestore, Cloud Messaging, Realtime DB)
+- Learner's mindset, proactive, self-directed
+
+Bonus:
+- IoT, SaaS, or data-driven products exposure
+- Git, APIs, or deployment pipelines familiarity
+- Interest in ag-tech, hardware, real-world problem solving
+
+Application note:
+Must include answer to: "Complete this sentence: To me, AI is ____ and ____." at very top of Cover Letter or CV.

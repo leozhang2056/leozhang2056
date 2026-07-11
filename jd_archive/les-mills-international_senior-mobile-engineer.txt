@@ -1,0 +1,41 @@
+Senior Mobile Engineer
+Les Mills International · Auckland, New Zealand (Hybrid)
+
+Senior Software Engineer – React Native
+Fixed Term (6 Months)
+
+We need an experienced React Native Developer to help us build the next generation of our world-class LES MILLS services.
+
+Join us in shaping the digital experience of fitness enthusiasts around the world.
+- Build a product that inspires people to live healthier lives
+- Collaborate with a team passionate about fitness and technology
+- Ship features that reach a global audience
+
+About The Role
+We're looking for a React Native developer to join our LES MILLS B2B engineering team – the team behind our club and instructor platforms.
+
+Skills And Experience You'll Need
+You're an experienced React Native developer who can quickly integrate into a product team and help deliver quality features at speed. You're comfortable working in an agile environment and collaborating across disciplines including design, backend, and QA.
+
+You Will Ideally Need Experience In The Following
+- Solid commercial experience with React Native (iOS and Android)
+- Strong knowledge of Typescript, React Navigation and common RN libraries
+- Experience integrating APIs and managing state
+- Comfortable working with native modules and app store deployments
+
+About Les Mills
+At Les Mills, unlocking and amplifying that inner drive to achieve our goals is something we're not shy to say we're great at.
+
+Today, Les Mills Internationals programs are in 20,000 gyms in over 100 countries – pair that with the boom of our digital subscription service LES MILLS+ (like Netflix for our workouts), and it's an exciting time to be a part of our global company. Our mission is simple – to create a fitter planet.
+
+You don't have to be a fitness fanatic to fit in here, but you can make a workout part of your workday. If you want to grow your professional career, Les Mills International could be the place for you. Our mission is simple – to create a fitter planet.
+
+What's In It For You
+We operate as a flexible and hybrid workplace with a mix of working in the office and at home as a work scheme that enhances and encourages work/life balance. Whether that be working from home, going to the gym or doing school drop-offs/pick-ups, we want our employees to feel comfortable working in an environment where they can thrive and feel empowered.
+
+We Offer Some Great Benefits That Include
+- Companywide connection opportunities
+- Global mobility
+- Dog friendly office
+- Volunteer day
+- Free fresh fruits & snacks

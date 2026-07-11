@@ -1,0 +1,45 @@
+Company: Enable
+Role: Experienced Engineer
+Location: Auckland, New Zealand (Hybrid)
+Type: Full-time
+Salary: $85,000 - $105,000 NZD/year
+Posted: ~recent (as of 2026-07-10)
+Source: LinkedIn
+
+About the company:
+Enable provides intelligent platform for pricing and rebate management. $291M Series A-D funding. Acquired Flintfox in 2025. Flagship product launched 2016.
+
+About the job:
+Develop high-quality software following defined standards to meet R&D project roadmap. Duties include product implementations, testing, bug fixing, documenting, customer support, training, drafting requirements and specifications.
+
+Responsibilities:
+- Write and code individual programs from requirements and technical specifications
+- Draft and interpret business requirements and technical specifications
+- Create, document and maintain technical documentation, unit test plans, scripts
+- Design, develop, modify, debug, document and test applications
+- Complete thorough testing on builds
+- Code reviews, ensuring best technical practices
+- Troubleshoot dev/production environments, performance tune and optimize code
+- Comply with internal/external company policy and quality guidelines
+- Deliver work in agreed timeframes and budgets
+- Transfer knowledge and skills to team members
+
+Requirements:
+- 2+ years' experience in .NET preferably using C#
+- Strong knowledge ASP.NET Core development
+- Strong T-SQL development skills and relational database design
+- Intermediate level TypeScript, jQuery, and JavaScript
+- Knowledge of ERP systems and software or accounting processes
+- HTML and CSS experience
+- Scrum, Sprint and Agile Software Development methodologies
+- Strong communicator, problem-solver, analytical, attention to detail
+- Relevant post-secondary qualification or substantial relevant work experience
+
+Benefits:
+- Paid Time Off
+- Quarterly Wellness Benefit
+- Lucrative Bonus Plan
+- Equity Program
+- Career Growth / internal mobility
+- Learning & Development
+- Pet-friendly offices

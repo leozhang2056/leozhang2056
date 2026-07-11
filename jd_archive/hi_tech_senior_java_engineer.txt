@@ -1,0 +1,41 @@
+Company: HI Technology & Innovation
+Role: Senior Java Engineer
+Location: New Zealand (Fully Remote)
+Type: Full-time, 4-month initial sprint (potential extension)
+Compensation: NZD 8,000-12,000/month
+Posted: ~2026-07-11 (2 hours ago)
+Source: LinkedIn
+
+About the company:
+HI Technology & Innovation - established UK business placing senior engineers with international clients. New Zealand-based team.
+
+About the role:
+AI Product Engineer for construction technology client (US-based). Hands-on engineering with strong product focus. Greenfield/loosely-coupled areas. AI (LLMs, agentic coding) is central to how they work.
+
+Responsibilities:
+- Work with product/client stakeholders to understand problems, shape into buildable solutions
+- Own features end-to-end: scoping, design, building, testing, shipping
+- Use AI coding agents while maintaining quality and code health
+- Build and integrate LLMs into features (prompts, evaluations, guardrails)
+- Work against defined data model and clear contracts
+- Feed learnings back to product and client teams
+
+Requirements:
+Required:
+- Back end: Primarily Java, with some Python
+- Strong Java experience
+- End-to-end feature ownership
+- Stakeholder-facing communication
+- Product instinct and technical judgment
+
+Optional:
+- Front end: TypeScript with Angular
+- Google Firebase (hierarchical JSON document store)
+- PostgreSQL databases
+- Google Cloud Storage
+- AI/LLM integration experience
+
+Benefits:
+- Fully remote NZ
+- Backed by established UK business
+- US client (may require some hour shifts for overlap with US west coast)

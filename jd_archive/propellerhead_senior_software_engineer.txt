@@ -1,0 +1,27 @@
+Company: Propellerhead
+Role: Senior Software Engineer (Core Engineering Team)
+Location: Auckland, New Zealand (Hybrid)
+Type: Full-time
+Posted: ~1 day ago (as of 2026-07-10)
+Source: LinkedIn
+
+About the job
+Propellerhead is looking for an experienced Senior Software Engineer to join our core engineering team (reporting to the CTO) to research and define future technical strategies. The engineering team provides core tools, techniques, and software libraries to support service development teams.
+
+You will guide proofs of concept to production, mentoring team members on new technologies and practices. Help teams navigate effective, secure enterprise software and deployment architectures in the age of AI.
+
+Role Responsibilities:
+- Define technical solutions through research and team investigation, in line with the CTO's vision
+- Actively participate in the design and construction of software across the full stack - including code structure, deployment architecture, DevOps, automated testing, and integration of third-party systems. Primarily involves use of LLMs, with expectation of virtually no hand-coding
+- Collaborate with client stakeholders and team members on solution design and roadmap delivery
+- Drive migration of existing polyglot solutions to standardized Rust and TypeScript, towards more standardized and portable deployment architectures
+
+Skills and Experience Required:
+- 7+ years experience as a Software Developer/Engineer, including enterprise-level complexity. High proficiency in at least one enterprise-quality language: C# .NET or Java and Spring
+- Must have experience with lower-level language: Rust (preferable) or C++
+- Experience in TypeScript and React or similar front-end frameworks
+- Hands-on experience deploying to Azure and/or AWS, including CI/CD pipelines and infrastructure scripting (e.g., Terraform)
+- Demonstrable experience in software design for distributed and asynchronous architecture, microservices and messaging
+- Embraced use of LLMs over hand-coding, able to articulate how this improved delivery speed and safety
+- With help of LLMs can produce clear and concise design documents
+- Excellent written and verbal communication skills

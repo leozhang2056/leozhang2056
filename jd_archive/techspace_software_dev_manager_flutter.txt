@@ -1,0 +1,41 @@
+Company: Techspace Consulting Limited
+Role: Software Development Manager (Flutter)
+Location: Albany, Auckland, New Zealand
+Type: Full-time
+Posted: ~2026-07-10 (1 day ago as of 2026-07-11)
+Source: LinkedIn
+
+About the role:
+Lead NZ-based engineering team developing innovative mobile and web applications used by customers globally. Combines people leadership, technical direction, stakeholder engagement, and delivery management. Lead ~12 engineers, testers, and technical specialists.
+
+Responsibilities:
+- Lead, coach, and develop high-performing software engineering team
+- Drive delivery of mobile and web applications across global customer base
+- Technical leadership across Flutter-based applications and cloud platforms
+- Work with product, commercial, and customer stakeholders
+- Influence architecture, engineering standards, security practices, technical roadmaps
+- Foster culture of continuous improvement, collaboration, customer focus
+- Support agile delivery practices
+
+Requirements:
+Required:
+- Proven experience leading software development teams
+- Strong technical background in Flutter and Dart
+- AWS cloud technologies experience
+- IoT-connected products/platforms/solutions exposure
+- Strong stakeholder management and communication skills
+- Multi-region/global market support experience
+- Fast-changing environment adaptability
+- Passion for mentoring engineers and developing future leaders
+
+Nice to have:
+- Mobile development across Android and iOS
+- Scalable SaaS or customer-facing platforms
+- Agile software delivery environments
+- Tertiary qualification in Software Engineering
+
+Benefits:
+- Lead globally deployed technology
+- Significant product direction and engineering standards influence
+- Mentor future leaders
+- Collaborative, innovative culture

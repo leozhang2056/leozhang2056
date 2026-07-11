@@ -1,0 +1,48 @@
+Senior Mobile Developer - 3 month contract
+Hnry Limited · Wellington Central, Wellington (Hybrid/Remote)
+Contract/Temp · $105 – $120 per hour
+
+We are currently looking for a contractor to support our mobile team for a 3 month contract. You will be an experienced Android or Mobile Engineer with prior experience in Native Android development. You'll be working on a modern platform in a fast-paced but rewarding environment - with the opportunity to also contribute to our iOS apps.
+
+🚀 Responsibilities
+- Working with the mobile Principal Engineer to design and build a modern and scalable platform to support the future of mobile development at Hnry
+- Engaging with customers and all members of the business to actively identify problems and propose solutions
+- Maintaining and deepening our existing user-facing feature set, ensuring delightful experiences which are consistent across our mobile apps and our web offering
+- Working alongside other engineers to make sure we are providing our customers with the best tools and dashboards to support them in all aspects of being self-employed individuals
+- Championing best practices in building robust and reliable software and encouraging the same among colleagues
+- Taking responsibility for delivering functionality from concept through to production release and post-release maintenance
+- Producing work that meets the expected level of test coverage and improving test coverage across the existing codebase
+- Providing detailed code reviews to colleagues, sharing your knowledge and ensuring that standards are maintained
+- Providing guidance and support to other engineers on the team
+- Collaborating with and supporting other members of the wider Hnry team
+- Contributing development and code reviews for our iOS apps (no prior experience needed, you'll have the opportunity to learn!)
+
+💪 You will
+- Have at least four years' experience building Android apps
+- Have strong experience with the fundamentals of Android development (Kotlin)
+- Have experience with managing CI/CD pipelines
+- Care about writing clean, maintainable and efficient code, and improving existing code, both for your peers and future you
+- Be confident using distributed development tools such as GitHub and Slack
+- Contribute in all phases of the development lifecycle
+- Work in a product team, alongside product owners and designers
+- Be able to take complex problems, break them down, and build robust solutions
+- Approach problems with a curious mindset and empathy for the end user, always considering the impact of changes
+- Have excellent communication and collaboration skills — we work together and succeed as a team
+- Have significant experience with automated testing
+- Enjoy discussions about software/product design and crafting solutions
+- Be open to working on our iOS app too - no prior iOS experience required, but a willingness to learn is a must
+- Have NZ residency or a valid NZ work visa
+
+✔️ Bonus points
+- Experience with iOS development
+- Experience with using Turbolinks to build hybrid apps
+- Experience with Ruby on Rails, React and JavaScript
+- Experience with Compose
+- Experience being self-employed
+
+🫵 How we work
+- Agile practices, iterative delivery
+- Ruby on Rails, AWS (Terraform), Postgres, Docker, React
+- Hybrid mobile via Turbolinks
+- Automated tests, CI/CD, regular releases
+- Code reviews, experimentation time

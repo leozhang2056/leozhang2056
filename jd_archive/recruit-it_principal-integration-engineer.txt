@@ -1,0 +1,33 @@
+Principal Integration Engineer - C# .Net
+Recruit I.T. Auckland · Posted 15d ago · $160K - $190K
+Hybrid (Auckland) / Remote (outside Auckland, onsite 4x per year)
+
+Key Points
+- Lead the design and delivery of large scale, enterprise integration platforms
+- Work across modern technologies including .NET, Kafka, Kubernetes and API gateways
+- Influence architecture, mentor engineers, and drive best practice across high performing teams
+
+About the Role
+We are seeking an experienced Lead or Principal Engineer to join a high performing engineering environment focused on large scale API development and system integration. This is a senior level role where you will combine hands on engineering expertise with technical leadership.
+
+Key Responsibilities
+- Design and build high volume, scalable APIs across enterprise platforms
+- Develop and support event driven architectures using Kafka
+- Build and maintain synchronous integration processes across systems
+- Integrate internal platforms with third party vendor solutions
+- Collaborate across digital, mobile, CRM, and other enterprise systems
+- Contribute to CI/CD pipelines, DevOps practices, and continuous improvement
+- Provide technical leadership, mentoring, and guidance to engineering squads
+- Influence architectural decisions and promote best practice engineering standards
+
+Must Have
+- Strong experience with C# and .NET to build APIs in enterprise environments
+- Experience with Kubernetes and API gateway technologies such as Kong
+- Familiarity with GitHub Actions or similar tooling
+- Experience working with Kafka or similar event driven technologies
+- Strong understanding of CI/CD pipelines and DevOps practices
+- Experience working in cloud native environments
+- Excellent communication skills and stakeholder engagement experience
+
+Nice to Have
+- Exposure to workflow or orchestration tools such as Temporal

@@ -1,0 +1,28 @@
+Company: Salt (recruiter) / Financial Lending Client
+Role: Senior .NET Developer (Full Stack)
+Location: Ellerslie, Auckland, New Zealand (3 days office - Tue & Thu)
+Type: Permanent
+Salary: NZD $135K-$145K/year + discretionary bonus (5-7%)
+Posted: ~2026-07-08 (3 days ago as of 2026-07-11)
+Source: LinkedIn
+Contact: DC at 022 500 5159 (text preferred)
+
+About the role:
+Hands-on Full Stack .NET Developer joining client's IT team. Ongoing enhancements across core systems. Financial lending domain.
+
+Requirements:
+- Minimum 10 years commercial development as backend/fullstack developer at Senior level using C# .NET (Non-negotiable)
+- Not a job hopper - need stability (Non-negotiable)
+- Microsoft technologies: .NET, C#, Azure, SQL Server, CI/CD, Testing
+- Front-end: Vue.js, Angular.js, Blazor, Umbraco integration
+- Based in Auckland or able to relocate
+- Approachable, team fit, contributes to technical discussions
+
+Benefits:
+- Discretionary bonus (5-7%)
+- Life insurance
+- KiwiSaver matched up to 5%
+- Staff discounts with major retailers
+- Flexible & hybrid
+
+Note: Valid NZ work visa is a prerequisite.

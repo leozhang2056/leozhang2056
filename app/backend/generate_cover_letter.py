@@ -220,6 +220,12 @@ _COMPANY_TEAMS = {
     'orbitremit': "OrbitRemit's Engineering team",
     'smartly': "Smartly's product engineering team",
     'datacom': "Datacom's engineering team",
+    'les mills international': "Les Mills International's B2B engineering team",
+    'les mills': "Les Mills International's B2B engineering team",
+    'hnry limited': "Hnry's Mobile Engineering team",
+    'hnry': "Hnry's Mobile Engineering team",
+    'flowingly limited': "Flowingly's Product Engineering team",
+    'flowingly': "Flowingly's Product Engineering team",
 }
 
 def build_cover_letter_content(
@@ -922,6 +928,32 @@ def build_cover_letter_content(
                 "I would welcome the opportunity to contribute my AI automation expertise, "
                 "full-stack depth, and autonomous engineering mindset to Digital Generationz's "
                 "engineering team. Thank you for your time and consideration."
+            )
+        elif 'orion' in company_lower:
+            opening = (
+                "I am applying for Orion Health's Technical Graduate Programme. As a graduate "
+                "of AUT's Master of Computer and Information Sciences (First Class Honours) with "
+                "10+ years of production software experience, I am drawn to this programme because "
+                "it combines software engineering, systems integration, and real healthcare impact — "
+                "exactly the kind of work where my breadth adds value."
+            )
+            body1 = (
+                "I bring strong Java skills from 8+ years building Spring Cloud microservices "
+                "and enterprise backends, along with hands-on experience in JavaScript, TypeScript, "
+                "SQL, AWS, Docker, Git, and Linux — all technologies your programme highlights. "
+                "What sets me apart is not just the technical depth but the ability to pick up "
+                "new domains quickly: I moved from industrial IoT to AI research and delivered "
+                "a published multimodal system (IVCNZ 2025) within 18 months."
+            )
+            body2 = (
+                "Orion Health's mission to improve healthcare through smart digital solutions "
+                "resonates with me. I want to apply my engineering discipline, curiosity, and "
+                "collaborative approach to health-tech challenges — contributing to real projects "
+                "from day one while growing my skills across the three rotations."
+            )
+            closing = (
+                "I would welcome the opportunity to discuss how my background can contribute "
+                "to Orion Health's engineering team. Thank you for your time and consideration."
             )
         else:
             company_lower = (company_name or '').strip().lower()

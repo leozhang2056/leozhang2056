@@ -1,0 +1,46 @@
+Full-Stack Developer
+Webjet Group NZ · Auckland · Posted 1d ago
+
+About The Role
+You will be working with a talented and multi-faceted team, both within our Digital team, as well as across the wider business, to build out new features and apps for customers on a cloud-native, PHP-centric platform. We are moving towards a fully-automated devops lifecycle, and you will be at the forefront of reinventing our software.
+
+Key responsibilities include:
+- Researching, analysing and evaluating system program requirements
+- Collaborating with stakeholders regarding the planning of new systems
+- Review current available technologies, identifying limitations and deficiencies
+- Writing and maintaining programme code to meet system requirements
+- Work with outside suppliers where required to implement the new system
+- Testing, debugging, diagnosing, and fixing to ensure system performs per specifications
+- Modify and update the system where required
+- Complete and maintain technical documentation
+- Provide guidance in reviewing company proposals for software design
+
+About You
+- At least 2-3 years' experience as a Software Developer working with PHP, JavaScript, MySQL, Html, CSS
+- Familiarity with MVC frameworks like Laravel
+- Experience in ReactJS, jQuery and other JavaScript frameworks/libraries
+- Experience in Agentic AI
+- Experience with Automation workflows/scripting
+- Knowledge and experience writing functional PHPUnit tests
+- Experience in building complex solutions from scratch using various technologies
+- Extensive familiarity with building APIs and integrating with 3rd party vendors
+- Knowledge and experience with various AWS technologies
+- Familiarity and experience in building stand-alone microservices
+- Familiarity with PSR-2/PSR-4 coding standards
+- Knowledge and experience in docker and Kubernetes
+- Familiarity with non-relation databases like MongoDB, DynamoDB
+- Familiarity with various caching mechanisms
+- Excellent Communication skills and a positive can-do attitude
+
+Advantageous:
+- Experience with SilverStripe CMS
+- Familiarity with JIRA, Bitbucket, Confluence
+- Knowledge of JAVA
+
+Why join Webjet Group NZ?
+- Flexible and hybrid work options
+- Central Auckland office with parking & public transport subsidies
+- Subsidised Southern Cross health insurance
+- Travel discounts across The Webjet Group brands
+- Enhanced parental leave benefits
+- Extra leave for birthday, wedding and birth/adoption

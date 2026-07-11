@@ -1,0 +1,35 @@
+Company: FUJIFILM Business Innovation New Zealand Limited
+Role: Junior .NET Developer
+Location: Mount Eden, Auckland, New Zealand
+Type: Full-time
+Posted: ~2026-07-09 (2 days ago as of 2026-07-11)
+Source: Seek
+Applications close: 5 August 2026
+
+About the company:
+FUJIFILM Business Innovation NZ (FBNZ). Over 60 years partnering with Kiwi businesses. Information Management team in Auckland.
+
+About the role:
+Junior .NET Developer reporting to Applications Manager. Developing and supporting software applications and interfaces for business operations.
+
+Responsibilities:
+- Create software, DB, and documentation ensuring application optimization
+- Design and develop new systems, maintain/enhance existing applications
+- Troubleshoot program, application, or database problems
+- Liaise with Applications Manager and key IM staff
+
+Requirements:
+- 1-2 years development experience (or strong graduate equivalent)
+- .NET / C# development (web APIs, backend services, ASP.NET)
+- .NET C#, SQL, Microsoft Power Platform
+- SSIS, SSRS advantageous
+- Workflow application design and configuration
+- Problem solving, analytical and decision-making skills
+
+Benefits:
+- Southern Cross Health Insurance (fully funded)
+- Superannuation contributions (on top of KiwiSaver)
+- Hybrid work
+- Birthday Leave and special leave days
+- Health & Wellbeing Subsidy
+- Mt Eden, Auckland location

@@ -1,0 +1,34 @@
+Company: Potentia
+Role: Lead Back End Engineer
+Location: New Zealand (open across NZ, remote)
+Type: Full-time, Permanent
+Posted: ~2026-07-03 (8 days ago as of 2026-07-11)
+Source: LinkedIn
+
+About the company:
+Potentia (recruiting for a client). Global creative industry digital platform with highly engaged community. Product-led technology team.
+
+About the role:
+Lead Back End Engineer for global creative platform. Not a ticket-pickup role - shape how the engineering function matures, challenge ideas, make sensible architectural decisions.
+
+Responsibilities:
+- Lead back end architecture and platform evolution
+- Design and deliver scalable APIs across REST and GraphQL
+- Work with Product, Design, and technical leaders
+- Guide major platform initiatives from concept through delivery
+- Improve CI/CD, DevOps practices, monitoring, and observability
+- Set engineering patterns, standards, and best practices
+- Mentor engineers through code reviews and technical guidance
+- Own performance, reliability, security, and production quality
+- Support third-party integrations
+
+Requirements:
+- 10+ years building modern back end systems
+- Strong senior, lead, or principal engineering experience
+- Deep Python/Django experience (or strong equivalent)
+- Strong API design (REST and GraphQL)
+- Relational databases (PostgreSQL or MySQL)
+- AWS with Terraform or AWS CDK
+- Docker, CI/CD, modern DevOps
+- Scalable/distributed systems design
+- Strategic thinking, ownership, collaboration

@@ -1,0 +1,42 @@
+Company: Bureau Limited
+Role: Engineering Team Lead – Fintech Platform (Java / AWS)
+Location: Auckland CBD, New Zealand (Hybrid)
+Type: Full-time
+Salary: Highly competitive salary, bonus & benefits
+Posted: ~2026-07-08 (3 days ago as of 2026-07-11)
+Source: Seek
+Low application volume
+
+About the company:
+Bureau Limited. Fintech company with Auction and Trading Platform. Globally visible, mission-critical platform at scale.
+
+About the role:
+Engineering Team Lead reporting to Head of Engineering. Transitioning platform from full outsourcing to internal capability. Lead team through transition, re-architect platform, set technical direction.
+
+Responsibilities:
+- Lead and grow small, high-performing team
+- Own end-to-end delivery of Auction and Trading Platform
+- Partner with vendor for smooth transition to in-house
+- Re-architect and modernise platform
+- Define technical priorities and strategy
+- Drive cloud migration from AWS to Azure
+- Mentor and develop team members
+- Align technology delivery with commercial goals
+
+Requirements:
+Required:
+- Proven experience leading small-to-medium engineering teams
+- Strong Java and AWS background
+- Platform transitions, vendor handovers, or cloud migrations
+- Balance strategic architecture with hands-on leadership
+- Communication and stakeholder management
+- Mentor's mindset
+
+Nice to have:
+- .NET and Azure knowledge
+
+Benefits:
+- Highly competitive salary + bonus
+- Hybrid working
+- Auckland CBD office with parking
+- Mission-critical global platform
