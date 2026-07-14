@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"Project: Leo CV Generator. Commands: /cv-backend, /cv-android, /cv-fullstack, /cv-ai, /cv-best, /cover-letter, /kb-validate, /run-tests\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

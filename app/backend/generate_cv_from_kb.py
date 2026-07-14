@@ -14,7 +14,6 @@ import yaml
 import os
 import re
 import html
-import random
 import hashlib
 import json
 from datetime import datetime
@@ -55,7 +54,6 @@ except Exception:
     render_alignment_snippet = None  # type: ignore
 
 # 保留私有名称供内部使用（历史调用方 / 测试不需要改动）
-_load_all_bullets = load_all_bullets
 _load_project_relations = load_project_relations
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -2575,9 +2573,6 @@ def _adapt_progression_focus(focus: str, role_type: str) -> str:
         out = out.replace("Full-stack", "Android")
         return out
 
-
-        return focus
-
     exact = _PROGRESSION_FOCUS_ROLE_MAP.get(role_type, {}).get(focus)
     return exact if exact else focus
 
@@ -3990,7 +3985,7 @@ def generate_html_from_kb(
     ]
 
     # Portfolio link (prominent in contact row)
-    portfolio_url = "https://portfolio.leoz.fun"
+    portfolio_url = (contact.get('portfolio') or "https://portfolio.leoz.fun").strip()
     contact_primary_bits.append(
         f'<a href="{html.escape(portfolio_url, quote=True)}" class="cv-social-link cv-portfolio-highlight">{_CV_ICON_PORTFOLIO_SVG}Portfolio</a>'
     )
@@ -4283,20 +4278,6 @@ def build_cv_review_bundle_markdown(
         "",
     ]
     return "\n".join(lines)
-
-
-def _ensure_min_jd_keyword_coverage_html(
-    html_text: str,
-    supported_kws: List[str],
-    min_pct: float,
-) -> str:
-    """
-    DISABLED (2026-06-30): Injecting raw JD keywords as "Additional:" skill rows
-    produces garbage output (e.g., "Additional: enhance, millions").
-    JD coverage should be achieved through proper Skills section ordering,
-    not keyword injection. This function now returns the input unchanged.
-    """
-    return html_text
 
 
 def _print_quality_metrics(html: str, jd_keywords: Optional[List[str]], role_type: str, min_target_pct: float) -> None:
@@ -4699,9 +4680,10 @@ async def generate_cv_from_kb(
         role_tag_lower = role_type.lower()
         company_slug = _slugify_company(company_name)
         suffix = f"_{company_slug}" if company_slug else ""
-        en_path = str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}.pdf')
+        display_name = profile.get('personal_info', {}).get('preferred_name', 'Leo Zhang').replace(' ', '_')
+        en_path = str(dated_outputs_dir / f'CV_{display_name}_{today}_{role_tag_lower}{suffix}.pdf')
         zh_path = (
-            str(dated_outputs_dir / f'CV_Leo_Zhang_{today}_{role_tag_lower}{suffix}_CN.pdf')
+            str(dated_outputs_dir / f'CV_{display_name}_{today}_{role_tag_lower}{suffix}_CN.pdf')
             if generate_zh else None
         )
 
@@ -4755,11 +4737,6 @@ async def generate_cv_from_kb(
         company_name=company_name,
         target_role_title=target_role_title,
         kb_data=loaded_kb_data,
-    )
-    html_en = _ensure_min_jd_keyword_coverage_html(
-        html_en,
-        safe_jd_keywords,
-        min_jd_match_pct,
     )
 
     html_en_path = en_path.replace('.pdf', '.html')

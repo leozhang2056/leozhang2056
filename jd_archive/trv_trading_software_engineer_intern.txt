@@ -1,0 +1,52 @@
+Company: TRV Trading Group
+Role: Software Engineer Summer Internship / Graduate
+Location: New Lynn, Auckland, New Zealand (Hybrid)
+Type: Full-time, Summer Internship (Nov start, ends start of next uni year)
+Salary: $62,500 + performance and profit share bonuses
+Posted: ~2026-06-21 (23 days ago as of 2026-07-14)
+Source: Seek
+Applied: 2026-06-30
+High application volume
+
+About the company:
+TRV Trading Group. Auckland-based high-frequency trading firm. Custom-built trading systems, market microstructure, backtesting infrastructure, exchange emulation. Team of traders, quants, and technologists.
+
+About the role:
+Software Engineer intern working on critical systems that directly generate profits. Real-time systems, nanosecond-level performance, millions of trading decisions across global markets. Top performers guaranteed graduate position.
+
+Responsibilities:
+- Build real-time data processing pipelines handling millions of market events per second
+- Optimize trading algorithms for nanosecond-level performance in live markets
+- Learn about high-frequency trading and business model
+- Collaborate with traders and research to build and refine trading infrastructure
+- Increase profits through technology
+
+Requirements:
+Required:
+- In pen/ultimate year of computing-related field (Software/Computer Systems Engineering, Computer Science)
+- Exceptional drive and resilience with complex problems
+- Ability to abstract away complexity
+- Outstanding analytical skills
+- Proficient in a programming language (C/C++, Java, Python)
+- Genuine interest in financial markets
+- Available full-time during summer break
+
+Nice to have:
+- Interest in market microstructure
+- Performance optimization experience
+- Real-time systems knowledge
+
+Benefits:
+- $62,500 salary + performance and profit share bonuses
+- Graduate role guaranteed for top performers
+- Work from home 2 days per week
+- Small team, direct impact on trading profits
+- Learn from strong engineers and traders
+
+Application process:
+1. Submit CV and university transcript on Seek
+2. Attend UoA Internship Expo (Tue 29 Jul) if possible
+3. Technical challenge suite (custom programming problems)
+4. In-person technical and behavioural interviews
+5. Offer
+6. Join November when exams finish

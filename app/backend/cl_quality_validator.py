@@ -15,7 +15,7 @@ from typing import List, Optional
 # ---------------------------------------------------------------------------
 # Thresholds
 # ---------------------------------------------------------------------------
-CL_WORD_COUNT_MIN = 200
+CL_WORD_COUNT_MIN = 250
 CL_WORD_COUNT_MAX = 400
 CL_PARAGRAPH_MIN = 3
 CL_PARAGRAPH_MAX = 5
@@ -39,6 +39,13 @@ TEMPLATE_PHRASES = [
     (r"\bhighly motivated\b", "Template phrase: 'highly motivated'"),
     (r"\bstrong fit\b", "Template phrase: 'strong fit'"),
     (r"\bI am confident that\b", "Template phrase: 'I am confident that'"),
+    (r"\bI am writing to apply\b", "Template phrase: 'I am writing to apply'"),
+    (r"\bI believe my skills\b", "Template phrase: 'I believe my skills'"),
+    (r"\bI would be a valuable\b", "Template phrase: 'I would be a valuable'"),
+    (r"\bI am eager to contribute\b", "Template phrase: 'I am eager to contribute'"),
+    (r"\bI am writing to express\b", "Template phrase: 'I am writing to express'"),
+    (r"\bI am excited to apply\b", "Template phrase: 'I am excited to apply'"),
+    (r"\bI would like to apply\b", "Template phrase: 'I would like to apply'"),
 ]
 
 
@@ -91,9 +98,9 @@ def _extract_paragraphs(html: str) -> List[str]:
 
 
 def _keyword_hits(text: str, keywords: List[str]) -> List[str]:
-    """Return keywords found in text (case-insensitive)."""
+    """Return keywords found in text (case-insensitive, with word boundary matching)."""
     text_lower = text.lower()
-    return [kw for kw in keywords if kw.lower() in text_lower]
+    return [kw for kw in keywords if re.search(r'\b' + re.escape(kw.lower()) + r'\b', text_lower)]
 
 
 # ---------------------------------------------------------------------------
@@ -150,9 +157,9 @@ def run_cl_quality_check(
 
     # Notes
     if not report.word_count_ok:
-        report.notes.append(f"Word count {report.word_count} outside {CL_WORD_COUNT_MIN}-{CL_WORD_COUNT_MAX} range")
+        report.notes.append(f"Word count {report.word_count} outside {CL_WORD_COUNT_MIN}-{CL_WORD_COUNT_MAX} range (target: 250-400)")
     if not report.paragraph_ok:
-        report.notes.append(f"Paragraph count {report.paragraph_count} outside {CL_PARAGRAPH_MIN}-{CL_PARAGRAPH_MAX} range")
+        report.notes.append(f"Paragraph count {report.paragraph_count} outside {CL_PARAGRAPH_MIN}-{CL_PARAGRAPH_MAX} range (target: 3-5)")
     if not report.has_salutation:
         report.notes.append("Missing salutation (e.g., 'Dear Hiring Manager')")
     if not report.has_closing:

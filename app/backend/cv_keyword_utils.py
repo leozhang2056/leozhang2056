@@ -19,8 +19,102 @@ def strip_html_tags(text: str) -> str:
     return re.sub(r"<[^>]+>", " ", text)
 
 
+STOP_WORDS = frozenset({
+    # Generic verbs / adjectives that appear in every JD
+    'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+    'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'were', 'be',
+    'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will',
+    'would', 'could', 'should', 'may', 'might', 'can', 'shall', 'must',
+    'not', 'no', 'nor', 'if', 'then', 'else', 'when', 'where', 'how',
+    'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those',
+    'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her',
+    'us', 'them', 'my', 'your', 'his', 'its', 'our', 'their',
+    # Common JD filler words
+    'experience', 'ability', 'skills', 'knowledge', 'understanding',
+    'strong', 'good', 'excellent', 'great', 'proven', 'solid',
+    'including', 'such', 'like', 'well', 'also', 'able',
+    'working', 'work', 'role', 'position', 'job', 'team',
+    'new', 'existing', 'various', 'different', 'multiple',
+    'develop', 'development', 'developing', 'technical',
+    'preferred', 'desired', 'desirable', 'required', 'nice',
+    'must', 'should', 'need', 'looking', 'seeking',
+    'opportunity', 'environment', 'culture', 'company',
+    'benefits', 'offer', 'offers', 'providing', 'provide',
+    'join', 'joining', 'candidates', 'applicant',
+    'communication', 'communication skills', 'interpersonal',
+    'time', 'full', 'part', 'contract', 'permanent',
+    'degree', 'qualification', 'bachelor', 'master', 'diploma',
+    'years', 'year', 'plus', 'least', 'minimum',
+    'excellent', 'outstanding', 'exceptional', 'superior',
+    'highly', 'very', 'extremely', 'incredibly',
+    'day', 'days', 'per', 'week', 'month', 'year',
+    'location', 'office', 'remote', 'hybrid', 'onsite',
+    'salary', 'compensation', 'pay', 'rate', 'bonus',
+    'health', 'insurance', 'leave', 'kiwisaver',
+    'monday', 'friday', 'tuesday', 'wednesday', 'thursday',
+    'please', 'note', 'apply', 'apply now', 'submit',
+    'love', 'excited', 'passionate', 'enthusiastic',
+    'fast', 'paced', 'dynamic', 'agile', 'lean',
+    'about', 'us', 'our', 'them', 'their',
+    'click', 'clicks', 'people', 'posted', 'ago',
+    'promoted', 'hirer', 'responses', 'managed',
+    'matches', 'preferences', 'workplace', 'type',
+    'show', 'match', 'details', 'help', 'stand',
+    'create', 'cover', 'letter', 'beta', 'information',
+    'beneficial', 'advantageous', 'plus', 'bonus',
+    'relevant', 'related', 'similar', 'equivalent',
+    'ability', 'capable', 'comfortable', 'confident',
+    'familiar', 'familiarity', 'exposure', 'awareness',
+    'practical', 'hands', 'on', 'real', 'world',
+    'level', 'senior', 'junior', 'mid', 'intermediate',
+    'lead', 'principal', 'staff', 'architect', 'manager',
+    'director', 'head', 'vp', 'c-level', 'cto', 'ceo',
+    'engineer', 'developer', 'designer', 'analyst',
+    'design', 'develop', 'build', 'test', 'deploy',
+    'support', 'maintain', 'improve', 'optimize',
+    'create', 'implement', 'deliver', 'ship',
+    'collaborate', 'partner', 'work', 'contribute',
+    'drive', 'lead', 'manage', 'coordinate',
+    'ensure', 'confirm', 'verify', 'validate',
+    'understand', 'identify', 'evaluate', 'assess',
+    'analyze', 'review', 'research', 'investigate',
+    'document', 'communicate', 'present', 'report',
+    'follow', 'adhere', 'comply', 'conform',
+    'commitment', 'dedication', 'motivation',
+    'initiative', 'proactive', 'self', 'directed',
+    'deadline', 'pressure', 'fast', 'paced',
+    'changing', 'shifting', 'evolving', 'growing',
+    'results', 'driven', 'focused', 'oriented',
+    'mindset', 'approach', 'philosophy', 'principle',
+    'values', 'mission', 'vision', 'purpose',
+    'diversity', 'inclusion', 'equal', 'opportunity',
+    'gender', 'age', 'ethnicity', 'identity',
+    'disability', 'orientation', 'religion', 'belief',
+    'veteran', 'military', 'protected', 'characteristic',
+    'eligible', 'entitled', 'visa', 'sponsorship',
+    'citizenship', 'residency', 'permit', 'status',
+    'legal', 'lawful', 'authorized', 'work',
+    'closing', 'date', 'deadline', 'closing date',
+    'apply', 'submit', 'send', 'email',
+    'contact', 'phone', 'call', 'text',
+    'website', 'link', 'url', 'page',
+    'reference', 'referral', 'recommend',
+    'assessment', 'test', 'interview', 'screening',
+    'background', 'check', 'reference check',
+    'probation', 'trial', 'period',
+    'termination', 'resignation', 'notice',
+    'overtime', 'shift', 'rotation',
+    'travel', 'relocate', 'relocation',
+    'driver', 'licence', 'license', 'vehicle',
+    'security', 'clearance', 'check',
+    'confidential', 'nda', 'agreement',
+    'intellectual', 'property', 'ip',
+    'non', 'compete', 'non', 'disclosure',
+})
+
+
 def normalize_keywords(jd_keywords: Optional[List[str]]) -> List[str]:
-    """Normalize JD keywords by lowercasing, trimming and de-duplicating."""
+    """Normalize JD keywords by lowercasing, trimming, de-duplicating, and filtering stop words."""
     if not jd_keywords:
         return []
     out: List[str] = []
@@ -30,6 +124,9 @@ def normalize_keywords(jd_keywords: Optional[List[str]]) -> List[str]:
             continue
         normalized = str(kw).strip().lower()
         if not normalized or normalized in seen:
+            continue
+        # Skip stop words and empty terms
+        if not normalized or normalized in STOP_WORDS:
             continue
         seen.add(normalized)
         out.append(normalized)
@@ -57,7 +154,7 @@ def keyword_variant_candidates(keyword: str) -> List[str]:
 
 
 def keyword_hits_in_text(text: str, keywords: List[str]) -> List[str]:
-    """Return the subset of keywords that appear in the text."""
+    """Return the subset of keywords that appear in the text (with word boundary awareness)."""
     if not text or not keywords:
         return []
     normalized_text = normalize_text_for_match(text)
@@ -66,7 +163,11 @@ def keyword_hits_in_text(text: str, keywords: List[str]) -> List[str]:
         matched = False
         for variant in keyword_variant_candidates(keyword):
             normalized_variant = normalize_text_for_match(variant)
-            if normalized_variant and normalized_variant in normalized_text:
+            if not normalized_variant:
+                continue
+            # Use word boundary matching to avoid false positives
+            # e.g., "api" should not match "capital", "rapid"
+            if re.search(r'\b' + re.escape(normalized_variant) + r'\b', normalized_text):
                 matched = True
                 break
         if matched:
@@ -103,7 +204,7 @@ def filter_jd_keywords_by_kb_evidence(
     jd_keywords: Optional[List[str]],
     base: Path,
 ) -> tuple[List[str], List[str]]:
-    """Keep only JD keywords that are supported by KB evidence."""
+    """Keep only JD keywords that are supported by KB evidence (with word boundary matching)."""
     normalized_keywords = normalize_keywords(jd_keywords)
     if not normalized_keywords:
         return [], []
@@ -115,7 +216,10 @@ def filter_jd_keywords_by_kb_evidence(
         hit = False
         for variant in keyword_variant_candidates(keyword):
             normalized_variant = normalize_text_for_match(variant)
-            if normalized_variant and normalized_variant in corpus:
+            if not normalized_variant:
+                continue
+            # Use word boundary matching to avoid false positives
+            if re.search(r'\b' + re.escape(normalized_variant) + r'\b', corpus):
                 hit = True
                 break
         if hit:

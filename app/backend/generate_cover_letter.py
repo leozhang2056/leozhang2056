@@ -81,9 +81,7 @@ _WHY_ME_HOOKS = {
             'That combination fits environments where mobile software must be maintainable, integration-friendly, and reliable under real usage.'
         ),
         'zh': (
-            '鎴戣涓鸿嚜宸遍€傚悎杩欑被鍦烘櫙锛屽洜涓烘垜鐨?Android 缁忛獙涓嶅彧鏄仛鐣岄潰鍔熻兘锛?'
-            '鑰屾槸闀挎湡鍚屾椂瑕嗙洊搴旂敤鏋舵瀯銆佸悗绔泦鎴愩€佽澶囩浉鍏虫祦绋嬨€佸彂甯冩祦姘村拰鐢熶骇闂闂幆銆?'
-            '杩欑缁勫悎姝ｅソ閫傚悎瀵圭淮鎶ゆ€с€侀泦鎴愯兘鍔涘拰鍙潬鎬ф湁楂樿姹傜殑浜т笟绾у洟闃熴€?'
+            '我认为自己非常适合这个岗位，因为我同时具备三项难以兼得的品质：跨层交付能力（移动端、后端与硬件集成）、可验证的生产成果（50万+消息/天、亚200ms延迟、多站点上线效果），以及稳定的工程交付习惯（CI/CD、代码评审和生产环境下的务实排障）。这意味着我能在短期内快速产出，从早期迭代就开始交付可靠结果。'
         ),
     },
     'eroad': {
@@ -1087,7 +1085,7 @@ _CL_CSS = """
     }
 
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
       font-size: 11pt;
       line-height: 1.65;
       color: #111;
