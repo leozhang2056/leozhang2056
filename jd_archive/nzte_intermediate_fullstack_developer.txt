@@ -1,0 +1,49 @@
+Company: New Zealand Trade and Enterprise (NZTE)
+Role: Intermediate Full Stack Developer
+Location: Auckland or Wellington, New Zealand (On-site)
+Type: Permanent, Full-time
+Closing: 12:00pm, 30 Jul 2026 (NZT)
+Source: LinkedIn
+
+About the company:
+NZTE — New Zealand Trade and Enterprise. Purpose: growing New Zealand companies internationally, bigger, better and faster. Government agency supporting NZ businesses on the world stage.
+
+About the role:
+Intermediate Full Stack Developer in Digital & Data team. Hands-on across front-end and back-end. New features, product enhancements, integrations, maintenance, operational support. Works in agile squads with Product Managers, Designers, Analysts, Testers.
+
+Responsibilities:
+- Build and enhance customer-facing and internal digital products
+- Develop across front-end and back-end technologies
+- Work in agile squads with cross-functional teams
+- Contribute to solution design, development, testing, deployment
+- Support existing applications through incident resolution and maintenance
+- Use AI-assisted development tools (GitHub Copilot)
+- Build secure-by-design solutions
+- Manage dependencies and remediate vulnerabilities
+- Review AI-generated code for quality, security and privacy standards
+
+Requirements:
+Required:
+- 4-6 years commercial software development at enterprise level
+- React
+- Node.js
+- TypeScript / JavaScript
+- Azure cloud environments
+- NoSQL or Graph databases
+- Agile delivery
+- Secure software development (auth, authz, vulnerability management, secrets, customer data)
+- AI development tools (GitHub Copilot or equivalent)
+- Work independently, take ownership
+- Collaborate with technical and non-technical stakeholders
+
+Nice to have:
+- Growth mindset
+- Problem-solving orientation
+- Clear technical communication
+- Security-first approach
+
+Benefits:
+- Supportive, collaborative, high-performing team
+- Meaningful digital products
+- Broad range of products to contribute to
+- Career growth and technical development

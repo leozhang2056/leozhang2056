@@ -1,0 +1,26 @@
+Full-Stack Software Development Engineer
+Traffic Safe New Zealand Ltd · South Auckland, New Zealand
+Full-time
+
+About the role
+
+This is a hands-on, individual contributor role for someone who enjoys owning software delivery from start to finish. You'll design, develop, deploy, and support enterprise-grade internal applications across the business.
+
+What you'll do
+- Lead development of internal enterprise applications across the full software development lifecycle
+- Build backend services, APIs, integrations, and frontend web apps using C#, .NET, JavaScript/TypeScript, Angular, SQL, and NoSQL
+- Implement and maintain CI/CD pipelines (Azure DevOps, GitHub Actions, Jenkins, or similar)
+- Support cloud-based deployments across Azure and/or AWS
+- Troubleshoot production issues, perform root-cause analysis, and optimise performance
+- Write and maintain automated unit, integration, and functional tests
+- Contribute to architecture discussions, code reviews, and technical documentation
+- Use AI-assisted development tools such as Claude Code, GitHub Copilot/Codex, or Cursor to work smarter
+
+What you'll bring
+- 3–5 years of hands-on experience in enterprise software development and production application support
+- Backend Expertise: Strong proficiency in the C#/.NET ecosystem (.NET Framework/.NET 8+) alongside practical working knowledge of Go (Golang) for backend services and APIs
+- Frontend Skills: Solid frontend experience using JavaScript/TypeScript and modern frameworks, specifically React and Angular
+- Data & APIs: Strong understanding of REST APIs, OOP, SOLID principles, SQL Server, and NoSQL databases (e.g., MongoDB)
+- Cloud & DevOps: Hands-on experience deploying to AWS (Azure experience is highly valued), alongside Git and automated deployment pipelines
+- AI Tooling: Basic knowledge and practical familiarity with AI-assisted coding tools
+- A practical, detail-oriented approach with the ability to work independently

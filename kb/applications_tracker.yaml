@@ -1667,3 +1667,27 @@ applications:
   cv: true
   cl: false
   status: submitted
+- company: Traffic Safe NZ
+  role: fullstack
+  date: '2026-07-17'
+  cv: true
+  cl: false
+  status: submitted
+- company: Geneva Finance
+  role: fullstack
+  date: '2026-07-17'
+  cv: true
+  cl: false
+  status: submitted
+- company: NZTE
+  role: fullstack
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted
+- company: Tenzing
+  role: backend
+  date: '2026-07-17'
+  cv: true
+  cl: false
+  status: submitted
