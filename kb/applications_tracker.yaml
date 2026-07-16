@@ -918,12 +918,13 @@ applications:
   cl: true
   status: submitted
 - company: Gentrack
+- company: Tenzing
   role: backend
-  date: '2026-06-24'
-  cv: true
+  date: '2026-07-17'
+  cv: false
   cl: true
   status: submitted
-- company: Landlord-Studio
+- company: Tudio
   role: fullstack
   date: '2026-06-24'
   cv: true
@@ -1691,3 +1692,10 @@ applications:
   cv: true
   cl: false
   status: submitted
+- company: Talent
+  role: backend
+  date: '2026-07-17'
+  cv: false
+  cl: true
+  status: submitted
+ubmitted
