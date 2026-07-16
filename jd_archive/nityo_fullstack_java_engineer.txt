@@ -1,0 +1,34 @@
+Fullstack Java Engineer
+Nityo Infotech · Auckland, New Zealand (Hybrid, Contract)
+
+About the Company
+We are looking for a Mid/Senior Full Stack Developer to design, develop, test, and maintain scalable web applications across front-end and back-end layers.
+
+About the Role
+The ideal candidate will have strong hands-on experience with React and/or Angular for front-end development and Java/Spring Boot for back-end services and APIs. The role requires experience delivering secure, maintainable, and high-quality applications in an agile environment, with strong collaboration across product, QA, DevOps, architecture, and delivery teams.
+
+Responsibilities
+- Design, develop, test, deploy, and maintain end-to-end web applications.
+- Build responsive, accessible, and user-friendly front-end interfaces using React and/or Angular.
+- Develop secure, scalable, and maintainable back-end services/APIs using Java and Spring Boot.
+- Design and optimise database models, queries, and data access patterns.
+- Integrate internal and third-party systems using REST APIs, enterprise services, and secure authentication mechanisms.
+- Collaborate with product owners, architects, designers, QA, DevOps, and security teams.
+- Participate in sprint planning, estimation, backlog refinement, and agile ceremonies.
+- Contribute to solution design, code reviews, debugging, performance tuning, and production issue resolution.
+- Write and maintain unit, integration, and API tests to support reliable software delivery.
+- Follow secure coding standards, CI/CD practices, branching strategies, and agile delivery methods.
+- Create and maintain technical documentation, including API specifications, design notes, and deployment/support documentation.
+
+Qualifications
+- Strong hands-on experience with JavaScript and TypeScript.
+- Strong experience with front-end frameworks, specifically React and/or Angular.
+- Strong experience with Java and Spring Boot for back-end service and API development.
+- Good understanding of RESTful API design, JSON, authentication, authorisation, and API security.
+- Experience with secure API design, vulnerability awareness, secrets handling, role-based access control, and OWASP guidelines.
+- Experience with relational and/or NoSQL databases such as PostgreSQL, MySQL, SQL Server, MongoDB, or Oracle.
+- Strong knowledge of HTML5, CSS3, responsive design, accessibility, and UI engineering best practices.
+- Experience writing unit, integration, and API tests using appropriate testing frameworks.
+- Experience with Git, pull requests, code reviews, CI/CD pipelines, and Agile/Scrum delivery.
+- Experience participating in sprint planning, estimation, backlog refinement, and cross-functional collaboration with product, QA, and DevOps teams.
+- Strong debugging, problem-solving, communication, and collaboration skills.
