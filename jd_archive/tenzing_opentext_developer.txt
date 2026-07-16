@@ -1,0 +1,35 @@
+OpenText Developer
+Tenzing · Auckland CBD, New Zealand (Hybrid)
+
+About the Role
+We're looking for an experienced OpenText Technical Consultant to join our team in Auckland, bringing expertise in enterprise content management and systems transformation. In this role, you'll work on large-scale ECM implementations, leveraging your deep knowledge of the OpenText Content Server suite and related technologies.
+
+You'll be hands-on with development and administration tasks, including scripting with OScript, workflow design, and integration with platforms like SAP and Microsoft 365. Your ability to navigate ambiguity, communicate clearly, and deliver client-focused solutions will be key to your success. This is a dynamic role suited to someone who thrives in Agile environments, enjoys solving complex problems, and is confident working independently and collaboratively.
+
+This role sits within our Information Services practice - one of four key areas at Tenzing, alongside Technology Services, Management Consulting, and Managed Services. The Information Services team partners with clients to deliver all things data including data science, data warehousing, and data migrations. We use proven methodologies along with industry leading technology (like Snowflake!) to create scalable and sustainable data solutions tailored to our customer's needs.
+
+What You Bring
+You'll have OpenText certification and consulting experience with large ECM implementations with proven ability in:
+- Administration and development with OpenText Content Server suite products
+- Exposure to OpenText Archive Center, Extended ECM for SAP, Extended ECM for M365 etc.
+- OScript and web report development
+- Programming experience with .Net, C# or Java
+- Workflow design and development
+- Documentation, with good written and spoken English language skills
+- Agile systems implementations
+
+It's also important you bring a client-focused mindset, strong communication skills and the ability to navigate ambiguity with confidence.
+
+Why Join Tenzing?
+At Tenzing, we've been helping clients scale their mountains for over twenty years. We call it the Sherpa ethos - standing alongside our clients, doing the heavy lifting, and guiding them through complex transformations. As trusted partners in change, we work with some of Australasia's leading organisations to deliver strategic and operational impact across industries.
+
+What We Offer
+- Competitive Salary
+- Discretionary annual bonus
+- Flexible and hybrid working options
+- Ability to purchase additional annual leave
+- Life and Income Protection Insurance (fully subsidised)
+- Discounted Medical Insurance
+- Comprehensive Learning & Development programmes
+- Wellbeing support including EAP and flu vaccinations
+- Inclusive culture with regular social events and celebrations
