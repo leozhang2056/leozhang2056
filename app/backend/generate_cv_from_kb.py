@@ -4680,7 +4680,12 @@ async def generate_cv_from_kb(
         role_tag_lower = role_type.lower()
         company_slug = _slugify_company(company_name)
         suffix = f"_{company_slug}" if company_slug else ""
-        display_name = profile.get('personal_info', {}).get('preferred_name', 'Leo Zhang').replace(' ', '_')
+        # Load profile early for display name in output path
+        try:
+            _early_profile = load_yaml(repo_root / 'kb' / 'profile.yaml')
+            display_name = (_early_profile or {}).get('personal_info', {}).get('preferred_name', 'Leo Zhang').replace(' ', '_')
+        except Exception:
+            display_name = 'Leo_Zhang'
         en_path = str(dated_outputs_dir / f'CV_{display_name}_{today}_{role_tag_lower}{suffix}.pdf')
         zh_path = (
             str(dated_outputs_dir / f'CV_{display_name}_{today}_{role_tag_lower}{suffix}_CN.pdf')

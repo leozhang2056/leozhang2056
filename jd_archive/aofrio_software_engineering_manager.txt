@@ -1,0 +1,44 @@
+Company: AoFrio Ltd
+Role: Software Engineering Manager
+Location: Albany, Auckland, New Zealand (On-site)
+Type: Full-time, Permanent
+Source: LinkedIn
+
+About the company:
+AoFrio — NZX-listed global leader in IoT solutions for commercial refrigeration. Hardware-enabled SaaS. Connected technology inside commercial fridges worldwide for brands like Coca-Cola, PepsiCo, AB InBev. Offices in 4 countries, team across 12 countries. HQ in Albany, NZ. "World of Cold."
+
+About the role:
+Software Engineering Manager — own development and maintenance of mobile and web application suite. Hands-on technical leadership, shipping alongside the team. Lead cross-functional squads. Set architecture, security, code quality standards. Champion AI development tools.
+
+Responsibilities:
+- Lead mobile and web app development at centre of global SaaS growth
+- Hands-on technical leadership — ship alongside team
+- Set architecture, security and code quality standards
+- Lead design, development, delivery of scalable web and mobile applications
+- Build high-performing teams
+- Drive agile and secure development practices
+- Mentor engineers
+- Champion AI development tools to accelerate delivery
+- Scale application suite from supporting business to driving it
+
+Requirements:
+Required:
+- Application development at senior/lead level
+- Solid experience building and leading strong engineering teams
+- Proficiency in Flutter, Dart and agile project management
+- Habit of ongoing learning — applying AI advances, automation, new approaches
+
+Nice to have:
+- IoT experience
+- SaaS product experience
+- Enterprise B2B environment experience
+
+Benefits:
+- Health Insurance (Southern Cross WellbeingOne, all covered)
+- EAP program + yearly flu shots
+- Flexible hours
+- Work-From-Anywhere 4 weeks/year
+- Parental leave top-up (12 weeks primary, 1 week partner)
+- Professional development funds
+- Free parking + free EV charging
+- Monthly cake celebrations, snacks, fruit

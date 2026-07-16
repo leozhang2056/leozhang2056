@@ -1,0 +1,29 @@
+Principal Digital Platform Engineer
+Tribe Group · Auckland, New Zealand (On-site)
+Full-time
+
+About The Opportunity
+
+A large, high-profile New Zealand consumer business is in the midst of a genuine digital transformation, shifting from vendor-led delivery to building stronger, longer-term in-house engineering capability. This is a pivotal hire into a small but mighty senior team that sits at the heart of a high-traffic digital platform used by hundreds of thousands of customers each month.
+
+Key responsibilities:
+- Leading technical design and decision-making across a modern services environment, with a strong focus on reliability, performance and maintainability
+- Building and evolving backend services in Java and Spring Boot
+- Working in an AWS environment and applying cloud-native patterns and pragmatic operational excellence
+- Establishing and uplifting engineering standards and reusable patterns that teams actually adopt
+- Coaching senior engineers, strengthening capability, and setting a calm, practical tone in delivery and incident situations
+- Taking on line management for a small but mighty engineering team (currently 2 engineers, with an additional hire underway)
+- Participating in an on-call roster supporting a 24/7 operational platform with a focus on improving stability and reducing repeat issues over time
+
+What You'll Bring
+- Very strong Java engineering experience (you've built and supported systems that matter)
+- Solid commercial experience with Spring Boot in modern, service-based environments
+- Strong AWS capability (architecture, deployment patterns, production operations)
+- Confidence working in distributed systems and production environments where reliability and performance aren't optional
+- Comfort using modern development productivity tooling, including Claude (AI), to support faster iteration, experimentation and agentic workflows where appropriate
+
+Beyond the tech:
+- You communicate clearly and bring people with you, especially when priorities compete
+- You can influence across teams without relying on hierarchy
+- You're pragmatic: you know when to perfect something and when to make a safe, sensible trade-off
+- You care about lifting others through coaching, strong review habits, and improving how work gets delivered

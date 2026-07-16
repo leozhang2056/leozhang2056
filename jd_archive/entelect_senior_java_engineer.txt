@@ -1,0 +1,51 @@
+Company: Entelect
+Role: Senior Java Software Engineer
+Location: Auckland, New Zealand (Hybrid, 2-3 days in office)
+Type: Full-time, Permanent
+Source: LinkedIn
+
+About the company:
+Entelect — software engineering consultancy. Multidisciplinary environment, culture of growth, collaboration and innovation. Clients in South Africa (expanding to NZ). Strong focus on people development with regular one-on-ones.
+
+About the role:
+Senior Java Software Engineer — develop world-class web and mobile applications. Participate in full SDLC. Research innovative technologies. Mentor colleagues. Build customer relationships.
+
+Responsibilities:
+- Develop web and mobile applications for leading organisations
+- Enhance product quality through containerisation and CI
+- Engage in full SDLC: design, analysis, scoping, estimation
+- Research and implement innovative technologies
+- Champion change, foster collaborative culture
+- Mentor colleagues, uphold standards
+- Build strong customer relationships
+- Ensure compliance with data security and regulations
+
+Requirements:
+Required:
+- Bachelor's degree in IT, Engineering or related
+- 6+ years experience as software engineer in enterprise
+- Software engineering fundamentals, clean code, best practices
+- Mastery of various technologies, agile to new frameworks
+- Architecture and structuring small projects in enterprise
+- Strong collaboration and communication
+- Pro hybrid working model
+- Strong customer-facing ability
+- Flexibility across environments and tooling
+
+Nice to have:
+- Spring, Spring Boot
+- Angular, React, Vue
+- JPA, Hibernate
+- Oracle, MSSql, PostgreSQL, MySQL
+- MongoDB, Cosmos DB
+- Maven/Gradle
+- Azure, AWS
+- Terraform, Bicep
+- Kafka, RabbitMQ, Amazon SQS
+
+Benefits:
+- Hybrid working
+- $400 work-from-home setup allowance
+- Birthday leave
+- Regular one-on-ones and quarterly reviews
+- Continuous development programs (leadership + technical)

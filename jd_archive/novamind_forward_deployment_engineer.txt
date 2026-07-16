@@ -1,0 +1,43 @@
+Forward Deployment Engineer
+Novamind Labs · Auckland, New Zealand (Hybrid)
+
+About Novamind
+Novamind Labs is an enterprise AI governance company building the infrastructure that makes AI safe, auditable, and accountable for business. Our flagship platform, Novie, helps enterprises transform uncontrolled "Shadow AI" into structured, compliant, production-ready AI capability.
+
+About the Job
+Forward Deployment Engineers (FDEs) are our most client-facing engineers. You will embed directly with enterprise customers, understand their business and technical reality deeply, and build real, working AI solutions on top of the Novie platform that solve their most pressing problems.
+
+This is not a traditional support or implementation role. You are a builder and a problem-solver who sits at the intersection of engineering, product, and customer strategy. One day you might be mapping a client's compliance requirements with their legal team; the next you are writing code to configure agents, building custom workflows, or designing a governance architecture that fits their organisation.
+
+Critically, your work does not stay siloed with one client. A core part of your mission is to convert what you learn and build in the field into reusable blueprints, templates, and product capability that benefits every Novie customer.
+
+What You'll Do
+- Embed & Understand: Embed directly with enterprise clients to understand their business goals, technical environment, and operational constraints. Translate ambiguous business problems into clear, structured technical requirements. Map client workflows, data sources, compliance needs, and governance requirements.
+- Build & Deploy: Design and build working AI solutions, agents, and workflows on the Novie platform for client use cases. Configure governance controls, approval chains, and human-in-the-loop checkpoints to fit each client's needs. Integrate Novie with client systems, data sources, and existing infrastructure. Own the technical delivery from design through to production deployment.
+- Convert Field Work to Product: Turn client-specific solutions into reusable blueprints, templates, and reference architectures. Feed real-world insights and requirements back to the product and engineering teams.
+- Drive Customer Success: Be a trusted technical advisor to client stakeholders, from developers to CIOs. Ensure clients achieve real, measurable value from Novie.
+
+What We're Looking For
+Core Requirements:
+- 3+ years of software engineering experience, with strong hands-on coding ability
+- Proven ability to work directly with customers and translate business problems into technical solutions
+- Strong proficiency in Python and/or JavaScript/TypeScript
+- Experience integrating with APIs, data systems, and enterprise software
+- Excellent communication skills
+- A self-directed, ownership-driven approach: you thrive with autonomy and ambiguity
+- Willingness to travel regionally for client engagements as required
+- Strong written and verbal communication in English
+
+Strong Advantage:
+- Experience with AI/ML systems, LLMs, agent frameworks, or AI orchestration
+- Background in solutions engineering, professional services, consulting, or other client-facing technical roles
+- Experience with enterprise integration, cloud infrastructure (AWS, Azure, GCP), and data pipelines
+- Familiarity with enterprise governance, security, or compliance contexts
+- Bilingual in English and Mandarin/Cantonese, given our Greater China and Asia-Pacific client base
+- Experience at an early-stage startup or in a 0-to-1 product environment
+
+What We Offer
+- One of the most impactful and visible roles in the company, working directly with our founding team and our most important customers
+- Direct influence over both customer outcomes and the Novie product roadmap
+- Exposure to a wide range of industries and enterprise AI challenges
+- A front-row seat to building one of New Zealand's most ambitious enterprise AI companies

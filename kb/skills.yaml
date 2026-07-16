@@ -655,6 +655,29 @@ cloud_sync:
     evidence:
       - Backup automation
 
+# Productivity & Business Tools
+productivity_tools:
+  - name: Microsoft Office Suite
+    level: advanced
+    years: 10
+    evidence:
+      - Word, Excel, Outlook, PowerPoint daily use
+      - Teams for collaboration and communication
+      - SharePoint for document management
+
+  - name: Microsoft Teams
+    level: advanced
+    evidence:
+      - Team collaboration and video conferencing
+      - Channel management and file sharing
+
+  - name: Service Desk / IT Support
+    level: intermediate
+    evidence:
+      - Hardware and software troubleshooting
+      - Incident resolution and ticket management
+      - End-user support and communication
+
 # System Administration
 system_admin:
   - name: Active Directory
@@ -754,6 +777,10 @@ categorized_skills:
   tools_devops:
     label: "Tools & DevOps"
     skills: [Git, GitHub, GitLab, Version Control, CI/CD, Docker, Kubernetes, Octopus Deploy, Linux, Jenkins, Code Review, Agile/Scrum]
+
+  it_support:
+    label: "IT Support & Productivity"
+    skills: [Microsoft Office, Microsoft Teams, Hardware Troubleshooting, Software Troubleshooting, Service Desk, Ticket Management, Active Directory, Windows Server]
   
   ai_emerging:
     label: "AI & Emerging Technologies"

@@ -1577,3 +1577,93 @@ applications:
   cv: true
   cl: false
   status: submitted
+- company: TRV Trading
+  role: backend
+  date: '2026-07-14'
+  cv: true
+  cl: true
+  status: submitted
+- company: FDM Group
+  role: backend
+  date: '2026-07-16'
+  cv: false
+  cl: true
+  status: submitted
+- company: The AA
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Slalom
+  role: fullstack
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: ANZ
+  role: fullstack
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Datacom
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: ZURU
+  role: ai
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Talent
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: AoFrio
+  role: android
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Tribe Group
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: Novamind Labs
+  role: ai
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: The Warehouse Group
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Entelect
+  role: backend
+  date: '2026-07-16'
+  cv: true
+  cl: true
+  status: submitted
+- company: Parkable
+  role: fullstack
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted
+- company: Nityo Infotech
+  role: fullstack
+  date: '2026-07-16'
+  cv: true
+  cl: false
+  status: submitted

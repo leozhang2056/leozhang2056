@@ -1,38 +1,40 @@
-Company: Datacom
-Role: Junior Application Engineer
-Location: Auckland or Tauranga, New Zealand (Hybrid)
-Type: Full-time
-Posted: ~2026-07-08 (recent as of 2026-07-11)
-Source: LinkedIn
+Junior Application Engineer
+Datacom · Auckland, New Zealand (Remote)
+Full-time, Remote
 
-About the company:
-Datacom is one of Australia and New Zealand's largest IT professional services suppliers. Dynamic, agile, small business feel. Local Government Product Engineering team builds ERP product Datascape.
+About The Role
 
-About the role:
-Junior Application Engineer contributing to building ERP product Datascape. Designed for someone early in their career. Configuring customer solutions using proprietary low-code platform. Progressive greater ownership over delivery.
+You'll be joining Datacom's Local Government Product Engineering team as a Junior Application Engineer, contributing to the building of our ERP product, Datascape.
 
-Responsibilities:
-- Design, build and test product changes while learning engineering patterns
-- Work with experienced engineers to understand business requirements
-- Investigate issues, troubleshoot problems, maintain existing functionality
-- Produce and maintain technical documentation, knowledge articles
-- Participate in planning, reviews and continuous improvement
-- Learn modern software engineering including AI-assisted development
+This role is designed for someone early in their career who wants to develop into an exceptional engineer. You'll work alongside experienced team members to solve real customer problems, contribute to a large enterprise product and learn how modern software and product teams operate. This position centres around configuring customer solutions using system functionality within our proprietary low-code platform, with progressively greater ownership over delivery as you develop.
 
-Requirements:
+We're less interested in finding someone who already knows ERP systems and more interested in finding someone with strong technical fundamentals, curiosity, and a genuine desire to learn.
+
+What You'll Do
+- Designing, building and testing product changes while learning established engineering patterns and practices
+- Working with experienced engineers and product specialists to understand business requirements and deliver quality solutions
+- Investigating issues, troubleshooting problems and helping maintain existing product functionality
+- Producing and maintaining technical documentation, knowledge articles and supporting materials
+- Participating in team delivery activities including planning, reviews and continuous improvement initiatives
+- Learning modern software engineering approaches, including automation, AI-assisted development and emerging agentic engineering practices
+
+What You'll Bring
+
 Required:
-- 1-2 years experience in technical, analytical, software-related or IT role
-- Bachelor's degree in CS, Software Engineering, Information Systems, Engineering, Science
+- Around 1–2 years' experience in a technical, analytical, software-related or IT role, or equivalent practical experience
+- A Bachelor's degree in Computer Science, Software Engineering, Information Systems, Engineering, Science or a related discipline
 - Strong analytical and problem-solving skills
-- Genuine interest in software engineering
-- Confident experience with AI tools
-- Good verbal and written communication
-- Team collaboration, attention to detail
+- A genuine interest in software engineering, systems and technology
+- Confident, practical experience with AI tools and their application in a professional setting
+- Curiosity and a willingness to learn unfamiliar technologies and business domains
+- Good verbal and written communication skills
+- Ability to work collaboratively within a team environment
+- Strong attention to detail and pride in producing quality work
 
 Nice to have:
-- Databases and data structures
-- Git version control
-- APIs and data formats (JSON, XML)
-- Software delivery lifecycle
-- Enterprise software and business systems
-- Agile delivery approaches
+- Exposure to databases and data structures and how data is organized
+- Source control and Git familiarity for version management
+- Working knowledge of APIs and data formats such as JSON and XML
+- Exposure to software delivery practices across the development lifecycle
+- Experience with enterprise software and business systems
+- Familiarity with Agile delivery approaches and iterative delivery

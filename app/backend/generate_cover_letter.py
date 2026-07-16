@@ -112,6 +112,16 @@ _WHY_ME_HOOKS = {
             "同时我适应分布式敏捷协作，能够清晰沟通技术取舍。"
         ),
     },
+    'trv trading': {
+        'en': (
+            "What attracts me most to TRV is the opportunity to solve difficult engineering problems where software quality and performance directly influence business outcomes. "
+            "I enjoy building reliable, efficient systems and understanding the underlying technical details that make them fast and scalable. "
+            "One aspect of the role that particularly interests me is working on low-latency systems and real-time data processing. "
+            "Although high-frequency trading is a new domain, I find the engineering challenges highly motivating — problems involving concurrency, synchronization, "
+            "performance optimisation, memory efficiency, and system reliability are areas I genuinely enjoy exploring. "
+            "I am confident that my strong software engineering background and analytical approach will allow me to contribute while learning from your experienced team."
+        ),
+    },
 }
 
 

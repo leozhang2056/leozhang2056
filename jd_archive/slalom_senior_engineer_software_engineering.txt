@@ -1,0 +1,27 @@
+Senior Engineer - Software Engineering
+Slalom · Auckland, NZL
+Business Function: Cloud innovation & modernization
+
+About Slalom Build
+
+Slalom Build is Slalom's technology powerhouse, dedicated to Engineering and Experience Design. We build fast, clean, reliable code that drives business outcomes for our clients every day. We leverage cutting-edge patterns, platforms, and services to build digital products that scale well into the future.
+
+Technologies include:
+- Front-end: React, Angular, Vue (native mobile and modern web)
+- APIs and back-end: Node, TypeScript, Java, .NET Core, Golang
+- Cloud: AWS, Azure, GCP (hosting, Generative AI, application services)
+- Operational efficiencies: modern ecosystems, automated build and deployment pipelines
+- Collaborative build practices including Generative AI tooling
+
+What You Will Do
+- Write high-quality application code using emerging technologies and frameworks primarily targeting cloud-based ecosystems
+- Collaborate with other software development capabilities to iteratively develop, validate, and operate software at scale using agile techniques
+- Verify components at the unit and integration level using proven validation techniques
+- Develop supporting scripts and routines that automate procedures and help maintain components in production environments
+
+What You Will Bring
+- Recent, practical experience using a modern programming language. Ideally: AWS (essential), React (essential), and Java/.NET Core/Python
+- Experience developing multi-platform software utilising various programming environments and tools
+- Passionate about crafting and delivering high-quality products that meet and exceed customer expectations
+- A passion for ongoing learning and enhancing technical expertise
+- Strong problem-solving and software triage skills with the ability to work cross-functionally in a constantly evolving work environment

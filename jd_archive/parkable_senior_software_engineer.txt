@@ -1,0 +1,23 @@
+Senior Software Engineer
+Parkable · Auckland, New Zealand (Hybrid)
+Full-time
+
+About Parkable
+
+Parkable is the global software company fixing the problem everyone drives past: parking. We make parking fair and stress-free for drivers and turn empty space into revenue for asset owners, with AI doing the work in the real world.
+
+AI at Parkable. AI fluency is an expectation in every role here. You'll use AI tools as a regular part of how you work. In this role you'll also model that and help your team build it.
+
+What you'll do
+- Help shape our AI-enabled product work and the calls on where AI adds real value
+- Guide the architectural direction of our mobile and web platforms
+- Support technical delivery end to end with Product, Design and QA
+- Coach and mentor the engineers around you, and lift how the whole team builds
+- Care for the reliability and security of what we ship at scale
+
+What you'll bring
+- 4+ years full-stack in a commercial setting: Java (or similar backend), React and TypeScript
+- Experience guiding architectural decisions and technical direction
+- Depth in cloud-native architecture (GCP, AWS or Azure), CI/CD, API design, and SQL/NoSQL data modelling
+- Fluency with AI-assisted development
+- A genuine pull toward growing other engineers

@@ -1,0 +1,45 @@
+Company: ANZ Bank New Zealand
+Role: Software Engineer (Full Stack)
+Location: Auckland or Wellington, New Zealand (On-site)
+Type: Permanent, Full-time (37.5 hrs/week)
+Source: LinkedIn
+
+About the company:
+ANZ Bank — one of Australia and New Zealand's largest banking groups. Shaping a world where people and communities thrive. Millions of customers across NZ and Australia.
+
+About the role:
+Full Stack Software Engineer delivering end-to-end solutions across frontend and backend. Strong emphasis on intuitive UI and API development. Customer-facing sales experiences — fast, reliable, secure. Works across Digital ecosystems: Online Store, Sales Delivery Platform, OPAL, ANZ Apply.
+
+Responsibilities:
+- Design and deliver high-quality software across full SDLC
+- End-to-end feature collaboration with Product Owners, BAs, Designers, Architects
+- Apply modern engineering practices: clean code, automated testing, code reviews, CI/CD
+- Hands-on technical leadership — mentoring, guiding technical decisions
+- Monitor and improve platform health — technical debt, logs, metrics, dashboards, alerts
+- Embed security by design, comply with standards and controls
+- Support incident management — diagnose issues, improve operability, reduce manual toil
+- Contribute to agile ways of working, continuous improvement
+
+Requirements:
+Required:
+- 4+ years building and running production software
+- Backend: Java 11+ with Spring Boot and/or Node.js; microservices architecture
+- Frontend: React with TypeScript; Next.js (SSR/SSG); UI frameworks/design systems
+- APIs: REST (OpenAPI/Swagger), JSON; event-driven patterns; secure API design
+- Data: SQL (PostgreSQL, SQL Server); schema design and query optimisation
+- Version control: Git (Bitbucket/GitHub)
+- CI/CD: Jenkins, Codefresh or equivalent; automated build, test, deployment
+- Cloud: AWS (EKS, Elasticache, Lambda, SQS, EC2) or similar
+- Observability: Dynatrace and/or Splunk (logs, metrics, alerting)
+- Security: Secure coding standards; secrets management; IAM fundamentals
+- Agile delivery: Estimation, refinement, sprint practices
+- Strong collaboration and clear technical communication
+
+Nice to have:
+- UI frameworks/design systems experience
+- Growth mindset
+
+Benefits:
+- Career development support, tools, and resources
+- Part of ANZ work whānau
+- Flexible location: Auckland or Wellington
