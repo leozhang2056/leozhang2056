@@ -1,0 +1,37 @@
+Java Backend Engineer - e-Commerce (Fully Remote)
+Binance · Auckland, New Zealand (Remote)
+
+About Binance
+Binance is a leading global blockchain ecosystem behind the world's largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for our industry-leading security, user fund transparency, trading engine speed, deep liquidity, and an unmatched portfolio of digital-asset products. Binance offerings range from trading and finance to education, research, payments, institutional services, Web3 features, and more.
+
+About the Role
+We are seeking a highly skilled and experienced Backend Java Engineer to join our dynamic team - Binance BigPay. The ideal candidate will have a strong background in Java development, with a focus on building high-performance, scalable, and reliable backend systems. This role is particularly suited for individuals with experience in designing system architectures in Web3 or financial payment systems, and will involve solving complex technical challenges, ensuring system performance and stability, and collaborating with cross-functional teams to deliver high-quality projects.
+
+This role is 100% remote, work from home based.
+
+Responsibilities:
+- Develop and implement business modules and core frameworks in Java
+- Identify and resolve technical issues in Java backend systems to ensure optimal performance and stability
+- Collaborate on the architecture and design of financial systems, including core modules
+- Collaborate with cross-functional teams to ensure the rationality of system architecture and safeguard project quality and progress
+- Participate in code reviews and provide constructive feedback
+- Continuously improve and optimize existing systems for performance, scalability, and reliability
+
+Requirements:
+- At least 5 years+ of Java development experience from e-Commerce or financial sectors
+- Familiar with technology frameworks such as Spring and MyBatis, as well as common NoSQL technologies
+- Basic proficiency in English communication
+- Experience working on blockchain or financial systems is a big plus
+- Experience with mainstream development frameworks and common distributed system components, including caching and messaging mechanisms
+- Capable of independent system design, with experience in high-concurrency, high-availability, and high-load development
+- Experience in designing, developing, and tuning large-scale distributed systems
+- Strong problem-solving skills and the ability to provide effective solutions to complex technical issues
+- Experience in the crypto industry is advantageous
+
+Why Binance
+- Shape the future with the world's leading blockchain ecosystem
+- Collaborate with world-class talent in a user-centric global organization with a flat structure
+- Tackle unique, fast-paced projects with autonomy in an innovative environment
+- Thrive in a results-driven workplace with opportunities for career growth and continuous learning
+- Competitive salary and company benefits
+- Work-from-home arrangement
