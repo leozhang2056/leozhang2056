@@ -1,0 +1,44 @@
+Application Support / Software Developer
+Geneva Finance Limited · Auckland, New Zealand (Hybrid)
+
+Build. Support. Improve. Make an Impact.
+
+Are you a hands-on Software Developer who enjoys solving problems, supporting business-critical applications, and delivering practical solutions that make a real difference?
+
+Geneva Finance is looking for an experienced Application Support / Software Developer to join our Auckland-based team. This is a varied role where you'll work across software development, application support, reporting, troubleshooting, integrations, and system enhancements in a dynamic financial services environment.
+
+What You'll Be Doing
+- Supporting and troubleshooting business-critical applications
+- Developing and enhancing software solutions to meet business needs
+- Writing and maintaining code using Visual Basic, SQL, and C#
+- Developing and supporting web-based applications
+- Building insightful Power BI dashboards and reports
+- Testing system changes, upgrades, and integrations
+- Supporting finPOWER Connect configuration, upgrades, and ongoing optimisation
+- Working with vendors and third-party providers to resolve technical issues
+- Documenting processes, procedures, and technical solutions
+- Identifying opportunities for automation and operational efficiencies
+- Supporting cyber security and infrastructure improvement projects
+
+What We're Looking For
+Essential Skills & Experience:
+- Proven software development experience
+- Strong skills in Visual Basic, SQL, and C#
+- Excellent troubleshooting and problem-solving abilities
+- Ability to work autonomously and manage multiple priorities
+- Strong documentation and communication skills
+- A practical, solutions-focused mindset
+
+Highly Regarded:
+- Experience with finPOWER Connect
+- Web application development experience
+- Power BI reporting and dashboard development
+- Experience supporting business-critical applications in a commercial environment
+
+Why Join Geneva Finance?
+- Diverse role with a mix of development, support, reporting, and project work
+- Opportunity to become a key technical specialist within the business
+- Work directly with decision-makers and business stakeholders
+- Small, collaborative team where your contribution is visible and valued
+- Modern hybrid technology environment spanning cloud and on-premise systems
+- Competitive salary package
