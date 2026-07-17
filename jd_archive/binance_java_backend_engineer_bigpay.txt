@@ -1,0 +1,31 @@
+Binance Accelerator Program - Java Backend Engineer
+Binance
+Auckland City, Auckland (Remote)
+Full-time
+
+Binance is a leading global blockchain ecosystem behind the world's largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for our industry-leading security, user fund transparency, trading engine speed, deep liquidity, and an unmatched portfolio of digital-asset products.
+
+Binance Accelerator Program is a 6-month full-time internship designed for students and fresh graduates to gain hands-on experience in a fast-paced Web3 environment. Interns are expected to commit 5 working days per week (Monday to Friday) and will contribute to real projects while learning from experienced mentors across the organization.
+
+Requirements:
+- Contribute to the development and continuous improvement of Binance's BigPay platform at global scale
+- Define and document clear API contracts between Bigpay services and downstream consumers
+- Demonstrate strong troubleshooting skills to solve problems provided by QA team
+- Assist the CS team to solve customer problems and classify them for system improvement
+
+Responsibilities:
+- Computer-related major, Bachelor or Masters Degree
+- Have a solid Java foundation and understand basic frameworks, such as multithreading and networking
+- Familiar with Spring Microservice framework and understanding of its operation mechanism
+- Familiar with MySQL database and common middleware such as Redis, RabbitMQ and Kafka
+- Good logical thinking ability, strong sense of teamwork and strong learning ability
+- Fluency in English is required to be able to coordinate with overseas partners and stakeholders. Additional languages would be an advantage
+- Experience with open source projects is preferred
+
+Why Binance:
+- Shape the future with the world's leading blockchain ecosystem
+- Collaborate with world-class talent in a user-centric global organization with a flat structure
+- Tackle unique, fast-paced projects with autonomy in an innovative environment
+- Thrive in a results-driven workplace with opportunities for career growth and continuous learning
+- Competitive salary and company benefits
+- Work-from-home arrangement

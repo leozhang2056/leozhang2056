@@ -1,0 +1,52 @@
+Company: Centrapay
+Role: Software Engineer (Full Stack)
+Location: Auckland, New Zealand (Flexible/Remote OK)
+Type: Full-time, Permanent
+Source: LinkedIn
+
+About the company:
+Centrapay — fintech revolutionising payments in-store and online. Partners include Coca-Cola, BNZ, Farmlands. Processing payments in NZ and AU. Building Payap app (www.payap.com). BNZ and Centrapay partnering to lead payment innovation.
+
+About the role:
+Full Stack Engineer working on real projects — self-service partner tools, multiplayer money experiences in Payap, fraud detection. Ship features end-to-end, own them in production. Learn by building, not specs.
+
+Real projects from roadmap:
+- Self-service tools: business idea → live loyalty programme in 10 minutes
+- Payap: split payments, shared challenges, group payment UX
+- Fraud detection: catch card testing without blocking legit transactions
+
+How they work:
+- Build it, run it, own it — end-to-end ownership
+- Business problems, not specs
+- Deploy to production daily, push code day one
+- 10% time and Hackathons
+- Async-first, clear writing valued
+
+Stack:
+- AI tools: Claude Code, Cursor, GitHub Copilot
+- Backend: Node.js, DynamoDB, Redis, Vitest
+- Frontend: Vue.js, Tailwind CSS, Astro, Testing Library, Playwright
+- Infrastructure: AWS, Kubernetes, Terraform, Honeycomb, OpenTelemetry
+- Tooling: Claude, GitHub, Slack, Notion, Figma
+
+Requirements:
+Required:
+- 4+ years shipping real code to users
+- Startup experience preferred, end-to-end ownership
+- Clear writing (async-first)
+- Comfortable with ambiguity — talk to users, figure out what to build
+
+Nice to have:
+- Vue.js experience (not required — React devs learn in a week)
+- Fintech/payments experience
+- AWS, Node.js experience
+
+Benefits:
+- Flexible working
+- City Works Depot office (Auckland)
+- 6 weeks annual leave
+- MacBook Pro
+- Free health insurance (Southern Cross)
+- Free life insurance
+- Additional parental leave
+- Training and development

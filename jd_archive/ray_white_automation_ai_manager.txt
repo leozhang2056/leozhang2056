@@ -1,0 +1,32 @@
+Company: Ray White Remuera / Megan Jaffe Real Estate
+Role: Automation & AI Manager
+Location: Remuera, Auckland, New Zealand
+Type: Full-time
+Source: Seek
+Posted: ~2026-07-14 (3 days ago)
+
+About the company:
+Megan Jaffe Real Estate — the number one office for Ray White International. Already has substantial automation and AI infrastructure in place.
+
+About the role:
+Automation & AI Manager — build on existing automation and AI infrastructure. Hands-on role solving real operational problems through code and automation.
+
+Responsibilities:
+- Build and maintain Make.com (and/or Zapier) scenarios connecting CRM, marketing, compliance, accounting systems
+- Design AI-powered workflows using LLMs — document processing, data matching, smart notifications
+- Work with structured data across Airtable and SQL-based systems
+- Troubleshoot and refine existing workflows, identify root causes, implement durable fixes
+
+Requirements:
+Required:
+- Solid hands-on experience with Make.com and/or Zapier
+- Genuine interest in AI/LLMs — prompt design, API integration, tool use
+- Comfortable thinking in data structures and relationships
+
+Nice to have:
+- SQL and/or Airtable experience
+- Web development exposure (Next.js, APIs)
+
+Benefits:
+- Hands-on role with real operational impact
+- Work with existing AI infrastructure

@@ -1,0 +1,30 @@
+Full Stack Software Engineer - Smartly (a Datacom company)
+Datacom · Auckland, New Zealand (Remote)
+$75,000 - $95,000 a year - Full-time
+
+About Smartly
+
+We exist to make it simpler for Kiwi businesses to look after their people. We're known as the simple way to sort your payroll for over 20,000 businesses. As a fast-growing FinTech expanding into adjacent markets, Smartly offers a fast-paced, fun work environment with great opportunities for personal and professional development.
+
+About the Role
+
+As a Full Stack Engineer, you will work on our Smartly Payroll System, a SaaS Online Payroll Product. Our ideal candidate will have at least 2 years of experience working on the front end and back end; also have a strong ability to solve problems, design & write clean code; and mentor junior engineers.
+
+What you'll do
+- Owning the day-to-day delivery of assigned work, including clarifying feature-level ambiguity, managing tasks effectively, supporting release, and verifying outcomes in production
+- Contributing to team-owned delivery by giving realistic input into effort, raising risks or blockers early, communicating progress clearly
+- Contributing to team-owned quality through appropriate testing, code review participation, safe change practices, and disciplined attention to correctness, maintainability, security, and performance
+- Using modern tooling, automation, and AI-assisted development in a practical and controlled way
+- Supporting less experienced engineers through constructive collaboration, review feedback, and strong day-to-day engineering practice
+
+What you'll bring
+- 2+ years' experience working on IT projects across multiple phases of the SDLC
+- Recent C# .NET experience with at least 2 years of .NET development
+- Experience with web front-end technologies, including HTML, JavaScript, CSS, React, or ASP.NET Razor
+- Good understanding of software architecture, design patterns, SOLID principles, and object-oriented programming
+- Knowledge of software configuration management using tools such as Git
+- Familiarity with service-oriented frameworks
+- Ability to implement features, unit tests, and fix complex bugs
+- Excellent communication skills
+- Strong problem-solving and conceptual thinking skills
+- Public cloud exposure (Azure) is a bonus

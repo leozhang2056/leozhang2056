@@ -1,0 +1,41 @@
+Company: New Image Group
+Role: IT Support Engineer (6-month fixed-term contract)
+Location: Auckland, New Zealand (On-site)
+Type: Fixed-term contract (6 months)
+Source: LinkedIn
+
+About the company:
+New Image Group — global health and wellness business operating across 22 countries. Values: Consumer and Customer First, One Team One Dream, Find a Better Way, Be Accountable. Innovation, continuous improvement, positive impact.
+
+About the role:
+IT Support Engineer — Level 2 support across hardware, software, Microsoft 365, mobile devices, business applications. Work with users across multiple countries. Improve systems, processes and user experience.
+
+Responsibilities:
+- Level 2 support across hardware, software, Microsoft 365, mobile devices, business apps
+- Troubleshoot and resolve technical issues with exceptional customer service
+- Support cloud environments, servers, networks, system upgrades
+- Manage Intune and support endpoint security initiatives
+- Assist with cybersecurity, user access management, vulnerability remediation
+- Work with external vendors and technology partners
+- Identify opportunities to improve system performance and reliability
+
+Requirements:
+Required:
+- 3-5 years IT support, service desk or systems support experience
+- Strong knowledge of Microsoft 365, cloud services, modern workplace technologies
+- Experience supporting infrastructure, systems and business applications
+- Excellent communication and stakeholder management
+- Strong troubleshooting and problem-solving
+- Tertiary qualification in IS, Computer Science or similar
+
+Nice to have:
+- Intune, cybersecurity practices, endpoint management
+- External vendor experience
+- Direct selling environment exposure
+- NZ-based organisation support experience
+
+Benefits:
+- Diverse role: infrastructure, cybersecurity, cloud, end-user support
+- Multiple international markets exposure
+- Supportive environment
+- Modern technologies

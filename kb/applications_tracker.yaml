@@ -1698,4 +1698,33 @@ applications:
   cv: false
   cl: true
   status: submitted
-ubmitted
+- company: Ray White Remuera
+  role: ai
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted
+- company: New Image Group
+  role: backend
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted
+- company: Centrapay
+  role: fullstack
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted
+- company: Smartly
+  role: fullstack
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted
+- company: Binance
+  role: backend
+  date: '2026-07-17'
+  cv: true
+  cl: true
+  status: submitted

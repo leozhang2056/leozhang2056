@@ -5,3 +5,4 @@
 - After every CV/CL generation, run review against rules (Summary structure, font=Inter, Chunxiao title gradient, banned words) before delivering. Confidence: 0.65
 - Save the job description (JD) text when generating a CV, so the original posting can be referenced later for context. Confidence: 0.65
 - Clean up intermediate/temporary files after completing CV and CL generation. Confidence: 0.70
+- When naming CV files for target companies that are subsidiaries (e.g., Smartly is a Datacom company), use the parent company name (Datacom) rather than the subsidiary brand — the CV is for a job application, not a past employer. Confidence: 0.60
