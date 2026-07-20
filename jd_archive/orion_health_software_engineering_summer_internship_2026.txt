@@ -1,0 +1,92 @@
+Orion Health
+Software Engineering Summer Internships 2026/27
+
+Auckland, Auckland, New Zealand · Hybrid · Contract
+
+About the job
+Make your mark on the future of digital health.
+
+At Orion Health, our Software Engineering Summer Internship Programme gives you the opportunity to work on real products, solve meaningful technical challenges, and learn alongside experienced engineers who are building technology that improves healthcare for millions of people around the world.
+
+Over 10-12 weeks, you'll gain hands-on software engineering experience, build practical skills, and see what it's like to work in a global health technology company. You'll be part of a supportive team where your ideas are valued and your work makes a genuine impact.
+
+Why join us?
+
+We believe internships should be meaningful. From your first week, you'll join a real dev team, be contributing to real projects, while receiving the support and mentoring you need to learn and grow.
+
+As an Orion Health Software Engineer Intern, you'll enjoy:
+
+A paid 10-12 week summer internship
+A dedicated mentor and support from experienced engineers
+Meaningful work on real software projects
+Opportunities to learn modern engineering practices, tools and technologies
+Exposure to agile software development in a collaborative environment
+Networking opportunities with teams across the business
+Free breakfast every day and barista-quality coffee
+Great office facilities including café spaces, arcade games, pool table, table tennis, PlayStation and pickleball court (Christchurch)
+A fun, social workplace with regular team events throughout the summer
+The opportunity to be considered for future Graduate Programme opportunities
+
+What you'll be doing
+
+You'll work as part of an engineering team, contributing to products that help healthcare organisations deliver better patient care.
+
+Depending on your team, you could be involved in:
+
+Designing, building and testing software features
+Writing clean, maintainable code
+Debugging and solving technical problems
+Developing APIs and backend services
+Working with cloud technologies and modern development tools
+Collaborating with product managers, designers and engineers
+Participating in agile ceremonies including stand-ups, sprint planning and retrospectives
+Throughout the internship you'll receive regular feedback, coaching and opportunities to expand your technical skills while gaining valuable commercial software development experience.
+
+Who we're looking for
+
+We're looking for curious, motivated students who enjoy solving problems and are excited by technology that makes a real difference.
+
+Your background
+
+You'll be currently studying towards a degree in:
+Software Engineering
+Computer Science
+Computer Systems Engineering
+Information Technology
+Information Systems
+Or another related discipline
+
+Technical skills
+
+You'll have some experience with Java through your university studies, personal projects, hackathons or previous internships.
+
+Experience with any of the following is an advantage:
+JavaScript or TypeScript
+React or Angular
+HTML/CSS
+SQL and databases
+Git
+REST APIs
+AWS or Azure
+Linux or Bash scripting
+
+Don't worry if you haven't used all of these - we're interested in your potential and willingness to learn.
+
+What will help you succeed
+
+You'll be someone who:
+Enjoys learning new technologies
+Thinks critically and approaches problems with curiosity
+Communicates well and works effectively with others
+Takes initiative and enjoys contributing to a team
+Is passionate about building quality software
+
+Why Orion Health?
+
+Orion Health is a global healthcare technology company creating software that connects health information and supports better care for millions of people worldwide.
+
+When you join us, you'll work with talented people who love solving complex problems, learn from experienced engineers, and gain experience that's difficult to find elsewhere.
+
+Many of our interns go on to join Orion Health's Graduate Programme after completing their studies, making this a great opportunity to kick-start your career in software engineering.
+
+Applications close 18 August 2026, with internships commencing in late November 2026 and running through February 2027.
