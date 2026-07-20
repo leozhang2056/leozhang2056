@@ -1,0 +1,72 @@
+Brunswick Corporation
+Senior Software Engineer
+
+Auckland, Auckland, New Zealand · Full-time
+
+About the job
+Are you ready for what's next?
+
+Come explore opportunities within Brunswick, a global marine leader committed to challenging conventions and innovating next-generation technologies that transform experiences on the water and beyond. Brunswick believes "Next Never Rests™," and we offer a variety of exciting careers and growth opportunities within united teams defining the future of marine recreation.
+
+Position Overview:
+
+The Senior Software Engineer plays a key role in the design, development, and delivery of software solutions within the Navico Group PD&E division. This is a hands-on engineering role focused on building reliable, high-quality products while collaborating closely with cross-functional teams.
+
+You will contribute to software architecture, implementation, code quality, and technical problem-solving across a range of products. The role requires strong technical capability, practical engineering judgement, and a collaborative mindset. You will also support and mentor other engineers, helping to drive engineering best practices across the team.
+
+Given evolving product and team requirements, exposure to firmware and embedded systems development will be highly valued.
+
+Essential Functions:
+
+Design, develop, test, and maintain high-quality software systems and applications.
+Contribute to technical design discussions and code reviews.
+Collaborate with product managers, engineers, and stakeholders to deliver robust solutions.
+Support software quality through testing, automation, debugging, and best engineering practices.
+Troubleshoot complex software and system-level issues.
+Mentor junior engineers and contribute to a strong engineering culture.
+Contribute to architecture and technical decisions where appropriate.
+Collaborate on software, firmware, and hardware integration as product needs evolve.
+
+Requirements:
+
+Bachelor's degree in computer science, Software Engineering, Electrical Engineering, or a related field.
+5+ years of professional software engineering experience.
+Strong experience in software design, development, and debugging.
+Strong proficiency in C and C++.
+Experience with Make and CMake.
+Experience with Qt/QML or similar frameworks.
+Experience developing applications for Linux, iOS, Android, and/or Windows.
+Experience working with CAN bus.
+Experience with IoT technologies such as ThingsBoard, MQTT, Mender, or similar.
+Strong problem-solving and communication skills.
+Ability to work effectively in a collaborative team environment.
+Experience with Zephyr or similar RTOS would be a bonus.
+Experienced with debugging hardware.
+Experienced with using tools such as oscilloscopes and multimeters.
+Ability to read and understand electronic schematics.
+
+Preferred Qualifications:
+
+Experience with firmware development or low-level embedded systems programming.
+Experience with hardware–software integration and debugging in embedded environments.
+Experience with embedded Linux systems.
+Familiarity with bootloaders, firmware update mechanisms, and embedded security.
+Experience developing Linux kernel drivers.
+Experience bringing up new hardware from scratch.
+Experience with networking technologies such as Wi-Fi, Bluetooth, TCP/IP, and Ethernet.
+Familiarity with CI/CD and DevOps tools such as Azure DevOps, Jenkins, or similar.
+Familiarity with Docker or similar container technologies.
+Ability to read and understand electronic schematics.
+Experience working in Agile development environments.
+
+Working Conditions:
+
+Technical, hands-on position.
+On water testing of advanced prototypes and new products.
+Will work mainly with the New Zealand team in the office but will have an occasional need to partner with colleagues abroad.
+
+About Navico Group:
+
+Navico Group is a stand-alone division of Brunswick, the world's largest recreational marine business.
+
+Navico Group is the global leader in technology, systems and solutions for a variety of industries, from Marine & RV to Speciality Vehicles and beyond. Our broad portfolio consists of the industry's leading brands in Power Systems, Digital Systems, Fishing Systems, and Performance Components, including Ancor, Attwood, B&G, BEP, Blue Sea Systems, C-MAP, CZone, Garelick, Lenco, Lowrance, Marinco, MotorGuide, Mastervolt, ProMariner, RELiON, Simrad and Whale.
