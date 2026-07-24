@@ -1728,3 +1728,87 @@ applications:
   cv: true
   cl: true
   status: submitted
+- company: Parkable
+  role: backend
+  date: '2026-07-18'
+  cv: true
+  cl: true
+  status: submitted
+- company: Potentia
+  role: backend
+  date: '2026-07-20'
+  cv: true
+  cl: true
+  status: submitted
+- company: FR Consultancy
+  role: ai
+  date: '2026-07-20'
+  cv: true
+  cl: true
+  status: submitted
+- company: Orion Health
+  role: backend
+  date: '2026-07-20'
+  cv: true
+  cl: true
+  status: submitted
+- company: ANZ
+  role: fullstack
+  date: '2026-07-20'
+  cv: true
+  cl: true
+  status: submitted
+- company: Brunswick Corporation
+  role: embedded
+  date: '2026-07-20'
+  cv: true
+  cl: true
+  status: submitted
+- company: The HR Ally
+  role: backend
+  date: '2026-07-20'
+  cv: true
+  cl: false
+  status: submitted
+- company: ATOM Intelligence
+  role: fullstack
+  date: '2026-07-21'
+  cv: true
+  cl: true
+  status: submitted
+- company: Moyle Marine Surveyors
+  role: backend
+  date: '2026-07-21'
+  cv: true
+  cl: true
+  status: submitted
+- company: Electoral Commission NZ
+  role: election
+  date: '2026-07-21'
+  cv: true
+  cl: true
+  status: submitted
+- company: Electoral Commission NZ
+  role: backend
+  date: '2026-07-21'
+  cv: true
+  cl: true
+  status: submitted
+- company: Fiserv
+  role: android
+  date: '2026-07-24'
+  cv: true
+  cl: true
+  status: submitted
+- company: BW Digital
+  role: fullstack
+  date: '2026-07-24'
+  cv: true
+  cl: true
+  status: submitted
+- company: Auckland Transport
+  role: ai
+  date: '2026-07-24'
+  cv: true
+  cl: true
+  status: submitted

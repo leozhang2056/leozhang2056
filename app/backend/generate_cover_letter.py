@@ -195,6 +195,7 @@ _COMPANY_CULTURE_HOOKS = {
     'vts': "it is building the Diverge platform — a cloud-native energy data platform co-developed with AWS.",
     'smartly': "payroll isn't glamorous, but getting it right means 20,000+ Kiwi businesses pay their people on time — practical impact that matters.",
     'datacom': "it is one of New Zealand's largest tech companies, delivering real solutions across diverse industries.",
+    'auckland transport': "it applies computer vision and AI to real-world transport problems that directly improve how Auckland moves — from ANPR and object detection to automated monitoring of critical infrastructure.",
 }
 
 _COMPANY_TEAMS = {
@@ -234,6 +235,7 @@ _COMPANY_TEAMS = {
     'hnry': "Hnry's Mobile Engineering team",
     'flowingly limited': "Flowingly's Product Engineering team",
     'flowingly': "Flowingly's Product Engineering team",
+    'auckland transport': "Auckland Transport's Computer Vision team",
 }
 
 def build_cover_letter_content(
@@ -962,6 +964,39 @@ def build_cover_letter_content(
             closing = (
                 "I would welcome the opportunity to discuss how my background can contribute "
                 "to Orion Health's engineering team. Thank you for your time and consideration."
+            )
+        elif 'auckland transport' in company_lower or 'at ' in company_lower[:4]:
+            opening = (
+                f"I am applying for the {target_role_title} position at Auckland Transport. "
+                "I recently completed a Master of Computer and Information Sciences at AUT "
+                "with First Class Honours, focused on computer vision and AI. "
+                "I am drawn to Auckland Transport because this role sits at the intersection "
+                "I want to grow into — applying computer vision to real-world transport problems "
+                "like ANPR, object detection, and automated monitoring that directly improve "
+                "how Auckland moves."
+            )
+            body1 = (
+                "My Master's thesis, ChatClothes, was a hands-on computer vision project from "
+                "start to finish: I trained and evaluated diffusion models, fine-tuned YOLO "
+                "classifiers, ran ground truth validation across standard datasets, and deployed "
+                "the full pipeline on a Raspberry Pi for offline inference. I learned what it takes "
+                "to go from model prototype to something that actually runs in the field — including "
+                "the repetitive, detail-oriented work of dataset curation, annotation, and systematic "
+                "testing that makes or breaks a CV system. I am genuinely excited about doing that "
+                "work every day on transport data."
+            )
+            body2 = (
+                "Before pivoting into AI, I spent ten years building production software across "
+                "backend, mobile, and IoT domains. That experience taught me how to collaborate "
+                "across teams, communicate technical decisions clearly, and deliver reliable systems "
+                "under real deadlines. I work well in Agile environments, I mentor when I can, "
+                "and I am not afraid to do the foundational work that enables a team to move fast."
+            )
+            closing = (
+                "I would welcome the opportunity to bring my computer vision skills and "
+                "engineering discipline to Auckland Transport's Computer Vision team, and to grow "
+                "alongside engineers who are solving genuinely hard problems in transport automation. "
+                "Thank you for your time and consideration."
             )
         else:
             company_lower = (company_name or '').strip().lower()

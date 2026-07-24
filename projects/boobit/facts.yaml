@@ -15,7 +15,7 @@ company:
 summary: |
   Built an Android cryptocurrency trading app supporting real-time market data,
   token search, exchange, and recharge flows with a focus on security,
-  reliability, and responsive user experience.
+  reliability, and responsive user experience in the financial services domain.
 summary_cn: |
   负责数字货币交易 Android 应用开发，支持行情实时更新、币种检索、兑换与充值流程，
   重点保障安全性、稳定性与交互体验。
@@ -23,17 +23,17 @@ summary_cn: |
 overview: |
   Android cryptocurrency trading app for real-time market data, coin search,
   exchange, recharge, and wallet flows, built with focus on security,
-  performance, and clear user experience.
+  performance, and clear user experience in the financial/banking domain.
 overview_cn: |
   一款数字货币交易平台 Android 应用，支持实时行情查询、币种搜索、兑换与充值，
   兼顾安全、性能与用户体验。
 
 highlights:
-  - Implemented real-time market feed and price updates through WebSocket channels.
-  - Developed secure wallet-related data handling with encrypted local storage.
-  - Designed a clear trading workflow UI to reduce user operation complexity.
-  - Integrated recharge and exchange APIs with robust error handling and retries.
-  - Delivered fintech trading flows (wallet, exchange, recharge) with banking-style reliability expectations for sensitive financial actions.
+  - Implemented real-time market feed and price updates through WebSocket channels for financial trading data.
+  - Developed secure wallet-related data handling with encrypted local storage for financial asset protection.
+  - Designed a clear financial trading workflow UI to reduce user operation complexity.
+  - Integrated financial recharge and exchange APIs with robust error handling and retries.
+  - Delivered fintech banking-style trading flows (wallet, exchange, recharge) with high reliability expectations for sensitive financial actions.
 highlights_cn:
   - 基于 WebSocket 实现行情实时推送与价格更新。
   - 通过加密本地存储提升钱包相关数据安全性。

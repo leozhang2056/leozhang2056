@@ -5,4 +5,12 @@
 - After every CV/CL generation, run review against rules (Summary structure, font=Inter, Chunxiao title gradient, banned words) before delivering. Confidence: 0.65
 - Save the job description (JD) text when generating a CV, so the original posting can be referenced later for context. Confidence: 0.65
 - Clean up intermediate/temporary files after completing CV and CL generation. Confidence: 0.70
-- When naming CV files for target companies that are subsidiaries (e.g., Smartly is a Datacom company), use the parent company name (Datacom) rather than the subsidiary brand — the CV is for a job application, not a past employer. Confidence: 0.60
+- When naming CV files for target companies that are subsidiaries (e.g., Smartly is a Datacom company), use the parent company name (Datacom) rather than the subsidiary brand — the CV is for a job application, not a past employer. Confidence: 0.70
+- The Cover Letter must NOT repeat CV content — no metrics, no project enumeration, no restating education/experience. CL should focus on soft skills, personal values, persona, and fit. CV has data; CL makes them want to read the CV. Confidence: 0.90
+- Keep the Core Competencies / Skills section concise — max 6 categories, do not stack irrelevant or buzzword keywords. User explicitly dislikes bloated skill sections. Confidence: 0.85
+- When the user provides their own custom CL or text, render it EXACTLY as given — do not auto-generate alternatives. User had to insist "直接用我给你的内容生成" multiple times when auto-generated CL was substituted. Confidence: 0.95
+- After every CV/CL generation, run a sub-agent review that checks quality (format rules, JD coverage, CL-CV separation, keyword accuracy) and deliver fixes before presenting to user. Confidence: 0.80
+- Use the standard CV/CL pipeline format consistently — do not create custom HTML templates or standalone rendering scripts unless absolutely necessary. User rejected a custom format saying "按我原来的格式，现在变化太大了". Confidence: 0.90
+- CV header should NOT include physical address (e.g., "Auckland") — only email, phone, portfolio, LinkedIn, GitHub. Confidence: 0.75
+- Supporting statements and concise CL variants should be under 300 words. User said "简洁一点" when first draft was ~430 words. Confidence: 0.70
+- CV should ensure JD keyword coverage through natural integration in project bullets and skills — target high coverage but never inject fake "Additional:" keyword rows or stuff keywords unnaturally. Quality over artificial coverage percentage. Confidence: 0.85

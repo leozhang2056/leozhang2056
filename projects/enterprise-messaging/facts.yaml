@@ -20,7 +20,7 @@ company:
 summary: >
   Android-led enterprise communication platform (Android, Web, PC) with 5,000 DAU over a 10-year
   lifecycle; owned real-time messaging, file and workflow subsystems, and mobile client architecture
-  including NDK TCP/UDP paths for sub-200ms latency.
+  including NDK TCP/UDP paths for sub-200ms latency and continuous quality engineering.
 
   The product began as a focused enterprise IM client, then incrementally platformized: a unified user
   center was built atop existing IM identity and profile data and reused for authentication and
@@ -71,16 +71,17 @@ summary_cn: '大型企业通讯平台，支持多端（Android、Web、PC）。
   个人职责从单一开发扩展至全栈交付，并承担进度协调、人员与资源分配等管理向工作。'
 highlights:
   - Engineered NDK TCP/UDP transport layer and Easemob cloud IM architecture supporting 5,000 DAU, <200ms message latency, and 500K+ daily messages
-  - Architected resilient push delivery: Easemob IM + JPush backup channel, with keep-alive strategies and OEM ROM adaptation for reliable wake-up
+  - Architected resilient push delivery: Easemob (环信) primary push and IM channel + JPush backup notification channel, with keep-alive strategies and OEM ROM adaptation for reliable wake-up
   - Migrated core messaging from unstable in-house C++ to Easemob cloud infrastructure, eliminating 90%+ defects and enabling platform focus (files, permissions, user center)
   - Implemented FastDFS distributed file storage supporting 100GB+ user uploads and document hosting; engineered chunk distribution, redundancy, and cross-subsystem access control
   - Architected unified platform from standalone IM: centralized user center, file service, and permission layer reused across 5+ subsystems (attendance, approvals, asset management, audit)
   - Built Spring Cloud microservices and Node.js backend for messaging, workflow, and operational analytics (Kettle ETL + PowerBI dashboards)
       - Reduced OOM crashes through memory optimization; implemented in-house crash reporting infrastructure when third-party SDKs were unavailable
-  - Managed OEM ROM variance (Xiaomi, Huawei, OPPO) with targeted device testing; balanced QA coverage and release velocity for Android 7+ support
+  - Managed OEM ROM variance (Xiaomi, Huawei, OPPO) with targeted device testing; balanced quality assurance coverage and release velocity for Android 7+ support
   - Strengthened security posture: migrated user assets from Windows file server to secure cloud storage with validation and access control hardening
   - Maintained <2% downtime across 10-year product lifecycle through proactive reliability engineering and rapid incident response
   - Designed and built Android IM client with full chat feature set: real-time one-to-one messaging, group chat with topic channels, file transfer with inline preview, message history with local persistence and offline synchronization
+  - Integrated Easemob (环信 / Hyphenate) SDK for primary message push and real-time notification delivery on Android, ensuring reliable message arrival across diverse network conditions and device states
   - Implemented connection persistence and session management for Android background survival across OEM fragmentation (Xiaomi, Huawei, OPPO background policy variances), maintaining reliable message delivery under aggressive battery optimization
   - Built presence management and typing indicators over WebSocket, delivering sub-second status propagation for 5,000 concurrent users with minimal battery impact
 
@@ -100,7 +101,7 @@ highlights_cn:
 - 用户头像曾存放于 Windows 文件服务器；因上传权限与校验不足导致恶意可执行文件写入、服务器中毒与数据风险；经备份恢复与重建后强化权限与防毒，并将头像/用户文件迁移至云端存储与更严管控
 - Android 客户端面临类 C 端的系统版本与厂商 ROM 差异（如小米、华为、OPPO）；不少问题仅在用户真实环境中暴露，测试难以在发版前穷尽所有小问题；需在发布时间、测试成本与测试机型投入之间权衡；常规以主流版本与约 Android 7/8 为实验室测试下限，更老机型一般不入常规矩阵；模拟器难以 1:1 复现时需反馈驱动真机验证，必要时购机或贴近用户现场，而非假设发版前可做满全矩阵
 - 消息架构演进：早期消息服务端以 **C++** 自建为主，稳定性不足、缺陷持续暴露、维护成本高；后整体迁移至 **环信 Easemob** 云消息服务与 **多端 SDK**，个人消息、群消息与底层消息基础设施由其承载，稳定性与封装能力（群聊、多消息类型、已读等状态、重发/补发、多平台 SDK）显著提升，自研聚焦业务与中台及各子系统
-- Android 通知与到达：**环信** 主 IM 路径之外，集成 **极光（JPush）** 作为**推送备用通道**，侧重**通知类**下发与唤醒补充，与 IM 主链路分层、降低单通道风险
+- Android 通知与到达：**环信** 主推送通道 + **极光（JPush）** 备用推送通道，分层配合确保消息送达率
 - 团队扩大与多项目并行后，引入飞书及协作文档（如石墨等）、项目管理、预算与审批等流程，并辅以自动化改进研发与组织协作；个人从单一开发走向全栈交付，并承担进度协调、人员与资源分配等管理职责
 - >-
   Android 稳定性（早期阶段）：在成熟第三方崩溃 SDK 尚未普及时，自研崩溃捕获与自动上报路径，减少对「用户手工捞日志」的依赖；
@@ -121,6 +122,7 @@ tech_stack:
   - NDK
   - TCP/UDP
   - OEM ROM compatibility testing
+  - Easemob (环信 / Hyphenate) primary push and IM SDK
   - Jiguang (JPush) backup notification push channel (alongside Easemob IM)
   backend:
   - Spring Cloud

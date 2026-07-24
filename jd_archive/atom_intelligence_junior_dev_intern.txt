@@ -1,0 +1,35 @@
+Company: ATOM Intelligence
+Role: Junior Dev Intern — AI & Data Platform
+Location: Tākapuna, North Shore City, Auckland
+Type: Internship (Part-time/Full-time, On-site)
+Pay: $25.00 per hour
+Start: May 11, 2026
+Hours: 20 per week
+Vacancies: 2
+
+About:
+ATOM Intelligence is a New Zealand company building vertical AI and data platforms for enterprise clients across retail, FMCG, hospitality, luxury, and healthcare. Auckland R&D centre.
+
+About the internship:
+Full-Stack Developer Intern working across platform stack — backend services, web applications, data pipelines, and cloud infrastructure. Real client projects from day one, mentored by senior engineers.
+
+Requirements:
+- Currently studying/recently completed Bachelor's/Honours/Master's/PhD in CS, IS, or IT
+- Fluent in English and Mandarin (written and spoken)
+- Solid Python fundamentals
+- Hands-on exposure to at least one front-end framework: React, Angular, or Vue
+- Working SQL skills (JOINs, aggregations, query tuning)
+- Some cloud exposure (Azure preferred; AWS/GCP also welcome)
+- Available onsite at North Shore, Auckland
+
+Nice to have:
+- Docker, Kubernetes
+- Eventing/messaging patterns (queues, pub/sub, event-driven)
+- Data warehousing (Snowflake, BigQuery, Redshift, ClickHouse)
+- Portfolio/GitHub repo/capstone
+
+Benefits:
+- Real client delivery from day one
+- Direct mentorship from senior engineers
+- NZ$24-28 per hour
+- Pathway to graduate/full-time engineer

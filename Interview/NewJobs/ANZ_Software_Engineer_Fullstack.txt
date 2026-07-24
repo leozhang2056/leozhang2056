@@ -1,0 +1,34 @@
+ANZ - Software Engineer (Full Stack)
+Location: Auckland, Auckland, New Zealand
+Role Type: Permanent, Full time
+Hours: Standard, Mon to Friday, 37.5 hrs
+
+About the Role
+The Software Engineer (Full Stack) is responsible for delivering end-to-end software solutions across frontend and backend systems, with a strong emphasis on intuitive, high-quality user interface (UI) & API development. This role combines technical engineering capability with a user-centric mindset to build and run customer-facing sales experiences that are fast, reliable, and secure across ANZ's digital platforms.
+
+Working across several of ANZ's Digital ecosystems - including Online Store, Sales Delivery Platform, OPAL, and ANZ Apply - the Software Engineer collaborates with Engineers, Architects, Testers, Business Analysts, and Product Owners to design and deliver solutions end-to-end. The role contributes to engineering excellence through quality automation, continuous improvement, and active participation in a high-performing agile squad.
+
+Responsibilities:
+- Designing clear and effective solutions technical and non-technical that address customer and business needs, while delivering high-quality software across the full SDLC.
+- Working end-to-end on features in close collaboration with Product Owners, BAs, Designers and Architects to shape and deliver valuable outcomes.
+- Applying modern engineering practices such as clean code, automated testing, code reviews and CI/CD to ensure reliable, efficient delivery.
+- Providing hands-on technical leadership by mentoring engineers, guiding technical decisions and fostering a culture of learning and knowledge sharing.
+- Monitoring and improving platform health by managing technical debt, maintaining currency of systems and ensuring meaningful logs, metrics, dashboards and alerts.
+- Embedding security by design, complying with standards and controls, and addressing vulnerabilities and risks in a timely manner.
+- Supporting incident management by diagnosing issues, collaborating with SRE partners to improve operability and reducing manual toil.
+- Contributing to agile ways of working, using data and feedback to simplify flows, and supporting continuous improvement of team practices and collaboration.
+
+Requirements:
+- 4+ years building and running production software.
+- Backend: Java (11+) with Spring Boot and/or Node.js. Experience with microservices architectures
+- Frontend: React with Typescript; Server-side rendering/static generation with Next.js, UI Framework /design systems (eg: ANZ's Ocean Blue).
+- APIs & Integration: REST (OpenAPI/Swagger), JSON; event driven patterns; secure API design.
+- Data: SQL proficiency (e.g., PostgreSQL, SQL Server); sound schema design and query optimisation.
+- Version control: Git with Bitbucket and/or GitHub.
+- CI/CD: Jenkins, Codefresh (or equivalent); automated build, test and deployment.
+- Cloud: Experience deploying to AWS (e.g. EKS) or similar platforms including Elasticache, Lambda, SQS, EC2
+- Observability: Practical use of Dynatrace and/or Splunk (logs, metrics, alerting)
+- Security: Familiarity with secure coding standards; secrets management; IAM fundamentals.
+- Agile delivery: Strong experience working in agile teams, including estimation and refinement
+- Strong collaboration and clear technical communication skills
+- Experience with UI frameworks/design systems (e.g. Ocean Blue or similar)

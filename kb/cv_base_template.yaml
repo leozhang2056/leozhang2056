@@ -11,9 +11,9 @@ roles:
   android:
     summary_sentences:
       en:
-      - "Senior Android Architect with 10+ years building large-scale Android platforms, real-time messaging systems, and mobile infrastructure."
-      - "Expert in Kotlin, Java, NDK/JNI, Android architecture, performance optimization, and communication protocols."
-      - "Designed and delivered Android systems supporting 5,000+ DAU and 500K+ daily messages, including messaging platforms, mobile SDKs, hotfix frameworks, and performance engineering tooling."
+      - "Senior Android Architect with 10+ years building large-scale Android platforms, real-time messaging systems, and mobile infrastructure using modern Android technologies."
+      - "Expert in Kotlin, Java, NDK/JNI, Android architecture, performance optimization, quality engineering, and communication technologies."
+      - "Designed and delivered high-quality Android systems supporting 5,000+ DAU and 500K+ daily messages, including messaging platforms, mobile SDKs, hotfix frameworks, and performance engineering tooling with ongoing enhancements and extension."
       - "Strong background in WebSocket, TCP/UDP, cold start optimization, ANR/OOM resolution, and AI-powered applications published at IVCNZ 2025."
       - "Master's in Computer and Information Sciences from AUT, First Class Honours."
     key_skills:
@@ -23,11 +23,9 @@ roles:
         - Kotlin
         - Java
         - Android SDK
+        - Material Design
         - Jetpack Compose
-        - Coroutines & Flow
-        - Hilt
-        - NDK/JNI
-        - C++
+        - Android Design Guidelines
       - label: Real-time Messaging
         skills:
         - WebSocket
@@ -46,23 +44,18 @@ roles:
       - label: Mobile Infrastructure
         skills:
         - Multi-Module Architecture
-        - Hotfix (Tinker/AndFix)
+        - DevOps
         - SDK Development
         - CI/CD
+        - Hotfix (Tinker/AndFix)
         - Gradle
-      - label: Cross-Platform
-        skills:
-        - Flutter
-        - Dart
-        - JavaScript
-        - React
-      - label: Backend & Data
-        skills:
-        - Spring Cloud
         - RESTful APIs
-        - MySQL
-        - Redis
-        - SQLite
+        - Spring Cloud
+      - label: Engineering Practices
+        skills:
+        - Agile / Scrum
+        - Mentoring
+        - Code Review
       - label: AI & Tools
         skills:
         - PyTorch
@@ -629,28 +622,27 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - AI engineer who builds systems that actually ship.
-      - I built ChatClothes from scratch — a multimodal virtual try-on system combining
-        diffusion models, computer vision, and local LLM orchestration.
-      - This system was optimized for edge deployment on Raspberry Pi 5 and published
-        at IVCNZ 2025.
-      - I've learned that the hard part in AI isn't training a model — it's making
-        it reliable, fast, and maintainable enough that production teams can actually use it.
+      - AI engineer with deep experience in computer vision, machine learning, image processing, LLM orchestration, and production-grade GenAI application development.
+      - Delivered ChatClothes, a multimodal virtual try-on system integrating diffusion models, computer
+        vision, and local LLM workflows — from concept through evaluation, deployment, and publication.
+        Involved extensive image dataset work, model training and testing across multiple CV projects.
+      - Optimised AI inference for ARM edge hardware (Raspberry Pi, Android) with offline-capable,
+        on-device prediction.
+      - Published at IVCNZ 2025; combines strong engineering fundamentals with practical AI deployment
+        across cloud and resource-constrained environments.
     key_skills:
       en:
       - label: AI / ML
         skills:
         - PyTorch
         - OpenCV
+        - Image Processing
+        - Model Training & Testing
         - Transformers
         - Hugging Face
         - YOLO
         - Diffusion Models
         - LoRA
-        - LLM
-        - RAG
-        - Ollama
-        - ComfyUI
       - label: Infrastructure
         skills:
         - Python
@@ -669,7 +661,6 @@ roles:
         - MongoDB
       - label: Product Integration
         skills:
-        - Android Chrome PWA
         - API Integration
         - User Workflow Design
         - Offline-capable Systems

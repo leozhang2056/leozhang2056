@@ -8,7 +8,9 @@ $80,000 – $120,000 per year
 
 About us
 
-A group of New Zealand e-commerce businesses running a custom-built platform with around 20,000 products. The digital team has gone all-in on AI-led development: traditional .NET developers who now build almost everything with tools like Claude Code — self-taught, learning as they go.
+A group of New Zealand e-commerce businesses running a custom-built platform with around 20,000 products. 
+The digital team has gone all-in on AI-led development: 
+traditional .NET developers who now build almost everything with tools like Claude Code — self-taught, learning as they go.
 
 What you'll be doing
 - Build internal tools, automations, platform features and new products using AI-led development

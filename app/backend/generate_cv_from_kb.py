@@ -887,6 +887,8 @@ def _base_template_skills_html(
             ]
         if not names:
             continue
+        # Cap to 4 skills per category to keep Core Competencies compact
+        names = names[:4]
         # Bold IoT-related label for parking-industry targeting
         if "iot" in label.lower() or "integration" in label.lower():
             bold_label = f'<strong>{html.escape(label)}</strong>'
@@ -2411,10 +2413,10 @@ def _render_one_project_job_html(
 
 # Chunxiao career_progression titles/focus — adapt display per target role while KB keeps canonical facts.
 _CHUNXIAO_MERGED_ROLE_TITLES: Dict[str, str] = {
-    "android": "Senior Mobile Engineer",
-    "backend": "Senior Java Backend Engineer",
-    "fullstack": "Senior Full-Stack Engineer",
-    "ai": "AI Software Engineer",
+    "android": "Senior Software Engineer",
+    "backend": "Senior Software Engineer",
+    "fullstack": "Senior Software Engineer",
+    "ai": "Senior Software Engineer",
 }
 
 _CHUNXIAO_MERGED_FOCUS: Dict[str, str] = {
@@ -2773,11 +2775,17 @@ def _render_career_progression_html(
 
     if "Chunxiao" in company_name and len(progression) > 1:
         # Two-stage rendering: each stage as a career-stage div (mandatory per project rules)
-        target_line = f'<div class="employer-progression"><strong>Target role:</strong> {html.escape(target_role_title)}</div>' if target_role_title else ""
+        target_line = ""  # Suppressed — internal label, not for output
         stages: List[str] = []
         for stage in progression:
             period = str(stage.get("period") or "")
-            title = _adapt_progression_title(str(stage.get("title") or ""), role_type, jd_keywords, target_role_title, period=period)
+            # Use unified "Senior Software Engineer" for Chunxiao's later career stage
+            # while keeping early stage KB original to show career progression
+            is_early_stage = '2013' in str(period)
+            if is_early_stage:
+                title = str(stage.get("title") or "Senior Software Engineer")
+            else:
+                title = _CHUNXIAO_MERGED_ROLE_TITLES.get(role_type, "Senior Software Engineer")
             achievements = stage.get("achievements") or []
             tech_stack = stage.get("tech_stack") or []
             if not isinstance(achievements, list):
@@ -2789,8 +2797,8 @@ def _render_career_progression_html(
             if period:
                 header_parts.append(period)
             header_text = " | ".join(header_parts)
-            bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements[:5] if a)
-            tech_line = ", ".join(str(t) for t in tech_stack if t)
+            bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements[:4] if a)
+            tech_line = ", ".join(str(t) for t in tech_stack if t)[:120]
             tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
             stages.append(f'''
     <div class="career-stage">
@@ -2828,7 +2836,7 @@ def _render_career_progression_html(
             tech_stack = []
         
         # Cap achievements per stage to keep CV within 2 pages
-        MAX_ACHIEVEMENTS_PER_STAGE = 5
+        MAX_ACHIEVEMENTS_PER_STAGE = 4
         achievements = achievements[:MAX_ACHIEVEMENTS_PER_STAGE]
         
         # Apply role-specific tech_stack ordering from cv_base_template
@@ -2843,7 +2851,7 @@ def _render_career_progression_html(
         
         bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
         
-        tech_line = ", ".join(str(t) for t in tech_stack if t)
+        tech_line = ", ".join(str(t) for t in tech_stack if t)[:120]
         tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
         
         stages.append(f'''
@@ -2891,14 +2899,14 @@ def _render_aut_research_html(
         tech_stack = []
     
     # Cap AUT achievements to keep CV compact
-    achievements = achievements[:3]
+    achievements = achievements[:2]
     
     loc_html = f'<span class="employer-loc"> — {html.escape(location)}</span>' if location else ""
     company_link = f'<a href="{html.escape(company_url, quote=True)}" style="color:#444;">{html.escape(company_name)}</a>' if company_url else html.escape(company_name)
     company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
     
     bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
-    tech_line = ", ".join(str(t) for t in tech_stack if t)
+    tech_line = ", ".join(str(t) for t in tech_stack if t)[:120]
     tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
     
     return f'''
@@ -2942,7 +2950,7 @@ def _render_simple_experience_html(
     company_desc_html = f'<div class="employer-desc">{html.escape(company_desc)}</div>' if company_desc else ""
 
     bullets_html = '\n            '.join(f'<li>{_allow_basic_html(html.escape(str(a)))}</li>' for a in achievements if a)
-    tech_line = ", ".join(str(t) for t in tech_stack if t)
+    tech_line = ", ".join(str(t) for t in tech_stack if t)[:120]
     tech_html = f'<div class="stage-tech"><span style="font-weight:bold; color:#000;">Tech:</span> <strong>{html.escape(tech_line)}</strong></div>' if tech_line else ""
 
     return f'''

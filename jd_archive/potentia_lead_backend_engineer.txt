@@ -1,34 +1,49 @@
 Company: Potentia
 Role: Lead Back End Engineer
-Location: New Zealand (open across NZ, remote)
-Type: Full-time, Permanent
-Posted: ~2026-07-03 (8 days ago as of 2026-07-11)
-Source: LinkedIn
-
-About the company:
-Potentia (recruiting for a client). Global creative industry digital platform with highly engaged community. Product-led technology team.
+Location: New Zealand (Remote OK)
+Type: Permanent, Full-time
+Ref: BH-20135
+Posted: 02 Jul 2026
+Source: Seek / Beyond Recruitment
 
 About the role:
-Lead Back End Engineer for global creative platform. Not a ticket-pickup role - shape how the engineering function matures, challenge ideas, make sensible architectural decisions.
+Lead Back End Engineer — Build for a deeply engaged creative community. Permanent role, open across New Zealand. Lead architecture for a global digital platform. Hands-on technical leadership with real ownership.
+
+The opportunity:
+Join a digital product team working in a global creative industry, supporting a highly engaged community. Platform needs thoughtful architecture, reliable delivery, and pragmatic technical leadership. Help shape how the engineering function matures, challenge ideas constructively, make sensible calls on rebuild vs. refine vs. leave alone.
+
+Company profile:
+Product-led technology team building digital experiences for a passionate international audience. Collaborative, practical, serious about quality without getting lost in theory.
 
 Responsibilities:
 - Lead back end architecture and platform evolution
 - Design and deliver scalable APIs across REST and GraphQL
-- Work with Product, Design, and technical leaders
+- Work closely with Product, Design, and technical leaders
 - Guide major platform initiatives from concept through delivery
 - Improve CI/CD, DevOps practices, monitoring, and observability
 - Set engineering patterns, standards, and best practices
 - Mentor engineers through code reviews and technical guidance
 - Own performance, reliability, security, and production quality
-- Support third-party integrations
+- Support integrations with third-party platforms and services
 
 Requirements:
 - 10+ years building modern back end systems
 - Strong senior, lead, or principal engineering experience
-- Deep Python/Django experience (or strong equivalent)
-- Strong API design (REST and GraphQL)
-- Relational databases (PostgreSQL or MySQL)
-- AWS with Terraform or AWS CDK
-- Docker, CI/CD, modern DevOps
-- Scalable/distributed systems design
-- Strategic thinking, ownership, collaboration
+- Deep Python/Django experience, or strong equivalent back end depth
+- Strong API design skills across REST and GraphQL
+- Relational database experience, ideally PostgreSQL or MySQL
+- AWS experience, with Terraform or AWS CDK
+- Docker, CI/CD, and modern DevOps practices
+- Experience designing scalable or distributed systems
+- Strategic thinking, confidence to challenge ideas constructively
+- Balance of technical excellence and genuine collaboration
+- Pragmatism on rebuild vs. refine decisions
+- Desire to help shape engineering, not simply deliver tasks
+
+Notes for CL:
+Answer "Why you would like it" points:
+1. Permanent role, open across New Zealand
+2. Lead architecture for a global digital platform
+3. Work in a creative industry people genuinely care about
+4. Hands-on technical leadership with real ownership
+5. Help shape the future of the engineering function

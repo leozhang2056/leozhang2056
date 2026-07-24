@@ -1,0 +1,65 @@
+Looking for NewZealand PRs and Citizens only.
+
+We are seeking a highly skilled Platform Engineer with strong expertise in Backstage, TypeScript, Springboot and Java to design, build, and operate an enterprise-grade Internal Developer Platform (IDP).
+
+The role will focus on enabling self-service developer workflows, golden paths, and seamless integration with enterprise DevOps toolchains to improve developer productivity, standardization, and governance.
+
+Experience
+
+8–15 years of overall experience
+Minimum 4+ years in TypeScript and Java Springbok/Microservices
+Proven hands-on experience in Backstage implementation and platform engineering
+
+Key Responsibilities
+
+Backstage Platform Development
+Design, develop, and enhance Backstage Developer Portal
+Build and maintain Software Templates (Scaffolder) and golden paths
+Develop custom Backstage plugins (frontend + backend) using TypeScript
+Manage Backstage Catalog (entities, systems, ownership, metadata governance)
+
+DevOps & Platform Integration
+Integrate Backstage with SCM, CI/CD pipelines, Kubernetes, security and monitoring tools
+Build reusable CI/CD templates and pipeline-as-code frameworks
+Enable end-to-end automation (build, test, deploy, monitor)
+Implement RBAC, secrets management, and security-first pipelines
+
+Engineering & Development
+Build backend services using Java (Spring Boot, Microservices architecture)
+Develop and manage API integrations across platform services
+Work on containerization (Docker) and orchestration (Kubernetes)
+
+Platform Enablement
+Drive self-service capabilities and developer experience improvements
+Create and maintain documentation, onboarding guides, and standards
+Promote best practices across DevOps, security, and platform engineering
+
+Operations & Reliability
+Ensure platform scalability, reliability, and performance
+Participate in incident resolution, RCA, and continuous improvement
+Maintain observability (logging, monitoring, alerting)
+
+Must-Have Skills
+
+Core Platform Skills
+Backstage (implementation, customization, plugin development)
+Strong TypeScript / Node.js development
+Experience with Developer Portals / Internal Developer Platforms
+
+Backend & Engineering
+Strong Java (Spring Boot, Microservices)
+API design and integration
+Git workflows (branching, PRs, merge strategies)
+
+Good-to-Have Skills
+Maven and polyglot build ecosystems
+Event streaming (Kafka)
+Cloud platforms (AWS / Azure / GCP)
+Service management integrations (e.g., JSM)
+Platform engineering concepts: Golden Path, self-service, abstraction layers
+
+DevOps & Cloud
+CI/CD tools: Jenkins / Azure DevOps / Bitbucket pipelines
+Kubernetes and container orchestration
+Infrastructure automation and pipeline design
+Code quality tools: Snyk (or equivalent)

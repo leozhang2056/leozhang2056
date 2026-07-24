@@ -14,7 +14,7 @@ company:
   name: Chunxiao Technology Co., Ltd.
   location: China
 summary: >
-  Led Android performance optimization across multiple enterprise applications, focusing on
+  Led Android performance optimization and quality engineering across multiple enterprise applications, focusing on
   cold start reduction, memory optimization, ANR elimination, and OOM prevention. Built
   profiling and monitoring tooling to systematically identify and resolve performance
   bottlenecks across diverse Android device ecosystems.
@@ -25,7 +25,8 @@ highlights:
   - Built in-app performance monitoring infrastructure tracking startup metrics, frame rate, memory usage, and crash rate across device models and OS versions
   - Optimized APK size through resource shrinking, ProGuard/R8 rules, dynamic delivery, and modularization
   - Applied rendering optimization including GPU overdraw reduction, layout hierarchy flattening, and RecyclerView recycling improvements
-  - Developed automated performance regression detection integrated into CI/CD pipeline
+  - Developed automated performance regression detection integrated into CI/CD pipeline, ensuring quality standards across technology stack upgrades
+  - Extended optimization framework with custom profiling tools for emerging Android technologies and runtime changes
 tech_stack:
   languages:
   - Kotlin

@@ -17,7 +17,7 @@ def _load_chunxiao_entry():
 def test_chunxiao_two_stages_for_backend():
     html = _render_career_progression_html(_load_chunxiao_entry(), "en", "backend")
 
-    assert "Full-stack Engineer" in html
+    assert "Senior Software Engineer" in html
     assert "Senior Android Engineer" in html
     assert html.count('class="career-stage"') == 2
 
@@ -26,7 +26,7 @@ def test_chunxiao_two_stages_for_android():
     entry = _load_chunxiao_entry()
     html = _render_career_progression_html(entry, "en", "android")
 
-    assert "Senior Mobile Engineer" in html
+    assert "Senior Software Engineer" in html
     assert "Senior Android Engineer" in html
     assert html.count('class="career-stage"') == 2
 
@@ -34,7 +34,7 @@ def test_chunxiao_two_stages_for_android():
 def test_chunxiao_two_stages_for_fullstack():
     html = _render_career_progression_html(_load_chunxiao_entry(), "en", "fullstack")
 
-    assert "Full-stack Engineer" in html
+    assert "Senior Software Engineer" in html
     assert "Senior Android Engineer" in html
     assert html.count('class="career-stage"') == 2
 
@@ -42,6 +42,6 @@ def test_chunxiao_two_stages_for_fullstack():
 def test_chunxiao_two_stages_for_ai():
     html = _render_career_progression_html(_load_chunxiao_entry(), "en", "ai")
 
-    assert "Full-stack Engineer" in html
+    assert "Senior Software Engineer" in html
     assert "Senior Android Engineer" in html
     assert html.count('class="career-stage"') == 2

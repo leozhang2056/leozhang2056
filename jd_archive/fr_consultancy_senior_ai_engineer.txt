@@ -1,0 +1,21 @@
+Company: FR Consultancy
+Role: Senior AI Engineer – Enterprise GenAI Solutions
+Location: Auckland, New Zealand (On-site)
+Type: Contract / Permanent
+Source: LinkedIn
+Posted: ~2026-07-20
+
+About the job:
+Senior AI Engineer – Enterprise GenAI Solutions. Building enterprise-grade GenAI solutions.
+
+Requisites:
+- Python and enterprise GenAI/LLM application development experience
+- Expertise in RAG, vector search, embeddings, and prompt grounding
+- Experience with structured and unstructured data sources
+- Experience with cloud platforms (Azure, AWS, or GCP) and cloud-native development
+- Knowledge of Responsible AI and secure enterprise AI solutions
+
+Requirements:
+- 4+ years in AI/ML, GenAI, or related domains
+- Python, GenAI, LLM Applications, RAG, Vector Search, Prompt Grounding, Cloud-Native Engineering
+- Valid NZ work rights (Citizen, PR, or valid work visa)

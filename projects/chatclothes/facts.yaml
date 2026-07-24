@@ -62,12 +62,12 @@ highlights:
   # 首条保留移动端可演示面，便于 Android 岗扫描；其余按重要性排列
   - Shipped handheld-facing control UX (PWA tuned for Android Chrome) so diffusion/LLM jobs and status surface on the same mobile surfaces used beside Pi deployments
   - Designed and implemented complete multimodal VTON system independently
-  - During AUT research period, also conducted fruit ripeness image recognition experiments to extend CV methods into agri-related use cases
+  - During AUT research period, also conducted fruit ripeness image recognition experiments with model training, testing, and evaluation to extend CV methods into agri-related use cases
   - Applied LoRA fine-tuning to OOTDiffusion for enhanced pose alignment and texture reconstruction
   - Optimized YOLO12n to YOLO12n-LC for on-device and resource-constrained targets, pairing lightweight CV with local diffusion/LLM orchestration for handheld and Raspberry Pi–class deployments
   - Orchestrated DeepSeek LLM via Ollama for natural language control and dialogue-driven interaction
   - Deployed full system on Raspberry Pi 5 for offline-capable inference on ARM-class hardware
-  - Validated system on DressCode and VITON-HD datasets; thesis passed with First Class Honours
+  - Validated system through rigorous model testing and evaluation on DressCode and VITON-HD image datasets; thesis passed with First Class Honours
 
 highlights_cn:
   - 独立设计并实现完整的多模态虚拟试衣系统

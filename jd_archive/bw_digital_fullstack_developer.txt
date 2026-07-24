@@ -1,0 +1,36 @@
+Full Stack Developer
+BW Digital · Auckland, New Zealand (Remote)
+Full-time
+
+About the role
+
+This role will report to the Director – Engineering and IT and play a critical role in designing, developing, deploying, maintaining, and supporting our diverse range of applications. This role will be closely aligned with the company’s IT strategy and product roadmap, ensuring our technological solutions remain at the forefront of industry standards.
+
+The role also supports BW Digital's Information Security Management System (ISMS) by ensuring that all development activities comply with internal information security policies, secure development practices, and ISO/IEC 27001 requirements.
+
+Key Responsibilities
+- Participate in strategic decision-making and contribute to the design of the IT Dev Roadmap
+- Report to the manager on collaboration and projects, and proactively offer solutions
+- Participate in designing and implementing software architecture and applications
+- Review, identify, propose, and implement changes in our current application stacks, to optimize costs and reduce maintenance
+- Identify, test, recommend, develop and deploy applications and tools including Java related technologies and frameworks
+- Identify, assess, advise on, develop and implement centralized software development tools and development guidelines
+- Maintain updated overview of the software stack and applications, their interactions and user documentation
+- Participate in and facilitate code reviews with peers
+
+Mandatory Qualifications & Experiences
+- 2-3 years of professional experience in full-stack software development
+- Proven experience in building and deploying scalable applications and services
+- Frontend proficiency in JavaScript/TypeScript and modern frameworks such as Angular
+- Backend proficiency in server-side language like Java with framework Springboot
+- APIs experience in designing, building, and consuming RESTful APIs
+- ETL Tools to schedule and collect data, process and store them, such as Pentaho
+- Understanding of secure coding principles and common application security risks (e.g., OWASP Top 10)
+
+Desirable Requirements
+- DevOps experience with container tools such as Docker
+- Testing skills in automated testing framework (e.g., Selenium, BDD Cucumber)
+- Familiarity with setting up CI/CD automated deployments via Jenkins or GitLab
+- Experience with problem-solving and analytical skills
+- Experience with debugging and optimization skills
+- Strong verbal and written communication skills for cross-functional teamwork

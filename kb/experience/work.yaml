@@ -13,14 +13,15 @@ experiences:
     type: Education/Research
     
     achievements:
-      - 'Designed and delivered ChatClothes, a multimodal AI platform integrating computer vision, diffusion
-        models, and LLM-powered workflows. Owned the project end-to-end, from system design and development
-        through evaluation, deployment, and user validation.'
+      - 'Designed and delivered ChatClothes, a digital multimodal AI platform integrating computer vision, diffusion
+        models, and LLM-powered workflows with RAG, vector search, and prompt grounding. Conducted extensive
+        image dataset work, model training and testing across multiple CV projects. Provided technical
+        leadership and owned the product end-to-end as cloud-native AI solutions, from system design and
+        development through evaluation, deployment, and user validation.'
       - 'Deployed and optimized AI models on edge devices including Raspberry Pi and Android phones,
         running lightweight LLMs and vision models on resource-constrained ARM hardware with offline
-        inference and on-device prediction.'
-      - 'Published research at IVCNZ 2025 and completed a First Class Honours Master''s thesis six months
-        ahead of schedule.'
+        inference, image processing, and on-device prediction. Validated model outputs through ground truth testing and evaluation.'
+      - 'Published research at IVCNZ 2025 and completed a First Class Honours Master''s thesis in machine learning and computer vision six months ahead of schedule.'
 
     tech_stack: [Python, PyTorch, Ollama, Docker, Linux, AWS, Azure, Git, Raspberry Pi, Android]
 
@@ -40,16 +41,17 @@ experiences:
         achievements:
           - 'Smart Factory IoT Platform: architected manufacturing platform across 10+ factory sites with 6-person cross-functional team. Integrated RFID readers, barcode scanners, electronic scales (RS232/RS485 serial bridge to WebSocket), conveyors, and Android workshop terminals with Spring Cloud microservices. Event-driven architecture via ActiveMQ/Kafka, Docker deployment, 30%+ efficiency gain.'
           - 'IoT Device Management Platform: built Android device discovery/binding/remote control app and gateway firmware for smart switches and Zigbee/WiFi gateways. Protocol handling, MQTT cloud uplink, Spring Cloud backend API, and Vue.js management dashboard.'
-          - 'Boobit Crypto Trading App: sole Android developer for cryptocurrency trading app. Real-time market data via WebSocket, order book rendering, candlestick charting, encrypted local wallet storage, MVVM with Clean Architecture, Retrofit/OkHttp, Room.'
+          - 'Boobit Crypto Trading App: sole Android developer for financial cryptocurrency trading app. Real-time market data via WebSocket, order book rendering, candlestick charting, encrypted local wallet storage, MVVM with Clean Architecture, Retrofit/OkHttp, Room — delivering banking-grade reliability for sensitive financial transactions.'
           - 'Picture Book Locker: Android cabinet control system with electromagnetic locks, UV sterilization, sensors, face recognition + QR code authentication. Borrowing client app with <3s checkout time, 24/7 self-service.'
           - 'Built Android platform infrastructure adopted across 12+ enterprise applications: multi-module architecture, shared SDKs, reusable networking layers, and common business frameworks. Reduced duplicate code by more than 50%.'
+          - 'Mentored junior Android developers through code reviews, architecture guidance, and Agile sprint ceremonies, accelerating their growth from entry-level to independent contributors.'
         
         tech_stack: [Kotlin, Java, Android SDK, Spring Cloud, REST APIs, MySQL, Redis, Docker, CI/CD, WebSocket, NDK/JNI, MQTT, Zigbee, RFID]
 
       - title: Senior Android Engineer
         period: "2013 - 2018"
         achievements:
-          - 'Enterprise Messaging Platform: architected Android client for 5,000+ DAU and 500K+ daily messages with sub-200ms latency. Built NDK/JNI TCP/UDP transport layer, WebSocket connection persistence, offline message sync, JPush backup push channel, and OEM ROM keep-alive strategies (Xiaomi/Huawei/OPPO). Migrated core IM from unstable in-house C++ to Easemob cloud, eliminating 90%+ defects. Built FastDFS distributed file storage (100GB+). Applied hotfix framework (Tinker, AndFix) for emergency patches and performance engineering across cold start, ANR, OOM, and APK size.'
+          - 'Enterprise Messaging Platform: architected Android client for 5,000+ DAU and 500K+ daily messages with sub-200ms latency. Built NDK/JNI TCP/UDP transport layer, WebSocket connection persistence, offline message sync, JPush backup push channel, and OEM ROM keep-alive strategies (Xiaomi/Huawei/OPPO). Migrated core IM from unstable in-house C++ to Easemob cloud, eliminating 90%+ defects. Built FastDFS distributed file storage (100GB+). Applied hotfix framework (Tinker, AndFix) for emergency patches and performance quality engineering across cold start, ANR, OOM, and APK size.'
           - 'Live Streaming Commerce System: full-stack Android + web delivery for live commerce platform. Android client in Java/Kotlin with RTMP/WebRTC/HLS streaming, multi-language architecture (C# + C++ media core + Python analytics + Lua config), 1000+ peak concurrency, 99.5% stream availability.'
 
         tech_stack: [Kotlin, Java, Android SDK, NDK/JNI, C++, WebSocket, TCP/UDP, Gradle, CI/CD, Tinker, AndFix, JPush, RTMP, WebRTC, HLS, Easemob]
