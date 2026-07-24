@@ -318,49 +318,49 @@ Shared technologies and domain relationships across all projects:
 ```mermaid
 graph LR
   subgraph Enterprise
-    IM["Enterprise Messaging<br/>(10-yr platform)"]
-    SF["Smart Factory<br/>(5+ sites)"]
-    SP["Smart Power<br/>(3+ parks)"]
-    BC["Broadcast Control<br/>(1000+ devices)"]
+    IM["Enterprise Messaging\n(10-yr platform)"]
+    SF["Smart Factory\n(5+ sites)"]
+    SP["Smart Power\n(3+ parks)"]
+    BC["Broadcast Control\n(1000+ devices)"]
   end
 
   subgraph IoT
-    VG["Visual Gateway<br/>(1:70 ratio)"]
-    IoT["IoT Solutions<br/>(7-yr product)"]
-    PBL["Picture Book Locker<br/>(10+ peripherals)"]
+    VG["Visual Gateway\n(1:70 ratio)"]
+    IoTD["IoT Solutions\n(7-yr product)"]
+    PBL["Picture Book Locker\n(10+ peripherals)"]
   end
 
   subgraph AI
-    CC["ChatClothes<br/>(Diffusion + LLM)"]
-    CH["Herbal Recognition<br/>(YOLO/ResNet)"]
-    DM["Maintenance Prediction<br/>(Random Forest)"]
+    CC["ChatClothes\n(Diffusion + LLM)"]
+    CH["Herbal Recognition\n(YOLO/ResNet)"]
+    DM["Maintenance Prediction\n(Random Forest)"]
   end
 
   subgraph Mobile
-    Boobit["Boobit<br/>(Compose)"]
-    SA["School Attendance<br/>(Face SDK)"]
-    FP["Forest Patrol<br/>(Offline GIS)"]
-    ER["Exhibition Robot<br/>(SLAM)"]
+    Boobit["Boobit\n(Compose)"]
+    SA["School Attendance\n(Face SDK)"]
+    FP["Forest Patrol\n(Offline GIS)"]
+    ER["Exhibition Robot\n(SLAM)"]
   end
 
   subgraph Govt
-    BP["Banknote Paper Mill<br/>(Air-gapped ETL)"]
-    VS["Visit System<br/>(WebRTC)"]
+    BP["Banknote Paper Mill\n(Air-gapped ETL)"]
+    VS["Visit System\n(WebRTC)"]
   end
 
   %% Shared technology links
-  IM -- "Spring Cloud<br/>Kotlin/Java" --> SF
-  SF -- "MQTT<br/>Vue.js" --> BC
-  SP -- "MQTT<br/>InfluxDB" --> IoT
-  IoT -- "RS485<br/>Modbus" --> VG
-  VG -- "MQTT<br/>Edge alerts" --> SP
+  IM -- "Spring Cloud\nKotlin/Java" --> SF
+  SF -- "MQTT\nVue.js" --> BC
+  SP -- "MQTT\nInfluxDB" --> IoTD
+  IoTD -- "RS485\nModbus" --> VG
+  VG -- "MQTT\nEdge alerts" --> SP
   CC -- "YOLO" --> CH
   CH -- "Python" --> DM
   SA -- "Face SDK" --> ER
-  PBL -- "Face SDK<br/>UART" --> SA
-  FP -- "Android<br/>Offline-first" --> IoT
+  PBL -- "Face SDK\nUART" --> SA
+  FP -- "Android\nOffline-first" --> IoTD
   BP -- "C#/.NET" --> VS
-  BC -- "Android<br/>Fleet mgmt" --> IoT
+  BC -- "Android\nFleet mgmt" --> IoTD
 ```
 
 ---
