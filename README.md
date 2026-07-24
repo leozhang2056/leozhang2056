@@ -22,13 +22,13 @@
 
 ## Experience by Domain
 
-```mermaid
-xychart-beta
-  title "Years of Hands-On Experience by Domain"
-  x-axis ["Android", "Backend/Java", "IoT/Hardware", "Frontend", "AI/ML"]
-  y-axis "Years" 0 --> 11
-  bar [10, 8, 7, 5, 3]
-```
+| Domain | Years | Bar |
+|--------|------:|-----|
+| **Android** | 10+ | ████████████████████ |
+| **Backend/Java** | 8+ | ████████████████ |
+| **IoT/Hardware** | 7+ | ██████████████ |
+| **Frontend** | 5+ | ██████████ |
+| **AI/ML** | 3+ | ██████ |
 
 ---
 
