@@ -1,0 +1,50 @@
+Plant & Food Research
+Software Developer - Data and Digital
+
+Te Puke, Bay of Plenty · Full time · $103,500 - $129,372
+
+Software Developer
+Digital Solutions
+Location: Te Puke, New Zealand
+Vacancy number: 60645
+Permanent Fulltime (38 hours per week)
+
+Develop specialist software supporting New Zealand's kiwifruit breeding programme
+Apply your software engineering expertise to real-world horticultural research
+Work alongside scientists and breeders to accelerate cultivar development
+
+What you will be doing | Nga whainga matua
+
+This is a unique opportunity for an experienced Software Developer to support the Kiwifruit Data Programme and the Kiwifruit Breeding Centre. You will develop and maintain science informatics systems used to capture, manage, analyse, and deliver breeding and research data that supports the development of future kiwifruit cultivars.
+
+Working closely with scientists, breeders, Technical Product Owners and other software developers, you will:
+
+Design, develop, test and maintain software applications and services.
+Support data capture and analysis platforms used within kiwifruit breeding and research programmes.
+Develop REST APIs, database solutions, and modern web applications.
+Participate in Agile software delivery practices.
+Contribute to software quality through automated testing, peer reviews and continuous improvement.
+Collaborate with scientists and breeding teams to deliver practical, user-focused solutions.
+
+What you will bring | Nga tino pukenga me nga wheako
+
+To be successful in this role, you will have:
+
+A relevant tertiary qualification in Software Engineering, Computer Science, or equivalent industry experience.
+At least five years' commercial software development experience using Java, including Spring Boot.
+Strong experience with ReactJS or Angular.
+Experience working with MySQL, PostgreSQL and other database technologies.
+Experience developing automated tests and RESTful APIs.
+Experience working in Agile development environments.
+Demonstrated knowledge and practical understanding of plant breeding principles, genetic selection methodologies, and crop improvement processes.
+Strong understanding of kiwifruit breeding, kiwifruit research systems, and new cultivar development.
+The ability to contribute effectively with minimal onboarding and quickly build productive relationships with scientists, breeders, and stakeholders.
+
+Highly desirable
+
+Experience working within the horticulture sector.
+Experience supporting breeding, genetics, or agricultural research programmes.
+Exposure to Docker, Jenkins, Apache Kafka and Couchbase.
+Knowledge of geospatial technologies and data.
+Additional programming experience in Python, C#, C++, R or PHP.
+Understanding of Te Tiriti o Waitangi, te reo Maori and tikanga Maori.
