@@ -1,0 +1,40 @@
+Datacom
+Principal Developer
+
+Christchurch Central, Canterbury (Hybrid) · Full time
+
+Our Why
+
+Datacom works with organisations and communities across Australia and New Zealand to make a difference in people's lives and help organisations use the power of tech to innovate and grow.
+
+About Us
+
+We have over 6,200 people across our global offices, and generate an annual revenue of over $1.2 billion, this makes us one of Australasia's largest professional IT services companies. We have extensive expertise in operating data centres, providing IT services, software engineering and application management, as well as payroll and customer service design and operations.
+
+About the Role
+
+The Principal Developer is responsible for developing and maintaining applications software. This role is a senior developer who is responsible for completing technical tasks including writing code/programming and overseeing Development teams.
+
+Responsibilities
+
+Leading Development teams, including planning, controlling and reporting on progress.
+Designing, coding, testing and installing applications programs either in one major language or in a range of programs across multiple platforms.
+Developing operating and system documentation.
+Mentoring Developers in working with users to evaluate IT applications and equipment requirements.
+Ensuring that systems are developed within agreed budgets and time frames and achieving necessary design and systems security standards.
+Overseeing the analysis, design, programming, debugging, and modification of computer programs for commercial or end user applications, such as materials management, financial management, HRIS, mobile apps or personal applications products.
+Completing documentation and procedures for installation and maintenance.
+Monitoring the performance and availability of systems hardware and software.
+Installing, testing and maintaining new or modified systems software.
+Analysing and rectifying operating systems problems.
+
+Qualifications
+
+10+ years in Software Development, with at least 4 years in a large IT organisation.
+Advanced skills in one or more of the major programming languages (either 'legacy' or 'hot') such as .Net, Java, Cobol, C++, Visual Basic, XML, ASP, COM/DCOM and/or SQL development tools.
+Advanced skills and knowledge of one of the major relational database packages such as Oracle, SQL Server, Access, Sybase or DB2.
+Ability to understand the essential needs of Users and meet these in well-designed programs.
+
+Desirable skills
+
+Experience in Azure Cloud, GitHub, and agent engineering
