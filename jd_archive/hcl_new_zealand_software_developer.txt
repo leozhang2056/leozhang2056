@@ -1,0 +1,57 @@
+HCL New Zealand
+Software Developer
+
+Auckland CBD, Auckland · Contract/Temp
+
+We are HCLTech, one of the fastest-growing large tech companies in the world and home to 219,000+ people across 54 countries, supercharging progress through industry-leading capabilities centered around Digital, Engineering and Cloud.
+
+About the Role
+We are seeking an experienced Software Developer to design, develop, and support scalable cloud-native applications and platforms. The ideal candidate will have strong expertise in Java-based backend development, AWS cloud services, microservices architecture, and DevOps automation, with a passion for building secure, resilient, and highly available enterprise solutions.
+
+You will work closely with cross-functional teams to deliver modern digital platforms, automate infrastructure provisioning, and drive continuous improvement across the software development lifecycle.
+
+Key Responsibilities
+
+Design, develop, and maintain enterprise-grade applications using Java, Spring Boot, REST APIs, and Microservices architecture.
+Build and support modern front-end applications using React.js, JavaScript, and TypeScript.
+Develop cloud-native solutions leveraging AWS services and best practices.
+Design, implement, and maintain Infrastructure as Code (IaC) solutions using AWS CloudFormation and AWS CDK.
+Develop and maintain CI/CD pipelines to enable automated, reliable, and repeatable deployments.
+Deploy and manage containerized applications using Docker and cloud-native platforms.
+Monitor, troubleshoot, and optimize application performance, reliability, and scalability.
+Collaborate with architects, developers, business stakeholders, and operations teams to deliver high-quality solutions.
+Implement security, governance, and compliance standards across applications and cloud infrastructure.
+Contribute to technical design discussions, code reviews, and engineering best practices.
+
+Required Technical Skills
+
+Programming Languages & Frameworks:
+Strong experience in Java
+Expertise in Spring Boot
+Experience developing RESTful APIs
+Strong understanding of Microservices Architecture
+Front-end development experience with React.js, JavaScript, TypeScript
+
+Cloud & Platform Technologies:
+Extensive experience with AWS services, including AWS Lambda, ECS, S3, CloudWatch, IAM, EC2, SQS, RDS
+Experience working with OpenShift platforms
+
+Infrastructure as Code:
+Hands-on experience with AWS CloudFormation (YAML) and AWS CDK (TypeScript)
+Strong understanding of cloud infrastructure automation and provisioning
+
+DevOps & CI/CD:
+Experience creating and managing CI/CD pipelines using GitHub Actions
+Strong knowledge of Docker, containerized deployments, infrastructure automation, knowledge of DevOps practices and release management
+
+Databases & Scripting:
+Strong experience with PostgreSQL, SQL
+Scripting and automation experience using Python, Bash, PowerShell
+
+Preferred Qualifications
+
+Experience designing and implementing enterprise-scale cloud platforms.
+Strong understanding of Agile and DevSecOps practices.
+Experience with monitoring, observability, and operational excellence.
+Exposure to event-driven architectures and distributed systems.
+AWS Certifications (Developer Associate, Solutions Architect Associate, or equivalent) are highly regarded.
