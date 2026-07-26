@@ -1,0 +1,44 @@
+Gallagher Insurance
+Integration Developer
+
+Auckland CBD, Auckland · Full time · Base Salary + KiwiSaver
+
+About the role:
+
+Reporting to the Integration Architect, this position is responsible for the design, development, testing, and support of software solutions within delivery teams at Gallagher Insurance New Zealand (AJG NZ). The role contributes to the delivery of high-quality applications, APIs, integrations, and automation solutions that align with agreed technical standards, architectural direction, and security practices.
+
+The Developer works closely with other developers, testers, DevOps engineers, business analysts, and architects to deliver maintainable, secure, and reliable solutions across a range of technologies and platforms.
+
+Key responsibilities for the role include:
+
+Contribute to the design, development, testing, maintenance, and support of applications, APIs, integrations, and supporting services
+Develop solutions across AJG technology stacks, including MuleSoft, Java/Spring Boot, Node.js, front-end applications, and integrations with SaaS platforms (e.g. Salesforce, Unmand)
+Develop and maintain automated tests, including unit, integration, and regression test suites where appropriate
+Participate in code reviews and contribute to maintaining high standards of code quality, performance, security, and maintainability
+Contribute technical input during refinement, including solution options, estimates, technical dependencies, and implementation considerations
+Support release activities, including deployments, smoke testing, validation, and post-release monitoring
+Investigate and resolve defects, incidents, and production support issues in a timely manner
+Work with DevOps engineers to ensure solutions are buildable, deployable, observable, and operationally ready
+Follow agreed development standards, secure coding practices, and architectural guidelines
+Produce and maintain technical documentation where required
+Collaborate effectively with developers, testers, business analysts, product owners, and architects to deliver business outcomes
+Contribute to continuous improvement initiatives across development practices, tooling, automation, and the SDLC
+
+Skills and Experience:
+
+Hands-on experience with one or more of the AJG technology stacks, including MuleSoft, Java/Spring Boot, Node.js, React or similar front-end frameworks
+Experience developing REST APIs, integrations, and service-based solutions
+Experience working with SaaS platform integrations (e.g. Salesforce, Unmand) is desirable
+Experience developing and maintaining automated tests and supporting quality assurance activities
+Understanding of software development principles, secure coding practices, and source control processes
+Understanding of emerging AI technologies and the ability to leverage AI-assisted tools and agents to support software development, testing, troubleshooting, and delivery activities
+Experience supporting software releases and production issue resolution
+Familiarity with CI/CD pipelines, automated deployment processes, and DevOps practices
+Experience working in Agile delivery environments
+Strong analytical and problem-solving skills
+Ability to work collaboratively within cross-functional delivery teams
+3+ years' experience in software development, integration, or related technical roles
+
+About us:
+
+At Gallagher, we've been helping to protect what's important to people and businesses for more than 95 years. Gallagher is the world's third largest insurance brokerage and risk management companies, with a global network of brokers in over 130 countries.
