@@ -1,0 +1,43 @@
+The Onset
+Software Engineer (.NET / Backend)
+
+Auckland (Remote) · Full time · $120,000-$140,000 NZD
+
+Software Engineer (.NET / Backend) - Build AI-Powered Products at Scale
+
+Technology is changing fast, and so is this engineering team.
+
+We're looking for Software Engineers who enjoy solving complex engineering problems, modernising legacy platforms, and using AI to improve the way software is built and delivered. If you're excited by clean architecture, automation, modern engineering practices, and building software that reaches millions of users, we'd love to talk.
+
+You'll join a collaborative engineering team that believes in shipping quality software, learning continuously, and giving engineers the freedom to influence technical direction.
+
+What you'll be working on:
+
+Building scalable, cloud-native software used by businesses every day.
+Modernising legacy systems into maintainable, high-performing platforms.
+Leveraging AI-assisted engineering tools and workflows to improve developer productivity and software quality.
+Designing and building new products and capabilities from the ground up.
+Automating manual processes wherever possible.
+Solving complex engineering challenges at scale.
+Working across the full software development lifecycle—from design through to production support.
+Collaborating with Product, Design and Engineering teams to deliver customer-focused outcomes.
+
+What you'll bring:
+
+Have strong experience building commercial software in .NET/C# or another modern backend language.
+Care deeply about writing clean, maintainable, well-tested code.
+Enjoy improving existing systems as much as building new ones.
+Have experience with cloud platforms (AWS, Azure or GCP).
+Understand modern engineering practices such as CI/CD, automated testing, code reviews and observability.
+Are curious about AI developer tools and excited to incorporate them into everyday engineering.
+Thrive in collaborative, agile teams and enjoy sharing knowledge with others.
+Can troubleshoot production issues and think systematically about reliability and scalability.
+
+Why this opportunity:
+
+Work on meaningful technical challenges at enterprise scale.
+Help shape the future of AI-assisted software engineering.
+Modernise large-scale legacy platforms using modern architecture and engineering practices.
+Work with talented engineers who value collaboration, continuous learning and technical excellence.
+Influence technical decisions rather than simply implementing requirements.
+Enjoy the flexibility of working remotely anywhere in New Zealand or in a hybrid environment.
