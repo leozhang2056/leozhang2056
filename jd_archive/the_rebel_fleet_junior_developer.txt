@@ -1,0 +1,40 @@
+The Rebel Fleet
+Junior Developer
+
+Auckland CBD, Auckland (Hybrid) · Full time
+
+About the role
+
+The Junior Developer role will work in collaboration with the development team to create high-level programs that meet the client's needs. Reporting to the Senior Developer, this role works across a variety of projects, infrastructure and languages. The Junior Developer will work with talented developers on new and existing products that keep the creatives happy. As well as that, the role will also work on internal tools and documentation to enable our Operations team to be as effective as possible.
+
+Key responsibilities
+
+Troubleshooting and debugging code, identifying root causes and implementing effective solutions
+Recommending and executing program improvements
+Contribute to the documentation of software systems, including technical specifications, user manuals, and guidelines
+Collaborate with the development team to design, develop, and maintain software applications
+Participate in code reviews
+Use AWS services to facilitate clean integrations of products with clients
+Work with Microservice architecture to build various services for use in all the different stages of the film production pipeline
+Writing performant and stable code with supervision
+Respond to support requests and evaluate user feedback to suggest possible solutions
+Constant communication with clients and collaborate with team members within the hybrid working environment
+
+About you
+
+Bachelor's degree in Computer Science, Software Engineering, or a related field such as IT
+0-2 years of experience in a development environment
+1-2 years of software development experience
+Experience in Python, and Front-end technology like REACT
+Technical Knowledge of OS, software applications, hardware components, networking concepts
+Ability to clearly articulate complex issues and work effectively with other team members and our clients
+Willing to learn new skills and take on varying responsibilities
+Strong problem-solving skills and ability to think creatively to find innovative solutions
+High motivation and results driven
+Detail focused
+
+About us
+
+The Rebel Fleet is dedicated to giving creatives the freedom to create by partnering with producers, studios and production teams to simplify the complex workflows behind film, television and commercial productions.
+Konsol is The Rebel Fleet's technology platform, built from years of hands-on industry experience and a deep understanding of the challenges faced by modern production teams. It brings people, information and workflows together in one connected environment, helping productions operate more efficiently from set through to post-production.
+The Rebel Fleet has a growing portfolio of exciting projects and ambitious plans. Joining the Konsol team means helping shape technology that is changing how screen productions collaborate, communicate and deliver.
