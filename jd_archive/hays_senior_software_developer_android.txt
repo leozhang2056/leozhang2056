@@ -1,0 +1,43 @@
+Hays | Technology
+Senior Software Developer - Android
+
+Auckland · Full time
+
+Tō kamupene hou | Your new company
+
+They are a leading fintech organisation operating at a global scale. Their technology enables secure and reliable payment and financial services for banks, businesses and consumers worldwide. Whether it is paying by card, using a digital wallet or accessing funds, their systems support many everyday transactions.
+
+Tō tūranga hou | Your new role
+
+You will be responsible for delivering mobile banking solutions to clients across the full project lifecycle. This includes pre-sales support, requirements and gap analysis, project coordination, branding, product enhancement and extension, localisation, system integration, testing and deployment.
+
+As a Software Developer, you will contribute across all stages of delivery, with a strong focus on developing enhancements and extensions to existing products.
+
+The role may require occasional out-of-hours support in response to critical incidents or essential business needs.
+
+Support the development of high-quality mobile software as part of an agile scrum team.
+Contribute to strong code quality by maintaining and improving software development standards.
+Support technical design decisions by validating approaches and prototyping new concepts.
+Work closely with team members to help achieve successful sprint outcomes.
+Encourage and mentor junior team members to support their ongoing development.
+Proactively identify and raise technical, security, delivery and performance risks.
+Actively contribute to and help promote a DevOps culture.
+Identify and implement continuous improvements to development practices.
+
+***Applicants must currently hold a valid New Zealand work visa***
+
+Ngā uara me ngā pūkenga e angitu ai koe | What you'll need to succeed
+
+Experience contributing to large-scale products within complex enterprise environments, including work across both modern platforms and legacy systems.
+Strong collaboration and communication skills, with the ability to work effectively in cross-functional teams.
+Deep knowledge of Android development and design best practices, including Android design standards.
+A demonstrated interest in delivering high-quality, market-leading software and staying up to date with industry trends and emerging technologies.
+An interest in working within an agile scrum environment.
+A willingness to broaden technical capability and explore new technologies.
+At least five years of hands-on experience developing downloadable Android mobile applications.
+
+Nice to have
+
+Experience using AI tools and AI-driven practices to improve engineering productivity.
+Experience within the financial services or banking sector.
+Working experience with React Native technologies.
