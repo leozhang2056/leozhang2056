@@ -1,0 +1,41 @@
+Kitomba
+Senior Software Developer - AI Enabled Development
+
+Wellington Central, Wellington (Hybrid) · Full time
+
+What Kitomba is all about
+
+Kitomba is the complete salon and spa management system, built specifically for the hair and beauty industry. It gives salon, spa and clinic owners everything they need to manage their business day-to-day plus the free, unlimited support they want.
+
+Kitomba has over 40 staff across Australia and New Zealand. Our head office is based in Wellington, New Zealand.
+
+Kitomba is a subsidiary of Jonas Software, the leading provider of enterprise management software for more than 40,000 customers across 15 countries.
+
+We're seeking a Senior Software Developer - AI Enabled Development with a strong interest in AI to join our software development team and work on the continued development of the Kitomba product.
+
+Your new role
+
+This role will be directly involved in envisaging, designing, developing, and producing features and functionality for our platform with a focus on solving complex problems.
+
+Specific responsibilities will include:
+
+Lead technical delivery of major features and epics, including solution design and coordinating development work across the team.
+Provide strong technical development expertise and maintain responsibility for the end-to-end development including product design and architecture.
+Framework design to develop robust, secure and resilient applications.
+Design, code, test, debug, and document software according to requirements.
+Work with stakeholders and customers, to understand business requirements, provide technical solutions, ideas, and improvements.
+Diagnose and resolve complex customer and system issues.
+Utilise best practice development techniques, design patterns, and state of the art architecture to constantly improve or enhance the company's platform.
+Coach and mentor team members and share knowledge with the team.
+
+About you
+
+A qualification in Computer Science or related field an advantage but not required.
+6 years' experience in a software development in complex environments.
+Strong technical knowledge: JavaScript, PHP, Java, modular JavaScript.
+Good knowledge of modern front-end development frameworks.
+Good knowledge of unit testing frameworks - phpunit, mocha, Junit.
+Understanding of OO design and methodologies & SQL databases.
+Excellent knowledge of: Object Orientated Programming, Relational Databases, Modern IDEs, Version control software, Agile Methodology – is essential.
+Good ability to work both autonomously and as part of a team.
+Strong work ethic and communication skills.
