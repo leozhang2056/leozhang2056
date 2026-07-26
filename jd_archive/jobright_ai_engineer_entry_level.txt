@@ -1,0 +1,35 @@
+Company: Jobright.ai
+Role: AI Engineer, Entry Level
+Location: United Kingdom (Remote)
+Type: Full-time
+Tech: Python, LLMs, RAG, Embeddings, PyTorch, TensorFlow, scikit-learn, ML, NLP, Information Retrieval, AI Agents
+
+About:
+Jobright is a personal AI job search agent that transforms how people do job search — from solo, time-consuming efforts to a fast, expert-guided journey. As an AI Engineer, you'll help develop and evaluate AI-powered features for relevant, personalised, and effective job discovery.
+
+Why Join:
+- Build real, production AI agents used by real users
+- High ownership and impact
+- Work at intersection of AI, agents, and product
+- Shape how people experience AI-driven job search
+
+Responsibilities:
+- Contribute to AI and machine-learning features for search and personalisation
+- Build data preparation, evaluation, and experimentation workflows
+- Work with prompts, embeddings, retrieval, structured outputs, and LLM APIs
+- Integrate AI capabilities into reliable product and backend systems
+- Investigate model quality, latency, and failure cases
+- Communicate technical findings and collaborate with distributed teams
+
+Required:
+- Bachelor's or master's degree in CS, AI, ML, or related field
+- Strong Python programming skills
+- Understanding of ML, NLP, or information retrieval fundamentals
+- Familiarity with APIs, Git, debugging, and software engineering practices
+- Ability to work remotely within the United Kingdom
+
+Preferred:
+- Experience with LLM applications, RAG, embeddings, or model evaluation
+- Familiarity with PyTorch, TensorFlow, scikit-learn, or cloud AI services
+- Experience building AI prototypes or data pipelines
+- Interest in AI agents, recommendation systems, or search technology

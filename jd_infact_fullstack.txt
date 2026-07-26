@@ -1,0 +1,83 @@
+Full Stack Software Engineer
+
+InFact Limited 
+Christchurch Central, Canterbury
+Engineering - Software (Information & Communication Technology)
+Full time
+$85,000 – $105,000 per year
+
+About InFact
+
+At InFact, we develop world-first technology to solve real-world problems. We pursue meaningful projects that have real impact: economically, environmentally, and socially. Over 28 years and 500 projects, we've helped bring new products and services to market for leading companies such as Hamilton Jet, Qualcomm, Invacare, the University of Canterbury, Atrax, and the Auckland Bioengineering Institute.
+
+Our multidisciplinary engineering team works across HighTech, DeepTech and MedTech. We translate emerging ideas and research into commercial products, often developing complete systems that combine hardware, software, and user-facing applications.
+
+We're now looking for a Software Engineer to strengthen our small but highly capable software team, supporting both client projects and internal systems as the business continues to grow.
+
+The Role
+
+This is a dynamic, hands-on software engineering role working across multiple projects in parallel. You'll contribute across the full development lifecycle — from understanding problems and defining requirements through to delivery and ongoing support.
+
+You will work closely with senior engineers, project managers, and other engineering disciplines to deliver software as part of broader product development programmes. Projects are often early-stage or evolving, meaning requirements are not always fully defined, and solutions must be developed iteratively.
+
+Initially, the role will undertake delivery and maintenance work while establishing a deeper understanding of our systems and how we might automate these using AI and other service delivery tools. This will be done in collaboration with senior staff. Over time there is an expectation that you will take increasing ownership of work streams, contribute to solution design, and play a role in translating client needs into actionable work.
+
+This role requires someone who is comfortable working across multiple projects, can manage ambiguity, and is motivated by delivering practical, value-driven solutions.
+
+What We're Looking For
+
+Practical Software Engineering Experience
+3–6 years' experience delivering production software. Comfortable working across backend, frontend, and integrations, and able to pick up new tools and languages as required.
+
+Strong Problem-Solving & Ownership
+Able to take loosely defined problems and work toward practical solutions. You don't need perfect instructions to get started, and you take responsibility for getting work across the line.
+
+Comfort with Ambiguity
+Experience working in environments where requirements are not always fully defined. Able to ask the right questions, make reasonable assumptions, and move forward without constant direction.
+
+Value-Focused Thinking
+Understand that good software is not just technically correct, but delivers value. Able to think about trade-offs, prioritize effectively, and avoid over-engineering when it doesn't add benefit.
+
+AI & Continuous Learning Mindset
+Committed to the application of AI to accelerate automation, learning, problem solving, software development, documentation, analysis, and communication. Actively seeks out new tools, techniques, and workflows that improve effectiveness and is willing to experiment, evaluate, and adapt as AI capabilities evolve.
+
+Communication & Collaboration
+Able to clearly communicate progress, risks, and ideas. Comfortable working with both technical and non-technical people, and contributing to team discussions and problem solving.
+
+Adaptability & Initiative
+Proactive in identifying improvements and opportunities, but pragmatic in where effort is spent. Comfortable working across multiple projects with changing priorities.
+
+Systems & Automation Mindset (Desirable)
+Interest in improving workflows, tooling, and automation. Experience with modern development tooling, CI/CD, or internal systems improvement is a strong advantage.
+
+Key Responsibilities
+
+Software Development & Delivery
+- Develop, test, and maintain software across a wide range of client and internal projects
+- Deliver features and fixes across backend, frontend, and integration layers as required
+- Work across multiple projects concurrently, adapting to shifting priorities and timelines
+- Ensure code quality through testing, peer review, and sound engineering practices
+
+Requirements & Solution Development
+- Work from partially defined requirements and actively clarify gaps
+- Translate discussions, requests, and ideas into clear, actionable work
+- Identify assumptions, risks, and trade-offs early in the development process
+- Contribute to solution design, balancing technical quality with project constraints
+
+Maintenance & Operational Support
+- Support maintenance-phase work, including bug fixing and incremental feature delivery
+- Investigate issues, identify root causes, and implement robust solutions
+- Improve system reliability, maintainability, and performance over time
+
+Internal Systems & Tooling
+- Support and improve internal systems, tools, and workflows
+- Contribute to automation and integration between systems where appropriate
+- Assist with development and maintenance of project and reporting tools
+
+Collaboration & Communication
+- Work closely with software engineers and cross-disciplinary project teams
+- Participate in technical discussions and contribute to problem solving
+- Communicate progress, risks, and uncertainties clearly
+- Contribute to client discussions and requirements development over time
+
+Please submit your CV alongside a cover letter describing why you are the best fit for the role on offer.

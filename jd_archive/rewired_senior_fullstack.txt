@@ -1,0 +1,48 @@
+Senior Software Engineer
+
+Rewired Consulting Ltd 
+View all jobs
+
+Auckland CBD, Auckland (Hybrid)
+Engineering - Software (Information & Communication Technology)
+Full time
+Posted 4d ago
+•
+Medium application volume
+
+How you match
+3 skills and credentials match your profile
+ Java Spring Boot
+ CI/CD
+ Microsoft Azure
+Show all⁠
+We're partnering with a financial services business to recruit a Senior Software Engineer (Full Stack) to join their growing technology team. This is an opportunity to play a key role in shaping the future of the digital platforms while working with modern technologies in a collaborative, high-performing environment.
+  
+About the Role:
+
+As a Senior Software Engineer, you'll combine hands-on development with technical leadership, helping design and deliver scalable, secure, and high-quality software solutions across the technology platforms.
+Working closely with architects, product owners, and delivery teams, you'll influence technical decisions, champion engineering best practices, and mentor other developers while remaining actively involved in software development.
+This role offers the opportunity to work with modern engineering practices, cloud technologies, and AI-assisted development tools as they continue to invest in innovation.
+  
+You'll have:
+Significant commercial experience as a Full Stack Software Engineer
+Strong experience with Java, Spring Boot, and React
+Experience designing and delivering complex enterprise applications
+A solid understanding of software architecture, design patterns, and engineering best practices
+Experience with Agile delivery, automated testing, CI/CD, and modern SDLC practices
+Ideally, you'll also have experience with:
+Azure or AWS
+DevOps and CI/CD pipelines
+Distributed systems and integrations
+Salesforce or other CRM platforms
+AI-assisted development tools
+Insurance or financial services
+In return, you'll enjoy:
+Hybrid working
+Modern technology stack
+Supportive, collaborative engineering culture
+Opportunities to mentor and develop others
+Ongoing investment in learning and emerging technologies
+The chance to work on meaningful products used by thousands of New Zealanders
+  
+If you're passionate about building quality software and want to join a business where your ideas and technical expertise will make a real difference, please apply now.

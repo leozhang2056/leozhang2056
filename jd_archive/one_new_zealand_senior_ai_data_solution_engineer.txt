@@ -1,0 +1,53 @@
+One New Zealand
+
+Senior AI & Data Solution Engineer
+
+Auckland, Auckland, New Zealand · Hybrid · Full-time
+
+About the job
+
+He aha ai tātou – Why us?
+
+At One NZ we're not just imagining the future, we're building it. Our purpose? A better-connected Aotearoa New Zealand. Kia renarena te taukaea i Aotearoa New Zealand.
+
+Our ambition? To become the most AI-enabled telco on the planet. This isn't just about our technology, It's about you. We're investing in our people like never before.... empowering them to grow, lead, and shape what's next.
+
+Through our AI School, access to world-class learning platforms, or career pathways that evolve with you, we create an environment where your curiosity thrives, and your skills accelerate.
+
+Join us and be part of something extraordinary: connect with purpose and help redefine what's possible.
+
+Ko tō tūranga – your role
+
+As the Senior AI & Data Solution Engineer your role is to collaborate closely with business stakeholders to understand their needs and deliver highly performant, scalable AI and data solutions that support One NZ's business strategies. As a key member of the AI & Data Engineering team, you'll take ownership of complex solution components from design through to build, test, deployment and continuous improvement, helping us future-proof our workforce, reduce handoffs and accelerate delivery as we work towards becoming the most AI-enabled telco in the world.
+
+Ko Tō Mahi – What You'll Do
+
+Own the delivery of complex AI and data engineering solution components across squads and delivery streams.
+Translate complex business and technical requirements into scalable, production-ready AI, data and integration outputs.
+Design, build, maintain and improve data pipelines, data products, AI-enabled workflows, integrations, APIs, automation, dashboards, models, prompts, agents and related solution components.
+Apply and reinforce agreed engineering frameworks, reusable patterns, coding standards, DevOps and AgentOps practices, governance requirements and production readiness criteria.
+Work with product owners, delivery leads, business SMEs, architects and senior technical stakeholders to define clear requirements, technical designs, data flows, AI workflows, process maps, integrations, implementation plans and acceptance criteria.
+Provide squad-level technical leadership, supporting design choices, estimation, sequencing, technical decision-making and blocker resolution.
+Champion responsible, secure and scalable delivery across responsible AI, data governance, privacy, cyber security, access control, observability, reliability, cost awareness and operational support.
+Lead testing, evaluation and production readiness activities, including unit testing, integration testing, data quality checks, AI evaluation, performance validation, monitoring, documentation, runbooks and deployment readiness.
+Mentor and uplift others through pairing, code reviews, design reviews, knowledge sharing and practical coaching across AI, data, cloud, software engineering and technical analysis disciplines.
+
+Na Tōu Rourou - What You'll Bring
+
+Strong hands-on engineering capability, with practical experience designing, building, testing, deploying and maintaining complex AI and data solution components using modern engineering practices.
+Strong data engineering and analysis expertise, including data structures, SQL, data modelling, data quality, data pipelines, reporting, analytics and business rules.
+Practical applied AI and GenAI engineering experience, including prompt engineering, retrieval augmented generation, AI workflow automation, evaluation, human-in-the-loop design and responsible AI practices.
+Strong working knowledge of programming, scripting, APIs, CI/CD, source control, testing, observability, automation and cloud-based delivery practices, ideally including Python, SQL, AWS and relevant data or AI platforms.
+Proven ability to take accountability for outcomes, manage technical dependencies and turn requirements and designs into working, production-grade solutions.
+A disciplined approach to engineering quality, including clean code, testing, documentation, maintainability, security, performance, observability and production support.
+Strong systems thinking and complex problem-solving skills, with the ability to work through ambiguity and define pragmatic, scalable solution options.
+Clear and credible communication skills, with the ability to explain design decisions, risks and trade-offs to engineers, product owners, delivery leads, business SMEs and technical stakeholders.
+A mentoring mindset, with experience supporting others through coaching, pairing, reviews and sharing reusable patterns, lessons learned and best practices.
+Curiosity and a continuous learning mindset across AI, data, cloud, software engineering and solution architecture disciplines.
+
+Nā Mātou Te Rourou – What You'll Get
+
+One New Zealand is leading the way by ensuring you can have a truly balanced life. Most roles allow flexibility to work from home and flex your hours to enjoy work & whānau commitments.
+A fully subsidised Southern Cross health insurance cover for you and your family.
+Lifestyle leave, giving you the option to purchase an extra week or two of annual leave.
+Discounts on One New Zealand products, services and much more!

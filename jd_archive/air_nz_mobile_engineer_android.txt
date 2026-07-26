@@ -1,0 +1,36 @@
+Company: Air New Zealand
+Role: Mobile Engineer (Android)
+Location: Auckland, New Zealand (Hybrid)
+Type: Full-time
+Tech: Kotlin, Jetpack Compose, Android SDK, RESTful APIs, CI/CD, AWS, Agile
+Experience: 2+ years software engineering, including native Android development
+
+About:
+Air New Zealand is on an accelerated journey to become the world's leading digital airline. This is a newly created role within the Customer Touchpoints team, helping deliver seamless, high-performing mobile experiences used by millions of customers across Aotearoa and around the world.
+
+What you'll be doing:
+- Build and enhance native Android applications using Kotlin and Jetpack Compose
+- Deliver high-quality mobile features from concept through to release and ongoing support
+- Collaborate closely with Product Managers, Designers, QA and Engineers in an agile product environment
+- Contribute to CI/CD pipelines, automated testing practices, and app store deployment processes
+- Support mobile solutions that meet performance, accessibility, security, and usability standards
+- Help identify and reduce technical debt to improve long-term product quality and maintainability
+- Provide reliable application support and contribute to continuous improvement across the mobile platform
+
+What they're looking for:
+- 2+ years' experience in software engineering, including native Android development
+- Strong experience with Kotlin and Jetpack Compose
+- Understanding of mobile application architecture, engineering patterns, and release practices
+- Experience with testing frameworks, CI/CD tooling, and version control systems
+- Familiarity with RESTful APIs, mobile dependency management, observability, and crash analysis
+- Knowledge of Agile or Lean delivery practices
+- Strong problem-solving and communication skills
+- Relevant tertiary qualification in Computer Science, Engineering, or equivalent
+- Exposure to backend-for-frontend patterns and cloud platforms such as AWS is an advantage
+
+Benefits:
+- Discounted travel on Air New Zealand and partner airlines
+- FlexiLeave (up to 4 extra weeks leave)
+- Strong learning culture with development opportunities
+
+Applications close: 07/08/2026

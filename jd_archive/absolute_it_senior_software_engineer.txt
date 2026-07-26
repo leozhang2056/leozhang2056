@@ -1,0 +1,49 @@
+Company: Absolute IT Limited (for a global SaaS organisation)
+Role: Senior Software Engineer
+Location: Auckland CBD, Auckland (Hybrid - 3 days office / 2 WFH)
+Type: Full-time
+Salary: Up to $150K plus bonus
+Tech: React, TypeScript, Go, Java, C#, AWS, Microservices, Event-driven Architecture, CI/CD, RAG, LLM, Vector Databases, Embeddings, Prompt Engineering, LangChain, LlamaIndex, PyTorch, TensorFlow
+
+About the Organisation:
+A global SaaS organisation undergoing significant technology evolution. Focus on cloud platforms, intelligent automation, and AI-driven product development. Embedding AI into products, platforms, and engineering practices.
+
+Role Description:
+Senior Software Engineer to join high-performing engineering team delivering large-scale cloud applications and next-generation intelligent software solutions. Strong full-stack engineering capability with AI development practices.
+
+Key Responsibilities:
+- Design, develop and maintain scalable cloud-native applications and services
+- Contribute to architecture decisions and long-term platform strategy
+- Develop modern frontend and backend solutions using contemporary engineering practices
+- Build and integrate APIs, event-driven services, and distributed systems
+- Drive engineering excellence through testing automation, code reviews, and CI/CD practices
+- Contribute to AI-enabled product capabilities, intelligent automation, and emerging technology initiatives
+- Mentor engineers and help foster a culture of continuous improvement and technical excellence
+- Identify opportunities to improve performance, scalability, reliability, and developer experience
+
+Skills & Experience Required:
+- Proven experience as Senior Software Engineer, Senior Full Stack Engineer, or similar
+- Strong experience with React, TypeScript, and modern web application development
+- Backend development using Go, TypeScript, Java, C#, or similar
+- Experience building and scaling SaaS products within cloud environments
+- Strong knowledge of AWS and modern cloud architecture principles
+- Experience with distributed systems, microservices, and event-driven architecture
+- Expertise in software design, engineering best practices, and solution architecture
+- Experience with DevOps, CI/CD pipelines, infrastructure as code, and automated testing
+- Proactive interest in AI-driven software development and emerging technologies
+- Comfortable evaluating, piloting, and implementing new technologies
+
+Highly Regarded:
+- Experience developing AI-powered applications in production environments
+- Experience building RAG pipelines and LLM-enabled solutions
+- Exposure to vector databases, embeddings, prompt engineering, AI orchestration frameworks
+- Experience with ML/AI frameworks: PyTorch, TensorFlow, LangChain, LlamaIndex
+- Knowledge of MLOps practices, model deployment, monitoring, operationalisation
+- Experience integrating OpenAI, Anthropic, Azure AI, AWS AI into commercial products
+- Demonstrated ability to help teams adopt AI technologies practically
+- Experience in high-volume payments or message queue architectures
+
+Benefits:
+- Attractive annual incentive
+- Hybrid working (3/2)
+- Fully subsidised Health Insurance

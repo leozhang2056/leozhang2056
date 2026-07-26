@@ -88,7 +88,7 @@ class TestCLContent:
         # Halter has a _WHY_ME_HOOKS entry — body1 should reference it
         assert "Halter" in content["body1"] or "farmer" in content["body1"].lower()
 
-    def test_jd_keywords_appear_in_body2(self, kb_data):
+    def test_jd_keywords_appear_in_body1_why_role(self, kb_data):
         profile, achievements, projects = kb_data
         content = build_cover_letter_content(
             profile, achievements, projects,
@@ -98,9 +98,9 @@ class TestCLContent:
             jd_keywords=["Java", "Spring Boot", "REST API"],
             lang="en",
         )
-        # Body2 should reference JD themes
-        body2_lower = content["body2"].lower()
-        assert "java" in body2_lower or "spring" in body2_lower or "rest" in body2_lower
+        # body1 (Why this role) should reference JD themes (moved from body2 in 2026-07-25 restructure)
+        body1_lower = content["body1"].lower()
+        assert "java" in body1_lower or "spring" in body1_lower or "rest" in body1_lower
 
 
 # ---------------------------------------------------------------------------

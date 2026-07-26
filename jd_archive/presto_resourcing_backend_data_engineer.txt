@@ -1,0 +1,19 @@
+Company: Presto Resourcing (for a client organisation)
+Role: Backend Developer / Data Engineer
+Location: Auckland CBD, Auckland (Hybrid)
+Type: Full-time
+Tech: NodeJS, SQL, ETL/ELT, Qlik, CI/CD, Docker/Containers, Data Governance, AI/LLM
+
+About:
+Unique opportunity to play a central part in data governance & AI-enabled engineering practices including implementation of metadata.
+
+Requirements:
+- Experience building APIs and backend services with NodeJS
+- Experience designing and maintaining ETL/ELT pipelines
+- Experience with tools such as Qlik
+- Strong SQL and data modelling skills
+- Solid experience with containers and CI/CD pipelines
+- Familiar with AI-assisted engineering, LLM integrations or automation platforms
+- Experience working within data governance frameworks
+- Enthusiastic self-starter
+- Exceptional communication skills

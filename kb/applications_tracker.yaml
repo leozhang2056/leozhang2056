@@ -2099,3 +2099,75 @@ applications:
   cv: true
   cl: false
   status: submitted
+- company: PredictHQ
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Summerset
+  role: ai
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Gallagher Insurance
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Sunstone Talent
+  role: ai
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Gallagher
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Umbrellar Technology Group
+  role: ai
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Plexure
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Kitomba
+  role: fullstack
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: Northborn
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: HCL New Zealand
+  role: fullstack
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: NZME
+  role: backend
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted
+- company: InFact
+  role: fullstack
+  date: '2026-07-27'
+  cv: true
+  cl: true
+  status: submitted

@@ -1,0 +1,37 @@
+Senior Software Engineer
+
+Northborn 
+Takapuna, Auckland (Hybrid)
+Engineering - Software (Information & Communication Technology)
+Full time
+
+ROLE OVERVIEW
+
+My client is an established Australian automotive parts sourcing platform, connecting repairers and suppliers nationwide to streamline quoting, purchasing and receipting across the automotive repair industry. The platform integrates with major repair quoting packages and supports over 10,000 members.
+
+They are establishing a small new office in Auckland and are looking for a very strong Senior Software Engineer to join it. You'll work hands-on with .NET and modern JavaScript building production backend systems, taking on system design, testing, CI/CD and production operations, alongside a team made up entirely of senior engineers.
+
+WHY JOIN
+
+Migrating its core platform from PHP to .NET Core, this role involves genuine greenfield and brownfield work rather than pure maintenance. The business is growing, and this is a chance to make a real impact working alongside a small team of senior developers with a strong technical culture built on real ownership.
+
+CORE REQUIREMENTS
+
+They are looking for a strong Full Stack Developer with a background in .NET Core, JavaScript and ideally some PHP. Realistically this means at least 8-10 years of professional software development experience in production environments.
+
+You should bring:
+Strong hands-on experience with .NET Core in production environments
+Experience with a major cloud platform (AWS preferred)
+Strong system design and architecture experience, including modular monolith and/or service-oriented approaches
+Solid engineering practices around testing, CI/CD, code review and version control
+Experience with production operations such as monitoring, incident response and on-call
+Security-conscious coding practices
+A genuine curiosity about AI and how it's changing software development, rather than resistance to new ways of working
+
+This role calls for genuine senior technical strength, since you'll be operating at peer level in a team of senior engineers.
+
+THE DETAILS
+
+This is a permanent role based in Auckland, hybrid, as part of a small office they are currently establishing here. If this sounds like your level and your kind of challenge, get in touch to hear more.
+
+Please note, only candidates based in New Zealand with the relevant right to work will be considered for this opportunity.

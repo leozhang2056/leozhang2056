@@ -1,0 +1,44 @@
+Company: Plexure Limited
+Role: Intermediate & Senior Software Engineers
+Location: Auckland CBD, Auckland (Hybrid - WFH days)
+Type: Full-time
+Tech: C#, .NET, React, Git, SQL, Azure DevOps, Bicep, Azure Services
+Experience: Intermediate or Senior level
+
+About:
+Plexure redefines customer experience through personalized mobile marketing and next-generation loyalty programs for household names such as McDonald's. Industry-leading customer engagement data platform with over 300 million users in 60+ countries. Global, growing SaaS company.
+
+Role:
+Backend Software Engineer reporting to Engineering Team Lead. Join the Rewards squad creating rewarding experiences that deepen loyalty between brands and their customers. Contribute to design, development, and testing of innovative backend solutions.
+
+Initial focus: Non-Repeatable Rewards project - introducing sophisticated loyalty redemption rules (redemption limits, time-based restrictions).
+
+Key Responsibilities:
+- Contribute to design discussions shaping reliable, scalable systems
+- Troubleshoot, debug, and optimize backend systems for performance and reliability
+- Contribute to CI/CD pipelines and automated testing
+- Participate in code reviews and provide constructive feedback
+- Help with monitoring, respond to alerts, support stabilisation
+- Work in AI-enabled engineering environment using AI tools for specifications, development, code validation, workflow improvement
+
+Tech Stack: C#, .NET, React, Git, SQL, Azure DevOps, Bicep and Azure services
+
+Requirements:
+- Passion for back-end development
+- Experience with C#, .NET
+- Exposure to cloud-based environments (infrastructure or CI/CD experience a plus)
+- Practical experience using AI development tools
+- Curious, collaborative, enjoys tackling challenges
+- Motivation to continue learning and developing
+
+Benefits:
+- Paid wellness days (4/year) + birthday day off
+- $2,000 yearly training budget
+- $1,000 WFH setup allowance + PB Tech discounts
+- Fully paid health insurance (Southern Cross Wellbeing 2)
+- Life insurance and income protection
+- Hospitality benefits (Sky City restaurants, TANK monthly credit)
+- Summer hours (1pm finish Friday, Dec-Feb)
+- Free Udemy subscription
+- Mental wellbeing support (EAP)
+- Annual paid volunteering day

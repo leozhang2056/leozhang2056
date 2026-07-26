@@ -1,0 +1,34 @@
+Company: Sunstone Talent (for a client company)
+Role: Graduate Java Developer (AI)
+Location: Christchurch, Canterbury (Hybrid)
+Type: Full-time
+Salary: $65k+ (plus training budget $3k, 25 days holiday)
+Tech: TypeScript, Java, Python, Kotlin, SQL, Kafka, Docker, Grafana, OpenSearch, Kubernetes, AWS, LLMs, ML Algorithms
+
+About:
+An exciting company processing hundreds of millions of data transactions daily. Developer-led, friendly company with inclusive Agile culture. Global software product reach.
+
+Role:
+Graduate Java Developer with AI focus. Work on backend web services and APIs in AWS. Opportunity to work on LLMs, APIs and ML Algorithms.
+
+Requirements:
+- BSc in Computer Science or BEng in Software Engineering or similar
+- Basic TypeScript, Java or Python coding experience
+- Interest in backend web services and APIs in AWS
+- Agile approach to work in Scrum team, pair programming
+- Great attitude of continuous learning
+- Curious mind and good critical thinking
+- Modern AI approach using Claude and/or other models
+- Love solving complex maths and algorithm problems
+
+Benefits:
+- Fun, collaborative, supportive team
+- Great tech stack: TypeScript, JavaScript, Kotlin, Java, Python, SQL, Kafka, Docker, Grafana, OpenSearch, Kubernetes, AWS
+- Work on LLMs, APIs and ML Algorithms
+- Global software product reach
+- 25 days holiday, inclusive agile culture
+- Hybrid working / flexibility
+- Personal training budget ($3k)
+- Modern offices
+
+Must have right to work in NZ and be based in Christchurch.

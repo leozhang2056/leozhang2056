@@ -1,0 +1,24 @@
+AKQA - Senior Native App Developer
+
+At AKQA (part of WPP) our Technology discipline sets the approach and standard for native app delivery and governance, helping deliver a world-class application through a mature agile methodology.
+
+As a Senior Native App Developer, you will bring deep native iOS and/or Android experience into a collaborative, multidisciplinary team. You'll help build and evolve a world-class mobile application, balancing craft, quality and pace, while supporting the team with clear thinking and practical guidance.
+
+Role Requirements:
+- Deliver native mobile development end-to-end across the full app life cycle
+- Define the work needed to implement solutions; assess and communicate feasibility and delivery impact
+- Estimate accurately, report progress clearly, and deliver to deadlines
+- Produce high-quality code that is performant, reliable, and maintainable
+- Partner with Experience Design to deliver high-fidelity, platform-appropriate UI that meets requirements
+- Integrate with external systems and APIs; optimise app and tool performance
+- Debug confidently, explain app flow to others, and triage/fix defects
+- Contribute to continuous improvement, grow new skills on the job, and share knowledge openly within the team
+
+Qualities & Characteristics:
+- 5+ years building native apps with Swift and/or Kotlin
+- Strong grasp of common frameworks, libraries, and design patterns; solid iOS and/or Android SDK knowledge
+- Experience with RESTful APIs, multi-threading, and writing unit-tested, testable code
+- Comfortable with DevOps/continuous delivery and agile ways of working
+- Proven track record delivering high-quality iOS and/or Android applications
+
+Hybrid in-studio/WFH model. On-site. Full-time. Auckland, NZ.

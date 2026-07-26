@@ -12,9 +12,9 @@ roles:
     summary_sentences:
       en:
       - "Senior Android Architect with 10+ years building large-scale Android platforms, real-time messaging systems, and mobile infrastructure using modern Android technologies."
-      - "Expert in Kotlin, Java, NDK/JNI, Android architecture, performance optimization, quality engineering, and communication technologies."
+      - "Expert in Kotlin, Java, NDK/JNI, Android architecture, Flutter, cross-platform mobile development, and web technologies including React and TypeScript."
       - "Designed and delivered high-quality Android systems supporting 5,000+ DAU and 500K+ daily messages, including messaging platforms, mobile SDKs, hotfix frameworks, and performance engineering tooling with ongoing enhancements and extension."
-      - "Strong background in WebSocket, TCP/UDP, cold start optimization, ANR/OOM resolution, and AI-powered applications published at IVCNZ 2025."
+      - "Strong background in WebSocket, TCP/UDP, cold start optimization, ANR/OOM resolution, CI/CD automation, and AI-powered applications published at IVCNZ 2025."
       - "Master's in Computer and Information Sciences from AUT, First Class Honours."
     key_skills:
       en:
@@ -51,11 +51,21 @@ roles:
         - Gradle
         - RESTful APIs
         - Spring Cloud
+      - label: Cross-Platform & Web
+        skills:
+        - Flutter
+        - React
+        - TypeScript
+        - JavaScript
+        - Responsive UI/UX
+        - Clean Architecture
       - label: Engineering Practices
         skills:
         - Agile / Scrum
         - Mentoring
         - Code Review
+        - Automated Testing
+        - Quality Engineering
       - label: AI & Tools
         skills:
         - PyTorch
@@ -457,10 +467,10 @@ roles:
     summary_sentences:
       en:
       - Master of Computer and Information Sciences (First Class Honours) from AUT.
-      - Full-stack engineer with 10+ years shipping production systems — from React and Vue.js front-ends to Java, C#/.NET, and Node.js back-end services.
-      - Strong focus on software architecture, SOLID principles, and design patterns — building systems that balance quality with delivery constraints.
+      - Full-stack engineer with 10+ years shipping production systems using modern technologies — from React and Vue.js front-ends to Java, C#/.NET, and Node.js back-end services.
+      - Strong focus on software architecture, SOLID principles, and design patterns — building scalable distributed systems that balance quality with business delivery constraints.
       - Delivered end-to-end features across web, mobile, and IoT, with hands-on CI/CD and automated testing at scale.
-      - Published AI research at IVCNZ 2025, with practical experience integrating LLM workflows into delivery pipelines.
+      - Published AI research at IVCNZ 2025, with practical experience integrating AI-assisted development tools and LLM workflows into delivery pipelines.
     key_skills:
       en:
       - label: Languages
@@ -488,6 +498,7 @@ roles:
         skills:
         - SOLID Principles
         - Design Patterns
+        - Distributed Systems
         - Unit Testing
         - CI/CD
         - Git

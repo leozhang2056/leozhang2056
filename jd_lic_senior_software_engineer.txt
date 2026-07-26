@@ -1,0 +1,55 @@
+Senior Software Engineer - Dairy Agri-tech
+
+Livestock Improvement Corporation 
+Auckland Airport, Auckland (Hybrid)
+Engineering - Software (Information & Communication Technology)
+Full time
+
+LIC is a farmer-owned co-operative that's been supporting herd improvement in New Zealand's dairy sector for more than 115 years. We're focused on providing superior genetics, reliable testing and diagnostics, integrated on-farm software, and great customer service, all designed to help farmers make smarter decisions every day.
+
+As a proud generational co-operative, we're here for farmers, their families, and rural communities, not just for today, but for the future. And none of it happens without our people. Whether on farm, in the lab, or behind the scenes, every one of us plays a part in helping New Zealand farmers succeed.
+
+Your Role:
+As a Senior Software Engineer in our Testing stream, you'll play a key role in building and evolving the technology products that support LIC's Genetics, Testing and Farm Software value streams.
+
+Reporting to the Technical Lead, you'll take ownership of end-to-end technical delivery—from solution design through to implementation, quality and operational performance. You'll work closely with engineers, product teams and domain experts to deliver scalable, reliable solutions while influencing technical direction, engineering practices and continuous improvement across the team.
+
+This is an opportunity to combine hands-on engineering with technical leadership, helping shape products that make a real difference to New Zealand's dairy industry.
+
+Your Key Focus:
+Lead the design, development and delivery of high-quality software solutions.
+Mentor and support Software Engineers, promoting engineering excellence and best practice.
+Champion modern Software Development Life Cycle (SDLC) practices and continuous improvement.
+Embed security, privacy, compliance and risk management into every stage of delivery.
+Drive performance, reliability and scalability across products and systems.
+Support the responsible adoption of AI-enabled development practices.
+Apply product and domain knowledge to make informed technical decisions.
+Contribute to architecture and design decisions that support long-term technology strategy.
+Stay ahead of emerging technologies, trends and industry best practice.
+Provide technical leadership on key initiatives and projects when required.
+
+About You:
+Bachelors degree in Computer Science, Software Engineering, or equivalent industry experience.
+Significant experience as a Software Engineer in a complex enterprise environment.
+Strong knowledge of modern software development practices, tools and technologies.
+Proven experience designing, building and supporting secure, reliable applications in production environments.
+Ability to translate business needs into practical, scalable technical solutions.
+Strong systems-thinking skills, with an understanding of integration, dependencies and operational impacts.
+Excellent problem-solving skills and sound technical judgement.
+Self-motivated, organised and able to influence outcomes across teams.
+Proven ability to deliver high-quality work in a fast-paced environment.
+Strong communication skills and the ability to engage effectively with both technical and non-technical stakeholders.
+Experience with Laboratory Information Management Systems (LIMS), Elixir, or knowledge of LIC products, systems and the dairy industry would be an added advantage.
+
+In Return:
+In addition to a competitive salary, you'll receive some great benefits including:
+Extra leave days
+Flexible working options
+Discounted health, life, income and disability insurances
+Access to our employee shares scheme
+Wellbeing discounts
+Free onsite parking and free EV chargers for our team to use!
+
+Our Hamilton office is located in a park-like setting, with tennis court, pool, and onsite café and social club!
+
+The role provides the opportunity to join a progressive and forward-thinking agri-tech organisation, where you'll play a key role in driving the future of dairy in NZ and around the globe.

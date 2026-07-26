@@ -1,0 +1,33 @@
+Company: Twine
+Role: Application Developer – Dating App
+Location: New Zealand (Fully Remote)
+Type: Contract
+Tech: Swift, Kotlin, React Native, Flutter, APIs, Cloud Services, Real-time Messaging, Push Notifications, Security, GDPR
+
+About:
+Twine is a leading freelance marketplace connecting top freelancers, consultants, and contractors with companies needing creative and tech expertise. Trusted by Fortune 500 companies and innovative startups alike.
+
+Role Description:
+Lead the end-to-end creation of a new dating app, inspired by the user experience and core features of leading platforms such as Tinder, Bumble, and Hinge. Build from scratch, ensuring seamless, intuitive, and engaging user journey. Fully remote, ideal for a developer with strong background in both mobile and web development.
+
+Responsibilities:
+- Architect, design, and develop a fully functional dating app for iOS and Android platforms
+- Implement user authentication, profile creation, and matching algorithms
+- Integrate chat and messaging features with real-time capabilities
+- Develop swipe-based navigation and discovery features
+- Ensure robust security, privacy, and data protection measures
+- Optimize app performance and scalability for a growing user base
+- Collaborate on UI/UX design to deliver a modern, user-friendly interface
+- Conduct thorough testing, debugging, and deployment
+- Provide technical documentation and post-launch support
+
+Skills Required:
+- Proven experience developing and launching mobile applications, preferably in dating or social networking space
+- Proficiency in relevant programming languages and frameworks (e.g., Swift, Kotlin, React Native, Flutter)
+- Strong understanding of backend development, APIs, and cloud services
+- Experience with real-time messaging, push notifications, and third-party integrations
+- Knowledge of security best practices and GDPR compliance
+- Ability to deliver clean, maintainable, and well-documented code
+- Excellent problem-solving skills and attention to detail
+- Strong communication skills and ability to work independently
+- Availability to work remotely and commit to project timelines

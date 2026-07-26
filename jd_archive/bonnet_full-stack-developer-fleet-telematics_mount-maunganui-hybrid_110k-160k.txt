@@ -1,0 +1,82 @@
+Full Stack Developer for Fleet & Telematics Software
+
+Bonnet Limited
+Mount Maunganui, Bay of Plenty (Hybrid)
+Developers/Programmers (Information & Communication Technology)
+Full time
+$110,000 - $160,000 per year
+Posted 17d ago
+Medium application volume
+
+How you match
+Matches based on your career history
+Internet of Things
+Analysis
+
+This is an exciting opportunity for an experienced Full Stack Developer to join the technology team at BONNET, reporting directly to our CTO. This role is predominantly backend-focused (approximately 80%), with 20% frontend development, however a strong capability and pride in delivering high-quality frontend work is essential.
+
+This role is open to candidates based anywhere in New Zealand. While you can work remotely, monthly trips to our Mount Maunganui office will be required. All travel expenses will be fully covered.
+
+You will play a key role in building, scaling, and improving BONNET's core platforms and products.
+
+About BONNET
+
+BONNET is a fleet compliance management platform with built-in telematics. We help businesses manage vehicles, machines, and drivers by automating compliance and eliminating the manual admin that leads to fines, downtime, and operational risk.
+
+BONNET combines:
+
+Fleet compliance management, including WOF, COF, Rego, RUC, servicing, inspections, and documentation
+
+Built-in telematics and GPS tracking, capturing real-time vehicle and machine data
+
+Automated alerts, workflows, and reporting, giving fleet managers clear visibility of what's due, what's overdue, and what needs action
+
+Our platform is used by construction companies, trades, logistics operators, rental fleets, and enterprise customers managing anything from a handful of vehicles through to large, complex fleets. BONNET is built to scale and sits at the intersection of software, vehicle data, and real-world operations.
+
+What you'll be doing
+
+Design, develop, and implement new features and functionality for BONNET's proprietary web-based platforms
+
+Focus primarily on backend development using PHP, while contributing to and maintaining a polished, high-quality frontend experience
+
+Collaborate closely with the CTO and wider technology team to define technical requirements, system architecture, and product roadmaps
+
+Write clean, efficient, scalable, and well-documented code
+
+Debug, troubleshoot, and resolve technical issues across the stack
+
+Participate in code reviews and quality assurance processes to maintain high engineering standards
+
+Stay up to date with emerging technologies, tools, and industry best practices
+
+Mentor and support junior developers as the team grows
+
+What we're looking for
+
+Minimum 5 years' experience as a Full Stack Developer, ideally in a fast-paced or product-led environment
+
+Strong backend experience, particularly with PHP, and modern database design
+
+Proven ability to deliver high-quality frontend experiences, even if frontend is not your primary focus
+
+Solid understanding of APIs, web architecture, security best practices, and the full software development lifecycle
+
+Excellent problem-solving and analytical skills, with the ability to think creatively and pragmatically
+
+Strong communication skills and the ability to work effectively with both technical and non-technical stakeholders
+
+Highly regarded but not required:
+
+Experience building, integrating, or working with AI models or AI-powered features
+
+Any experience with telematics, GPS tracking, vehicle data, IoT devices, or fleet management systems will be considered a significant advantage
+
+Our stack
+
+The BONNET backend is a LAMP stack in the cloud. We use PHP with CodeIgniter and MySQL to power our web applications, along with a data API that supports our Android (Kotlin) and iOS (Swift) apps.
+
+What we offer
+
+At BONNET, we back ambitious builders. You'll have access to continuous learning and development opportunities, flexible working arrangements, and a collaborative, high-ownership environment where engineers are close to the product, the data, and real customer problems.
+
+If you're a Full Stack Developer who loves backend engineering, cares deeply about frontend quality, and wants to work on a product with real-world impact, we'd love to hear from you.

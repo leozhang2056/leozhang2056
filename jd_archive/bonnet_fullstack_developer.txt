@@ -1,0 +1,36 @@
+Company: Bonnet Limited
+Role: Full Stack Developer for Fleet & Telematics Software
+Location: Mount Maunganui, Bay of Plenty (Hybrid - remote with monthly office visits, expenses covered)
+Type: Full-time
+Salary: $110,000 – $160,000 per year
+Tech: PHP, CodeIgniter, MySQL, LAMP Stack, REST APIs, Android (Kotlin), iOS (Swift), IoT, Telematics, GPS Tracking
+
+About:
+BONNET is a fleet compliance management platform with built-in telematics. Helps businesses manage vehicles, machines, and drivers by automating compliance. Combines fleet compliance management (WOF, COF, Rego, RUC, servicing, inspections), built-in telematics and GPS tracking, and automated alerts/reporting. Used by construction, trades, logistics, rental fleets, and enterprise customers.
+
+Role:
+Full Stack Developer (80% backend, 20% frontend) reporting to CTO. Play key role in building, scaling, and improving core platforms and products.
+
+Key Responsibilities:
+- Design, develop, and implement new features for web-based platforms
+- Primarily backend development using PHP
+- Contribute to and maintain polished frontend experience
+- Collaborate with CTO and technology team on technical requirements, architecture, and roadmaps
+- Write clean, efficient, scalable, well-documented code
+- Debug, troubleshoot, resolve technical issues across the stack
+- Participate in code reviews and QA processes
+- Mentor and support junior developers as team grows
+
+Requirements:
+- Minimum 5 years experience as Full Stack Developer
+- Strong backend experience with PHP and modern database design
+- Proven ability to deliver high-quality frontend experiences
+- Solid understanding of APIs, web architecture, security best practices
+- Excellent problem-solving and analytical skills
+- Strong communication skills
+
+Highly Regarded:
+- Experience building, integrating, or working with AI models or AI-powered features
+- Experience with telematics, GPS tracking, vehicle data, IoT devices, or fleet management systems
+
+Stack: LAMP stack (PHP, CodeIgniter, MySQL), data API for Android (Kotlin) and iOS (Swift) apps

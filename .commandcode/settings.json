@@ -1,7 +1,34 @@
 {
   "permissions": {
     "allow": [
-      "Shell(git:*)"
+      "Shell(git:*)",
+      "Shell(python generate.py cv --role ai --jd-file jd_archive/summerset_ai_automation_engineer.txt --company \"Summerset\")",
+      "Shell(python generate.py cl --role ai --company \"Summerset\" --jd-file jd_archive/summerset_ai_automation_engineer.txt)",
+      "Shell(del:*)",
+      "Shell(python -c \"import asyncio; from app.backend.generate_cv_html_to_pdf import html_to_pdf; from pathlib import Path; html_content = Path(r'outputs/2026-07-25/CoverLetter_Summerset_20260725.html').read_text(encoding='utf-8'); asyncio.run(html_to_pdf(html_content, r'outputs/2026-07-25/CoverLetter_Summerset_20260725.pdf'))\")",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_archive/tribe_group_principal_engineer.txt --company \"Tribe Group\")",
+      "Shell(python generate.py cl --role fullstack --company \"Tribe Group\" --jd-file jd_archive/tribe_group_principal_engineer.txt)",
+      "Shell(python generate.py cv --role ai --jd-file jd_archive/one_new_zealand_senior_ai_data_solution_engineer.txt --company \"One New Zealand\")",
+      "Shell(python generate.py cl --role ai --company \"One New Zealand\" --jd-file jd_archive/one_new_zealand_senior_ai_data_solution_engineer.txt)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_archive/kpmg_digital_consulting_graduate.txt --company \"KPMG\")",
+      "Shell(python generate.py cl --role fullstack --company \"KPMG\" --jd-file jd_archive/kpmg_digital_consulting_graduate.txt)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_suncorp_junior_software_engineer.txt --company \"Suncorp\" --title \"Junior Software Engineer\" --with-quality-report --with-jd-annotated)",
+      "Shell(python generate.py cl --role fullstack --jd-file jd_suncorp_junior_software_engineer.txt --company \"Suncorp\" --title \"Junior Software Engineer\")",
+      "Shell(pdftotext \"E:\\Coding\\leozhang2056\\outputs\\2026-07-26\\CV_Leo_Zhang_20260726_fullstack_Suncorp.pdf\" - 2>nul || python -c \" import subprocess result = subprocess.run(['python', '-m', 'pymupdf', 'show', 'outputs/2026-07-26/CV_Leo_Zhang_20260726_fullstack_Suncorp.pdf'], capture_output=True, text=True) print(result.stdout[:5000]) \" 2>nul || python -c \" from pypdf import PdfReader r = PdfReader('outputs/2026-07-26/CV_Leo_Zhang_20260726_fullstack_Suncorp.pdf') for p in r.pages: print(p.extract_text()) \" 2>nul)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_suncorp_junior_software_engineer.txt --company \"Suncorp\" --title \"Junior Software Engineer\" --keep-html --no-post-check)",
+      "Shell(python app/backend/validate.py 2>&1)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_nzte_fullstack.txt --company \"NZTE\" --title \"Intermediate Full Stack Developer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role fullstack --jd-file jd_nzte_fullstack.txt --company \"NZTE\" --title \"Intermediate Full Stack Developer\" 2>&1)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_lic_senior_software_engineer.txt --company \"LIC\" --title \"Senior Software Engineer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role fullstack --jd-file jd_lic_senior_software_engineer.txt --company \"LIC\" --title \"Senior Software Engineer\" 2>&1)",
+      "Shell(python generate.py cv --role ai --jd-file jd_summerset_ai_automation.txt --company \"Summerset\" --title \"AI & Automation Engineer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role ai --jd-file jd_summerset_ai_automation.txt --company \"Summerset\" --title \"AI & Automation Engineer\" 2>&1)",
+      "Shell(python generate.py cv --role backend --jd-file jd_gallagher_integration_developer.txt --company \"Gallagher\" --title \"Integration Developer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role backend --jd-file jd_gallagher_integration_developer.txt --company \"Gallagher\" --title \"Integration Developer\" 2>&1)",
+      "Shell(python generate.py cv --role backend --jd-file jd_northborn_senior_software_engineer.txt --company \"Northborn\" --title \"Senior Software Engineer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role backend --jd-file jd_northborn_senior_software_engineer.txt --company \"Northborn\" --title \"Senior Software Engineer\" 2>&1)",
+      "Shell(python generate.py cv --role fullstack --jd-file jd_infact_fullstack.txt --company \"InFact\" --title \"Full Stack Software Engineer\" --with-quality-report --with-jd-annotated 2>&1)",
+      "Shell(python generate.py cl --role fullstack --jd-file jd_infact_fullstack.txt --company \"InFact\" --title \"Full Stack Software Engineer\" 2>&1)"
     ],
     "deny": [],
     "defaultMode": "default"

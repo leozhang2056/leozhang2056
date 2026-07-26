@@ -1,0 +1,64 @@
+Summerset Retirement Villages
+
+AI & Automation Engineer 
+
+Wellington, Wellington, New Zealand · On-site · Full-time
+
+About the job
+At Summerset, from the moment we start developing a village to when our residents call it home, it's the passion and dedication of our people that brings our villages to life. We are one team, united by being part of something bigger – to bring the best of life to our residents.
+
+Job Description
+
+As an AI & Automation Engineer, you will play a key role in enabling Summerset's intelligent use of AI, automation and data across the organisation. Sitting within our Intelligence & Applications team in Group Digital Services, you'll design, develop and maintain AI‑driven scripts, workflows and integrations that deliver practical, real‑world value.
+
+Working closely with digital, data and operational teams, you'll translate business needs into effective technology solutions—improving efficiency, enabling insight, and supporting safe, scalable adoption of tools such as Microsoft Copilot, Azure AI Services, and automation / RPA tooling.
+
+This is a hands‑on role for someone passionate about using AI and automation to solve meaningful business problems and uplift organisational capability.
+
+Your Day‑to‑Day Will Include:
+
+Designing, developing and maintaining AI‑assisted scripts, automation workflows and intelligent process solutions across village, care, corporate and construction environments. 
+Building and iterating prompt engineering frameworks, AI agent configurations and scripted workflows using large language model (LLM) platforms. 
+Developing reusable libraries and automation components to support consistent, scalable solutions. 
+Working closely with business process owners to understand requirements and translate them into effective solutions. 
+Supporting the operation and continuous improvement of enterprise AI platforms including Microsoft Copilot, Azure AI Services and approved AI tooling. 
+Building and maintaining integrations between AI platforms, Microsoft 365, enterprise applications and data platforms using APIs, Power Platform, Python, PowerShell and other scripting tools. 
+Monitoring solution performance and usage, identifying opportunities to improve accuracy, efficiency and adoption. 
+Supporting data pipelines, reporting workflows and insight generation in partnership with data and analytics teams. 
+Ensure all AI and automation solutions comply with data governance, privacy and security obligations. 
+Researching emerging AI tools and automation frameworks and contributing to communities of practice to uplift capability across the organisation. 
+Providing guidance, documentation and enablement to support teams adopting AI safely and confidently. 
+
+Qualifications
+
+You're curious, analytical and solutions‑focused, with a strong interest in practical AI and automation. You enjoy working closely with both technical and non‑technical stakeholders and are motivated by delivering solutions that genuinely improve how people work.
+
+You bring hands‑on experience delivering AI automation and agent solutions in enterprise environments and can confidently advise what needs to be enabled within Microsoft to do this safely and at scale.
+
+You're comfortable working autonomously, engaging with both technical and non‑technical stakeholders, and operating in a fast‑moving technological landscape while maintaining strong governance and quality standards.
+
+A tertiary qualification in Computer Science, IT, Software Engineering or a related field. 
+Substantial experience in scripting, automation or software development. 
+Proven experience delivering AI automation or agent solutions in production enterprise environments. 
+Hands‑on experience with Microsoft AI technologies including Azure AI Services and Microsoft 365 Copilot. 
+Strong experience with APIs, Power Platform, Python, PowerShell and automation / RPA tooling. 
+Demonstrated experience implementing governance, privacy and compliance controls for AI solutions in sensitive business contexts. 
+Strong communication and stakeholder engagement skills. 
+Experience working within enterprise IT environments with security controls and approval processes. 
+Proactive, curious and outcomes‑focused mindset. 
+
+Additional Information
+
+Why Summerset
+
+At Summerset, we believe diversity strengthens our team and enriches the experience we deliver to residents. We warmly welcome applicants from all backgrounds, experiences and industries. Even if you don't tick every box, we encourage you to apply—we value transferable skills and the unique perspective you bring.
+
+We're committed to creating a workplace where everyone feels valued, supported and empowered to thrive.
+
+Summerset is known for excellent benefits and a strong culture built around care, teamwork and a drive for excellence. Some of the great benefits you'll enjoy include:
+
+Flexible working arrangements
+Free Southern Cross health insurance
+Ongoing professional development and tailored career progression
+Birthday leave
+Applications for this role will close on the Sunday 26th July. Please note, this role may close early due to high application volume—apply as soon as possible to avoid disappointment!

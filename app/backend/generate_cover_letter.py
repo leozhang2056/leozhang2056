@@ -215,6 +215,8 @@ _COMPANY_CULTURE_HOOKS = {
     'capgemini': "it partners with leading financial services organisations to deliver high-quality testing, quality engineering, and DevOps solutions that help businesses innovate with confidence.",
     'predicthq': "it is the real-world context platform powering enterprise AI decisions, trusted by Uber, Domino's and Accor, grounding models in verified spatial, temporal and economic reality.",
     'sunstone talent': "it connects curious, AI-minded developers with companies building modern software products at global scale.",
+    'plexure': "it redefines customer experience through personalised mobile marketing and next-generation loyalty programs for household names such as McDonald's, serving over 300 million users in 60+ countries.",
+    'nzme': "it is one of New Zealand's leading media and entertainment companies, building intelligent platforms that power advertising, data and AI-driven products.",
 }
 
 _COMPANY_TEAMS = {
@@ -274,6 +276,8 @@ _COMPANY_TEAMS = {
     'capgemini': "Capgemini's Testing Services team",
     'predicthq': "PredictHQ's Sustained Engineering team",
     'sunstone talent': "the client company's development team",
+    'plexure': "Plexure's Rewards squad",
+    'nzme': "NZME's Backend & AI engineering team",
     'heebee': "CIVIC's founding engineering team",
 }
 
@@ -1168,12 +1172,15 @@ def build_cover_letter_content(
                     f"{company_name} is where I want to apply what I have built. "
                     "As an AUT graduate, I understand the university's values and I am motivated "
                     "by the opportunity to contribute to the community that shaped my research career. "
-                    f"{anchor}"
+                    "I believe my blend of academic rigour and production engineering "
+                    f"fits well with how {company_name} works."
                 )
             else:
                 body2 = (
                     f"I am drawn to {company_name} because {culture_reason.rstrip('.')}. "
-                    f"{anchor}"
+                    "The work your team is doing in this space is exactly the kind of challenge "
+                    "I want to invest my next chapter in — building something that matters, "
+                    "with people who set high standards."
                 )
 
             # === Closing: concise, forward-looking ===

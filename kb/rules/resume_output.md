@@ -260,22 +260,22 @@ Replace beginner/amateur phrasing with senior-engineer vocabulary. These are wri
 
 ### 9 Rules
 
-<!-- EVOLVE: 2026-07-01 | source: session | issue: Rule §9.1 conflicted with code — "I am applying for..." replaced by fit hook -->
-1. **Opening paragraph:** Lead with a fit hook — `{tagline}, I am drawn to {company} because {culture_reason}`. Do NOT start with "I am applying for..." or "Master of Computer...". The goal is to show you chose THIS company, not that you're mass-applying.
+<!-- EVOLVE: 2026-07-25 | source: session | issue: Restructured CL to three distinct dimensions — who I am / why this role / why this company -->
+1. **Opening paragraph (Who I am):** Lead with your identity — professional background, years of experience, domain expertise. Use the profile tagline or summary variant from `profile.yaml`. NOT a rehash of the CV summary; frame it as an introduction. Do NOT start with "I am applying for..." or "I am writing to express...".
 2. **Topic sentences:** Each paragraph starts with a clear topic sentence.
-3. **One-sentence background:** Use profile tagline from `profile.yaml`.
-4. **Specific names + tech:** Use specific project names (ChatClothes) and concrete terms (diffusion models, CI/CD), not vague abstractions.
-5. **Evidence → role:** Every piece of evidence links back to role requirements — not just "I did X" but "X maps to what this role needs".
-6. **Soft skills embedded:** In hard facts: `"10 years... developed a practical engineering mindset focused on reliability..."`. Never standalone "I'm hardworking".
-7. **No repetition across paragraphs:** Each paragraph covers a distinct dimension.
+3. **Second paragraph (Why this role):** Explain what draws you to THIS specific role — how your skills and experience map to what the job demands. Reference the role title and 1–2 JD themes naturally.
+4. **Third paragraph (Why this company):** Show you chose THIS company. Use the culture reason from `_COMPANY_CULTURE_HOOKS`, mention what the company does and why it matters to you. Avoid generic praise.
+5. **Specific names + tech:** Use specific project names (ChatClothes) and concrete terms (diffusion models, CI/CD), not vague abstractions.
+6. **Soft skills embedded:** In hard facts — never standalone "I'm hardworking". Each paragraph embeds at least one soft skill through storytelling.
+7. **No repetition across paragraphs:** Each paragraph covers a distinct dimension (who → role → company).
 8. **Specific team:** Closing names the specific team (use `_COMPANY_TEAMS` dict).
 9. **Length:** 4 paragraphs, 2–4 sentences each. Fits one A4 page.
 
 ### Structure
-- Para 1: Opening — "I am applying for..." + background + culture connection.
-- Para 2: Evidence — project/thesis + differentiator.
-- Para 3: Experience — what attracted me to the role + years + mindset.
-- Para 4: Closing — motivation + specific team + thank you.
+- Para 1: **Who I am** — background + identity + career context (tagline/summary variant from profile).
+- Para 2: **Why this role** — role-specific fit + differentiator + 1–2 JD theme references.
+- Para 3: **Why this company** — company motivation + culture hooks + what draws you to them.
+- Para 4: Closing — forward-looking + specific team + thank you.
 
 ### CL-CV separation (HARD CONSTRAINT)
 - **CL must NOT repeat CV content.** CV has data; CL makes them WANT to read the CV.

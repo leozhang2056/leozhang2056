@@ -1,0 +1,40 @@
+Company: PredictHQ
+Role: Senior Software Engineer
+Location: Auckland CBD, Auckland (Hybrid - 2 days office)
+Type: Full-time
+Tech: Python, FastAPI, Kafka, Elasticsearch, Kubernetes, Docker, AWS, CI/CD, Helm
+Experience: Senior level
+
+About PredictHQ:
+Real-world context platform powering enterprise AI decisions. Trusted by Uber, Domino's, Accor. Explains 60%+ of real-world demand variability, grounding models in verified spatial, temporal and economic reality. With Beam (relevancy engine), Bolt (rapid integration framework), and native MCP support for AI agent workflows. Founded 2016, backed by Lightspeed Venture Partners, Sutter Hill Ventures, Aspect Ventures. Offices in Auckland and San Francisco.
+
+Role:
+Senior Software Engineer joining Sustained Engineering team - responsible for backend systems that ingest, process, and enrich event data at the core of the platform. Own backend pipeline services that turn raw real-world signals into structured insight.
+
+Key Responsibilities:
+- Build, improve and maintain scalable APIs, data pipelines, and services (Python, FastAPI, Kafka, Elasticsearch)
+- Own and improve monitoring and alerting for pipeline services
+- Contribute to evolving architecture, standards, and engineering practices
+- Collaborate with cross-functional teams (product managers, data specialists, engineers)
+- Proactively identify and address technical debt, performance bottlenecks, reliability issues
+- Conduct thoughtful code reviews and share knowledge
+- Mentor and support other engineers through pairing, feedback, guidance
+- Help shape engineering culture with CI/CD, observability, testing, agentic workflows
+- Stay current with modern tools, techniques, and AI trends
+
+Required Skills:
+- Strong experience building production systems in Python
+- Proficient with FastAPI or similar modern API frameworks
+- Comfortable with distributed systems and event-driven architecture (Kafka)
+- Familiarity with search technologies like Elasticsearch
+- Comfortable with Kubernetes, including Helm charts
+- Solid understanding of CI/CD, Docker, and cloud-native infrastructure (AWS)
+- Writes clean, testable, maintainable code
+- Diagnoses and resolves technical issues across the stack independently
+- Communicates clearly and collaborates effectively
+- Mentors and supports other engineers
+- Takes initiative and ownership
+- Curious, pragmatic, continuously learning around AI and data-driven tech
+- Bonus: experience with ML pipelines or open source contributions
+
+Must have NZ residency or valid NZ work visa.

@@ -1,0 +1,36 @@
+Company: Capgemini Australia Pty Ltd
+Role: Mobile Application Test Engineer
+Location: Wellington (Onsite 3-4 days/week)
+Type: Full-time
+Tech: XCUITest, Espresso, Appium, Jenkins, Fastlane, CI/CD, Swift, Kotlin, Java, JavaScript, Groovy
+
+About:
+Capgemini's Testing Services team partners with leading financial services organisations to deliver high-quality testing, quality engineering, and DevOps solutions. Focus on faster time-to-market, improved software quality, reduced delivery costs, and mitigation of business and technology risk.
+
+Role:
+Mobile Application Test Engineer passionate about quality, automation, and continuous improvement. Work on innovative mobile applications within a collaborative Agile environment, directly impacting customer experience.
+
+Key Responsibilities:
+- Design, build, and maintain automated test suites for mobile applications
+- Contribute to development of scalable test frameworks and reusable automation utilities
+- Collaborate closely with developers, product owners, business stakeholders, and quality engineers
+- Support CI/CD pipelines
+- Identify opportunities to improve testing tools and processes
+- Champion best practices across the software delivery lifecycle
+
+Requirements:
+- Minimum 5 years software testing with at least 3 years in Test Automation
+- Proven experience with XCUITest, Espresso, Appium
+- Experience with CI/CD tools like Jenkins Pipeline, Fastlane
+- Proficient in at least one: Swift, Kotlin, Java, JavaScript, Groovy
+- Hands-on experience testing mobile apps across various devices and OS platforms
+- Experience with UI testing for mobile applications
+- Familiarity with continuous integration environments
+- Working knowledge of DevOps practices including CI/CD pipeline
+- Experience managing end-to-end test lifecycle
+- Ideally banking or financial services experience
+- Proven problem-solving ability
+- Excellent communication skills
+- Self-managing and self-starter
+
+Must be located in Wellington for onsite 3-4 days/week. Cannot be done remotely.

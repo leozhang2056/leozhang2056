@@ -1,0 +1,51 @@
+Company: Aderant
+Role: Intermediate Software Engineer
+Location: Auckland, New Zealand
+Type: Full-time
+Tech: TypeScript, Node.js, React, Express.js, Nest.js, REST APIs, GraphQL, PostgreSQL, MS SQL, MongoDB, AWS, Kubernetes, Docker, Terraform, GitHub Actions, CI/CD, Playwright
+Experience: 3-5 years software development
+
+About:
+Aderant is a global industry leading software company providing comprehensive business management solutions for law firms and other professional services organizations. With over 2,500 clients worldwide, including 95 of the top AmLaw 100 firms. Our mission is to help law firms run a better business.
+
+Culture: "The A" — innovation, collaboration, personal growth. Diverse teams encouraged to bring whole selves to work.
+
+Role Description:
+Design, build, and maintain scalable, secure, and high-quality cloud-based applications. Contribute across full software development lifecycle including API design, frontend development, testing, deployment, and production support. Strong collaboration within Agile team.
+
+Responsibilities:
+- Design, develop, and maintain backend services and APIs
+- Build and enhance responsive user-facing applications using modern frameworks (e.g., React)
+- Own and deliver features independently from design through to production
+- Contribute to scalable and maintainable system design and architectural decisions
+- Collaborate with Product, QA, and engineering teams
+- Write clean, testable, and efficient code following best practices
+- Participate in code reviews and continuously improve code quality
+- Troubleshoot, debug, and resolve issues across dev and production environments
+- Contribute to CI/CD pipelines and containerized deployments
+- Ensure application security, data integrity, and reliability
+- Leverage AI tools to improve development workflows (code generation, test creation, debugging)
+- Continuously improve development practices, automation, and system performance
+
+Qualifications:
+- 3-5 years of experience in software development
+- Strong experience building modern web applications using TypeScript
+- Experience developing backend services using Node.js
+- Experience building user interfaces with frameworks such as React
+- Experience designing and consuming APIs (RESTful services; GraphQL is a plus)
+- Familiarity with relational databases (e.g., PostgreSQL, MS SQL) and NoSQL databases (e.g., MongoDB)
+- Understanding of distributed systems or service-based architectures
+- Experience with cloud-based application development (e.g., AWS or similar)
+- Experience with container orchestration platforms (e.g., Kubernetes)
+- Experience with infrastructure as code and GitOps practices (e.g., Terraform, Flux)
+- Experience with containerization and CI/CD pipelines (e.g., Docker, GitHub Actions)
+- Experience writing and maintaining unit and end-to-end tests
+- Strong understanding of testing practices, including test automation
+- Experience with UI test automation (e.g., Playwright) is a plus
+- Proactive mindset in leveraging AI tools to improve productivity
+- Understanding of application security, authentication, and authorization concepts
+- Strong understanding of SDLC and Agile methodologies (e.g., Scrum)
+- Ability to own components and deliver features independently
+- Contribution to architectural discussions and technical decision-making
+- Strong problem-solving skills and attention to detail
+- Computer Science, Software Engineering, or related degree (or equivalent) is a plus

@@ -1,0 +1,39 @@
+Company: NZME (New Zealand Media and Entertainment)
+Role: Senior Software Engineer – Backend & AI
+Location: Auckland CBD, Auckland
+Type: Full-time
+Tech: TypeScript, Node.js, Google Cloud Platform (GCP), CI/CD, LLMs, AI/ML, SQL, Python (bonus)
+
+About:
+NZME is one of New Zealand's leading media and entertainment companies. This role is pivotal in designing, building and evolving the platforms that power advertising, data and AI-driven products.
+
+Role:
+Senior Software Engineer – Backend & AI. Shape the future of intelligent applications by combining robust software engineering with emerging AI technologies. Build scalable services, create intelligent automation solutions, ensure AI-powered systems remain secure, reliable and production-ready.
+
+Key Responsibilities:
+- Design, build and support backend services, APIs and integrations
+- Leverage TypeScript, Node.js and cloud-native platforms (GCP)
+- Ensure reliability of AI and LLM applications
+- Develop AI workflows, testing and evaluation frameworks
+- Establish automated quality controls for AI outputs
+- Take ownership of CI/CD pipelines and release processes
+- Implement automated testing, deployment safeguards, best-practice engineering controls
+- Secure coding, structured logging, observability, incident resolution
+- Collaborate with engineers, product stakeholders and business teams
+- Lead technically, mentor others, drive engineering excellence
+
+Requirements:
+- 5+ years developing and supporting production software systems
+- Strong expertise in TypeScript and Node.js backend development
+- Experience with cloud platforms, ideally GCP
+- Hands-on knowledge of CI/CD, automated testing, release engineering
+- Experience building or supporting AI and LLM-powered applications
+- Strong understanding of secure software development practices
+- Experience integrating third-party APIs and event-driven architectures
+- Confidence in Linux environments and modern Git workflows
+- Excellent communication skills
+
+Bonus:
+- Advertising technology, CRM platforms, data warehousing
+- SQL, Python or automation tooling
+- Security challenges specific to AI applications

@@ -1,0 +1,65 @@
+Tribe Group (via recruitment agency - end employer undisclosed, banking/financial sector)
+
+Principal Engineer
+
+Auckland, Auckland, New Zealand · Full-time
+
+About The Opportunity
+
+This is a high-impact Principal Engineer opportunity within a large, complex environment undergoing significant transformation. You'll join a squad with strong technical leadership and a clear roadmap, focused on modernising core platforms and advancing capability.
+
+While there is exposure to nCino and Salesforce, this is not an nCino Engineer role. This is a true Principal position for someone who can operate across engineering, integration, data and architecture, taking ownership of standards, guiding best practice, and influencing how systems are built at scale.
+
+You'll play a key role in shaping how the organisation evolves its technology landscape bringing a forward-thinking mindset across data, integration, and emerging technologies like AI, while navigating regulatory and enterprise complexity within a banking environment.
+
+What You'll Be Doing
+
+This role sits across both strategy and delivery, ideal for someone who enjoys influencing direction while staying close to the technology.
+
+Lead across the development layer, uplifting engineering standards, principles, and best practices.
+Drive integration across Salesforce and broader platforms, including API design and service architecture.
+Act as a thought leader, guiding architectural decisions and ensuring alignment with regulatory and enterprise standards.
+Shape and embed CI/CD pipelines, development frameworks, and engineering governance.
+Work cross-functionally to deliver scalable, resilient solutions across complex systems.
+Provide direction across data architecture, system design, and integration strategy.
+Support the adoption of AI and modern technologies as part of the broader roadmap.
+Influence senior stakeholders and bring clarity to complex technical and business challenges.
+
+The Technology Stack
+
+You'll be working across a modern, evolving ecosystem that blends core banking platforms with scalable integration and data capabilities:
+
+Salesforce – A core platform underpinning customer and workflow capabilities, with a strong focus on integration and extensibility
+nCino – Supporting lending and banking workflows; exposure is important, but this role is not hands-on nCino configuration
+API & Integration frameworks – Designing and enabling robust integrations across internal systems and third-party platforms (REST APIs, event-driven architecture, microservices)
+CI/CD & Engineering Practices – Mature delivery pipelines, automation, and a focus on uplifting engineering standards, release processes, and quality
+Data Architecture & Distributed Systems – Working across complex data environments, ensuring systems are scalable, well-structured, and aligned to enterprise data strategy.
+
+Nice To Haves
+
+While not essential, experience in the following will help you add even more value:
+
+Azure – Exposure to cloud-native services, infrastructure, and platform capabilities
+Snowflake or modern data platforms – Experience working with cloud data warehouses and enabling data-driven decision making
+Test strategy / quality engineering – Ability to influence testing frameworks, automation, and overall quality practices across engineering teams
+AI / automation – Interest or experience in leveraging AI, machine learning, or automation to enhance platforms and customer outcomes
+
+What's on Offer
+
+A true Principal-level role with influence across engineering and architecture
+Opportunity to shape a future-focused technical roadmap within a banking environment
+Work alongside strong new leadership to drive real transformation.
+High-impact role across integration, data, and platform modernisation
+A collaborative environment where you can lead, influence, and push boundaries
+
+Next Steps?
+
+To keep things simple, we ask that all applications are submitted through this advert. We'll review applications as they come in and be in touch.
+
+For any questions give Teresa Jordan a call on 027 376 4884 and quote Job ID 16863 for a confidential chat.
+
+To apply for this vacancy, you MUST be a New Zealand citizen, resident, or have already secured the right to work in New Zealand and therefore hold a valid visa.
+
+At the appropriate stage we will request your references, we ask that you do not include them on your CV when applying.
+
+Tribe is a group of specialist teams. Each of who truly understand their world, and together they partner to understand yours. Whether you're looking for your next opportunity or recruiting, we're all about bringing people together for a shared purpose. Find your people.

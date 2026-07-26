@@ -1,0 +1,35 @@
+Company: Future Secure AI (FSAI)
+Role: Principal Software Engineer (AI)
+Location: Auckland, New Zealand (Hybrid)
+Type: Full-time
+Tech: Node.js, TypeScript, LangChain, LangGraph, AI Co-Worker systems, LLMs, AI orchestration
+Experience: 10+ years software development, deep hands-on AI work
+
+About:
+Future Secure AI is a leading enterprise AI company created in deep partnership with one of the world's largest financial institutions. Operating as an enterprise company with relationships at C-suite with large global enterprises, FSAI believes humans and AI Workers will collaborate seamlessly to raise organisational performance.
+
+We're hiring a Principal Software Engineer (AI) to help set the technical direction of our products and platform. You'll provide technical leadership across squads, projects, and product, shaping architectural decisions and working closely with engineering and customer delivery teams.
+
+What you'll be doing:
+- Shaping architectural decisions for AI Co-Worker systems, enabling enterprise customers to deploy persona-based AI Co-Workers that perform complex, end-to-end operational workflows through their own secure platform.
+- Designing human-in-the-loop systems that keep humans in control of AI Co-Workers operating in mission-critical environments.
+- Setting the technical standards and patterns other engineers will build on.
+- Bringing novel approaches to how deterministic and non-deterministic systems are combined in production AI products.
+- Ensuring platform remains model-agnostic, integrating LLMs and AI frameworks from both established and emerging vendors.
+- Working closely with customers to deeply understand their needs and make sure solutions exceed their expectations.
+
+Requirements:
+- 10+ years of software development experience, with deep hands-on AI work.
+- Strong coding fundamentals, primarily Node.js and TypeScript.
+- Experience with AI frameworks and orchestration tools such as LangChain or LangGraph.
+- Experience building systems where security and data governance are first-class design constraints.
+- Track record of shaping and defending architectural decisions in complex, production environments.
+- Communication skills to align technical and non-technical stakeholders around hard trade-offs.
+- Sharp problem-solving instincts and follow-through.
+
+Why join:
+- Genuine influence over technical direction of fast-growing AI product company
+- Technical leadership across full breadth of product
+- Direct line into senior leadership
+
+Values: BRAVER - courage, rigor, relentless curiosity

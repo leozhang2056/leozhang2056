@@ -1,0 +1,33 @@
+Company: ASB Bank
+Role: Software Engineer
+Location: Auckland, New Zealand
+Type: Full-time
+Tech: Not specified (general software engineering)
+
+About:
+ASB is one of New Zealand's leading banks, focused on helping customers get "One Step Ahead" by giving them the tools to manage their lives and achieve their goals with confidence. Technology plays a critical role in that mission.
+
+Role Description:
+Join the Digital & Engineering Practice to design, build and support secure, reliable software solutions. Part of a collaborative squad contributing across the full software development lifecycle.
+
+What you'll be doing:
+- Contribute across full SDLC: analysis, design, development, testing and support
+- Build and maintain software solutions that are secure, reliable and performant
+- Participate in peer reviews and contribute to high engineering standards
+- Support continuous improvement initiatives and identify opportunities to innovate
+- Work closely with squad members to deliver customer-focused outcomes
+- Develop enterprise engineering and DevOps capabilities
+- Support maintenance and enhancement of applications and platforms
+- Contribute to an Agile team environment
+
+What they're looking for:
+- Tertiary qualification in Computer Science or equivalent industry experience
+- Knowledge of Agile ways of working and SDLC
+- Experience across software design, development, testing and support
+- Strong problem-solving skills
+- Ability to collaborate effectively
+- Customer-focused mindset
+- Interest in continuous learning
+- Understanding of engineering best practices, risk management and compliance
+
+Values: Care, Courage, Curiosity

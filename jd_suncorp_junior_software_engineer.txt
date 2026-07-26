@@ -1,0 +1,26 @@
+Junior Software Engineer
+Suncorp
+Auckland CBD, Auckland (Hybrid)
+Engineering - Software (Information & Communication Technology)
+Full time
+$80k - $95k p.a.
+
+We're looking for a motivated Junior Software Developer to support the development and delivery of modern technology solutions across Salesforce, MuleSoft, web development, integrations, data platforms, and AI-assisted development tools. This is an excellent opportunity to accelerate your career while gaining hands-on experience with leading technologies. Working within an Agile environment, you'll collaborate with experienced developers, architects, and business stakeholders to build secure, scalable, and maintainable solutions while growing your technical skills across a diverse technology stack.
+
+Key Responsibilities
+
+Develop, test, debug, and maintain applications using JavaScript, React, Python, Java, Apex, and Lightning Web Components.
+Support Salesforce CRM development and administration, including Apex, OmniStudio, data migration, and platform configuration.
+Build and support integrations using REST/SOAP APIs, OAuth, and third-party systems.
+Contribute to MuleSoft Anypoint Platform development, including Mule 4, DataWeave, API-led connectivity, and API management.
+Assist with data transformation, reporting, and analytics using SQL, Pandas, Databricks, and Tableau.
+Collaborate with developers, analysts, QA teams, architects, and business stakeholders to deliver high-quality solutions.
+
+Skills & Experience
+
+Exposure to software development and the SDLC, including development, testing, deployment, and support.
+Experience with JavaScript, React, Python, Java, object-oriented programming, debugging, and unit testing.
+Knowledge of Salesforce Administration, CRM Development, Lightning Web Components, Apex, and OmniStudio.
+Understanding of REST and SOAP APIs, web services, OAuth, and system integrations.
+Familiarity with MuleSoft Anypoint Platform, Mule 4, DataWeave, and API-led connectivity.
+Experience with SQL, data transformation, reporting, and analytics tools.

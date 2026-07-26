@@ -1,0 +1,31 @@
+Company: YO IT Consulting
+Role: Java Developer - Remote
+Location: Auckland, New Zealand (Remote)
+Type: Contract
+Tech: Java, Spring Boot, Microservices, REST APIs, AWS, Azure, GCP, Distributed Systems
+
+About:
+Apply Java expertise to help train next-generation AI systems. Work will shape how models learn, reason, and perform through high-quality, real-world input. No prior AI experience required — domain knowledge is what matters.
+
+Key Responsibilities:
+- Design, develop, and maintain scalable backend systems using Java and Spring Boot
+- Architect robust microservices solutions to support complex application requirements
+- Collaborate with customer's team to review technical specifications and deliver high-quality code
+- Contribute expert insights to improve application performance, reliability, and security
+- Participate in code reviews and provide constructive feedback to peers
+- Document technical processes and solutions with clear, concise written communication
+- Troubleshoot, debug, and optimize backend systems as needed
+
+Required Skills:
+- Expert proficiency in Java programming language
+- Hands-on experience with Spring Boot framework for backend development
+- Strong knowledge of microservices architecture and design principles
+- Demonstrated ability to write clean, maintainable, and efficient code
+- Exceptional written and verbal communication skills
+- Experience collaborating with remote teams in a fast-paced environment
+- Solid understanding of REST APIs, data structures, and backend best practices
+
+Preferred:
+- Exposure to cloud platforms (AWS, Azure, Google Cloud)
+- Prior experience working on AI-driven or data-intensive projects
+- Background in high-availability or distributed systems

@@ -2,6 +2,7 @@
 - When generating a CV for a job, always also generate the Cover Letter (CL) in the same session — do not wait for the user to ask. Confidence: 0.90
 - For multiple roles at the same employer (e.g., Chunxiao), titles must be differentiated to show plausible career progression — not identical or contradictory. Analyze timeline and growth path to assign distinct, believable titles. Confidence: 0.70
 - When generating a CV with a target role, filter Chunxiao career achievements by JD keyword relevance — do not include bullets that are irrelevant to the target role (e.g., no crypto trading app bullet for an Infrastructure & Operations role). Confidence: 0.70
+- When selecting projects for a CV, exclude entire technology-specific projects that don't match the JD's core tech stack — e.g., remove Android-heavy projects (Boobit, Picture Book Locker) for a web/backend Angular+Spring Boot JD. Reframe remaining experience bullets to emphasize the target technologies (e.g., stress Pentaho ETL in Enterprise Messaging, stress .NET Core + RESTful API in Live Streaming). Confidence: 0.80
 - After every CV/CL generation, run review against rules (Summary structure, font=Inter, Chunxiao title gradient, banned words) before delivering. Confidence: 0.65
 - Save the job description (JD) text when generating a CV, so the original posting can be referenced later for context. Confidence: 0.65
 - Clean up intermediate/temporary files after completing CV and CL generation. Confidence: 0.70
@@ -14,3 +15,6 @@
 - CV header should NOT include physical address (e.g., "Auckland") — only email, phone, portfolio, LinkedIn, GitHub. Confidence: 0.75
 - Supporting statements and concise CL variants should be under 300 words. User said "简洁一点" when first draft was ~430 words. Confidence: 0.70
 - CV should ensure JD keyword coverage through natural integration in project bullets and skills — target high coverage but never inject fake "Additional:" keyword rows or stuff keywords unnaturally. Quality over artificial coverage percentage. Confidence: 0.85
+- When user pastes a job listing and asks for the company logo, fetch the logo from the company's official website (OG image meta tags, CDN assets, or favicon). User follows this pattern repeatedly as a first step before CV/CL generation. Confidence: 0.85
+- Cover Letter must follow a strict 3-paragraph structure: P1 = "Who I am" (background, credentials), P2 = "Why this role" (skills-to-JD fit), P3 = "Why this company" (mission/culture alignment). User explicitly stated: "第一段我是谁，第二段为什么这个角色，第三段，为什么这个公司". Confidence: 0.90
+- After generating CV+CL, proactively warn the user if the job level is a poor match for their experience (e.g., flagging a Graduate/internship role for someone with 10+ years of experience and a Master's degree). Do not silently deliver a mismatched application. Confidence: 0.75

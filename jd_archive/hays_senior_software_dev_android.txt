@@ -1,0 +1,37 @@
+Company: Hays (for a leading global fintech organisation)
+Role: Senior Software Developer - Android
+Location: Auckland, New Zealand (On-site)
+Type: Full-time
+Tech: Android, Kotlin, Java, React Native (nice to have), AI tools (nice to have)
+Experience: 5+ years hands-on downloadable Android app development
+
+About:
+A leading fintech organisation operating at a global scale. Technology enables secure and reliable payment and financial services for banks, businesses and consumers worldwide - cards, digital wallets, funds access.
+
+Role Description:
+Deliver mobile banking solutions to clients across full project lifecycle: pre-sales support, requirements & gap analysis, project coordination, branding, product enhancement, localisation, system integration, testing, and deployment. Focus on developing enhancements and extensions to existing products. May require occasional out-of-hours support for critical incidents.
+
+Responsibilities:
+- Support development of high-quality mobile software as part of agile scrum team
+- Contribute to strong code quality by maintaining and improving development standards
+- Support technical design decisions by validating approaches and prototyping
+- Work closely with team members to achieve successful sprint outcomes
+- Encourage and mentor junior team members
+- Proactively identify technical, security, delivery, and performance risks
+- Actively contribute to and promote a DevOps culture
+- Identify and implement continuous improvements to development practices
+
+Required:
+- 5+ years hands-on experience developing downloadable Android mobile applications
+- Deep knowledge of Android development and design best practices
+- Experience contributing to large-scale products in complex enterprise environments
+- Strong collaboration and communication skills
+- Experience across modern platforms and legacy systems
+- Interest in agile scrum environment
+- Willingness to broaden technical capability
+- Valid NZ work visa
+
+Nice to have:
+- Experience using AI tools to improve engineering productivity
+- Financial services or banking sector experience
+- React Native experience

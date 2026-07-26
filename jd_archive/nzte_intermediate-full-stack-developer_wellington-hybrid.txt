@@ -1,0 +1,107 @@
+Intermediate Full Stack Developer
+
+New Zealand Trade & Enterprise
+Wellington Central, Wellington (Hybrid)
+Developers/Programmers (Information & Communication Technology)
+Government (Government & Defence)
+Full time
+Posted 10d ago
+
+How you match
+5 skills and credentials match your profile
+Github
+Software Development
+Node.JS
+JavaScript Programming
++1 more
+
+Intermediate Full Stack Developer
+
+Internally this role is referred to as Full Stack Developer
+
+You can be based in either our Auckland or Wellington office
+
+Help build digital experiences that create real impact for New Zealand businesses.
+
+At NZTE, our purpose is simple: growing New Zealand companies internationally, bigger, better and faster.
+
+We're looking for an Intermediate Full Stack Developer to join our Digital & Data team and help deliver the digital products and services that support New Zealand businesses on the world stage.
+
+This is a hands-on role for a Full Stack developer who enjoys working across both front-end and back-end technologies, contributing to new features, product enhancements, integrations, maintenance, and operational support across a range of digital products.
+
+What you'll be doing
+
+Building and enhancing customer-facing and internal digital products.
+
+Developing across both front-end and back-end technologies.
+
+Working closely with Product Managers, Designers, Analysts, Testers and fellow Developers in agile squads.
+
+Contributing to solution design, development, testing and deployment.
+
+Supporting existing applications through incident resolution, maintenance and continuous improvement.
+
+Using AI-assisted development tools such as GitHub Copilot to accelerate delivery while applying sound engineering judgement.
+
+Building secure-by-design solutions and applying secure coding practices, including authentication, authorisation and the safe handling of sensitive data.
+
+Managing dependencies and remediating vulnerabilities to keep our digital products secure and healthy.
+
+Reviewing AI-generated code to ensure it meets NZTE's quality, security and privacy standards.
+
+What you'll bring
+
+You'll likely have 4-6 years of commercial software development experience working at enterprise level, be confident delivering production-ready features end-to-end. You're able to work independently, take ownership of your work, and collaborate effectively with both technical and non-technical stakeholders.
+
+Experience in the following or equivalent is required:
+
+React
+
+Node.js
+
+TypeScript / JavaScript
+
+Azure cloud environments
+
+NoSQL or Graph databases
+
+Agile delivery environments
+
+Secure software development practices, including authentication, authorisation, vulnerability management, and the secure handling of secrets and customer data
+
+AI development tools such as GitHub Copilot or equivalent
+
+We welcome candidates with experience in equivalent technologies and encourage you to tell us how your background aligns with our technology stack. Please confirm in your resume.
+
+About you
+
+You're someone who:
+
+Enjoys solving problems and delivering practical outcomes.
+
+Has a strong growth mindset and a genuine desire to learn and develop.
+
+Communicates technical concepts in a way others can understand.
+
+Values collaboration and works effectively in cross-functional teams.
+
+Understands that security is a fundamental part of delivering quality software.
+
+Embraces modern engineering practices, including AI-assisted development.
+
+Why NZTE?
+
+You'll join a supportive, collaborative and high-performing team working on meaningful digital products that help New Zealand businesses succeed internationally. You'll have the opportunity to contribute across a broad range of products, continue growing your technical capability, and work with people who value curiosity, experimentation, trust and collaboration.
+
+What's next?
+
+For more information, please review the Position Description:
+https://assets.ctfassets.net/on0b3359khf9/7HYRE2KxSqoKUhUKWVTcEh/4828607176fa8c441b163e8ca0e20267/Full_Stack_Developer_-_July_2026_-_intermediate_PD.pdf
+
+Apply online with your CV and cover letter by 12:00pm, 30 July 2026 (NZT).
+
+This is an NZ Level 15ITS role.
+
+Please note: The legal right to live and work in NZ is required to apply for this role.
+
+We believe New Zealand is good for the world. New Zealand Trade and Enterprise (NZTE) is an equal opportunity employer. At NZTE it is all about our people and we seek diversity of thought; we welcome and encourage you to apply regardless of ethnicity, gender, religion, age, sexual orientation, gender identity, neurodiversity or disability. If we need to make specific accommodations in any part of the interview process, please note this in your application or discuss with the Talent Acquisition Partner.
