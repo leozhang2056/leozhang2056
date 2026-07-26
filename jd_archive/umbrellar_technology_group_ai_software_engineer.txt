@@ -1,0 +1,58 @@
+Umbrellar Technology Group
+AI Software Engineer
+
+Auckland CBD, Auckland · Full time
+
+Umbrellar Technology Group is a New Zealand–owned cloud company with a history stretching back close to three decades. For more than 20 years we have implemented and managed our customers' infrastructure, datacentres and cloud environments.
+
+Our ambition is simple: to be New Zealand's most respected cloud company, giving our customers honest, insightful guidance, world-class support, and the engineering expertise to trust us with what matters most.
+
+Our New AI Practice
+We're growing something exciting. Umbrellar's AI Practice delivers practical, outcome-focused AI solutions built on Microsoft's trusted stack: Azure AI Foundry, Microsoft Fabric, and Copilot.
+
+Our approach is deliberately pragmatic — real business outcomes over hype, quick wins built on solid cloud foundations, and responsible AI with security and governance designed in from day one. Solutions are deployed inside each customer's own environment, working with their data, so trust is never traded off against innovation.
+
+As a key engineer in the practice, you'll help shape how we build, the standards we set, and the products we take to market with the backing of an established, profitable cloud business behind you.
+
+About the Role
+We're looking for a Software Engineer who builds AI-powered products and automation on the Microsoft stack. This is a hands-on engineering role at the centre of our client delivery work, building agentic applications, automation platforms, and integrations across Azure and Microsoft 365.
+
+You'll work in .NET and Python, with PostgreSQL as the data layer and Azure AI Foundry as the AI platform. You'll partner with our data engineering and architecture teams, and you'll own what you build from investigation through to production.
+
+This is an AI-native engineering role. We expect you to direct AI coding agents as part of your daily workflow, build agentic systems for clients, and make pragmatic calls about where AI genuinely helps and where it doesn't.
+
+This is a customer-facing, consulting role. You'll work directly with clients running discovery to understand their business, actively consulting to surface their real needs, and shaping the solutions worth building alongside them.
+
+Core Technology Stack
+
+Strong C# and .NET, building services, APIs, and integrations
+Strong Python for AI workloads, automation, and data-adjacent engineering
+PostgreSQL as the primary database, including schema design, performance, and pgvector for AI workloads
+Azure platform services, including compute, identity, networking fundamentals, and deployment of containerised (Docker) workloads
+Azure AI Foundry for model deployment, evaluation, and AI application management
+SQL and general relational data modelling, with working knowledge of NoSQL patterns where they fit
+GitHub for source control, pull requests, and CI/CD with GitHub Actions
+
+Gen AI Knowledge and Experience
+
+Model SDKs and APIs, including Azure OpenAI, OpenAI, and Anthropic
+Agent frameworks, including Microsoft Agent Framework
+Vector databases and RAG patterns
+Model Context Protocol (MCP)
+AI safety and guardrails, including content filtering, grounding, and evaluation
+Cost, accuracy, and latency tradeoffs, and the judgement to balance them per workload
+
+Customer Engagement and Consulting
+
+Work directly with customers as a trusted technical advisor, not just an implementer
+Run discovery to understand each customer's business, surface their real needs, and define the problems worth solving
+Actively consult, asking sharp questions, challenging assumptions, and recommending pragmatic solutions
+Bring proven experience dealing with customers in a delivery, consulting, or client-facing engineering role
+Communicate clearly with both technical and non-technical stakeholders, building trust through what you deliver
+
+End-to-End Ownership
+
+Owning features from investigation to deploy, in co-build with subject matter experts and customers
+Holding client relationships through multi-month engagements
+Managing technical debt and balancing velocity with long-term health
+Building systems that make team knowledge durable and accessible
