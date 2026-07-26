@@ -196,6 +196,25 @@ _COMPANY_CULTURE_HOOKS = {
     'smartly': "payroll isn't glamorous, but getting it right means 20,000+ Kiwi businesses pay their people on time — practical impact that matters.",
     'datacom': "it is one of New Zealand's largest tech companies, delivering real solutions across diverse industries.",
     'auckland transport': "it applies computer vision and AI to real-world transport problems that directly improve how Auckland moves — from ANPR and object detection to automated monitoring of critical infrastructure.",
+    'future secure': "it operates at the frontier of enterprise AI, building AI Co-Worker systems that raise organisational performance — and it believes in humans and AI working together, not replacing each other.",
+    'aderant': "it provides business management solutions for law firms and professional services organizations, serving 95 of the top AmLaw 100 firms, and is driving the legal industry toward innovation.",
+    'air new zealand': "it is on an accelerated journey to become the world's leading digital airline, building mobile experiences used by millions of customers across Aotearoa and around the world.",
+    'air nz': "it is on an accelerated journey to become the world's leading digital airline, building mobile experiences used by millions of customers across Aotearoa and around the world.",
+    'twine': "it is a leading freelance marketplace connecting top freelancers with companies needing creative and tech expertise, trusted by Fortune 500 companies and innovative startups alike.",
+    'yo it consulting': "it connects expert developers with cutting-edge AI training projects, applying production engineering skills to shape how AI models learn and reason.",
+    'hays': "it connects skilled professionals with leading global organisations, matching engineering expertise with roles that have real enterprise impact.",
+    'auckland council': "it serves the people of Tāmaki Makaurau through services and initiatives that shape the future of New Zealand's largest city.",
+    'deloitte': "it is a global professional services firm where extraordinary people solve complex business and technology challenges, with a strong commitment to innovation and AI.",
+    'jobright': "it is transforming job search with AI agents that help people discover relevant opportunities faster and more intelligently.",
+    'asb bank': "it is one of New Zealand's leading banks, helping customers get 'One Step Ahead' through secure, reliable digital banking experiences.",
+    'asb': "it is one of New Zealand's leading banks, helping customers get 'One Step Ahead' through secure, reliable digital banking experiences.",
+    'absolute it': "it partners with leading global SaaS organisations to find engineers who can drive AI-powered product evolution and cloud-native innovation.",
+    'lic': "it is a farmer-owned co-operative that has been supporting herd improvement in New Zealand's dairy sector for over 115 years, building technology that helps farmers make smarter decisions every day.",
+    'bonnet': "it is a fleet compliance management platform with built-in telematics, helping businesses automate compliance and eliminate manual admin across vehicles, machines, and drivers.",
+    'presto resourcing': "it connects skilled backend and data engineers with organisations driving AI-enabled engineering practices and data governance initiatives.",
+    'capgemini': "it partners with leading financial services organisations to deliver high-quality testing, quality engineering, and DevOps solutions that help businesses innovate with confidence.",
+    'predicthq': "it is the real-world context platform powering enterprise AI decisions, trusted by Uber, Domino's and Accor, grounding models in verified spatial, temporal and economic reality.",
+    'sunstone talent': "it connects curious, AI-minded developers with companies building modern software products at global scale.",
 }
 
 _COMPANY_TEAMS = {
@@ -236,6 +255,26 @@ _COMPANY_TEAMS = {
     'flowingly limited': "Flowingly's Product Engineering team",
     'flowingly': "Flowingly's Product Engineering team",
     'auckland transport': "Auckland Transport's Computer Vision team",
+    'future secure': "Future Secure AI's engineering team",
+    'aderant': "Aderant's engineering team",
+    'air new zealand': "Air New Zealand's Customer Touchpoints team",
+    'air nz': "Air New Zealand's Customer Touchpoints team",
+    'twine': "Twine's client project team",
+    'yo it consulting': "YO IT Consulting's development team",
+    'hays': "the fintech organisation's mobile engineering team",
+    'auckland council': "Auckland Council's Technology Services team",
+    'deloitte': "Deloitte's Enterprise Transformation team",
+    'jobright': "Jobright.ai's engineering team",
+    'asb bank': "ASB's Digital & Engineering Practice team",
+    'asb': "ASB's Digital & Engineering Practice team",
+    'absolute it': "the global SaaS organisation's engineering team",
+    'lic': "LIC's Farm Software team",
+    'bonnet': "BONNET's technology team",
+    'presto resourcing': "the client organisation's data engineering team",
+    'capgemini': "Capgemini's Testing Services team",
+    'predicthq': "PredictHQ's Sustained Engineering team",
+    'sunstone talent': "the client company's development team",
+    'heebee': "CIVIC's founding engineering team",
 }
 
 def build_cover_letter_content(
@@ -250,11 +289,11 @@ def build_cover_letter_content(
 ) -> Dict[str, str]:
     """组装 Cover Letter 的文本内容块。
 
-    结构（2026-05）：
-      opening = 寒暄问候 + 认同公司文化
-      body1   = 竞争力亮点（证据 + 差异化合并）
-      body2   = 在贵公司的展望作用
-      closing = Thank you.
+    结构（2026-07-25）：
+      opening = 我是谁（身份简介）
+      body1   = 为什么这个职位（角色匹配）
+      body2   = 为什么这个公司（公司动机）
+      closing = 结束语
     """
     # Role-based default title fallback
     if not target_role_title or target_role_title == 'Software Engineer':
@@ -999,6 +1038,14 @@ def build_cover_letter_content(
                 "Thank you for your time and consideration."
             )
         else:
+            # ============================================================
+            # Generic template (applies when no company hand-craft exists)
+            # Structure (2026-07-25):
+            #   Para 1: Who I am     — background, identity, tagline
+            #   Para 2: Why this role — role-specific fit + evidence
+            #   Para 3: Why this company — company motivation, culture
+            #   Closing: forward-looking thank you
+            # ============================================================
             company_lower = (company_name or '').strip().lower()
 
             # ---- helpers ----
@@ -1024,48 +1071,65 @@ def build_cover_letter_content(
                         return v
                 return f"{company_name}'s engineering team"
 
-            # === Para 1: Fit hook — why this company/role (not education-first) ===
-            culture_reason = _culture_reason()
-            tagline = _background_tagline().rstrip('.')
-            opening = (
-                f"{tagline}, I am drawn to {company_name} because {culture_reason} "
-                f"The {target_role_title} role aligns well with my background — "
-                f"I have spent the past decade building production systems across "
-                f"backend, mobile, and IoT layers, and I am looking for a team where "
-                f"that breadth creates value rather than just filling tickets."
-            )
-            if "aut" in company_lower or "auckland university of technology" in company_lower:
-                opening += " As an AUT graduate, I am especially motivated by the opportunity to contribute to the university community through this role."
+            def _summary_variant() -> str:
+                """Get the role-appropriate summary/focus variant from profile."""
+                var_key = _ROLE_SUMMARY_KEY.get(role_type, 'default')
+                variants = profile.get('career_identity', {}).get('summary_variants', {})
+                return variants.get(var_key, variants.get('default', ''))
 
-            # === Para 2: Fit hook — company-specific or role differentiator ===
-            # 优先使用 _WHY_ME_HOOKS（公司专属），否则用 _differentiator_hook（角色差异化）
+            # === Para 1: Who I am ===
+            summary_text = _summary_variant()
+            if not summary_text:
+                tagline = _background_tagline().rstrip('.')
+                summary_text = tagline
+            # First sentence of the summary variant is the opener identity
+            who_intro = summary_text.split('.')[0].strip() + '.'
+            opening = (
+                f"{who_intro} "
+                f"{summary_text.split('.', 1)[1].strip() if '.' in summary_text else ''}"
+            ).strip()
+            if opening.endswith(','):
+                opening = opening.rstrip(',') + '.'
+            # Ensure it reads as a solid intro paragraph — not a list
+            opening = opening.replace('  ', ' ')
+
+            # === Para 2: Why this role ===
+            # Role differentiator + JD-specific alignment (avoid metrics per CL-CV separation rules)
             why_me = _WHY_ME_HOOKS.get(company_lower, {}).get('en', '')
             if why_me:
                 body1 = why_me
             else:
-                body1 = _differentiator_hook(role_type)
+                differentiator = _differentiator_hook(role_type).strip()
+                if differentiator:
+                    body1 = (
+                        f"I am drawn to the {target_role_title} role because it demands "
+                        f"the kind of work I do best. {differentiator}"
+                    )
+                else:
+                    body1 = (
+                        f"The {target_role_title} role aligns with my background in "
+                        f"{role_type} engineering, where I have consistently delivered "
+                        f"production systems that balance technical quality with practical results."
+                    )
+                # Add JD theme mention for personalization (role-aware filtering)
+                if jd_keywords:
+                    role_signals = {
+                        'android': ['android', 'kotlin', 'java', 'mobile', 'sdk', 'ndk'],
+                        'backend': ['java', 'spring', 'api', 'microservice', 'database', 'sql', 'cloud', 'node'],
+                        'ai': ['ai', 'ml', 'model', 'data', 'python', 'pytorch', 'vision'],
+                        'fullstack': ['react', 'node', 'java', 'typescript', 'api', 'full', 'frontend', 'backend'],
+                        'embedded': ['c', 'c++', 'embedded', 'firmware', 'rtos', 'linux', 'iot'],
+                    }
+                    signal_words = role_signals.get(role_type, role_signals['fullstack'])
+                    theme_kws = [kw for kw in jd_keywords if any(s in kw.lower() for s in signal_words)][:3]
+                    if theme_kws:
+                        body1 += (
+                            f" I see the emphasis on {', '.join(theme_kws[:2])} "
+                            f"in your JD, which maps directly to experience I can apply immediately."
+                        )
 
-            # === Para 3: JD-specific fit — what you bring that they need ===
-            # Extract 2-3 key JD themes for tailored response
-            jd_themes = []
-            if jd_keywords:
-                # Pick most relevant keywords from the raw JD
-                role_signals = {
-                    'android': ['android', 'kotlin', 'java', 'mobile', 'sdk', 'ndk'],
-                    'backend': ['java', 'spring', 'api', 'microservice', 'database', 'sql', 'cloud'],
-                    'ai': ['ai', 'ml', 'model', 'data', 'python', 'pytorch', 'vision'],
-                    'fullstack': ['react', 'node', 'java', 'typescript', 'api', 'full', 'frontend', 'backend'],
-                }
-                signal_words = role_signals.get(role_type, role_signals['fullstack'])
-                jd_themes = [kw for kw in jd_keywords if any(s in kw.lower() for s in signal_words)][:3]
-
-            fit_parts = []
-            if jd_themes:
-                theme_str = ', '.join(jd_themes[:3])
-                fit_parts.append(
-                    f"Your JD highlights {theme_str} — areas where I have hands-on production experience. "
-                )
-            # Add a concise experience anchor (not a full bullet list)
+            # === Para 3: Why this company ===
+            culture_reason = _culture_reason()
             _EXPERIENCE_ANCHOR = {
                 'android': (
                     "I have shipped Android applications across enterprise messaging, IoT device "
@@ -1091,10 +1155,26 @@ def build_cover_letter_content(
                     "database schema to user interface. This breadth means I can contribute "
                     "wherever the team needs, without waiting for handoffs."
                 ),
+                'embedded': (
+                    "I have designed and maintained embedded systems including IoT device "
+                    "firmware, sensor data pipelines, and real-time monitoring dashboards — "
+                    "from hardware bring-up through production deployment and field debugging."
+                ),
             }
             anchor = _EXPERIENCE_ANCHOR.get(role_type, _EXPERIENCE_ANCHOR['fullstack'])
-            fit_parts.append(anchor)
-            body2 = " ".join(fit_parts)
+            # Check if there's a strong reason to mention the company specifically
+            if "aut" in company_lower or "auckland university of technology" in company_lower:
+                body2 = (
+                    f"{company_name} is where I want to apply what I have built. "
+                    "As an AUT graduate, I understand the university's values and I am motivated "
+                    "by the opportunity to contribute to the community that shaped my research career. "
+                    f"{anchor}"
+                )
+            else:
+                body2 = (
+                    f"I am drawn to {company_name} because {culture_reason.rstrip('.')}. "
+                    f"{anchor}"
+                )
 
             # === Closing: concise, forward-looking ===
             team = _team_name()
